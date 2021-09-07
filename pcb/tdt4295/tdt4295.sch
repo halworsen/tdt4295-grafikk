@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 1
+Sheet 1 2
 Title ""
 Date ""
 Rev ""
@@ -391,4 +391,16 @@ Wire Notes Line
 	8750 700  8750 3100
 Text Notes 5950 800  0    50   ~ 0
 3V3 Regulator
+$Sheet
+S 11700 400  1050 600 
+U 6137CCE7
+F0 "User pushbuttons" 50
+F1 "pushbuttons.sch" 50
+$EndSheet
+$Sheet
+S 11700 1250 1050 500 
+U 61389BA0
+F0 "VMCU" 50
+F1 "vmcu.sch" 50
+$EndSheet
 $EndSCHEMATC
