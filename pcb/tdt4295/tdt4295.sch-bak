@@ -1,0 +1,154 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L power:GND #PWR?
+U 1 1 6138FF4F
+P 1400 1500
+F 0 "#PWR?" H 1400 1250 50  0001 C CNN
+F 1 "GND" H 1405 1327 50  0000 C CNN
+F 2 "" H 1400 1500 50  0001 C CNN
+F 3 "" H 1400 1500 50  0001 C CNN
+	1    1400 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 613908C7
+P 3250 1300
+F 0 "#PWR?" H 3250 1150 50  0001 C CNN
+F 1 "+5V" H 3265 1473 50  0000 C CNN
+F 2 "" H 3250 1300 50  0001 C CNN
+F 3 "" H 3250 1300 50  0001 C CNN
+	1    3250 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L 2021-09-07_12-32-16:BKP2125HS221-T L600
+U 1 1 61392AB6
+P 2300 1750
+F 0 "L600" H 2600 2038 60  0000 C CNN
+F 1 "BKP2125HS221-T" H 2600 1932 60  0000 C CNN
+F 2 "BKP2125_TAY" H 2575 1465 60  0001 C CNN
+F 3 "" H 2300 1750 60  0000 C CNN
+	1    2300 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2900 1750 3250 1750
+Wire Wire Line
+	3250 1750 3250 1300
+Wire Wire Line
+	1000 1500 1000 1750
+Wire Wire Line
+	1100 1500 1100 2350
+Wire Wire Line
+	1100 2350 2250 2350
+Wire Wire Line
+	1200 1500 1200 2150
+$Comp
+L dk_USB-DVI-HDMI-Connectors:690-005-299-043 P601
+U 1 1 6138976E
+P 1900 600
+F 0 "P601" V 2048 1275 60  0000 C CNN
+F 1 "690-005-299-043" V 2154 1275 60  0000 C CNN
+F 2 "digikey-footprints:USB_Mini_B_Female_690-005-299-043" H 2100 800 60  0001 L CNN
+F 3 "http://files.edac.net/690-005-299-043.pdf" H 2100 900 60  0001 L CNN
+F 4 "151-1206-1-ND" H 2100 1000 60  0001 L CNN "Digi-Key_PN"
+F 5 "690-005-299-043" H 2100 1100 60  0001 L CNN "MPN"
+F 6 "Connectors, Interconnects" H 2100 1200 60  0001 L CNN "Category"
+F 7 "USB, DVI, HDMI Connectors" H 2100 1300 60  0001 L CNN "Family"
+F 8 "http://files.edac.net/690-005-299-043.pdf" H 2100 1400 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/edac-inc/690-005-299-043/151-1206-1-ND/4312192" H 2100 1500 60  0001 L CNN "DK_Detail_Page"
+F 10 "CONN RCPT USB2.0 MINI B SMD R/A" H 2100 1600 60  0001 L CNN "Description"
+F 11 "EDAC Inc." H 2100 1700 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 2100 1800 60  0001 L CNN "Status"
+	1    1900 600 
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	1200 2150 1850 2150
+$Comp
+L dk_TVS-Diodes:IP4220CZ6_125 D600
+U 1 1 61396654
+P 1950 3000
+F 0 "D600" V 2003 2520 60  0000 R CNN
+F 1 "IP4220CZ6_125" V 1897 2520 60  0000 R CNN
+F 2 "digikey-footprints:SC-74" H 2150 3200 60  0001 L CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/IP4220CZ6.pdf" H 2150 3300 60  0001 L CNN
+F 4 "1727-3578-1-ND" H 2150 3400 60  0001 L CNN "Digi-Key_PN"
+F 5 "IP4220CZ6,125" H 2150 3500 60  0001 L CNN "MPN"
+F 6 "Circuit Protection" H 2150 3600 60  0001 L CNN "Category"
+F 7 "TVS - Diodes" H 2150 3700 60  0001 L CNN "Family"
+F 8 "https://assets.nexperia.com/documents/data-sheet/IP4220CZ6.pdf" H 2150 3800 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/nexperia-usa-inc/IP4220CZ6,125/1727-3578-1-ND/1133548" H 2150 3900 60  0001 L CNN "DK_Detail_Page"
+F 10 "TVS DIODE 5.5V 6TSOP" H 2150 4000 60  0001 L CNN "Description"
+F 11 "Nexperia USA Inc." H 2150 4100 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 2150 4200 60  0001 L CNN "Status"
+	1    1950 3000
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1000 1750 2050 1750
+Wire Wire Line
+	2050 2500 2050 1750
+Connection ~ 2050 1750
+Wire Wire Line
+	2050 1750 2300 1750
+Wire Wire Line
+	1850 2500 1850 2150
+Connection ~ 1850 2150
+Wire Wire Line
+	1850 2150 3300 2150
+Wire Wire Line
+	2250 2500 2250 2350
+Connection ~ 2250 2350
+Wire Wire Line
+	2250 2350 3300 2350
+$Comp
+L power:GND #PWR?
+U 1 1 6139DC3C
+P 2050 3650
+F 0 "#PWR?" H 2050 3400 50  0001 C CNN
+F 1 "GND" H 2055 3477 50  0000 C CNN
+F 2 "" H 2050 3650 50  0001 C CNN
+F 3 "" H 2050 3650 50  0001 C CNN
+	1    2050 3650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2050 3500 2050 3650
+NoConn ~ 2250 3600
+NoConn ~ 1850 3600
+Wire Wire Line
+	2250 3500 2250 3600
+Wire Wire Line
+	1850 3600 1850 3500
+$Comp
+L Regulator_Linear:LP3982ILD-ADJ U?
+U 1 1 613A5597
+P 7300 2550
+F 0 "U?" H 7300 2917 50  0000 C CNN
+F 1 "LP3982ILD-ADJ" H 7300 2826 50  0000 C CNN
+F 2 "Package_SON:WSON-8-1EP_3x2.5mm_P0.5mm_EP1.2x1.5mm_PullBack_ThermalVias" H 7500 2200 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lp3982.pdf" H 7300 2550 50  0001 C CNN
+	1    7300 2550
+	1    0    0    -1  
+$EndComp
+Text Label 3000 2150 0    50   ~ 0
+USBDP
+Text Label 3000 2350 0    50   ~ 0
+USBDM
+$EndSCHEMATC

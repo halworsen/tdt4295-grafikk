@@ -1,0 +1,72 @@
+<items>
+  <item>
+    <name>EFM32 Gecko Starter Kit User Manual</name>
+    <description>EFM32 Gecko Starter Kit User Manual.</description>
+    <open>doc/stk_docs/t0008_efm32_g8xx_stk_user_manual.pdf</open>
+  </item>
+  <item>
+    <name>EFM32 Gecko Starter Kit Datasheet</name>
+    <description>The Datasheet for the EFM32 Gecko Starter Kit Datasheet.</description>
+    <open>doc/stk_docs/t0009_efm32_g8xx_stk_data_sheet.pdf</open>
+  </item>
+  <item>
+    <name>EFM32 Gecko Starter Kit Quick Start Guide</name>
+    <description>A quick guide to start using the Gecko Starter Kit (STK).</description>
+    <open>doc/stk_docs/t0010_efm32_g8xx_stk_quick_start.pdf</open>
+  </item>
+  <item>
+    <name>EFM32 Tiny Gecko Starter Kit User Manual</name>
+    <description>EFM32 Tiny Gecko Starter Kit User Manual.</description>
+    <open>doc/stk_docs/t0011_efm32_tiny_gecko_stk_user_manual.pdf</open>
+  </item>
+  <item>
+    <name>EFM32 Tiny Gecko Starter Kit Datasheet</name>
+    <description>EFM32 Tiny Gecko Starter Kit Datasheet.</description>
+    <open>doc/stk_docs/t0012_efm32_tiny_gecko_stk_datasheet.pdf</open>
+  </item>
+  <item>
+    <name>EFM32 Tiny Gecko Starter Kit Quick Start Guide</name>
+    <description>A quick guide to start using the Tiny Gecko Starter Kit (STK).</description>
+    <open>doc/stk_docs/t0013_efm32_tiny_gecko_stk_quick_start.pdf</open>
+  </item>
+  <item>
+    <name>EFM32GG-STK3700 User Manual</name>
+    <description>User Manual for the EFM32 Giant Gecko Starter Kit.</description>
+    <open>doc/stk_docs/t0014_efm32_giant_gecko_stk_user_manual.pdf</open>
+  </item>
+    <item>
+    <name>EFM32GG-STK3700 Schematics</name>
+    <description>Schematic drawings for the EFM32 Giant Gecko Starter Kit.</description>
+    <open>doc/stk_docs/brd2200/BRD2200A_A03_schematic.pdf</open>
+  </item>
+  <item>
+    <name>EFM32GG-STK3700 Assembly Drawings</name>
+    <description>Assembly drawings for the EFM32 Giant Gecko Starter Kit.</description>
+    <open>doc/stk_docs/brd2200/BRD2200A_A03_assy_draw.pdf</open>
+  </item>
+  <item>
+    <name>EFM32GG-STK3700 Bill of Materials</name>
+    <description>Bill of Materials (BOM) for the EFM32 Giant Gecko Starter Kit.</description>
+    <open>doc/stk_docs/brd2200/BRD2200A_A03_bom.xlsx</open>
+  </item>
+  <item>
+    <name>EFM32LG-STK3600 User Manual</name>
+    <description>User manual for the EFM32 Leopard Gecko Starter Kit.</description>
+    <open>doc/stk_docs/t0026_efm32_leopard_gecko_stk_user_manual.pdf</open>
+  </item>
+    <item>
+    <name>EFM32LG-STK3600 Schematics</name>
+    <description>Schematic drawings for the EFM32 Leopard Gecko Starter Kit.</description>
+    <open>doc/stk_docs/brd2201/BRD2201A_A02_schematic.pdf</open>
+  </item>
+  <item>
+    <name>EFM32LG-STK3600 Assembly Drawings</name>
+    <description>Assembly drawings for the EFM32 Leopard Gecko Starter Kit.</description>
+    <open>doc/stk_docs/brd2201/BRD2201A_A02_assy_draw.pdf</open>
+  </item>
+  <item>
+    <name>EFM32LG-STK3600 Bill of Materials</name>
+    <description>Bill of Materials (BOM) for the EFM32 Leopard Gecko Starter Kit.</description>
+    <open>doc/stk_docs/brd2201/BRD2201A_A02_bom.xlsx</open>
+  </item>
+</items>
