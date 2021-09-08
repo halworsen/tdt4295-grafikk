@@ -31,6 +31,8 @@ class FrameBufferSpec extends FreeSpec with ChiselScalatestTester {
 
   "Should initialize correct graphics array while enabling writing" in {
     test(new FrameBuffer(4, 4)) { dut =>
+      dut.io.writeX.poke(1.U)
+      dut.io.writeY.poke(1.U)
 
     }
   }
