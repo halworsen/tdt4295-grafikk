@@ -1,1 +1,8 @@
+
+# FPGA
+
+# IntelliJ
 .idea/
+.bsp/
+target/
+test_run_dir/
