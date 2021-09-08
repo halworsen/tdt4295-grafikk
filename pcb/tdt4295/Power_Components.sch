@@ -1,0 +1,408 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 2
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L power:GND #PWR?
+U 1 1 613C395E
+P 1450 1500
+F 0 "#PWR?" H 1450 1250 50  0001 C CNN
+F 1 "GND" H 1455 1327 50  0000 C CNN
+F 2 "" H 1450 1500 50  0001 C CNN
+F 3 "" H 1450 1500 50  0001 C CNN
+	1    1450 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 613C3964
+P 3300 1300
+F 0 "#PWR?" H 3300 1150 50  0001 C CNN
+F 1 "+5V" H 3315 1473 50  0000 C CNN
+F 2 "" H 3300 1300 50  0001 C CNN
+F 3 "" H 3300 1300 50  0001 C CNN
+	1    3300 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L 2021-09-07_12-32-16:BKP2125HS221-T L600
+U 1 1 613C396A
+P 2350 1750
+F 0 "L600" H 2650 2038 60  0000 C CNN
+F 1 "BKP2125HS221-T" H 2650 1932 60  0000 C CNN
+F 2 "BKP2125_TAY" H 2625 1465 60  0001 C CNN
+F 3 "" H 2350 1750 60  0000 C CNN
+	1    2350 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2950 1750 3300 1750
+Wire Wire Line
+	3300 1750 3300 1300
+Wire Wire Line
+	1050 1500 1050 1750
+Wire Wire Line
+	1150 1500 1150 2350
+Wire Wire Line
+	1150 2350 2300 2350
+Wire Wire Line
+	1250 1500 1250 2150
+$Comp
+L dk_USB-DVI-HDMI-Connectors:690-005-299-043 P601
+U 1 1 613C397F
+P 1950 600
+F 0 "P601" V 2098 1275 60  0000 C CNN
+F 1 "690-005-299-043" V 2204 1275 60  0000 C CNN
+F 2 "digikey-footprints:USB_Mini_B_Female_690-005-299-043" H 2150 800 60  0001 L CNN
+F 3 "http://files.edac.net/690-005-299-043.pdf" H 2150 900 60  0001 L CNN
+F 4 "151-1206-1-ND" H 2150 1000 60  0001 L CNN "Digi-Key_PN"
+F 5 "690-005-299-043" H 2150 1100 60  0001 L CNN "MPN"
+F 6 "Connectors, Interconnects" H 2150 1200 60  0001 L CNN "Category"
+F 7 "USB, DVI, HDMI Connectors" H 2150 1300 60  0001 L CNN "Family"
+F 8 "http://files.edac.net/690-005-299-043.pdf" H 2150 1400 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/edac-inc/690-005-299-043/151-1206-1-ND/4312192" H 2150 1500 60  0001 L CNN "DK_Detail_Page"
+F 10 "CONN RCPT USB2.0 MINI B SMD R/A" H 2150 1600 60  0001 L CNN "Description"
+F 11 "EDAC Inc." H 2150 1700 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 2150 1800 60  0001 L CNN "Status"
+	1    1950 600 
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	1250 2150 1900 2150
+$Comp
+L dk_TVS-Diodes:IP4220CZ6_125 D600
+U 1 1 613C398F
+P 2000 3000
+F 0 "D600" V 2053 2520 60  0000 R CNN
+F 1 "IP4220CZ6_125" V 1947 2520 60  0000 R CNN
+F 2 "digikey-footprints:SC-74" H 2200 3200 60  0001 L CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/IP4220CZ6.pdf" H 2200 3300 60  0001 L CNN
+F 4 "1727-3578-1-ND" H 2200 3400 60  0001 L CNN "Digi-Key_PN"
+F 5 "IP4220CZ6,125" H 2200 3500 60  0001 L CNN "MPN"
+F 6 "Circuit Protection" H 2200 3600 60  0001 L CNN "Category"
+F 7 "TVS - Diodes" H 2200 3700 60  0001 L CNN "Family"
+F 8 "https://assets.nexperia.com/documents/data-sheet/IP4220CZ6.pdf" H 2200 3800 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/nexperia-usa-inc/IP4220CZ6,125/1727-3578-1-ND/1133548" H 2200 3900 60  0001 L CNN "DK_Detail_Page"
+F 10 "TVS DIODE 5.5V 6TSOP" H 2200 4000 60  0001 L CNN "Description"
+F 11 "Nexperia USA Inc." H 2200 4100 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 2200 4200 60  0001 L CNN "Status"
+	1    2000 3000
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1050 1750 2100 1750
+Wire Wire Line
+	2100 2500 2100 1750
+Connection ~ 2100 1750
+Wire Wire Line
+	2100 1750 2350 1750
+Wire Wire Line
+	1900 2500 1900 2150
+Connection ~ 1900 2150
+Wire Wire Line
+	1900 2150 3350 2150
+Wire Wire Line
+	2300 2500 2300 2350
+Connection ~ 2300 2350
+Wire Wire Line
+	2300 2350 3350 2350
+$Comp
+L power:GND #PWR?
+U 1 1 613C399F
+P 2100 3650
+F 0 "#PWR?" H 2100 3400 50  0001 C CNN
+F 1 "GND" H 2105 3477 50  0000 C CNN
+F 2 "" H 2100 3650 50  0001 C CNN
+F 3 "" H 2100 3650 50  0001 C CNN
+	1    2100 3650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2100 3500 2100 3650
+NoConn ~ 2300 3600
+NoConn ~ 1900 3600
+Wire Wire Line
+	2300 3500 2300 3600
+Wire Wire Line
+	1900 3600 1900 3500
+Text Label 3050 2150 0    50   ~ 0
+USBDP
+Text Label 3050 2350 0    50   ~ 0
+USBDM
+Wire Notes Line
+	3750 4450 650  4450
+Wire Notes Line
+	650  4450 650  600 
+Text Notes 1850 700  0    50   ~ 0
+Power input
+Wire Notes Line
+	3750 600  3750 4450
+Wire Notes Line
+	650  600  3750 600 
+$Comp
+L Regulator_Linear:LP3982IMM-ADJ U?
+U 1 1 613D90AF
+P 6450 1400
+AR Path="/613D90AF" Ref="U?"  Part="1" 
+AR Path="/613AE19D/613D90AF" Ref="U600"  Part="1" 
+F 0 "U600" H 6450 1767 50  0000 C CNN
+F 1 "LP3982IMM-ADJ" H 6450 1676 50  0000 C CNN
+F 2 "Package_SO:VSSOP-8_3.0x3.0mm_P0.65mm" H 6650 1050 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lp3982.pdf" H 6450 1400 50  0001 C CNN
+	1    6450 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 613D90B5
+P 4000 850
+F 0 "#PWR?" H 4000 700 50  0001 C CNN
+F 1 "+5V" H 4015 1023 50  0000 C CNN
+F 2 "" H 4000 850 50  0001 C CNN
+F 3 "" H 4000 850 50  0001 C CNN
+	1    4000 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 613D90BB
+P 4000 1650
+AR Path="/613D90BB" Ref="C?"  Part="1" 
+AR Path="/613AE19D/613D90BB" Ref="C600"  Part="1" 
+F 0 "C600" H 4115 1696 50  0000 L CNN
+F 1 "100N" H 4115 1605 50  0000 L CNN
+F 2 "" H 4038 1500 50  0001 C CNN
+F 3 "~" H 4000 1650 50  0001 C CNN
+	1    4000 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 613D90C1
+P 4500 1650
+AR Path="/613D90C1" Ref="C?"  Part="1" 
+AR Path="/613AE19D/613D90C1" Ref="C601"  Part="1" 
+F 0 "C601" H 4615 1696 50  0000 L CNN
+F 1 "10U" H 4615 1605 50  0000 L CNN
+F 2 "" H 4538 1500 50  0001 C CNN
+F 3 "~" H 4500 1650 50  0001 C CNN
+	1    4500 1650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4000 1800 4000 2000
+Wire Wire Line
+	4500 1800 4500 2000
+Wire Wire Line
+	6050 1300 5200 1300
+Connection ~ 5200 1300
+Wire Wire Line
+	5200 1300 4500 1300
+$Comp
+L Device:C C?
+U 1 1 613D90CC
+P 6950 1800
+AR Path="/613D90CC" Ref="C?"  Part="1" 
+AR Path="/613AE19D/613D90CC" Ref="C602"  Part="1" 
+F 0 "C602" H 7065 1846 50  0000 L CNN
+F 1 "33N" H 7065 1755 50  0000 L CNN
+F 2 "" H 6988 1650 50  0001 C CNN
+F 3 "~" H 6950 1800 50  0001 C CNN
+	1    6950 1800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6950 1650 6950 1500
+Wire Wire Line
+	6950 1500 6850 1500
+Wire Wire Line
+	4500 1500 4500 1300
+Connection ~ 4500 1300
+Wire Wire Line
+	4500 1300 4000 1300
+Wire Wire Line
+	4000 850  4000 1300
+Wire Wire Line
+	4000 1500 4000 1300
+Connection ~ 4000 1300
+$Comp
+L power:GND #PWR?
+U 1 1 613D90DA
+P 6450 1700
+F 0 "#PWR?" H 6450 1450 50  0001 C CNN
+F 1 "GND" H 6455 1527 50  0000 C CNN
+F 2 "" H 6450 1700 50  0001 C CNN
+F 3 "" H 6450 1700 50  0001 C CNN
+	1    6450 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 613D90E0
+P 6950 1950
+F 0 "#PWR?" H 6950 1700 50  0001 C CNN
+F 1 "GND" H 6955 1777 50  0000 C CNN
+F 2 "" H 6950 1950 50  0001 C CNN
+F 3 "" H 6950 1950 50  0001 C CNN
+	1    6950 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 613D90E6
+P 4500 2000
+F 0 "#PWR?" H 4500 1750 50  0001 C CNN
+F 1 "GND" H 4505 1827 50  0000 C CNN
+F 2 "" H 4500 2000 50  0001 C CNN
+F 3 "" H 4500 2000 50  0001 C CNN
+	1    4500 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 613D90EC
+P 4000 2000
+F 0 "#PWR?" H 4000 1750 50  0001 C CNN
+F 1 "GND" H 4005 1827 50  0000 C CNN
+F 2 "" H 4000 2000 50  0001 C CNN
+F 3 "" H 4000 2000 50  0001 C CNN
+	1    4000 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 613D90F2
+P 5200 1450
+AR Path="/613D90F2" Ref="R?"  Part="1" 
+AR Path="/613AE19D/613D90F2" Ref="R600"  Part="1" 
+F 0 "R600" H 5270 1496 50  0000 L CNN
+F 1 "10K" H 5270 1405 50  0000 L CNN
+F 2 "" V 5130 1450 50  0001 C CNN
+F 3 "~" H 5200 1450 50  0001 C CNN
+	1    5200 1450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 1600 5550 1600
+Wire Wire Line
+	5550 1600 5550 1400
+Wire Wire Line
+	5550 1400 6050 1400
+Wire Wire Line
+	6050 1500 6050 2200
+Wire Wire Line
+	6050 2200 7300 2200
+NoConn ~ 6850 1400
+Wire Wire Line
+	6850 1300 7300 1300
+$Comp
+L Device:R R?
+U 1 1 613D90FF
+P 7300 1600
+F 0 "R?" H 7370 1646 50  0000 L CNN
+F 1 "180K" H 7370 1555 50  0000 L CNN
+F 2 "" V 7230 1600 50  0001 C CNN
+F 3 "~" H 7300 1600 50  0001 C CNN
+	1    7300 1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7300 1300 7300 1450
+Wire Wire Line
+	7300 1750 7300 2200
+$Comp
+L Device:R R?
+U 1 1 613D9107
+P 7300 2450
+AR Path="/613D9107" Ref="R?"  Part="1" 
+AR Path="/613AE19D/613D9107" Ref="R602"  Part="1" 
+F 0 "R602" H 7370 2496 50  0000 L CNN
+F 1 "110K" H 7370 2405 50  0000 L CNN
+F 2 "" V 7230 2450 50  0001 C CNN
+F 3 "~" H 7300 2450 50  0001 C CNN
+	1    7300 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7300 2200 7300 2300
+Connection ~ 7300 2200
+Wire Wire Line
+	7300 2600 7300 2750
+$Comp
+L power:GND #PWR?
+U 1 1 613D9110
+P 7300 2750
+F 0 "#PWR?" H 7300 2500 50  0001 C CNN
+F 1 "GND" H 7305 2577 50  0000 C CNN
+F 2 "" H 7300 2750 50  0001 C CNN
+F 3 "" H 7300 2750 50  0001 C CNN
+	1    7300 2750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7300 1300 8000 1300
+Wire Wire Line
+	8250 1300 8250 1050
+Connection ~ 7300 1300
+$Comp
+L Device:C C?
+U 1 1 613D9119
+P 8000 1550
+AR Path="/613D9119" Ref="C?"  Part="1" 
+AR Path="/613AE19D/613D9119" Ref="C607"  Part="1" 
+F 0 "C607" H 8115 1596 50  0000 L CNN
+F 1 "10U" H 8115 1505 50  0000 L CNN
+F 2 "" H 8038 1400 50  0001 C CNN
+F 3 "~" H 8000 1550 50  0001 C CNN
+	1    8000 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 613D911F
+P 8000 1700
+F 0 "#PWR?" H 8000 1450 50  0001 C CNN
+F 1 "GND" H 8005 1527 50  0000 C CNN
+F 2 "" H 8000 1700 50  0001 C CNN
+F 3 "" H 8000 1700 50  0001 C CNN
+	1    8000 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8000 1400 8000 1300
+Connection ~ 8000 1300
+Wire Wire Line
+	8000 1300 8250 1300
+$Comp
+L power:+3V3 #PWR?
+U 1 1 613D9128
+P 8250 1050
+F 0 "#PWR?" H 8250 900 50  0001 C CNN
+F 1 "+3V3" H 8265 1223 50  0000 C CNN
+F 2 "" H 8250 1050 50  0001 C CNN
+F 3 "" H 8250 1050 50  0001 C CNN
+	1    8250 1050
+	1    0    0    -1  
+$EndComp
+Wire Notes Line
+	8650 3000 3850 3000
+Wire Notes Line
+	3850 3000 3850 600 
+Wire Notes Line
+	3850 600  8650 600 
+Wire Notes Line
+	8650 600  8650 3000
+Text Notes 5850 700  0    50   ~ 0
+3V3 Regulator
+$EndSCHEMATC
