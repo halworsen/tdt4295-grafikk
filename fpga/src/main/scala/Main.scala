@@ -12,10 +12,9 @@ class Main extends Module {
   when(io.btn(0) === true.B) {
     counter := counter + 1.U
   }
-  io.led(0) := 0.U
-  io.led(1) := 0.U
-  io.led(2) := 0.U
-  io.led(3) := 0.U
+  for (i <- 0 to 3) {
+    io.led(i) := 0.U
+  }
 
   when(counter === 1.U) {
     io.led(0) := true.B
