@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html xml:lang="en" lang="en" dir="ltr" class="no-js">
+<head>
+    <script src="https://unpkg.com/vue"></script>
+    <meta charset="UTF-8" />
+    <meta name="referrer" content="always" />
+
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
+    <title>
+        Pmod VGA Reference Manual - Digilent Reference    </title>
+    
+    <script src="https://use.typekit.net/axp2oni.js"></script>
+    <script>try{Typekit.load({ async: false });}catch(e){}</script>
+    
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+
+<!-- NOTE: dokuwiki's php css compressor doesn't play nice with media queries -->
+<link href="https://digilent.com/reference/lib/tpl/digilent-tpl/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://digilent.com/reference/lib/tpl/digilent-tpl/css/print.css" rel="stylesheet" media="print">
+<script src="https://digilent.com/reference/lib/tpl/digilent-tpl/js/iconic.min.js" type="text/javascript" ></script>
+<script src="https://digilent.com/reference/lib/tpl/digilent-tpl/js/respond.min.js" type="text/javascript"></script>
+
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="pmod,pmodvga,video,reference-manual"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://digilent.com/reference/lib/exe/opensearch.php" title="Digilent Reference"/>
+<link rel="start" href="https://digilent.com/reference/"/>
+<link rel="contents" href="https://digilent.com/reference/pmod/pmodvga/reference-manual?do=index" title="Sitemap"/>
+<link rel="manifest" href="https://digilent.com/reference/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="https://digilent.com/reference/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="https://digilent.com/reference/feed.php?mode=list&amp;ns=pmod:pmodvga"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="https://digilent.com/reference/_export/xhtml/pmod/pmodvga/reference-manual"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="https://digilent.com/reference/_export/raw/pmod/pmodvga/reference-manual"/>
+<link rel="canonical" href="https://digilent.com/reference/pmod/pmodvga/reference-manual"/>
+<link rel="stylesheet" type="text/css" href="https://digilent.com/reference/lib/exe/css.php?t=digilent-tpl&amp;tseed=edfff1dcc1475e1a47f986a766ae9a72"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='pmod:pmodvga';var JSINFO = {"plugins":{"edittable":{"default columnwidth":""}},"plugin":{"semantic":{"exposeWebService":1}},"move_renameokay":false,"id":"pmod:pmodvga:reference-manual","namespace":"pmod:pmodvga","ACT":"show","useHeadingNavigation":1,"useHeadingContent":1};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="https://digilent.com/reference/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="https://digilent.com/reference/lib/exe/js.php?t=digilent-tpl&amp;tseed=edfff1dcc1475e1a47f986a766ae9a72"></script>
+<script type="application/ld+json">/*<![CDATA[*/{
+    "@context": "http:\/\/schema.org",
+    "@type": "WebSite",
+    "url": "https:\/\/digilent.com\/reference\/",
+    "name": "Digilent Reference",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https:\/\/digilent.com\/reference\/doku.php?do=search&amp;id={search_term_string}",
+        "query-input": "required name=search_term_string"
+    }
+}
+/*!]]>*/</script>
+<script type="application/ld+json">/*<![CDATA[*/[
+    {
+        "@context": "http:\/\/schema.org",
+        "@type": "WebPage",
+        "relatedLink": [
+            "https:\/\/digilent.com\/reference\/pmod\/pmodvga\/start"
+        ]
+    }
+]
+/*!]]>*/</script>
+<script type="text/x-mathjax-config">/*<![CDATA[*/MathJax.Hub.Config({
+
+    tex2jax: {
+
+        inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+
+        displayMath: [ ["$$","$$"], ["\\[","\\]"] ],
+
+        processEscapes: true
+
+    }
+
+});
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML.js"></script>
+<!--<![endif]-->
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="shortcut icon" href="https://digilent.com/reference/lib/tpl/digilent-tpl/images/favicon.ico" />
+<link rel="apple-touch-icon" href="https://digilent.com/reference/lib/tpl/digilent-tpl/images/apple-touch-icon.png" />
+    <style>
+        .navbar-brand-img {
+            box-sizing: content-box;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            height: auto;\n        }
+    </style>
+
+<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<script type='text/javascript'>
+(function(){var g=function(e,h,f,g){
+this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}};
+this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};};
+try{(new g(100,"r","QSI_S_ZN_9mGrPMbiRHWifVc","https://zn9mgrpmbirhwifvc-singuser98edbb5b.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_9mGrPMbiRHWifVc")).start()}catch(i){}})();
+</script>
+<div id='ZN_9mGrPMbiRHWifVc'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET-->
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/553b1116bb.js" crossorigin="anonymous"></script>
+
+<!-- Cookie Policy Notification -->
+<link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/digilent/resources/cdn/cookieconsent.min.css"/>
+<script src="https://s3-us-west-2.amazonaws.com/digilent/resources/cdn/cookieconsent.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/digilent/resources/cdn/digilent-cookie-consent.js"></script>
+
+<!-- Mautic forms -->
+<script type="text/javascript">
+    /** This section is only needed once per page if manually copying **/
+    if (typeof MauticSDKLoaded == 'undefined') {
+        var MauticSDKLoaded = true;
+        var head            = document.getElementsByTagName('head')[0];
+        var script          = document.createElement('script');
+        script.type         = 'text/javascript';
+        script.src          = 'https://mautic.digilentinc.com/media/js/mautic-form.js';
+        script.onload       = function() {
+            MauticSDK.onLoad();
+        };
+        head.appendChild(script);
+        var MauticDomain = 'https://mautic.digilentinc.com';
+        var MauticLang   = {
+            'submittingMessage': "Please wait..."
+        }
+    }
+</script>
+<script type="text/javascript">
+    var formName = 'digilentnewsletterbigcommerceform';
+    if (typeof MauticFormCallback == 'undefined') {
+        var MauticFormCallback = {};
+    }
+
+    MauticFormCallback[formName] = { onValidateStart: function() {
+        let refInput = document.getElementById('mauticform_input_digilentnewsletterbigcommerceform_referrer');
+        refInput ? refInput.value = document.referrer : false;
+
+        let pageInput = document.getElementById('mauticform_input_digilentnewsletterbigcommerceform_page');
+        pageInput ? pageInput.value = document.location.href : false;
+    },};
+</script>
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NHG3J9R');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://digilent.s3.us-west-2.amazonaws.com/resources/cdn/sitewide-banner/sitewide-banner.min.js"></script>
+<link href="https://digilent.s3.us-west-2.amazonaws.com/resources/cdn/sitewide-banner/src/sitewide-banner.css" rel="stylesheet">
+
+</head>
+
+<body data-spy="scroll" data-target="#dw_toc">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHG3J9R"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+        <!--[if IE 6 ]><div id="IE6"><![endif]--><!--[if IE 7 ]><div id="IE7"><![endif]--><!--[if IE 8 ]><div id="IE8"><![endif]-->
+
+                <div id="dokuwiki__site" >
+	
+	<div id="dokuwiki__top" class="dokuwiki site mode_show ">
+        
+		<!-------------------------------------Start  OF HEADER------------------------------------->	
+		<div class="navbar navbar-default navbar-fixed-top" id="navbar">
+            <div>
+                <ul id="header-tabs">
+                    <li>
+                        <a href="https://digilent.com">Shop</a>
+                    </li>
+                    <li id="wiki-tab">
+                        <a href="https://digilent.com/reference">Reference</a>
+                    </li>
+                </ul>
+                <div id="ni-tag">An NI Company</div>
+            </div>
+
+
+            <div class="container">
+                                <div id="header-main">
+                    
+                    <div class="flex-container">
+                        <button class="navbar-toggle" data-toggle="collapse" data-target="#topnav" type="button">
+                            <span class="sr-only">Toggle Navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        <!---------------Search--------------->
+                        <form action="https://digilent.com/reference/start" accept-charset="utf-8" class="navbar-form" id="dw__search" method="get" role="search"><input type="hidden" name="do" value="search" /><i id="search-icon" class="fa fa-search"></i><div class="form-group"><input type="text"  autocomplete="off" id="qsearch__in" accesskey="f" name="id" class="form-control col-lg-3" title="[F]" placeholder="Search" /> </div><div id="qsearch__out" class="ajax_qsearch"></div></form>                        
+                        <!---------------Logo ---------------> 
+                                                    <div id="logo"><a class="navbar-brand-img" href="/reference"><img src="/reference/_media/digilent-logo-reference-260.png" alt=""></a></div>
+                                                
+                        <!---------------Tools ---------------> 
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle toolsdrop" data-toggle="dropdown">
+                                <i id="tools-icon" class="fas fa-tools"></i><span id="tools-text">
+                                Internal Tools</span><b class="caret"></b></a>
+                                <ul id="tools-menu" class="dropdown-menu hortop">
+                                    <li class="dropdown-header">Page Tools</li>
+                                    <li><a href="https://digilent.com/reference/pmod/pmodvga/reference-manual?do=edit"  class="action source" accesskey="v" rel="nofollow" title="Show pagesource [V]">Show pagesource</a></li><li><a href="https://digilent.com/reference/pmod/pmodvga/reference-manual?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Old revisions [O]">Old revisions</a></li><li><a href="https://digilent.com/reference/pmod/pmodvga/reference-manual?do=backlink"  class="action backlink" rel="nofollow" title="Backlinks">Backlinks</a></li>                                    <li class="dropdown-header">Site Tools</li>
+                                                                        <li><a href="https://digilent.com/reference/pmod/pmodvga/reference-manual?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Recent Changes [R]">Recent Changes</a></li><li><a href="https://digilent.com/reference/pmod/pmodvga/reference-manual?do=index"  class="action index" accesskey="x" rel="nofollow" title="Sitemap [X]">Sitemap</a></li><li><a href="https://digilent.com/reference/pmod/pmodvga/reference-manual?do=media&amp;ns=pmod%3Apmodvga"  class="action media" rel="nofollow" title="Media Manager">Media Manager</a></li>                                                                                                            <li class="dropdown-header">User Tools</li>
+                                    <li><a href="https://digilent.com/reference/pmod/pmodvga/reference-manual?do=login&amp;sectok="  class="action login" rel="nofollow" title="Log In">Log In</a></li>                                                                    </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="header-categories">
+                <div class="container">
+                    <div class="container navbar-collapse collapse" id="topnav">				
+                        <!---------------Generate Navbar--------------->					
+                            
+                            <!------------------------------------------------------------------------------------------				
+                            - START WIKI NAV
+                            ---------------------------------------------	--------------------------------------------->
+                            <div>
+	<ul class="nav navbar-nav flex-container">
+		<li class="dropdown dropdown-lg">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Boards and Components<b class="caret"></b></a>
+			<ul class="dropdown-menu dropdown-menu-lg row two-col hortop">
+				<li class ="col-sm-7">
+					<ul>
+						<li class="dropdown-header">FPGA/SoC Development Boards</li>
+						<li><a href="/reference/programmable-logic/arty-a7/start">Arty A7</a></li>
+						<li><a href="/reference/programmable-logic/arty-s7/start">Arty S7</a></li>
+						<li><a href="/reference/programmable-logic/arty-z7/start">Arty Z7</a></li>
+						<li><a href="/reference/programmable-logic/basys-3/start">Basys 3</a></li>
+						<li><a href="/reference/programmable-logic/cmod-a7/start">Cmod A7</a></li>
+						<li><a href="/reference/programmable-logic/cmod-s7/start">Cmod S7</a></li>
+						<li><a href="/reference/programmable-logic/cora-z7/start">Cora Z7</a></li>
+						<li><a href="/reference/programmable-logic/eclypse-z7/start">Eclypse Z7</a></li>
+						<li><a href="/reference/programmable-logic/genesys-2/start">Genesys 2</a></li>
+						<li><a href="/reference/programmable-logic/genesys-zu/start">Genesys ZU</a></li>
+						<li><a href="/reference/programmable-logic/nexys-a7/start">Nexys A7</a></li>
+						<li><a href="/reference/programmable-logic/nexys-video/start">Nexys Video</a></li>
+						<li><a href="/reference/programmable-logic/usb104a7/start">USB104 A7</a></li>
+						<li><a href="/reference/programmable-logic/b205mini/start">USRP B205mini-i</a></li>
+						<li><a href="/reference/programmable-logic/zedboard/start">Zedboard Zynq-7000 Development Board</a></li>
+						<li><a href="/reference/programmable-logic/zybo-z7/start">Zybo Z7</a></li>						
+						<li><a class="see-all" href="/reference/programmable-logic/start">See All</a></li>
+						<li class="divider"></li>
+					</ul>
+
+					<ul>
+						<li class="dropdown-header">Programmers</li>
+						<li><a class="see-all" href="/reference/programmers/start">See All</a></li>
+					</ul>
+				</li>
+
+				<li class ="col-sm-5">
+					<ul>
+						<li class="dropdown-header">Expansion Modules</li>
+						<ul>
+							<li class="dropdown-header sub-heading">Zmods</li>
+							<li><a href="/reference/zmod/zmodadc/start">Zmod ADC 1410</a></li>
+							<li><a href="/reference/zmod/zmoddac/start">Zmod DAC 1411</a></li>
+							<li><a class="see-all" href="/reference/zmod/start">See All</a></li>
+							<li class="divider"></li>
+						</ul>
+
+						<ul>
+							<li class="dropdown-header sub-heading">Pmods</li>
+							<li><a class="see-all" href="/reference/pmod/start">See All</a></li>
+							<li class="divider"></li>
+						</ul>
+		
+						<ul>
+							<li class="dropdown-header sub-heading">Pcams</li>
+							<li><a href="/reference/add-ons/fmc-pcam-adapter/start">FMC Pcam Adapter</a></li>
+							<li><a href="/reference/add-ons/pcam-5c/start">Pcam 5C</a></li>
+							<li class="divider"></li>
+						</ul>
+
+						<ul>
+							<li class="dropdown-header">MCU Boards</li>
+							<li><a href="/reference/microprocessor/basys-mx3/start">Basys MX3</a></li>
+							<li><a href="/reference/microprocessor/max32/start">Max32</a></li>
+							<li><a href="/reference/microprocessor/uc32/start">uC32</a></li>
+							<li><a href="/reference/microprocessor/wf32/start">WF32</a></li>
+							<li><a href="/reference/microprocessor/wi-fire/start">Wi-Fire</a></li>
+							<li><a class="see-all" href="/reference/microprocessor/start">See All</a></li>
+						</ul>
+					</ul>
+				</li>
+			</ul>
+		</li>
+
+		<li class="dropdown dropdown-lg">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Test and Measurement Equipment<b class="caret"></b></a>
+			<ul class="dropdown-menu dropdown-menu-lg row two-col hortop">
+				<li class ="col-sm-12">
+					<ul>
+						<li class="dropdown-header">USB Scopes, Analyzers and Signal Generators</li>
+						<li><a href="/reference/test-and-measurement/analog-discovery-2/start">Analog Discovery 2</a></li>
+						<li><a href="/reference/test-and-measurement/analog-discovery-pro-3x50/start">Analog Discovery Pro (ADP3450/ADP3250)</a></li>
+						<li><a href="/reference/test-and-measurement/analog-discovery-studio/start">Analog Discovery Studio</a></li>
+						<li><a href="/reference/test-and-measurement/digital-discovery/start">Digital Discovery</a></li>
+						<li><a class="see-all" href="/reference/test-and-measurement/start">See All</a></li>
+						<li class="divider"></li>
+					</ul>
+
+					<ul>
+						<li class="dropdown-header">Adapters and Canvases</li>
+						<li><a href="/reference/add-ons/audio-adapter/start">Audio Adapter</a></li>
+						<li><a href="/reference/test-and-measurement/bnc-adapter-board/start">BNC Adapter</a></li>
+						<li><a href="/reference/test-and-measurement/analog-discovery-2-breadboard-breakout/start">Breadboard Breakout</a></li>
+						<li><a href="/reference/test-and-measurement/bb-adapter-board/start">Breadboard Adapter</a></li>
+						<li><a href="/reference/add-ons/impedance-analyzer/start">Impedance Analyzer Adapter</a></li>
+						<li><a href="/reference/test-and-measurement/analog-discovery-studio/canvases/blank-canvas/start">Blank Canvas</a></li>
+						<li><a href="/reference/test-and-measurement/analog-discovery-studio/canvases/breadboard-canvas/start">Breadboard Canvas</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+
+		<li class="dropdown dropdown-lg">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Software<b class="caret"></b></a>
+			<ul class="dropdown-menu dropdown-menu-lg row one-col hortop">
+				<li class="col-sm-12">
+					<ul>
+						<li class="dropdown-header">Digilent Software</li>
+						<li><a href="/reference/software/adept/start">Adept 2</a></li>
+						<li><a href="/reference/software/waveforms/waveforms-3/start">WaveForms</a></li>
+						<li><a href="/reference/software/waveforms/waveforms-sdk/start">WaveForms SDK</a></li>
+						<li><a class="see-all"href="/reference/software/start">See All</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+
+		<li class="vertical-divider">
+			|
+		</li>
+
+		<li class="nav-link nav-link-secondary">
+			<a href="https://blog.digilentinc.com/" target="_blank" rel="noopener">Blog</a>
+		</li>
+
+		<li class="nav-link nav-link-secondary">
+			<a href="https://forum.digilentinc.com" target="_blank" rel="noopener">Forum</a>
+		</li>
+
+		<li class="nav-link nav-link-secondary">
+			<a href="https://projects.digilentinc.com" target="_blank" rel="noopener">Projects</a>
+		</li>
+
+
+		<li class="nav-link nav-link-secondary">
+			<a id="github-link" href="https://github.com/digilent" target="_blank" rel="noopener" title="Github">
+				<i id="github-icon" class="fa fa-github fa-lg"></i>
+				<span id="github-text">Digilent Github</span>
+			</a>
+		</li>
+	</ul>
+</div>
+                            <!------------------------------------------------------------------------------------------				
+                            - END WIKI NAV
+                            ---------------------------------------------	--------------------------------------------->
+                            
+                    </div>
+                </div>
+            </div>	
+
+            <section id="sitewide-banner-slot"></section>
+        </div>
+	<!-------------------------------------END OF HEADER------------------------------------->
+        <div class="container not-header">
+            <div class="notifications hidden-print">
+                            </div>
+
+                        
+            				<div class="youarehere">
+					<ul class="breadcrumb hidden-print">You are here::&nbsp; <li class="home"><bdi><a href="https://digilent.com/reference/start" class="wikilink1" title="start">Digilent Reference</a></bdi></li> <li><bdi><a href="https://digilent.com/reference/pmod/start" class="wikilink1" title="pmod:start">Pmod™</a></bdi></li> <li><bdi><a href="https://digilent.com/reference/pmod/pmodvga/start" class="wikilink1" title="pmod:pmodvga:start">Pmod VGA</a></bdi></li> <li><bdi><span class="curid"><a href="https://digilent.com/reference/pmod/pmodvga/reference-manual" class="wikilink1" title="pmod:pmodvga:reference-manual">Pmod VGA Reference Manual</a></span></bdi></li> </ul>				</div>
+			
+            
+            <section class="wrapper row"><!-- PAGE ACTIONS -->
+                <!-- ********** CONTENT ********** -->
+                <div id="dokuwiki__content" class="col-xs-12">
+                    
+                                        
+                    <!-- TOC START -->
+<div id="dw_toc" class="hidden-print panel panel-default pull-right col-sm-4 col-md-3 col-xs-12">
+<div class="panel-heading hidden-print"><h3 class="panel-title" data-toggle="collapse" data-target="#toc_contents">Table of Contents <b class="caret"></b></h3></div>
+<div id="toc_contents" class="hidden-print panel-collapse collapse in"><div class="panel-body">
+<ul class="">
+<li class="level1"><a href="#pmod_vga_reference_manual">Pmod VGA Reference Manual</a></li>
+<li class="level1"><a href="#features">Features</a></li>
+<li class="level1"><a href="#specifications">Specifications</a>
+<ul class="">
+<li class="">
+<ul class="">
+<li class="level3"><a href="#pinout_description_tables">Pinout Description Tables</a></li>
+</ul>
+</li>
+<li class="level2"><a href="#physical_dimensions">Physical Dimensions</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#functional_description">Functional Description</a>
+<ul class="">
+<li class="level2"><a href="#interfacing_with_the_pmod">Interfacing with the Pmod</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#additional_information">Additional Information</a></li>
+</ul>
+</div></div></div>
+<!-- TOC END -->
+                    <div class="page row" role="main">
+                    <!-- wikipage start -->
+                        
+<h1 class="sectionedit1" id="pmod_vga_reference_manual">Pmod VGA Reference Manual</h1>
+<div class="level1">
+
+<p>
+The Pmod VGA (Rev. C) provides a VGA port to any board with Pmod connectivity. The VGA port can be used to drive standard displays such as televisions and monitors. The host board must be capable of driving a fast parallel data bus in order to properly drive a display with the Pmod VGA.
+</p>
+
+<p>
+<div class='image-gallery'>
+	
+	
+	<div class='large-image'>
+		<a id='gallery-large-image-link' href='https://digilent.com/reference/_media/reference/pmod/pmodvga/pmodvga-0.png'>
+			<img id='gallery-large-image' src='https://digilent.com/reference/_media/reference/pmod/pmodvga/pmodvga-0.png'>
+		</a>
+	</div>
+	
+	
+	<div class='thumbnails'>
+		
+		
+		<img id='thumbnail0' src='https://digilent.com/reference/_media/reference/pmod/pmodvga/pmodvga-0.png' onmouseover='thumbnailHover(this)'>
+		
+		<img id='thumbnail1' src='https://digilent.com/reference/_media/reference/pmod/pmodvga/pmodvga-1.png' onmouseover='thumbnailHover(this)'>
+		
+		<img id='thumbnail2' src='https://digilent.com/reference/_media/reference/pmod/pmodvga/pmodvga-2.png' onmouseover='thumbnailHover(this)'>
+		
+		<img id='thumbnail3' src='https://digilent.com/reference/_media/reference/pmod/pmodvga/pmodvga-3.png' onmouseover='thumbnailHover(this)'>
+			
+			
+	</div>
+</div>
+</p>
+
+</div>
+
+<h5 id="download_this_reference_manual">Download This Reference Manual</h5>
+<div class="level5">
+<ul>
+<li class="level1"><div class="li"> <a href="https://digilent.com/reference/_media/reference/pmod/pmodvga/pmodvga_rm.pdf" class="media mediafile mf_pdf" title="reference:pmod:pmodvga:pmodvga_rm.pdf (500 KB)">PDF</a> </div>
+</li>
+</ul>
+<hr />
+
+</div>
+
+<h1 class="sectionedit2" id="features">Features</h1>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> Standard VGA port for connecting commonly found displays</div>
+</li>
+<li class="level1"><div class="li"> 12-bit RGB444 color depth</div>
+</li>
+<li class="level1"><div class="li"> Simple, high-speed R-2R resistor ladder <abbr title="Digital-to-Analog Converter">DAC</abbr></div>
+</li>
+<li class="level1"><div class="li"> High-speed buffers support pixel clocks up to 150 <abbr title="Megahertz (million times per second)">MHz</abbr></div>
+</li>
+<li class="level1"><div class="li"> Small PCB size for flexible designs 1.7“ × 1.7” (4.3 cm × 4.3 cm)</div>
+</li>
+<li class="level1"><div class="li"> Dual 12-pin Pmod connector with <abbr title="General Purpose Input/Output">GPIO</abbr> interface</div>
+</li>
+<li class="level1"><div class="li"> Follows Digilent Pmod Interface Specification</div>
+</li>
+<li class="level1"><div class="li"> Library and example code available in resource center</div>
+</li>
+</ul>
+
+</div>
+
+<h1 class="sectionedit3" id="specifications">Specifications</h1>
+<div class="level1">
+
+</div>
+
+<h3 class="sectionedit4" id="pinout_description_tables">Pinout Description Tables</h3>
+<div class="level3">
+<div class="table sectionedit5"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 centeralign" colspan="6">  Header J1  </th><td class="col6" rowspan="2"> </td><th class="col7 centeralign" colspan="6">  Header J2  </th>
+	</tr>
+	<tr class="row1">
+		<th class="col0 leftalign"> Pin  </th><th class="col1 leftalign"> Signal  </th><th class="col2 leftalign"> Description  </th><th class="col3 leftalign"> Pin  </th><th class="col4 leftalign"> Signal  </th><th class="col5 leftalign"> Description  </th><th class="col6 centeralign">  Pin  </th><th class="col7 leftalign"> Signal  </th><th class="col8 leftalign"> Description  </th><th class="col9 leftalign"> Pin  </th><th class="col10 leftalign"> Signal  </th><th class="col11 leftalign"> Description  </th>
+	</tr>
+	</thead>
+	<tr class="row2">
+		<td class="col0 leftalign"> 1    </td><td class="col1 leftalign"> R0      </td><td class="col2 leftalign"> Red 0   </td><td class="col3 leftalign"> 7    </td><td class="col4 leftalign"> B0   </td><td class="col5 leftalign"> Blue 0  </td><td class="col6" rowspan="6"></td><td class="col7 leftalign"> 1    </td><td class="col8 leftalign"> G0      </td><td class="col9 leftalign"> Green 0  </td><td class="col10 leftalign"> 7    </td><td class="col11 leftalign"> HS      </td><td class="col12 leftalign"> Horizontal Sync  </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> 2    </td><td class="col1 leftalign"> R1      </td><td class="col2 leftalign"> Red 1   </td><td class="col3 leftalign"> 8    </td><td class="col4 leftalign"> B1   </td><td class="col5 leftalign"> Blue 1  </td><td class="col6 leftalign"> 2    </td><td class="col7 leftalign"> G1      </td><td class="col8 leftalign"> Green 1  </td><td class="col9 leftalign"> 8    </td><td class="col10 leftalign"> VS      </td><td class="col11 leftalign"> Vertical Sync    </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> 3    </td><td class="col1 leftalign"> R2      </td><td class="col2 leftalign"> Red 2   </td><td class="col3 leftalign"> 9    </td><td class="col4 leftalign"> B2   </td><td class="col5 leftalign"> Blue 2  </td><td class="col6 leftalign"> 3    </td><td class="col7 leftalign"> G2      </td><td class="col8 leftalign"> Green 2  </td><td class="col9 leftalign"> 9    </td><td class="col10 leftalign"> <abbr title="No Connection">NC</abbr>      </td><td class="col11 leftalign"> Not Connected    </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign"> 4    </td><td class="col1 leftalign"> R3      </td><td class="col2 leftalign"> Red 3   </td><td class="col3 leftalign"> 10   </td><td class="col4 leftalign"> B3   </td><td class="col5 leftalign"> Blue 3  </td><td class="col6 leftalign"> 4    </td><td class="col7 leftalign"> G3      </td><td class="col8 leftalign"> Green 3  </td><td class="col9 leftalign"> 10   </td><td class="col10 leftalign"> <abbr title="No Connection">NC</abbr>      </td><td class="col11 leftalign"> Not Connected    </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 leftalign"> 5  </td><td class="col1 leftalign"> <abbr title="Ground">GND</abbr>  </td><td class="col2 leftalign"> Power Supply Ground  </td><td class="col3 leftalign"> 11  </td><td class="col4 leftalign"> <abbr title="Ground">GND</abbr>  </td><td class="col5 leftalign"> Power Supply Ground  </td><td class="col6 leftalign"> 5  </td><td class="col7 leftalign"> <abbr title="Ground">GND</abbr>  </td><td class="col8 leftalign"> Power Supply Ground  </td><td class="col9 leftalign"> 11  </td><td class="col10 leftalign"> <abbr title="Ground">GND</abbr>  </td><td class="col11 leftalign"> Power Supply Ground  </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 leftalign"> 6  </td><td class="col1 leftalign"> VCC3V3  </td><td class="col2 leftalign"> Positive Power Supply  </td><td class="col3 leftalign"> 12  </td><td class="col4 leftalign"> VCC3V3  </td><td class="col5 leftalign"> Positive Power Supply  </td><td class="col6 leftalign"> 6  </td><td class="col7 leftalign"> VCC3V3  </td><td class="col8 leftalign"> Positive Power Supply  </td><td class="col9 leftalign"> 12  </td><td class="col10 leftalign"> VCC3V3  </td><td class="col11 leftalign"> Positive Power Supply  </td>
+	</tr>
+</table></div>
+<hr />
+
+</div>
+
+<h2 class="sectionedit6" id="physical_dimensions">Physical Dimensions</h2>
+<div class="level2">
+
+<p>
+The pins on the pin header are spaced 100 mil apart. The PCB is 1.7 inches (4.3 cm) long on the sides parallel to the pins on the pin header and 1.7 inches (4.3 cm) long on the sides perpendicular to the pin header. 
+</p>
+<hr />
+
+</div>
+
+<h1 class="sectionedit7" id="functional_description">Functional Description</h1>
+<div class="level1">
+
+<p>
+The Pmod VGA uses 14 input pins to create an analog VGA output port. This translates to 12-bit color depth and two standard sync signals: Horizontal Sync (HS) and Vertical Sync (VS). The digital-to-analog conversion is done using a simple R-2R resistor ladder. The ladder works in conjunction with the 75-ohm termination resistance of the VGA display to create 16 analog signal levels for the red, blue, and green VGA signals. This circuit produces video color signals that proceed in equal increments between 0V (fully off) and 0.7V (fully on). With 4 bits each for red, blue, and green, 4096 (16x16x16) different colors can be displayed, one for each unique 12-bit pattern.
+</p>
+
+<p>
+When used with an FPGA host board, a video controller circuit must be created in programmable logic to drive the sync and color signals with the correct timing in order to produce a working display system. It may be possible to drive the video signals using a very fast microcontroller with a parallel bus controller; however, Digilent does not provide examples for this use case.
+</p>
+<hr />
+
+</div>
+
+<h2 class="sectionedit8" id="interfacing_with_the_pmod">Interfacing with the Pmod</h2>
+<div class="level2">
+
+<p>
+VGA signal timings are specified, published, copyrighted, and sold by the VESA organization (www.vesa.org). The following VGA system timing information is provided as an example of how a VGA monitor might be driven in 640 by 480 mode. 
+</p>
+
+<p>
+NOTE: For more precise information, or for information on other VGA frequencies, refer to documentation available at the VESA website.
+CRT-based VGA displays use amplitude-modulated moving electron beams (or cathode rays) to display information on a phosphor-coated screen. <abbr title="Liquid Crystal Display">LCD</abbr> displays use an array of switches that can impose a voltage across a small amount of liquid crystal, thereby changing light permittivity through the crystal on a pixel-by-pixel basis. Although the following description is limited to CRT displays, <abbr title="Liquid Crystal Display">LCD</abbr> displays have evolved to use the same signal timings as CRT displays (so the “signals” discussion below pertains to both CRTs and LCDs). Color CRT displays use three electron beams (one for red, one for blue, and one for green) to energize the phosphor that coats the inner side of the display end of a cathode ray tube (see Fig. 1).
+</p>
+
+<p>
+<a href="https://digilent.com/reference/_detail/reference/pmod/pmodvga/figure-1-color-crt-display.png?id=pmod%3Apmodvga%3Areference-manual" class="media" title="reference:pmod:pmodvga:figure-1-color-crt-display.png"><img src="https://digilent.com/reference/_media/reference/pmod/pmodvga/figure-1-color-crt-display.png" class="mediacenter" title="Figure 1. Color CRT display." alt="Figure 1. Color CRT display." /></a>
+</p>
+
+<p>
+Electron beams emanate from “electron guns,” which are finely-pointed heated cathodes placed in close proximity to a positively charged annular plate called a “grid.” The electrostatic force imposed by the grid pulls rays of energized electrons from the cathodes, and those rays are fed by the current that flows into the cathodes. These particle rays are initially accelerated towards the grid, but they soon fall under the influence of the much larger electrostatic force that results from the entire phosphor-coated display surface of the CRT being charged to 20kV (or more). The rays are focused to a fine beam as they pass through the center of the grids, and then they accelerate to impact on the phosphor-coated display surface. The phosphor surface glows brightly at the impact point, and it continues to glow for several hundred microseconds after the beam is removed. The larger the current fed into the cathode, the brighter the phosphor will glow.
+</p>
+
+<p>
+Between the grid and the display surface, the beam passes through the neck of the CRT where two coils of wire produce orthogonal electromagnetic fields. Because cathode rays are composed of charged particles (electrons), they can be deflected by these magnetic fields. Current waveforms are passed through the coils to produce magnetic fields that interact with the cathode rays and cause them to transverse the display surface in a “raster” pattern, horizontally from left to right and vertically from top to bottom, as shown in Fig. 2. As the cathode ray moves over the surface of the display, the current sent to the electron guns can be increased or decreased to change the brightness of the display at the cathode ray impact point.
+</p>
+
+<p>
+Information is only displayed when the beam is moving in the “forward” direction (left to right and top to bottom), and not during the time the beam is reset back to the left or top edge of the display. Much of the potential display time is therefore lost in “blanking” periods when the beam is reset and stabilized to begin a new horizontal or vertical display pass. The size of the beams, the frequency at which the beam can be traced across the display, and the frequency at which the electron beam can be modulated determine the display resolution. 
+</p>
+
+<p>
+Modern VGA displays can accommodate different resolutions, and a VGA controller circuit dictates the resolution by producing timing signals to control the raster patterns. The controller must produce synchronizing pulses at 3.3V to set the frequency at which current flows through the deflection coils, and it must ensure that video data is applied to the electron guns at the correct time. Raster video displays define a number of “rows” that corresponds to the number of horizontal passes the cathode makes over the display area, and a number of “columns” that corresponds to an area on each row that is assigned to one “picture element”, or pixel. Typical displays use from 240 to 1200 rows and from 320 to 1600 columns. The overall size of a display and the number of rows and columns determines the size of each pixel.
+</p>
+
+<p>
+<a href="https://digilent.com/reference/_detail/reference/pmod/pmodvga/vga_crt_theory_timing.png?id=pmod%3Apmodvga%3Areference-manual" class="media" title="reference:pmod:pmodvga:vga_crt_theory_timing.png"><img src="https://digilent.com/reference/_media/reference/pmod/pmodvga/vga_crt_theory_timing.png" class="mediacenter" title="Figure 2. VGA horizontal synchronization." alt="Figure 2. VGA horizontal synchronization." /></a>
+</p>
+
+<p>
+Video data typically comes from a video refresh memory with one or more bytes assigned to each pixel location (the Pmod VGA uses 12 bits per pixel). The controller must index into video memory as the beams move across the display, and retrieve and apply video data to the display at precisely the time the electron beam is moving across a given pixel.
+</p>
+
+<p>
+A VGA controller circuit must generate the HS and VS timings signals and coordinate the delivery of video data based on the pixel clock. The pixel clock defines the time available to display one pixel of information. The VS signal defines the “refresh” frequency of the display, or the frequency at which all information on the display is redrawn. The minimum refresh frequency is a function of the display’s phosphor and electron beam intensity, with practical refresh frequencies falling in the 50Hz to 120Hz range. The number of lines to be displayed at a given refresh frequency defines the horizontal “retrace” frequency. For a 640-pixel by 480-row display using a 25MHz pixel clock and 60 +/-1Hz refresh, the signal timings shown in Fig. 3 can be derived. Timings for sync pulse-width and front and back porch intervals (porch intervals are the pre- and post-sync pulse times during which information cannot be displayed) are based on observations taken from actual VGA displays.
+</p>
+
+<p>
+<a href="https://digilent.com/reference/_detail/reference/pmod/pmodvga/figure-3-signal-timings.png?id=pmod%3Apmodvga%3Areference-manual" class="media" title="reference:pmod:pmodvga:figure-3-signal-timings.png"><img src="https://digilent.com/reference/_media/reference/pmod/pmodvga/figure-3-signal-timings.png" class="mediacenter" title="Figure 3. Signal timings for a 640-pixel by 480 row display using a 25MHz pixel clock and 60Hz vertical refresh." alt="Figure 3. Signal timings for a 640-pixel by 480 row display using a 25MHz pixel clock and 60Hz vertical refresh." /></a>
+</p>
+
+<p>
+A VGA controller circuit, such as the one diagrammed in Fig. 4, decodes the output of a horizontal-sync counter driven by the pixel clock to generate HS signal timings. You can use this counter to locate any pixel location on a given row. Likewise, the output of a vertical-sync counter that increments with each HS pulse can be used to generate VS signal timings, and you can use this counter to locate any given row. These two continually running counters can be used to form an address into video <abbr title="Random Access Memory">RAM</abbr>. No time relationship between the onset of the HS pulse and the onset of the VS pulse is specified, so you can arrange the counters to easily form video <abbr title="Random Access Memory">RAM</abbr> addresses, or to minimize decoding logic for sync pulse generation.
+</p>
+
+<p>
+<a href="https://digilent.com/reference/_detail/reference/pmod/pmodvga/figure-4-vga-display-controller-block-diagram.png?id=pmod%3Apmodvga%3Areference-manual" class="media" title="reference:pmod:pmodvga:figure-4-vga-display-controller-block-diagram.png"><img src="https://digilent.com/reference/_media/reference/pmod/pmodvga/figure-4-vga-display-controller-block-diagram.png" class="mediacenter" title="Figure 4. VGA display controller block diagram." alt="Figure 4. VGA display controller block diagram." /></a>
+</p>
+<hr />
+
+</div>
+
+<h1 class="sectionedit9" id="additional_information">Additional Information</h1>
+<div class="level1">
+
+<p>
+The schematics of the Pmod VGA are available <a href="https://digilent.com/reference/_media/reference/pmod/pmodvga/pmodvga_sch.pdf" class="media mediafile mf_pdf" title="reference:pmod:pmodvga:pmodvga_sch.pdf (303.5 KB)">here</a>. Additional information about the transceiver used including voltage levels and specific timings of the chip can be found by checking out its datasheet <a href="http://www.ti.com/lit/ds/symlink/sn74alvc245.pdf" class="urlextern" title="http://www.ti.com/lit/ds/symlink/sn74alvc245.pdf" rel="nofollow">here</a>.
+</p>
+
+<p>
+Example code demonstrating how to get information from the Pmod VGA can be found on its Resource Center <a href="https://digilent.com/reference/pmod/pmodvga/start#example_projects" class="wikilink1" title="pmod:pmodvga:start">here</a>. 
+</p>
+
+<p>
+If you have any questions or comments about the Pmod VGA, feel free to post them under the appropriate section (“Add-on Boards”) of the <a href="https://forum.digilentinc.com/" class="urlextern" title="https://forum.digilentinc.com/" rel="nofollow">Digilent Forum</a>.
+</p>
+<div class="tags"><span>
+	<a href="https://digilent.com/reference/tag/pmod?do=showtag&amp;tag=Pmod" class="wikilink1" title="tag:pmod" rel="tag">Pmod</a>,
+	<a href="https://digilent.com/reference/tag/pmodvga?do=showtag&amp;tag=PmodVGA" class="wikilink1" title="tag:pmodvga" rel="tag">PmodVGA</a>,
+	<a href="https://digilent.com/reference/tag/video?do=showtag&amp;tag=video" class="wikilink1" title="tag:video" rel="tag">video</a>,
+	<a href="https://digilent.com/reference/tag/reference-manual?do=showtag&amp;tag=reference-manual" class="wikilink1" title="tag:reference-manual" rel="tag">reference-manual</a>
+</span></div>
+
+</div>
+
+                    <!-- wikipage stop -->
+                    </div>
+
+                    					
+					
+                </div><!-- /content -->
+
+                <!-- ********** ASIDE ********** -->
+                                <aside id="dokuwiki__aside" class="col-sm-3 col-sm-pull-9">
+                                    </aside><!-- /aside -->
+                            </section><!-- /wrapper -->
+
+            <!-- ********** FOOTER ********** -->            
+			
+    </div></div><!-- /site -->
+	<div class="container-fluid footer">
+        <div class="container">
+            <div class="row footer-links">
+
+                <div class="footer-info-col col-xs-12 col-sm-6 col-md-2">
+                    <h5 class="footer-info-heading">
+                        <a href="https://digilent.com/company/">Company</a>
+                    </h5>
+                    <ul >
+                        <li>
+                            <a href="https://digilent.com/company/#about-digilent">About Us</a>
+                        </li>
+                        <li>
+                            <a href="https://digilent.com/company/#faqs">FAQs</a>
+                        </li>
+                        <li>
+                            <a href="https://digilent.com/shipping-returns/">Shipping & Returns</a>
+                        </li>
+                        <li>
+                            <a href="https://digilent.com/company/#jobs">Jobs</a>
+                        </li>
+                        <li>
+                            <a href="https://digilent.com/legal-privacy/">Legal & Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-info-col col-xs-12 col-sm-6 col-md-2">
+                    <h5 class="footer-info-heading">
+                        <a href="https://digilent.com/news/">News</a>
+                    </h5>
+                    <ul >
+                        <li>
+                            <a href="https://digilent.com/blog/">Blog</a>
+                        </li>
+                        <li>
+                            <a href="https://digilent.com/news/#newsletter">Newsletter</a>
+                        </li>
+                        <li>
+                            <a href="https://digilent.com/news/#events">Events</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-info-col col-xs-12 col-sm-6 col-md-2">
+                    <h5 class="footer-info-heading">
+                        <a href="https://digilent.com/affiliations/">Affiliations</a>
+                    </h5>
+                    <ul >
+                        <li>
+                            <a href="https://digilent.com/affiliations/#distributors">List of Distributors</a>
+                        </li>
+                        <li>
+                            <a href="https://digilent.com/affiliations/#partners">Technology Partners</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-info-col col-xs-12 col-sm-6 col-md-4">
+                    <h5 class="footer-info-heading">Subscribe to our newsletter</h5>
+                    <p>Get the latest updates on new products and upcoming sales</p>
+
+                    <div id="mauticform_wrapper_digilentnewsletterbigcommerceform" class="mauticform_wrapper">
+                        <form autocomplete="false" role="form" method="post" action="https://mautic.digilentinc.com/form/submit?formId=66" id="mauticform_digilentnewsletterbigcommerceform" data-mautic-form="digilentnewsletterbigcommerceform" enctype="multipart/form-data">
+                            <div class="mauticform-error" id="mauticform_digilentnewsletterbigcommerceform_error"></div>
+                            <div class="mauticform-message" id="mauticform_digilentnewsletterbigcommerceform_message"></div>
+                            <div class="mauticform-innerform">
+
+                                
+                            <div class="mauticform-page-wrapper mauticform-page-1" data-mautic-form-page="1">
+
+                                <div id="mauticform_digilentnewsletterbigcommerceform_email" data-validate="email" data-validation-type="email" class="mauticform-row mauticform-email mauticform-field-1 mauticform-required">
+                                    <input id="mauticform_input_digilentnewsletterbigcommerceform_email" name="mauticform[email]" value="" placeholder="Your email address" class="mauticform-input" type="email">
+                                    <span class="mauticform-errormsg" style="display: none;">This is required.</span>
+                                </div>
+
+                                    <input id="mauticform_input_digilentnewsletterbigcommerceform_location" name="mauticform[location]" value="footer" class="mauticform-hidden" type="hidden">
+                                    <input id="mauticform_input_digilentnewsletterbigcommerceform_referrer" name="mauticform[referrer]" value="" class="mauticform-hidden" type="hidden">
+                                    <input id="mauticform_input_digilentnewsletterbigcommerceform_page" name="mauticform[page]" value="" class="mauticform-hidden" type="hidden">
+                                <div id="mauticform_digilentnewsletterbigcommerceform_captcha" style="display: none;" class="mauticform-row mauticform-text mauticform-field-5">
+                                    <label id="mauticform_label_digilentnewsletterbigcommerceform_captcha" for="mauticform_input_digilentnewsletterbigcommerceform_captcha" class="mauticform-label">Captcha</label>
+                                    <input id="mauticform_input_digilentnewsletterbigcommerceform_captcha" name="mauticform[captcha]" value="" class="mauticform-input" type="text">
+                                    <span class="mauticform-errormsg" style="display: none;"></span>
+                                </div>
+
+                                <div id="mauticform_digilentnewsletterbigcommerceform_hidden" style="margin: 0;" class="mauticform-row mauticform-freehtml mauticform-field-6">
+                                    <h3 id="mauticform_label_digilentnewsletterbigcommerceform_hidden" for="mauticform_input_digilentnewsletterbigcommerceform_hidden" style="display: none;" class="mauticform-label">
+                                        Hidden
+                                    </h3>
+                                    <div id="mauticform_input_digilentnewsletterbigcommerceform_hidden" name="mauticform[hidden]" value="" style="display: none;" class="mauticform-freehtml">
+                                        
+                                    </div>
+                                </div>
+
+                                <div id="mauticform_digilentnewsletterbigcommerceform_submit" style="text-align: center;" class="mauticform-row mauticform-button-wrapper mauticform-field-7">
+                                    <button type="submit" name="mauticform[submit]" id="mauticform_input_digilentnewsletterbigcommerceform_submit" value="" style="width: 100%; line-height: 1rem; background-color: #62a744; border-radius: 4px; color: white; font-size: 14px; font-weight: normal;" class="mauticform-button">Submit</button>
+                                </div>
+                                </div>
+                            </div>
+
+                            <input type="hidden" name="mauticform[formId]" id="mauticform_digilentnewsletterbigcommerceform_id" value="66">
+                            <input type="hidden" name="mauticform[return]" id="mauticform_digilentnewsletterbigcommerceform_return" value="">
+                            <input type="hidden" name="mauticform[formName]" id="mauticform_digilentnewsletterbigcommerceform_name" value="digilentnewsletterbigcommerceform">
+
+                        </form>
+                    </div>
+
+                </div>
+
+                <div class="footer-info-col col-xs-12 col-sm-6 col-md-2">
+                    <h5 class="footer-info-heading">Contact Us</h5>
+                    <ul id="contact-us-links">
+                        <li>
+                            <a href="https://digilent.com/support/#channels">Support Channels</a>
+                        </li>
+                    </ul>
+                    <address>
+                        Digilent<br>
+                        1300 NE Henley Ct. Suite 3<br>
+                        Pullman, WA 99163<br>
+                        United States of America
+                    </address>
+                </div>
+
+                <div class="footer-info-col col-xs-12 social">
+                    <ul class="socialLinks">
+                        <li class="socialLinks-item">
+                            <a href="http://twitter.com/DigilentInc" target="_blank" rel="noopener">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="socialLinks-item">
+                            <a href="http://facebook.com/Digilent" target="_blank" rel="noopener">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="socialLinks-item">
+                            <a href="https://www.youtube.com/user/DigilentInc" target="_blank" rel="noopener">
+                                <i class="fa fa-youtube"></i>
+                            </a>
+                        </li>
+                        <li class="socialLinks-item">
+                            <a href="https://github.com/digilent" target="_blank" rel="noopener">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="socialLinks-item">
+                            <a href="https://instagram.com/digilentinc" target="_blank" rel="noopener">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="socialLinks-item">
+                            <a href="https://www.linkedin.com/company/1454013" target="_blank" rel="noopener">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="socialLinks-item">
+                            <a href="https://www.flickr.com/photos/127815101@N07" target="_blank" rel="noopener">
+                                <i class="fa fa-flickr"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div> 
+            </div>
+        </div>
+	</div>
+
+    <div class="no"><img src="https://digilent.com/reference/lib/exe/indexer.php?id=pmod%3Apmodvga%3Areference-manual&amp;1631185006" width="2" height="1" alt="" /></div>
+    <!--[if ( IE 6 | IE 7 | IE 8 ) ]></div><![endif]-->
+
+    <script src="https://digilent.com/reference/lib/tpl/digilent-tpl/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var jQNew = $.noConflict(true);
+</script>
+<script src="https://digilent.com/reference/lib/tpl/digilent-tpl/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="https://digilent.com/reference/lib/tpl/digilent-tpl/js/sorttable.js" type="text/javascript"></script>
+<script src="https://digilent.com/reference/lib/tpl/digilent-tpl/js/script.js" type="text/javascript"></script>
+
+    <!-- Mautic -->
+    <script>
+    (function(w,d,t,u,n,a,m){w['MauticTrackingObject']=n;
+        w[n]=w[n]||function(){(w[n].q=w[n].q||[]).push(arguments)},a=d.createElement(t),
+        m=d.getElementsByTagName(t)[0];a.async=1;a.src=u;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://mautic.digilentinc.com/mtc.js','mt');
+    mt('send', 'pageview');
+
+    </script>
+
+    <!-- Lucky Orange -->
+    <script type='text/javascript'>
+    window.__lo_site_id = 287347;
+	(function() {
+		var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
+		wa.src = 'https://d10lpsik1i8c69.cloudfront.net/w.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
+	  })();
+	</script>
+
+</body>
+</html>
+
+
+
