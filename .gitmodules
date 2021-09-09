@@ -1,0 +1,3 @@
+[submodule "fpga/vivado-boards"]
+	path = fpga/vivado-boards
+	url = git@github.com:digilent/vivado-boards.git
