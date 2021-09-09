@@ -15,32 +15,13 @@ class FrameBuffer(width: Int, height: Int) extends Module{
     val readVal = Output(Bool())
   })
 
+  // Init framebuffer -> Vec[Vec[UInt]]
   val fb = RegInit(VecInit(Seq.fill(height)(VecInit(Seq.fill(width)(false.B)))))
 
   when(io.writeEnable) {
     fb(io.writeX)(io.writeY) := io.writeVal
   }
+
+  // 2D Array Indexing
   io.readVal := fb(io.readX)(io.readY)
 }
-
-/*class FrameBuffer(width: Int, height: Int) extends Module{
-  val io = IO(new Bundle {
-    val input = Input(Vec(height, Vec(width, UInt(1.W))))
-    val writeEnable = Input(Bool())
-    val selx = Input(UInt(5.W))
-    val sely = Input(UInt(5.W))
-    val output = Output(Vec(height, Vec(width, UInt(1.W))))
-    val selected = Output(UInt(1.W))
-  })
-
-  val fb = RegInit(VecInit(Seq.fill(height)(VecInit(Seq.fill(width)(0.U(1.W))))))
-
-  when(io.writeEnable) {
-    fb := io.input
-  }.otherwise {
-    fb := fb
-  }
-
-  io.selected := fb(io.sely)(io.selx)
-  io.output := fb
-}*/

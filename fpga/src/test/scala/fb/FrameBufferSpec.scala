@@ -14,8 +14,8 @@ class FrameBufferSpec extends FreeSpec with ChiselScalatestTester {
       dut.clock.step(1)
       dut.io.readX.poke(1.U)
       dut.io.readY.poke(1.U)
-      println(dut.io.readVal.peek())
       dut.io.readVal.expect(true.B)
     }
+    println("Success!")
   }
 }
