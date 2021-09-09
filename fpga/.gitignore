@@ -44,6 +44,7 @@
 *_usage.xml
 *_xst.xrpt
 .metals
+.bloop
 
 # project-wide generated files
 *.gise
