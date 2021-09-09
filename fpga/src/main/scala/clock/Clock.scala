@@ -3,6 +3,7 @@ package clock
 import chisel3._
 
 class Clock extends Module{
+  """Counts pixels to help us out with VGA."""
   val io = IO(new Bundle {
     val count = Output(UInt(16.W))
   })
