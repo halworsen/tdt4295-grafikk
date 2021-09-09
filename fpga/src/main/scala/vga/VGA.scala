@@ -43,26 +43,12 @@ class VGA extends Module{
     io.vsync := true.B
     io.out := false.B
     // Porches
-  } .otherwise() {
+  } .otherwise {
     io.hsync := false.B
     io.vsync := false.B
     io.out := false.B
   }
 
-  // ============== VSYNC ==============
-  // Visible Area
-  when(counterVsync < 480.U) {
-
-  } // Front Porch
-  .elsewhen(counterVsync < (480+10).U) {
-
-  }// Sync Pulse
-  .elsewhen(counterVsync < (480+10+2).U) {
-
-  } // Back porch
-  .elsewhen(counterVsync < (480+10+2+33).U) {
-
-  }
 
 
 
