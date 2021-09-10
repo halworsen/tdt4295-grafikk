@@ -26,11 +26,15 @@ OLD CODE
 
 val io = IO(new Bundle {
     val led = Output(Vec(4, UInt(1.W)))
+    val clkout = Output(UInt(1.W))
 
     val btn = Input(Vec(2, UInt(1.W)))
   })
 
   var counter = Reg(UInt())
+
+  var clocks = Module(new Clock(23, 23))
+  io.clkout := clocks.io.clkout
 
   when(io.btn(0) === true.B) {
     counter := counter + 1.U
