@@ -1,0 +1,8 @@
+replicaCount: 1
+image:
+  repository: docker.io/halworsen/ingebrigtsen
+  pullPolicy: IfNotPresent
+
+runner:
+  repository: https://github.com/halworsen/tdt4295-grafikk
+  token: ""
