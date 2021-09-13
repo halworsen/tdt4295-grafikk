@@ -9,7 +9,6 @@ on:
 
 jobs:
   tests:
-
     runs-on: [self-hosted, ubuntu-18-04]
     defaults:
       run:
@@ -17,12 +16,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
-      - name: Set up JDK 8
-        uses: actions/setup-java@v2
-        with:
-          java-version: '8'
-          distribution: 'adopt'
+      - uses: olafurpg/setup-scala@v11
 
       - name: Check formatting
         run: sbt scalafmtCheck
