@@ -1,7 +1,7 @@
 import chisel3._
 
 class Main extends Module {
-  val io = IO(new Bundle{
+  val io = IO(new Bundle {
     val led = Output(Vec(4, UInt(1.W)))
 
     val btn = Input(Vec(2, UInt(1.W)))
@@ -30,7 +30,6 @@ class Main extends Module {
     counter := 0.U
     io.led(0) := true.B
   }
-
 
   //val x  = Reg(UInt())
   //val y  = Reg(UInt())
