@@ -1159,4 +1159,6 @@ Ip>3.5A Irms>3.1A
 NoConn ~ 1350 1500
 Text Notes 9150 4100 0    50   ~ 0
 Ip>2.9A, Irms>2.1A
+Text Notes 4750 3850 0    50   ~ 0
+Ip>2.8A, Irms>2.1A
 $EndSCHEMATC

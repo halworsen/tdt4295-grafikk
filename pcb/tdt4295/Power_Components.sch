@@ -668,9 +668,9 @@ F 3 "~" H 8200 4100 50  0001 C CNN
 	1    8200 4100
 	0    1    1    0   
 $EndComp
-Text HLabel 2800 2150 2    50   Output ~ 0
+Text HLabel 2800 2150 2    50   BiDi ~ 0
 USB_D+
-Text HLabel 2800 2350 2    50   Output ~ 0
+Text HLabel 2800 2350 2    50   BiDi ~ 0
 USB_D-
 $Comp
 L Device:Ferrite_Bead FB201
