@@ -3,7 +3,7 @@ package fb
 import chisel3._
 import scala.math._
 
-class FrameBuffer(width: UInt, height: UInt) extends Module {
+class FrameBuffer(width: Int, height: Int) extends Module {
   var log2 = (x: Int) => (log10(x) / log10(2.0)).toInt
   val io = IO(new Bundle {
     val writeX = Input(UInt(log2(width).W))
