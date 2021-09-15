@@ -26,7 +26,7 @@ class LineDrawing extends Module{
 
   x := x + 1;
   when (x <= io.xe) {
-    warnAssert.apply(-dx <= e && e < 0.U, "-dx <= e < 0 is not satisfied!", true);
+    assert(-dx <= e && e < 0.U, "-dx <= e < 0 is not satisfied!");
     // Draw pixel
     x := x + 1.U;
     e := e + dy;
