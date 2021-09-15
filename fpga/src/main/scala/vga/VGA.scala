@@ -48,9 +48,4 @@ class VGA extends Module{
     io.vsync := false.B
     io.out := false.B
   }
-
-
-
-
-
 }

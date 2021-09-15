@@ -1,9 +1,7 @@
 package tools
 
-import scala._
 import chisel3._
 import fb.FrameBuffer
-
 import scala.math.log10
 
 object helpers {
@@ -13,5 +11,6 @@ object helpers {
      fb.io.writeVal := value;
      fb.io.writeX := x;
      fb.io.writeY := y;
+     // TODO: Set in clock here to avoid reading from previous update.
   };
 }
