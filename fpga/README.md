@@ -16,5 +16,5 @@ code and output verilog.
 
 To set up the vivado project, open up vivado and in the tcl console:
 
-1. Change directory to the `tdt4195-graphics` subdir in this folder.
+1. Change directory to this directory.
 2. Source the `tdt4195-graphics.tcl` script: `source tdt4195-graphics.tcl`

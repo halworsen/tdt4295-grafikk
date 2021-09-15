@@ -17,7 +17,8 @@ class Main extends Module {
 
 // Compiles chisel files to one single verilog file.
 object Main extends App {
-  (new chisel3.stage.ChiselStage).emitVerilog(new Main())
+  (new chisel3.stage.ChiselStage)
+    .emitVerilog(new Main(), Array("--target-dir", "verilog/"))
 }
 
 /*
@@ -33,7 +34,7 @@ val io = IO(new Bundle {
 
   var counter = Reg(UInt())
 
-  var clocks = Module(new Clock(23, 23))
+  var clocks = Module(new Clock())
   io.clkout := clocks.io.clkout
 
   when(io.btn(0) === true.B) {
