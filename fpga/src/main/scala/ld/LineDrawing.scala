@@ -1,6 +1,7 @@
 package ld
 
 import chisel3._
+import tools.warnAssert
 
 class LineDrawing extends Module{
   val io = IO(new Bundle {
@@ -25,6 +26,7 @@ class LineDrawing extends Module{
 
   x := x + 1;
   when (x <= io.xe) {
+    warnAssert.apply(-dx <= e && e < 0.U, "-dx <= e < 0 is not satisfied!", true);
     // Draw pixel
     x := x + 1.U;
     e := e + dy;
