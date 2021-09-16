@@ -1,9 +1,9 @@
 EESchema Schematic File Version 4
 EELAYER 30 0
 EELAYER END
-$Descr A4 11693 8268
+$Descr A3 16535 11693
 encoding utf-8
-Sheet 1 5
+Sheet 1 4
 Title ""
 Date ""
 Rev ""
@@ -19,12 +19,7 @@ U 613AE19D
 F0 "Power_components" 50
 F1 "Power_Components.sch" 50
 $EndSheet
-$Sheet
-S 7500 1300 1050 600 
-U 6137CCE7
-F0 "User pushbuttons" 50
-F1 "pushbuttons.sch" 50
-$EndSheet
+NoConn ~ -700 1050
 $Sheet
 S 7500 2150 1050 500 
 U 61389BA0
@@ -32,9 +27,9 @@ F0 "VMCU" 50
 F1 "vmcu.sch" 50
 $EndSheet
 $Sheet
-S 3700 2650 1750 1100
-U 6142251A
-F0 "FPGA" 50
-F1 "fpga.sch" 50
+S 7500 1300 1050 600 
+U 6137CCE7
+F0 "User pushbuttons" 50
+F1 "pushbuttons.sch" 50
 $EndSheet
 $EndSCHEMATC
