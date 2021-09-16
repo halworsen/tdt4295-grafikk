@@ -3,10 +3,10 @@ package vga
 import chisel3._
 import chisel3.util.Counter
 
-class VGA extends Module{
-  /**
-   * We primaraly focus on a 640 x 480px implementation
-   */
+class VGA extends Module {
+
+  /** We primaraly focus on a 640 x 480px implementation
+    */
   val io = IO(new Bundle {
     // Data is for now just a bool
     val data = Input(Bool())
@@ -28,29 +28,27 @@ class VGA extends Module{
     io.vsync := false.B
     io.out := io.data
   } // HSYNC and VSYNC
-  .elsewhen(counterHsync >= (640+16).U & counterHsync < (640+16+96).U & counterVsync >= (480+10).U & counterVsync < (480+10+2).U) {
-    io.hsync := true.B
-    io.vsync := true.B
-    io.out := false.B
-  }// HSYNC
-  .elsewhen(counterHsync >= (640+16).U & counterHsync < (640+16+96).U) {
-    io.hsync := true.B
-    io.vsync := false.B
-    io.out := false.B
-  } // VSYNC
-  .elsewhen(counterVsync >= (480+10).U & counterVsync < (480+10+2).U) {
-    io.hsync := false.B
-    io.vsync := true.B
-    io.out := false.B
-    // Porches
-  } .otherwise {
-    io.hsync := false.B
-    io.vsync := false.B
-    io.out := false.B
-  }
-
-
-
-
-
+    .elsewhen(
+      counterHsync >= (640 + 16).U & counterHsync < (640 + 16 + 96).U & counterVsync >= (480 + 10).U & counterVsync < (480 + 10 + 2).U
+    ) {
+      io.hsync := true.B
+      io.vsync := true.B
+      io.out := false.B
+    } // HSYNC
+    .elsewhen(counterHsync >= (640 + 16).U & counterHsync < (640 + 16 + 96).U) {
+      io.hsync := true.B
+      io.vsync := false.B
+      io.out := false.B
+    } // VSYNC
+    .elsewhen(counterVsync >= (480 + 10).U & counterVsync < (480 + 10 + 2).U) {
+      io.hsync := false.B
+      io.vsync := true.B
+      io.out := false.B
+      // Porches
+    }
+    .otherwise {
+      io.hsync := false.B
+      io.vsync := false.B
+      io.out := false.B
+    }
 }
