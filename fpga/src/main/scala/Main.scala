@@ -2,17 +2,20 @@ import chisel3._
 import fb.FrameBuffer
 import ld.LineDrawing
 import vga.VGA
+import vga.{Clock => VGAClock}
 
 class Main extends Module {
   val io = IO(new Bundle {})
 
-  val fb = new FrameBuffer(640, 480);
-  val bresenhams = new LineDrawing(fb, 10, 500, 200, 250);
+  val fb = new FrameBuffer(640, 480)
+  val bresenhams = new LineDrawing(fb, 10, 500, 200, 250)
 
-  val vga = new VGA;
-  fb.io.readX := vga.io.selX;
-  fb.io.readY := vga.io.selY;
+  val vga = new VGA
+  val vgaClock = new VGAClock
+  fb.io.readX := vga.io.selX
+  fb.io.readY := vga.io.selY
   vga.io.data := fb.io.readVal
+  vga.io.clock := vgaClock.io.clkout
 }
 
 // Compiles chisel files to one single verilog file.
