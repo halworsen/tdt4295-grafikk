@@ -32,7 +32,7 @@ class LineDrawing(
   dy := io.ye - io.ys
   e := -(dx >> 1.U).asUInt();
 
-  x := x + 1;
+  x := x + 1.U;
   when(x <= io.xe) {
     assert(-dx <= e && e < 0.U, "-dx <= e < 0 is not satisfied!");
     // Draw pixel
