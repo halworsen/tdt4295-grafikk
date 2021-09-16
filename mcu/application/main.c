@@ -13,22 +13,11 @@
  * @date    01/09/2018
  */
 
+#include "em_cmu.h"
 #include "em_device.h"
+#include "em_gpio.h"
 #include "spidrv.h"
 #include <stdint.h>
-
-/**
- * @brief       BIT macro
- *              Defines a constant (hopefully) with a bit 1 in the N position
- * @param       N : Bit index with bit 0 the Least Significant Bit
- */
-#define BIT(N) (1U << (N))
-
-///@{
-/// LEDs are on Port E
-#define LED1 BIT(2)
-#define LED2 BIT(3)
-///@}
 
 /**
  * @brief  Main function
@@ -49,32 +38,36 @@ void TransferComplete(SPIDRV_Handle_t handle, Ecode_t transferStatus,
   }
 }
 
-int main() {
-  uint8_t buffer[10] = {0};
+int main(void) {
+  uint8_t buffer[10];
+  Ecode_t retval;
   SPIDRV_Init_t initData = SPIDRV_MASTER_USART1;
+  CMU_ClockEnable(cmuClock_GPIO, true);
 
-  // Initialize a SPI driver instance
-  SPIDRV_Init(handle, &initData);
+  // Initialize an SPI driver instance.
+  retval = SPIDRV_Init(handle, &initData);
+  if (retval != ECODE_OK) {
+    GPIO_PinModeSet(gpioPortE, 2 /*pin 4*/,
+                    gpioModePushPull /*push-pull output*/, 1 /*output level*/);
+    return -1;
+  }
 
-  // Transmit data using a blocking transmit function
+  // Transmit data using a blocking transmit function.
   SPIDRV_MTransmitB(handle, buffer, 10);
+  if (retval != ECODE_OK) {
+    GPIO_PinModeSet(gpioPortE, 2 /*pin 4*/,
+                    gpioModePushPull /*push-pull output*/, 1 /*output level*/);
+    return -1;
+  }
 
   // Transmit data using a callback to catch transfer completion.
   SPIDRV_MTransmit(handle, buffer, 10, TransferComplete);
-
-  /// Pointer to GPIO Port E registers
-  GPIO_P_TypeDef *const GPIOE = &(GPIO->P[4]); // GPIOE
-
-  /* Enable Clock for GPIO */
-  CMU->HFPERCLKDIV |= CMU_HFPERCLKDIV_HFPERCLKEN; // Enable HFPERCLK
-  CMU->HFPERCLKEN0 |= CMU_HFPERCLKEN0_GPIO;       // Enable HFPERCKL for GPIO
-
-  /* Configure Pins in GPIOE */
-  GPIOE->MODEL &=
-      ~(_GPIO_P_MODEL_MODE2_MASK | _GPIO_P_MODEL_MODE3_MASK); // Clear bits
-  GPIOE->MODEL |=
-      (GPIO_P_MODEL_MODE2_PUSHPULL | GPIO_P_MODEL_MODE3_PUSHPULL); // Set bits
-
-  /* Initial values for LEDs */
-  GPIOE->DOUT |= (LED1 | LED2); // Turn Off LEDs
+  if (retval != ECODE_OK) {
+    GPIO_PinModeSet(gpioPortE, 2 /*pin 4*/,
+                    gpioModePushPull /*push-pull output*/, 1 /*output level*/);
+    return -1;
+  }
+  GPIO_PinModeSet(gpioPortE, 2 /*pin 4*/, gpioModePushPull /*push-pull output*/,
+                  1 /*output level*/);
+  return 0;
 }
