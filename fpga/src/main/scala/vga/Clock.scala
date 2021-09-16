@@ -50,7 +50,7 @@ class Clock() extends BlackBox with HasBlackBoxResource {
     val clk_pix = Output(Wire(Bool()))
     val clk_locked = Output(Wire(Bool()))
   })
-  addResource("../../verilog/clock_gen.v")
+  addResource("/clock_gen.v")
 }
 
 
