@@ -27,7 +27,7 @@
 #
 # 3. The following remote source files that were added to the original project:-
 #
-#    "/home/ludvig/code/NTNU/dmpro/tdt4295-grafikk/fpga/Main.v"
+#    "/home/ludvig/code/NTNU/dmpro/tdt4295-grafikk/fpga/verilog/Main.v"
 #
 #*****************************************************************************************
 
@@ -45,7 +45,7 @@ proc checkRequiredFiles { origin_dir} {
   }
 
   set files [list \
- "[file normalize "$origin_dir/../Main.v"]"\
+ "[file normalize "$origin_dir/verilog/Main.v"]"\
   ]
   foreach ifile $files {
     if { ![file isfile $ifile] } {
@@ -214,12 +214,12 @@ if {[string equal [get_filesets -quiet sources_1] ""]} {
 # Set 'sources_1' fileset object
 set obj [get_filesets sources_1]
 set files [list \
- [file normalize "${origin_dir}/../Main.v"] \
+ [file normalize "${origin_dir}/verilog/Main.v"] \
 ]
 add_files -norecurse -fileset $obj $files
 
 # Set 'sources_1' fileset file properties for remote files
-set file "$origin_dir/../Main.v"
+set file "$origin_dir/verilog/Main.v"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "Verilog" -objects $file_obj
