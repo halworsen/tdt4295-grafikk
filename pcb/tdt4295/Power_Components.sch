@@ -688,7 +688,7 @@ L Device:R R211
 U 1 1 6154B874
 P 10700 4200
 F 0 "R211" V 10493 4200 50  0000 C CNN
-F 1 "1???" V 10584 4200 50  0000 C CNN
+F 1 "1" V 10584 4200 50  0000 C CNN
 F 2 "" V 10630 4200 50  0001 C CNN
 F 3 "~" H 10700 4200 50  0001 C CNN
 	1    10700 4200
@@ -1138,16 +1138,6 @@ Wire Notes Line
 	2750 4650 650  4650
 Text Notes 950  4750 0    50   ~ 0
 Power status LEDs & Hierarchical output
-Text Notes 10350 4650 0    50   ~ 0
-Originalskjematikken\nviser bare 1.\nVet ikke\nstørrelsesorden
-Wire Notes Line
-	10550 3950 10550 4300
-Wire Notes Line
-	10550 4300 10850 4300
-Wire Notes Line
-	10850 4300 10850 3950
-Wire Notes Line
-	10850 3950 10550 3950
 Wire Wire Line
 	8850 5100 8850 4200
 Wire Wire Line
