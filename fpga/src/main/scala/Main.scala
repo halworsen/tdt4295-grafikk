@@ -1,13 +1,10 @@
 import chisel3._
-import vga.VGA
 import fb.FrameBuffer
-import clock.Clock
 import ld.LineDrawing
+import vga.VGA
 
 class Main extends Module {
-  val io = IO(new Bundle {
-
-  })
+  val io = IO(new Bundle {})
 
   val fb = new FrameBuffer(640, 480);
   val bresenhams = new LineDrawing(fb, 10, 500, 200, 250);
@@ -22,7 +19,6 @@ class Main extends Module {
 object Main extends App {
   (new chisel3.stage.ChiselStage).emitVerilog(new Main())
 }
-
 
 /*
 
@@ -64,4 +60,3 @@ val io = IO(new Bundle {
 
 
  */
-
