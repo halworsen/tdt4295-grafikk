@@ -4,7 +4,13 @@ import chisel3._
 import fb.FrameBuffer
 import tools.helpers.{log2, setPixel}
 
-class LineDrawing(fb: FrameBuffer, xStart: Int, xEnd: Int, yStart: Int, yEnd: Int) extends Module{
+class LineDrawing(
+    fb: FrameBuffer,
+    xStart: Int,
+    xEnd: Int,
+    yStart: Int,
+    yEnd: Int
+) extends Module {
   val io = IO(new Bundle {
     val xs = Input(UInt(log2(xStart).W))
     val ys = Input(UInt(log2(yStart).W))
@@ -17,7 +23,8 @@ class LineDrawing(fb: FrameBuffer, xStart: Int, xEnd: Int, yStart: Int, yEnd: In
   val y = RegInit(0.U(log2(yEnd).W));
   val dx = RegInit(0.U(log2(xEnd).W));
   val dy = RegInit(0.U(log2(yEnd).W));
-  val e = RegInit(0.U(log2(xEnd).W)); // This could be swapped for another bitwidth
+  val e =
+    RegInit(0.U(log2(xEnd).W)); // This could be swapped for another bitwidth
 
   x := io.xs
   y := io.ys
@@ -26,13 +33,13 @@ class LineDrawing(fb: FrameBuffer, xStart: Int, xEnd: Int, yStart: Int, yEnd: In
   e := -(dx >> 1.U).asUInt();
 
   x := x + 1;
-  when (x <= io.xe) {
+  when(x <= io.xe) {
     assert(-dx <= e && e < 0.U, "-dx <= e < 0 is not satisfied!");
     // Draw pixel
     setPixel(fb, x.asUInt(), y.asUInt(), true.B)
     x := x + 1.U;
     e := e + dy;
-    when (e >= 0.U) {
+    when(e >= 0.U) {
       y := y + 1.U;
       e := e - dx;
     }
