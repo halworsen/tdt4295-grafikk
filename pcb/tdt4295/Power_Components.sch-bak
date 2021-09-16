@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 4
+Sheet 1 5
 Title ""
 Date ""
 Rev ""
@@ -98,262 +98,7 @@ USBDP
 Text Label 3050 2350 0    50   ~ 0
 USBDM
 Text Notes 1850 700  0    50   ~ 0
-Power input
-$Comp
-L Regulator_Linear:LP3982IMM-ADJ U?
-U 1 1 613D90AF
-P 8900 1400
-AR Path="/613D90AF" Ref="U?"  Part="1" 
-AR Path="/613AE19D/613D90AF" Ref="U600"  Part="1" 
-F 0 "U600" H 8900 1767 50  0000 C CNN
-F 1 "LP3982IMM-ADJ" H 8900 1676 50  0000 C CNN
-F 2 "Package_SO:VSSOP-8_3.0x3.0mm_P0.65mm" H 9100 1050 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/lp3982.pdf" H 8900 1400 50  0001 C CNN
-	1    8900 1400
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+5V #PWR?
-U 1 1 613D90B5
-P 6450 850
-F 0 "#PWR?" H 6450 700 50  0001 C CNN
-F 1 "+5V" H 6465 1023 50  0000 C CNN
-F 2 "" H 6450 850 50  0001 C CNN
-F 3 "" H 6450 850 50  0001 C CNN
-	1    6450 850 
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C?
-U 1 1 613D90BB
-P 6450 1650
-AR Path="/613D90BB" Ref="C?"  Part="1" 
-AR Path="/613AE19D/613D90BB" Ref="C600"  Part="1" 
-F 0 "C600" H 6565 1696 50  0000 L CNN
-F 1 "100N" H 6565 1605 50  0000 L CNN
-F 2 "" H 6488 1500 50  0001 C CNN
-F 3 "~" H 6450 1650 50  0001 C CNN
-	1    6450 1650
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C?
-U 1 1 613D90C1
-P 6950 1650
-AR Path="/613D90C1" Ref="C?"  Part="1" 
-AR Path="/613AE19D/613D90C1" Ref="C601"  Part="1" 
-F 0 "C601" H 7065 1696 50  0000 L CNN
-F 1 "10U" H 7065 1605 50  0000 L CNN
-F 2 "" H 6988 1500 50  0001 C CNN
-F 3 "~" H 6950 1650 50  0001 C CNN
-	1    6950 1650
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6450 1800 6450 2000
-Wire Wire Line
-	6950 1800 6950 2000
-Wire Wire Line
-	8500 1300 7650 1300
-Connection ~ 7650 1300
-Wire Wire Line
-	7650 1300 6950 1300
-$Comp
-L Device:C C?
-U 1 1 613D90CC
-P 9400 1800
-AR Path="/613D90CC" Ref="C?"  Part="1" 
-AR Path="/613AE19D/613D90CC" Ref="C602"  Part="1" 
-F 0 "C602" H 9515 1846 50  0000 L CNN
-F 1 "33N" H 9515 1755 50  0000 L CNN
-F 2 "" H 9438 1650 50  0001 C CNN
-F 3 "~" H 9400 1800 50  0001 C CNN
-	1    9400 1800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9400 1650 9400 1500
-Wire Wire Line
-	9400 1500 9300 1500
-Wire Wire Line
-	6950 1500 6950 1300
-Connection ~ 6950 1300
-Wire Wire Line
-	6950 1300 6450 1300
-Wire Wire Line
-	6450 850  6450 1300
-Wire Wire Line
-	6450 1500 6450 1300
-Connection ~ 6450 1300
-$Comp
-L power:GND #PWR?
-U 1 1 613D90DA
-P 8900 1700
-F 0 "#PWR?" H 8900 1450 50  0001 C CNN
-F 1 "GND" H 8905 1527 50  0000 C CNN
-F 2 "" H 8900 1700 50  0001 C CNN
-F 3 "" H 8900 1700 50  0001 C CNN
-	1    8900 1700
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 613D90E0
-P 9400 1950
-F 0 "#PWR?" H 9400 1700 50  0001 C CNN
-F 1 "GND" H 9405 1777 50  0000 C CNN
-F 2 "" H 9400 1950 50  0001 C CNN
-F 3 "" H 9400 1950 50  0001 C CNN
-	1    9400 1950
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 613D90E6
-P 6950 2000
-F 0 "#PWR?" H 6950 1750 50  0001 C CNN
-F 1 "GND" H 6955 1827 50  0000 C CNN
-F 2 "" H 6950 2000 50  0001 C CNN
-F 3 "" H 6950 2000 50  0001 C CNN
-	1    6950 2000
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 613D90EC
-P 6450 2000
-F 0 "#PWR?" H 6450 1750 50  0001 C CNN
-F 1 "GND" H 6455 1827 50  0000 C CNN
-F 2 "" H 6450 2000 50  0001 C CNN
-F 3 "" H 6450 2000 50  0001 C CNN
-	1    6450 2000
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 613D90F2
-P 7650 1450
-AR Path="/613D90F2" Ref="R?"  Part="1" 
-AR Path="/613AE19D/613D90F2" Ref="R600"  Part="1" 
-F 0 "R600" H 7720 1496 50  0000 L CNN
-F 1 "10K" H 7720 1405 50  0000 L CNN
-F 2 "" V 7580 1450 50  0001 C CNN
-F 3 "~" H 7650 1450 50  0001 C CNN
-	1    7650 1450
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7650 1600 8000 1600
-Wire Wire Line
-	8000 1600 8000 1400
-Wire Wire Line
-	8000 1400 8500 1400
-Wire Wire Line
-	8500 1500 8500 2200
-Wire Wire Line
-	8500 2200 9750 2200
-NoConn ~ 9300 1400
-Wire Wire Line
-	9300 1300 9750 1300
-$Comp
-L Device:R R?
-U 1 1 613D90FF
-P 9750 1600
-F 0 "R?" H 9820 1646 50  0000 L CNN
-F 1 "180K" H 9820 1555 50  0000 L CNN
-F 2 "" V 9680 1600 50  0001 C CNN
-F 3 "~" H 9750 1600 50  0001 C CNN
-	1    9750 1600
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9750 1300 9750 1450
-Wire Wire Line
-	9750 1750 9750 2200
-$Comp
-L Device:R R?
-U 1 1 613D9107
-P 9750 2450
-AR Path="/613D9107" Ref="R?"  Part="1" 
-AR Path="/613AE19D/613D9107" Ref="R602"  Part="1" 
-F 0 "R602" H 9820 2496 50  0000 L CNN
-F 1 "110K" H 9820 2405 50  0000 L CNN
-F 2 "" V 9680 2450 50  0001 C CNN
-F 3 "~" H 9750 2450 50  0001 C CNN
-	1    9750 2450
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9750 2200 9750 2300
-Connection ~ 9750 2200
-Wire Wire Line
-	9750 2600 9750 2750
-$Comp
-L power:GND #PWR?
-U 1 1 613D9110
-P 9750 2750
-F 0 "#PWR?" H 9750 2500 50  0001 C CNN
-F 1 "GND" H 9755 2577 50  0000 C CNN
-F 2 "" H 9750 2750 50  0001 C CNN
-F 3 "" H 9750 2750 50  0001 C CNN
-	1    9750 2750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9750 1300 10450 1300
-Wire Wire Line
-	10700 1300 10700 1050
-Connection ~ 9750 1300
-$Comp
-L Device:C C?
-U 1 1 613D9119
-P 10450 1550
-AR Path="/613D9119" Ref="C?"  Part="1" 
-AR Path="/613AE19D/613D9119" Ref="C607"  Part="1" 
-F 0 "C607" H 10565 1596 50  0000 L CNN
-F 1 "10U" H 10565 1505 50  0000 L CNN
-F 2 "" H 10488 1400 50  0001 C CNN
-F 3 "~" H 10450 1550 50  0001 C CNN
-	1    10450 1550
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 613D911F
-P 10450 1700
-F 0 "#PWR?" H 10450 1450 50  0001 C CNN
-F 1 "GND" H 10455 1527 50  0000 C CNN
-F 2 "" H 10450 1700 50  0001 C CNN
-F 3 "" H 10450 1700 50  0001 C CNN
-	1    10450 1700
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	10450 1400 10450 1300
-Connection ~ 10450 1300
-Wire Wire Line
-	10450 1300 10700 1300
-$Comp
-L power:+3V3 #PWR?
-U 1 1 613D9128
-P 10700 1050
-F 0 "#PWR?" H 10700 900 50  0001 C CNN
-F 1 "+3V3" H 10715 1223 50  0000 C CNN
-F 2 "" H 10700 1050 50  0001 C CNN
-F 3 "" H 10700 1050 50  0001 C CNN
-	1    10700 1050
-	1    0    0    -1  
-$EndComp
-Wire Notes Line
-	11100 3000 6300 3000
-Wire Notes Line
-	6300 3000 6300 600 
-Wire Notes Line
-	6300 600  11100 600 
-Wire Notes Line
-	11100 600  11100 3000
-Text Notes 8300 700  0    50   ~ 0
-3V3 Regulator
+5V input from USB
 $Comp
 L NUP4114UCW1T2G:NUP4114UCW1T2G D600
 U 1 1 6141E828
@@ -393,4 +138,12 @@ Wire Wire Line
 Connection ~ 2100 1750
 Wire Wire Line
 	2100 2500 2100 1750
+Wire Notes Line
+	500  550  500  4850
+Wire Notes Line
+	500  4850 5200 4850
+Wire Notes Line
+	5200 4850 5200 550 
+Wire Notes Line
+	5200 550  500  550 
 $EndSCHEMATC
