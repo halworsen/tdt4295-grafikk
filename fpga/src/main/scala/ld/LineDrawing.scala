@@ -1,11 +1,10 @@
 package ld
 
 import chisel3._
-import fb.FrameBuffer
-import tools.helpers.{log2, setPixel}
+import chisel3.util._
+import tools.helpers.log2
 
 class LineDrawing(
-    fb: FrameBuffer,
     xStart: Int,
     xEnd: Int,
     yStart: Int,
@@ -16,6 +15,11 @@ class LineDrawing(
     val ys = Input(UInt(log2(yStart).W))
     val xe = Input(UInt(log2(xEnd).W))
     val ye = Input(UInt(log2(yEnd).W))
+
+    val writeEnable = Output(Bool())
+    val writeX = Output(UInt(log2Up(xEnd).W))
+    val writeY = Output(UInt(log2Up(yEnd).W))
+    val writeVal = Output(Bool())
   })
 
   // Initialize registers
@@ -36,7 +40,12 @@ class LineDrawing(
   when(x <= io.xe) {
     assert(-dx <= e && e < 0.U, "-dx <= e < 0 is not satisfied!");
     // Draw pixel
-    setPixel(fb, x.asUInt(), y.asUInt(), true.B)
+    io.writeEnable := true.B
+    io.writeX := x.asUInt()
+    io.writeY := y.asUInt()
+    io.writeVal := true.B
+
+    //setPixel(enable, x.asUInt(), y.asUInt(), true.B)
     x := x + 1.U;
     e := e + dy;
     when(e >= 0.U) {
