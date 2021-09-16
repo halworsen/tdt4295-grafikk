@@ -1,4 +1,5 @@
-package vga
+
+/*package vga
 
 import chisel3._
 import chisel3.tester._
@@ -66,3 +67,4 @@ class VGASpec extends FreeSpec with ChiselScalatestTester {
   }
 
 }
+*/
