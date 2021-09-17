@@ -1151,4 +1151,33 @@ Text Notes 9150 4100 0    50   ~ 0
 Ip>2.9A, Irms>2.1A
 Text Notes 4750 3850 0    50   ~ 0
 Ip>2.8A, Irms>2.1A
+$Comp
+L power:GND #PWR?
+U 1 1 618DCFE2
+P 1050 2300
+F 0 "#PWR?" H 1050 2050 50  0001 C CNN
+F 1 "GND" H 1055 2127 50  0000 C CNN
+F 2 "" H 1050 2300 50  0001 C CNN
+F 3 "" H 1050 2300 50  0001 C CNN
+	1    1050 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 618DD8EF
+P 1050 2050
+F 0 "C?" H 900 2150 50  0000 L CNN
+F 1 "100uF" H 800 1950 50  0000 L CNN
+F 2 "" H 1088 1900 50  0001 C CNN
+F 3 "~" H 1050 2050 50  0001 C CNN
+	1    1050 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1050 1900 1050 1750
+Connection ~ 1050 1750
+Wire Wire Line
+	1050 2200 1050 2300
+Text Notes 1850 1450 0    50   ~ 0
+Mye av application notes viser bruk\nav ferrite bead her i stedet for en spole?
 $EndSCHEMATC
