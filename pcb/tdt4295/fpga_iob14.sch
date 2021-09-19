@@ -1,0 +1,272 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 3
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L xc7a100t-ftg256-modified:XC7A100T-FTG256-tdt4295 U?
+U 1 1 614741A8
+P 3450 4300
+F 0 "U?" H 4218 4754 50  0000 L CNN
+F 1 "XC7A100T-FTG256-tdt4295" H 4218 4663 50  0000 L CNN
+F 2 "" H 3450 1250 50  0001 C CNN
+F 3 "" H 3450 1250 50  0000 C CNN
+	1    3450 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3400 1000 3300 1000
+Connection ~ 3000 1000
+Wire Wire Line
+	3000 1000 2900 1000
+Connection ~ 3100 1000
+Wire Wire Line
+	3100 1000 3000 1000
+Connection ~ 3200 1000
+Wire Wire Line
+	3200 1000 3100 1000
+Connection ~ 3300 1000
+Wire Wire Line
+	3300 1000 3200 1000
+NoConn ~ 2500 1800
+NoConn ~ 2500 2300
+NoConn ~ 2500 2400
+NoConn ~ 2500 2600
+NoConn ~ 2500 2700
+NoConn ~ 2500 2800
+NoConn ~ 2500 3000
+NoConn ~ 2500 3100
+NoConn ~ 2500 3200
+NoConn ~ 2500 3300
+NoConn ~ 2500 3400
+NoConn ~ 2500 3500
+NoConn ~ 2500 3600
+NoConn ~ 2500 3700
+NoConn ~ 2500 3800
+NoConn ~ 2500 3900
+NoConn ~ 2500 4000
+NoConn ~ 2500 4100
+NoConn ~ 2500 4200
+NoConn ~ 2500 4400
+NoConn ~ 2500 4500
+NoConn ~ 2500 4600
+NoConn ~ 2500 4700
+NoConn ~ 2500 4800
+NoConn ~ 2500 4900
+NoConn ~ 2500 5000
+NoConn ~ 2500 5100
+NoConn ~ 2500 5200
+NoConn ~ 2500 5300
+NoConn ~ 2500 5400
+NoConn ~ 2500 5500
+NoConn ~ 2500 5600
+NoConn ~ 2500 5700
+NoConn ~ 2500 5800
+NoConn ~ 2500 5900
+NoConn ~ 2500 6000
+NoConn ~ 2500 6100
+NoConn ~ 2500 6200
+NoConn ~ 2500 6300
+NoConn ~ 2500 6400
+NoConn ~ 2500 6500
+NoConn ~ 2500 6600
+NoConn ~ 2500 6700
+Text HLabel 2500 1900 0    50   Input ~ 0
+IO_L1P_T0_D0O_MOSI_14
+Text HLabel 2500 2000 0    50   Input ~ 0
+IO_L1N_TO_D01_DIN_14
+Text HLabel 2500 2100 0    50   Input ~ 0
+IO_L2P_T0_D02_14
+Text HLabel 2500 2200 0    50   Input ~ 0
+IO_L2N_TO_D03_14
+Text HLabel 2500 2900 0    50   Input ~ 0
+IO_L6P_T0_FCS_B_14
+$Comp
+L power:+3V3 #PWR?
+U 1 1 614741B9
+P 8050 850
+F 0 "#PWR?" H 8050 700 50  0001 C CNN
+F 1 "+3V3" H 7900 900 50  0000 C CNN
+F 2 "" H 8050 850 50  0001 C CNN
+F 3 "" H 8050 850 50  0001 C CNN
+	1    8050 850 
+	1    0    0    -1  
+$EndComp
+NoConn ~ 2500 2500
+Wire Wire Line
+	3400 1000 4450 1000
+Connection ~ 3400 1000
+Connection ~ 4450 1000
+$Comp
+L power:GND #PWR?
+U 1 1 614B3B58
+P 8050 1400
+F 0 "#PWR?" H 8050 1150 50  0001 C CNN
+F 1 "GND" H 8055 1227 50  0000 C CNN
+F 2 "" H 8050 1400 50  0001 C CNN
+F 3 "" H 8050 1400 50  0001 C CNN
+	1    8050 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C21
+U 1 1 614B5319
+P 4450 1150
+F 0 "C21" H 4565 1196 50  0000 L CNN
+F 1 "4.7uF" H 4565 1105 50  0000 L CNN
+F 2 "" H 4488 1000 50  0001 C CNN
+F 3 "~" H 4450 1150 50  0001 C CNN
+	1    4450 1150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4450 1300 4900 1300
+Wire Wire Line
+	4450 1000 4900 1000
+$Comp
+L Device:C C22
+U 1 1 614B636F
+P 4900 1150
+F 0 "C22" H 5015 1196 50  0000 L CNN
+F 1 "4.7uF" H 5015 1105 50  0000 L CNN
+F 2 "" H 4938 1000 50  0001 C CNN
+F 3 "~" H 4900 1150 50  0001 C CNN
+	1    4900 1150
+	1    0    0    -1  
+$EndComp
+Connection ~ 4900 1000
+Connection ~ 4900 1300
+Wire Wire Line
+	4900 1300 5350 1300
+Wire Wire Line
+	4900 1000 5350 1000
+$Comp
+L Device:C C23
+U 1 1 614B7D1A
+P 5350 1150
+F 0 "C23" H 5465 1196 50  0000 L CNN
+F 1 "470nF" H 5465 1105 50  0000 L CNN
+F 2 "" H 5388 1000 50  0001 C CNN
+F 3 "~" H 5350 1150 50  0001 C CNN
+	1    5350 1150
+	1    0    0    -1  
+$EndComp
+Connection ~ 5350 1000
+Wire Wire Line
+	5350 1000 5800 1000
+Connection ~ 5350 1300
+Wire Wire Line
+	5350 1300 5800 1300
+Connection ~ 5800 1000
+Connection ~ 5800 1300
+$Comp
+L Device:C C24
+U 1 1 614B833F
+P 5800 1150
+F 0 "C24" H 5915 1196 50  0000 L CNN
+F 1 "470nF" H 5915 1105 50  0000 L CNN
+F 2 "" H 5838 1000 50  0001 C CNN
+F 3 "~" H 5800 1150 50  0001 C CNN
+	1    5800 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C25
+U 1 1 614BA633
+P 6250 1150
+F 0 "C25" H 6365 1196 50  0000 L CNN
+F 1 "470nF" H 6365 1105 50  0000 L CNN
+F 2 "" H 6288 1000 50  0001 C CNN
+F 3 "~" H 6250 1150 50  0001 C CNN
+	1    6250 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C26
+U 1 1 614BAE20
+P 6700 1150
+F 0 "C26" H 6815 1196 50  0000 L CNN
+F 1 "470nF" H 6815 1105 50  0000 L CNN
+F 2 "" H 6738 1000 50  0001 C CNN
+F 3 "~" H 6700 1150 50  0001 C CNN
+	1    6700 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C27
+U 1 1 614BB1D9
+P 7150 1150
+F 0 "C27" H 7265 1196 50  0000 L CNN
+F 1 "47nF" H 7265 1105 50  0000 L CNN
+F 2 "" H 7188 1000 50  0001 C CNN
+F 3 "~" H 7150 1150 50  0001 C CNN
+	1    7150 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C28
+U 1 1 614BB6C0
+P 7600 1150
+F 0 "C28" H 7715 1196 50  0000 L CNN
+F 1 "47nF" H 7715 1105 50  0000 L CNN
+F 2 "" H 7638 1000 50  0001 C CNN
+F 3 "~" H 7600 1150 50  0001 C CNN
+	1    7600 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C29
+U 1 1 614BBD0B
+P 8050 1150
+F 0 "C29" H 8165 1196 50  0000 L CNN
+F 1 "47nF" H 8165 1105 50  0000 L CNN
+F 2 "" H 8088 1000 50  0001 C CNN
+F 3 "~" H 8050 1150 50  0001 C CNN
+	1    8050 1150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8050 1000 8050 850 
+Wire Wire Line
+	5800 1000 6250 1000
+Connection ~ 8050 1000
+Connection ~ 6250 1000
+Wire Wire Line
+	6250 1000 6700 1000
+Connection ~ 6700 1000
+Wire Wire Line
+	6700 1000 7150 1000
+Connection ~ 7150 1000
+Wire Wire Line
+	7150 1000 7600 1000
+Connection ~ 7600 1000
+Wire Wire Line
+	7600 1000 8050 1000
+Wire Wire Line
+	8050 1300 8050 1400
+Wire Wire Line
+	5800 1300 6250 1300
+Connection ~ 8050 1300
+Connection ~ 6250 1300
+Wire Wire Line
+	6250 1300 6700 1300
+Connection ~ 6700 1300
+Wire Wire Line
+	6700 1300 7150 1300
+Connection ~ 7150 1300
+Wire Wire Line
+	7150 1300 7600 1300
+Connection ~ 7600 1300
+Wire Wire Line
+	7600 1300 8050 1300
+$EndSCHEMATC
