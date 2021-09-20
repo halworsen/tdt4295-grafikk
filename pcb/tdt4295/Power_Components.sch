@@ -1118,4 +1118,144 @@ Wire Wire Line
 Wire Wire Line
 	6700 1650 6700 1950
 Connection ~ 6700 1950
+$Comp
+L Connector:TestPoint_Probe TP?
+U 1 1 617D83E5
+P 3950 6450
+F 0 "TP?" H 4103 6551 50  0000 L CNN
+F 1 "TestPoint_Probe" H 4103 6460 50  0000 L CNN
+F 2 "" H 4150 6450 50  0001 C CNN
+F 3 "~" H 4150 6450 50  0001 C CNN
+	1    3950 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint_Probe TP?
+U 1 1 617D910C
+P 3950 6650
+F 0 "TP?" H 4103 6751 50  0000 L CNN
+F 1 "TestPoint_Probe" H 4103 6660 50  0000 L CNN
+F 2 "" H 4150 6650 50  0001 C CNN
+F 3 "~" H 4150 6650 50  0001 C CNN
+	1    3950 6650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint_Probe TP?
+U 1 1 617D9DC0
+P 3950 6850
+F 0 "TP?" H 4103 6951 50  0000 L CNN
+F 1 "TestPoint_Probe" H 4103 6860 50  0000 L CNN
+F 2 "" H 4150 6850 50  0001 C CNN
+F 3 "~" H 4150 6850 50  0001 C CNN
+	1    3950 6850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint_Probe TP?
+U 1 1 617DA131
+P 3950 7050
+F 0 "TP?" H 4103 7151 50  0000 L CNN
+F 1 "TestPoint_Probe" H 4103 7060 50  0000 L CNN
+F 2 "" H 4150 7050 50  0001 C CNN
+F 3 "~" H 4150 7050 50  0001 C CNN
+	1    3950 7050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint_Probe TP?
+U 1 1 617DA44A
+P 3950 7250
+F 0 "TP?" H 4103 7351 50  0000 L CNN
+F 1 "TestPoint_Probe" H 4103 7260 50  0000 L CNN
+F 2 "" H 4150 7250 50  0001 C CNN
+F 3 "~" H 4150 7250 50  0001 C CNN
+	1    3950 7250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 617E7DF6
+P 3800 6300
+F 0 "#PWR?" H 3800 6150 50  0001 C CNN
+F 1 "+5V" H 3815 6473 50  0000 C CNN
+F 2 "" H 3800 6300 50  0001 C CNN
+F 3 "" H 3800 6300 50  0001 C CNN
+	1    3800 6300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3800 6300 3800 6450
+Wire Wire Line
+	3800 6450 3950 6450
+$Comp
+L power:+3V3 #PWR?
+U 1 1 61800EE5
+P 3600 6300
+F 0 "#PWR?" H 3600 6150 50  0001 C CNN
+F 1 "+3V3" H 3615 6473 50  0000 C CNN
+F 2 "" H 3600 6300 50  0001 C CNN
+F 3 "" H 3600 6300 50  0001 C CNN
+	1    3600 6300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3600 6300 3600 6650
+Wire Wire Line
+	3600 6650 3950 6650
+$Comp
+L power:+1V8 #PWR?
+U 1 1 6180C15B
+P 3400 6300
+F 0 "#PWR?" H 3400 6150 50  0001 C CNN
+F 1 "+1V8" H 3415 6473 50  0000 C CNN
+F 2 "" H 3400 6300 50  0001 C CNN
+F 3 "" H 3400 6300 50  0001 C CNN
+	1    3400 6300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3400 6300 3400 6850
+Wire Wire Line
+	3400 6850 3950 6850
+$Comp
+L power:+1V0 #PWR?
+U 1 1 61817BCE
+P 3200 6300
+F 0 "#PWR?" H 3200 6150 50  0001 C CNN
+F 1 "+1V0" H 3215 6473 50  0000 C CNN
+F 2 "" H 3200 6300 50  0001 C CNN
+F 3 "" H 3200 6300 50  0001 C CNN
+	1    3200 6300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3200 6300 3200 7050
+Wire Wire Line
+	3200 7050 3950 7050
+$Comp
+L power:GND #PWR?
+U 1 1 61823BA4
+P 3800 7400
+F 0 "#PWR?" H 3800 7150 50  0001 C CNN
+F 1 "GND" H 3805 7227 50  0000 C CNN
+F 2 "" H 3800 7400 50  0001 C CNN
+F 3 "" H 3800 7400 50  0001 C CNN
+	1    3800 7400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3800 7400 3800 7250
+Wire Wire Line
+	3800 7250 3950 7250
+Wire Notes Line
+	2950 5900 2950 7650
+Wire Notes Line
+	2950 7650 4850 7650
+Wire Notes Line
+	4850 7650 4850 5900
+Wire Notes Line
+	4850 5900 2950 5900
+Text Notes 3650 6000 0    50   ~ 0
+Probe points
 $EndSCHEMATC
