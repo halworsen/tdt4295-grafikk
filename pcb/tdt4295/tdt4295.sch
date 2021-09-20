@@ -745,8 +745,6 @@ Connection ~ 11350 3650
 NoConn ~ 8850 4300
 Wire Notes Line
 	14150 5500 14150 900 
-Wire Notes Line
-	13650 900  3900 900 
 Text Notes 8650 1050 0    50   ~ 0
 EFM32GG MCU
 Wire Wire Line
@@ -771,8 +769,6 @@ Wire Wire Line
 	13650 4600 13550 4600
 Wire Wire Line
 	13550 4700 13650 4700
-Wire Notes Line
-	3900 5500 13650 5500
 Wire Notes Line
 	3900 900  3900 5500
 Wire Wire Line
@@ -1018,7 +1014,7 @@ Connection ~ 9550 4400
 Wire Wire Line
 	9550 4400 9850 4400
 Text Notes 9750 3900 0    50   ~ 0
-See AN0002.1\nFig 3.3
+See AN0002.1\nFig 3.3 & 2.6
 Text Notes 5700 4850 0    50   ~ 0
 See AN0002.1\nFig 3.3
 Wire Wire Line
@@ -1149,4 +1145,8 @@ Wire Wire Line
 	9500 3450 9500 3400
 Wire Wire Line
 	9500 3400 8850 3400
+Wire Notes Line
+	3900 5500 14150 5500
+Wire Notes Line
+	3900 900  14150 900 
 $EndSCHEMATC
