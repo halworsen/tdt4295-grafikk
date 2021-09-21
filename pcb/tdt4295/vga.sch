@@ -327,7 +327,7 @@ Wire Wire Line
 	8250 2650 6700 2650
 Wire Wire Line
 	8250 2750 6700 2750
-Text Notes 10200 6300 0    50   ~ 0
+Text Notes 8450 5700 0    50   ~ 0
 ICD15S13E6GX00LF maybe?\n
 $Comp
 L 5177802-9:5177802-9 J?

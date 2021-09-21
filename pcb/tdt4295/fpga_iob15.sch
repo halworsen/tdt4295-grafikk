@@ -327,4 +327,6 @@ F 3 "~" H 5450 1950 50  0001 C CNN
 $EndComp
 Text Notes 4300 2550 2    50   ~ 0
 Datasheet says:\n1x47uF\n2x4.7uF\n4x470nF
+Text Notes 4650 3400 2    50   ~ 10
+Have SPIs between FPGA and MCU on IOB15?
 $EndSCHEMATC
