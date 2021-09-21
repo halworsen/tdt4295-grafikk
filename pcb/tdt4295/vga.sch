@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 3
+Sheet 4 5
 Title ""
 Date ""
 Rev ""
@@ -29,10 +29,10 @@ $EndComp
 Wire Wire Line
 	4650 3350 5250 3350
 $Comp
-L Device:C C101
+L Device:C C?
 U 1 1 61467E30
 P 5250 3500
-F 0 "C101" H 5365 3546 50  0000 L CNN
+F 0 "C?" H 5365 3546 50  0000 L CNN
 F 1 "1uF" H 5365 3455 50  0000 L CNN
 F 2 "" H 5288 3350 50  0001 C CNN
 F 3 "~" H 5250 3500 50  0001 C CNN
@@ -41,10 +41,10 @@ F 3 "~" H 5250 3500 50  0001 C CNN
 $EndComp
 Connection ~ 5250 3350
 $Comp
-L Device:C C102
+L Device:C C?
 U 1 1 614688C2
 P 5650 3500
-F 0 "C102" H 5765 3546 50  0000 L CNN
+F 0 "C?" H 5765 3546 50  0000 L CNN
 F 1 "100nF" H 5765 3455 50  0000 L CNN
 F 2 "" H 5688 3350 50  0001 C CNN
 F 3 "~" H 5650 3500 50  0001 C CNN
@@ -135,21 +135,17 @@ Wire Wire Line
 Wire Wire Line
 	5250 3350 5650 3350
 Text Label 5000 2350 0    50   ~ 0
-VGA_R0
+R0
 Text Label 5000 2450 0    50   ~ 0
-VGA_R1
-Text Label 5000 2550 0    50   ~ 0
-VGA_R2
-Text Label 5000 2650 0    50   ~ 0
-VGA_R3
+R1
 Text Label 5000 2750 0    50   ~ 0
-VGA_B0
+B0
 Text Label 5000 2850 0    50   ~ 0
-VGA_B1
+B1
 Text Label 5000 2950 0    50   ~ 0
-VGA_B2
+B2
 Text Label 5000 3050 0    50   ~ 0
-VGA_B3
+B3
 Wire Wire Line
 	3050 2250 1500 2250
 Wire Wire Line
@@ -166,22 +162,6 @@ Wire Wire Line
 	3050 2750 1500 2750
 Wire Wire Line
 	3050 2850 1500 2850
-Text HLabel 1500 2850 0    50   Input ~ 0
-B3
-Text HLabel 1500 2750 0    50   Input ~ 0
-B2
-Text HLabel 1500 2650 0    50   Input ~ 0
-B1
-Text HLabel 1500 2550 0    50   Input ~ 0
-B0
-Text HLabel 1500 2450 0    50   Input ~ 0
-R3
-Text HLabel 1500 2350 0    50   Input ~ 0
-R2
-Text HLabel 1500 2250 0    50   Input ~ 0
-R1
-Text HLabel 1500 2150 0    50   Input ~ 0
-R0
 Text Notes 1750 1950 0    50   ~ 0
 Needs to be connected to ground?\n
 $Comp
@@ -220,10 +200,10 @@ $EndComp
 Wire Wire Line
 	9850 3250 10450 3250
 $Comp
-L Device:C C103
+L Device:C C?
 U 1 1 61478F90
 P 10450 3400
-F 0 "C103" H 10565 3446 50  0000 L CNN
+F 0 "C?" H 10565 3446 50  0000 L CNN
 F 1 "1uF" H 10565 3355 50  0000 L CNN
 F 2 "" H 10488 3250 50  0001 C CNN
 F 3 "~" H 10450 3400 50  0001 C CNN
@@ -232,10 +212,10 @@ F 3 "~" H 10450 3400 50  0001 C CNN
 $EndComp
 Connection ~ 10450 3250
 $Comp
-L Device:C C104
+L Device:C C?
 U 1 1 61478F97
 P 10850 3400
-F 0 "C104" H 10965 3446 50  0000 L CNN
+F 0 "C?" H 10965 3446 50  0000 L CNN
 F 1 "100nF" H 10965 3355 50  0000 L CNN
 F 2 "" H 10888 3250 50  0001 C CNN
 F 3 "~" H 10850 3400 50  0001 C CNN
@@ -298,17 +278,17 @@ Wire Wire Line
 Wire Wire Line
 	9850 2950 10200 2950
 Text Label 10200 2250 0    50   ~ 0
-VGA_G0
+G0
 Text Label 10200 2350 0    50   ~ 0
-VGA_G1
+G1
 Text Label 10200 2450 0    50   ~ 0
-VGA_G2
+G2
 Text Label 10200 2550 0    50   ~ 0
-VGA_G3
+G3
 Text Label 10200 2850 0    50   ~ 0
-VGA_HS
+HS
 Text Label 10200 2950 0    50   ~ 0
-VGA_VS
+VS
 NoConn ~ 9850 2650
 NoConn ~ 9850 2750
 Wire Wire Line
@@ -343,22 +323,10 @@ Wire Wire Line
 	8250 2250 6700 2250
 Wire Wire Line
 	8250 2350 6700 2350
-Text HLabel 6700 2350 0    50   Input ~ 0
-G3
-Text HLabel 6700 2250 0    50   Input ~ 0
-G2
-Text HLabel 6700 2150 0    50   Input ~ 0
-G1
-Text HLabel 6700 2050 0    50   Input ~ 0
-G0
 Wire Wire Line
 	8250 2650 6700 2650
 Wire Wire Line
 	8250 2750 6700 2750
-Text HLabel 6700 2750 0    50   Input ~ 0
-VS
-Text HLabel 6700 2650 0    50   Input ~ 0
-HS
 Text Notes 10200 6300 0    50   ~ 0
 ICD15S13E6GX00LF maybe?\n
 $Comp
@@ -375,12 +343,12 @@ $EndComp
 Wire Wire Line
 	7700 4900 7650 4900
 Text Label 7100 4900 0    50   ~ 0
-VGA_HS
+HS
 $Comp
-L Device:R R39
+L Device:R R?
 U 1 1 6147C891
 P 7500 4900
-F 0 "R39" V 7293 4900 50  0000 C CNN
+F 0 "R?" V 7293 4900 50  0000 C CNN
 F 1 "100" V 7384 4900 50  0000 C CNN
 F 2 "" V 7430 4900 50  0001 C CNN
 F 3 "~" H 7500 4900 50  0001 C CNN
@@ -401,7 +369,7 @@ F 3 "~" H 6850 5000 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Text Label 6450 5000 0    50   ~ 0
-VGA_VS
+VS
 Wire Wire Line
 	6450 5000 6700 5000
 Wire Wire Line
@@ -442,10 +410,10 @@ NoConn ~ 7700 4700
 Wire Wire Line
 	7700 5900 5750 5900
 $Comp
-L Device:R R19
+L Device:R R?
 U 1 1 61490189
 P 5450 5900
-F 0 "R19" V 5243 5900 50  0000 C CNN
+F 0 "R?" V 5243 5900 50  0000 C CNN
 F 1 "536" V 5334 5900 50  0000 C CNN
 F 2 "" V 5380 5900 50  0001 C CNN
 F 3 "~" H 5450 5900 50  0001 C CNN
@@ -453,10 +421,10 @@ F 3 "~" H 5450 5900 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R R21
+L Device:R R?
 U 1 1 61490B3B
 P 5750 6050
-F 0 "R21" H 5680 6004 50  0000 R CNN
+F 0 "R?" H 5680 6004 50  0000 R CNN
 F 1 "270" H 5680 6095 50  0000 R CNN
 F 2 "" V 5680 6050 50  0001 C CNN
 F 3 "~" H 5750 6050 50  0001 C CNN
@@ -801,29 +769,29 @@ Wire Wire Line
 Wire Wire Line
 	2750 6100 3050 6100
 Text Label 5000 5900 0    50   ~ 0
-VGA_B3
+B3
 Text Label 5000 6200 0    50   ~ 0
-VGA_B2
+B2
 Text Label 5000 6500 0    50   ~ 0
-VGA_B1
+B1
 Text Label 5000 6800 0    50   ~ 0
-VGA_B0
+B0
 Text Label 3800 6400 0    50   ~ 0
-VGA_G0
+G0
 Text Label 3800 6100 0    50   ~ 0
-VGA_G1
+G1
 Text Label 3800 5800 0    50   ~ 0
-VGA_G2
+G2
 Text Label 3800 5500 0    50   ~ 0
-VGA_G3
+G3
 Text Label 2750 6100 0    50   ~ 0
-VGA_R0
+R0
 Text Label 2750 5800 0    50   ~ 0
-VGA_R1
+R1
 Text Label 2750 5500 0    50   ~ 0
-VGA_R2
+R2
 Text Label 2750 5200 0    50   ~ 0
-VGA_R3
+R3
 Wire Wire Line
 	7700 5800 6500 5800
 Wire Wire Line
@@ -834,4 +802,36 @@ Wire Wire Line
 	6600 5700 6600 5200
 Wire Wire Line
 	3500 5200 6600 5200
+Text Label 5000 2550 0    50   ~ 0
+R2
+Text Label 5000 2650 0    50   ~ 0
+R3
+Text GLabel 1500 2150 0    50   Input ~ 0
+VGA_R0
+Text GLabel 1500 2250 0    50   Input ~ 0
+VGA_R1
+Text GLabel 1500 2350 0    50   Input ~ 0
+VGA_R2
+Text GLabel 1500 2450 0    50   Input ~ 0
+VGA_R3
+Text GLabel 1500 2550 0    50   Input ~ 0
+VGA_B0
+Text GLabel 1500 2650 0    50   Input ~ 0
+VGA_B1
+Text GLabel 1500 2750 0    50   Input ~ 0
+VGA_B2
+Text GLabel 1500 2850 0    50   Input ~ 0
+VGA_B3
+Text GLabel 6700 2050 0    50   Input ~ 0
+VGA_G0
+Text GLabel 6700 2150 0    50   Input ~ 0
+VGA_G1
+Text GLabel 6700 2250 0    50   Input ~ 0
+VGA_G2
+Text GLabel 6700 2350 0    50   Input ~ 0
+VGA_G3
+Text GLabel 6700 2650 0    50   Input ~ 0
+VGA_HS
+Text GLabel 6700 2750 0    50   Input ~ 0
+VGA_VS
 $EndSCHEMATC

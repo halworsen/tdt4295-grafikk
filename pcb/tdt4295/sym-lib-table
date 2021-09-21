@@ -156,4 +156,5 @@
   (lib (name xc7a100t-ftg256-modified)(type Legacy)(uri ${KIPRJMOD}/symlib/xc7a100t-ftg256-modified.lib)(options "")(descr ""))
   (lib (name SN74ALVC245PWR)(type Legacy)(uri ${KIPRJMOD}/symlib/kicad-ext-lib/SN74ALVC245PWR/SN74ALVC245PWR.lib)(options "")(descr ""))
   (lib (name 5177802-9)(type Legacy)(uri ${KIPRJMOD}/symlib/kicad-ext-lib/5177802-9/5177802-9.lib)(options "")(descr ""))
+  (lib (name 66953-008LF)(type Legacy)(uri ${KIPRJMOD}/symlib/kicad-ext-lib/66953-008LF/66953-008LF.lib)(options "")(descr ""))
 )
