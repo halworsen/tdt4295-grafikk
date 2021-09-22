@@ -65,7 +65,7 @@ class Main extends Module {
     val btn = Input(UInt(4.W))
   })
 
-  val fb = Module(new FrameBuffer(640, 480))
+  val fb = Module(new FrameBuffer(24, 24))
   val bresenhams = Module(new LineDrawing(10, 500, 200, 250))
   bresenhams.io.xs := 0.U
   bresenhams.io.xe := 400.U
@@ -82,14 +82,15 @@ class Main extends Module {
   fb.io.readX := vga.io.selX
   fb.io.readY := vga.io.selY
 
-  //val writeBtn = Module(new WriteBtn)
-  //writeBtn.io.aresetn := io.aresetn
-  //writeBtn.io.btn := io.btn
+  val writeBtn = Module(new WriteBtn)
+  writeBtn.io.aresetn := io.aresetn
+  writeBtn.io.btn := io.btn
 
   //fb.io.writeEnable := writeBtn.io.writeEnable
 
   vga.io.data := fb.io.readVal
   vga.io.clock := vgaClock.io.clk_pix
+  vga.io.reset := writeBtn.io.writeEnable
 
   vgaClock.io.clk := clock
 }

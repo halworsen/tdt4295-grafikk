@@ -22,6 +22,11 @@ class LineDrawing(
     val writeVal = Output(Bool())
   })
 
+  val writeEnable = RegInit(false.B)
+  val writeX = Reg(UInt(log2Up(xEnd).W))
+  val writeY = Reg(UInt(log2Up(yEnd).W))
+  val writeVal = RegInit(true.B)
+
   // Initialize registers
   val x = RegInit(0.U(log2(xEnd).W));
   val y = RegInit(0.U(log2(yEnd).W));
@@ -40,10 +45,10 @@ class LineDrawing(
   when(x <= io.xe) {
     assert(-dx <= e && e < 0.U, "-dx <= e < 0 is not satisfied!");
     // Draw pixel
-    io.writeEnable := true.B
-    io.writeX := x.asUInt()
-    io.writeY := y.asUInt()
-    io.writeVal := true.B
+    writeEnable := true.B
+    writeX := x.asUInt()
+    writeY := y.asUInt()
+    writeVal := true.B
 
     //setPixel(enable, x.asUInt(), y.asUInt(), true.B)
     x := x + 1.U;
@@ -53,4 +58,9 @@ class LineDrawing(
       e := e - dx;
     }
   }
+
+  io.writeEnable := writeEnable
+  io.writeX := writeX
+  io.writeY := writeY
+  io.writeVal := writeVal
 }
