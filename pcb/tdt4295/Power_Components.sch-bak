@@ -1001,7 +1001,7 @@ Wire Wire Line
 	8300 1650 8100 1650
 Wire Wire Line
 	5450 1200 8300 1200
-Text GLabel 8200 2150 2    50   Input ~ 0
+Text GLabel 8200 2150 2    50   Output ~ 0
 R1_PG
 Wire Wire Line
 	8200 2150 8100 2150
