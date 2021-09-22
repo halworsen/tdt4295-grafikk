@@ -33,15 +33,14 @@ class LineDrawing(
   e := -(dx >> 1.U).asUInt();
 
   x := x + 1.U;
-  when(x <= io.xe) {
+  when(x <= io.xe && e >= 0.U) {
+      y := y + 1.U;
+      e := e - dx;
+  } .elsewhen(x <= io.xe) {
     assert(-dx <= e && e < 0.U, "-dx <= e < 0 is not satisfied!");
     // Draw pixel
     setPixel(fb, x.asUInt(), y.asUInt(), true.B)
     x := x + 1.U;
     e := e + dy;
-    when(e >= 0.U) {
-      y := y + 1.U;
-      e := e - dx;
-    }
   }
 }
