@@ -43,7 +43,7 @@ class LineDrawing(
       y := y + 1.U;
       e := e - dx;
     }
-  } .otherwise {
+  }.otherwise {
     io.done := true.B
   }
 }
