@@ -24,7 +24,7 @@ class LineDrawing(
 
     val done = Output(RegInit(true.B))
   })
-  
+
   val x = Reg(UInt(log2(xStart).W))
   val y = Reg(UInt(log2(yStart).W))
   val dx = Reg(SInt(log2(xEnd).W))
@@ -51,7 +51,6 @@ class LineDrawing(
     dy := io.ye - io.ys
     e := -(dx >> 1.U).asSInt();
   }
-
   when(x <= io.xe) {
     // Draw pixel
     writeEnable := true.B
@@ -73,6 +72,4 @@ class LineDrawing(
     io.writeY := writeY
     io.writeVal := writeVal
   }
-
-  
 }
