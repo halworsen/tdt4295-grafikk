@@ -16,31 +16,34 @@ class LineDrawing(
     val ys = Input(UInt(log2(yStart).W))
     val xe = Input(UInt(log2(xEnd).W))
     val ye = Input(UInt(log2(yEnd).W))
+    val done = Output(RegInit(true.B))
   })
+  val x = Reg(UInt(log2(xStart).W))
+  val y = Reg(UInt(log2(yStart).W))
+  val dx = Reg(SInt(log2(xEnd).W))
+  val dy = Reg(SInt(log2(yEnd).W))
+  val e = Reg(SInt(log2(xStart).W))
 
-  // Initialize registers
-  val x = RegInit(0.U(log2(xEnd).W));
-  val y = RegInit(0.U(log2(yEnd).W));
-  val dx = RegInit(0.U(log2(xEnd).W));
-  val dy = RegInit(0.U(log2(yEnd).W));
-  val e =
-    RegInit(0.U(log2(xEnd).W)); // This could be swapped for another bitwidth
+  when(io.done) {
+    // Initialize registers
+    io.done := false.B
+    x := io.xs
+    y := io.ys
+    dx := io.xe - io.xs
+    dy := io.ye - io.ys
+    e := -(dx >> 1.U).asSInt();
+  }
 
-  x := io.xs
-  y := io.ys
-  dx := io.xe - io.xs
-  dy := io.ye - io.ys
-  e := -(dx >> 1.U).asUInt();
-
-  x := x + 1.U;
-  when(x <= io.xe && e >= 0.U) {
-      y := y + 1.U;
-      e := e - dx;
-  } .elsewhen(x <= io.xe) {
-    assert(-dx <= e && e < 0.U, "-dx <= e < 0 is not satisfied!");
+  when(x <= io.xe) {
     // Draw pixel
     setPixel(fb, x.asUInt(), y.asUInt(), true.B)
     x := x + 1.U;
     e := e + dy;
+    when(e >= 0.S) {
+      y := y + 1.U;
+      e := e - dx;
+    }
+  } .otherwise {
+    io.done := true.B
   }
 }
