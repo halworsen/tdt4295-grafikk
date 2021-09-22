@@ -3,7 +3,7 @@ import chisel3.util._
 import fb.FrameBuffer
 import ld.LineDrawing
 import vga.VGA
-import vga.{Clock => VGAClock}
+import vga.VGAClock
 
 class WriteBtn extends Module {
   val io = IO(new Bundle {
@@ -63,36 +63,71 @@ class Main extends Module {
     val aresetn = Input(Bool())
 
     val btn = Input(UInt(4.W))
+
+    val vga_hsync = Output(Bool())
+    val vga_vsync = Output(Bool())
+    val vga_r = Output(UInt(4.W))
+    val vga_g = Output(UInt(4.W))
+    val vga_b = Output(UInt(4.W))
   })
 
-  val fb = Module(new FrameBuffer(24, 24))
-  val bresenhams = Module(new LineDrawing(10, 500, 200, 250))
-  bresenhams.io.xs := 0.U
-  bresenhams.io.xe := 400.U
-  bresenhams.io.ys := 200.U
-  bresenhams.io.ye := 200.U
+  withReset(~io.aresetn) {
+    val fb = Module(new FrameBuffer(24, 24))
+    val bresenhams = Module(new LineDrawing(10, 500, 200, 250))
+    bresenhams.io.xs := 0.U
+    bresenhams.io.xe := 400.U
+    bresenhams.io.ys := 200.U
+    bresenhams.io.ye := 200.U
 
-  fb.io.writeEnable := bresenhams.io.writeEnable
-  fb.io.writeX := bresenhams.io.writeX
-  fb.io.writeY := bresenhams.io.writeY
-  fb.io.writeVal := bresenhams.io.writeVal
+    fb.io.writeEnable := bresenhams.io.writeEnable
+    fb.io.writeX := bresenhams.io.writeX
+    fb.io.writeY := bresenhams.io.writeY
+    fb.io.writeVal := bresenhams.io.writeVal
 
-  val vga = Module(new VGA)
-  val vgaClock = Module(new VGAClock)
-  fb.io.readX := vga.io.selX
-  fb.io.readY := vga.io.selY
+    val vga = Module(new VGA)
+    val vgaClock = Module(new VGAClock)
+    fb.io.readX := vga.io.selX
+    fb.io.readY := vga.io.selY
 
-  val writeBtn = Module(new WriteBtn)
-  writeBtn.io.aresetn := io.aresetn
-  writeBtn.io.btn := io.btn
+    val writeBtn = Module(new WriteBtn)
+    writeBtn.io.aresetn := io.aresetn
+    writeBtn.io.btn := io.btn
 
-  //fb.io.writeEnable := writeBtn.io.writeEnable
+    //fb.io.writeEnable := writeBtn.io.writeEnable
 
-  vga.io.data := fb.io.readVal
-  vga.io.clock := vgaClock.io.clk_pix
-  vga.io.reset := writeBtn.io.writeEnable
+    vga.io.data := fb.io.readVal
+    vga.io.clock := vgaClock.io.clk_pix
+    vga.io.reset := ~io.aresetn
 
-  vgaClock.io.clk := clock
+    //io.vga_r := vga.io.out.asUInt()
+    //io.vga_g := vga.io.out.asUInt()
+    //io.vga_b := vga.io.out.asUInt()
+    vga.io.out := DontCare
+
+    vgaClock.io.clk := clock
+
+    val shouldDraw = vga.io.selX < 48.U && vga.io.selY < 48.U
+    withClock(vgaClock.io.clk_pix) {
+      io.vga_hsync := vga.io.hsync
+      io.vga_vsync := vga.io.vsync
+
+      when(~vga.io.enable) {
+        io.vga_r := "h0".U
+        io.vga_g := "h0".U
+        io.vga_b := "h0".U
+
+      }.elsewhen(shouldDraw) {
+        io.vga_r := "hf".U
+        io.vga_g := "h8".U
+        io.vga_b := "h0".U
+      }.otherwise {
+        io.vga_r := "h0".U + vga.io.selX
+        io.vga_g := "h8".U + vga.io.selX
+        io.vga_b := "hf".U
+      }
+
+    }
+  }
 }
 
 // Compiles chisel files to one single verilog file.

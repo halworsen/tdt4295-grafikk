@@ -4,7 +4,7 @@ import chisel3._
 import chisel3.util.HasBlackBoxResource
 
 // Wrapper module around ARTIX MMCE2 module
-class Clock extends BlackBox with HasBlackBoxResource {
+class VGAClock extends BlackBox with HasBlackBoxResource {
   val io = IO(new Bundle {
     val clk = Input(Clock())
     val rst = Input(Reset())

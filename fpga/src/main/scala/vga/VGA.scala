@@ -14,6 +14,7 @@ class VGA extends Module {
     val selY = Output(UInt(16.W))
     val hsync = Output(Bool())
     val vsync = Output(Bool())
+    val enable = Output(Bool()) // Data enable. We can write to pixel.
     val out = Output(Bool())
 
     val clock = Input(Clock())
@@ -32,6 +33,7 @@ class VGA extends Module {
       io.hsync := false.B
       io.vsync := false.B
       io.out := io.data
+      io.enable := true.B
     } // HSYNC and VSYNC
       .elsewhen(
         counterHsync >= (640 + 16).U & counterHsync < (640 + 16 + 96).U & counterVsync >= (480 + 10).U & counterVsync < (480 + 10 + 2).U
@@ -39,6 +41,7 @@ class VGA extends Module {
         io.hsync := true.B
         io.vsync := true.B
         io.out := false.B
+        io.enable := false.B
       } // HSYNC
       .elsewhen(
         counterHsync >= (640 + 16).U & counterHsync < (640 + 16 + 96).U
@@ -46,6 +49,7 @@ class VGA extends Module {
         io.hsync := true.B
         io.vsync := false.B
         io.out := false.B
+        io.enable := false.B
       } // VSYNC
       .elsewhen(
         counterVsync >= (480 + 10).U & counterVsync < (480 + 10 + 2).U
@@ -53,12 +57,14 @@ class VGA extends Module {
         io.hsync := false.B
         io.vsync := true.B
         io.out := false.B
+        io.enable := false.B
         // Porches
       }
       .otherwise {
         io.hsync := false.B
         io.vsync := false.B
         io.out := false.B
+        io.enable := false.B
       }
   }
 }

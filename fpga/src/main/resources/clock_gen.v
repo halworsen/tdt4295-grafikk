@@ -4,7 +4,7 @@
 // Set to 25.2 MHz (640x480 60 Hz) with 100 MHz XO
 // MMCME2_BASE and BUFG are documented in Xilinx UG472
 
-module clock_gen_480p #(
+module VGAClock #(
     parameter MULT_MASTER=31.5,   // master clock multiplier (2.000-64.000)
     parameter DIV_MASTER=5,       // master clock divider (1-106)
     parameter DIV_PIX=25,         // pixel clock divider (1-128)
