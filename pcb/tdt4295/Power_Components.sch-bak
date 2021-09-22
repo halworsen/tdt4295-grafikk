@@ -463,8 +463,6 @@ Wire Notes Line
 	2750 4650 650  4650
 Text Notes 950  4750 0    50   ~ 0
 Power status LEDs & Hierarchical output
-Text Notes 9050 1150 0    50   ~ 0
-Ip>3.5A Irms>3.1A
 NoConn ~ 1350 1500
 $Comp
 L power:GND #PWR?
