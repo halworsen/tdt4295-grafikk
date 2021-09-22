@@ -2,8 +2,6 @@ package fb
 
 import chisel3._
 
-import scala.math._
-import tools.helpers
 import tools.helpers.log2
 
 class FrameBuffer(width: Int, height: Int) extends Module {
