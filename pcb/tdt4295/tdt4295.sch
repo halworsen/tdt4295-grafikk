@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 1 2
+Sheet 1 7
 Title ""
 Date ""
 Rev ""
@@ -328,44 +328,7 @@ Wire Wire Line
 	5850 2200 5850 2000
 Wire Wire Line
 	6150 2300 6850 2300
-$Comp
-L Connector_Generic:Conn_02x10_Odd_Even J102
-U 1 1 6148061B
-P 11400 3350
-F 0 "J102" V 11600 3850 50  0000 L CNN
-F 1 "MCU GPIO Header" V 11500 3850 50  0000 L CNN
-F 2 "" H 11400 3350 50  0001 C CNN
-F 3 "~" H 11400 3350 50  0001 C CNN
-	1    11400 3350
-	0    1    -1   0   
-$EndComp
 NoConn ~ 11800 1250
-$Comp
-L power:+3V3 #PWR0116
-U 1 1 6149A7FB
-P 11900 2850
-F 0 "#PWR0116" H 11900 2700 50  0001 C CNN
-F 1 "+3V3" H 11915 3023 50  0000 C CNN
-F 2 "" H 11900 2850 50  0001 C CNN
-F 3 "" H 11900 2850 50  0001 C CNN
-	1    11900 2850
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0117
-U 1 1 6149AFB1
-P 11900 3750
-F 0 "#PWR0117" H 11900 3500 50  0001 C CNN
-F 1 "GND" H 11905 3577 50  0000 C CNN
-F 2 "" H 11900 3750 50  0001 C CNN
-F 3 "" H 11900 3750 50  0001 C CNN
-	1    11900 3750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	11800 3650 11800 3550
-Wire Wire Line
-	11800 2950 11800 3050
 Text GLabel 11500 4500 0    50   BiDi ~ 0
 SDIO_DAT3
 Text GLabel 11500 4600 0    50   Input ~ 0
@@ -550,12 +513,6 @@ Wire Wire Line
 Wire Wire Line
 	8950 4700 8850 4700
 Wire Wire Line
-	11800 3650 11900 3650
-Wire Wire Line
-	11900 3650 11900 3750
-Wire Wire Line
-	11700 3650 11700 3550
-Wire Wire Line
 	9600 2400 9600 2450
 Wire Wire Line
 	8850 2400 9600 2400
@@ -571,58 +528,6 @@ Wire Wire Line
 	8850 2800 10150 2800
 Wire Wire Line
 	8950 2700 8850 2700
-Wire Wire Line
-	11800 2950 11900 2950
-Wire Wire Line
-	11900 2950 11900 2850
-Wire Wire Line
-	11700 2950 11700 3050
-Wire Wire Line
-	11600 2950 11600 3050
-Wire Wire Line
-	11500 2950 11500 3050
-Wire Wire Line
-	11400 2950 11400 3050
-Wire Wire Line
-	11300 2950 11300 3050
-Wire Wire Line
-	11200 2950 11200 3050
-Wire Wire Line
-	11100 2950 11100 3050
-$Comp
-L power:+3V3 #PWR0120
-U 1 1 6171BDCE
-P 10800 2850
-F 0 "#PWR0120" H 10800 2700 50  0001 C CNN
-F 1 "+3V3" H 10815 3023 50  0000 C CNN
-F 2 "" H 10800 2850 50  0001 C CNN
-F 3 "" H 10800 2850 50  0001 C CNN
-	1    10800 2850
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	10900 3050 10900 2950
-Wire Wire Line
-	10900 2950 10800 2950
-Wire Wire Line
-	10800 2950 10800 2850
-$Comp
-L power:GND #PWR0121
-U 1 1 6172366B
-P 10800 3750
-F 0 "#PWR0121" H 10800 3500 50  0001 C CNN
-F 1 "GND" H 10805 3577 50  0000 C CNN
-F 2 "" H 10800 3750 50  0001 C CNN
-F 3 "" H 10800 3750 50  0001 C CNN
-	1    10800 3750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	10800 3750 10800 3650
-Wire Wire Line
-	10800 3650 10900 3650
-Wire Wire Line
-	10900 3650 10900 3550
 NoConn ~ 8850 4300
 Wire Notes Line
 	15500 5500 15500 900 
@@ -1024,7 +929,7 @@ Text GLabel 6750 1600 0    50   BiDi ~ 0
 USART3_TX
 Text GLabel 6750 1700 0    50   Input ~ 0
 USART3_RX
-Text GLabel 6750 1800 0    50   BiDi ~ 0
+Text GLabel 6750 1800 0    50   Output ~ 0
 USART3_CLK
 Text GLabel 6750 1900 0    50   BiDi ~ 0
 USART3_CS
@@ -1305,8 +1210,6 @@ Wire Wire Line
 	4150 2700 4350 2700
 Text Notes 14150 1300 0    50   ~ 0
 All button inputs are active low
-Wire Wire Line
-	11600 3650 11600 3550
 Text GLabel 8950 1600 2    50   Output ~ 0
 SDIO_CMD
 Text GLabel 8950 1700 2    50   Output ~ 0
@@ -1427,66 +1330,47 @@ Wire Wire Line
 	14200 1750 14200 2200
 Wire Wire Line
 	14400 1750 14400 2350
-Text GLabel 11700 2950 1    50   UnSpc ~ 0
-GPIO_PA8
-Text GLabel 11600 2950 1    50   UnSpc ~ 0
-GPIO_PA12
-Text GLabel 11500 2950 1    50   UnSpc ~ 0
+Text GLabel 10850 3100 0    50   UnSpc ~ 0
 GPIO_PA14
-Text GLabel 11400 2950 1    50   UnSpc ~ 0
+Text GLabel 10850 3000 0    50   UnSpc ~ 0
 GPIO_PD6
-Text GLabel 11300 2950 1    50   UnSpc ~ 0
+Text GLabel 10850 2900 0    50   UnSpc ~ 0
 GPIO_PD8
-Text GLabel 11200 2950 1    50   UnSpc ~ 0
-GPIO_PF5
-Text GLabel 11100 2950 1    50   UnSpc ~ 0
-GPIO_PF12
-Text GLabel 11700 3650 3    50   UnSpc ~ 0
-GPIO_PE12
-Text GLabel 11600 3650 3    50   UnSpc ~ 0
-GPIO_PE13
-NoConn ~ 11000 3550
-NoConn ~ 11100 3550
-NoConn ~ 11200 3550
-NoConn ~ 11300 3550
-NoConn ~ 11400 3550
-NoConn ~ 11500 3550
 $Comp
 L Connector_Generic:Conn_01x06 J104
 U 1 1 61BFE8BD
-P 13100 3650
-F 0 "J104" H 13180 3642 50  0000 L CNN
-F 1 "MCU USART1 Header" H 13180 3551 50  0000 L CNN
-F 2 "" H 13100 3650 50  0001 C CNN
-F 3 "~" H 13100 3650 50  0001 C CNN
-	1    13100 3650
+P 12650 3050
+F 0 "J104" H 12730 3042 50  0000 L CNN
+F 1 "MCU USART1 Header" H 12730 2951 50  0000 L CNN
+F 2 "" H 12650 3050 50  0001 C CNN
+F 3 "~" H 12650 3050 50  0001 C CNN
+	1    12650 3050
 	1    0    0    -1  
 $EndComp
-Text GLabel 12750 3450 0    50   UnSpc ~ 0
+Text GLabel 12300 2850 0    50   UnSpc ~ 0
 USART1_TX
-Text GLabel 12750 3550 0    50   UnSpc ~ 0
+Text GLabel 12300 2950 0    50   UnSpc ~ 0
 USART1_RX
-Text GLabel 12750 3650 0    50   UnSpc ~ 0
+Text GLabel 12300 3050 0    50   UnSpc ~ 0
 USART1_CLK
-Text GLabel 12750 3750 0    50   UnSpc ~ 0
+Text GLabel 12300 3150 0    50   UnSpc ~ 0
 USART1_CS
-Text GLabel 12750 3850 0    50   UnSpc ~ 0
+Text GLabel 12300 3250 0    50   UnSpc ~ 0
 USART1_RTS
-Text GLabel 12750 3950 0    50   UnSpc ~ 0
+Text GLabel 12300 3350 0    50   UnSpc ~ 0
 USART1_CTS
 Wire Wire Line
-	12750 3450 12900 3450
+	12300 2850 12450 2850
 Wire Wire Line
-	12900 3550 12750 3550
+	12450 2950 12300 2950
 Wire Wire Line
-	12750 3650 12900 3650
+	12300 3050 12450 3050
 Wire Wire Line
-	12900 3750 12750 3750
+	12450 3150 12300 3150
 Wire Wire Line
-	12750 3850 12900 3850
+	12300 3250 12450 3250
 Wire Wire Line
-	12900 3950 12750 3950
-NoConn ~ 11000 3050
+	12450 3350 12300 3350
 $Comp
 L power:GND #PWR?
 U 1 1 615042CB
@@ -1670,4 +1554,129 @@ Wire Wire Line
 	14050 3200 14350 3200
 Wire Wire Line
 	14050 2900 13950 2900
+$Sheet
+S 750  2250 1150 950 
+U 617F72AC
+F0 "FPGA" 50
+F1 "fpga.sch" 50
+$EndSheet
+Text GLabel 1800 3900 0    50   BiDi ~ 0
+FPGA_MCU_USART_CLK
+Text GLabel 1800 4000 0    50   BiDi ~ 0
+FPGA_MCU_USART_CS
+Text GLabel 1800 4200 0    50   Input ~ 0
+FPGA_MCU_USART_CTS
+Text GLabel 1800 4100 0    50   Output ~ 0
+FPGA_MCU_USART_RTS
+Text GLabel 1800 4300 0    50   Output ~ 0
+FPGA_MCU_USART_TX
+Text GLabel 1800 4400 0    50   Input ~ 0
+FPGA_MCU_USART_RX
+Text Notes 1750 3800 0    50   ~ 0
+SPI over USART
+Text GLabel 2300 4400 2    50   BiDi ~ 0
+USART3_TX
+Text GLabel 2300 4300 2    50   Input ~ 0
+USART3_RX
+Wire Wire Line
+	2300 4400 1800 4400
+Wire Wire Line
+	1800 4300 2300 4300
+Text GLabel 2300 4200 2    50   Output ~ 0
+USART3_RTS
+Text GLabel 2300 4100 2    50   Input ~ 0
+USART3_CTS
+Text GLabel 2300 4000 2    50   BiDi ~ 0
+USART3_CS
+Text GLabel 2300 3900 2    50   BiDi ~ 0
+USART3_CLK
+Wire Wire Line
+	2300 3900 1800 3900
+Wire Wire Line
+	1800 4000 2300 4000
+Wire Wire Line
+	2300 4100 1800 4100
+Wire Wire Line
+	1800 4200 2300 4200
+Text Notes 1950 4650 0    50   ~ 0
+GPIO
+Wire Notes Line
+	750  3500 750  5150
+Wire Notes Line
+	750  5150 3050 5150
+Wire Notes Line
+	3050 5150 3050 3500
+Wire Notes Line
+	3050 3500 750  3500
+$Comp
+L Connector_Generic:Conn_01x07 J?
+U 1 1 618E52FC
+P 11050 3100
+F 0 "J?" H 11130 3142 50  0000 L CNN
+F 1 "MCU GPIO Header" H 11130 3051 50  0000 L CNN
+F 2 "" H 11050 3100 50  0001 C CNN
+F 3 "~" H 11050 3100 50  0001 C CNN
+	1    11050 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR?
+U 1 1 618E6273
+P 10750 2700
+F 0 "#PWR?" H 10750 2550 50  0001 C CNN
+F 1 "+3V3" H 10765 2873 50  0000 C CNN
+F 2 "" H 10750 2700 50  0001 C CNN
+F 3 "" H 10750 2700 50  0001 C CNN
+	1    10750 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10750 2700 10750 2800
+Wire Wire Line
+	10750 2800 10850 2800
+$Comp
+L power:GND #PWR?
+U 1 1 618FA27C
+P 10750 3500
+F 0 "#PWR?" H 10750 3250 50  0001 C CNN
+F 1 "GND" H 10755 3327 50  0000 C CNN
+F 2 "" H 10750 3500 50  0001 C CNN
+F 3 "" H 10750 3500 50  0001 C CNN
+	1    10750 3500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10850 3400 10750 3400
+Wire Wire Line
+	10750 3400 10750 3500
+Text GLabel 10850 3200 0    50   UnSpc ~ 0
+GPIO_PA12
+Text GLabel 10850 3300 0    50   UnSpc ~ 0
+GPIO_PA8
+Text GLabel 2300 4700 2    50   UnSpc ~ 0
+GPIO_PE13
+Text GLabel 2300 4800 2    50   UnSpc ~ 0
+GPIO_PE12
+Text GLabel 2300 4900 2    50   UnSpc ~ 0
+GPIO_PF5
+Text GLabel 2300 5000 2    50   UnSpc ~ 0
+GPIO_PF12
+Text GLabel 1800 4700 0    50   UnSpc ~ 0
+FPGA_MCU_GPIO_0
+Text GLabel 1800 4800 0    50   UnSpc ~ 0
+FPGA_MCU_GPIO_1
+Text GLabel 1800 4900 0    50   UnSpc ~ 0
+FPGA_MCU_GPIO_2
+Text GLabel 1800 5000 0    50   UnSpc ~ 0
+FPGA_MCU_GPIO_3
+Wire Wire Line
+	1800 4700 2300 4700
+Wire Wire Line
+	2300 4800 1800 4800
+Wire Wire Line
+	1800 4900 2300 4900
+Wire Wire Line
+	2300 5000 1800 5000
+Text Notes 1400 3600 0    50   ~ 0
+FPGA <-> MCU connections
 $EndSCHEMATC
