@@ -1,3 +1,21 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP +3.3V
+D Power symbol creates a global label with name "+3.3V"
+K power-flag
+$ENDCMP
+#
+$CMP +3V3A
+D Power symbol creates a global label with name "+3V3"
+K power-flag
+$ENDCMP
+#
+$CMP TPS54294
+F ${KIPRJMOD}/docs/datasheets/tps54294.pdf
+$ENDCMP
+#
+$CMP TPS54325
+F ${KIPRJMOD}/docs/datasheets/tps54325.pdf
+$ENDCMP
+#
 #End Doc Library

@@ -45,6 +45,10 @@
 *_xst.xrpt
 .metals
 .bloop
+project/metals.sbt
+
+# Vivado project folder
+tdt4295-graphics/
 
 # project-wide generated files
 *.gise
@@ -72,6 +76,8 @@ tmp/
 local.properties
 .settings/
 .loadpath
+
+verilog/
 
 # Eclipse Core
 .project
