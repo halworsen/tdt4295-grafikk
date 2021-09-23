@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 4
+Sheet 4 4
 Title ""
 Date ""
 Rev ""
@@ -345,4 +345,10 @@ F 3 "" H 9600 800 50  0001 C CNN
 	1    9600 800 
 	1    0    0    -1  
 $EndComp
+NoConn ~ 5200 4750
+NoConn ~ 5200 4650
+NoConn ~ 5200 4550
+NoConn ~ 5200 4450
+NoConn ~ 5200 2750
+NoConn ~ 5200 2650
 $EndSCHEMATC

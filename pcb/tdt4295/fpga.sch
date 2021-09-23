@@ -805,14 +805,11 @@ Wire Wire Line
 	2300 5300 2300 5200
 Wire Wire Line
 	2350 6200 3150 6200
-Connection ~ 2350 6200
 Wire Wire Line
 	2150 4150 2350 4150
 Wire Wire Line
 	2350 4150 2700 4150
 Connection ~ 2350 4150
-Wire Wire Line
-	1700 6200 2350 6200
 Wire Wire Line
 	2350 4650 2350 6200
 $Comp
@@ -896,31 +893,6 @@ Connection ~ 3150 6100
 Wire Wire Line
 	3150 6000 3150 6100
 Connection ~ 3150 6000
-Wire Wire Line
-	3150 5800 3150 6000
-Connection ~ 3150 5800
-Wire Wire Line
-	3150 5700 3150 5800
-$Comp
-L power:+3V3 #PWR0105
-U 1 1 6176AD1A
-P 2900 6400
-F 0 "#PWR0105" H 2900 6250 50  0001 C CNN
-F 1 "+3V3" H 2900 6550 50  0000 C CNN
-F 2 "" H 2900 6400 50  0001 C CNN
-F 3 "" H 2900 6400 50  0001 C CNN
-	1    2900 6400
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3050 6400 3150 6400
-Connection ~ 3050 6400
-Wire Wire Line
-	2900 6400 3050 6400
-Wire Wire Line
-	3050 5600 3050 6400
-Wire Wire Line
-	3150 5600 3050 5600
 Wire Wire Line
 	1150 1900 1450 1900
 Wire Wire Line
@@ -1069,7 +1041,7 @@ F 3 "" H 3850 2700 50  0000 C CNN
 	3    3850 5750
 	-1   0    0    -1  
 $EndComp
-Text HLabel 1700 6200 0    50   Input ~ 0
+Text HLabel 2350 6200 0    50   Input ~ 0
 program_b
 NoConn ~ 3150 7300
 NoConn ~ 3150 7200
@@ -1265,4 +1237,138 @@ Text Label 1050 5300 0    50   ~ 0
 TDO_JTAG
 Text Label 1050 5400 0    50   ~ 0
 TCK_JTAG
+$Comp
+L power:+3V3 #PWR0105
+U 1 1 6176AD1A
+P 2900 6400
+F 0 "#PWR0105" H 2900 6250 50  0001 C CNN
+F 1 "+3V3" H 2900 6550 50  0000 C CNN
+F 2 "" H 2900 6400 50  0001 C CNN
+F 3 "" H 2900 6400 50  0001 C CNN
+	1    2900 6400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J?
+U 1 1 61879505
+P 1600 7450
+F 0 "J?" H 1600 7550 50  0000 C CNN
+F 1 "Conn_01x02" H 1600 7250 50  0000 C CNN
+F 2 "" H 1600 7450 50  0001 C CNN
+F 3 "~" H 1600 7450 50  0001 C CNN
+	1    1600 7450
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	1800 7550 2050 7550
+Text Label 2100 7450 0    50   ~ 0
+MODE2
+Wire Wire Line
+	2900 6400 3150 6400
+Wire Wire Line
+	3150 5600 2850 5600
+Wire Wire Line
+	3150 5700 2850 5700
+Wire Wire Line
+	3150 5800 2850 5800
+Text Label 2850 5600 0    50   ~ 0
+MODE0
+Text Label 2850 5700 0    50   ~ 0
+MODE1
+Text Label 2850 5800 0    50   ~ 0
+MODE2
+$Comp
+L power:GND #PWR?
+U 1 1 618E8B3B
+P 2050 7550
+F 0 "#PWR?" H 2050 7300 50  0001 C CNN
+F 1 "GND" H 2050 7400 50  0000 C CNN
+F 2 "" H 2050 7550 50  0001 C CNN
+F 3 "" H 2050 7550 50  0001 C CNN
+	1    2050 7550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 618E96EF
+P 1900 7300
+F 0 "R?" V 1980 7300 50  0000 C CNN
+F 1 "1k" V 1900 7300 50  0000 C CNN
+F 2 "" V 1830 7300 50  0001 C CNN
+F 3 "~" H 1900 7300 50  0001 C CNN
+	1    1900 7300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR?
+U 1 1 618EA756
+P 1900 7150
+F 0 "#PWR?" H 1900 7000 50  0001 C CNN
+F 1 "+3V3" H 1900 7290 50  0000 C CNN
+F 2 "" H 1900 7150 50  0001 C CNN
+F 3 "" H 1900 7150 50  0001 C CNN
+	1    1900 7150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1800 7450 1900 7450
+Wire Wire Line
+	1900 7450 2100 7450
+Connection ~ 1900 7450
+$Comp
+L Device:R R?
+U 1 1 619371E0
+P 1250 7400
+F 0 "R?" V 1330 7400 50  0000 C CNN
+F 1 "1k" V 1250 7400 50  0000 C CNN
+F 2 "" V 1180 7400 50  0001 C CNN
+F 3 "~" H 1250 7400 50  0001 C CNN
+	1    1250 7400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 61937C9D
+P 800 7400
+F 0 "R?" V 880 7400 50  0000 C CNN
+F 1 "1k" V 800 7400 50  0000 C CNN
+F 2 "" V 730 7400 50  0001 C CNN
+F 3 "~" H 800 7400 50  0001 C CNN
+	1    800  7400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1250 7250 1000 7250
+$Comp
+L power:GND #PWR?
+U 1 1 6195618C
+P 1250 7550
+F 0 "#PWR?" H 1250 7300 50  0001 C CNN
+F 1 "GND" H 1250 7400 50  0000 C CNN
+F 2 "" H 1250 7550 50  0001 C CNN
+F 3 "" H 1250 7550 50  0001 C CNN
+	1    1250 7550
+	1    0    0    -1  
+$EndComp
+Text Label 1000 7250 0    50   ~ 0
+MODE1
+Text Label 500  7650 0    50   ~ 0
+MODE0
+$Comp
+L power:+3V3 #PWR?
+U 1 1 619680CF
+P 800 7250
+F 0 "#PWR?" H 800 7100 50  0001 C CNN
+F 1 "+3V3" H 800 7390 50  0000 C CNN
+F 2 "" H 800 7250 50  0001 C CNN
+F 3 "" H 800 7250 50  0001 C CNN
+	1    800  7250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	800  7650 800  7550
+Wire Wire Line
+	500  7650 800  7650
+Text Notes 950  6950 0    50   ~ 0
+Jumped = Master SPI\nDefault = JTAG
 $EndSCHEMATC
