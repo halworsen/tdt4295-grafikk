@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 5
+Sheet 2 4
 Title ""
 Date ""
 Rev ""
@@ -24,116 +24,6 @@ F 3 "" H 1700 1000 50  0000 C CNN
 	5    1700 4050
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:C C301
-U 1 1 614DC8F2
-P 2400 1050
-F 0 "C301" H 2515 1096 50  0000 L CNN
-F 1 "100uF" H 2515 1005 50  0000 L CNN
-F 2 "" H 2438 900 50  0001 C CNN
-F 3 "~" H 2400 1050 50  0001 C CNN
-	1    2400 1050
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C302
-U 1 1 614DE01C
-P 2900 1050
-F 0 "C302" H 3015 1096 50  0000 L CNN
-F 1 "4.7uF" H 3015 1005 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 2938 900 50  0001 C CNN
-F 3 "~" H 2900 1050 50  0001 C CNN
-	1    2900 1050
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C303
-U 1 1 614DE58E
-P 3350 1050
-F 0 "C303" H 3465 1096 50  0000 L CNN
-F 1 "4.7uF" H 3465 1005 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 3388 900 50  0001 C CNN
-F 3 "~" H 3350 1050 50  0001 C CNN
-	1    3350 1050
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C306
-U 1 1 614DEA18
-P 3800 1050
-F 0 "C306" H 3915 1096 50  0000 L CNN
-F 1 "470nF" H 3915 1005 50  0000 L CNN
-F 2 "" H 3838 900 50  0001 C CNN
-F 3 "~" H 3800 1050 50  0001 C CNN
-	1    3800 1050
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C308
-U 1 1 614DF153
-P 4250 1050
-F 0 "C308" H 4365 1096 50  0000 L CNN
-F 1 "470nF" H 4365 1005 50  0000 L CNN
-F 2 "" H 4288 900 50  0001 C CNN
-F 3 "~" H 4250 1050 50  0001 C CNN
-	1    4250 1050
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C310
-U 1 1 614DF5FE
-P 4700 1050
-F 0 "C310" H 4815 1096 50  0000 L CNN
-F 1 "470nF" H 4815 1005 50  0000 L CNN
-F 2 "" H 4738 900 50  0001 C CNN
-F 3 "~" H 4700 1050 50  0001 C CNN
-	1    4700 1050
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C313
-U 1 1 614DFBD9
-P 5200 1050
-F 0 "C313" H 5315 1096 50  0000 L CNN
-F 1 "470nF" H 5315 1005 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 5238 900 50  0001 C CNN
-F 3 "~" H 5200 1050 50  0001 C CNN
-	1    5200 1050
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C315
-U 1 1 614E00E6
-P 5650 1050
-F 0 "C315" H 5765 1096 50  0000 L CNN
-F 1 "47nF" H 5765 1005 50  0000 L CNN
-F 2 "" H 5688 900 50  0001 C CNN
-F 3 "~" H 5650 1050 50  0001 C CNN
-	1    5650 1050
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C316
-U 1 1 614E08F1
-P 6100 1050
-F 0 "C316" H 6215 1096 50  0000 L CNN
-F 1 "47nF" H 6215 1005 50  0000 L CNN
-F 2 "" H 6138 900 50  0001 C CNN
-F 3 "~" H 6100 1050 50  0001 C CNN
-	1    6100 1050
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C317
-U 1 1 614E0EB5
-P 6500 1050
-F 0 "C317" H 6615 1096 50  0000 L CNN
-F 1 "47nF" H 6615 1005 50  0000 L CNN
-F 2 "" H 6538 900 50  0001 C CNN
-F 3 "~" H 6500 1050 50  0001 C CNN
-	1    6500 1050
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	1450 900  1550 900 
 Connection ~ 1550 900 
@@ -149,195 +39,121 @@ Connection ~ 1850 900
 Wire Wire Line
 	1850 900  1950 900 
 Connection ~ 1950 900 
-Wire Wire Line
-	1950 900  2400 900 
-Connection ~ 2400 900 
-Wire Wire Line
-	2400 900  2900 900 
-Connection ~ 2900 900 
-Wire Wire Line
-	2900 900  3350 900 
-Connection ~ 3350 900 
-Wire Wire Line
-	3350 900  3800 900 
-Connection ~ 3800 900 
-Wire Wire Line
-	3800 900  4250 900 
-Connection ~ 4250 900 
-Wire Wire Line
-	4250 900  4700 900 
-Connection ~ 4700 900 
-Wire Wire Line
-	4700 900  5200 900 
-Connection ~ 5200 900 
-Wire Wire Line
-	5200 900  5650 900 
-Connection ~ 5650 900 
-Wire Wire Line
-	5650 900  6100 900 
-Connection ~ 6100 900 
-Wire Wire Line
-	6100 900  6500 900 
-Wire Wire Line
-	2400 1200 2900 1200
-Connection ~ 2900 1200
-Wire Wire Line
-	2900 1200 3350 1200
-Connection ~ 3350 1200
-Wire Wire Line
-	3350 1200 3800 1200
-Connection ~ 3800 1200
-Wire Wire Line
-	3800 1200 4250 1200
-Connection ~ 4250 1200
-Wire Wire Line
-	4250 1200 4700 1200
-Connection ~ 4700 1200
-Wire Wire Line
-	4700 1200 5200 1200
-Connection ~ 5200 1200
-Wire Wire Line
-	5200 1200 5650 1200
-Connection ~ 5650 1200
-Wire Wire Line
-	5650 1200 6100 1200
-Connection ~ 6100 1200
-Wire Wire Line
-	6100 1200 6500 1200
 $Comp
 L power:GND #PWR0301
 U 1 1 614E24A1
-P 6500 1200
-F 0 "#PWR0301" H 6500 950 50  0001 C CNN
-F 1 "GND" H 6505 1027 50  0000 C CNN
-F 2 "" H 6500 1200 50  0001 C CNN
-F 3 "" H 6500 1200 50  0001 C CNN
-	1    6500 1200
+P 4800 1200
+F 0 "#PWR0301" H 4800 950 50  0001 C CNN
+F 1 "GND" H 4805 1027 50  0000 C CNN
+F 2 "" H 4800 1200 50  0001 C CNN
+F 3 "" H 4800 1200 50  0001 C CNN
+	1    4800 1200
 	1    0    0    -1  
 $EndComp
-Connection ~ 6500 1200
-Text GLabel 2350 6200 2    50   Output ~ 0
-VGA_B0
-Text GLabel 2350 6300 2    50   Output ~ 0
-VGA_B1
-Text GLabel 2350 6400 2    50   Output ~ 0
-VGA_B2
-Text GLabel 2350 6500 2    50   Output ~ 0
-VGA_B3
-Text GLabel 2350 3800 2    50   Output ~ 0
-VGA_R0
-Text GLabel 2350 3900 2    50   Output ~ 0
-VGA_R1
-Text GLabel 2350 4000 2    50   Output ~ 0
-VGA_R2
-Text GLabel 2350 4100 2    50   Output ~ 0
-VGA_R3
 $Comp
 L Device:C C?
 U 1 1 615F1C9B
-P 3350 1950
+P 2400 1050
 AR Path="/61459CB7/615F1C9B" Ref="C?"  Part="1" 
 AR Path="/614933B1/615F1C9B" Ref="C304"  Part="1" 
-F 0 "C304" H 3375 2050 50  0000 L CNN
-F 1 "47uF" H 3375 1850 50  0000 L CNN
-F 2 "" H 3388 1800 50  0001 C CNN
-F 3 "~" H 3350 1950 50  0001 C CNN
-	1    3350 1950
+F 0 "C304" H 2425 1150 50  0000 L CNN
+F 1 "47uF" H 2425 950 50  0000 L CNN
+F 2 "" H 2438 900 50  0001 C CNN
+F 3 "~" H 2400 1050 50  0001 C CNN
+	1    2400 1050
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C?
 U 1 1 615F1CA1
-P 3650 1950
+P 2700 1050
 AR Path="/61459CB7/615F1CA1" Ref="C?"  Part="1" 
 AR Path="/614933B1/615F1CA1" Ref="C305"  Part="1" 
-F 0 "C305" H 3675 2050 50  0000 L CNN
-F 1 "4.7uF" H 3675 1850 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 3688 1800 50  0001 C CNN
-F 3 "~" H 3650 1950 50  0001 C CNN
-	1    3650 1950
+F 0 "C305" H 2725 1150 50  0000 L CNN
+F 1 "4.7uF" H 2725 950 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 2738 900 50  0001 C CNN
+F 3 "~" H 2700 1050 50  0001 C CNN
+	1    2700 1050
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C?
 U 1 1 615F1CA7
-P 4000 1950
+P 3050 1050
 AR Path="/61459CB7/615F1CA7" Ref="C?"  Part="1" 
 AR Path="/614933B1/615F1CA7" Ref="C307"  Part="1" 
-F 0 "C307" H 4025 2050 50  0000 L CNN
-F 1 "4.7uF" H 4025 1850 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 4038 1800 50  0001 C CNN
-F 3 "~" H 4000 1950 50  0001 C CNN
-	1    4000 1950
+F 0 "C307" H 3075 1150 50  0000 L CNN
+F 1 "4.7uF" H 3075 950 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 3088 900 50  0001 C CNN
+F 3 "~" H 3050 1050 50  0001 C CNN
+	1    3050 1050
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C?
 U 1 1 615F1CAD
-P 4350 1950
+P 3400 1050
 AR Path="/61459CB7/615F1CAD" Ref="C?"  Part="1" 
 AR Path="/614933B1/615F1CAD" Ref="C309"  Part="1" 
-F 0 "C309" H 4375 2050 50  0000 L CNN
-F 1 "470nF" H 4375 1850 50  0000 L CNN
-F 2 "" H 4388 1800 50  0001 C CNN
-F 3 "~" H 4350 1950 50  0001 C CNN
-	1    4350 1950
+F 0 "C309" H 3425 1150 50  0000 L CNN
+F 1 "470nF" H 3425 950 50  0000 L CNN
+F 2 "" H 3438 900 50  0001 C CNN
+F 3 "~" H 3400 1050 50  0001 C CNN
+	1    3400 1050
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C?
 U 1 1 615F1CB3
-P 4700 1950
+P 3750 1050
 AR Path="/61459CB7/615F1CB3" Ref="C?"  Part="1" 
 AR Path="/614933B1/615F1CB3" Ref="C311"  Part="1" 
-F 0 "C311" H 4725 2050 50  0000 L CNN
-F 1 "470nF" H 4725 1850 50  0000 L CNN
-F 2 "" H 4738 1800 50  0001 C CNN
-F 3 "~" H 4700 1950 50  0001 C CNN
-	1    4700 1950
+F 0 "C311" H 3775 1150 50  0000 L CNN
+F 1 "470nF" H 3775 950 50  0000 L CNN
+F 2 "" H 3788 900 50  0001 C CNN
+F 3 "~" H 3750 1050 50  0001 C CNN
+	1    3750 1050
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C?
 U 1 1 615F1CB9
-P 5100 1950
+P 4150 1050
 AR Path="/61459CB7/615F1CB9" Ref="C?"  Part="1" 
 AR Path="/614933B1/615F1CB9" Ref="C312"  Part="1" 
-F 0 "C312" H 5125 2050 50  0000 L CNN
-F 1 "470nF" H 5125 1850 50  0000 L CNN
-F 2 "" H 5138 1800 50  0001 C CNN
-F 3 "~" H 5100 1950 50  0001 C CNN
-	1    5100 1950
+F 0 "C312" H 4175 1150 50  0000 L CNN
+F 1 "470nF" H 4175 950 50  0000 L CNN
+F 2 "" H 4188 900 50  0001 C CNN
+F 3 "~" H 4150 1050 50  0001 C CNN
+	1    4150 1050
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C?
 U 1 1 615F1CBF
-P 5450 1950
+P 4500 1050
 AR Path="/61459CB7/615F1CBF" Ref="C?"  Part="1" 
 AR Path="/614933B1/615F1CBF" Ref="C314"  Part="1" 
-F 0 "C314" H 5475 2050 50  0000 L CNN
-F 1 "470nF" H 5475 1850 50  0000 L CNN
-F 2 "" H 5488 1800 50  0001 C CNN
-F 3 "~" H 5450 1950 50  0001 C CNN
-	1    5450 1950
+F 0 "C314" H 4525 1150 50  0000 L CNN
+F 1 "470nF" H 4525 950 50  0000 L CNN
+F 2 "" H 4538 900 50  0001 C CNN
+F 3 "~" H 4500 1050 50  0001 C CNN
+	1    4500 1050
 	1    0    0    -1  
 $EndComp
-Text Notes 4300 2550 2    50   ~ 0
+Text Notes 4350 1800 2    50   ~ 0
 Datasheet says:\n1x47uF\n2x4.7uF\n4x470nF
-Text Notes 9400 3700 2    50   ~ 10
-Have SPIs between FPGA and MCU on IOB15?
-Text GLabel 2350 1700 2    50   Input ~ 0
+Text GLabel 2350 2300 2    50   Input ~ 0
 FPGA_MCU_USART_TX
 Text GLabel 2350 2500 2    50   Input ~ 0
 FPGA_MCU_USART_CLK
 Text GLabel 2350 2400 2    50   Input ~ 0
 FPGA_MCU_USART_RX
-Text GLabel 2350 2800 2    50   Input ~ 0
+Text GLabel 2350 2600 2    50   Input ~ 0
 FPGA_MCU_USART_CS
-Text GLabel 2350 2900 2    50   Input ~ 0
+Text GLabel 2350 2700 2    50   Input ~ 0
 FPGA_MCU_USART_RTS
-Text GLabel 2350 3600 2    50   Input ~ 0
+Text GLabel 2350 2800 2    50   Input ~ 0
 FPGA_MCU_USART_CTS
 Text GLabel 2350 4800 2    50   Input ~ 0
 FPGA_MCU_GPIO_0
@@ -355,4 +171,60 @@ Text GLabel 2350 5400 2    50   Input ~ 0
 FPGA_MCU_GPIO_6
 Text GLabel 2350 5500 2    50   Input ~ 0
 FPGA_MCU_GPIO_7
+Wire Wire Line
+	4800 900  4800 800 
+$Comp
+L power:+3V3 #PWR?
+U 1 1 61732788
+P 4800 800
+F 0 "#PWR?" H 4800 650 50  0001 C CNN
+F 1 "+3V3" H 4800 940 50  0000 C CNN
+F 2 "" H 4800 800 50  0001 C CNN
+F 3 "" H 4800 800 50  0001 C CNN
+	1    4800 800 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 1200 2700 1200
+Wire Wire Line
+	1950 900  2400 900 
+Connection ~ 2400 900 
+Wire Wire Line
+	2400 900  2700 900 
+Connection ~ 2700 900 
+Wire Wire Line
+	2700 900  3050 900 
+Connection ~ 2700 1200
+Wire Wire Line
+	2700 1200 3050 1200
+Connection ~ 3050 900 
+Wire Wire Line
+	3050 900  3400 900 
+Connection ~ 3050 1200
+Wire Wire Line
+	3050 1200 3400 1200
+Connection ~ 3400 900 
+Wire Wire Line
+	3400 900  3750 900 
+Connection ~ 3400 1200
+Wire Wire Line
+	3400 1200 3750 1200
+Connection ~ 3750 900 
+Wire Wire Line
+	3750 900  4150 900 
+Connection ~ 3750 1200
+Wire Wire Line
+	3750 1200 4150 1200
+Connection ~ 4150 900 
+Wire Wire Line
+	4150 900  4500 900 
+Connection ~ 4150 1200
+Wire Wire Line
+	4150 1200 4500 1200
+Connection ~ 4500 900 
+Wire Wire Line
+	4500 900  4800 900 
+Connection ~ 4500 1200
+Wire Wire Line
+	4500 1200 4800 1200
 $EndSCHEMATC

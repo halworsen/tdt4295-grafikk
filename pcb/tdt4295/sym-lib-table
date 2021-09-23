@@ -160,4 +160,5 @@
   (lib (name T520V337M2R5ATE025)(type Legacy)(uri ${KIPRJMOD}/symlib/kicad-ext-lib/T520V337M2R5ATE025/T520V337M2R5ATE025.lib)(options "")(descr ""))
   (lib (name EFM32GG12B810F1024GQ64)(type Legacy)(uri ${KIPRJMOD}/symlib/EFM32GG12B810F1024GQ64/2021-09-15_16-42-51.lib)(options "")(descr ""))
   (lib (name LM20143MHX-NOPB)(type Legacy)(uri ${KIPRJMOD}/symlib/LM20143MHX-NOPB/2021-09-15_14-49-32/2021-09-15_14-49-32.lib)(options "")(descr ""))
+  (lib (name DSC1001AL5-100.0000)(type Legacy)(uri ${KIPRJMOD}/symlib/kicad-ext-lib/DSC1001AL5-100.0000/DSC1001AL5-100.0000.lib)(options "")(descr ""))
 )
