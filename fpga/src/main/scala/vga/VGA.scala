@@ -25,10 +25,10 @@ class VGA extends Module {
     val (counterHsync, counterHsyncWrap) = Counter(0 to 800)
     val (counterVsync, counterVsyncWrap) = Counter(counterHsyncWrap, 525)
 
-    io.hsync := true.B - counterHsync >= (640 + 16).U & counterHsync < (640 + 16 + 96).U 
-    io.vsync := true.B - counterVsync >= (480 + 10).U & counterVsync < (480 + 10 + 2).U
-    io.out := io.data - counterHsync < 640.U & counterVsync < 480.U
-    io.enable := true.B - counterHsync < 640.U & counterVsync < 480.U
+    io.hsync := counterHsync >= (640 + 16).U & counterHsync < (640 + 16 + 96).U 
+    io.vsync := counterVsync >= (480 + 10).U & counterVsync < (480 + 10 + 2).U
+    io.out := counterHsync < 640.U & counterVsync < 480.U
+    io.enable := counterHsync < 640.U & counterVsync < 480.U
 
     io.selX := counterHsync
     io.selY := counterVsync
