@@ -157,4 +157,5 @@
   (lib (name SN74ALVC245PWR)(type Legacy)(uri ${KIPRJMOD}/symlib/kicad-ext-lib/SN74ALVC245PWR/SN74ALVC245PWR.lib)(options "")(descr ""))
   (lib (name 5177802-9)(type Legacy)(uri ${KIPRJMOD}/symlib/kicad-ext-lib/5177802-9/5177802-9.lib)(options "")(descr ""))
   (lib (name 66953-008LF)(type Legacy)(uri ${KIPRJMOD}/symlib/kicad-ext-lib/66953-008LF/66953-008LF.lib)(options "")(descr ""))
+  (lib (name T520V337M2R5ATE025)(type Legacy)(uri ${KIPRJMOD}/symlib/kicad-ext-lib/T520V337M2R5ATE025/T520V337M2R5ATE025.lib)(options "")(descr ""))
 )

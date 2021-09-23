@@ -58,7 +58,7 @@ U 1 1 614B5319
 P 7150 1100
 F 0 "C21" H 7265 1146 50  0000 L CNN
 F 1 "4.7uF" H 7265 1055 50  0000 L CNN
-F 2 "" H 7188 950 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 7188 950 50  0001 C CNN
 F 3 "~" H 7150 1100 50  0001 C CNN
 	1    7150 1100
 	1    0    0    -1  
@@ -73,7 +73,7 @@ U 1 1 614B636F
 P 7600 1100
 F 0 "C22" H 7715 1146 50  0000 L CNN
 F 1 "4.7uF" H 7715 1055 50  0000 L CNN
-F 2 "" H 7638 950 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 7638 950 50  0001 C CNN
 F 3 "~" H 7600 1100 50  0001 C CNN
 	1    7600 1100
 	1    0    0    -1  
@@ -203,7 +203,7 @@ Wire Wire Line
 Connection ~ 10300 1250
 Wire Wire Line
 	10300 1250 10750 1250
-Text Notes 7500 6350 0    50   ~ 0
+Text Notes 1250 7750 0    50   ~ 0
 From looking at schematics of arty PMODs and VGA shield:\nJC1_P = pin1 = G0\nJC1_N = pin2 = G1\nJC2_P = pin3 = G2\nJC2_N = pin4 =G3\nVCC3V3 = Pin 6+12 = VCC3V3\nJC3_P = pin7 = HS\nJC3_N = pin8 = VS\nJC4_P = pin9 = x\nJC4_N = pin10 = x 
 Text GLabel 5200 5650 0    50   Output ~ 0
 VGA_G0
@@ -328,7 +328,7 @@ U 1 1 615EAEB1
 P 7550 1900
 F 0 "C?" H 7575 2000 50  0000 L CNN
 F 1 "4.7uF" H 7575 1800 50  0000 L CNN
-F 2 "" H 7588 1750 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 7588 1750 50  0001 C CNN
 F 3 "~" H 7550 1900 50  0001 C CNN
 	1    7550 1900
 	1    0    0    -1  
@@ -339,7 +339,7 @@ U 1 1 615EB62D
 P 7900 1900
 F 0 "C?" H 7925 2000 50  0000 L CNN
 F 1 "4.7uF" H 7925 1800 50  0000 L CNN
-F 2 "" H 7938 1750 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 7938 1750 50  0001 C CNN
 F 3 "~" H 7900 1900 50  0001 C CNN
 	1    7900 1900
 	1    0    0    -1  

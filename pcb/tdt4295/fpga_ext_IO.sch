@@ -19,7 +19,7 @@ U 1 1 6155E5DE
 P 2550 1350
 F 0 "J?" H 2600 1867 50  0000 C CNN
 F 1 "Conn_02x08_Odd_Even" H 2600 1776 50  0000 C CNN
-F 2 "" H 2550 1350 50  0001 C CNN
+F 2 "Connector_PinHeader_1.00mm:PinHeader_2x08_P1.00mm_Vertical" H 2550 1350 50  0001 C CNN
 F 3 "~" H 2550 1350 50  0001 C CNN
 	1    2550 1350
 	1    0    0    -1  
@@ -296,7 +296,7 @@ U 1 1 61588030
 P 2550 2850
 F 0 "J?" H 2600 3367 50  0000 C CNN
 F 1 "Conn_02x08_Odd_Even" H 2600 3276 50  0000 C CNN
-F 2 "" H 2550 2850 50  0001 C CNN
+F 2 "Connector_PinHeader_1.00mm:PinHeader_2x08_P1.00mm_Vertical" H 2550 2850 50  0001 C CNN
 F 3 "~" H 2550 2850 50  0001 C CNN
 	1    2550 2850
 	1    0    0    -1  

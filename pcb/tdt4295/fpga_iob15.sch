@@ -24,8 +24,6 @@ F 3 "" H 1700 1000 50  0000 C CNN
 	5    1700 4050
 	1    0    0    -1  
 $EndComp
-Text Notes 550  7750 0    50   ~ 0
-JB1_P = pin1 =R0\nJB1_N = pin2 =R1\nJB2_P = pin3 = R2\nJB2_N = pin4 = R3\nJB3_P = pin7 = B0\nJB3_N = pin8 = B1\nJB4_P = pin9 = B2\nJB4_N = pin10 = B3
 $Comp
 L Device:C C43
 U 1 1 614DC8F2
@@ -43,7 +41,7 @@ U 1 1 614DE01C
 P 2900 1050
 F 0 "C44" H 3015 1096 50  0000 L CNN
 F 1 "4.7uF" H 3015 1005 50  0000 L CNN
-F 2 "" H 2938 900 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 2938 900 50  0001 C CNN
 F 3 "~" H 2900 1050 50  0001 C CNN
 	1    2900 1050
 	1    0    0    -1  
@@ -54,7 +52,7 @@ U 1 1 614DE58E
 P 3350 1050
 F 0 "C45" H 3465 1096 50  0000 L CNN
 F 1 "4.7uF" H 3465 1005 50  0000 L CNN
-F 2 "" H 3388 900 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 3388 900 50  0001 C CNN
 F 3 "~" H 3350 1050 50  0001 C CNN
 	1    3350 1050
 	1    0    0    -1  
@@ -98,7 +96,7 @@ U 1 1 614DFBD9
 P 5200 1050
 F 0 "C49" H 5315 1096 50  0000 L CNN
 F 1 "470nF" H 5315 1005 50  0000 L CNN
-F 2 "" H 5238 900 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 5238 900 50  0001 C CNN
 F 3 "~" H 5200 1050 50  0001 C CNN
 	1    5200 1050
 	1    0    0    -1  
@@ -255,7 +253,7 @@ AR Path="/61459CB7/615F1CA1" Ref="C?"  Part="1"
 AR Path="/614933B1/615F1CA1" Ref="C?"  Part="1" 
 F 0 "C?" H 3675 2050 50  0000 L CNN
 F 1 "4.7uF" H 3675 1850 50  0000 L CNN
-F 2 "" H 3688 1800 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 3688 1800 50  0001 C CNN
 F 3 "~" H 3650 1950 50  0001 C CNN
 	1    3650 1950
 	1    0    0    -1  
@@ -268,7 +266,7 @@ AR Path="/61459CB7/615F1CA7" Ref="C?"  Part="1"
 AR Path="/614933B1/615F1CA7" Ref="C?"  Part="1" 
 F 0 "C?" H 4025 2050 50  0000 L CNN
 F 1 "4.7uF" H 4025 1850 50  0000 L CNN
-F 2 "" H 4038 1800 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 4038 1800 50  0001 C CNN
 F 3 "~" H 4000 1950 50  0001 C CNN
 	1    4000 1950
 	1    0    0    -1  
@@ -327,6 +325,34 @@ F 3 "~" H 5450 1950 50  0001 C CNN
 $EndComp
 Text Notes 4300 2550 2    50   ~ 0
 Datasheet says:\n1x47uF\n2x4.7uF\n4x470nF
-Text Notes 4650 3400 2    50   ~ 10
+Text Notes 9400 3700 2    50   ~ 10
 Have SPIs between FPGA and MCU on IOB15?
+Text GLabel 2350 1700 2    50   Input ~ 0
+FPGA_MCU_USART_TX
+Text GLabel 2350 2500 2    50   Input ~ 0
+FPGA_MCU_USART_CLK
+Text GLabel 2350 2400 2    50   Input ~ 0
+FPGA_MCU_USART_RX
+Text GLabel 2350 2800 2    50   Input ~ 0
+FPGA_MCU_USART_CS
+Text GLabel 2350 2900 2    50   Input ~ 0
+FPGA_MCU_USART_RTS
+Text GLabel 2350 3600 2    50   Input ~ 0
+FPGA_MCU_USART_CTS
+Text GLabel 2350 4800 2    50   Input ~ 0
+FPGA_MCU_GPIO_0
+Text GLabel 2350 4900 2    50   Input ~ 0
+FPGA_MCU_GPIO_1
+Text GLabel 2350 5000 2    50   Input ~ 0
+FPGA_MCU_GPIO_2
+Text GLabel 2350 5100 2    50   Input ~ 0
+FPGA_MCU_GPIO_3
+Text GLabel 2350 5200 2    50   Input ~ 0
+FPGA_MCU_GPIO_4
+Text GLabel 2350 5300 2    50   Input ~ 0
+FPGA_MCU_GPIO_5
+Text GLabel 2350 5400 2    50   Input ~ 0
+FPGA_MCU_GPIO_6
+Text GLabel 2350 5500 2    50   Input ~ 0
+FPGA_MCU_GPIO_7
 $EndSCHEMATC
