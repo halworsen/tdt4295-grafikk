@@ -6,4 +6,5 @@
   (lib (name S25FL127SABMFV101-footprint)(type KiCad)(uri ${KIPRJMOD}/symlib/kicad-ext-lib/S25FL127SABMFV101/footprints.pretty)(options "")(descr ""))
   (lib (name NUP4114UCW1T2G-footprint)(type KiCad)(uri ${KIPRJMOD}/symlib/kicad-ext-lib/NUP4114UCW1T2G/footprints.pretty)(options "")(descr ""))
   (lib (name 5177802-9)(type KiCad)(uri ${KIPRJMOD}/symlib/kicad-ext-lib/5177802-9/footprints.pretty)(options "")(descr ""))
+  (lib (name com09032-joystick)(type KiCad)(uri ${KIPRJMOD}/symlib/com09032-joystick)(options "")(descr ""))
 )
