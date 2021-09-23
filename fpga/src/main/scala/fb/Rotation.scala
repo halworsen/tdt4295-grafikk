@@ -39,7 +39,6 @@ object Matrix {
       return V
     }
 
-
   val ladermanMultiply: Vec[Vec[SInt]] =
     (a: Vec[SInt], b: Vec[Vec[SInt]]) => {
       var m = RegInit(VecInit(Seq.fill(23)(0.S)))
