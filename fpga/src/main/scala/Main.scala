@@ -72,7 +72,7 @@ class Main extends Module {
   })
 
   withReset(~io.aresetn) {
-    val fb = Module(new FrameBuffer(24, 24))
+    val fb = Module(new FrameBuffer(640, 480))
     val bresenhams = Module(new LineDrawing(10, 500, 200, 250))
     bresenhams.io.xs := 0.U
     bresenhams.io.xe := 400.U
@@ -99,32 +99,34 @@ class Main extends Module {
     vga.io.clock := vgaClock.io.clk_pix
     vga.io.reset := ~io.aresetn
 
-    //io.vga_r := vga.io.out.asUInt()
-    //io.vga_g := vga.io.out.asUInt()
-    //io.vga_b := vga.io.out.asUInt()
-    vga.io.out := DontCare
+    //vga.io.out := DontCare
 
     vgaClock.io.clk := clock
+    fb.io.clock := vgaClock.io.clk_pix
 
-    val shouldDraw = vga.io.selX < 48.U && vga.io.selY < 48.U
+    //val shouldDraw = vga.io.selX < 48.U && vga.io.selY < 48.U
     withClock(vgaClock.io.clk_pix) {
       io.vga_hsync := vga.io.hsync
       io.vga_vsync := vga.io.vsync
 
-      when(~vga.io.enable) {
-        io.vga_r := "h0".U
-        io.vga_g := "h0".U
-        io.vga_b := "h0".U
+      io.vga_r := vga.io.out(0)
+      io.vga_g := vga.io.out(1)
+      io.vga_b := vga.io.out(2)
 
-      }.elsewhen(shouldDraw) {
-        io.vga_r := "hf".U
-        io.vga_g := "h8".U
-        io.vga_b := "h0".U
-      }.otherwise {
-        io.vga_r := "h0".U + vga.io.selX
-        io.vga_g := "h8".U + vga.io.selX
-        io.vga_b := "hf".U
-      }
+      //when(~vga.io.enable) {
+      //io.vga_r := "h0".U
+      //io.vga_g := "h0".U
+      //io.vga_b := "h0".U
+
+      //}.elsewhen(shouldDraw) {
+      //io.vga_r := "hf".U
+      //io.vga_g := "h8".U
+      //io.vga_b := "h0".U
+      //}.otherwise {
+      //io.vga_r := "h0".U + vga.io.selX
+      //io.vga_g := "h8".U + vga.io.selX
+      //io.vga_b := "hf".U
+      //}
 
     }
   }

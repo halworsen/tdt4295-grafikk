@@ -9,13 +9,13 @@ class VGA extends Module {
     */
   val io = IO(new Bundle {
     // Data is for now just a bool
-    val data = Input(Bool())
+    val data = Input(Vec(3, UInt(4.W)))
     val selX = Output(UInt(16.W))
     val selY = Output(UInt(16.W))
     val hsync = Output(Bool())
     val vsync = Output(Bool())
     val enable = Output(Bool()) // Data enable. We can write to pixel.
-    val out = Output(Bool())
+    val out = Output(Vec(3, UInt(4.W)))
 
     val clock = Input(Clock())
     val reset = Input(Bool())
@@ -32,5 +32,15 @@ class VGA extends Module {
 
     io.selX := counterHsync
     io.selY := counterVsync
+
+    when(~io.enable) {
+      io.selX := 0.U
+      io.selY := 0.U
+      io.out := io.data
+    }.otherwise {
+      io.selX := counterHsync
+      io.selY := counterVsync
+      io.out := "h0".U
+    }
   }
 }

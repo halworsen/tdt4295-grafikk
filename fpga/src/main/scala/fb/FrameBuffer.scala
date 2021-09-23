@@ -2,27 +2,40 @@ package fb
 
 import chisel3._
 
-import tools.helpers.log2
+import chisel3.util._
 
 class FrameBuffer(width: Int, height: Int) extends Module {
 
+  val colorDepth: Int = 4 // Bit width of a single color channel
+
   val io = IO(new Bundle {
-    val writeX = Input(UInt(log2(width).W))
-    val writeY = Input(UInt(log2(height).W))
-    val writeVal = Input(Bool())
+    val writeX = Input(UInt(log2Up(width).W))
+    val writeY = Input(UInt(log2Up(height).W))
+    val writeVal = Input(Vec(3, UInt(colorDepth.W)))
     val writeEnable = Input(Bool())
-    val readX = Input(UInt(log2(width).W))
-    val readY = Input(UInt(log2(height).W))
-    val readVal = Output(Bool())
+    val readX = Input(UInt(log2Up(width).W))
+    val readY = Input(UInt(log2Up(height).W))
+    val readVal = Output(Vec(3, UInt(colorDepth.W)))
+
+    val clock = Input(Clock())
   })
 
-  // Init framebuffer -> Vec[Vec[UInt]]
-  val fb = RegInit(VecInit(Seq.fill(height)(VecInit(Seq.fill(width)(false.B)))))
+  withClock(io.clock) {
 
-  when(io.writeEnable) {
-    fb(io.writeX)(io.writeY) := io.writeVal
+    val fb = SyncReadMem(width * height, Vec(3, UInt(colorDepth.W)))
+
+    when(io.writeEnable) {
+      fb.write(io.writeY * width.U + io.writeX, io.writeVal)
+    }
+    val r = fb.read(io.readY * width.U + io.readX)
+
+    when(r(0) === 0.U) {
+      io.readVal(0) := "hf".U
+      io.readVal(1) := "h1".U
+      io.readVal(2) := "h7".U
+
+    }.otherwise {
+      io.readVal := r
+    }
   }
-
-  // 2D Array Indexing
-  io.readVal := fb(io.readX)(io.readY)
 }
