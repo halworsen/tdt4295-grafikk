@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 5
+Sheet 2 2
 Title ""
 Date ""
 Rev ""
@@ -36,11 +36,15 @@ F 3 "" H 3300 1300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
+	2850 1750 3300 1750
+Wire Wire Line
 	3300 1750 3300 1300
 Wire Wire Line
 	1050 1500 1050 1750
 Wire Wire Line
 	1150 1500 1150 2350
+Wire Wire Line
+	1150 2350 2300 2350
 Wire Wire Line
 	1250 1500 1250 2150
 $Comp
@@ -112,11 +116,11 @@ F 3 "" H 2100 3650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2500 4450 2500 4600
-NoConn ~ 3500 3750
-NoConn ~ 600  3750
+	2100 3500 2100 3650
+NoConn ~ 2300 3600
+NoConn ~ 1900 3600
 Wire Wire Line
-	3500 3650 3500 3750
+	2300 3500 2300 3600
 Wire Wire Line
 	1900 3600 1900 3500
 Wire Notes Line
@@ -1240,14 +1244,14 @@ Probe points
 $Comp
 L Device:Ferrite_Bead FB?
 U 1 1 614FE6B3
-P 2800 1750
-F 0 "FB?" V 2526 1750 50  0000 C CNN
-F 1 "Ferrite_Bead" V 2617 1750 50  0000 C CNN
-F 2 "" V 2730 1750 50  0001 C CNN
-F 3 "~" H 2800 1750 50  0001 C CNN
-	1    2800 1750
+P 2700 1750
+F 0 "FB?" V 2426 1750 50  0000 C CNN
+F 1 "Ferrite_Bead" V 2517 1750 50  0000 C CNN
+F 2 "" V 2630 1750 50  0001 C CNN
+F 3 "~" H 2700 1750 50  0001 C CNN
+	1    2700 1750
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	2100 1750 2650 1750
+	2100 1750 2550 1750
 $EndSCHEMATC
