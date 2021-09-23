@@ -1,3 +1,5 @@
 (fp_lib_table
   (lib (name digikey-footprints)(type KiCad)(uri "D:/Emblas Data/Documents/Skole/Semester/7/kicad-lib/digikey-kicad-library/digikey-footprints.pretty")(options "")(descr ""))
+  (lib (name efm32gg-footprint)(type KiCad)(uri ${KIPRJMOD}/symlib/EFM32GG12B810F1024GQ64/footprints.pretty)(options "")(descr ""))
+  (lib (name lm20143mhx-nopb-footprint)(type KiCad)(uri ${KIPRJMOD}/symlib/LM20143MHX-NOPB/2021-09-15_14-49-32/footprints.pretty)(options "")(descr ""))
 )

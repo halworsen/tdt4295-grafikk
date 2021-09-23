@@ -151,4 +151,6 @@
   (lib (name dk_TVS-Diodes)(type Legacy)(uri ${KIPRJMOD}/symlib/digikey-symbols/dk_TVS-Diodes.lib)(options "")(descr ""))
   (lib (name dk_TVS-Mixed-Technology)(type Legacy)(uri ${KIPRJMOD}/symlib/digikey-symbols/dk_TVS-Mixed-Technology.lib)(options "")(descr ""))
   (lib (name dk_USB-DVI-HDMI-Connectors)(type Legacy)(uri ${KIPRJMOD}/symlib/digikey-symbols/dk_USB-DVI-HDMI-Connectors.lib)(options "")(descr ""))
+  (lib (name EFM32GG12B810F1024GQ64)(type Legacy)(uri ${KIPRJMOD}/symlib/EFM32GG12B810F1024GQ64/2021-09-15_16-42-51.lib)(options "")(descr ""))
+  (lib (name LM20143MHX-NOPB)(type Legacy)(uri ${KIPRJMOD}/symlib/LM20143MHX-NOPB/2021-09-15_14-49-32/2021-09-15_14-49-32.lib)(options "")(descr ""))
 )
