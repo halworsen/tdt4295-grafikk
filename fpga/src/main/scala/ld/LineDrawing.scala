@@ -20,9 +20,9 @@ class LineDrawing(
     val writeEnable = Output(Bool())
     val writeX = Output(UInt(log2Up(xEnd).W))
     val writeY = Output(UInt(log2Up(yEnd).W))
-    val writeVal = Output(Bool())
+    val writeVal = Output(Vec(3, UInt(4.W)))
 
-    val done = Output(RegInit(true.B))
+    val done = Output(Bool())
   })
 
   val x = Reg(UInt(log2(xStart).W))
@@ -31,15 +31,15 @@ class LineDrawing(
   val dy = Reg(SInt(log2(yEnd).W))
   val e = Reg(SInt(log2(xStart).W))
 
-  val writeEnable = RegInit(false.B)
-  val writeX = Reg(UInt(log2(xEnd).W))
-  val writeY = Reg(UInt(log2(yEnd).W))
-  val writeVal = RegInit(true.B)
+  val writeVal = Reg(Vec(3, UInt(4.W)))
+  writeVal(0) := "h4".U
+  writeVal(1) := "h4".U
+  writeVal(2) := "h4".U
 
   x := io.xs
   y := io.ys
-  dx := io.xe - io.xs
-  dy := io.ye - io.ys
+  dx := io.xe.asSInt() - io.xs.asSInt()
+  dy := io.ye.asSInt() - io.ys.asSInt()
   e := -(dx >> 1.U).asSInt();
 
   when(io.done) {
@@ -47,16 +47,15 @@ class LineDrawing(
     io.done := false.B
     x := io.xs
     y := io.ys
-    dx := io.xe - io.xs
-    dy := io.ye - io.ys
+    dx := io.xe.asSInt() - io.xs.asSInt()
+    dy := io.ye.asSInt() - io.ys.asSInt()
     e := -(dx >> 1.U).asSInt();
   }
   when(x <= io.xe) {
     // Draw pixel
-    writeEnable := true.B
-    writeX := x.asUInt()
-    writeY := y.asUInt()
-    writeVal := true.B
+    io.writeEnable := true.B
+    io.writeX := x.asUInt()
+    io.writeY := y.asUInt()
 
     //setPixel(enable, x.asUInt(), y.asUInt(), true.B)
     x := x + 1.U;
@@ -65,11 +64,13 @@ class LineDrawing(
       y := y + 1.U;
       e := e - dx;
     }
+
+    io.done := false.B
   }.otherwise {
+    io.writeX := DontCare
+    io.writeY := DontCare
+    io.writeEnable := false.B
     io.done := true.B
-    io.writeEnable := writeEnable
-    io.writeX := writeX
-    io.writeY := writeY
-    io.writeVal := writeVal
   }
+  io.writeVal := writeVal
 }
