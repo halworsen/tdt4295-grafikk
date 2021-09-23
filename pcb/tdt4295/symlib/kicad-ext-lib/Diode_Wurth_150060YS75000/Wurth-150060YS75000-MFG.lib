@@ -1,0 +1,55 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# Wurth 150060YS75000
+#
+DEF 150060YS75000 D 0 40 Y Y 1 L N
+F0 "D" 0 400 50 H V L CNN 
+F1 "150060YS75000" 0 500 50 H V L CNN 
+F2 "Wurth-150060YS75000-*" 0 600 50 H I L CNN 
+F3 "https://www.we-online.com/catalog/datasheet/150060YS75000.pdf" 0 700 50 H I L CNN 
+F4 "No" 0 800 50 H I L CNN "automotive"
+F5 "Diode" 0 900 50 H I L CNN "category"
+F6 "Yellow" 0 1000 50 H I L CNN "colour"
+F7 "Optoelectronics" 0 1100 50 H I L CNN "device class L1"
+F8 "LEDs" 0 1200 50 H I L CNN "device class L2"
+F9 "unset" 0 1300 50 H I L CNN "device class L3"
+F10 "LED YELLOW CLEAR 0603 SMD" 0 1400 50 H I L CNN "digikey description"
+F11 "732-4981-1-ND" 0 1500 50 H I L CNN "digikey part number"
+F12 "20mA" 0 1600 50 H I L CNN "forward current"
+F13 "2V" 0 1700 50 H I L CNN "forward voltage"
+F14 "0.8mm" 0 1800 50 H I L CNN "height"
+F15 "Yes" 0 1900 50 H I L CNN "lead free"
+F16 "Top View" 0 2000 50 H I L CNN "led orientation"
+F17 "3d34d53c8560c7ac" 0 2100 50 H I L CNN "library id"
+F18 "120mcd" 0 2200 50 H I L CNN "luminous intensity"
+F19 "Wurth" 0 2300 50 H I L CNN "manufacturer"
+F20 "+95°C" 0 2400 50 H I L CNN "max junction temp"
+F21 "Standard LEDs - SMD WL-SMCW SMDMono TpVw Waterclr 0603 Yellow" 0 2500 50 H I L CNN "mouser description"
+F22 "710-150060YS75000" 0 2600 50 H I L CNN "mouser part number"
+F23 "0603" 0 2700 50 H I L CNN "package"
+F24 "595nm" 0 2800 50 H I L CNN "peak emmision wavelength"
+F25 "72mW" 0 2900 50 H I L CNN "power dissipation"
+F26 "5V" 0 3000 50 H I L CNN "reverse voltage"
+F27 "Yes" 0 3100 50 H I L CNN "rohs"
+F28 "+85°C" 0 3200 50 H I L CNN "temperature range high"
+F29 "-40°C" 0 3300 50 H I L CNN "temperature range low"
+F30 "140°" 0 3400 50 H I L CNN "viewing angle"
+F31 "590nm" 0 3500 50 H I L CNN "wavelength"
+DRAW
+X + 2 100 0 100 R 40 0 1 1 P 
+X - 1 500 0 100 L 40 0 1 1 P 
+P 2 1 1 0 200 100 200 -100 N
+P 2 1 1 0 400 100 400 -100 N
+P 2 1 1 0 200 100 400 0 N
+P 2 1 1 0 200 -100 400 0 N
+P 2 1 1 0 250 120 350 220 N
+P 2 1 1 0 350 220 300 220 N
+P 2 1 1 0 350 220 350 170 N
+P 2 1 1 0 320 80 420 180 N
+P 2 1 1 0 420 180 370 180 N
+P 2 1 1 0 420 180 420 130 N
+ENDDRAW
+ENDDEF
+#
+# End Library
