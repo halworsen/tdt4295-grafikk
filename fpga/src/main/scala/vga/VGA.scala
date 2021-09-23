@@ -22,7 +22,6 @@ class VGA extends Module {
   })
 
   withClockAndReset(io.clock, io.reset) {
-
     val (counterHsync, counterHsyncWrap) = Counter(0 to 800)
     val (counterVsync, counterVsyncWrap) = Counter(counterHsyncWrap, 525)
 
@@ -33,6 +32,5 @@ class VGA extends Module {
 
     io.selX := counterHsync
     io.selY := counterVsync
-    
   }
 }
