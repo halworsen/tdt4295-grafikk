@@ -36,13 +36,13 @@ F 3 "" H 8850 3700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Sheet
-S 5950 3450 800  900 
+S 6750 2100 800  900 
 U 614933B1
 F0 "IOB15" 50
 F1 "fpga_iob15.sch" 50
 $EndSheet
 $Sheet
-S 5950 2500 1000 500 
+S 6750 1150 1000 500 
 U 61537853
 F0 "FPGA_ext_IO" 50
 F1 "fpga_ext_IO.sch" 50
@@ -833,7 +833,7 @@ F 4 "GRM32ER71A476ME15L" H 4400 3900 50  0001 C CNN "Component name"
 	1    0    0    -1  
 $EndComp
 $Sheet
-S 4850 1150 1600 1050
+S 4850 1150 550  850 
 U 61459CB7
 F0 "IOB14" 50
 F1 "fpga_iob14.sch" 50
@@ -878,19 +878,6 @@ Wire Wire Line
 Connection ~ 4000 6550
 Wire Wire Line
 	4000 6450 4000 6550
-Connection ~ 4000 6450
-Wire Wire Line
-	4000 6250 4000 6450
-Connection ~ 4000 6250
-Wire Wire Line
-	4000 6050 4000 6250
-Connection ~ 4000 6050
-Wire Wire Line
-	4000 5950 4000 6050
-Connection ~ 4000 5950
-Wire Wire Line
-	4000 5850 4000 5950
-Connection ~ 4000 5850
 Wire Wire Line
 	2000 1750 2300 1750
 Wire Wire Line
