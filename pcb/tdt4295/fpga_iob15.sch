@@ -146,8 +146,6 @@ F 4 "GRM188R71C474KA88D" H 4500 1050 50  0001 C CNN "Component name"
 	1    4500 1050
 	1    0    0    -1  
 $EndComp
-Text Notes 3800 1650 2    50   ~ 0
-Datasheet says:\n1x47uF\n2x4.7uF\n4x470nF
 Text GLabel 2350 2300 2    50   Input ~ 0
 FPGA_MCU_USART_TX
 Text GLabel 2350 2500 2    50   Input ~ 0

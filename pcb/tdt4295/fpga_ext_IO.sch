@@ -19,7 +19,7 @@ U 1 1 61588030
 P 6750 2050
 F 0 "J302" H 6800 2567 50  0000 C CNN
 F 1 "Conn_02x08_Odd_Even" H 6800 2476 50  0000 C CNN
-F 2 "Connector_PinHeader_1.00mm:PinHeader_2x08_P1.00mm_Vertical" H 6750 2050 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x08_P2.54mm_Vertical" H 6750 2050 50  0001 C CNN
 F 3 "~" H 6750 2050 50  0001 C CNN
 	1    6750 2050
 	1    0    0    -1  
@@ -37,10 +37,10 @@ FPGA_EXT_IO4
 Text GLabel 4300 2250 0    50   BiDi ~ 0
 FPGA_EXT_IO5
 $Comp
-L Device:R R322
+L Device:R R323
 U 1 1 61588075
 P 4650 1750
-F 0 "R322" V 4600 1600 50  0000 C CNN
+F 0 "R323" V 4600 1600 50  0000 C CNN
 F 1 "200" V 4650 1750 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 4580 1750 50  0001 C CNN
 F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 4650 1750 50  0001 C CNN
@@ -49,10 +49,10 @@ F 4 "RNCF0805TKY200R" H 4650 1750 50  0001 C CNN "Component name"
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R R325
+L Device:R R326
 U 1 1 6158807B
 P 4900 1850
-F 0 "R325" V 4850 2000 50  0000 C CNN
+F 0 "R326" V 4850 2000 50  0000 C CNN
 F 1 "200" V 4900 1850 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 4830 1850 50  0001 C CNN
 F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 4900 1850 50  0001 C CNN
@@ -61,10 +61,10 @@ F 4 "RNCF0805TKY200R" H 4900 1850 50  0001 C CNN "Component name"
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R R319
+L Device:R R320
 U 1 1 61588081
 P 4600 1950
-F 0 "R319" V 4550 1800 50  0000 C CNN
+F 0 "R320" V 4550 1800 50  0000 C CNN
 F 1 "200" V 4600 1950 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 4530 1950 50  0001 C CNN
 F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 4600 1950 50  0001 C CNN
@@ -73,10 +73,10 @@ F 4 "RNCF0805TKY200R" H 4600 1950 50  0001 C CNN "Component name"
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R R323
+L Device:R R324
 U 1 1 61588087
 P 4850 2050
-F 0 "R323" V 4800 2200 50  0000 C CNN
+F 0 "R324" V 4800 2200 50  0000 C CNN
 F 1 "200" V 4850 2050 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 4780 2050 50  0001 C CNN
 F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 4850 2050 50  0001 C CNN
@@ -85,10 +85,10 @@ F 4 "RNCF0805TKY200R" H 4850 2050 50  0001 C CNN "Component name"
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R R320
+L Device:R R321
 U 1 1 6158808D
 P 4600 2150
-F 0 "R320" V 4550 2000 50  0000 C CNN
+F 0 "R321" V 4550 2000 50  0000 C CNN
 F 1 "200" V 4600 2150 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 4530 2150 50  0001 C CNN
 F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 4600 2150 50  0001 C CNN
@@ -97,10 +97,10 @@ F 4 "RNCF0805TKY200R" H 4600 2150 50  0001 C CNN "Component name"
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R R324
+L Device:R R325
 U 1 1 61588093
 P 4850 2250
-F 0 "R324" V 4800 2400 50  0000 C CNN
+F 0 "R325" V 4800 2400 50  0000 C CNN
 F 1 "200" V 4850 2250 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 4780 2250 50  0001 C CNN
 F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 4850 2250 50  0001 C CNN
@@ -123,10 +123,10 @@ Wire Wire Line
 Wire Wire Line
 	4500 1750 4300 1750
 $Comp
-L Device:R R321
+L Device:R R322
 U 1 1 6158ADEF
 P 4600 2350
-F 0 "R321" V 4550 2200 50  0000 C CNN
+F 0 "R322" V 4550 2200 50  0000 C CNN
 F 1 "200" V 4600 2350 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 4530 2350 50  0001 C CNN
 F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 4600 2350 50  0001 C CNN
@@ -178,10 +178,10 @@ F 3 "" H 2000 2300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0305
+L power:GND #PWR0306
 U 1 1 614F3721
 P 6500 2450
-F 0 "#PWR0305" H 6500 2200 50  0001 C CNN
+F 0 "#PWR0306" H 6500 2200 50  0001 C CNN
 F 1 "GND" H 6500 2300 50  0000 C CNN
 F 2 "" H 6500 2450 50  0001 C CNN
 F 3 "" H 6500 2450 50  0001 C CNN
@@ -189,10 +189,10 @@ F 3 "" H 6500 2450 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:+3V3 #PWR0306
+L power:+3V3 #PWR0307
 U 1 1 614F4188
 P 7150 2450
-F 0 "#PWR0306" H 7150 2300 50  0001 C CNN
+F 0 "#PWR0307" H 7150 2300 50  0001 C CNN
 F 1 "+3V3" H 7150 2590 50  0000 C CNN
 F 2 "" H 7150 2450 50  0001 C CNN
 F 3 "" H 7150 2450 50  0001 C CNN
@@ -201,56 +201,6 @@ F 3 "" H 7150 2450 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	7150 2450 7050 2450
-Text Notes 2250 6450 0    50   ~ 0
-ICD15S13E6GX00LF maybe?\n
-$Comp
-L 5177802-9:5177802-9 J?
-U 1 1 615A8760
-P 3750 4650
-AR Path="/614BF60C/615A8760" Ref="J?"  Part="1" 
-AR Path="/61537853/615A8760" Ref="J301"  Part="1" 
-F 0 "J301" H 4278 4003 60  0000 L CNN
-F 1 "5177802-9" H 4278 3897 60  0000 L CNN
-F 2 "CONN_5177802-9_TEC" H 4150 3890 60  0001 C CNN
-F 3 "" H 3750 4650 60  0000 C CNN
-	1    3750 4650
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3750 4850 3700 4850
-Wire Wire Line
-	3750 6050 3650 6050
-Wire Wire Line
-	3650 6050 3650 6200
-Wire Wire Line
-	3750 5550 3650 5550
-Wire Wire Line
-	3650 5550 3650 6050
-Connection ~ 3650 6050
-Wire Wire Line
-	3750 5450 3650 5450
-Wire Wire Line
-	3650 5450 3650 5550
-Connection ~ 3650 5550
-Wire Wire Line
-	3750 5350 3650 5350
-Wire Wire Line
-	3650 5350 3650 5450
-Connection ~ 3650 5450
-Wire Wire Line
-	3750 5250 3650 5250
-Wire Wire Line
-	3650 5250 3650 5350
-Connection ~ 3650 5350
-Wire Wire Line
-	3750 5150 3650 5150
-Wire Wire Line
-	3650 5150 3650 5250
-Connection ~ 3650 5250
-NoConn ~ 3750 5950
-NoConn ~ 3750 5050
-NoConn ~ 3750 4750
-NoConn ~ 3750 4650
 Text GLabel 950  4500 0    50   Input ~ 0
 VGA_R0
 $Comp
@@ -261,8 +211,9 @@ AR Path="/614BF60C/615B3EE9" Ref="R?"  Part="1"
 AR Path="/61537853/615B3EE9" Ref="R301"  Part="1" 
 F 0 "R301" V 1400 4500 50  0000 C CNN
 F 1 "4k" V 1300 4500 50  0000 C CNN
-F 2 "" V 1230 4500 50  0001 C CNN
-F 3 "~" H 1300 4500 50  0001 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 1230 4500 50  0001 C CNN
+F 3 "https://www.koaglobal.com/-/media/Files/KOA_Global/EN/product/commonpdf/rn73r.pdf" H 1300 4500 50  0001 C CNN
+F 4 "RN73R2BTTD4001B25" H 1300 4500 50  0001 C CNN "Component name"
 	1    1300 4500
 	0    1    1    0   
 $EndComp
@@ -334,8 +285,9 @@ AR Path="/614BF60C/615EF461" Ref="R?"  Part="1"
 AR Path="/61537853/615EF461" Ref="R303"  Part="1" 
 F 0 "R303" V 1400 5150 50  0000 C CNN
 F 1 "4k" V 1300 5150 50  0000 C CNN
-F 2 "" V 1230 5150 50  0001 C CNN
-F 3 "~" H 1300 5150 50  0001 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 1230 5150 50  0001 C CNN
+F 3 "https://www.koaglobal.com/-/media/Files/KOA_Global/EN/product/commonpdf/rn73r.pdf" H 1300 5150 50  0001 C CNN
+F 4 "RN73R2BTTD4001B25" H 1300 5150 50  0001 C CNN "Component name"
 	1    1300 5150
 	0    1    1    0   
 $EndComp
@@ -407,8 +359,9 @@ AR Path="/614BF60C/615FE017" Ref="R?"  Part="1"
 AR Path="/61537853/615FE017" Ref="R305"  Part="1" 
 F 0 "R305" V 1400 5850 50  0000 C CNN
 F 1 "4k" V 1300 5850 50  0000 C CNN
-F 2 "" V 1230 5850 50  0001 C CNN
-F 3 "~" H 1300 5850 50  0001 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 1230 5850 50  0001 C CNN
+F 3 "https://www.koaglobal.com/-/media/Files/KOA_Global/EN/product/commonpdf/rn73r.pdf" H 1300 5850 50  0001 C CNN
+F 4 "RN73R2BTTD4001B25" H 1300 5850 50  0001 C CNN "Component name"
 	1    1300 5850
 	0    1    1    0   
 $EndComp
@@ -481,8 +434,6 @@ Wire Wire Line
 Wire Wire Line
 	1950 5150 1950 5300
 Connection ~ 1950 5300
-Wire Wire Line
-	1950 5300 1950 5350
 Connection ~ 1950 5450
 Wire Wire Line
 	1950 5450 1950 5600
@@ -494,72 +445,6 @@ Wire Wire Line
 Connection ~ 1950 6150
 Wire Wire Line
 	1950 6150 1950 6000
-Wire Wire Line
-	1950 5850 3750 5850
-Connection ~ 1950 5850
-Wire Wire Line
-	1950 5350 2150 5350
-Wire Wire Line
-	2150 5350 2150 5750
-Wire Wire Line
-	2150 5750 3750 5750
-Wire Wire Line
-	1950 5350 1950 5450
-Wire Wire Line
-	1950 4950 2250 4950
-Wire Wire Line
-	2250 4950 2250 5650
-Wire Wire Line
-	2250 5650 3750 5650
-Connection ~ 1950 4950
-Connection ~ 1950 5350
-$Comp
-L Device:R R318
-U 1 1 6164F5BC
-P 3550 4850
-F 0 "R318" V 3630 4850 50  0000 C CNN
-F 1 "100" V 3550 4850 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 3480 4850 50  0001 C CNN
-F 3 "https://www.vishay.com/docs/28758/tnpw_e3.pdf" H 3550 4850 50  0001 C CNN
-F 4 "TNPW0805100RBEEA" H 3550 4850 50  0001 C CNN "Component name"
-	1    3550 4850
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R317
-U 1 1 61651319
-P 3200 4950
-F 0 "R317" V 3280 4950 50  0000 C CNN
-F 1 "100" V 3200 4950 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 3130 4950 50  0001 C CNN
-F 3 "https://www.vishay.com/docs/28758/tnpw_e3.pdf" H 3200 4950 50  0001 C CNN
-F 4 "TNPW0805100RBEEA" H 3200 4950 50  0001 C CNN "Component name"
-	1    3200 4950
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	3750 4950 3350 4950
-Wire Wire Line
-	3050 4950 2900 4950
-Wire Wire Line
-	2900 4850 3400 4850
-Text GLabel 2900 4850 0    50   Input ~ 0
-VGA_HS
-Text GLabel 2900 4950 0    50   Input ~ 0
-VGA_VS
-$Comp
-L power:GND #PWR?
-U 1 1 6153D809
-P 3650 6200
-AR Path="/614BF60C/6153D809" Ref="#PWR?"  Part="1" 
-AR Path="/61537853/6153D809" Ref="#PWR0302"  Part="1" 
-F 0 "#PWR0302" H 3650 5950 50  0001 C CNN
-F 1 "GND" H 3655 6027 50  0000 C CNN
-F 2 "" H 3650 6200 50  0001 C CNN
-F 3 "" H 3650 6200 50  0001 C CNN
-	1    3650 6200
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	2000 1250 2000 1600
 Wire Wire Line
@@ -659,7 +544,7 @@ Wire Notes Line
 	2450 550  550  550 
 Wire Notes Line
 	2450 2550 2450 550 
-Text Notes 600  650  0    50   ~ 0
+Text Notes 600  650  0    50   ~ 10
 User LEDs
 Wire Notes Line
 	4900 6550 4900 4250
@@ -669,7 +554,7 @@ Wire Notes Line
 	550  4250 550  6550
 Wire Notes Line
 	550  6550 4900 6550
-Text Notes 2500 4400 0    50   ~ 0
+Text Notes 2500 4400 0    50   ~ 10
 VGA output
 $Comp
 L NUP4114UCW1T2G:NUP4114UCW1T2G U301
@@ -677,8 +562,8 @@ U 1 1 61ADFC51
 P 5650 2900
 F 0 "U301" H 5650 2600 60  0000 C CNN
 F 1 "NUP4114UCW1T2G" H 5650 2500 60  0000 C CNN
-F 2 "SOIC_W1T2G_ONS" H 5650 2390 60  0001 C CNN
-F 3 "" H 4850 1450 60  0000 C CNN
+F 2 "NUP4114UCW1T2G-footprint:NUP4114UCW1T2G" H 5650 2390 60  0001 C CNN
+F 3 "https://www.onsemi.com/pdf/datasheet/nup4114-d.pdf" H 4850 1450 60  0001 C CNN
 	1    5650 2900
 	1    0    0    -1  
 $EndComp
@@ -688,8 +573,8 @@ U 1 1 61B06D56
 P 5800 1100
 F 0 "U302" H 5800 1650 60  0000 C CNN
 F 1 "NUP4114UCW1T2G" H 5800 1550 60  0000 C CNN
-F 2 "SOIC_W1T2G_ONS" H 5800 590 60  0001 C CNN
-F 3 "" H 5000 -350 60  0000 C CNN
+F 2 "NUP4114UCW1T2G-footprint:NUP4114UCW1T2G" H 5800 590 60  0001 C CNN
+F 3 "https://www.onsemi.com/pdf/datasheet/nup4114-d.pdf" H 5000 -350 60  0001 C CNN
 	1    5800 1100
 	1    0    0    -1  
 $EndComp
@@ -743,15 +628,15 @@ Wire Wire Line
 	5200 2900 5100 2900
 Wire Wire Line
 	5100 2900 5100 2250
-Text Notes 6600 800  0    50   ~ 0
+Text Notes 6600 800  0    50   ~ 10
 GPIO header \nwith ESD protection
 Text GLabel 9450 1750 2    50   BiDi ~ 0
 FPGA_EXT_IO7
 $Comp
-L Device:R R329
+L Device:R R330
 U 1 1 61588045
 P 8950 1750
-F 0 "R329" V 8900 1600 50  0000 C CNN
+F 0 "R330" V 8900 1600 50  0000 C CNN
 F 1 "200" V 8950 1750 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 8880 1750 50  0001 C CNN
 F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 8950 1750 50  0001 C CNN
@@ -760,10 +645,10 @@ F 4 "RNCF0805TKY200R" H 8950 1750 50  0001 C CNN "Component name"
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R R332
+L Device:R R333
 U 1 1 6158804B
 P 9200 1850
-F 0 "R332" V 9150 2000 50  0000 C CNN
+F 0 "R333" V 9150 2000 50  0000 C CNN
 F 1 "200" V 9200 1850 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 9130 1850 50  0001 C CNN
 F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 9200 1850 50  0001 C CNN
@@ -772,10 +657,10 @@ F 4 "RNCF0805TKY200R" H 9200 1850 50  0001 C CNN "Component name"
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R R326
+L Device:R R327
 U 1 1 61588051
 P 8900 1950
-F 0 "R326" V 8850 1800 50  0000 C CNN
+F 0 "R327" V 8850 1800 50  0000 C CNN
 F 1 "200" V 8900 1950 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 8830 1950 50  0001 C CNN
 F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 8900 1950 50  0001 C CNN
@@ -784,10 +669,10 @@ F 4 "RNCF0805TKY200R" H 8900 1950 50  0001 C CNN "Component name"
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R R330
+L Device:R R331
 U 1 1 61588057
 P 9150 2050
-F 0 "R330" V 9100 2200 50  0000 C CNN
+F 0 "R331" V 9100 2200 50  0000 C CNN
 F 1 "200" V 9150 2050 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 9080 2050 50  0001 C CNN
 F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 9150 2050 50  0001 C CNN
@@ -796,10 +681,10 @@ F 4 "RNCF0805TKY200R" H 9150 2050 50  0001 C CNN "Component name"
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R R327
+L Device:R R328
 U 1 1 6158805D
 P 8900 2150
-F 0 "R327" V 8850 2000 50  0000 C CNN
+F 0 "R328" V 8850 2000 50  0000 C CNN
 F 1 "200" V 8900 2150 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 8830 2150 50  0001 C CNN
 F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 8900 2150 50  0001 C CNN
@@ -808,10 +693,10 @@ F 4 "RNCF0805TKY200R" H 8900 2150 50  0001 C CNN "Component name"
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R R331
+L Device:R R332
 U 1 1 61588063
 P 9150 2250
-F 0 "R331" V 9100 2400 50  0000 C CNN
+F 0 "R332" V 9100 2400 50  0000 C CNN
 F 1 "200" V 9150 2250 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 9080 2250 50  0001 C CNN
 F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 9150 2250 50  0001 C CNN
@@ -844,10 +729,10 @@ FPGA_EXT_IO8
 Wire Wire Line
 	9050 2350 9450 2350
 $Comp
-L Device:R R328
+L Device:R R329
 U 1 1 61588069
 P 8900 2350
-F 0 "R328" V 8850 2200 50  0000 C CNN
+F 0 "R329" V 8850 2200 50  0000 C CNN
 F 1 "200" V 8900 2350 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 8830 2350 50  0001 C CNN
 F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 8900 2350 50  0001 C CNN
@@ -863,8 +748,8 @@ U 1 1 61B47BBA
 P 8000 3200
 F 0 "U304" H 8000 2900 60  0000 C CNN
 F 1 "NUP4114UCW1T2G" H 8000 2800 60  0000 C CNN
-F 2 "SOIC_W1T2G_ONS" H 8000 2690 60  0001 C CNN
-F 3 "" H 7200 1750 60  0000 C CNN
+F 2 "NUP4114UCW1T2G-footprint:NUP4114UCW1T2G" H 8000 2690 60  0001 C CNN
+F 3 "https://www.onsemi.com/pdf/datasheet/nup4114-d.pdf" H 7200 1750 60  0001 C CNN
 	1    8000 3200
 	1    0    0    -1  
 $EndComp
@@ -878,8 +763,8 @@ U 1 1 61BB530D
 P 8000 1000
 F 0 "U303" H 8000 700 60  0000 C CNN
 F 1 "NUP4114UCW1T2G" H 8000 600 60  0000 C CNN
-F 2 "SOIC_W1T2G_ONS" H 8000 490 60  0001 C CNN
-F 3 "" H 7200 -450 60  0000 C CNN
+F 2 "NUP4114UCW1T2G-footprint:NUP4114UCW1T2G" H 8000 490 60  0001 C CNN
+F 3 "https://www.onsemi.com/pdf/datasheet/nup4114-d.pdf" H 7200 -450 60  0001 C CNN
 	1    8000 1000
 	1    0    0    -1  
 $EndComp
@@ -950,10 +835,10 @@ Wire Wire Line
 Wire Wire Line
 	5050 1750 6550 1750
 $Comp
-L power:GND #PWR0307
+L power:GND #PWR0308
 U 1 1 61BFEB31
 P 7550 3400
-F 0 "#PWR0307" H 7550 3150 50  0001 C CNN
+F 0 "#PWR0308" H 7550 3150 50  0001 C CNN
 F 1 "GND" H 7550 3250 50  0000 C CNN
 F 2 "" H 7550 3400 50  0001 C CNN
 F 3 "" H 7550 3400 50  0001 C CNN
@@ -961,10 +846,10 @@ F 3 "" H 7550 3400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0303
+L power:GND #PWR0304
 U 1 1 61BFF287
 P 5200 3100
-F 0 "#PWR0303" H 5200 2850 50  0001 C CNN
+F 0 "#PWR0304" H 5200 2850 50  0001 C CNN
 F 1 "GND" H 5200 2950 50  0000 C CNN
 F 2 "" H 5200 3100 50  0001 C CNN
 F 3 "" H 5200 3100 50  0001 C CNN
@@ -972,10 +857,10 @@ F 3 "" H 5200 3100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:+3V3 #PWR0308
+L power:+3V3 #PWR0309
 U 1 1 61C0028E
 P 8450 2850
-F 0 "#PWR0308" H 8450 2700 50  0001 C CNN
+F 0 "#PWR0309" H 8450 2700 50  0001 C CNN
 F 1 "+3V3" H 8450 2990 50  0000 C CNN
 F 2 "" H 8450 2850 50  0001 C CNN
 F 3 "" H 8450 2850 50  0001 C CNN
@@ -983,10 +868,10 @@ F 3 "" H 8450 2850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:+3V3 #PWR0304
+L power:+3V3 #PWR0305
 U 1 1 61C00B46
 P 6100 2550
-F 0 "#PWR0304" H 6100 2400 50  0001 C CNN
+F 0 "#PWR0305" H 6100 2400 50  0001 C CNN
 F 1 "+3V3" H 6100 2690 50  0000 C CNN
 F 2 "" H 6100 2550 50  0001 C CNN
 F 3 "" H 6100 2550 50  0001 C CNN
@@ -1001,4 +886,147 @@ Wire Notes Line
 	3500 3750 10150 3750
 Wire Notes Line
 	10150 500  10150 3750
+$Comp
+L Connector:DB15_Female_HighDensity_MountingHoles J301
+U 1 1 61509FEE
+P 3050 5350
+F 0 "J301" H 3050 6200 50  0000 C CNN
+F 1 "618015330923" H 3050 6100 50  0000 C CNN
+F 2 "VGA_618015330923-footprint:618015330923" H 2100 5750 50  0001 C CNN
+F 3 " ~" H 2100 5750 50  0001 C CNN
+	1    3050 5350
+	1    0    0    -1  
+$EndComp
+Text GLabel 4200 5550 2    50   Input ~ 0
+VGA_VS
+Text GLabel 4150 5350 2    50   Input ~ 0
+VGA_HS
+Wire Wire Line
+	4150 5350 3650 5350
+Wire Wire Line
+	4050 5550 4200 5550
+Wire Wire Line
+	3350 5550 3750 5550
+$Comp
+L Device:R R319
+U 1 1 61651319
+P 3900 5550
+F 0 "R319" V 3980 5550 50  0000 C CNN
+F 1 "100" V 3900 5550 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 3830 5550 50  0001 C CNN
+F 3 "https://www.vishay.com/docs/28758/tnpw_e3.pdf" H 3900 5550 50  0001 C CNN
+F 4 "TNPW0805100RBEEA" H 3900 5550 50  0001 C CNN "Component name"
+	1    3900 5550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R318
+U 1 1 6164F5BC
+P 3500 5350
+F 0 "R318" V 3580 5350 50  0000 C CNN
+F 1 "100" V 3500 5350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 3430 5350 50  0001 C CNN
+F 3 "https://www.vishay.com/docs/28758/tnpw_e3.pdf" H 3500 5350 50  0001 C CNN
+F 4 "TNPW0805100RBEEA" H 3500 5350 50  0001 C CNN "Component name"
+	1    3500 5350
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1950 5300 1950 5450
+Wire Wire Line
+	1950 4950 2750 4950
+Connection ~ 1950 4950
+Wire Wire Line
+	2750 5150 1950 5150
+Connection ~ 1950 5150
+Wire Wire Line
+	1950 5850 2200 5850
+Wire Wire Line
+	2200 5850 2200 5350
+Wire Wire Line
+	2200 5350 2750 5350
+Connection ~ 1950 5850
+$Comp
+L Device:C C301
+U 1 1 6153D59F
+P 3050 6200
+F 0 "C301" H 3075 6300 50  0000 L CNN
+F 1 "1nF/250V" H 3075 6100 50  0000 L CNN
+F 2 "cap_8853522100131:8853522100131" H 3088 6050 50  0001 C CNN
+F 3 "~" H 3050 6200 50  0001 C CNN
+F 4 "8853522100131" H 3050 6200 50  0001 C CNN "Component name"
+	1    3050 6200
+	-1   0    0    1   
+$EndComp
+Connection ~ 3050 6050
+Wire Wire Line
+	3050 6050 3250 6050
+$Comp
+L Device:R R317
+U 1 1 6153CE4E
+P 3400 6050
+F 0 "R317" V 3480 6050 50  0000 C CNN
+F 1 "1M" V 3400 6050 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 3330 6050 50  0001 C CNN
+F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf" H 3400 6050 50  0001 C CNN
+F 4 "ERA-6AEB105V" H 3400 6050 50  0001 C CNN "Component name"
+	1    3400 6050
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3050 6350 3550 6350
+Wire Wire Line
+	3550 6350 3550 6050
+$Comp
+L power:GND #PWR0303
+U 1 1 61560B17
+P 3550 6350
+F 0 "#PWR0303" H 3550 6100 50  0001 C CNN
+F 1 "GND" H 3550 6200 50  0000 C CNN
+F 2 "" H 3550 6350 50  0001 C CNN
+F 3 "" H 3550 6350 50  0001 C CNN
+	1    3550 6350
+	1    0    0    -1  
+$EndComp
+Connection ~ 3550 6350
+NoConn ~ 2750 5550
+NoConn ~ 2750 5450
+NoConn ~ 3350 4950
+NoConn ~ 3350 5150
+NoConn ~ 3350 5750
+Wire Wire Line
+	2750 4850 2650 4850
+Wire Wire Line
+	2650 4850 2650 5050
+Wire Wire Line
+	2750 5750 2650 5750
+Connection ~ 2650 5750
+Wire Wire Line
+	2650 5750 2650 5850
+Wire Wire Line
+	2750 5650 2650 5650
+Connection ~ 2650 5650
+Wire Wire Line
+	2650 5650 2650 5750
+Wire Wire Line
+	2750 5250 2650 5250
+Connection ~ 2650 5250
+Wire Wire Line
+	2650 5250 2650 5650
+Wire Wire Line
+	2750 5050 2650 5050
+Connection ~ 2650 5050
+Wire Wire Line
+	2650 5050 2650 5250
+$Comp
+L power:GND #PWR0302
+U 1 1 61591B16
+P 2650 5850
+F 0 "#PWR0302" H 2650 5600 50  0001 C CNN
+F 1 "GND" H 2650 5700 50  0000 C CNN
+F 2 "" H 2650 5850 50  0001 C CNN
+F 3 "" H 2650 5850 50  0001 C CNN
+	1    2650 5850
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
