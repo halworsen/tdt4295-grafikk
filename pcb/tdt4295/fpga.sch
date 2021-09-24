@@ -402,8 +402,6 @@ Wire Wire Line
 Wire Wire Line
 	8850 2250 8900 2250
 Wire Wire Line
-	8850 1650 8850 2150
-Wire Wire Line
 	8900 1650 8850 1650
 Wire Wire Line
 	8500 1750 8500 1700
@@ -481,8 +479,6 @@ Connection ~ 10900 2450
 Wire Wire Line
 	10900 2350 10900 2250
 Connection ~ 10900 2350
-Wire Wire Line
-	10900 2250 10900 2150
 Connection ~ 10900 2250
 $Comp
 L power:+1V0 #PWR0123
@@ -513,8 +509,6 @@ Connection ~ 10900 1050
 Wire Wire Line
 	10900 950  10900 800 
 Connection ~ 10900 950 
-Wire Wire Line
-	10900 1550 10900 1450
 $Comp
 L xc7a100t-ftg256-modified:XC7A100T-FTG256-tdt4295 U102
 U 4 1 614D7483
@@ -1355,10 +1349,10 @@ F 3 "" H 1400 5650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:CP1 C?
+L Device:CP1 C103
 U 1 1 614EBAD6
 P 6600 6250
-F 0 "C?" H 6650 6350 50  0000 L CNN
+F 0 "C103" H 6650 6350 50  0000 L CNN
 F 1 "330uF" H 6650 6150 50  0000 L CNN
 F 2 "" H 6600 6250 50  0001 C CNN
 F 3 "~" H 6600 6250 50  0001 C CNN
@@ -1369,4 +1363,10 @@ Connection ~ 6600 6100
 Connection ~ 6600 6400
 NoConn ~ 1900 5350
 NoConn ~ 1900 5450
+Wire Wire Line
+	8850 1650 8850 2150
+Wire Wire Line
+	10900 2150 10900 2250
+Wire Wire Line
+	10900 1450 10900 1550
 $EndSCHEMATC
