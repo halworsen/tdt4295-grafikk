@@ -160,7 +160,7 @@ P 1250 1750
 F 0 "U401" H 2250 2150 60  0000 C CNN
 F 1 "DSC1001AL5-100.0000" H 2250 2050 60  0000 C CNN
 F 2 "DSC1001AL5-100.0000:DSC1001AL5-100.0000" H 2250 1990 60  0001 C CNN
-F 3 "https://rocelec.widen.net/view/pdf/4jp9qpy8qv/MCHP-S-A0003587227-1.pdf?t.download=true&u=5oefqw" H 1250 1750 60  0000 C CNN
+F 3 "https://rocelec.widen.net/view/pdf/4jp9qpy8qv/MCHP-S-A0003587227-1.pdf?t.download=true&u=5oefqw" H 1250 1750 60  0001 C CNN
 	1    1250 1750
 	1    0    0    -1  
 $EndComp
@@ -355,4 +355,5 @@ NoConn ~ 5200 4550
 NoConn ~ 5200 4450
 NoConn ~ 5200 2750
 NoConn ~ 5200 2650
+NoConn ~ 5200 6650
 $EndSCHEMATC
