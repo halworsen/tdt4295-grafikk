@@ -67,62 +67,20 @@ F 12 "Active" H 2150 1800 60  0001 L CNN "Status"
 	1    1950 600 
 	0    -1   1    0   
 $EndComp
-Wire Wire Line
-	1250 2150 1900 2150
-$Comp
-L dk_TVS-Diodes:IP4220CZ6_125 D203
-U 1 1 613C398F
-P 2000 3000
-F 0 "D203" V 2053 2520 60  0000 R CNN
-F 1 "IP4220CZ6_125" V 1947 2520 60  0000 R CNN
-F 2 "digikey-footprints:SC-74" H 2200 3200 60  0001 L CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/IP4220CZ6.pdf" H 2200 3300 60  0001 L CNN
-F 4 "1727-3578-1-ND" H 2200 3400 60  0001 L CNN "Digi-Key_PN"
-F 5 "IP4220CZ6,125" H 2200 3500 60  0001 L CNN "MPN"
-F 6 "Circuit Protection" H 2200 3600 60  0001 L CNN "Category"
-F 7 "TVS - Diodes" H 2200 3700 60  0001 L CNN "Family"
-F 8 "https://assets.nexperia.com/documents/data-sheet/IP4220CZ6.pdf" H 2200 3800 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/nexperia-usa-inc/IP4220CZ6,125/1727-3578-1-ND/1133548" H 2200 3900 60  0001 L CNN "DK_Detail_Page"
-F 10 "TVS DIODE 5.5V 6TSOP" H 2200 4000 60  0001 L CNN "Description"
-F 11 "Nexperia USA Inc." H 2200 4100 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 2200 4200 60  0001 L CNN "Status"
-	1    2000 3000
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	1050 1750 2100 1750
-Wire Wire Line
-	2100 2500 2100 1750
-Connection ~ 2100 1750
-Wire Wire Line
-	1900 2500 1900 2150
-Connection ~ 1900 2150
-Wire Wire Line
-	1900 2150 2800 2150
-Wire Wire Line
-	2300 2500 2300 2350
 Connection ~ 2300 2350
 Wire Wire Line
 	2300 2350 2800 2350
 $Comp
 L power:GND #PWR0133
 U 1 1 613C399F
-P 2100 3650
-F 0 "#PWR0133" H 2100 3400 50  0001 C CNN
-F 1 "GND" H 2105 3477 50  0000 C CNN
-F 2 "" H 2100 3650 50  0001 C CNN
-F 3 "" H 2100 3650 50  0001 C CNN
-	1    2100 3650
+P 2100 3600
+F 0 "#PWR0133" H 2100 3350 50  0001 C CNN
+F 1 "GND" H 2105 3427 50  0000 C CNN
+F 2 "" H 2100 3600 50  0001 C CNN
+F 3 "" H 2100 3600 50  0001 C CNN
+	1    2100 3600
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2100 3500 2100 3650
-NoConn ~ 2300 3600
-NoConn ~ 1900 3600
-Wire Wire Line
-	2300 3500 2300 3600
-Wire Wire Line
-	1900 3600 1900 3500
 Wire Notes Line
 	3750 4450 650  4450
 Wire Notes Line
@@ -397,7 +355,7 @@ L Device:R R201
 U 1 1 618CE8AF
 P 1000 5750
 F 0 "R201" H 1070 5796 50  0000 L CNN
-F 1 "1K" H 1070 5705 50  0000 L CNN
+F 1 "330" H 1070 5705 50  0000 L CNN
 F 2 "" V 930 5750 50  0001 C CNN
 F 3 "~" H 1000 5750 50  0001 C CNN
 	1    1000 5750
@@ -408,7 +366,7 @@ L Device:R R202
 U 1 1 618CF109
 P 1500 5750
 F 0 "R202" H 1570 5796 50  0000 L CNN
-F 1 "1K" H 1570 5705 50  0000 L CNN
+F 1 "330" H 1570 5705 50  0000 L CNN
 F 2 "" V 1430 5750 50  0001 C CNN
 F 3 "~" H 1500 5750 50  0001 C CNN
 	1    1500 5750
@@ -1252,6 +1210,45 @@ F 3 "~" H 2700 1750 50  0001 C CNN
 	1    2700 1750
 	0    1    1    0   
 $EndComp
+$Comp
+L tdt4295:PHDMI2AB4 U?
+U 1 1 61657D49
+P 2150 3050
+F 0 "U?" H 1912 2979 50  0000 R CNN
+F 1 "PHDMI2AB4" H 1912 3070 50  0000 R CNN
+F 2 "tdt4295:DFN2510A-10" H 2150 2950 50  0001 C CNN
+F 3 "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjq-uC3upjzAhUSmYsKHV0iBjEQFnoECAQQAQ&url=https%3A%2F%2Fassets.nexperia.com%2Fdocuments%2Fdata-sheet%2FPHDMI2AB4.pdf&usg=AOvVaw2t6nU9jF_TXAIowSn_9t4X" H 2150 2950 50  0001 C CNN
+	1    2150 3050
+	-1   0    0    1   
+$EndComp
 Wire Wire Line
-	2100 1750 2550 1750
+	2100 3400 2100 3500
+Wire Wire Line
+	2100 3500 1750 3500
+Wire Wire Line
+	1750 3500 1750 2550
+Wire Wire Line
+	1750 2550 2100 2550
+Wire Wire Line
+	2100 2550 2100 2650
+Connection ~ 2100 3500
+Wire Wire Line
+	2100 3500 2100 3600
+Wire Wire Line
+	2300 2350 2300 2650
+Wire Wire Line
+	1050 1750 2200 1750
+Wire Wire Line
+	2200 1750 2200 2650
+Connection ~ 2200 1750
+Wire Wire Line
+	2200 1750 2550 1750
+Wire Wire Line
+	1250 2150 2000 2150
+Wire Wire Line
+	2000 2150 2000 2650
+Connection ~ 2000 2150
+Wire Wire Line
+	2000 2150 2800 2150
+NoConn ~ 1900 2650
 $EndSCHEMATC
