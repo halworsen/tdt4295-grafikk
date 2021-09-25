@@ -162,4 +162,5 @@
   (lib (name LM20143MHX-NOPB)(type Legacy)(uri ${KIPRJMOD}/symlib/LM20143MHX-NOPB/2021-09-15_14-49-32/2021-09-15_14-49-32.lib)(options "")(descr ""))
   (lib (name DSC1001AL5-100.0000)(type Legacy)(uri ${KIPRJMOD}/symlib/kicad-ext-lib/DSC1001AL5-100.0000/DSC1001AL5-100.0000.lib)(options "")(descr ""))
   (lib (name VGA_618015330923)(type Legacy)(uri ${KIPRJMOD}/symlib/kicad-ext-lib/VGA_618015330923/618015330923.lib)(options "")(descr ""))
+  (lib (name COM-09032)(type Legacy)(uri ${KIPRJMOD}/symlib/com09032-joystick/COM-09032.lib)(options "")(descr ""))
 )

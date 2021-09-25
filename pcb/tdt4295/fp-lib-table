@@ -10,4 +10,7 @@
   (lib (name DSC1001AL5-100.0000)(type KiCad)(uri ${KIPRJMOD}/symlib/kicad-ext-lib/DSC1001AL5-100.0000/footprints.pretty)(options "")(descr ""))
   (lib (name VGA_618015330923-footprint)(type KiCad)(uri ${KIPRJMOD}/symlib/kicad-ext-lib/VGA_618015330923)(options "")(descr ""))
   (lib (name cap_8853522100131)(type KiCad)(uri ${KIPRJMOD}/symlib/kicad-ext-lib/cap_8853522100131/footprints.pretty)(options "")(descr ""))
+  (lib (name 5177802-9)(type KiCad)(uri ${KIPRJMOD}/symlib/kicad-ext-lib/5177802-9/footprints.pretty)(options "")(descr ""))
+  (lib (name com09032-joystick)(type KiCad)(uri ${KIPRJMOD}/symlib/com09032-joystick)(options "")(descr ""))
+  (lib (name tdt4295)(type KiCad)(uri ${KIPRJMOD}/symlib/tdt4295.pretty)(options "")(descr ""))
 )
