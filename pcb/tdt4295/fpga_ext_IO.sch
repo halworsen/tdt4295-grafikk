@@ -42,10 +42,10 @@ U 1 1 61588075
 P 4650 1750
 F 0 "R523" V 4600 1600 50  0000 C CNN
 F 1 "200" V 4650 1750 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 4580 1750 50  0001 C CNN
-F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 4650 1750 50  0001 C CNN
-F 4 "RNCF0805TKY200R" H 4650 1750 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/stackpole-electronics-inc/RNCF0805TKY200R/RNCF0805TKY200RCT-ND/4928400" H 4650 1750 50  0001 C CNN "DK_Detail_Page"
+F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 4580 1750 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 4650 1750 50  0001 C CNN
+F 4 "3521200RFT" H 4650 1750 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 4650 1750 50  0001 C CNN "DK_Detail_Page"
 	1    4650 1750
 	0    1    1    0   
 $EndComp
@@ -55,10 +55,10 @@ U 1 1 6158807B
 P 4900 1850
 F 0 "R526" V 4850 2000 50  0000 C CNN
 F 1 "200" V 4900 1850 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 4830 1850 50  0001 C CNN
-F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 4900 1850 50  0001 C CNN
-F 4 "RNCF0805TKY200R" H 4900 1850 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/stackpole-electronics-inc/RNCF0805TKY200R/RNCF0805TKY200RCT-ND/4928400" H 4900 1850 50  0001 C CNN "DK_Detail_Page"
+F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 4830 1850 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 4900 1850 50  0001 C CNN
+F 4 "3521200RFT" H 4900 1850 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 4900 1850 50  0001 C CNN "DK_Detail_Page"
 	1    4900 1850
 	0    1    1    0   
 $EndComp
@@ -68,10 +68,10 @@ U 1 1 61588081
 P 4600 1950
 F 0 "R520" V 4550 1800 50  0000 C CNN
 F 1 "200" V 4600 1950 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 4530 1950 50  0001 C CNN
-F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 4600 1950 50  0001 C CNN
-F 4 "RNCF0805TKY200R" H 4600 1950 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/stackpole-electronics-inc/RNCF0805TKY200R/RNCF0805TKY200RCT-ND/4928400" H 4600 1950 50  0001 C CNN "DK_Detail_Page"
+F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 4530 1950 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 4600 1950 50  0001 C CNN
+F 4 "3521200RFT" H 4600 1950 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 4600 1950 50  0001 C CNN "DK_Detail_Page"
 	1    4600 1950
 	0    1    1    0   
 $EndComp
@@ -81,10 +81,10 @@ U 1 1 61588087
 P 4850 2050
 F 0 "R524" V 4800 2200 50  0000 C CNN
 F 1 "200" V 4850 2050 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 4780 2050 50  0001 C CNN
-F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 4850 2050 50  0001 C CNN
-F 4 "RNCF0805TKY200R" H 4850 2050 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/stackpole-electronics-inc/RNCF0805TKY200R/RNCF0805TKY200RCT-ND/4928400" H 4850 2050 50  0001 C CNN "DK_Detail_Page"
+F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 4780 2050 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 4850 2050 50  0001 C CNN
+F 4 "3521200RFT" H 4850 2050 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 4850 2050 50  0001 C CNN "DK_Detail_Page"
 	1    4850 2050
 	0    1    1    0   
 $EndComp
@@ -94,10 +94,10 @@ U 1 1 6158808D
 P 4600 2150
 F 0 "R521" V 4550 2000 50  0000 C CNN
 F 1 "200" V 4600 2150 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 4530 2150 50  0001 C CNN
-F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 4600 2150 50  0001 C CNN
-F 4 "RNCF0805TKY200R" H 4600 2150 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/stackpole-electronics-inc/RNCF0805TKY200R/RNCF0805TKY200RCT-ND/4928400" H 4600 2150 50  0001 C CNN "DK_Detail_Page"
+F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 4530 2150 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 4600 2150 50  0001 C CNN
+F 4 "3521200RFT" H 4600 2150 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 4600 2150 50  0001 C CNN "DK_Detail_Page"
 	1    4600 2150
 	0    1    1    0   
 $EndComp
@@ -107,10 +107,10 @@ U 1 1 61588093
 P 4850 2250
 F 0 "R525" V 4800 2400 50  0000 C CNN
 F 1 "200" V 4850 2250 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 4780 2250 50  0001 C CNN
-F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 4850 2250 50  0001 C CNN
-F 4 "RNCF0805TKY200R" H 4850 2250 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/stackpole-electronics-inc/RNCF0805TKY200R/RNCF0805TKY200RCT-ND/4928400" H 4850 2250 50  0001 C CNN "DK_Detail_Page"
+F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 4780 2250 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 4850 2250 50  0001 C CNN
+F 4 "3521200RFT" H 4850 2250 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 4850 2250 50  0001 C CNN "DK_Detail_Page"
 	1    4850 2250
 	0    1    1    0   
 $EndComp
@@ -134,10 +134,10 @@ U 1 1 6158ADEF
 P 4600 2350
 F 0 "R522" V 4550 2200 50  0000 C CNN
 F 1 "200" V 4600 2350 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 4530 2350 50  0001 C CNN
-F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 4600 2350 50  0001 C CNN
-F 4 "RNCF0805TKY200R" H 4600 2350 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/stackpole-electronics-inc/RNCF0805TKY200R/RNCF0805TKY200RCT-ND/4928400" H 4600 2350 50  0001 C CNN "DK_Detail_Page"
+F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 4530 2350 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 4600 2350 50  0001 C CNN
+F 4 "3521200RFT" H 4600 2350 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 4600 2350 50  0001 C CNN "DK_Detail_Page"
 	1    4600 2350
 	0    1    1    0   
 $EndComp
@@ -246,24 +246,11 @@ U 1 1 615B5C90
 P 1300 4800
 F 0 "R502" V 1380 4800 50  0000 C CNN
 F 1 "1k" V 1300 4800 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder" V 1230 4800 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1230 4800 50  0001 C CNN
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 1300 4800 50  0001 C CNN
 F 4 "RR0510P-102-D" H 1300 4800 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/susumu/RR0510P-102-D/RR05P1-0KDCT-ND/432937" H 1300 4800 50  0001 C CNN "DK_Detail_Page"
+F 5 "https://www.digikey.no/product-detail/en/susumu/RR1220P-102-D/RR12P1-0KDCT-ND/432830" H 1300 4800 50  0001 C CNN "DK_Detail_Page"
 	1    1300 4800
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R512
-U 1 1 615B6041
-P 1700 4950
-F 0 "R512" V 1780 4950 50  0000 C CNN
-F 1 "1k" V 1700 4950 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder" V 1630 4950 50  0001 C CNN
-F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 1700 4950 50  0001 C CNN
-F 4 "RR0510P-102-D" H 1700 4950 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/susumu/RR0510P-102-D/RR05P1-0KDCT-ND/432937" H 1700 4950 50  0001 C CNN "DK_Detail_Page"
-	1    1700 4950
 	0    1    1    0   
 $EndComp
 Text GLabel 950  4950 0    50   Input ~ 0
@@ -282,8 +269,6 @@ Wire Wire Line
 	1850 4650 1950 4650
 Wire Wire Line
 	950  4800 1150 4800
-Wire Wire Line
-	1450 4800 1950 4800
 Wire Wire Line
 	950  4950 1550 4950
 Wire Wire Line
@@ -325,10 +310,10 @@ U 1 1 615EF46D
 P 1300 5450
 F 0 "R504" V 1380 5450 50  0000 C CNN
 F 1 "1k" V 1300 5450 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder" V 1230 5450 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1230 5450 50  0001 C CNN
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 1300 5450 50  0001 C CNN
 F 4 "RR0510P-102-D" H 1300 5450 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/susumu/RR0510P-102-D/RR05P1-0KDCT-ND/432937" H 1300 5450 50  0001 C CNN "DK_Detail_Page"
+F 5 "https://www.digikey.no/product-detail/en/susumu/RR1220P-102-D/RR12P1-0KDCT-ND/432830" H 1300 5450 50  0001 C CNN "DK_Detail_Page"
 	1    1300 5450
 	0    1    1    0   
 $EndComp
@@ -337,11 +322,11 @@ L Device:R R514
 U 1 1 615EF473
 P 1700 5600
 F 0 "R514" V 1780 5600 50  0000 C CNN
-F 1 "1k" V 1700 5600 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder" V 1630 5600 50  0001 C CNN
-F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 1700 5600 50  0001 C CNN
-F 4 "RR0510P-102-D" H 1700 5600 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/susumu/RR0510P-102-D/RR05P1-0KDCT-ND/432937" H 1700 5600 50  0001 C CNN "DK_Detail_Page"
+F 1 "510" V 1700 5600 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1630 5600 50  0001 C CNN
+F 3 "" H 1700 5600 50  0001 C CNN
+F 4 "ERA-6AED511V" H 1700 5600 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/panasonic-electronic-components/ERA-6AED511V/P123855CT-ND/9467784" H 1700 5600 50  0001 C CNN "DK_Detail_Page"
 	1    1700 5600
 	0    1    1    0   
 $EndComp
@@ -404,10 +389,10 @@ U 1 1 615FE023
 P 1300 6150
 F 0 "R506" V 1380 6150 50  0000 C CNN
 F 1 "1k" V 1300 6150 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder" V 1230 6150 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1230 6150 50  0001 C CNN
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 1300 6150 50  0001 C CNN
 F 4 "RR0510P-102-D" H 1300 6150 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/susumu/RR0510P-102-D/RR05P1-0KDCT-ND/432937" H 1300 6150 50  0001 C CNN "DK_Detail_Page"
+F 5 "https://www.digikey.no/product-detail/en/susumu/RR1220P-102-D/RR12P1-0KDCT-ND/432830" H 1300 6150 50  0001 C CNN "DK_Detail_Page"
 	1    1300 6150
 	0    1    1    0   
 $EndComp
@@ -416,11 +401,11 @@ L Device:R R516
 U 1 1 615FE029
 P 1700 6300
 F 0 "R516" V 1780 6300 50  0000 C CNN
-F 1 "1k" V 1700 6300 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder" V 1630 6300 50  0001 C CNN
-F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 1700 6300 50  0001 C CNN
-F 4 "RR0510P-102-D" H 1700 6300 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/susumu/RR0510P-102-D/RR05P1-0KDCT-ND/432937" H 1700 6300 50  0001 C CNN "DK_Detail_Page"
+F 1 "510" V 1700 6300 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1630 6300 50  0001 C CNN
+F 3 "" H 1700 6300 50  0001 C CNN
+F 4 "ERA-6AED511V" H 1700 6300 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/panasonic-electronic-components/ERA-6AED511V/P123855CT-ND/9467784" H 1700 6300 50  0001 C CNN "DK_Detail_Page"
 	1    1700 6300
 	0    1    1    0   
 $EndComp
@@ -664,10 +649,10 @@ U 1 1 61588045
 P 8950 1750
 F 0 "R530" V 8900 1600 50  0000 C CNN
 F 1 "200" V 8950 1750 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 8880 1750 50  0001 C CNN
-F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 8950 1750 50  0001 C CNN
-F 4 "RNCF0805TKY200R" H 8950 1750 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/stackpole-electronics-inc/RNCF0805TKY200R/RNCF0805TKY200RCT-ND/4928400" H 8950 1750 50  0001 C CNN "DK_Detail_Page"
+F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 8880 1750 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 8950 1750 50  0001 C CNN
+F 4 "3521200RFT" H 8950 1750 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 8950 1750 50  0001 C CNN "DK_Detail_Page"
 	1    8950 1750
 	0    1    1    0   
 $EndComp
@@ -677,10 +662,10 @@ U 1 1 6158804B
 P 9200 1850
 F 0 "R533" V 9150 2000 50  0000 C CNN
 F 1 "200" V 9200 1850 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 9130 1850 50  0001 C CNN
-F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 9200 1850 50  0001 C CNN
-F 4 "RNCF0805TKY200R" H 9200 1850 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/stackpole-electronics-inc/RNCF0805TKY200R/RNCF0805TKY200RCT-ND/4928400" H 9200 1850 50  0001 C CNN "DK_Detail_Page"
+F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 9130 1850 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 9200 1850 50  0001 C CNN
+F 4 "3521200RFT" H 9200 1850 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 9200 1850 50  0001 C CNN "DK_Detail_Page"
 	1    9200 1850
 	0    1    1    0   
 $EndComp
@@ -690,10 +675,10 @@ U 1 1 61588051
 P 8900 1950
 F 0 "R527" V 8850 1800 50  0000 C CNN
 F 1 "200" V 8900 1950 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 8830 1950 50  0001 C CNN
-F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 8900 1950 50  0001 C CNN
-F 4 "RNCF0805TKY200R" H 8900 1950 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/stackpole-electronics-inc/RNCF0805TKY200R/RNCF0805TKY200RCT-ND/4928400" H 8900 1950 50  0001 C CNN "DK_Detail_Page"
+F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 8830 1950 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 8900 1950 50  0001 C CNN
+F 4 "3521200RFT" H 8900 1950 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 8900 1950 50  0001 C CNN "DK_Detail_Page"
 	1    8900 1950
 	0    1    1    0   
 $EndComp
@@ -703,10 +688,10 @@ U 1 1 61588057
 P 9150 2050
 F 0 "R531" V 9100 2200 50  0000 C CNN
 F 1 "200" V 9150 2050 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 9080 2050 50  0001 C CNN
-F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 9150 2050 50  0001 C CNN
-F 4 "RNCF0805TKY200R" H 9150 2050 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/stackpole-electronics-inc/RNCF0805TKY200R/RNCF0805TKY200RCT-ND/4928400" H 9150 2050 50  0001 C CNN "DK_Detail_Page"
+F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 9080 2050 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 9150 2050 50  0001 C CNN
+F 4 "3521200RFT" H 9150 2050 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 9150 2050 50  0001 C CNN "DK_Detail_Page"
 	1    9150 2050
 	0    1    1    0   
 $EndComp
@@ -716,10 +701,10 @@ U 1 1 6158805D
 P 8900 2150
 F 0 "R528" V 8850 2000 50  0000 C CNN
 F 1 "200" V 8900 2150 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 8830 2150 50  0001 C CNN
-F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 8900 2150 50  0001 C CNN
-F 4 "RNCF0805TKY200R" H 8900 2150 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/stackpole-electronics-inc/RNCF0805TKY200R/RNCF0805TKY200RCT-ND/4928400" H 8900 2150 50  0001 C CNN "DK_Detail_Page"
+F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 8830 2150 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 8900 2150 50  0001 C CNN
+F 4 "3521200RFT" H 8900 2150 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 8900 2150 50  0001 C CNN "DK_Detail_Page"
 	1    8900 2150
 	0    1    1    0   
 $EndComp
@@ -729,10 +714,10 @@ U 1 1 61588063
 P 9150 2250
 F 0 "R532" V 9100 2400 50  0000 C CNN
 F 1 "200" V 9150 2250 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 9080 2250 50  0001 C CNN
-F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 9150 2250 50  0001 C CNN
-F 4 "RNCF0805TKY200R" H 9150 2250 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/stackpole-electronics-inc/RNCF0805TKY200R/RNCF0805TKY200RCT-ND/4928400" H 9150 2250 50  0001 C CNN "DK_Detail_Page"
+F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 9080 2250 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 9150 2250 50  0001 C CNN
+F 4 "3521200RFT" H 9150 2250 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 9150 2250 50  0001 C CNN "DK_Detail_Page"
 	1    9150 2250
 	0    1    1    0   
 $EndComp
@@ -766,10 +751,10 @@ U 1 1 61588069
 P 8900 2350
 F 0 "R529" V 8850 2200 50  0000 C CNN
 F 1 "200" V 8900 2350 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 8830 2350 50  0001 C CNN
-F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 8900 2350 50  0001 C CNN
-F 4 "RNCF0805TKY200R" H 8900 2350 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/stackpole-electronics-inc/RNCF0805TKY200R/RNCF0805TKY200RCT-ND/4928400" H 8900 2350 50  0001 C CNN "DK_Detail_Page"
+F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 8830 2350 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 8900 2350 50  0001 C CNN
+F 4 "3521200RFT" H 8900 2350 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 8900 2350 50  0001 C CNN "DK_Detail_Page"
 	1    8900 2350
 	0    1    1    0   
 $EndComp
@@ -1111,4 +1096,19 @@ Wire Wire Line
 Connection ~ 8550 2050
 Wire Wire Line
 	8550 2050 9000 2050
+Wire Wire Line
+	1450 4800 1950 4800
+$Comp
+L Device:R R512
+U 1 1 615B6041
+P 1700 4950
+F 0 "R512" V 1780 4950 50  0000 C CNN
+F 1 "510" V 1700 4950 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1630 4950 50  0001 C CNN
+F 3 "" H 1700 4950 50  0001 C CNN
+F 4 "ERA-6AED511V" H 1700 4950 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/panasonic-electronic-components/ERA-6AED511V/P123855CT-ND/9467784" H 1700 4950 50  0001 C CNN "DK_Detail_Page"
+	1    1700 4950
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC

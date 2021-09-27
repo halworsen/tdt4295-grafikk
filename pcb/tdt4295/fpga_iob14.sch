@@ -177,10 +177,11 @@ L Device:C C601
 U 1 1 6151554B
 P 850 1350
 F 0 "C601" H 875 1450 50  0000 L CNN
-F 1 "100nF" H 875 1250 50  0000 L CNN
-F 2 "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder" H 888 1200 50  0001 C CNN
-F 3 "https://media.digikey.com/pdf/Data%20Sheets/Samsung%20PDFs/CL05B104KA5NNNC_Spec.pdf" H 850 1350 50  0001 C CNN
-F 4 "CL05B104KA5NNNC" H 850 1350 50  0001 C CNN "Component name"
+F 1 "0.1uF" H 875 1250 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 888 1200 50  0001 C CNN
+F 3 "" H 850 1350 50  0001 C CNN
+F 4 "CL10B104KA8NNNC" H 850 1350 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 850 1350 50  0001 C CNN "DK_Detail_Page"
 	1    850  1350
 	-1   0    0    1   
 $EndComp
