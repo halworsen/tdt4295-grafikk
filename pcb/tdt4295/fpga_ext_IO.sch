@@ -246,24 +246,11 @@ U 1 1 615B5C90
 P 1300 4800
 F 0 "R502" V 1380 4800 50  0000 C CNN
 F 1 "1k" V 1300 4800 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder" V 1230 4800 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1230 4800 50  0001 C CNN
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 1300 4800 50  0001 C CNN
 F 4 "RR0510P-102-D" H 1300 4800 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/susumu/RR0510P-102-D/RR05P1-0KDCT-ND/432937" H 1300 4800 50  0001 C CNN "DK_Detail_Page"
+F 5 "https://www.digikey.no/product-detail/en/susumu/RR1220P-102-D/RR12P1-0KDCT-ND/432830" H 1300 4800 50  0001 C CNN "DK_Detail_Page"
 	1    1300 4800
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R512
-U 1 1 615B6041
-P 1700 4950
-F 0 "R512" V 1780 4950 50  0000 C CNN
-F 1 "1k" V 1700 4950 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder" V 1630 4950 50  0001 C CNN
-F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 1700 4950 50  0001 C CNN
-F 4 "RR0510P-102-D" H 1700 4950 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/susumu/RR0510P-102-D/RR05P1-0KDCT-ND/432937" H 1700 4950 50  0001 C CNN "DK_Detail_Page"
-	1    1700 4950
 	0    1    1    0   
 $EndComp
 Text GLabel 950  4950 0    50   Input ~ 0
@@ -282,8 +269,6 @@ Wire Wire Line
 	1850 4650 1950 4650
 Wire Wire Line
 	950  4800 1150 4800
-Wire Wire Line
-	1450 4800 1950 4800
 Wire Wire Line
 	950  4950 1550 4950
 Wire Wire Line
@@ -325,10 +310,10 @@ U 1 1 615EF46D
 P 1300 5450
 F 0 "R504" V 1380 5450 50  0000 C CNN
 F 1 "1k" V 1300 5450 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder" V 1230 5450 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1230 5450 50  0001 C CNN
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 1300 5450 50  0001 C CNN
 F 4 "RR0510P-102-D" H 1300 5450 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/susumu/RR0510P-102-D/RR05P1-0KDCT-ND/432937" H 1300 5450 50  0001 C CNN "DK_Detail_Page"
+F 5 "https://www.digikey.no/product-detail/en/susumu/RR1220P-102-D/RR12P1-0KDCT-ND/432830" H 1300 5450 50  0001 C CNN "DK_Detail_Page"
 	1    1300 5450
 	0    1    1    0   
 $EndComp
@@ -337,11 +322,11 @@ L Device:R R514
 U 1 1 615EF473
 P 1700 5600
 F 0 "R514" V 1780 5600 50  0000 C CNN
-F 1 "1k" V 1700 5600 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder" V 1630 5600 50  0001 C CNN
-F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 1700 5600 50  0001 C CNN
-F 4 "RR0510P-102-D" H 1700 5600 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/susumu/RR0510P-102-D/RR05P1-0KDCT-ND/432937" H 1700 5600 50  0001 C CNN "DK_Detail_Page"
+F 1 "510" V 1700 5600 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1630 5600 50  0001 C CNN
+F 3 "" H 1700 5600 50  0001 C CNN
+F 4 "ERA-6AED511V" H 1700 5600 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/panasonic-electronic-components/ERA-6AED511V/P123855CT-ND/9467784" H 1700 5600 50  0001 C CNN "DK_Detail_Page"
 	1    1700 5600
 	0    1    1    0   
 $EndComp
@@ -404,10 +389,10 @@ U 1 1 615FE023
 P 1300 6150
 F 0 "R506" V 1380 6150 50  0000 C CNN
 F 1 "1k" V 1300 6150 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder" V 1230 6150 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1230 6150 50  0001 C CNN
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 1300 6150 50  0001 C CNN
 F 4 "RR0510P-102-D" H 1300 6150 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/susumu/RR0510P-102-D/RR05P1-0KDCT-ND/432937" H 1300 6150 50  0001 C CNN "DK_Detail_Page"
+F 5 "https://www.digikey.no/product-detail/en/susumu/RR1220P-102-D/RR12P1-0KDCT-ND/432830" H 1300 6150 50  0001 C CNN "DK_Detail_Page"
 	1    1300 6150
 	0    1    1    0   
 $EndComp
@@ -416,11 +401,11 @@ L Device:R R516
 U 1 1 615FE029
 P 1700 6300
 F 0 "R516" V 1780 6300 50  0000 C CNN
-F 1 "1k" V 1700 6300 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder" V 1630 6300 50  0001 C CNN
-F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 1700 6300 50  0001 C CNN
-F 4 "RR0510P-102-D" H 1700 6300 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/susumu/RR0510P-102-D/RR05P1-0KDCT-ND/432937" H 1700 6300 50  0001 C CNN "DK_Detail_Page"
+F 1 "510" V 1700 6300 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1630 6300 50  0001 C CNN
+F 3 "" H 1700 6300 50  0001 C CNN
+F 4 "ERA-6AED511V" H 1700 6300 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/panasonic-electronic-components/ERA-6AED511V/P123855CT-ND/9467784" H 1700 6300 50  0001 C CNN "DK_Detail_Page"
 	1    1700 6300
 	0    1    1    0   
 $EndComp
@@ -1111,4 +1096,19 @@ Wire Wire Line
 Connection ~ 8550 2050
 Wire Wire Line
 	8550 2050 9000 2050
+Wire Wire Line
+	1450 4800 1950 4800
+$Comp
+L Device:R R512
+U 1 1 615B6041
+P 1700 4950
+F 0 "R512" V 1780 4950 50  0000 C CNN
+F 1 "510" V 1700 4950 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1630 4950 50  0001 C CNN
+F 3 "" H 1700 4950 50  0001 C CNN
+F 4 "ERA-6AED511V" H 1700 4950 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/panasonic-electronic-components/ERA-6AED511V/P123855CT-ND/9467784" H 1700 4950 50  0001 C CNN "DK_Detail_Page"
+	1    1700 4950
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC

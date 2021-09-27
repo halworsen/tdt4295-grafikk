@@ -169,8 +169,9 @@ F 0 "C102" H 4815 4546 50  0000 L CNN
 F 1 "14pF" H 4815 4455 50  0000 L CNN
 F 2 "Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder" H 4738 4350 50  0001 C CNN
 F 3 "https://api.kemet.com/component-edge/download/specsheet/C1210C107M9PACTU.pdf" H 4700 4500 50  0001 C CNN
-F 4 "C1210C107M9PACTU" H 4700 4500 50  0001 C CNN "Category"
+F 4 "" H 4700 4500 50  0001 C CNN "Category"
 F 5 "https://no.farnell.com/kemet/c1210c107m9pactu/cap-100-f-6-3v-20-x5r-1210/dp/1108328?st=c1210c107m9pactu" H 4700 4500 50  0001 C CNN "DK_Detail_Page"
+F 6 "C1210C107M9PACTU" H 4700 4500 50  0001 C CNN "Component name"
 	1    4700 4500
 	1    0    0    -1  
 $EndComp
@@ -182,8 +183,9 @@ F 0 "C101" H 3915 4546 50  0000 L CNN
 F 1 "14pF" H 3915 4455 50  0000 L CNN
 F 2 "Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder" H 3838 4350 50  0001 C CNN
 F 3 "https://api.kemet.com/component-edge/download/specsheet/C1210C107M9PACTU.pdf" H 3800 4500 50  0001 C CNN
-F 4 "C1210C107M9PACTU" H 3800 4500 50  0001 C CNN "Category"
+F 4 "" H 3800 4500 50  0001 C CNN "Category"
 F 5 "https://no.farnell.com/kemet/c1210c107m9pactu/cap-100-f-6-3v-20-x5r-1210/dp/1108328?st=c1210c107m9pactu" H 3800 4500 50  0001 C CNN "DK_Detail_Page"
+F 6 "C1210C107M9PACTU" H 3800 4500 50  0001 C CNN "Component name"
 	1    3800 4500
 	1    0    0    -1  
 $EndComp

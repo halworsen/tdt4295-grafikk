@@ -882,10 +882,11 @@ L Device:C C301
 U 1 1 615AF0DB
 P 1750 1300
 F 0 "C301" H 1865 1346 50  0000 L CNN
-F 1 "100nF" H 1865 1255 50  0000 L CNN
-F 2 "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder" H 1788 1150 50  0001 C CNN
-F 3 "https://media.digikey.com/pdf/Data%20Sheets/Samsung%20PDFs/CL05B104KA5NNNC_Spec.pdf" H 1750 1300 50  0001 C CNN
-F 4 "CL05B104KA5NNNC" H 1750 1300 50  0001 C CNN "Component name"
+F 1 "0.1uF" H 1865 1255 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 1788 1150 50  0001 C CNN
+F 3 "" H 1750 1300 50  0001 C CNN
+F 4 "CL10B104KA8NNNC" H 1750 1300 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 1750 1300 50  0001 C CNN "DK_Detail_Page"
 	1    1750 1300
 	1    0    0    -1  
 $EndComp
@@ -1065,10 +1066,10 @@ U 1 1 618E96EF
 P 1850 6850
 F 0 "R305" V 1930 6850 50  0000 C CNN
 F 1 "1k" V 1850 6850 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder" V 1780 6850 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1780 6850 50  0001 C CNN
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 1850 6850 50  0001 C CNN
 F 4 "RR0510P-102-D" H 1850 6850 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/susumu/RR0510P-102-D/RR05P1-0KDCT-ND/432937" H 1850 6850 50  0001 C CNN "DK_Detail_Page"
+F 5 "https://www.digikey.no/product-detail/en/susumu/RR1220P-102-D/RR12P1-0KDCT-ND/432830" H 1850 6850 50  0001 C CNN "DK_Detail_Page"
 	1    1850 6850
 	1    0    0    -1  
 $EndComp
@@ -1089,10 +1090,10 @@ U 1 1 619371E0
 P 1300 7400
 F 0 "R302" V 1380 7400 50  0000 C CNN
 F 1 "1k" V 1300 7400 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder" V 1230 7400 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1230 7400 50  0001 C CNN
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 1300 7400 50  0001 C CNN
 F 4 "RR0510P-102-D" H 1300 7400 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/susumu/RR0510P-102-D/RR05P1-0KDCT-ND/432937" H 1300 7400 50  0001 C CNN "DK_Detail_Page"
+F 5 "https://www.digikey.no/product-detail/en/susumu/RR1220P-102-D/RR12P1-0KDCT-ND/432830" H 1300 7400 50  0001 C CNN "DK_Detail_Page"
 	1    1300 7400
 	1    0    0    -1  
 $EndComp
@@ -1102,10 +1103,10 @@ U 1 1 61937C9D
 P 850 7400
 F 0 "R301" V 930 7400 50  0000 C CNN
 F 1 "1k" V 850 7400 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder" V 780 7400 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 780 7400 50  0001 C CNN
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 850 7400 50  0001 C CNN
 F 4 "RR0510P-102-D" H 850 7400 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/susumu/RR0510P-102-D/RR05P1-0KDCT-ND/432937" H 850 7400 50  0001 C CNN "DK_Detail_Page"
+F 5 "https://www.digikey.no/product-detail/en/susumu/RR1220P-102-D/RR12P1-0KDCT-ND/432830" H 850 7400 50  0001 C CNN "DK_Detail_Page"
 	1    850  7400
 	1    0    0    -1  
 $EndComp
