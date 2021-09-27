@@ -163,4 +163,6 @@
   (lib (name DSC1001AL5-100.0000)(type Legacy)(uri ${KIPRJMOD}/symlib/kicad-ext-lib/DSC1001AL5-100.0000/DSC1001AL5-100.0000.lib)(options "")(descr ""))
   (lib (name VGA_618015330923)(type Legacy)(uri ${KIPRJMOD}/symlib/kicad-ext-lib/VGA_618015330923/618015330923.lib)(options "")(descr ""))
   (lib (name COM-09032)(type Legacy)(uri ${KIPRJMOD}/symlib/com09032-joystick/COM-09032.lib)(options "")(descr ""))
+  (lib (name MOLEX-104031-0811)(type Legacy)(uri ${KIPRJMOD}/symlib/MOLEX_104031-0811/104031-0811.lib)(options "")(descr ""))
+  (lib (name DM1AA-SF-PEJ_21_)(type Legacy)(uri ${KIPRJMOD}/symlib/DM1AA-SF-PEJ_21/DM1AA-SF-PEJ_21_.lib)(options "")(descr ""))
 )
