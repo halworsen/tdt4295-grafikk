@@ -243,6 +243,8 @@ F 0 "C309" H 8125 6350 50  0000 L CNN
 F 1 "10uF" H 8125 6150 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 8138 6100 50  0001 C CNN
 F 3 "~" H 8100 6250 50  0001 C CNN
+F 4 "CL10A106KQ8NNNC" H 8100 6250 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A106KQ8NNNC/1276-1038-1-ND/3889124" H 8100 6250 50  0001 C CNN "DK_Detail_Page"
 	1    8100 6250
 	1    0    0    -1  
 $EndComp
