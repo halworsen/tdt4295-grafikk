@@ -1399,10 +1399,10 @@ U 1 1 61433E2D
 P 3200 5600
 F 0 "R312" H 3270 5646 50  0000 L CNN
 F 1 "200" H 3270 5555 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 3130 5600 50  0001 C CNN
-F 3 "https://www.seielect.com/catalog/sei-rncf.pdf" H 3200 5600 50  0001 C CNN
-F 4 "RNCF0805TKY200R" H 3200 5600 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/no/stackpole-electronics-inc/RNCF0805TKY200R/RNCF0805TKY200RCT-ND/4928400" H 3200 5600 50  0001 C CNN "DK_Detail_Page"
+F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 3130 5600 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 3200 5600 50  0001 C CNN
+F 4 "3521200RFT" H 3200 5600 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 3200 5600 50  0001 C CNN "DK_Detail_Page"
 	1    3200 5600
 	1    0    0    -1  
 $EndComp
