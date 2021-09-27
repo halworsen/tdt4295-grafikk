@@ -10,6 +10,18 @@ D Power symbol creates a global label with name "+3V3"
 K power-flag
 $ENDCMP
 #
+$CMP MOLEX_Connector
+D SD Card Reader
+K connector SD
+F http://portal.fciconnect.com/Comergent//fci/drawing/10067847.pdf
+$ENDCMP
+#
+$CMP SD_Card
+D SD Card Reader
+K connector SD
+F http://portal.fciconnect.com/Comergent//fci/drawing/10067847.pdf
+$ENDCMP
+#
 $CMP TPS54294
 F ${KIPRJMOD}/docs/datasheets/tps54294.pdf
 $ENDCMP

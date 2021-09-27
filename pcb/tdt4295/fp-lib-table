@@ -13,4 +13,6 @@
   (lib (name 5177802-9)(type KiCad)(uri ${KIPRJMOD}/symlib/kicad-ext-lib/5177802-9/footprints.pretty)(options "")(descr ""))
   (lib (name com09032-joystick)(type KiCad)(uri ${KIPRJMOD}/symlib/com09032-joystick)(options "")(descr ""))
   (lib (name tdt4295)(type KiCad)(uri ${KIPRJMOD}/symlib/tdt4295.pretty)(options "")(descr ""))
+  (lib (name MOLEX_104031-0811)(type KiCad)(uri ${KIPRJMOD}/symlib/MOLEX_104031-0811)(options "")(descr ""))
+  (lib (name DM1AA-SF-PEJ_21)(type KiCad)(uri ${KIPRJMOD}/symlib/DM1AA-SF-PEJ_21)(options "")(descr ""))
 )
