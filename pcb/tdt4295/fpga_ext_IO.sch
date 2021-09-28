@@ -883,7 +883,7 @@ Wire Notes Line
 Wire Notes Line
 	10150 500  10150 3750
 $Comp
-L Connector:DB15_Female_HighDensity_MountingHoles J501
+L tdt4295:DB15_Female_HighDensity_MountingHoles J501
 U 1 1 61509FEE
 P 3050 5350
 F 0 "J501" H 3050 6200 50  0000 C CNN

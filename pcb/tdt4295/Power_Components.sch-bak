@@ -783,7 +783,7 @@ U 1 1 6166834E
 P 8450 4700
 F 0 "C211" H 8500 4800 50  0000 L CNN
 F 1 "1uF" H 8500 4600 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 8488 4550 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 8488 4550 50  0001 C CNN
 F 3 "www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp" H 8450 4700 50  0001 C CNN
 F 4 "CL21B105KOFNNNE" H 8450 4700 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL21B105KOFNNNE/1276-1026-1-ND/3889112" H 8450 4700 50  0001 C CNN "DK_Datasheet_Link"
@@ -1072,7 +1072,7 @@ U 1 1 615D1BFB
 P 8200 2550
 F 0 "C210" H 8315 2596 50  0000 L CNN
 F 1 "1uF" H 8315 2505 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 8238 2400 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 8238 2400 50  0001 C CNN
 F 3 "www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp" H 8200 2550 50  0001 C CNN
 F 4 "CL21B105KOFNNNE" H 8200 2550 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL21B105KOFNNNE/1276-1026-1-ND/3889112" H 8200 2550 50  0001 C CNN "DK_Datasheet_Link"

@@ -536,7 +536,7 @@ U 1 1 6145F357
 P 9550 4200
 F 0 "C107" H 9550 4300 50  0000 L CNN
 F 1 "1uF" H 9550 4100 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 9588 4050 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 9588 4050 50  0001 C CNN
 F 3 "www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp" H 9550 4200 50  0001 C CNN
 F 4 "CL21B105KOFNNNE" H 9550 4200 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL21B105KOFNNNE/1276-1026-1-ND/3889112" H 9550 4200 50  0001 C CNN "DK_Datasheet_Link"
@@ -807,7 +807,7 @@ U 1 1 618F8B31
 P 9500 3600
 F 0 "C106" H 9600 3650 50  0000 L CNN
 F 1 "1uF" H 9600 3550 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 9538 3450 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 9538 3450 50  0001 C CNN
 F 3 "www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp" H 9500 3600 50  0001 C CNN
 F 4 "CL21B105KOFNNNE" H 9500 3600 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL21B105KOFNNNE/1276-1026-1-ND/3889112" H 9500 3600 50  0001 C CNN "DK_Datasheet_Link"
@@ -882,10 +882,10 @@ F 3 "" H 14100 1250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R112
+L Device:R R110
 U 1 1 614E2162
 P 13800 1600
-F 0 "R112" H 13800 1750 50  0000 L CNN
+F 0 "R110" H 13800 1750 50  0000 L CNN
 F 1 "100K" V 13800 1500 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 13730 1600 50  0001 C CNN
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 13800 1600 50  0001 C CNN
@@ -941,10 +941,10 @@ $EndComp
 Wire Wire Line
 	15000 2200 15150 2200
 $Comp
-L Device:R R113
+L Device:R R111
 U 1 1 6158865B
 P 14000 1600
-F 0 "R113" H 14000 1750 50  0000 L CNN
+F 0 "R111" H 14000 1750 50  0000 L CNN
 F 1 "100K" V 14000 1500 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 13930 1600 50  0001 C CNN
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 14000 1600 50  0001 C CNN
@@ -954,10 +954,10 @@ F 5 "https://www.digikey.no/product-detail/no/susumu/RR1220P-104-D/RR12P100KDCT-
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R114
+L Device:R R112
 U 1 1 615889F3
 P 14200 1600
-F 0 "R114" H 14200 1750 50  0000 L CNN
+F 0 "R112" H 14200 1750 50  0000 L CNN
 F 1 "100K" V 14200 1500 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 14130 1600 50  0001 C CNN
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 14200 1600 50  0001 C CNN
@@ -967,10 +967,10 @@ F 5 "https://www.digikey.no/product-detail/no/susumu/RR1220P-104-D/RR12P100KDCT-
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R115
+L Device:R R113
 U 1 1 61599A1D
 P 14400 1600
-F 0 "R115" H 14400 1750 50  0000 L CNN
+F 0 "R113" H 14400 1750 50  0000 L CNN
 F 1 "100K" V 14400 1500 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 14330 1600 50  0001 C CNN
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 14400 1600 50  0001 C CNN
