@@ -801,8 +801,10 @@ U 1 1 615906D6
 P 3200 6700
 F 0 "D301" H 3200 6800 50  0000 C CNN
 F 1 "LED" H 3200 6600 50  0000 C CNN
-F 2 "Diode_SMD:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3200 6700 50  0001 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 3200 6700 50  0001 C CNN
 F 3 "~" H 3200 6700 50  0001 C CNN
+F 4 "QTLP650C4TR" H 3200 6700 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/no/everlight-electronics-co-ltd/QTLP650C4TR/1080-1415-1-ND/2676149" H 3200 6700 50  0001 C CNN "DK_Detail_Page"
 	1    3200 6700
 	0    -1   -1   0   
 $EndComp
@@ -1005,6 +1007,8 @@ F 0 "U301" H 2900 2550 60  0000 C CNN
 F 1 "S25FL127SABMFV101" H 2850 2400 60  0000 C CNN
 F 2 "S25FL127SABMFV101-footprint:S25FL127SABMFV101" H 2250 2440 60  0001 C CNN
 F 3 "https://www.cypress.com/file/177961/download" H 750 2200 60  0001 C CNN
+F 4 "S25FL127SABMFV101" H 750 2200 50  0001 C CNN "Component name"
+F 5 "https://no.farnell.com/cypress-semiconductor/s25fl127sabmfv101/flash-memory-128mbit-108mhz-soic/dp/2772749?ost=s25fl127sabmfv101" H 750 2200 50  0001 C CNN "DK_Detail_Page"
 	1    750  2200
 	1    0    0    -1  
 $EndComp
@@ -1098,8 +1102,10 @@ U 1 1 6145021F
 P 750 4250
 F 0 "J301" H 800 4767 50  0000 C CNN
 F 1 "FPGA__debug" H 800 4676 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x07_P2.54mm_Vertical" H 750 4250 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x07_P2.54mm_Vertical_SMD" H 750 4250 50  0001 C CNN
 F 3 "~" H 750 4250 50  0001 C CNN
+F 4 "61001421121" H 750 4250 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/w%C3%BCrth-elektronik/61001421121/732-5465-5-ND/4846970" H 750 4250 50  0001 C CNN "DK_Detail_Page"
 	1    750  4250
 	1    0    0    -1  
 $EndComp
@@ -1111,7 +1117,7 @@ U 1 1 6167522A
 P 1650 5050
 F 0 "U302" H 1650 4750 60  0000 C CNN
 F 1 "NUP4114UCW1T2G" H 1650 4650 60  0000 C CNN
-F 2 "SOIC_W1T2G_ONS" H 1650 4540 60  0001 C CNN
+F 2 "NUP4114UCW1T2G-footprint:NUP4114UCW1T2G" H 1650 4540 60  0001 C CNN
 F 3 "" H 850 3600 60  0000 C CNN
 	1    1650 5050
 	1    0    0    -1  

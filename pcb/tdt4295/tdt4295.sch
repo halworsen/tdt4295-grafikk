@@ -167,6 +167,8 @@ F 0 "Y101" H 4350 4500 50  0000 L CNN
 F 1 "48MHz" H 4350 4250 50  0000 L CNN
 F 2 "Crystal:Crystal_SMD_2016-4Pin_2.0x1.6mm" H 4250 4350 50  0001 C CNN
 F 3 "https://www.farnell.com/datasheets/1883673.pdf" H 4250 4350 50  0001 C CNN
+F 4 "ABM11-48.000MHZ-D2X-T3" H 4250 4350 50  0001 C CNN "Component name"
+F 5 "https://no.farnell.com/abracon/abm11-48-000mhz-d2x-t3/crystal-48mhz-10pf-2-x-1-6mm/dp/2467782RL?st=krystall" H 4250 4350 50  0001 C CNN "DK_Detail_Page"
 	1    4250 4350
 	1    0    0    -1  
 $EndComp
@@ -753,8 +755,10 @@ U 1 1 614A6418
 P 10900 1450
 F 0 "J101" V 11100 1950 50  0000 L CNN
 F 1 "ARM 20 Pin Debug Header" V 11000 1950 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x10_P2.54mm_Vertical" H 10900 1450 50  0001 C CNN
+F 2 "Connector_PinHeader_1.27mm:PinHeader_2x10_P1.27mm_Vertical_SMD" H 10900 1450 50  0001 C CNN
 F 3 "~" H 10900 1450 50  0001 C CNN
+F 4 "FTSH-110-01-L-DV-K-TR" H 10900 1450 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/samtec-inc/FTSH-110-01-L-DV-K-TR/SAM13960TR-ND/6693931" H 10900 1450 50  0001 C CNN "DK_Detail_Page"
 	1    10900 1450
 	0    1    -1   0   
 $EndComp
@@ -772,6 +776,7 @@ F 1 "15" V 9100 3200 50  0000 C CNN
 F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 9030 3200 50  0001 C CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-7&DocType=DS&DocLang=English" H 9100 3200 50  0001 C CNN
 F 4 "352215RFT" H 9100 3200 50  0001 C CNN "Category"
+F 5 "https://www.digikey.no/product-detail/no/te-connectivity-passive-product/352215RFT/A121147CT-ND/5245204" H 9100 3200 50  0001 C CNN "DK_Detail_Page"
 	1    9100 3200
 	0    1    1    0   
 $EndComp
@@ -786,6 +791,7 @@ F 1 "15" V 9100 3300 50  0000 C CNN
 F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 9030 3300 50  0001 C CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-7&DocType=DS&DocLang=English" H 9100 3300 50  0001 C CNN
 F 4 "352215RFT" H 9100 3300 50  0001 C CNN "Category"
+F 5 "https://www.digikey.no/product-detail/no/te-connectivity-passive-product/352215RFT/A121147CT-ND/5245204" H 9100 3300 50  0001 C CNN "DK_Detail_Page"
 	1    9100 3300
 	0    1    1    0   
 $EndComp
@@ -983,8 +989,10 @@ U 1 1 617052D6
 P 3800 1950
 F 0 "D101" V 3839 1832 50  0000 R CNN
 F 1 "LED" V 3748 1832 50  0000 R CNN
-F 2 "LED_SMD:LED_2816_7142Metric_Pad3.20x4.45mm_HandSolder" H 3800 1950 50  0001 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 3800 1950 50  0001 C CNN
 F 3 "~" H 3800 1950 50  0001 C CNN
+F 4 "150120BS75000" H 3800 1950 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/no/w%C3%BCrth-elektronik/150120BS75000/732-4989-1-ND/4489931" H 3800 1950 50  0001 C CNN "DK_Detail_Page"
 	1    3800 1950
 	0    -1   -1   0   
 $EndComp
@@ -1024,8 +1032,10 @@ U 1 1 61724822
 P 4150 1950
 F 0 "D102" V 4189 1832 50  0000 R CNN
 F 1 "LED" V 4098 1832 50  0000 R CNN
-F 2 "LED_SMD:LED_2816_7142Metric_Pad3.20x4.45mm_HandSolder" H 4150 1950 50  0001 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 4150 1950 50  0001 C CNN
 F 3 "~" H 4150 1950 50  0001 C CNN
+F 4 "150120BS75000" H 4150 1950 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/no/w%C3%BCrth-elektronik/150120BS75000/732-4989-1-ND/4489931" H 4150 1950 50  0001 C CNN "DK_Detail_Page"
 	1    4150 1950
 	0    -1   -1   0   
 $EndComp
@@ -1054,8 +1064,10 @@ U 1 1 617323B7
 P 4500 1950
 F 0 "D103" V 4539 1832 50  0000 R CNN
 F 1 "LED" V 4448 1832 50  0000 R CNN
-F 2 "LED_SMD:LED_2816_7142Metric_Pad3.20x4.45mm_HandSolder" H 4500 1950 50  0001 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 4500 1950 50  0001 C CNN
 F 3 "~" H 4500 1950 50  0001 C CNN
+F 4 "150120BS75000" H 4500 1950 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/no/w%C3%BCrth-elektronik/150120BS75000/732-4989-1-ND/4489931" H 4500 1950 50  0001 C CNN "DK_Detail_Page"
 	1    4500 1950
 	0    -1   -1   0   
 $EndComp
@@ -1084,8 +1096,10 @@ U 1 1 617408B8
 P 4850 1950
 F 0 "D104" V 4889 1832 50  0000 R CNN
 F 1 "LED" V 4798 1832 50  0000 R CNN
-F 2 "LED_SMD:LED_2816_7142Metric_Pad3.20x4.45mm_HandSolder" H 4850 1950 50  0001 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 4850 1950 50  0001 C CNN
 F 3 "~" H 4850 1950 50  0001 C CNN
+F 4 "150120BS75000" H 4850 1950 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/no/w%C3%BCrth-elektronik/150120BS75000/732-4989-1-ND/4489931" H 4850 1950 50  0001 C CNN "DK_Detail_Page"
 	1    4850 1950
 	0    -1   -1   0   
 $EndComp
@@ -1312,6 +1326,8 @@ F 4 "30.1mm" H 15150 3000 50  0001 L BNN "MAXIMUM_PACKAGE_HEIGHT"
 F 5 "SparkFun Electronics" H 15150 2750 50  0001 L BNN "MANUFACTURER"
 F 6 "Manufacturer Recommendations" H 15150 3100 50  0001 L BNN "STANDARD"
 F 7 "N/A" H 15150 2900 50  0001 L BNN "PARTREV"
+F 8 "COM-09032" H 14850 3300 50  0001 C CNN "Component name"
+F 9 "https://www.digikey.no/product-detail/no/sparkfun-electronics/COM-09032/1568-1526-ND/6823623" H 14850 3300 50  0001 C CNN "DK_Detail_Page"
 	1    14850 3300
 	1    0    0    -1  
 $EndComp
@@ -1425,6 +1441,8 @@ F 4 "30.1mm" H 15150 4400 50  0001 L BNN "MAXIMUM_PACKAGE_HEIGHT"
 F 5 "SparkFun Electronics" H 15150 4150 50  0001 L BNN "MANUFACTURER"
 F 6 "Manufacturer Recommendations" H 15150 4500 50  0001 L BNN "STANDARD"
 F 7 "N/A" H 15150 4300 50  0001 L BNN "PARTREV"
+F 8 "COM-09032" H 14850 4700 50  0001 C CNN "Component name"
+F 9 "https://www.digikey.no/product-detail/no/sparkfun-electronics/COM-09032/1568-1526-ND/6823623" H 14850 4700 50  0001 C CNN "DK_Detail_Page"
 	1    14850 4700
 	1    0    0    -1  
 $EndComp
@@ -1510,8 +1528,10 @@ U 1 1 618E52FC
 P 12550 3400
 F 0 "J104" H 12630 3442 50  0000 L CNN
 F 1 "MCU GPIO Header" H 12630 3351 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x07_P2.54mm_Vertical" H 12550 3400 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x07_P2.54mm_Vertical_SMD_Pin1Right" H 12550 3400 50  0001 C CNN
 F 3 "~" H 12550 3400 50  0001 C CNN
+F 4 "0878980726" H 12550 3400 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/molex/0878980726/WM20569-ND/3264913" H 12550 3400 50  0001 C CNN "DK_Detail_Page"
 	1    12550 3400
 	1    0    0    -1  
 $EndComp
@@ -1657,9 +1677,11 @@ U 1 1 61599B42
 P 12200 4850
 F 0 "J103" H 12200 5517 50  0000 C CNN
 F 1 "DM1AA-SF-PEJ(21)" H 12200 5426 50  0000 C CNN
-F 2 "HRS_DM1AA-SF-PEJ(21)" H 12200 4850 50  0001 L BNN
+F 2 "DM1AA-SF-PEJ_21:HRS_DM1AA-SF-PEJ(21)" H 12200 4850 50  0001 L BNN
 F 3 "https://www.hirose.com/product/document?clcode=CL0609-0004-8-72&productname=DM1AA-SF-PEJ(72)&series=DM1&documenttype=Catalog&lang=en&documentid=D31696_en" H 12200 4850 50  0001 L BNN
 F 4 "HRS" H 12200 4850 50  0001 L BNN "MANUFACTURER"
+F 5 "DM1AA-SF-PEJ-21" H 12200 4850 50  0001 C CNN "Component name"
+F 6 "https://www.digikey.no/product-detail/no/hirose-electric-co-ltd/DM1AA-SF-PEJ-21/HR845CT-ND/559985" H 12200 4850 50  0001 C CNN "DK_Detail_Page"
 	1    12200 4850
 	1    0    0    -1  
 $EndComp
@@ -1734,8 +1756,10 @@ U 1 1 61568E09
 P 12050 2250
 F 0 "J102" H 12100 2667 50  0000 C CNN
 F 1 "MCU USART1 Header" H 12100 2576 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Vertical" H 12050 2250 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Vertical_SMD" H 12050 2250 50  0001 C CNN
 F 3 "~" H 12050 2250 50  0001 C CNN
+F 4 "0015910120" H 12050 2250 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/molex/0015910120/WM17460-ND/614776" H 12050 2250 50  0001 C CNN "DK_Detail_Page"
 	1    12050 2250
 	1    0    0    -1  
 $EndComp

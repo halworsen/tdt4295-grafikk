@@ -60,10 +60,11 @@ F 5 "690-005-299-043" H 2150 1100 60  0001 L CNN "MPN"
 F 6 "Connectors, Interconnects" H 2150 1200 60  0001 L CNN "Category"
 F 7 "USB, DVI, HDMI Connectors" H 2150 1300 60  0001 L CNN "Family"
 F 8 "http://files.edac.net/690-005-299-043.pdf" H 2150 1400 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/edac-inc/690-005-299-043/151-1206-1-ND/4312192" H 2150 1500 60  0001 L CNN "DK_Detail_Page"
+F 9 "https://www.digikey.no/product-detail/en/edac-inc/690-005-299-043/151-1206-1-ND/4312192" H 2150 1500 60  0001 L CNN "DK_Detail_Page"
 F 10 "CONN RCPT USB2.0 MINI B SMD R/A" H 2150 1600 60  0001 L CNN "Description"
 F 11 "EDAC Inc." H 2150 1700 60  0001 L CNN "Manufacturer"
 F 12 "Active" H 2150 1800 60  0001 L CNN "Status"
+F 13 "690-005-299-043" H 1950 600 50  0001 C CNN "Component name"
 	1    1950 600 
 	0    -1   1    0   
 $EndComp
@@ -308,8 +309,10 @@ U 1 1 61883CDD
 P 1000 5350
 F 0 "D201" V 1039 5232 50  0000 R CNN
 F 1 "LED" V 948 5232 50  0000 R CNN
-F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1000 5350 50  0001 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 1000 5350 50  0001 C CNN
 F 3 "~" H 1000 5350 50  0001 C CNN
+F 4 "QTLP650D2TR" H 1000 5350 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/no/everlight-electronics-co-ltd/QTLP650D2TR/1080-1417-1-ND/2676151" H 1000 5350 50  0001 C CNN "DK_Detail_Page"
 	1    1000 5350
 	0    -1   -1   0   
 $EndComp
@@ -319,8 +322,10 @@ U 1 1 6188F1B9
 P 1500 5350
 F 0 "D202" V 1539 5232 50  0000 R CNN
 F 1 "LED" V 1448 5232 50  0000 R CNN
-F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1500 5350 50  0001 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 1500 5350 50  0001 C CNN
 F 3 "~" H 1500 5350 50  0001 C CNN
+F 4 "QTLP650C4TR" H 1500 5350 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/no/everlight-electronics-co-ltd/QTLP650C4TR/1080-1415-1-ND/2676149" H 1500 5350 50  0001 C CNN "DK_Detail_Page"
 	1    1500 5350
 	0    -1   -1   0   
 $EndComp
@@ -1294,6 +1299,8 @@ F 0 "U201" H 1912 2979 50  0000 R CNN
 F 1 "PHDMI2AB4" H 1912 3070 50  0000 R CNN
 F 2 "tdt4295:DFN2510A-10" H 2150 2950 50  0001 C CNN
 F 3 "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjq-uC3upjzAhUSmYsKHV0iBjEQFnoECAQQAQ&url=https%3A%2F%2Fassets.nexperia.com%2Fdocuments%2Fdata-sheet%2FPHDMI2AB4.pdf&usg=AOvVaw2t6nU9jF_TXAIowSn_9t4X" H 2150 2950 50  0001 C CNN
+F 4 "PHDMI2AB4Z" H 2150 3050 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/no/nexperia-usa-inc/PHDMI2AB4Z/1727-7820-1-ND/9092244" H 2150 3050 50  0001 C CNN "DK_Detail_Page"
 	1    2150 3050
 	-1   0    0    1   
 $EndComp

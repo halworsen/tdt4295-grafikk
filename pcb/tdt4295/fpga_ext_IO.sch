@@ -18,9 +18,11 @@ L Connector_Generic:Conn_02x08_Odd_Even J502
 U 1 1 61588030
 P 6750 2050
 F 0 "J502" H 6800 2567 50  0000 C CNN
-F 1 "Conn_02x08_Odd_Even" H 6800 2476 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x08_P2.54mm_Vertical" H 6750 2050 50  0001 C CNN
+F 1 "FPGA GPIO" H 6800 2476 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x08_P2.54mm_Vertical_SMD" H 6750 2050 50  0001 C CNN
 F 3 "~" H 6750 2050 50  0001 C CNN
+F 4 "0015910160" H 6750 2050 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/molex/0015910160/WM17462-ND/614778" H 6750 2050 50  0001 C CNN "DK_Detail_Page"
 	1    6750 2050
 	1    0    0    -1  
 $EndComp
@@ -151,8 +153,10 @@ U 1 1 615A0ABC
 P 1650 1250
 F 0 "D502" H 1650 1350 50  0000 C CNN
 F 1 "LED" H 1650 1150 50  0000 C CNN
-F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1650 1250 50  0001 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 1650 1250 50  0001 C CNN
 F 3 "~" H 1650 1250 50  0001 C CNN
+F 4 "150120BS75000" H 1650 1250 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/no/w%C3%BCrth-elektronik/150120BS75000/732-4989-1-ND/4489931" H 1650 1250 50  0001 C CNN "DK_Detail_Page"
 	1    1650 1250
 	-1   0    0    1   
 $EndComp
@@ -480,8 +484,10 @@ U 1 1 615A011F
 P 1650 900
 F 0 "D501" H 1650 1000 50  0000 C CNN
 F 1 "LED" H 1650 800 50  0000 C CNN
-F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1650 900 50  0001 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 1650 900 50  0001 C CNN
 F 3 "~" H 1650 900 50  0001 C CNN
+F 4 "150120BS75000" H 1650 900 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/no/w%C3%BCrth-elektronik/150120BS75000/732-4989-1-ND/4489931" H 1650 900 50  0001 C CNN "DK_Detail_Page"
 	1    1650 900 
 	-1   0    0    1   
 $EndComp
@@ -491,8 +497,10 @@ U 1 1 6169FAFD
 P 1650 1600
 F 0 "D503" H 1650 1700 50  0000 C CNN
 F 1 "LED" H 1650 1500 50  0000 C CNN
-F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1650 1600 50  0001 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 1650 1600 50  0001 C CNN
 F 3 "~" H 1650 1600 50  0001 C CNN
+F 4 "150120BS75000" H 1650 1600 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/no/w%C3%BCrth-elektronik/150120BS75000/732-4989-1-ND/4489931" H 1650 1600 50  0001 C CNN "DK_Detail_Page"
 	1    1650 1600
 	-1   0    0    1   
 $EndComp
@@ -521,8 +529,10 @@ U 1 1 616A665A
 P 1650 1950
 F 0 "D504" H 1650 2050 50  0000 C CNN
 F 1 "LED" H 1650 1850 50  0000 C CNN
-F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1650 1950 50  0001 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 1650 1950 50  0001 C CNN
 F 3 "~" H 1650 1950 50  0001 C CNN
+F 4 "150120BS75000" H 1650 1950 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/no/w%C3%BCrth-elektronik/150120BS75000/732-4989-1-ND/4489931" H 1650 1950 50  0001 C CNN "DK_Detail_Page"
 	1    1650 1950
 	-1   0    0    1   
 $EndComp
@@ -880,6 +890,8 @@ F 0 "J501" H 3050 6200 50  0000 C CNN
 F 1 "618015330923" H 3050 6100 50  0000 C CNN
 F 2 "VGA_618015330923-footprint:618015330923" H 2100 5750 50  0001 C CNN
 F 3 " ~" H 2100 5750 50  0001 C CNN
+F 4 "618015330923" H 3050 5350 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/products/no?keywords=618015330923" H 3050 5350 50  0001 C CNN "DK_Detail_Page"
 	1    3050 5350
 	1    0    0    -1  
 $EndComp
