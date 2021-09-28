@@ -850,17 +850,8 @@ F 3 "" H 3750 6850 50  0001 C CNN
 	1    3750 6850
 	1    0    0    -1  
 $EndComp
-Connection ~ 4000 6850
 Wire Wire Line
-	3750 6850 4000 6850
-Wire Wire Line
-	4000 6750 4000 6850
-Connection ~ 4000 6750
-Wire Wire Line
-	4000 6550 4000 6750
-Connection ~ 4000 6550
-Wire Wire Line
-	4000 6450 4000 6550
+	3750 6850 3950 6850
 Wire Wire Line
 	2000 1750 2300 1750
 Wire Wire Line
@@ -1027,131 +1018,8 @@ F 3 "" H 3750 6250 50  0001 C CNN
 	1    3750 6250
 	1    0    0    -1  
 $EndComp
-Text Label 2150 7000 0    50   ~ 0
-MODE2
 Wire Wire Line
 	3750 6250 4000 6250
-Wire Wire Line
-	4000 5450 3700 5450
-Wire Wire Line
-	4000 5550 3700 5550
-Wire Wire Line
-	4000 5650 3700 5650
-Text Label 3700 5450 0    50   ~ 0
-MODE0
-Text Label 3700 5550 0    50   ~ 0
-MODE1
-Text Label 3700 5650 0    50   ~ 0
-MODE2
-$Comp
-L power:GND #PWR0307
-U 1 1 618E8B3B
-P 1850 7600
-F 0 "#PWR0307" H 1850 7350 50  0001 C CNN
-F 1 "GND" H 1850 7450 50  0000 C CNN
-F 2 "" H 1850 7600 50  0001 C CNN
-F 3 "" H 1850 7600 50  0001 C CNN
-	1    1850 7600
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R305
-U 1 1 618E96EF
-P 1850 6850
-F 0 "R305" V 1930 6850 50  0000 C CNN
-F 1 "1k" V 1850 6850 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1780 6850 50  0001 C CNN
-F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 1850 6850 50  0001 C CNN
-F 4 "RR0510P-102-D" H 1850 6850 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/en/susumu/RR1220P-102-D/RR12P1-0KDCT-ND/432830" H 1850 6850 50  0001 C CNN "DK_Detail_Page"
-	1    1850 6850
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3V3 #PWR0306
-U 1 1 618EA756
-P 1850 6700
-F 0 "#PWR0306" H 1850 6550 50  0001 C CNN
-F 1 "+3V3" H 1850 6840 50  0000 C CNN
-F 2 "" H 1850 6700 50  0001 C CNN
-F 3 "" H 1850 6700 50  0001 C CNN
-	1    1850 6700
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R302
-U 1 1 619371E0
-P 1300 7400
-F 0 "R302" V 1380 7400 50  0000 C CNN
-F 1 "1k" V 1300 7400 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1230 7400 50  0001 C CNN
-F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 1300 7400 50  0001 C CNN
-F 4 "RR0510P-102-D" H 1300 7400 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/en/susumu/RR1220P-102-D/RR12P1-0KDCT-ND/432830" H 1300 7400 50  0001 C CNN "DK_Detail_Page"
-	1    1300 7400
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R301
-U 1 1 61937C9D
-P 850 7400
-F 0 "R301" V 930 7400 50  0000 C CNN
-F 1 "1k" V 850 7400 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 780 7400 50  0001 C CNN
-F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 850 7400 50  0001 C CNN
-F 4 "RR0510P-102-D" H 850 7400 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/en/susumu/RR1220P-102-D/RR12P1-0KDCT-ND/432830" H 850 7400 50  0001 C CNN "DK_Detail_Page"
-	1    850  7400
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1300 7250 1050 7250
-$Comp
-L power:GND #PWR0305
-U 1 1 6195618C
-P 1300 7550
-F 0 "#PWR0305" H 1300 7300 50  0001 C CNN
-F 1 "GND" H 1300 7400 50  0000 C CNN
-F 2 "" H 1300 7550 50  0001 C CNN
-F 3 "" H 1300 7550 50  0001 C CNN
-	1    1300 7550
-	1    0    0    -1  
-$EndComp
-Text Label 1050 7250 0    50   ~ 0
-MODE1
-Text Label 550  7650 0    50   ~ 0
-MODE0
-$Comp
-L power:+3V3 #PWR0302
-U 1 1 619680CF
-P 850 7250
-F 0 "#PWR0302" H 850 7100 50  0001 C CNN
-F 1 "+3V3" H 850 7390 50  0000 C CNN
-F 2 "" H 850 7250 50  0001 C CNN
-F 3 "" H 850 7250 50  0001 C CNN
-	1    850  7250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	850  7650 850  7550
-Wire Wire Line
-	550  7650 850  7650
-Text Notes 900  6800 0    50   ~ 0
-Jumped = Master SPI\nDefault = JTAG
-$Comp
-L Device:Jumper JP301
-U 1 1 614EDD7D
-P 1850 7300
-F 0 "JP301" H 1850 7450 50  0000 C CNN
-F 1 "Jumper" H 1850 7220 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 1850 7300 50  0001 C CNN
-F 3 "~" H 1850 7300 50  0001 C CNN
-	1    1850 7300
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	1850 7000 2150 7000
-Connection ~ 1850 7000
 Wire Wire Line
 	4400 4050 4400 3550
 Wire Wire Line
@@ -1355,17 +1223,13 @@ F 5 "https://www.digikey.no/product-detail/no/vishay-beyschlag-draloric-bc-compo
 	1    2400 4350
 	0    1    1    0   
 $EndComp
-Text Label 2550 4050 0    50   ~ 0
+Text Label 3300 4050 0    50   ~ 0
 TMS_JTAG
-Wire Wire Line
-	1550 4050 2550 4050
-Wire Wire Line
-	1650 4250 2550 4250
-Text Label 2550 4150 0    50   ~ 0
+Text Label 3300 4150 0    50   ~ 0
 TCK_JTAG
-Text Label 2550 4250 0    50   ~ 0
+Text Label 3300 4250 0    50   ~ 0
 TDO_JTAG
-Text Label 2550 4350 0    50   ~ 0
+Text Label 3300 4350 0    50   ~ 0
 TDI_JTAG
 Wire Wire Line
 	2850 5400 3200 5400
@@ -1547,4 +1411,100 @@ F 3 "" H 9800 4750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 9800 4750
+Wire Wire Line
+	3950 6850 3950 6750
+Wire Wire Line
+	3950 6750 4000 6750
+Connection ~ 3950 6850
+Wire Wire Line
+	3950 6850 4000 6850
+Wire Wire Line
+	3950 6750 3950 6550
+Wire Wire Line
+	3950 6550 4000 6550
+Connection ~ 3950 6750
+Wire Wire Line
+	3950 6550 3950 6450
+Wire Wire Line
+	3950 6450 4000 6450
+Connection ~ 3950 6550
+Wire Wire Line
+	4000 5650 3950 5650
+Connection ~ 3950 6450
+Wire Wire Line
+	4000 5550 3950 5550
+Wire Wire Line
+	3950 5550 3950 5650
+Connection ~ 3950 5650
+Wire Wire Line
+	3950 5650 3950 6450
+$Comp
+L power:+3.3V #PWR?
+U 1 1 615CAF52
+P 3750 5450
+F 0 "#PWR?" H 3750 5300 50  0001 C CNN
+F 1 "+3.3V" H 3765 5623 50  0000 C CNN
+F 2 "" H 3750 5450 50  0001 C CNN
+F 3 "" H 3750 5450 50  0001 C CNN
+	1    3750 5450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3750 5450 4000 5450
+Wire Wire Line
+	1550 4050 2700 4050
+Wire Wire Line
+	2550 4150 3000 4150
+Wire Wire Line
+	1650 4250 3300 4250
+Wire Wire Line
+	2550 4350 3300 4350
+$Comp
+L Device:R R?
+U 1 1 6163D0D9
+P 2700 3500
+F 0 "R?" H 2770 3546 50  0000 L CNN
+F 1 "10k" H 2770 3455 50  0000 L CNN
+F 2 "" V 2630 3500 50  0001 C CNN
+F 3 "~" H 2700 3500 50  0001 C CNN
+	1    2700 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 6163D9D1
+P 3000 3500
+F 0 "R?" H 3070 3546 50  0000 L CNN
+F 1 "10k" H 3070 3455 50  0000 L CNN
+F 2 "" V 2930 3500 50  0001 C CNN
+F 3 "~" H 3000 3500 50  0001 C CNN
+	1    3000 3500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3000 3350 2850 3350
+Wire Wire Line
+	2700 3650 2700 4050
+Connection ~ 2700 4050
+Wire Wire Line
+	2700 4050 3300 4050
+Wire Wire Line
+	3000 3650 3000 4150
+Connection ~ 3000 4150
+Wire Wire Line
+	3000 4150 3300 4150
+$Comp
+L power:+3.3V #PWR?
+U 1 1 6166EA7E
+P 2850 3350
+F 0 "#PWR?" H 2850 3200 50  0001 C CNN
+F 1 "+3.3V" H 2865 3523 50  0000 C CNN
+F 2 "" H 2850 3350 50  0001 C CNN
+F 3 "" H 2850 3350 50  0001 C CNN
+	1    2850 3350
+	1    0    0    -1  
+$EndComp
+Connection ~ 2850 3350
+Wire Wire Line
+	2850 3350 2700 3350
 $EndSCHEMATC
