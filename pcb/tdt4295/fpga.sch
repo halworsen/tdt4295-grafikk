@@ -229,9 +229,9 @@ L Device:C C308
 U 1 1 616BE823
 P 7800 6250
 F 0 "C308" H 7825 6350 50  0000 L CNN
-F 1 "10nF" H 7825 6150 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 7838 6100 50  0001 C CNN
-F 3 "~" H 7800 6250 50  0001 C CNN
+F 1 "4.7uF" H 7825 6150 50  0000 L CNN
+F 2 "" H 7838 6100 50  0001 C CNN
+F 3 "" H 7800 6250 50  0001 C CNN
 	1    7800 6250
 	1    0    0    -1  
 $EndComp
@@ -240,11 +240,11 @@ L Device:C C309
 U 1 1 616BEB4E
 P 8100 6250
 F 0 "C309" H 8125 6350 50  0000 L CNN
-F 1 "10uF" H 8125 6150 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 8138 6100 50  0001 C CNN
-F 3 "~" H 8100 6250 50  0001 C CNN
-F 4 "CL10A106KQ8NNNC" H 8100 6250 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A106KQ8NNNC/1276-1038-1-ND/3889124" H 8100 6250 50  0001 C CNN "DK_Detail_Page"
+F 1 "4.7uF" H 8125 6150 50  0000 L CNN
+F 2 "" H 8138 6100 50  0001 C CNN
+F 3 "" H 8100 6250 50  0001 C CNN
+F 4 "" H 8100 6250 50  0001 C CNN "Component name"
+F 5 "" H 8100 6250 50  0001 C CNN "DK_Detail_Page"
 	1    8100 6250
 	1    0    0    -1  
 $EndComp
@@ -315,11 +315,11 @@ L Device:C C305
 U 1 1 615E904D
 P 7450 5450
 F 0 "C305" H 7475 5550 50  0000 L CNN
-F 1 "14pF" H 7475 5350 50  0000 L CNN
-F 2 "Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder" H 7488 5300 50  0001 C CNN
-F 3 "https://api.kemet.com/component-edge/download/specsheet/C1210C107M9PACTU.pdf" H 7450 5450 50  0001 C CNN
-F 4 "https://no.farnell.com/kemet/c1210c107m9pactu/cap-100-f-6-3v-20-x5r-1210/dp/1108328?st=c1210c107m9pactu" H 7450 5450 50  0001 C CNN "DK_Detail_Page"
-F 5 "C1210C107M9PACTU" H 7450 5450 50  0001 C CNN "Component name"
+F 1 "100uF" H 7475 5350 50  0000 L CNN
+F 2 "" H 7488 5300 50  0001 C CNN
+F 3 "" H 7450 5450 50  0001 C CNN
+F 4 "" H 7450 5450 50  0001 C CNN "DK_Detail_Page"
+F 5 "" H 7450 5450 50  0001 C CNN "Component name"
 	1    7450 5450
 	1    0    0    -1  
 $EndComp
@@ -417,10 +417,6 @@ Wire Wire Line
 	8850 3550 8900 3550
 Wire Wire Line
 	8850 2250 8850 2350
-Wire Wire Line
-	8850 1450 8850 1650
-Wire Wire Line
-	8900 1450 8850 1450
 Wire Wire Line
 	8850 2250 8900 2250
 Wire Wire Line
@@ -633,8 +629,6 @@ Wire Wire Line
 	10550 6400 10250 6400
 Wire Wire Line
 	10850 6100 10550 6100
-Wire Wire Line
-	6600 6100 6600 5900
 Connection ~ 6900 6100
 Wire Wire Line
 	6900 6100 6600 6100
@@ -1466,4 +1460,91 @@ Wire Wire Line
 	4000 5050 3650 5050
 Wire Wire Line
 	3650 5150 4000 5150
+Wire Wire Line
+	8900 1450 8850 1450
+Wire Wire Line
+	8850 1450 8850 1650
+Wire Wire Line
+	8850 1650 8850 2150
+Connection ~ 8850 1650
+Connection ~ 8850 2150
+Wire Wire Line
+	10900 1550 10900 1450
+Connection ~ 10900 1450
+Wire Wire Line
+	10900 2150 10900 2250
+Connection ~ 10900 2250
+Text GLabel 2400 6050 0    50   Input ~ 0
+FPGA_PROGRAM_B
+Wire Wire Line
+	3200 5850 2400 5850
+Wire Wire Line
+	2500 6050 2400 6050
+Connection ~ 2500 6050
+Text GLabel 2400 5850 0    50   Input ~ 0
+FPGA_DONE
+Wire Wire Line
+	6600 6100 6600 5900
+$Comp
+L Device:C C?
+U 1 1 615AFA54
+P 6600 6250
+F 0 "C?" H 6625 6350 50  0000 L CNN
+F 1 "330uF" H 6625 6150 50  0000 L CNN
+F 2 "" H 6638 6100 50  0001 C CNN
+F 3 "" H 6600 6250 50  0001 C CNN
+F 4 "" H 6600 6250 50  0001 C CNN "Component name"
+F 5 "" H 6600 6250 50  0001 C CNN "DK_Datasheet_Link"
+F 6 "" H 6600 6250 50  0001 C CNN "DK_Detail_Page"
+	1    6600 6250
+	1    0    0    -1  
+$EndComp
+Connection ~ 6600 6100
+Connection ~ 6600 6400
+Wire Wire Line
+	9800 3900 9800 4000
+Connection ~ 9800 4000
+Wire Wire Line
+	9800 4000 9800 4100
+Connection ~ 9800 4100
+Wire Wire Line
+	9800 4100 9800 4250
+Connection ~ 9800 4250
+Wire Wire Line
+	9800 4250 9800 4350
+Connection ~ 9800 4350
+Wire Wire Line
+	9800 4350 9800 4450
+Connection ~ 9800 4450
+Wire Wire Line
+	9800 4450 9800 4550
+Connection ~ 9800 4550
+Wire Wire Line
+	9800 4550 9800 4650
+Connection ~ 9800 4650
+Wire Wire Line
+	9800 4650 9800 4750
+$Comp
+L xc7a100t-ftg256-modified:XC7A100T-FTG256-tdt4295 U?
+U 7 1 615C8949
+P 10300 4350
+F 0 "U?" H 10200 3800 50  0000 L CNN
+F 1 "XC7A100T-FTG256-tdt4295" H 9800 3700 50  0000 L CNN
+F 2 "" H 10300 1300 50  0001 C CNN
+F 3 "" H 10300 1300 50  0000 C CNN
+	7    10300 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 615F9D9F
+P 9800 4750
+F 0 "#PWR?" H 9800 4500 50  0001 C CNN
+F 1 "GND" H 9805 4577 50  0000 C CNN
+F 2 "" H 9800 4750 50  0001 C CNN
+F 3 "" H 9800 4750 50  0001 C CNN
+	1    9800 4750
+	1    0    0    -1  
+$EndComp
+Connection ~ 9800 4750
 $EndSCHEMATC

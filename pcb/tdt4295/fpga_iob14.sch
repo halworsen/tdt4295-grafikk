@@ -13,7 +13,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-NoConn ~ 5200 2250
 NoConn ~ 5200 2350
 NoConn ~ 5200 2550
 Text HLabel 5200 1850 0    50   Input ~ 0
@@ -364,4 +363,17 @@ NoConn ~ 5200 4450
 NoConn ~ 5200 2750
 NoConn ~ 5200 2650
 NoConn ~ 5200 6650
+Wire Wire Line
+	5200 2250 4750 2250
+$Comp
+L power:GND #PWR?
+U 1 1 6158A76A
+P 4750 2250
+F 0 "#PWR?" H 4750 2000 50  0001 C CNN
+F 1 "GND" H 4755 2077 50  0000 C CNN
+F 2 "" H 4750 2250 50  0001 C CNN
+F 3 "" H 4750 2250 50  0001 C CNN
+	1    4750 2250
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

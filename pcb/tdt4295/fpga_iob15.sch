@@ -14,32 +14,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L xc7a100t-ftg256-modified:XC7A100T-FTG256-tdt4295 U303
-U 5 1 614C09B5
-P 1700 4050
-F 0 "U303" H 1700 1250 50  0000 R CNN
-F 1 "XC7A100T-FTG256-tdt4295" H 2100 1100 50  0000 R CNN
-F 2 "Package_BGA:Xilinx_FTG256" H 1700 1000 50  0001 C CNN
-F 3 "" H 1700 1000 50  0000 C CNN
-	5    1700 4050
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1450 900  1550 900 
-Connection ~ 1550 900 
-Wire Wire Line
-	1550 900  1650 900 
-Connection ~ 1650 900 
-Wire Wire Line
-	1650 900  1750 900 
-Connection ~ 1750 900 
-Wire Wire Line
-	1750 900  1850 900 
-Connection ~ 1850 900 
-Wire Wire Line
-	1850 900  1950 900 
-Connection ~ 1950 900 
-$Comp
 L power:GND #PWR0402
 U 1 1 614E24A1
 P 4800 1200
@@ -162,7 +136,7 @@ F 4 "GRM188R71C474KA88D" H 4500 1050 50  0001 C CNN "Component name"
 $EndComp
 Text GLabel 2350 2300 2    50   Input ~ 0
 FPGA_MCU_USART_TX
-Text GLabel 2350 2500 2    50   Input ~ 0
+Text GLabel 2350 4000 2    50   Input ~ 0
 FPGA_MCU_USART_CLK
 Text GLabel 2350 2400 2    50   Input ~ 0
 FPGA_MCU_USART_RX
@@ -172,7 +146,7 @@ Text GLabel 2350 2700 2    50   Input ~ 0
 FPGA_MCU_USART_RTS
 Text GLabel 2350 2800 2    50   Input ~ 0
 FPGA_MCU_USART_CTS
-Text GLabel 2350 4800 2    50   Input ~ 0
+Text GLabel 2350 4100 2    50   Input ~ 0
 FPGA_MCU_GPIO_0
 Text GLabel 2350 4900 2    50   Input ~ 0
 FPGA_MCU_GPIO_1
@@ -195,8 +169,6 @@ F 3 "" H 4800 800 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2400 1200 2700 1200
-Wire Wire Line
-	1950 900  2400 900 
 Connection ~ 2400 900 
 Wire Wire Line
 	2400 900  2700 900 
@@ -253,8 +225,7 @@ NoConn ~ 2350 3600
 NoConn ~ 2350 3700
 NoConn ~ 2350 3800
 NoConn ~ 2350 3900
-NoConn ~ 2350 4000
-NoConn ~ 2350 4100
+NoConn ~ 2350 2500
 NoConn ~ 2350 4200
 NoConn ~ 2350 4300
 NoConn ~ 2350 4400
@@ -276,4 +247,33 @@ NoConn ~ 2350 5200
 NoConn ~ 2350 5300
 NoConn ~ 2350 5400
 NoConn ~ 2350 5500
+Wire Wire Line
+	1950 900  2400 900 
+Connection ~ 1950 900 
+Wire Wire Line
+	1850 900  1950 900 
+Connection ~ 1850 900 
+Wire Wire Line
+	1750 900  1850 900 
+Connection ~ 1750 900 
+Wire Wire Line
+	1650 900  1750 900 
+Connection ~ 1650 900 
+Wire Wire Line
+	1450 900  1550 900 
+Wire Wire Line
+	1550 900  1650 900 
+Connection ~ 1550 900 
+$Comp
+L xc7a100t-ftg256-modified:XC7A100T-FTG256-tdt4295 U303
+U 5 1 614C09B5
+P 1700 4050
+F 0 "U303" H 1700 1250 50  0000 R CNN
+F 1 "XC7A100T-FTG256-tdt4295" H 2100 1100 50  0000 R CNN
+F 2 "Package_BGA:Xilinx_FTG256" H 1700 1000 50  0001 C CNN
+F 3 "" H 1700 1000 50  0000 C CNN
+	5    1700 4050
+	1    0    0    -1  
+$EndComp
+NoConn ~ 2350 4800
 $EndSCHEMATC
