@@ -7,6 +7,9 @@ EFM_NAME = efm32gg
 MCU = EFM32GG990F1024
 LINKERSCRIPT = ${GECKOSDKDIR}/platform/Device/SiliconLabs/${EFM_MODEL}/Source/GCC/${EFM_NAME}.ld
 GECKOSDKDIR = ../Gecko_SDK
+debug = true
+
+# Header file folders
 INCLUDEPATH += ${GECKOSDKDIR}/platform/emlib/inc
 INCLUDEPATH += ${GECKOSDKDIR}/platform/emdrv/dmadrv/inc
 INCLUDEPATH += ${GECKOSDKDIR}/platform/emdrv/dmadrv/config
@@ -36,9 +39,16 @@ CFLAGS += ${addprefix -I, ${INCLUDEPATH}} ${MACHFLAGS} ${SPECFLAGS} -Wall -Werro
 LDFLAGS += ${MACHFLAGS} -T${LINKERSCRIPT} ${SPECFLAGS} -Wl,--print-memory-usage
 ARFLAGS = cr
 
+ifeq ($(debug),true)
+	CFLAGS += -g
+endif
+
+# Main program source files
 objects = ${patsubst %.c,%.o,${wildcard *.c}}
 objects += ${patsubst %.c,%.o,${wildcard ${GECKOSDKDIR}/platform/Device/SiliconLabs/${EFM_MODEL}/Source/*.c}}
 objects += ${patsubst %.c,%.o,${wildcard ${GECKOSDKDIR}/platform/Device/SiliconLabs/${EFM_MODEL}/Source/GCC/*.c}}
+
+# SDK library source files
 lib_objects = ${patsubst %.c,%.o,${wildcard ${GECKOSDKDIR}/platform/emdrv/dmadrv/src/*.c}}
 lib_objects += ${patsubst %.c,%.o,${wildcard ${GECKOSDKDIR}/platform/emdrv/spidrv/src/*.c}}
 lib_objects += ${patsubst %.c,%.o,${wildcard ${GECKOSDKDIR}/platform/emdrv/common/src/*.c}}
