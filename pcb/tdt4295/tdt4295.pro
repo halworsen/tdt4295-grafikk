@@ -1,4 +1,4 @@
-update=28.09.2021 14:37:31
+update=28.09.2021 16:08:23
 version=1
 last_client=kicad
 [general]
@@ -12,11 +12,21 @@ NetIExt=net
 version=1
 LibDir=
 [eeschema/libraries]
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=Pcbnew
+SpiceAjustPassiveValues=0
+LabSize=50
+ERC_TestSimilarLabels=1
 [pcbnew]
 version=1
 PageLayoutDescrFile=
 LastNetListRead=
-CopperLayerCount=2
+CopperLayerCount=6
 BoardThickness=1.6
 AllowMicroVias=0
 AllowBlindVias=0
@@ -28,7 +38,7 @@ MinViaDrill=0.3
 MinMicroViaDiameter=0.2
 MinMicroViaDrill=0.09999999999999999
 MinHoleToHole=0.25
-TrackWidth1=0.2
+TrackWidth1=0.3
 ViaDiameter1=0.8
 ViaDrill1=0.4
 dPairWidth1=0.2
@@ -64,20 +74,20 @@ Type=0
 Enabled=1
 [pcbnew/Layer.In1.Cu]
 Name=In1.Cu
-Type=0
-Enabled=0
+Type=1
+Enabled=1
 [pcbnew/Layer.In2.Cu]
 Name=In2.Cu
-Type=0
-Enabled=0
+Type=1
+Enabled=1
 [pcbnew/Layer.In3.Cu]
 Name=In3.Cu
 Type=0
-Enabled=0
+Enabled=1
 [pcbnew/Layer.In4.Cu]
 Name=In4.Cu
 Type=0
-Enabled=0
+Enabled=1
 [pcbnew/Layer.In5.Cu]
 Name=In5.Cu
 Type=0
@@ -187,11 +197,11 @@ Name=B.Cu
 Type=0
 Enabled=1
 [pcbnew/Layer.B.Adhes]
-Enabled=1
+Enabled=0
 [pcbnew/Layer.F.Adhes]
 Enabled=1
 [pcbnew/Layer.B.Paste]
-Enabled=1
+Enabled=0
 [pcbnew/Layer.F.Paste]
 Enabled=1
 [pcbnew/Layer.B.SilkS]
@@ -219,7 +229,7 @@ Enabled=1
 [pcbnew/Layer.F.CrtYd]
 Enabled=1
 [pcbnew/Layer.B.Fab]
-Enabled=1
+Enabled=0
 [pcbnew/Layer.F.Fab]
 Enabled=1
 [pcbnew/Layer.Rescue]
@@ -228,7 +238,7 @@ Enabled=0
 [pcbnew/Netclasses/Default]
 Name=Default
 Clearance=0.2
-TrackWidth=0.2
+TrackWidth=0.3
 ViaDiameter=0.8
 ViaDrill=0.4
 uViaDiameter=0.3
@@ -237,8 +247,8 @@ dPairWidth=0.2
 dPairGap=0.25
 dPairViaGap=0.25
 [pcbnew/Netclasses/1]
-Name=Power bus
-Clearance=0.3
+Name=Power
+Clearance=0.2
 TrackWidth=0.5
 ViaDiameter=0.8
 ViaDrill=0.4
@@ -247,13 +257,3 @@ uViaDrill=0.1
 dPairWidth=0.2
 dPairGap=0.25
 dPairViaGap=0.25
-[schematic_editor]
-version=1
-PageLayoutDescrFile=
-PlotDirectoryName=
-SubpartIdSeparator=0
-SubpartFirstId=65
-NetFmtName=Pcbnew
-SpiceAjustPassiveValues=0
-LabSize=50
-ERC_TestSimilarLabels=1

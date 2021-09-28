@@ -36,8 +36,6 @@ F 3 "" H 3300 1300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2850 1750 3300 1750
-Wire Wire Line
 	3300 1750 3300 1300
 Wire Wire Line
 	1050 1500 1050 1750
@@ -1278,20 +1276,6 @@ Wire Notes Line
 Text Notes 3650 6000 0    50   ~ 0
 Probe points
 $Comp
-L Device:Ferrite_Bead FB201
-U 1 1 614FE6B3
-P 2700 1750
-F 0 "FB201" V 2426 1750 50  0000 C CNN
-F 1 "Ferrite_Bead" V 2517 1750 50  0000 C CNN
-F 2 "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder" V 2630 1750 50  0001 C CNN
-F 3 "~" H 2700 1750 50  0001 C CNN
-F 4 "BK0603HS330-T" H 2700 1750 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/en/products/detail/taiyo-yuden/BK0603HS330-T/957708" H 2700 1750 50  0001 C CNN "DK_Detail_Page"
-F 6 "See fig 2.5 https://www.ftdichip.com/Documents/AppNotes/AN_146_USB_Hardware_Design_Guidelines_for_FTDI_ICs.pdf" H 2700 1750 50  0001 C CNN "Description"
-	1    2700 1750
-	0    1    1    0   
-$EndComp
-$Comp
 L tdt4295:PHDMI2AB4 U201
 U 1 1 61657D49
 P 2150 3050
@@ -1325,8 +1309,6 @@ Wire Wire Line
 	2200 1750 2200 2650
 Connection ~ 2200 1750
 Wire Wire Line
-	2200 1750 2550 1750
-Wire Wire Line
 	1250 2150 2000 2150
 Wire Wire Line
 	2000 2150 2000 2650
@@ -1334,4 +1316,22 @@ Connection ~ 2000 2150
 Wire Wire Line
 	2000 2150 2800 2150
 NoConn ~ 1900 2650
+Wire Wire Line
+	2200 1750 2550 1750
+Wire Wire Line
+	2850 1750 3300 1750
+$Comp
+L Device:Ferrite_Bead FB201
+U 1 1 614FE6B3
+P 2700 1750
+F 0 "FB201" V 2426 1750 50  0000 C CNN
+F 1 "Ferrite_Bead" V 2517 1750 50  0000 C CNN
+F 2 "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder" V 2630 1750 50  0001 C CNN
+F 3 "~" H 2700 1750 50  0001 C CNN
+F 4 "BK0603HS330-T" H 2700 1750 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/en/products/detail/taiyo-yuden/BK0603HS330-T/957708" H 2700 1750 50  0001 C CNN "DK_Detail_Page"
+F 6 "See fig 2.5 https://www.ftdichip.com/Documents/AppNotes/AN_146_USB_Hardware_Design_Guidelines_for_FTDI_ICs.pdf" H 2700 1750 50  0001 C CNN "Description"
+	1    2700 1750
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC
