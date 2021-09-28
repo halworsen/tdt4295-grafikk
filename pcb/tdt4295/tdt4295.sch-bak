@@ -1167,8 +1167,8 @@ Text GLabel 8950 3700 2    50   Output ~ 0
 GPIO_LED2
 Text GLabel 8950 3600 2    50   Output ~ 0
 GPIO_LED3
-Text GLabel 6750 3000 0    50   UnSpc ~ 0
-GPIO_PB7
+Text GLabel 6750 3000 0    50   Input ~ 0
+FPGA_DONE
 Text GLabel 8950 1800 2    50   UnSpc ~ 0
 GPIO_PE13
 Text GLabel 8950 1900 2    50   UnSpc ~ 0
@@ -1453,6 +1453,8 @@ S 750  2250 1150 950
 U 617F72AC
 F0 "FPGA" 50
 F1 "fpga.sch" 50
+F2 "DONE" O R 1900 2500 50 
+F3 "PROGRAM_B" I R 1900 3000 50 
 $EndSheet
 Text GLabel 1800 3900 0    50   BiDi ~ 0
 FPGA_MCU_USART_CLK
@@ -1543,8 +1545,6 @@ Wire Wire Line
 	12350 3700 12250 3700
 Wire Wire Line
 	12250 3700 12250 3800
-Text GLabel 11750 3600 0    50   UnSpc ~ 0
-GPIO_PB7
 Text GLabel 2300 4700 2    50   UnSpc ~ 0
 GPIO_PE13
 Text GLabel 2300 4800 2    50   UnSpc ~ 0
@@ -1571,14 +1571,12 @@ Wire Wire Line
 	2300 5000 1800 5000
 Text Notes 1400 3600 0    50   ~ 0
 FPGA <-> MCU connections
-Text GLabel 6750 3100 0    50   UnSpc ~ 0
-GPIO_PB8
+Text GLabel 6750 3100 0    50   Output ~ 0
+FPGA_PROGRAM_B
 Text GLabel 6750 3600 0    50   UnSpc ~ 0
 GPIO_PB11
 Text GLabel 6750 3700 0    50   UnSpc ~ 0
 GPIO_PB12
-Text GLabel 11750 3500 0    50   UnSpc ~ 0
-GPIO_PB8
 Text GLabel 11750 3400 0    50   UnSpc ~ 0
 GPIO_PB11
 Text GLabel 11750 3300 0    50   UnSpc ~ 0
@@ -1637,46 +1635,12 @@ F 5 "https://www.digikey.no/product-detail/no/vishay-beyschlag-draloric-bc-compo
 	1    12050 3400
 	0    1    1    0   
 $EndComp
-$Comp
-L Device:R R110
-U 1 1 6153AB74
-P 12050 3500
-F 0 "R110" V 12100 3350 50  0000 C CNN
-F 1 "100" V 12050 3500 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 11980 3500 50  0001 C CNN
-F 3 "https://www.vishay.com/docs/28705/mcx0x0xpro.pdf" H 12050 3500 50  0001 C CNN
-F 4 "MCU08050C1000FP500" H 12050 3500 50  0001 C CNN "Category"
-F 5 "https://www.digikey.no/product-detail/no/vishay-beyschlag-draloric-bc-components/MCU08050C1000FP500/MCU0805-100-CFCT-ND/2607922" H 12050 3500 50  0001 C CNN "DK_Detail_Page"
-	1    12050 3500
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R111
-U 1 1 6153ACD0
-P 12050 3600
-F 0 "R111" V 12100 3450 50  0000 C CNN
-F 1 "100" V 12050 3600 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 11980 3600 50  0001 C CNN
-F 3 "https://www.vishay.com/docs/28705/mcx0x0xpro.pdf" H 12050 3600 50  0001 C CNN
-F 4 "MCU08050C1000FP500" H 12050 3600 50  0001 C CNN "Category"
-F 5 "https://www.digikey.no/product-detail/no/vishay-beyschlag-draloric-bc-components/MCU08050C1000FP500/MCU0805-100-CFCT-ND/2607922" H 12050 3600 50  0001 C CNN "DK_Detail_Page"
-	1    12050 3600
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	11900 3200 11750 3200
 Wire Wire Line
 	11750 3300 11900 3300
 Wire Wire Line
 	11900 3400 11750 3400
-Wire Wire Line
-	11750 3500 11900 3500
-Wire Wire Line
-	11900 3600 11750 3600
-Wire Wire Line
-	12200 3600 12350 3600
-Wire Wire Line
-	12350 3500 12200 3500
 Wire Wire Line
 	12200 3400 12350 3400
 Wire Wire Line
@@ -1817,4 +1781,14 @@ Wire Wire Line
 Connection ~ 12450 2150
 Wire Wire Line
 	4250 4550 4250 4900
+NoConn ~ 12350 3500
+NoConn ~ 12350 3600
+Text GLabel 2150 2500 2    50   Output ~ 0
+FPGA_DONE
+Text GLabel 2150 3000 2    50   Input ~ 0
+FPGA_PROGRAM_B
+Wire Wire Line
+	2150 2500 1900 2500
+Wire Wire Line
+	1900 3000 2150 3000
 $EndSCHEMATC

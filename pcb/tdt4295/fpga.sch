@@ -1294,15 +1294,11 @@ Connection ~ 10900 1450
 Wire Wire Line
 	10900 2150 10900 2250
 Connection ~ 10900 2250
-Text GLabel 2400 6050 0    50   Input ~ 0
-FPGA_PROGRAM_B
 Wire Wire Line
 	3200 5850 2400 5850
 Wire Wire Line
 	2500 6050 2400 6050
 Connection ~ 2500 6050
-Text GLabel 2400 5850 0    50   Input ~ 0
-FPGA_DONE
 Wire Wire Line
 	6600 6100 6600 5900
 Wire Wire Line
@@ -1465,4 +1461,8 @@ F 4 "https://www.digikey.no/product-detail/en/kemet/T520V337M2R5ATE025/399-4105-
 $EndComp
 Connection ~ 6600 6100
 Connection ~ 6600 6400
+Text HLabel 2400 5850 0    50   Output ~ 0
+DONE
+Text HLabel 2400 6050 0    50   Input ~ 0
+PROGRAM_B
 $EndSCHEMATC
