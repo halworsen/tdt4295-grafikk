@@ -3,7 +3,7 @@
   (lib (name efm32gg-footprint)(type KiCad)(uri ${KIPRJMOD}/symlib/EFM32GG12B810F1024GQ64/footprints.pretty)(options "")(descr ""))
   (lib (name lm20143mhx-nopb-footprint)(type KiCad)(uri ${KIPRJMOD}/symlib/LM20143MHX-NOPB/2021-09-15_14-49-32/footprints.pretty)(options "")(descr ""))
   (lib (name SN74ALVC245PWR-footprint)(type KiCad)(uri ${KIPRJMOD}/symlib/kicad-ext-lib/SN74ALVC245PWR/footprints.pretty)(options "")(descr ""))
-  (lib (name S25FL127SABMFV101-footprint)(type KiCad)(uri "D:/Emblas Data/Documents/Skole/Semester/7/tdt4295-grafikk/pcb/tdt4295/symlib/kicad-ext-lib/S25FL127SABMFV101/footprints.pretty")(options "")(descr ""))
+  (lib (name S25FL127SABMFV101-footprint)(type KiCad)(uri ${KIPRJMOD}/symlib/kicad-ext-lib/S25FL127SABMFV101/footprints.pretty)(options "")(descr ""))
   (lib (name NUP4114UCW1T2G-footprint)(type KiCad)(uri ${KIPRJMOD}/symlib/kicad-ext-lib/NUP4114UCW1T2G/footprints.pretty)(options "")(descr ""))
   (lib (name 5177802-9-footprint)(type KiCad)(uri ${KIPRJMOD}/symlib/kicad-ext-lib/5177802-9/footprints.pretty)(options "")(descr ""))
   (lib (name T520V337M2R5ATE025-footprint)(type KiCad)(uri ${KIPRJMOD}/symlib/kicad-ext-lib/T520V337M2R5ATE025/footprints.pretty)(options "")(descr ""))

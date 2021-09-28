@@ -773,10 +773,11 @@ U 1 1 618C2BE9
 P 9100 3200
 F 0 "R105" V 9150 3400 50  0000 C CNN
 F 1 "15" V 9100 3200 50  0000 C CNN
-F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 9030 3200 50  0001 C CNN
+F 2 "tdt4295:RESC6332X120N" V 9030 3200 50  0001 C CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-7&DocType=DS&DocLang=English" H 9100 3200 50  0001 C CNN
 F 4 "352215RFT" H 9100 3200 50  0001 C CNN "Category"
 F 5 "https://www.digikey.no/product-detail/no/te-connectivity-passive-product/352215RFT/A121147CT-ND/5245204" H 9100 3200 50  0001 C CNN "DK_Detail_Page"
+F 6 "352215RFT" H 9100 3200 50  0001 C CNN "Component name"
 	1    9100 3200
 	0    1    1    0   
 $EndComp
@@ -788,10 +789,11 @@ U 1 1 618CE8AE
 P 9100 3300
 F 0 "R106" V 9150 3500 50  0000 C CNN
 F 1 "15" V 9100 3300 50  0000 C CNN
-F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 9030 3300 50  0001 C CNN
+F 2 "tdt4295:RESC6332X120N" V 9030 3300 50  0001 C CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-7&DocType=DS&DocLang=English" H 9100 3300 50  0001 C CNN
 F 4 "352215RFT" H 9100 3300 50  0001 C CNN "Category"
 F 5 "https://www.digikey.no/product-detail/no/te-connectivity-passive-product/352215RFT/A121147CT-ND/5245204" H 9100 3300 50  0001 C CNN "DK_Detail_Page"
+F 6 "352215RFT" H 9100 3300 50  0001 C CNN "Component name"
 	1    9100 3300
 	0    1    1    0   
 $EndComp
