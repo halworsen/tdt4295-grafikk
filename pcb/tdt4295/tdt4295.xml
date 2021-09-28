@@ -2,7 +2,7 @@
 <export version="D">
   <design>
     <source>C:\tdt4295\tdt4295-grafikk\pcb\tdt4295\tdt4295.sch</source>
-    <date>28.09.2021 13:16:07</date>
+    <date>28.09.2021 17:35:09</date>
     <tool>Eeschema (5.1.10)-1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -88,6 +88,10 @@
       <value>48MHz</value>
       <footprint>Crystal:Crystal_SMD_2016-4Pin_2.0x1.6mm</footprint>
       <datasheet>https://www.farnell.com/datasheets/1883673.pdf</datasheet>
+      <fields>
+        <field name="Component name">ABM11-48.000MHZ-D2X-T3</field>
+        <field name="DK_Detail_Page">https://no.farnell.com/abracon/abm11-48-000mhz-d2x-t3/crystal-48mhz-10pf-2-x-1-6mm/dp/2467782RL?st=krystall</field>
+      </fields>
       <libsource lib="Device" part="Crystal_GND24" description="Four pin crystal, GND on pins 2 and 4"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>6146C42D</tstamp>
@@ -100,6 +104,7 @@
         <field name="Component name">CL10B104KA8NNNC</field>
         <field name="DK_Datasheet_Link">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092</field>
+        <field name="Digi-Key_PN">1276-1006-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -113,6 +118,7 @@
         <field name="Component name">CL10B104KA8NNNC</field>
         <field name="DK_Datasheet_Link">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092</field>
+        <field name="Digi-Key_PN">1276-1006-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -126,6 +132,7 @@
         <field name="Component name">CL10B104KA8NNNC</field>
         <field name="DK_Datasheet_Link">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092</field>
+        <field name="Digi-Key_PN">1276-1006-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -139,6 +146,7 @@
         <field name="Component name">CL10A106KQ8NNNC</field>
         <field name="DK_Datasheet_Link">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A106KQ8NNNC/1276-1038-1-ND/3889124</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A106KQ8NNNC/1276-1038-1-ND/3889124</field>
+        <field name="Digi-Key_PN">1276-1038-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -146,12 +154,13 @@
     </comp>
     <comp ref="C107">
       <value>1uF</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder</footprint>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
       <datasheet>www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp</datasheet>
       <fields>
         <field name="Component name">CL21B105KOFNNNE</field>
         <field name="DK_Datasheet_Link">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL21B105KOFNNNE/1276-1026-1-ND/3889112</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL21B105KOFNNNE/1276-1026-1-ND/3889112</field>
+        <field name="Digi-Key_PN">1276-1026-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -165,6 +174,7 @@
         <field name="Component name">CL10B103KB8NNNC</field>
         <field name="DK_Datasheet_Link">https://media.digikey.com/pdf/Data%20Sheets/Samsung%20PDFs/CL10B103KB8NNNC_Spec.pdf</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B103KB8NNNC/1276-1009-1-ND/3889095</field>
+        <field name="Digi-Key_PN">1276-1009-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -178,6 +188,7 @@
         <field name="Component name">CL10A106KQ8NNNC</field>
         <field name="DK_Datasheet_Link">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A106KQ8NNNC/1276-1038-1-ND/3889124</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A106KQ8NNNC/1276-1038-1-ND/3889124</field>
+        <field name="Digi-Key_PN">1276-1038-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -191,6 +202,7 @@
         <field name="Component name">CL10A106KQ8NNNC</field>
         <field name="DK_Datasheet_Link">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A106KQ8NNNC/1276-1038-1-ND/3889124</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A106KQ8NNNC/1276-1038-1-ND/3889124</field>
+        <field name="Digi-Key_PN">1276-1038-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -204,6 +216,7 @@
         <field name="Component name">CL10B104KA8NNNC</field>
         <field name="DK_Datasheet_Link">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092</field>
+        <field name="Digi-Key_PN">1276-1006-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -217,6 +230,7 @@
         <field name="Component name">CL10B104KA8NNNC</field>
         <field name="DK_Datasheet_Link">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092</field>
+        <field name="Digi-Key_PN">1276-1006-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -224,18 +238,26 @@
     </comp>
     <comp ref="J101">
       <value>ARM 20 Pin Debug Header</value>
-      <footprint>Connector_PinHeader_2.54mm:PinHeader_2x10_P2.54mm_Vertical</footprint>
+      <footprint>Connector_PinHeader_1.27mm:PinHeader_2x10_P1.27mm_Vertical_SMD</footprint>
       <datasheet>~</datasheet>
+      <fields>
+        <field name="Component name">FTSH-110-01-L-DV-K-TR</field>
+        <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samtec-inc/FTSH-110-01-L-DV-K-TR/SAM13960TR-ND/6693931</field>
+        <field name="Digi-Key_PN">SAM13960CT-ND</field>
+      </fields>
       <libsource lib="Connector_Generic" part="Conn_02x10_Odd_Even" description="Generic connector, double row, 02x10, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>614A6418</tstamp>
     </comp>
     <comp ref="R105">
       <value>15</value>
-      <footprint>Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder</footprint>
+      <footprint>tdt4295:RESC6332X120N</footprint>
       <datasheet>https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&amp;DocNm=9-1773463-7&amp;DocType=DS&amp;DocLang=English</datasheet>
       <fields>
         <field name="Category">352215RFT</field>
+        <field name="Component name">352215RFT</field>
+        <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/te-connectivity-passive-product/352215RFT/A121147CT-ND/5245204</field>
+        <field name="Digi-Key_PN">A121147CT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -243,10 +265,13 @@
     </comp>
     <comp ref="R106">
       <value>15</value>
-      <footprint>Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder</footprint>
+      <footprint>tdt4295:RESC6332X120N</footprint>
       <datasheet>https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&amp;DocNm=9-1773463-7&amp;DocType=DS&amp;DocLang=English</datasheet>
       <fields>
         <field name="Category">352215RFT</field>
+        <field name="Component name">352215RFT</field>
+        <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/te-connectivity-passive-product/352215RFT/A121147CT-ND/5245204</field>
+        <field name="Digi-Key_PN">A121147CT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -254,12 +279,13 @@
     </comp>
     <comp ref="C106">
       <value>1uF</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder</footprint>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
       <datasheet>www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp</datasheet>
       <fields>
         <field name="Component name">CL21B105KOFNNNE</field>
         <field name="DK_Datasheet_Link">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL21B105KOFNNNE/1276-1026-1-ND/3889112</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL21B105KOFNNNE/1276-1026-1-ND/3889112</field>
+        <field name="Digi-Key_PN">1276-1026-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -291,6 +317,7 @@
       <fields>
         <field name="Component name">RR1220P-104-D</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/susumu/RR1220P-104-D/RR12P100KDCT-ND/432878</field>
+        <field name="Digi-Key_PN">RR12P100KDCT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -341,6 +368,7 @@
       <fields>
         <field name="Component name">RR1220P-104-D</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/susumu/RR1220P-104-D/RR12P100KDCT-ND/432878</field>
+        <field name="Digi-Key_PN">RR12P100KDCT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -353,6 +381,7 @@
       <fields>
         <field name="Component name">RR1220P-104-D</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/susumu/RR1220P-104-D/RR12P100KDCT-ND/432878</field>
+        <field name="Digi-Key_PN">RR12P100KDCT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -365,6 +394,7 @@
       <fields>
         <field name="Component name">RR1220P-104-D</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/susumu/RR1220P-104-D/RR12P100KDCT-ND/432878</field>
+        <field name="Digi-Key_PN">RR12P100KDCT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -372,8 +402,13 @@
     </comp>
     <comp ref="D101">
       <value>LED</value>
-      <footprint>LED_SMD:LED_2816_7142Metric_Pad3.20x4.45mm_HandSolder</footprint>
+      <footprint>LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder</footprint>
       <datasheet>~</datasheet>
+      <fields>
+        <field name="Component name">150120BS75000</field>
+        <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/w%C3%BCrth-elektronik/150120BS75000/732-4989-1-ND/4489931</field>
+        <field name="Digi-Key_PN">732-4989-1-ND</field>
+      </fields>
       <libsource lib="Device" part="LED" description="Light emitting diode"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>617052D6</tstamp>
@@ -385,6 +420,7 @@
       <fields>
         <field name="Component name">RHC2512FT330R</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/stackpole-electronics-inc/RHC2512FT330R/RHC2512FT330RCT-ND/1646222</field>
+        <field name="Digi-Key_PN">RHC2512FT330RCT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -392,8 +428,13 @@
     </comp>
     <comp ref="D102">
       <value>LED</value>
-      <footprint>LED_SMD:LED_2816_7142Metric_Pad3.20x4.45mm_HandSolder</footprint>
+      <footprint>LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder</footprint>
       <datasheet>~</datasheet>
+      <fields>
+        <field name="Component name">150120BS75000</field>
+        <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/w%C3%BCrth-elektronik/150120BS75000/732-4989-1-ND/4489931</field>
+        <field name="Digi-Key_PN">732-4989-1-ND</field>
+      </fields>
       <libsource lib="Device" part="LED" description="Light emitting diode"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>61724822</tstamp>
@@ -405,6 +446,7 @@
       <fields>
         <field name="Component name">RHC2512FT330R</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/stackpole-electronics-inc/RHC2512FT330R/RHC2512FT330RCT-ND/1646222</field>
+        <field name="Digi-Key_PN">RHC2512FT330RCT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -412,8 +454,13 @@
     </comp>
     <comp ref="D103">
       <value>LED</value>
-      <footprint>LED_SMD:LED_2816_7142Metric_Pad3.20x4.45mm_HandSolder</footprint>
+      <footprint>LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder</footprint>
       <datasheet>~</datasheet>
+      <fields>
+        <field name="Component name">150120BS75000</field>
+        <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/w%C3%BCrth-elektronik/150120BS75000/732-4989-1-ND/4489931</field>
+        <field name="Digi-Key_PN">732-4989-1-ND</field>
+      </fields>
       <libsource lib="Device" part="LED" description="Light emitting diode"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>617323B7</tstamp>
@@ -425,6 +472,7 @@
       <fields>
         <field name="Component name">RHC2512FT330R</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/stackpole-electronics-inc/RHC2512FT330R/RHC2512FT330RCT-ND/1646222</field>
+        <field name="Digi-Key_PN">RHC2512FT330RCT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -432,8 +480,13 @@
     </comp>
     <comp ref="D104">
       <value>LED</value>
-      <footprint>LED_SMD:LED_2816_7142Metric_Pad3.20x4.45mm_HandSolder</footprint>
+      <footprint>LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder</footprint>
       <datasheet>~</datasheet>
+      <fields>
+        <field name="Component name">150120BS75000</field>
+        <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/w%C3%BCrth-elektronik/150120BS75000/732-4989-1-ND/4489931</field>
+        <field name="Digi-Key_PN">732-4989-1-ND</field>
+      </fields>
       <libsource lib="Device" part="LED" description="Light emitting diode"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>617408B8</tstamp>
@@ -445,6 +498,7 @@
       <fields>
         <field name="Component name">RHC2512FT330R</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/stackpole-electronics-inc/RHC2512FT330R/RHC2512FT330RCT-ND/1646222</field>
+        <field name="Digi-Key_PN">RHC2512FT330RCT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -473,6 +527,9 @@
       <value>COM-09032 Joystick</value>
       <footprint>com09032-joystick:XDCR_COM-09032</footprint>
       <fields>
+        <field name="Component name">COM-09032</field>
+        <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/sparkfun-electronics/COM-09032/1568-1526-ND/6823623</field>
+        <field name="Digi-Key_PN">1568-1526-ND</field>
         <field name="MANUFACTURER">SparkFun Electronics</field>
         <field name="MAXIMUM_PACKAGE_HEIGHT">30.1mm</field>
         <field name="PARTREV">N/A</field>
@@ -486,6 +543,9 @@
       <value>COM-09032 Joystick</value>
       <footprint>com09032-joystick:XDCR_COM-09032</footprint>
       <fields>
+        <field name="Component name">COM-09032</field>
+        <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/sparkfun-electronics/COM-09032/1568-1526-ND/6823623</field>
+        <field name="Digi-Key_PN">1568-1526-ND</field>
         <field name="MANUFACTURER">SparkFun Electronics</field>
         <field name="MAXIMUM_PACKAGE_HEIGHT">30.1mm</field>
         <field name="PARTREV">N/A</field>
@@ -497,8 +557,13 @@
     </comp>
     <comp ref="J104">
       <value>MCU GPIO Header</value>
-      <footprint>Connector_PinSocket_2.54mm:PinSocket_1x07_P2.54mm_Vertical</footprint>
+      <footprint>Connector_PinSocket_2.54mm:PinSocket_1x07_P2.54mm_Vertical_SMD_Pin1Right</footprint>
       <datasheet>~</datasheet>
+      <fields>
+        <field name="Component name">0878980726</field>
+        <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/molex/0878980726/WM20569-ND/3264913</field>
+        <field name="Digi-Key_PN">WM20569-ND</field>
+      </fields>
       <libsource lib="Connector_Generic" part="Conn_01x07" description="Generic connector, single row, 01x07, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>618E52FC</tstamp>
@@ -513,11 +578,13 @@
     </comp>
     <comp ref="R107">
       <value>100</value>
-      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <footprint>Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder</footprint>
       <datasheet>https://www.vishay.com/docs/28705/mcx0x0xpro.pdf</datasheet>
       <fields>
         <field name="Category">MCU08050C1000FP500</field>
+        <field name="Component name">RNCP1206FTD100R</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/vishay-beyschlag-draloric-bc-components/MCU08050C1000FP500/MCU0805-100-CFCT-ND/2607922</field>
+        <field name="Digi-Key_PN">RNCP1206FTD100RCT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -525,11 +592,13 @@
     </comp>
     <comp ref="R108">
       <value>100</value>
-      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <footprint>Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder</footprint>
       <datasheet>https://www.vishay.com/docs/28705/mcx0x0xpro.pdf</datasheet>
       <fields>
         <field name="Category">MCU08050C1000FP500</field>
+        <field name="Component name">RNCP1206FTD100R</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/vishay-beyschlag-draloric-bc-components/MCU08050C1000FP500/MCU0805-100-CFCT-ND/2607922</field>
+        <field name="Digi-Key_PN">RNCP1206FTD100RCT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -537,45 +606,26 @@
     </comp>
     <comp ref="R109">
       <value>100</value>
-      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <footprint>Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder</footprint>
       <datasheet>https://www.vishay.com/docs/28705/mcx0x0xpro.pdf</datasheet>
       <fields>
         <field name="Category">MCU08050C1000FP500</field>
+        <field name="Component name">RNCP1206FTD100R</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/vishay-beyschlag-draloric-bc-components/MCU08050C1000FP500/MCU0805-100-CFCT-ND/2607922</field>
+        <field name="Digi-Key_PN">RNCP1206FTD100RCT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>6153A9D4</tstamp>
     </comp>
-    <comp ref="R110">
-      <value>100</value>
-      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
-      <datasheet>https://www.vishay.com/docs/28705/mcx0x0xpro.pdf</datasheet>
-      <fields>
-        <field name="Category">MCU08050C1000FP500</field>
-        <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/vishay-beyschlag-draloric-bc-components/MCU08050C1000FP500/MCU0805-100-CFCT-ND/2607922</field>
-      </fields>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>6153AB74</tstamp>
-    </comp>
-    <comp ref="R111">
-      <value>100</value>
-      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
-      <datasheet>https://www.vishay.com/docs/28705/mcx0x0xpro.pdf</datasheet>
-      <fields>
-        <field name="Category">MCU08050C1000FP500</field>
-        <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/vishay-beyschlag-draloric-bc-components/MCU08050C1000FP500/MCU0805-100-CFCT-ND/2607922</field>
-      </fields>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>6153ACD0</tstamp>
-    </comp>
     <comp ref="J103">
       <value>DM1AA-SF-PEJ(21)</value>
-      <footprint>HRS_DM1AA-SF-PEJ(21)</footprint>
+      <footprint>DM1AA-SF-PEJ_21:HRS_DM1AA-SF-PEJ(21)</footprint>
       <datasheet>https://www.hirose.com/product/document?clcode=CL0609-0004-8-72&amp;productname=DM1AA-SF-PEJ(72)&amp;series=DM1&amp;documenttype=Catalog&amp;lang=en&amp;documentid=D31696_en</datasheet>
       <fields>
+        <field name="Component name">DM1AA-SF-PEJ-21</field>
+        <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/hirose-electric-co-ltd/DM1AA-SF-PEJ-21/HR845CT-ND/559985</field>
+        <field name="Digi-Key_PN">HR845CT-ND</field>
         <field name="MANUFACTURER">HRS</field>
       </fields>
       <libsource lib="DM1AA-SF-PEJ_21_" part="DM1AA-SF-PEJ(21)" description=""/>
@@ -584,8 +634,13 @@
     </comp>
     <comp ref="J102">
       <value>MCU USART1 Header</value>
-      <footprint>Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Vertical</footprint>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Vertical_SMD</footprint>
       <datasheet>~</datasheet>
+      <fields>
+        <field name="Component name">0015910120</field>
+        <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/molex/0015910120/WM17460-ND/614776</field>
+        <field name="Digi-Key_PN">WM17460-ND</field>
+      </fields>
       <libsource lib="Connector_Generic" part="Conn_02x06_Odd_Even" description="Generic connector, double row, 02x06, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>61568E09</tstamp>
@@ -596,8 +651,9 @@
       <datasheet>http://files.edac.net/690-005-299-043.pdf</datasheet>
       <fields>
         <field name="Category">Connectors, Interconnects</field>
+        <field name="Component name">690-005-299-043</field>
         <field name="DK_Datasheet_Link">http://files.edac.net/690-005-299-043.pdf</field>
-        <field name="DK_Detail_Page">/product-detail/en/edac-inc/690-005-299-043/151-1206-1-ND/4312192</field>
+        <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/edac-inc/690-005-299-043/151-1206-1-ND/4312192</field>
         <field name="Description">CONN RCPT USB2.0 MINI B SMD R/A</field>
         <field name="Digi-Key_PN">151-1206-1-ND</field>
         <field name="Family">USB, DVI, HDMI Connectors</field>
@@ -616,6 +672,7 @@
       <fields>
         <field name="Component name">CL32A107MPVNNNE</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL32A107MPVNNNE/1276-3364-1-ND/3891450</field>
+        <field name="Digi-Key_PN">1276-3364-1-ND</field>
       </fields>
       <libsource lib="Device" part="CP1" description="Polarized capacitor, US symbol"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -629,6 +686,7 @@
         <field name="Component name">CL10A106KQ8NNNC</field>
         <field name="DK_Datasheet_Link">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A106KQ8NNNC/1276-1038-1-ND/3889124</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A106KQ8NNNC/1276-1038-1-ND/3889124</field>
+        <field name="Digi-Key_PN">1276-1038-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -642,6 +700,7 @@
         <field name="Component name">CL10B104KA8NNNC</field>
         <field name="DK_Datasheet_Link">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092</field>
+        <field name="Digi-Key_PN">1276-1006-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -654,6 +713,7 @@
       <fields>
         <field name="Component name">CL10A226MQ8NRNC</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A226MQ8NRNC/1276-1193-2-ND/3886851</field>
+        <field name="Digi-Key_PN">1276-1193-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -666,6 +726,7 @@
       <fields>
         <field name="Component name">CL10A226MQ8NRNC</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A226MQ8NRNC/1276-1193-2-ND/3886851</field>
+        <field name="Digi-Key_PN">1276-1193-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -678,6 +739,7 @@
       <fields>
         <field name="Component name">TFM252012ALMA1R5MTAA</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/tdk-corporation/TFM252012ALMA1R5MTAA/445-175184-6-ND/7795261</field>
+        <field name="Digi-Key_PN">445-175184-1-ND</field>
       </fields>
       <libsource lib="Device" part="L" description="Inductor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -685,16 +747,26 @@
     </comp>
     <comp ref="D201">
       <value>LED</value>
-      <footprint>Diode_SMD:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
+      <footprint>LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder</footprint>
       <datasheet>~</datasheet>
+      <fields>
+        <field name="Component name">QTLP650D2TR</field>
+        <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/everlight-electronics-co-ltd/QTLP650D2TR/1080-1417-1-ND/2676151</field>
+        <field name="Digi-Key_PN">1080-1417-1-ND</field>
+      </fields>
       <libsource lib="Device" part="LED" description="Light emitting diode"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
       <tstamp>61883CDD</tstamp>
     </comp>
     <comp ref="D202">
       <value>LED</value>
-      <footprint>Diode_SMD:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
+      <footprint>LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder</footprint>
       <datasheet>~</datasheet>
+      <fields>
+        <field name="Component name">QTLP650C4TR</field>
+        <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/everlight-electronics-co-ltd/QTLP650C4TR/1080-1415-1-ND/2676149</field>
+        <field name="Digi-Key_PN">1080-1415-1-ND</field>
+      </fields>
       <libsource lib="Device" part="LED" description="Light emitting diode"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
       <tstamp>6188F1B9</tstamp>
@@ -706,6 +778,7 @@
       <fields>
         <field name="Component name">RHC2512FT330R</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/stackpole-electronics-inc/RHC2512FT330R/RHC2512FT330RCT-ND/1646222</field>
+        <field name="Digi-Key_PN">RHC2512FT330RCT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -718,6 +791,7 @@
       <fields>
         <field name="Component name">RHC2512FT330R</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/stackpole-electronics-inc/RHC2512FT330R/RHC2512FT330RCT-ND/1646222</field>
+        <field name="Digi-Key_PN">RHC2512FT330RCT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -730,6 +804,7 @@
       <fields>
         <field name="Component name">CL32A107MPVNNNE</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL32A107MPVNNNE/1276-3364-1-ND/3891450</field>
+        <field name="Digi-Key_PN">1276-3364-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -751,6 +826,7 @@
         <field name="Component name">CL10A106KQ8NNNC</field>
         <field name="DK_Datasheet_Link">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A106KQ8NNNC/1276-1038-1-ND/3889124</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A106KQ8NNNC/1276-1038-1-ND/3889124</field>
+        <field name="Digi-Key_PN">1276-1038-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -764,6 +840,7 @@
         <field name="Component name">CL10B104KA8NNNC</field>
         <field name="DK_Datasheet_Link">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092</field>
+        <field name="Digi-Key_PN">1276-1006-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -777,6 +854,7 @@
         <field name="Component name">CL10A106KQ8NNNC</field>
         <field name="DK_Datasheet_Link">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A106KQ8NNNC/1276-1038-1-ND/3889124</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A106KQ8NNNC/1276-1038-1-ND/3889124</field>
+        <field name="Digi-Key_PN">1276-1038-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -790,6 +868,7 @@
         <field name="Component name">CL10B104KA8NNNC</field>
         <field name="DK_Datasheet_Link">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092</field>
+        <field name="Digi-Key_PN">1276-1006-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -803,6 +882,7 @@
         <field name="Component name">CL10B104KA8NNNC</field>
         <field name="DK_Datasheet_Link">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092</field>
+        <field name="Digi-Key_PN">1276-1006-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -815,6 +895,7 @@
       <fields>
         <field name="Component name">LQM2HPN2R2MG0L</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/murata-electronics/LQM2HPN2R2MG0L/490-5114-1-ND/1893677</field>
+        <field name="Digi-Key_PN">490-5114-1-ND</field>
       </fields>
       <libsource lib="Device" part="L" description="Inductor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -827,6 +908,7 @@
       <fields>
         <field name="Component name">CL10A226MQ8NRNC</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A226MQ8NRNC/1276-1193-2-ND/3886851</field>
+        <field name="Digi-Key_PN">1276-1193-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -839,6 +921,7 @@
       <fields>
         <field name="Component name">CL10A226MQ8NRNC</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A226MQ8NRNC/1276-1193-2-ND/3886851</field>
+        <field name="Digi-Key_PN">1276-1193-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -851,6 +934,7 @@
       <fields>
         <field name="Component name">ERA-6AEB7322V</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/panasonic-electronic-components/ERA-6AEB7322V/P73-2KDACT-ND/3075242</field>
+        <field name="Digi-Key_PN">P73.2KDACT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -863,6 +947,7 @@
       <fields>
         <field name="Component name">RR1220P-2212-D-M</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/susumu/RR1220P-2212-D-M/RR12P22-1KDCT-ND/433125</field>
+        <field name="Digi-Key_PN">RR12P22.1KDCT-ND </field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -875,6 +960,7 @@
       <fields>
         <field name="Component name">RR1220P-104-D</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/susumu/RR1220P-104-D/RR12P100KDCT-ND/432878</field>
+        <field name="Digi-Key_PN">RR12P100KDCT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -882,12 +968,13 @@
     </comp>
     <comp ref="C211">
       <value>1uF</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder</footprint>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
       <datasheet>www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp</datasheet>
       <fields>
         <field name="Component name">CL21B105KOFNNNE</field>
         <field name="DK_Datasheet_Link">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL21B105KOFNNNE/1276-1026-1-ND/3889112</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL21B105KOFNNNE/1276-1026-1-ND/3889112</field>
+        <field name="Digi-Key_PN">1276-1026-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -901,6 +988,7 @@
         <field name="Component name">CL10B104KA8NNNC</field>
         <field name="DK_Datasheet_Link">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092</field>
+        <field name="Digi-Key_PN">1276-1006-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -913,6 +1001,7 @@
       <fields>
         <field name="Component name">TFM252012ALMA1R5MTAA</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/tdk-corporation/TFM252012ALMA1R5MTAA/445-175184-6-ND/7795261</field>
+        <field name="Digi-Key_PN">445-175184-1-ND</field>
       </fields>
       <libsource lib="Device" part="L" description="Inductor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -925,6 +1014,7 @@
       <fields>
         <field name="Component name">CL10A226MQ8NRNC</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A226MQ8NRNC/1276-1193-2-ND/3886851</field>
+        <field name="Digi-Key_PN">1276-1193-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -937,6 +1027,7 @@
       <fields>
         <field name="Component name">CL10A226MQ8NRNC</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A226MQ8NRNC/1276-1193-2-ND/3886851</field>
+        <field name="Digi-Key_PN">1276-1193-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -949,6 +1040,7 @@
       <fields>
         <field name="Component name">RG2012P-3012-B-T5</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/susumu/RG2012P-3012-B-T5/RG20P30-1KBCT-ND/1241123</field>
+        <field name="Digi-Key_PN">RG20P30.1KBCT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -961,6 +1053,7 @@
       <fields>
         <field name="Component name">RR1220P-2212-D-M</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/susumu/RR1220P-2212-D-M/RR12P22-1KDCT-ND/433125</field>
+        <field name="Digi-Key_PN">RR12P22.1KDCT-ND </field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -982,6 +1075,7 @@
         <field name="Component name">CL10B104KA8NNNC</field>
         <field name="DK_Datasheet_Link">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092</field>
+        <field name="Digi-Key_PN">1276-1006-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -989,12 +1083,13 @@
     </comp>
     <comp ref="C210">
       <value>1uF</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder</footprint>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
       <datasheet>www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp</datasheet>
       <fields>
         <field name="Component name">CL21B105KOFNNNE</field>
         <field name="DK_Datasheet_Link">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL21B105KOFNNNE/1276-1026-1-ND/3889112</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL21B105KOFNNNE/1276-1026-1-ND/3889112</field>
+        <field name="Digi-Key_PN">1276-1026-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -1007,6 +1102,7 @@
       <fields>
         <field name="Component name">RG1608P-6811-B-T5</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/susumu/RG1608P-6811-B-T5/RG16P6-81KBCT-ND/1241005</field>
+        <field name="Digi-Key_PN">RG16P6.81KBCT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -1019,6 +1115,7 @@
       <fields>
         <field name="Component name">RR1220P-2212-D-M</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/susumu/RR1220P-2212-D-M/RR12P22-1KDCT-ND/433125</field>
+        <field name="Digi-Key_PN">RR12P22.1KDCT-ND </field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -1026,6 +1123,7 @@
     </comp>
     <comp ref="TP201">
       <value>TestPoint_Probe</value>
+      <footprint>TestPoint:TestPoint_Pad_D4.0mm</footprint>
       <datasheet>~</datasheet>
       <libsource lib="Connector" part="TestPoint_Probe" description="test point (alternative probe-style design)"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -1033,6 +1131,7 @@
     </comp>
     <comp ref="TP202">
       <value>TestPoint_Probe</value>
+      <footprint>TestPoint:TestPoint_Pad_D4.0mm</footprint>
       <datasheet>~</datasheet>
       <libsource lib="Connector" part="TestPoint_Probe" description="test point (alternative probe-style design)"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -1040,6 +1139,7 @@
     </comp>
     <comp ref="TP203">
       <value>TestPoint_Probe</value>
+      <footprint>TestPoint:TestPoint_Pad_D4.0mm</footprint>
       <datasheet>~</datasheet>
       <libsource lib="Connector" part="TestPoint_Probe" description="test point (alternative probe-style design)"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -1047,6 +1147,7 @@
     </comp>
     <comp ref="TP204">
       <value>TestPoint_Probe</value>
+      <footprint>TestPoint:TestPoint_Pad_D4.0mm</footprint>
       <datasheet>~</datasheet>
       <libsource lib="Connector" part="TestPoint_Probe" description="test point (alternative probe-style design)"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -1054,6 +1155,7 @@
     </comp>
     <comp ref="TP205">
       <value>TestPoint_Probe</value>
+      <footprint>TestPoint:TestPoint_Pad_D4.0mm</footprint>
       <datasheet>~</datasheet>
       <libsource lib="Connector" part="TestPoint_Probe" description="test point (alternative probe-style design)"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -1067,6 +1169,7 @@
         <field name="Component name">BK0603HS330-T</field>
         <field name="DK_Detail_Page">https://www.digikey.no/en/products/detail/taiyo-yuden/BK0603HS330-T/957708</field>
         <field name="Description">See fig 2.5 https://www.ftdichip.com/Documents/AppNotes/AN_146_USB_Hardware_Design_Guidelines_for_FTDI_ICs.pdf</field>
+        <field name="Digi-Key_PN">587-1828-1-ND</field>
       </fields>
       <libsource lib="Device" part="Ferrite_Bead" description="Ferrite bead"/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
@@ -1076,6 +1179,11 @@
       <value>PHDMI2AB4</value>
       <footprint>tdt4295:DFN2510A-10</footprint>
       <datasheet>https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;ved=2ahUKEwjq-uC3upjzAhUSmYsKHV0iBjEQFnoECAQQAQ&amp;url=https%3A%2F%2Fassets.nexperia.com%2Fdocuments%2Fdata-sheet%2FPHDMI2AB4.pdf&amp;usg=AOvVaw2t6nU9jF_TXAIowSn_9t4X</datasheet>
+      <fields>
+        <field name="Component name">PHDMI2AB4Z</field>
+        <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/nexperia-usa-inc/PHDMI2AB4Z/1727-7820-1-ND/9092244</field>
+        <field name="Digi-Key_PN">1727-7820-1-ND</field>
+      </fields>
       <libsource lib="tdt4295" part="PHDMI2AB4" description=""/>
       <sheetpath names="/Power_components/" tstamps="/613AE19D/"/>
       <tstamp>61657D49</tstamp>
@@ -1086,6 +1194,7 @@
       <fields>
         <field name="Component name">C2012X7R1A475K125AC</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/tdk-corporation/C2012X7R1A475K125AC/445-7591-1-ND/2733663</field>
+        <field name="Digi-Key_PN">445-7591-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1098,6 +1207,7 @@
       <fields>
         <field name="Component name">GRM32ER71A476ME15L</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/murata-electronics/GRM32ER71A476ME15L/490-6543-1-ND/3845740</field>
+        <field name="Digi-Key_PN">490-6543-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1110,6 +1220,7 @@
       <fields>
         <field name="Component name">GRM188R71C474KA88D</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836</field>
+        <field name="Digi-Key_PN">490-3295-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1122,6 +1233,7 @@
       <fields>
         <field name="Component name">GRM188R71C474KA88D</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836</field>
+        <field name="Digi-Key_PN">490-3295-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1134,6 +1246,7 @@
       <fields>
         <field name="Component name">GRM188R71C474KA88D</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836</field>
+        <field name="Digi-Key_PN">490-3295-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1145,6 +1258,7 @@
       <fields>
         <field name="Component name">C2012X7R1A475K125AC</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/tdk-corporation/C2012X7R1A475K125AC/445-7591-1-ND/2733663</field>
+        <field name="Digi-Key_PN">445-7591-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1156,6 +1270,7 @@
       <fields>
         <field name="Component name">C2012X7R1A475K125AC</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/tdk-corporation/C2012X7R1A475K125AC/445-7591-1-ND/2733663</field>
+        <field name="Digi-Key_PN">445-7591-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1167,6 +1282,7 @@
       <fields>
         <field name="Component name">C2012X7R1A475K125AC</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/tdk-corporation/C2012X7R1A475K125AC/445-7591-1-ND/2733663</field>
+        <field name="Digi-Key_PN">445-7591-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1178,6 +1294,7 @@
       <fields>
         <field name="Component name">C2012X7R1A475K125AC</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/tdk-corporation/C2012X7R1A475K125AC/445-7591-1-ND/2733663</field>
+        <field name="Digi-Key_PN">445-7591-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1189,6 +1306,7 @@
       <fields>
         <field name="Component name">C2012X7R1A475K125AC</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/tdk-corporation/C2012X7R1A475K125AC/445-7591-1-ND/2733663</field>
+        <field name="Digi-Key_PN">445-7591-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1200,6 +1318,7 @@
       <fields>
         <field name="Component name">C2012X7R1A475K125AC</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/tdk-corporation/C2012X7R1A475K125AC/445-7591-1-ND/2733663</field>
+        <field name="Digi-Key_PN">445-7591-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1211,6 +1330,7 @@
       <fields>
         <field name="Component name">C2012X7R1A475K125AC</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/tdk-corporation/C2012X7R1A475K125AC/445-7591-1-ND/2733663</field>
+        <field name="Digi-Key_PN">445-7591-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1223,6 +1343,7 @@
       <fields>
         <field name="Component name">GRM188R71C474KA88D</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836</field>
+        <field name="Digi-Key_PN">490-3295-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1235,6 +1356,7 @@
       <fields>
         <field name="Component name">GRM188R71C474KA88D</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836</field>
+        <field name="Digi-Key_PN">490-3295-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1247,6 +1369,7 @@
       <fields>
         <field name="Component name">GRM188R71C474KA88D</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836</field>
+        <field name="Digi-Key_PN">490-3295-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1259,6 +1382,7 @@
       <fields>
         <field name="Component name">GRM188R71C474KA88D</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836</field>
+        <field name="Digi-Key_PN">490-3295-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1270,6 +1394,7 @@
       <fields>
         <field name="Component name">CL32A107MPVNNNE</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL32A107MPVNNNE/1276-3364-1-ND/3891450</field>
+        <field name="Digi-Key_PN">1276-3364-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1289,6 +1414,7 @@
       <fields>
         <field name="Component name">GRM188R71C474KA88D</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836</field>
+        <field name="Digi-Key_PN">490-3295-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1301,6 +1427,7 @@
       <fields>
         <field name="Component name">GRM188R71C474KA88D</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836</field>
+        <field name="Digi-Key_PN">490-3295-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1313,6 +1440,7 @@
       <fields>
         <field name="Component name">GRM188R71C474KA88D</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836</field>
+        <field name="Digi-Key_PN">490-3295-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1325,6 +1453,7 @@
       <fields>
         <field name="Component name">GRM188R71C474KA88D</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836</field>
+        <field name="Digi-Key_PN">490-3295-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1337,6 +1466,7 @@
       <fields>
         <field name="Component name">GRM188R71C474KA88D</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836</field>
+        <field name="Digi-Key_PN">490-3295-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1349,6 +1479,7 @@
       <fields>
         <field name="Component name">GRM188R71C474KA88D</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836</field>
+        <field name="Digi-Key_PN">490-3295-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1356,11 +1487,12 @@
     </comp>
     <comp ref="R308">
       <value>100</value>
-      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <footprint>Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder</footprint>
       <datasheet>https://www.vishay.com/docs/28758/tnpw_e3.pdf</datasheet>
       <fields>
-        <field name="Component name">TNPW0805100RBEEA</field>
+        <field name="Component name">RNCP1206FTD100R</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/vishay-dale/TNPW0805100RBEEA/TNP100ABCT-ND/1857094</field>
+        <field name="Digi-Key_PN">RNCP1206FTD100RCT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1368,8 +1500,13 @@
     </comp>
     <comp ref="D301">
       <value>LED</value>
-      <footprint>Diode_SMD:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
+      <footprint>LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder</footprint>
       <datasheet>~</datasheet>
+      <fields>
+        <field name="Component name">QTLP650C4TR</field>
+        <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/everlight-electronics-co-ltd/QTLP650C4TR/1080-1415-1-ND/2676149</field>
+        <field name="Digi-Key_PN">1080-1415-1-ND</field>
+      </fields>
       <libsource lib="Device" part="LED" description="Light emitting diode"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
       <tstamp>615906D6</tstamp>
@@ -1381,6 +1518,7 @@
       <fields>
         <field name="Component name">GRM32ER71A476ME15L</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/murata-electronics/GRM32ER71A476ME15L/490-6543-1-ND/3845740</field>
+        <field name="Digi-Key_PN">490-6543-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1393,6 +1531,7 @@
         <field name="Component name">CL10B104KA8NNNC</field>
         <field name="DK_Datasheet_Link">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092</field>
+        <field name="Digi-Key_PN">1276-1006-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1405,6 +1544,7 @@
       <fields>
         <field name="Component name">ERA-6AED242V</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/panasonic-electronic-components/ERA-6AED242V/P123827CT-ND/9467756</field>
+        <field name="Digi-Key_PN">P123827CT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1417,6 +1557,7 @@
       <fields>
         <field name="Component name">RG1608P-472-B-T5</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/susumu/RG1608P-472-B-T5/RG16P4-7KBCT-ND/1240978</field>
+        <field name="Digi-Key_PN">RG16P4.7KBCT-ND </field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1429,6 +1570,7 @@
       <fields>
         <field name="Component name">RG1608P-472-B-T5</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/susumu/RG1608P-472-B-T5/RG16P4-7KBCT-ND/1240978</field>
+        <field name="Digi-Key_PN">RG16P4.7KBCT-ND </field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1438,21 +1580,30 @@
       <value>S25FL127SABMFV101</value>
       <footprint>S25FL127SABMFV101-footprint:S25FL127SABMFV101</footprint>
       <datasheet>https://www.cypress.com/file/177961/download</datasheet>
+      <fields>
+        <field name="Component name">S25FL127SABMFV101</field>
+        <field name="DK_Detail_Page">https://no.farnell.com/cypress-semiconductor/s25fl127sabmfv101/flash-memory-128mbit-108mhz-soic/dp/2772749?ost=s25fl127sabmfv101</field>
+      </fields>
       <libsource lib="S25FL127SABMFV001" part="S25FL127SABMFV101" description=""/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
       <tstamp>614DBE1B</tstamp>
     </comp>
     <comp ref="J301">
       <value>FPGA__debug</value>
-      <footprint>Connector_PinHeader_2.54mm:PinHeader_2x07_P2.54mm_Vertical</footprint>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_2x07_P2.54mm_Vertical_SMD</footprint>
       <datasheet>~</datasheet>
+      <fields>
+        <field name="Component name">61001421121</field>
+        <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/w%C3%BCrth-elektronik/61001421121/732-5465-5-ND/4846970</field>
+        <field name="Digi-Key_PN">732-5465-5-ND</field>
+      </fields>
       <libsource lib="Connector_Generic" part="Conn_02x07_Odd_Even" description="Generic connector, double row, 02x07, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
       <tstamp>6145021F</tstamp>
     </comp>
     <comp ref="U302">
       <value>NUP4114UCW1T2G</value>
-      <footprint>SOIC_W1T2G_ONS</footprint>
+      <footprint>NUP4114UCW1T2G-footprint:NUP4114UCW1T2G</footprint>
       <libsource lib="NUP4114UCW1T2G" part="NUP4114UCW1T2G" description=""/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
       <tstamp>6167522A</tstamp>
@@ -1464,6 +1615,7 @@
       <fields>
         <field name="Component name">3521200RFT</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056</field>
+        <field name="Digi-Key_PN">A116015CT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1476,6 +1628,7 @@
       <fields>
         <field name="Component name">RG1608P-472-B-T5</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/susumu/RG1608P-472-B-T5/RG16P4-7KBCT-ND/1240978</field>
+        <field name="Digi-Key_PN">RG16P4.7KBCT-ND </field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1488,6 +1641,7 @@
       <fields>
         <field name="Component name">RG1608P-472-B-T5</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/susumu/RG1608P-472-B-T5/RG16P4-7KBCT-ND/1240978</field>
+        <field name="Digi-Key_PN">RG16P4.7KBCT-ND </field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1500,6 +1654,7 @@
       <fields>
         <field name="Component name">RNCP0805FTD10K0</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/stackpole-electronics-inc/RNCP0805FTD10K0/RNCP0805FTD10K0CT-ND/2240601</field>
+        <field name="Digi-Key_PN">RNCP0805FTD10K0CT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1512,6 +1667,7 @@
       <fields>
         <field name="Component name">RNCP0805FTD10K0</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/stackpole-electronics-inc/RNCP0805FTD10K0/RNCP0805FTD10K0CT-ND/2240601</field>
+        <field name="Digi-Key_PN">RNCP0805FTD10K0CT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1521,7 +1677,9 @@
       <value>330uF</value>
       <footprint>T520V337M2R5ATE025-footprint:T520V337M2R5ATE025</footprint>
       <fields>
+        <field name="Component name">T520V337M2R5ATE025</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/kemet/T520V337M2R5ATE025/399-4105-1-ND/819430</field>
+        <field name="Digi-Key_PN">399-4105-1-ND</field>
       </fields>
       <libsource lib="T520V337M2R5ATE025" part="T520V337M2R5ATE025" description=""/>
       <sheetpath names="/FPGA/" tstamps="/617F72AC/"/>
@@ -1534,6 +1692,7 @@
       <fields>
         <field name="Component name">GRM32ER71A476ME15L</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/murata-electronics/GRM32ER71A476ME15L/490-6543-1-ND/3845740</field>
+        <field name="Digi-Key_PN">490-6543-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/IOB15/" tstamps="/617F72AC/614933B1/"/>
@@ -1545,6 +1704,7 @@
       <fields>
         <field name="Component name">C2012X7R1A475K125AC</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/tdk-corporation/C2012X7R1A475K125AC/445-7591-1-ND/2733663</field>
+        <field name="Digi-Key_PN">445-7591-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/IOB15/" tstamps="/617F72AC/614933B1/"/>
@@ -1556,6 +1716,7 @@
       <fields>
         <field name="Component name">C2012X7R1A475K125AC</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/tdk-corporation/C2012X7R1A475K125AC/445-7591-1-ND/2733663</field>
+        <field name="Digi-Key_PN">445-7591-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/IOB15/" tstamps="/617F72AC/614933B1/"/>
@@ -1568,6 +1729,7 @@
       <fields>
         <field name="Component name">GRM188R71C474KA88D</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836</field>
+        <field name="Digi-Key_PN">490-3295-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/IOB15/" tstamps="/617F72AC/614933B1/"/>
@@ -1580,6 +1742,7 @@
       <fields>
         <field name="Component name">GRM188R71C474KA88D</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836</field>
+        <field name="Digi-Key_PN">490-3295-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/IOB15/" tstamps="/617F72AC/614933B1/"/>
@@ -1592,6 +1755,7 @@
       <fields>
         <field name="Component name">GRM188R71C474KA88D</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836</field>
+        <field name="Digi-Key_PN">490-3295-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/IOB15/" tstamps="/617F72AC/614933B1/"/>
@@ -1604,15 +1768,21 @@
       <fields>
         <field name="Component name">GRM188R71C474KA88D</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836</field>
+        <field name="Digi-Key_PN">490-3295-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/IOB15/" tstamps="/617F72AC/614933B1/"/>
       <tstamp>615F1CBF</tstamp>
     </comp>
     <comp ref="J502">
-      <value>Conn_02x08_Odd_Even</value>
-      <footprint>Connector_PinHeader_2.54mm:PinHeader_2x08_P2.54mm_Vertical</footprint>
+      <value>FPGA GPIO</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_2x08_P2.54mm_Vertical_SMD</footprint>
       <datasheet>~</datasheet>
+      <fields>
+        <field name="Component name">0015910160</field>
+        <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/molex/0015910160/WM17462-ND/614778</field>
+        <field name="Digi-Key_PN">WM17462-ND</field>
+      </fields>
       <libsource lib="Connector_Generic" part="Conn_02x08_Odd_Even" description="Generic connector, double row, 02x08, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
       <tstamp>61588030</tstamp>
@@ -1624,6 +1794,7 @@
       <fields>
         <field name="Component name">3521200RFT</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056</field>
+        <field name="Digi-Key_PN">A116015CT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -1636,6 +1807,7 @@
       <fields>
         <field name="Component name">3521200RFT</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056</field>
+        <field name="Digi-Key_PN">A116015CT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -1648,6 +1820,7 @@
       <fields>
         <field name="Component name">3521200RFT</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056</field>
+        <field name="Digi-Key_PN">A116015CT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -1660,6 +1833,7 @@
       <fields>
         <field name="Component name">3521200RFT</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056</field>
+        <field name="Digi-Key_PN">A116015CT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -1672,6 +1846,7 @@
       <fields>
         <field name="Component name">3521200RFT</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056</field>
+        <field name="Digi-Key_PN">A116015CT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -1684,6 +1859,7 @@
       <fields>
         <field name="Component name">3521200RFT</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056</field>
+        <field name="Digi-Key_PN">A116015CT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -1696,6 +1872,7 @@
       <fields>
         <field name="Component name">3521200RFT</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056</field>
+        <field name="Digi-Key_PN">A116015CT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -1703,8 +1880,13 @@
     </comp>
     <comp ref="D502">
       <value>LED</value>
-      <footprint>Diode_SMD:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
+      <footprint>LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder</footprint>
       <datasheet>~</datasheet>
+      <fields>
+        <field name="Component name">150120BS75000</field>
+        <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/w%C3%BCrth-elektronik/150120BS75000/732-4989-1-ND/4489931</field>
+        <field name="Digi-Key_PN">732-4989-1-ND</field>
+      </fields>
       <libsource lib="Device" part="LED" description="Light emitting diode"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
       <tstamp>615A0ABC</tstamp>
@@ -1716,6 +1898,7 @@
       <fields>
         <field name="Component name">RK73H2ATTD3300F</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/koa-speer-electronics-inc/RK73H2ATTD3300F/2019-RK73H2ATTD3300FCT-ND/10235463</field>
+        <field name="Digi-Key_PN">2019-RK73H2ATTD3300FCT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -1740,6 +1923,7 @@
       <fields>
         <field name="Component name">RC1206FR-072KL</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/yageo/RC1206FR-072KL/311-2-00KFRCT-ND/731559</field>
+        <field name="Digi-Key_PN">311-2.00KFRCT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -1750,8 +1934,9 @@
       <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
       <datasheet>https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf</datasheet>
       <fields>
-        <field name="Component name">RR0510P-102-D</field>
+        <field name="Component name">RNCP0805FTD1K00</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/susumu/RR1220P-102-D/RR12P1-0KDCT-ND/432830</field>
+        <field name="Digi-Key_PN">RNCP0805FTD1K00CT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -1776,6 +1961,7 @@
       <fields>
         <field name="Component name">RC1206FR-072KL</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/yageo/RC1206FR-072KL/311-2-00KFRCT-ND/731559</field>
+        <field name="Digi-Key_PN">311-2.00KFRCT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -1786,8 +1972,9 @@
       <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
       <datasheet>https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf</datasheet>
       <fields>
-        <field name="Component name">RR0510P-102-D</field>
+        <field name="Component name">RNCP0805FTD1K00</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/susumu/RR1220P-102-D/RR12P1-0KDCT-ND/432830</field>
+        <field name="Digi-Key_PN">RNCP0805FTD1K00CT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -1799,6 +1986,7 @@
       <fields>
         <field name="Component name">ERA-6AED511V</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/panasonic-electronic-components/ERA-6AED511V/P123855CT-ND/9467784</field>
+        <field name="Digi-Key_PN">P123855CT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -1823,6 +2011,7 @@
       <fields>
         <field name="Component name">RC1206FR-072KL</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/yageo/RC1206FR-072KL/311-2-00KFRCT-ND/731559</field>
+        <field name="Digi-Key_PN">311-2.00KFRCT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -1833,8 +2022,9 @@
       <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
       <datasheet>https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf</datasheet>
       <fields>
-        <field name="Component name">RR0510P-102-D</field>
+        <field name="Component name">RNCP0805FTD1K00</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/susumu/RR1220P-102-D/RR12P1-0KDCT-ND/432830</field>
+        <field name="Digi-Key_PN">RNCP0805FTD1K00CT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -1846,6 +2036,7 @@
       <fields>
         <field name="Component name">ERA-6AED511V</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/panasonic-electronic-components/ERA-6AED511V/P123855CT-ND/9467784</field>
+        <field name="Digi-Key_PN">P123855CT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -1858,6 +2049,7 @@
       <fields>
         <field name="Component name">RK73H2ATTD3300F</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/koa-speer-electronics-inc/RK73H2ATTD3300F/2019-RK73H2ATTD3300FCT-ND/10235463</field>
+        <field name="Digi-Key_PN">2019-RK73H2ATTD3300FCT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -1865,16 +2057,26 @@
     </comp>
     <comp ref="D501">
       <value>LED</value>
-      <footprint>Diode_SMD:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
+      <footprint>LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder</footprint>
       <datasheet>~</datasheet>
+      <fields>
+        <field name="Component name">150120BS75000</field>
+        <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/w%C3%BCrth-elektronik/150120BS75000/732-4989-1-ND/4489931</field>
+        <field name="Digi-Key_PN">732-4989-1-ND</field>
+      </fields>
       <libsource lib="Device" part="LED" description="Light emitting diode"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
       <tstamp>615A011F</tstamp>
     </comp>
     <comp ref="D503">
       <value>LED</value>
-      <footprint>Diode_SMD:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
+      <footprint>LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder</footprint>
       <datasheet>~</datasheet>
+      <fields>
+        <field name="Component name">150120BS75000</field>
+        <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/w%C3%BCrth-elektronik/150120BS75000/732-4989-1-ND/4489931</field>
+        <field name="Digi-Key_PN">732-4989-1-ND</field>
+      </fields>
       <libsource lib="Device" part="LED" description="Light emitting diode"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
       <tstamp>6169FAFD</tstamp>
@@ -1886,6 +2088,7 @@
       <fields>
         <field name="Component name">RK73H2ATTD3300F</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/koa-speer-electronics-inc/RK73H2ATTD3300F/2019-RK73H2ATTD3300FCT-ND/10235463</field>
+        <field name="Digi-Key_PN">2019-RK73H2ATTD3300FCT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -1893,8 +2096,13 @@
     </comp>
     <comp ref="D504">
       <value>LED</value>
-      <footprint>Diode_SMD:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
+      <footprint>LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder</footprint>
       <datasheet>~</datasheet>
+      <fields>
+        <field name="Component name">150120BS75000</field>
+        <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/w%C3%BCrth-elektronik/150120BS75000/732-4989-1-ND/4489931</field>
+        <field name="Digi-Key_PN">732-4989-1-ND</field>
+      </fields>
       <libsource lib="Device" part="LED" description="Light emitting diode"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
       <tstamp>616A665A</tstamp>
@@ -1906,6 +2114,7 @@
       <fields>
         <field name="Component name">RK73H2ATTD3300F</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/koa-speer-electronics-inc/RK73H2ATTD3300F/2019-RK73H2ATTD3300FCT-ND/10235463</field>
+        <field name="Digi-Key_PN">2019-RK73H2ATTD3300FCT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -1934,6 +2143,7 @@
       <fields>
         <field name="Component name">3521200RFT</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056</field>
+        <field name="Digi-Key_PN">A116015CT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -1946,6 +2156,7 @@
       <fields>
         <field name="Component name">3521200RFT</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056</field>
+        <field name="Digi-Key_PN">A116015CT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -1958,6 +2169,7 @@
       <fields>
         <field name="Component name">3521200RFT</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056</field>
+        <field name="Digi-Key_PN">A116015CT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -1970,6 +2182,7 @@
       <fields>
         <field name="Component name">3521200RFT</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056</field>
+        <field name="Digi-Key_PN">A116015CT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -1982,6 +2195,7 @@
       <fields>
         <field name="Component name">3521200RFT</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056</field>
+        <field name="Digi-Key_PN">A116015CT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -1994,6 +2208,7 @@
       <fields>
         <field name="Component name">3521200RFT</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056</field>
+        <field name="Digi-Key_PN">A116015CT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -2006,6 +2221,7 @@
       <fields>
         <field name="Component name">3521200RFT</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056</field>
+        <field name="Digi-Key_PN">A116015CT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -2031,17 +2247,23 @@
       <value>618015330923</value>
       <footprint>VGA_618015330923-footprint:618015330923</footprint>
       <datasheet> ~</datasheet>
+      <fields>
+        <field name="Component name">618015330923</field>
+        <field name="DK_Detail_Page">https://www.digikey.no/products/no?keywords=618015330923</field>
+        <field name="Digi-Key_PN">732-618015330923-ND</field>
+      </fields>
       <libsource lib="Connector" part="DB15_Female_HighDensity_MountingHoles" description="15-pin female D-SUB connector, High density (3 columns), Triple Row, Generic, VGA-connector, Mounting Hole"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
       <tstamp>61509FEE</tstamp>
     </comp>
     <comp ref="R519">
       <value>100</value>
-      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <footprint>Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder</footprint>
       <datasheet>https://www.vishay.com/docs/28758/tnpw_e3.pdf</datasheet>
       <fields>
-        <field name="Component name">TNPW0805100RBEEA</field>
+        <field name="Component name">RNCP1206FTD100R</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/vishay-dale/TNPW0805100RBEEA/TNP100ABCT-ND/1857094</field>
+        <field name="Digi-Key_PN">RNCP1206FTD100RCT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -2049,11 +2271,12 @@
     </comp>
     <comp ref="R518">
       <value>100</value>
-      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <footprint>Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder</footprint>
       <datasheet>https://www.vishay.com/docs/28758/tnpw_e3.pdf</datasheet>
       <fields>
-        <field name="Component name">TNPW0805100RBEEA</field>
+        <field name="Component name">RNCP1206FTD100R</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/vishay-dale/TNPW0805100RBEEA/TNP100ABCT-ND/1857094</field>
+        <field name="Digi-Key_PN">RNCP1206FTD100RCT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -2066,6 +2289,7 @@
       <fields>
         <field name="Component name">8853522100131</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/w%C3%BCrth-elektronik/8853522100131/732-8853522100131CT-ND/6140854</field>
+        <field name="Digi-Key_PN">732-8853522100131CT-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -2078,6 +2302,7 @@
       <fields>
         <field name="Component name">ERA-6AEB105V</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/panasonic-electronic-components/ERA-6AEB105V/P1MDACT-ND/1466019</field>
+        <field name="Digi-Key_PN">P1MDACT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -2089,6 +2314,7 @@
       <fields>
         <field name="Component name">ERA-6AED511V</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/panasonic-electronic-components/ERA-6AED511V/P123855CT-ND/9467784</field>
+        <field name="Digi-Key_PN">P123855CT-ND</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/FPGA/FPGA_ext_IO/" tstamps="/617F72AC/61537853/"/>
@@ -2101,6 +2327,7 @@
       <fields>
         <field name="Component name">GRM32ER71A476ME15L</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/murata-electronics/GRM32ER71A476ME15L/490-6543-1-ND/3845740</field>
+        <field name="Digi-Key_PN">490-6543-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/IOB14/" tstamps="/617F72AC/61459CB7/"/>
@@ -2112,6 +2339,7 @@
       <fields>
         <field name="Component name">C2012X7R1A475K125AC</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/tdk-corporation/C2012X7R1A475K125AC/445-7591-1-ND/2733663</field>
+        <field name="Digi-Key_PN">445-7591-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/IOB14/" tstamps="/617F72AC/61459CB7/"/>
@@ -2123,6 +2351,7 @@
       <fields>
         <field name="Component name">C2012X7R1A475K125AC</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/tdk-corporation/C2012X7R1A475K125AC/445-7591-1-ND/2733663</field>
+        <field name="Digi-Key_PN">445-7591-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/IOB14/" tstamps="/617F72AC/61459CB7/"/>
@@ -2135,6 +2364,7 @@
       <fields>
         <field name="Component name">GRM188R71C474KA88D</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836</field>
+        <field name="Digi-Key_PN">490-3295-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/IOB14/" tstamps="/617F72AC/61459CB7/"/>
@@ -2147,6 +2377,7 @@
       <fields>
         <field name="Component name">GRM188R71C474KA88D</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836</field>
+        <field name="Digi-Key_PN">490-3295-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/IOB14/" tstamps="/617F72AC/61459CB7/"/>
@@ -2159,6 +2390,7 @@
       <fields>
         <field name="Component name">GRM188R71C474KA88D</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836</field>
+        <field name="Digi-Key_PN">490-3295-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/IOB14/" tstamps="/617F72AC/61459CB7/"/>
@@ -2171,6 +2403,7 @@
       <fields>
         <field name="Component name">GRM188R71C474KA88D</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836</field>
+        <field name="Digi-Key_PN">490-3295-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/IOB14/" tstamps="/617F72AC/61459CB7/"/>
@@ -2180,6 +2413,11 @@
       <value>DSC1001AL5-100.0000</value>
       <footprint>DSC1001AL5-100.0000:DSC1001AL5-100.0000</footprint>
       <datasheet>https://rocelec.widen.net/view/pdf/4jp9qpy8qv/MCHP-S-A0003587227-1.pdf?t.download=true&amp;u=5oefqw</datasheet>
+      <fields>
+        <field name="Component name">DSC1001AL5-100.0000</field>
+        <field name="DK_Detail_Page">https://www.digikey.no/product-detail/no/microchip-technology/DSC1001AL5-100-0000/DSC1001AL5-100-0000-ND/5773489</field>
+        <field name="Digi-Key_PN">DSC1001AL5-100.0000-ND</field>
+      </fields>
       <libsource lib="DSC1001AL5-100.0000" part="DSC1001AL5-100.0000" description=""/>
       <sheetpath names="/FPGA/IOB14/" tstamps="/617F72AC/61459CB7/"/>
       <tstamp>6151217B</tstamp>
@@ -2191,6 +2429,7 @@
         <field name="Component name">CL10B104KA8NNNC</field>
         <field name="DK_Datasheet_Link">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092</field>
         <field name="DK_Detail_Page">https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092</field>
+        <field name="Digi-Key_PN">1276-1006-1-ND</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/FPGA/IOB14/" tstamps="/617F72AC/61459CB7/"/>
@@ -3086,628 +3325,629 @@
     </library>
   </libraries>
   <nets>
-    <net code="1" name="Net-(U103-PadB1A)">
-      <node ref="U103" pin="B1A"/>
-    </net>
-    <net code="2" name="Net-(U103-PadB2A)">
-      <node ref="U103" pin="B2A"/>
-    </net>
-    <net code="3" name="GND">
-      <node ref="R104" pin="2"/>
-      <node ref="R103" pin="2"/>
-      <node ref="C107" pin="2"/>
-      <node ref="R101" pin="2"/>
-      <node ref="S102" pin="2"/>
-      <node ref="S103" pin="2"/>
-      <node ref="J101" pin="4"/>
-      <node ref="J101" pin="6"/>
-      <node ref="J101" pin="8"/>
-      <node ref="C106" pin="2"/>
-      <node ref="C306" pin="2"/>
-      <node ref="C303" pin="2"/>
-      <node ref="U303" pin="D7"/>
-      <node ref="U303" pin="B3"/>
-      <node ref="U303" pin="A6"/>
-      <node ref="J101" pin="20"/>
-      <node ref="C102" pin="2"/>
-      <node ref="C104" pin="2"/>
-      <node ref="U303" pin="E4"/>
-      <node ref="C111" pin="2"/>
-      <node ref="C110" pin="2"/>
-      <node ref="J101" pin="10"/>
-      <node ref="S101" pin="2"/>
-      <node ref="R102" pin="2"/>
-      <node ref="U303" pin="T1"/>
-      <node ref="U303" pin="R4"/>
-      <node ref="C109" pin="2"/>
-      <node ref="U303" pin="M3"/>
-      <node ref="U303" pin="J2"/>
-      <node ref="U303" pin="F1"/>
-      <node ref="Y101" pin="2"/>
-      <node ref="Y101" pin="4"/>
-      <node ref="C315" pin="2"/>
-      <node ref="C108" pin="2"/>
-      <node ref="U302" pin="2"/>
-      <node ref="U201" pin="~"/>
-      <node ref="R209" pin="2"/>
-      <node ref="TP205" pin="1"/>
-      <node ref="C217" pin="1"/>
-      <node ref="C219" pin="1"/>
-      <node ref="C214" pin="2"/>
-      <node ref="C203" pin="1"/>
-      <node ref="C215" pin="2"/>
-      <node ref="C204" pin="1"/>
-      <node ref="C206" pin="2"/>
-      <node ref="C201" pin="2"/>
-      <node ref="U203" pin="17"/>
-      <node ref="C216" pin="1"/>
-      <node ref="U203" pin="4"/>
-      <node ref="U203" pin="8"/>
-      <node ref="U203" pin="13"/>
-      <node ref="R201" pin="2"/>
-      <node ref="R202" pin="2"/>
-      <node ref="C205" pin="2"/>
-      <node ref="R207" pin="2"/>
-      <node ref="C210" pin="2"/>
-      <node ref="C218" pin="1"/>
-      <node ref="U201" pin="~"/>
-      <node ref="C207" pin="2"/>
-      <node ref="P201" pin="5"/>
-      <node ref="C202" pin="2"/>
-      <node ref="R204" pin="2"/>
-      <node ref="J101" pin="12"/>
-      <node ref="J101" pin="14"/>
-      <node ref="J101" pin="16"/>
-      <node ref="C302" pin="2"/>
-      <node ref="J101" pin="18"/>
-      <node ref="C301" pin="2"/>
-      <node ref="D301" pin="1"/>
-      <node ref="U303" pin="H8"/>
-      <node ref="J301" pin="5"/>
-      <node ref="J301" pin="3"/>
-      <node ref="J301" pin="13"/>
-      <node ref="J301" pin="11"/>
-      <node ref="J301" pin="1"/>
-      <node ref="U303" pin="J8"/>
-      <node ref="C211" pin="2"/>
-      <node ref="U303" pin="J7"/>
-      <node ref="J301" pin="7"/>
-      <node ref="U303" pin="H7"/>
-      <node ref="U301" pin="4"/>
-      <node ref="U303" pin="M11"/>
-      <node ref="U303" pin="M10"/>
-      <node ref="C208" pin="2"/>
-      <node ref="U202" pin="8"/>
-      <node ref="U202" pin="1"/>
-      <node ref="U202" pin="5"/>
-      <node ref="U202" pin="4"/>
-      <node ref="U202" pin="17"/>
-      <node ref="J301" pin="9"/>
-      <node ref="U202" pin="13"/>
-      <node ref="J103" pin="6"/>
-      <node ref="C608" pin="2"/>
-      <node ref="U601" pin="2"/>
-      <node ref="C601" pin="1"/>
-      <node ref="J103" pin="3"/>
-      <node ref="C407" pin="2"/>
-      <node ref="C406" pin="2"/>
-      <node ref="C405" pin="2"/>
-      <node ref="C403" pin="2"/>
-      <node ref="C402" pin="2"/>
-      <node ref="C401" pin="2"/>
-      <node ref="C404" pin="2"/>
-      <node ref="U102" pin="H3"/>
-      <node ref="U102" pin="V3"/>
-      <node ref="J102" pin="10"/>
-      <node ref="J102" pin="12"/>
-      <node ref="J102" pin="2"/>
-      <node ref="J102" pin="4"/>
-      <node ref="J102" pin="6"/>
-      <node ref="U101" pin="8"/>
-      <node ref="U303" pin="L15"/>
-      <node ref="J102" pin="8"/>
-      <node ref="D502" pin="1"/>
-      <node ref="D501" pin="1"/>
-      <node ref="D503" pin="1"/>
-      <node ref="U501" pin="2"/>
-      <node ref="J104" pin="7"/>
-      <node ref="U504" pin="2"/>
-      <node ref="U502" pin="2"/>
-      <node ref="U103" pin="H3"/>
-      <node ref="D504" pin="1"/>
-      <node ref="J501" pin="10"/>
-      <node ref="J501" pin="5"/>
-      <node ref="J501" pin="6"/>
-      <node ref="J501" pin="7"/>
-      <node ref="J501" pin="8"/>
-      <node ref="U503" pin="2"/>
-      <node ref="S104" pin="2"/>
-      <node ref="U103" pin="V3"/>
-      <node ref="J502" pin="15"/>
-      <node ref="C317" pin="2"/>
-      <node ref="R517" pin="1"/>
-      <node ref="C501" pin="1"/>
-      <node ref="C320" pin="2"/>
-      <node ref="U101" pin="36"/>
-      <node ref="U303" pin="A1"/>
-      <node ref="U303" pin="D2"/>
-      <node ref="U303" pin="T6"/>
-      <node ref="U303" pin="T16"/>
-      <node ref="U303" pin="R9"/>
-      <node ref="U303" pin="P12"/>
-      <node ref="U303" pin="B8"/>
-      <node ref="C304" pin="2"/>
-      <node ref="C305" pin="2"/>
-      <node ref="C307" pin="2"/>
-      <node ref="U303" pin="G13"/>
-      <node ref="C309" pin="2"/>
-      <node ref="U303" pin="K6"/>
-      <node ref="C310" pin="2"/>
-      <node ref="U303" pin="A11"/>
-      <node ref="C322" pin="2"/>
-      <node ref="C308" pin="2"/>
-      <node ref="U303" pin="P2"/>
-      <node ref="U303" pin="N15"/>
-      <node ref="U303" pin="M8"/>
-      <node ref="U303" pin="L11"/>
-      <node ref="C311" pin="2"/>
-      <node ref="U303" pin="L1"/>
-      <node ref="U303" pin="N5"/>
-      <node ref="C326" pin="2"/>
-      <node ref="U101" pin="56"/>
-      <node ref="C607" pin="2"/>
-      <node ref="C606" pin="2"/>
-      <node ref="U303" pin="F16"/>
-      <node ref="C605" pin="2"/>
-      <node ref="C604" pin="2"/>
-      <node ref="U303" pin="F6"/>
-      <node ref="C313" pin="2"/>
-      <node ref="C603" pin="2"/>
-      <node ref="C103" pin="2"/>
-      <node ref="C602" pin="2"/>
-      <node ref="C324" pin="2"/>
-      <node ref="C319" pin="2"/>
-      <node ref="C325" pin="2"/>
-      <node ref="C323" pin="2"/>
-      <node ref="C321" pin="2"/>
-      <node ref="U303" pin="F8"/>
-      <node ref="U303" pin="E9"/>
-      <node ref="U303" pin="D12"/>
-      <node ref="U303" pin="G3"/>
-      <node ref="C312" pin="2"/>
-      <node ref="C101" pin="2"/>
-      <node ref="U101" pin="23"/>
-      <node ref="U303" pin="G7"/>
-      <node ref="C318" pin="2"/>
-      <node ref="U303" pin="C5"/>
-      <node ref="C316" pin="2"/>
-      <node ref="U303" pin="K14"/>
-      <node ref="U303" pin="F10"/>
-      <node ref="C105" pin="2"/>
-      <node ref="C314" pin="2"/>
-      <node ref="U303" pin="K4"/>
-      <node ref="U303" pin="G9"/>
-      <node ref="U303" pin="J9"/>
-      <node ref="U303" pin="C15"/>
-      <node ref="U303" pin="J11"/>
-      <node ref="U303" pin="H6"/>
-    </net>
-    <net code="4" name="GPIO_JSV1">
-      <node ref="U101" pin="34"/>
-      <node ref="U103" pin="V2"/>
-    </net>
-    <net code="5" name="Net-(U103-PadS1)">
-      <node ref="U103" pin="S1"/>
-      <node ref="U103" pin="S2"/>
-      <node ref="U103" pin="S4"/>
-      <node ref="U103" pin="S3"/>
-    </net>
-    <net code="6" name="+3V3">
-      <node ref="U303" pin="M9"/>
-      <node ref="C219" pin="2"/>
-      <node ref="U501" pin="6"/>
-      <node ref="U503" pin="6"/>
-      <node ref="U504" pin="6"/>
-      <node ref="U502" pin="6"/>
-      <node ref="R208" pin="1"/>
-      <node ref="J502" pin="16"/>
-      <node ref="L202" pin="2"/>
-      <node ref="C217" pin="2"/>
-      <node ref="C405" pin="1"/>
-      <node ref="R306" pin="1"/>
-      <node ref="R301" pin="1"/>
+    <net code="1" name="+3V3">
+      <node ref="R307" pin="1"/>
+      <node ref="R305" pin="1"/>
+      <node ref="R302" pin="1"/>
+      <node ref="C108" pin="1"/>
       <node ref="R303" pin="1"/>
-      <node ref="R304" pin="1"/>
-      <node ref="R309" pin="1"/>
-      <node ref="U303" pin="R14"/>
-      <node ref="C302" pin="1"/>
-      <node ref="U303" pin="P7"/>
-      <node ref="U303" pin="T11"/>
+      <node ref="R306" pin="1"/>
+      <node ref="C103" pin="1"/>
+      <node ref="U302" pin="6"/>
       <node ref="U303" pin="N10"/>
-      <node ref="U303" pin="L16"/>
       <node ref="U303" pin="M13"/>
+      <node ref="U303" pin="L16"/>
+      <node ref="J103" pin="4"/>
+      <node ref="C105" pin="1"/>
+      <node ref="C101" pin="1"/>
+      <node ref="U101" pin="39"/>
+      <node ref="U101" pin="38"/>
+      <node ref="U101" pin="27"/>
+      <node ref="U101" pin="24"/>
+      <node ref="U101" pin="55"/>
+      <node ref="U101" pin="7"/>
+      <node ref="U303" pin="R14"/>
+      <node ref="U303" pin="P7"/>
       <node ref="C602" pin="1"/>
       <node ref="C607" pin="1"/>
       <node ref="C606" pin="1"/>
       <node ref="C605" pin="1"/>
       <node ref="C604" pin="1"/>
       <node ref="C603" pin="1"/>
-      <node ref="C403" pin="1"/>
-      <node ref="C402" pin="1"/>
-      <node ref="C401" pin="1"/>
-      <node ref="U303" pin="E14"/>
+      <node ref="U303" pin="T11"/>
+      <node ref="J101" pin="1"/>
+      <node ref="R208" pin="1"/>
+      <node ref="C110" pin="1"/>
+      <node ref="U303" pin="M9"/>
+      <node ref="C111" pin="1"/>
+      <node ref="TP202" pin="1"/>
+      <node ref="D202" pin="2"/>
+      <node ref="C219" pin="2"/>
+      <node ref="C217" pin="2"/>
+      <node ref="L202" pin="2"/>
+      <node ref="R304" pin="1"/>
+      <node ref="C301" pin="1"/>
+      <node ref="C302" pin="1"/>
+      <node ref="R301" pin="1"/>
+      <node ref="R115" pin="1"/>
+      <node ref="R309" pin="1"/>
+      <node ref="R114" pin="1"/>
+      <node ref="R113" pin="1"/>
+      <node ref="R112" pin="1"/>
+      <node ref="C104" pin="1"/>
       <node ref="U301" pin="8"/>
       <node ref="U303" pin="E7"/>
+      <node ref="C109" pin="1"/>
       <node ref="U303" pin="L6"/>
-      <node ref="U303" pin="J12"/>
-      <node ref="R302" pin="1"/>
       <node ref="J301" pin="2"/>
-      <node ref="C407" pin="1"/>
-      <node ref="R305" pin="1"/>
-      <node ref="C406" pin="1"/>
-      <node ref="R307" pin="1"/>
+      <node ref="C102" pin="1"/>
+      <node ref="U303" pin="B13"/>
+      <node ref="U501" pin="6"/>
+      <node ref="U102" pin="H1"/>
+      <node ref="U503" pin="6"/>
+      <node ref="U303" pin="A16"/>
+      <node ref="C403" pin="1"/>
+      <node ref="C401" pin="1"/>
+      <node ref="C402" pin="1"/>
+      <node ref="U303" pin="C10"/>
+      <node ref="U103" pin="H1"/>
       <node ref="C404" pin="1"/>
+      <node ref="U103" pin="V1"/>
+      <node ref="C405" pin="1"/>
+      <node ref="C406" pin="1"/>
+      <node ref="C407" pin="1"/>
+      <node ref="U502" pin="6"/>
+      <node ref="U303" pin="E14"/>
+      <node ref="J104" pin="1"/>
+      <node ref="U303" pin="H15"/>
+      <node ref="U102" pin="V1"/>
+      <node ref="U303" pin="J12"/>
       <node ref="C608" pin="1"/>
       <node ref="U601" pin="1"/>
+      <node ref="U504" pin="6"/>
       <node ref="U601" pin="4"/>
       <node ref="C601" pin="2"/>
-      <node ref="C301" pin="1"/>
-      <node ref="U302" pin="6"/>
-      <node ref="U303" pin="B13"/>
-      <node ref="U303" pin="H15"/>
-      <node ref="U303" pin="C10"/>
-      <node ref="U303" pin="A16"/>
-      <node ref="R112" pin="1"/>
-      <node ref="J103" pin="4"/>
-      <node ref="R113" pin="1"/>
-      <node ref="R114" pin="1"/>
-      <node ref="J104" pin="1"/>
-      <node ref="U102" pin="V1"/>
-      <node ref="R115" pin="1"/>
-      <node ref="U102" pin="H1"/>
-      <node ref="C102" pin="1"/>
-      <node ref="TP202" pin="1"/>
-      <node ref="J101" pin="1"/>
-      <node ref="C104" pin="1"/>
-      <node ref="C109" pin="1"/>
-      <node ref="D202" pin="2"/>
-      <node ref="U103" pin="V1"/>
-      <node ref="C111" pin="1"/>
-      <node ref="C110" pin="1"/>
-      <node ref="U101" pin="27"/>
-      <node ref="U101" pin="39"/>
-      <node ref="U101" pin="38"/>
-      <node ref="U101" pin="24"/>
-      <node ref="U103" pin="H1"/>
-      <node ref="C108" pin="1"/>
-      <node ref="U101" pin="55"/>
-      <node ref="C105" pin="1"/>
-      <node ref="C101" pin="1"/>
-      <node ref="C103" pin="1"/>
-      <node ref="U101" pin="7"/>
+      <node ref="J502" pin="16"/>
     </net>
-    <net code="7" name="Net-(U102-PadB1A)">
-      <node ref="U102" pin="B1A"/>
+    <net code="2" name="Net-(U103-PadB1A)">
+      <node ref="U103" pin="B1A"/>
     </net>
-    <net code="8" name="Net-(U102-PadB2A)">
-      <node ref="U102" pin="B2A"/>
+    <net code="3" name="Net-(U103-PadB2A)">
+      <node ref="U103" pin="B2A"/>
     </net>
-    <net code="9" name="GPIO_JSV0">
-      <node ref="U102" pin="V2"/>
-      <node ref="U101" pin="18"/>
+    <net code="4" name="GND">
+      <node ref="R517" pin="1"/>
+      <node ref="C501" pin="1"/>
+      <node ref="C215" pin="2"/>
+      <node ref="D504" pin="1"/>
+      <node ref="J502" pin="15"/>
+      <node ref="U303" pin="H7"/>
+      <node ref="U303" pin="H8"/>
+      <node ref="U303" pin="J7"/>
+      <node ref="U303" pin="J8"/>
+      <node ref="J301" pin="1"/>
+      <node ref="J301" pin="11"/>
+      <node ref="J301" pin="13"/>
+      <node ref="J301" pin="3"/>
+      <node ref="J301" pin="5"/>
+      <node ref="J301" pin="7"/>
+      <node ref="J301" pin="9"/>
+      <node ref="U303" pin="M3"/>
+      <node ref="U303" pin="D7"/>
+      <node ref="U303" pin="E4"/>
+      <node ref="U303" pin="F1"/>
+      <node ref="U303" pin="J2"/>
+      <node ref="U303" pin="R4"/>
+      <node ref="U303" pin="T1"/>
+      <node ref="U303" pin="B3"/>
+      <node ref="D301" pin="1"/>
+      <node ref="C301" pin="2"/>
+      <node ref="C302" pin="2"/>
+      <node ref="R202" pin="2"/>
+      <node ref="R201" pin="2"/>
+      <node ref="U502" pin="2"/>
+      <node ref="U504" pin="2"/>
+      <node ref="C210" pin="2"/>
+      <node ref="C207" pin="2"/>
+      <node ref="P201" pin="5"/>
+      <node ref="C202" pin="2"/>
+      <node ref="C205" pin="2"/>
+      <node ref="U201" pin="~"/>
+      <node ref="TP205" pin="1"/>
+      <node ref="R207" pin="2"/>
+      <node ref="U201" pin="~"/>
+      <node ref="U303" pin="M10"/>
+      <node ref="C208" pin="2"/>
+      <node ref="C214" pin="2"/>
+      <node ref="C206" pin="2"/>
+      <node ref="C201" pin="2"/>
+      <node ref="U203" pin="17"/>
+      <node ref="U203" pin="4"/>
+      <node ref="U301" pin="4"/>
+      <node ref="U501" pin="2"/>
+      <node ref="D503" pin="1"/>
+      <node ref="D501" pin="1"/>
+      <node ref="U203" pin="8"/>
+      <node ref="D502" pin="1"/>
+      <node ref="U303" pin="M11"/>
+      <node ref="J501" pin="5"/>
+      <node ref="J501" pin="6"/>
+      <node ref="J501" pin="7"/>
+      <node ref="C217" pin="1"/>
+      <node ref="C219" pin="1"/>
+      <node ref="J501" pin="10"/>
+      <node ref="C216" pin="1"/>
+      <node ref="C218" pin="1"/>
+      <node ref="U203" pin="13"/>
+      <node ref="U503" pin="2"/>
+      <node ref="R209" pin="2"/>
+      <node ref="J501" pin="8"/>
+      <node ref="C311" pin="2"/>
+      <node ref="C326" pin="2"/>
+      <node ref="U303" pin="C5"/>
+      <node ref="U303" pin="C15"/>
+      <node ref="U303" pin="B8"/>
+      <node ref="U303" pin="A11"/>
+      <node ref="U303" pin="A1"/>
+      <node ref="U303" pin="D2"/>
+      <node ref="C308" pin="2"/>
+      <node ref="C312" pin="2"/>
+      <node ref="C304" pin="2"/>
+      <node ref="C318" pin="2"/>
+      <node ref="C316" pin="2"/>
+      <node ref="C314" pin="2"/>
+      <node ref="C313" pin="2"/>
+      <node ref="C306" pin="2"/>
+      <node ref="C319" pin="2"/>
+      <node ref="C325" pin="2"/>
+      <node ref="U303" pin="D12"/>
+      <node ref="C310" pin="2"/>
+      <node ref="C309" pin="2"/>
+      <node ref="C307" pin="2"/>
+      <node ref="C305" pin="2"/>
+      <node ref="C602" pin="2"/>
+      <node ref="U303" pin="L15"/>
+      <node ref="C601" pin="1"/>
+      <node ref="U601" pin="2"/>
+      <node ref="C603" pin="2"/>
+      <node ref="C608" pin="2"/>
+      <node ref="C604" pin="2"/>
+      <node ref="C605" pin="2"/>
+      <node ref="C606" pin="2"/>
+      <node ref="C607" pin="2"/>
+      <node ref="U303" pin="K4"/>
+      <node ref="U303" pin="K14"/>
+      <node ref="U303" pin="L11"/>
+      <node ref="U303" pin="L1"/>
+      <node ref="U303" pin="P2"/>
+      <node ref="U303" pin="M8"/>
+      <node ref="C324" pin="2"/>
+      <node ref="U303" pin="F8"/>
+      <node ref="U303" pin="F6"/>
+      <node ref="U303" pin="F16"/>
+      <node ref="U303" pin="F10"/>
+      <node ref="U303" pin="E9"/>
+      <node ref="C322" pin="2"/>
+      <node ref="U303" pin="J9"/>
+      <node ref="U303" pin="J11"/>
+      <node ref="U303" pin="H6"/>
+      <node ref="U303" pin="G9"/>
+      <node ref="U303" pin="G7"/>
+      <node ref="U303" pin="G3"/>
+      <node ref="U303" pin="G13"/>
+      <node ref="U303" pin="K6"/>
+      <node ref="C323" pin="2"/>
+      <node ref="C320" pin="2"/>
+      <node ref="U303" pin="T6"/>
+      <node ref="U303" pin="T16"/>
+      <node ref="U303" pin="R9"/>
+      <node ref="U303" pin="P12"/>
+      <node ref="U303" pin="N5"/>
+      <node ref="U303" pin="N15"/>
+      <node ref="C405" pin="2"/>
+      <node ref="C402" pin="2"/>
+      <node ref="C403" pin="2"/>
+      <node ref="C406" pin="2"/>
+      <node ref="C407" pin="2"/>
+      <node ref="U302" pin="2"/>
+      <node ref="C404" pin="2"/>
+      <node ref="C401" pin="2"/>
+      <node ref="C303" pin="2"/>
+      <node ref="U303" pin="A6"/>
+      <node ref="C321" pin="2"/>
+      <node ref="C317" pin="2"/>
+      <node ref="C315" pin="2"/>
+      <node ref="R204" pin="2"/>
+      <node ref="S101" pin="2"/>
+      <node ref="S102" pin="2"/>
+      <node ref="C108" pin="2"/>
+      <node ref="U202" pin="8"/>
+      <node ref="U202" pin="1"/>
+      <node ref="U202" pin="5"/>
+      <node ref="U202" pin="4"/>
+      <node ref="Y101" pin="2"/>
+      <node ref="C110" pin="2"/>
+      <node ref="C107" pin="2"/>
+      <node ref="C111" pin="2"/>
+      <node ref="U102" pin="H3"/>
+      <node ref="C109" pin="2"/>
+      <node ref="R102" pin="2"/>
+      <node ref="C102" pin="2"/>
+      <node ref="C104" pin="2"/>
+      <node ref="R101" pin="2"/>
+      <node ref="J101" pin="20"/>
+      <node ref="C106" pin="2"/>
+      <node ref="J101" pin="12"/>
+      <node ref="J101" pin="8"/>
+      <node ref="J101" pin="6"/>
+      <node ref="J101" pin="4"/>
+      <node ref="J101" pin="14"/>
+      <node ref="S104" pin="2"/>
+      <node ref="J101" pin="16"/>
+      <node ref="S103" pin="2"/>
+      <node ref="J101" pin="18"/>
+      <node ref="R104" pin="2"/>
+      <node ref="Y101" pin="4"/>
+      <node ref="R103" pin="2"/>
+      <node ref="J101" pin="10"/>
+      <node ref="U101" pin="36"/>
+      <node ref="U102" pin="V3"/>
+      <node ref="J103" pin="3"/>
+      <node ref="J103" pin="6"/>
+      <node ref="U101" pin="23"/>
+      <node ref="U103" pin="H3"/>
+      <node ref="C211" pin="2"/>
+      <node ref="U101" pin="8"/>
+      <node ref="J104" pin="7"/>
+      <node ref="U101" pin="56"/>
+      <node ref="J102" pin="10"/>
+      <node ref="C101" pin="2"/>
+      <node ref="C105" pin="2"/>
+      <node ref="U103" pin="V3"/>
+      <node ref="U202" pin="13"/>
+      <node ref="U202" pin="17"/>
+      <node ref="C103" pin="2"/>
+      <node ref="C204" pin="1"/>
+      <node ref="C203" pin="1"/>
+      <node ref="J102" pin="8"/>
+      <node ref="J102" pin="6"/>
+      <node ref="J102" pin="4"/>
+      <node ref="J102" pin="2"/>
+      <node ref="J102" pin="12"/>
     </net>
-    <net code="10" name="Net-(J104-Pad2)">
-      <node ref="R107" pin="1"/>
-      <node ref="J104" pin="2"/>
+    <net code="5" name="GPIO_JSV1">
+      <node ref="U101" pin="34"/>
+      <node ref="U103" pin="V2"/>
     </net>
-    <net code="11" name="FPGA_MCU_USART_RX">
-      <node ref="U303" pin="B10"/>
-      <node ref="U101" pin="1"/>
-    </net>
-    <net code="12" name="FPGA_MCU_USART_TX">
-      <node ref="U303" pin="A10"/>
-      <node ref="U101" pin="2"/>
-    </net>
-    <net code="13" name="FPGA_MCU_USART_CTS">
-      <node ref="U303" pin="D8"/>
-      <node ref="U101" pin="6"/>
-    </net>
-    <net code="14" name="FPGA_MCU_USART_RTS">
-      <node ref="U303" pin="A12"/>
-      <node ref="U101" pin="5"/>
-    </net>
-    <net code="15" name="FPGA_MCU_USART_CS">
-      <node ref="U101" pin="4"/>
-      <node ref="U303" pin="B12"/>
-    </net>
-    <net code="16" name="FPGA_MCU_USART_CLK">
-      <node ref="U303" pin="D13"/>
-      <node ref="U101" pin="3"/>
-    </net>
-    <net code="17" name="Net-(J104-Pad3)">
-      <node ref="J104" pin="3"/>
-      <node ref="R108" pin="1"/>
-    </net>
-    <net code="18" name="Net-(J104-Pad6)">
-      <node ref="J104" pin="6"/>
-      <node ref="R111" pin="1"/>
-    </net>
-    <net code="19" name="GPIO_JSH1">
+    <net code="6" name="GPIO_JSH1">
       <node ref="U103" pin="H2"/>
       <node ref="U101" pin="17"/>
     </net>
-    <net code="20" name="Net-(U102-PadS1)">
+    <net code="7" name="Net-(U102-PadS1)">
       <node ref="U102" pin="S4"/>
       <node ref="U102" pin="S3"/>
       <node ref="U102" pin="S2"/>
       <node ref="U102" pin="S1"/>
     </net>
+    <net code="8" name="Net-(U102-PadB1A)">
+      <node ref="U102" pin="B1A"/>
+    </net>
+    <net code="9" name="Net-(U102-PadB2A)">
+      <node ref="U102" pin="B2A"/>
+    </net>
+    <net code="10" name="GPIO_JSV0">
+      <node ref="U101" pin="18"/>
+      <node ref="U102" pin="V2"/>
+    </net>
+    <net code="11" name="Net-(U103-PadS1)">
+      <node ref="U103" pin="S1"/>
+      <node ref="U103" pin="S4"/>
+      <node ref="U103" pin="S2"/>
+      <node ref="U103" pin="S3"/>
+    </net>
+    <net code="12" name="FPGA_MCU_USART_CS">
+      <node ref="U101" pin="4"/>
+      <node ref="U303" pin="B12"/>
+    </net>
+    <net code="13" name="FPGA_MCU_USART_RX">
+      <node ref="U303" pin="B10"/>
+      <node ref="U101" pin="1"/>
+    </net>
+    <net code="14" name="FPGA_MCU_USART_TX">
+      <node ref="U303" pin="A10"/>
+      <node ref="U101" pin="2"/>
+    </net>
+    <net code="15" name="FPGA_MCU_USART_CTS">
+      <node ref="U303" pin="D8"/>
+      <node ref="U101" pin="6"/>
+    </net>
+    <net code="16" name="FPGA_MCU_USART_CLK">
+      <node ref="U101" pin="3"/>
+      <node ref="U303" pin="D13"/>
+    </net>
+    <net code="17" name="FPGA_MCU_USART_RTS">
+      <node ref="U303" pin="A12"/>
+      <node ref="U101" pin="5"/>
+    </net>
+    <net code="18" name="Net-(J104-Pad2)">
+      <node ref="J104" pin="2"/>
+      <node ref="R107" pin="1"/>
+    </net>
+    <net code="19" name="Net-(J104-Pad5)">
+      <node ref="J104" pin="5"/>
+    </net>
+    <net code="20" name="Net-(J104-Pad6)">
+      <node ref="J104" pin="6"/>
+    </net>
     <net code="21" name="GPIO_JSH0">
-      <node ref="U101" pin="19"/>
       <node ref="U102" pin="H2"/>
+      <node ref="U101" pin="19"/>
     </net>
     <net code="22" name="GPIO_BTN3">
       <node ref="S104" pin="1"/>
       <node ref="U101" pin="12"/>
       <node ref="R115" pin="2"/>
     </net>
-    <net code="23" name="SDIO_DAT0">
-      <node ref="U101" pin="60"/>
-      <node ref="J103" pin="7"/>
+    <net code="23" name="SDIO_WP">
+      <node ref="U101" pin="14"/>
+      <node ref="J103" pin="11"/>
     </net>
-    <net code="24" name="SDIO_DAT1">
-      <node ref="J103" pin="8"/>
+    <net code="24" name="Net-(J103-Pad12)">
+      <node ref="J103" pin="12"/>
+    </net>
+    <net code="25" name="Net-(J103-Pad13)">
+      <node ref="J103" pin="13"/>
+    </net>
+    <net code="26" name="SDIO_CD">
+      <node ref="J103" pin="10"/>
+      <node ref="U101" pin="13"/>
+    </net>
+    <net code="27" name="SDIO_DAT1">
       <node ref="U101" pin="59"/>
+      <node ref="J103" pin="8"/>
     </net>
-    <net code="25" name="SDIO_DAT2">
+    <net code="28" name="SDIO_DAT0">
+      <node ref="J103" pin="7"/>
+      <node ref="U101" pin="60"/>
+    </net>
+    <net code="29" name="SDIO_DAT2">
       <node ref="J103" pin="9"/>
       <node ref="U101" pin="58"/>
     </net>
-    <net code="26" name="SDIO_WP">
-      <node ref="J103" pin="11"/>
-      <node ref="U101" pin="14"/>
+    <net code="30" name="Net-(J104-Pad3)">
+      <node ref="J104" pin="3"/>
+      <node ref="R108" pin="1"/>
     </net>
-    <net code="27" name="Net-(J103-Pad12)">
-      <node ref="J103" pin="12"/>
+    <net code="31" name="GPIO_PB12">
+      <node ref="R108" pin="2"/>
+      <node ref="U101" pin="22"/>
     </net>
-    <net code="28" name="Net-(J103-Pad13)">
-      <node ref="J103" pin="13"/>
-    </net>
-    <net code="29" name="SDIO_CD">
-      <node ref="U101" pin="13"/>
-      <node ref="J103" pin="10"/>
-    </net>
-    <net code="30" name="Net-(J104-Pad4)">
-      <node ref="R109" pin="1"/>
+    <net code="32" name="Net-(J104-Pad4)">
       <node ref="J104" pin="4"/>
+      <node ref="R109" pin="1"/>
     </net>
-    <net code="31" name="Net-(J104-Pad5)">
-      <node ref="R110" pin="1"/>
-      <node ref="J104" pin="5"/>
-    </net>
-    <net code="32" name="SDIO_DAT3">
+    <net code="33" name="SDIO_DAT3">
       <node ref="J103" pin="1"/>
       <node ref="U101" pin="57"/>
     </net>
-    <net code="33" name="GPIO_BTN0">
-      <node ref="U101" pin="9"/>
-      <node ref="R112" pin="2"/>
-      <node ref="S101" pin="1"/>
+    <net code="34" name="FPGA_PROGRAM_B">
+      <node ref="R302" pin="2"/>
+      <node ref="U303" pin="L9"/>
+      <node ref="U101" pin="16"/>
     </net>
-    <net code="34" name="GPIO_BTN1">
+    <net code="35" name="GPIO_BTN1">
       <node ref="U101" pin="10"/>
-      <node ref="S102" pin="1"/>
       <node ref="R113" pin="2"/>
+      <node ref="S102" pin="1"/>
     </net>
-    <net code="35" name="GPIO_BTN2">
+    <net code="36" name="GPIO_BTN0">
+      <node ref="S101" pin="1"/>
+      <node ref="R112" pin="2"/>
+      <node ref="U101" pin="9"/>
+    </net>
+    <net code="37" name="GPIO_BTN2">
       <node ref="S103" pin="1"/>
       <node ref="R114" pin="2"/>
       <node ref="U101" pin="11"/>
     </net>
-    <net code="36" name="GPIO_PB7">
-      <node ref="R111" pin="2"/>
+    <net code="38" name="FPGA_DONE">
       <node ref="U101" pin="15"/>
+      <node ref="R307" pin="2"/>
+      <node ref="R308" pin="1"/>
+      <node ref="U303" pin="H10"/>
     </net>
-    <net code="37" name="MCU_RESETN">
+    <net code="39" name="MCU_RESETN">
       <node ref="J101" pin="15"/>
       <node ref="U101" pin="20"/>
     </net>
-    <net code="38" name="GPIO_PB8">
-      <node ref="R110" pin="2"/>
-      <node ref="U101" pin="16"/>
-    </net>
-    <net code="39" name="GPIO_PB11">
+    <net code="40" name="GPIO_PB11">
       <node ref="R109" pin="2"/>
       <node ref="U101" pin="21"/>
     </net>
-    <net code="40" name="GPIO_PB12">
-      <node ref="U101" pin="22"/>
-      <node ref="R108" pin="2"/>
-    </net>
-    <net code="41" name="Net-(R106-Pad2)">
-      <node ref="R106" pin="2"/>
-      <node ref="U101" pin="47"/>
-    </net>
-    <net code="42" name="Net-(R105-Pad2)">
-      <node ref="U101" pin="48"/>
-      <node ref="R105" pin="2"/>
-    </net>
-    <net code="43" name="DBG_SWCLK">
-      <node ref="J101" pin="9"/>
-      <node ref="U101" pin="49"/>
-    </net>
-    <net code="44" name="DBG_SWDIO">
-      <node ref="J101" pin="7"/>
-      <node ref="U101" pin="50"/>
-    </net>
-    <net code="45" name="DBG_SWO">
-      <node ref="J101" pin="13"/>
-      <node ref="U101" pin="51"/>
-    </net>
-    <net code="46" name="FPGA_MCU_GPIO_3">
-      <node ref="U303" pin="D16"/>
-      <node ref="U101" pin="53"/>
-    </net>
-    <net code="47" name="FPGA_MCU_GPIO_2">
-      <node ref="U101" pin="54"/>
-      <node ref="U303" pin="E16"/>
-    </net>
-    <net code="48" name="Net-(U101-Pad45)">
-      <node ref="U101" pin="45"/>
-    </net>
-    <net code="49" name="FPGA_MCU_GPIO_1">
-      <node ref="U303" pin="F13"/>
-      <node ref="U101" pin="61"/>
-    </net>
-    <net code="50" name="FPGA_MCU_GPIO_0">
-      <node ref="U101" pin="62"/>
-      <node ref="U303" pin="C13"/>
-    </net>
-    <net code="51" name="SDIO_CLK">
-      <node ref="J103" pin="5"/>
-      <node ref="U101" pin="63"/>
-    </net>
-    <net code="52" name="SDIO_CMD">
-      <node ref="U101" pin="64"/>
-      <node ref="J103" pin="2"/>
-    </net>
-    <net code="53" name="48MHZ_P3">
-      <node ref="U101" pin="25"/>
-      <node ref="Y101" pin="3"/>
-    </net>
-    <net code="54" name="48MHZ_P1">
-      <node ref="U101" pin="26"/>
-      <node ref="Y101" pin="1"/>
-    </net>
-    <net code="55" name="USART1_TX">
-      <node ref="U101" pin="28"/>
-      <node ref="J102" pin="1"/>
-    </net>
-    <net code="56" name="USART1_RX">
-      <node ref="U101" pin="29"/>
-      <node ref="J102" pin="3"/>
-    </net>
-    <net code="57" name="USART1_CLK">
-      <node ref="J102" pin="5"/>
-      <node ref="U101" pin="30"/>
-    </net>
-    <net code="58" name="USART1_CS">
-      <node ref="U101" pin="31"/>
-      <node ref="J102" pin="7"/>
-    </net>
-    <net code="59" name="USART1_CTS">
-      <node ref="J102" pin="11"/>
-      <node ref="U101" pin="32"/>
-    </net>
-    <net code="60" name="USART1_RTS">
-      <node ref="U101" pin="33"/>
-      <node ref="J102" pin="9"/>
-    </net>
-    <net code="61" name="GPIO_PD8">
-      <node ref="R107" pin="2"/>
-      <node ref="U101" pin="35"/>
-    </net>
-    <net code="62" name="Net-(U101-Pad37)">
-      <node ref="U101" pin="37"/>
-    </net>
-    <net code="63" name="Net-(C107-Pad1)">
-      <node ref="U101" pin="40"/>
-      <node ref="C107" pin="1"/>
-    </net>
-    <net code="64" name="GPIO_LED0">
-      <node ref="U101" pin="41"/>
-      <node ref="D101" pin="2"/>
-    </net>
-    <net code="65" name="GPIO_LED1">
-      <node ref="D102" pin="2"/>
-      <node ref="U101" pin="42"/>
-    </net>
-    <net code="66" name="GPIO_LED2">
-      <node ref="U101" pin="43"/>
-      <node ref="D103" pin="2"/>
-    </net>
-    <net code="67" name="GPIO_LED3">
+    <net code="41" name="GPIO_LED3">
       <node ref="D104" pin="2"/>
       <node ref="U101" pin="44"/>
     </net>
+    <net code="42" name="Net-(U101-Pad45)">
+      <node ref="U101" pin="45"/>
+    </net>
+    <net code="43" name="Net-(R106-Pad2)">
+      <node ref="R106" pin="2"/>
+      <node ref="U101" pin="47"/>
+    </net>
+    <net code="44" name="Net-(R105-Pad2)">
+      <node ref="R105" pin="2"/>
+      <node ref="U101" pin="48"/>
+    </net>
+    <net code="45" name="DBG_SWCLK">
+      <node ref="U101" pin="49"/>
+      <node ref="J101" pin="9"/>
+    </net>
+    <net code="46" name="DBG_SWDIO">
+      <node ref="J101" pin="7"/>
+      <node ref="U101" pin="50"/>
+    </net>
+    <net code="47" name="DBG_SWO">
+      <node ref="J101" pin="13"/>
+      <node ref="U101" pin="51"/>
+    </net>
+    <net code="48" name="FPGA_MCU_GPIO_3">
+      <node ref="U101" pin="53"/>
+      <node ref="U303" pin="D16"/>
+    </net>
+    <net code="49" name="FPGA_MCU_GPIO_2">
+      <node ref="U303" pin="E16"/>
+      <node ref="U101" pin="54"/>
+    </net>
+    <net code="50" name="GPIO_LED2">
+      <node ref="U101" pin="43"/>
+      <node ref="D103" pin="2"/>
+    </net>
+    <net code="51" name="FPGA_MCU_GPIO_1">
+      <node ref="U303" pin="F13"/>
+      <node ref="U101" pin="61"/>
+    </net>
+    <net code="52" name="FPGA_MCU_GPIO_0">
+      <node ref="U101" pin="62"/>
+      <node ref="U303" pin="C13"/>
+    </net>
+    <net code="53" name="SDIO_CLK">
+      <node ref="J103" pin="5"/>
+      <node ref="U101" pin="63"/>
+    </net>
+    <net code="54" name="SDIO_CMD">
+      <node ref="U101" pin="64"/>
+      <node ref="J103" pin="2"/>
+    </net>
+    <net code="55" name="USART1_CTS">
+      <node ref="U101" pin="32"/>
+      <node ref="J102" pin="11"/>
+    </net>
+    <net code="56" name="48MHZ_P3">
+      <node ref="Y101" pin="3"/>
+      <node ref="U101" pin="25"/>
+    </net>
+    <net code="57" name="48MHZ_P1">
+      <node ref="U101" pin="26"/>
+      <node ref="Y101" pin="1"/>
+    </net>
+    <net code="58" name="USART1_TX">
+      <node ref="J102" pin="1"/>
+      <node ref="U101" pin="28"/>
+    </net>
+    <net code="59" name="USART1_RX">
+      <node ref="J102" pin="3"/>
+      <node ref="U101" pin="29"/>
+    </net>
+    <net code="60" name="USART1_CLK">
+      <node ref="U101" pin="30"/>
+      <node ref="J102" pin="5"/>
+    </net>
+    <net code="61" name="USART1_CS">
+      <node ref="J102" pin="7"/>
+      <node ref="U101" pin="31"/>
+    </net>
+    <net code="62" name="USART1_RTS">
+      <node ref="U101" pin="33"/>
+      <node ref="J102" pin="9"/>
+    </net>
+    <net code="63" name="GPIO_PD8">
+      <node ref="R107" pin="2"/>
+      <node ref="U101" pin="35"/>
+    </net>
+    <net code="64" name="Net-(U101-Pad37)">
+      <node ref="U101" pin="37"/>
+    </net>
+    <net code="65" name="Net-(C107-Pad1)">
+      <node ref="U101" pin="40"/>
+      <node ref="C107" pin="1"/>
+    </net>
+    <net code="66" name="GPIO_LED0">
+      <node ref="D101" pin="2"/>
+      <node ref="U101" pin="41"/>
+    </net>
+    <net code="67" name="GPIO_LED1">
+      <node ref="U101" pin="42"/>
+      <node ref="D102" pin="2"/>
+    </net>
     <net code="68" name="USB_D+">
       <node ref="P201" pin="3"/>
-      <node ref="U201" pin="~"/>
       <node ref="R105" pin="1"/>
+      <node ref="U201" pin="~"/>
     </net>
     <net code="69" name="USB_D-">
+      <node ref="R106" pin="1"/>
       <node ref="P201" pin="2"/>
       <node ref="U201" pin="~"/>
-      <node ref="R106" pin="1"/>
     </net>
     <net code="70" name="+1V8">
-      <node ref="C319" pin="1"/>
-      <node ref="C325" pin="1"/>
-      <node ref="C323" pin="1"/>
-      <node ref="C321" pin="1"/>
-      <node ref="C315" pin="1"/>
-      <node ref="C317" pin="1"/>
-      <node ref="R203" pin="1"/>
-      <node ref="C204" pin="2"/>
-      <node ref="L201" pin="1"/>
       <node ref="U303" pin="L10"/>
-      <node ref="U303" pin="G10"/>
+      <node ref="C321" pin="1"/>
+      <node ref="C317" pin="1"/>
+      <node ref="C315" pin="1"/>
+      <node ref="C323" pin="1"/>
+      <node ref="C325" pin="1"/>
+      <node ref="C319" pin="1"/>
+      <node ref="C204" pin="2"/>
       <node ref="C203" pin="2"/>
+      <node ref="TP203" pin="1"/>
       <node ref="U303" pin="G8"/>
       <node ref="U303" pin="J10"/>
+      <node ref="R203" pin="1"/>
       <node ref="U303" pin="K11"/>
-      <node ref="TP203" pin="1"/>
+      <node ref="L201" pin="1"/>
+      <node ref="U303" pin="G10"/>
     </net>
     <net code="71" name="+5V">
-      <node ref="D201" pin="2"/>
-      <node ref="U101" pin="52"/>
-      <node ref="C207" pin="1"/>
-      <node ref="C205" pin="1"/>
-      <node ref="C202" pin="1"/>
+      <node ref="TP201" pin="1"/>
       <node ref="C208" pin="1"/>
       <node ref="C215" pin="1"/>
       <node ref="C214" pin="1"/>
-      <node ref="C206" pin="1"/>
-      <node ref="FB201" pin="1"/>
       <node ref="U203" pin="16"/>
+      <node ref="C206" pin="1"/>
+      <node ref="U101" pin="52"/>
       <node ref="U203" pin="1"/>
-      <node ref="TP201" pin="1"/>
+      <node ref="D201" pin="2"/>
+      <node ref="C207" pin="1"/>
+      <node ref="C202" pin="1"/>
+      <node ref="C205" pin="1"/>
+      <node ref="FB201" pin="1"/>
       <node ref="U202" pin="16"/>
       <node ref="U202" pin="12"/>
     </net>
     <net code="72" name="+1V0">
-      <node ref="U303" pin="E10"/>
-      <node ref="U303" pin="F11"/>
-      <node ref="U303" pin="F7"/>
+      <node ref="U303" pin="L8"/>
       <node ref="C320" pin="1"/>
-      <node ref="R206" pin="1"/>
       <node ref="C322" pin="1"/>
-      <node ref="C303" pin="1"/>
       <node ref="U303" pin="F9"/>
       <node ref="U303" pin="K9"/>
       <node ref="U303" pin="G6"/>
       <node ref="U303" pin="J6"/>
-      <node ref="U303" pin="H9"/>
       <node ref="C324" pin="1"/>
-      <node ref="U303" pin="L8"/>
-      <node ref="C218" pin="2"/>
-      <node ref="C316" pin="1"/>
+      <node ref="U303" pin="H9"/>
+      <node ref="R206" pin="1"/>
+      <node ref="U303" pin="F7"/>
       <node ref="TP204" pin="1"/>
-      <node ref="C318" pin="1"/>
-      <node ref="C326" pin="1"/>
-      <node ref="L203" pin="2"/>
-      <node ref="C306" pin="1"/>
-      <node ref="C305" pin="1"/>
-      <node ref="C312" pin="1"/>
-      <node ref="C310" pin="1"/>
-      <node ref="C309" pin="1"/>
+      <node ref="U303" pin="F11"/>
+      <node ref="U303" pin="E10"/>
+      <node ref="C313" pin="1"/>
+      <node ref="C314" pin="1"/>
+      <node ref="C316" pin="1"/>
+      <node ref="C303" pin="1"/>
       <node ref="C216" pin="2"/>
-      <node ref="C307" pin="1"/>
-      <node ref="C304" pin="1"/>
+      <node ref="C218" pin="2"/>
+      <node ref="L203" pin="2"/>
+      <node ref="C326" pin="1"/>
+      <node ref="C306" pin="1"/>
       <node ref="C308" pin="1"/>
       <node ref="C311" pin="1"/>
-      <node ref="C314" pin="1"/>
-      <node ref="C313" pin="1"/>
+      <node ref="C318" pin="1"/>
+      <node ref="C305" pin="1"/>
+      <node ref="C304" pin="1"/>
+      <node ref="C307" pin="1"/>
+      <node ref="C309" pin="1"/>
+      <node ref="C310" pin="1"/>
+      <node ref="C312" pin="1"/>
     </net>
     <net code="73" name="Net-(J101-Pad2)">
       <node ref="J101" pin="2"/>
@@ -3740,17 +3980,17 @@
       <node ref="D104" pin="1"/>
     </net>
     <net code="82" name="Net-(D101-Pad1)">
-      <node ref="D101" pin="1"/>
       <node ref="R101" pin="1"/>
+      <node ref="D101" pin="1"/>
     </net>
     <net code="83" name="Net-(D102-Pad1)">
-      <node ref="D102" pin="1"/>
       <node ref="R102" pin="1"/>
+      <node ref="D102" pin="1"/>
     </net>
     <net code="84" name="Net-(R203-Pad2)">
       <node ref="U203" pin="7"/>
-      <node ref="R203" pin="2"/>
       <node ref="R204" pin="1"/>
+      <node ref="R203" pin="2"/>
     </net>
     <net code="85" name="Net-(R205-Pad2)">
       <node ref="R205" pin="2"/>
@@ -3774,22 +4014,22 @@
       <node ref="U202" pin="2"/>
     </net>
     <net code="91" name="Net-(C209-Pad1)">
-      <node ref="C209" pin="1"/>
       <node ref="U203" pin="2"/>
+      <node ref="C209" pin="1"/>
     </net>
     <net code="92" name="Net-(C209-Pad2)">
-      <node ref="L201" pin="2"/>
       <node ref="C209" pin="2"/>
       <node ref="U203" pin="3"/>
+      <node ref="L201" pin="2"/>
     </net>
     <net code="93" name="Net-(C211-Pad1)">
-      <node ref="U203" pin="9"/>
       <node ref="C211" pin="1"/>
+      <node ref="U203" pin="9"/>
       <node ref="R205" pin="1"/>
     </net>
     <net code="94" name="R1_PG">
-      <node ref="U202" pin="11"/>
       <node ref="U203" pin="5"/>
+      <node ref="U202" pin="11"/>
     </net>
     <net code="95" name="Net-(U201-Pad~)">
       <node ref="U201" pin="~"/>
@@ -3811,9 +4051,9 @@
       <node ref="C213" pin="2"/>
     </net>
     <net code="101" name="Net-(C213-Pad1)">
-      <node ref="U202" pin="14"/>
-      <node ref="C213" pin="1"/>
       <node ref="L203" pin="1"/>
+      <node ref="C213" pin="1"/>
+      <node ref="U202" pin="14"/>
     </net>
     <net code="102" name="Net-(R206-Pad2)">
       <node ref="R207" pin="1"/>
@@ -3821,12 +4061,12 @@
       <node ref="R206" pin="2"/>
     </net>
     <net code="103" name="Net-(D202-Pad1)">
-      <node ref="D202" pin="1"/>
       <node ref="R202" pin="1"/>
+      <node ref="D202" pin="1"/>
     </net>
     <net code="104" name="Net-(D201-Pad1)">
-      <node ref="D201" pin="1"/>
       <node ref="R201" pin="1"/>
+      <node ref="D201" pin="1"/>
     </net>
     <net code="105" name="Net-(P201-Pad4)">
       <node ref="P201" pin="4"/>
@@ -3835,10 +4075,10 @@
       <node ref="P201" pin="SH"/>
     </net>
     <net code="107" name="Net-(C201-Pad1)">
-      <node ref="P201" pin="1"/>
-      <node ref="FB201" pin="2"/>
       <node ref="C201" pin="1"/>
       <node ref="U201" pin="~"/>
+      <node ref="P201" pin="1"/>
+      <node ref="FB201" pin="2"/>
     </net>
     <net code="108" name="Net-(C212-Pad2)">
       <node ref="U203" pin="14"/>
@@ -3850,9 +4090,9 @@
       <node ref="C212" pin="1"/>
     </net>
     <net code="110" name="Net-(R208-Pad2)">
-      <node ref="U203" pin="10"/>
       <node ref="R208" pin="2"/>
       <node ref="R209" pin="1"/>
+      <node ref="U203" pin="10"/>
     </net>
     <net code="111" name="Net-(U203-Pad11)">
       <node ref="U203" pin="11"/>
@@ -3864,8 +4104,8 @@
       <node ref="U303" pin="K8"/>
     </net>
     <net code="114" name="Net-(R305-Pad2)">
-      <node ref="R305" pin="2"/>
       <node ref="U303" pin="K10"/>
+      <node ref="R305" pin="2"/>
     </net>
     <net code="115" name="Net-(U301-Pad6)">
       <node ref="U301" pin="6"/>
@@ -3883,18 +4123,18 @@
       <node ref="U301" pin="1"/>
     </net>
     <net code="119" name="/FPGA/IOB14/QSPI_DQ3">
-      <node ref="U301" pin="7"/>
-      <node ref="R309" pin="2"/>
       <node ref="U303" pin="K16"/>
+      <node ref="R309" pin="2"/>
+      <node ref="U301" pin="7"/>
     </net>
     <net code="120" name="/FPGA/IOB14/QSPI_DQ2">
-      <node ref="U301" pin="3"/>
-      <node ref="R304" pin="2"/>
       <node ref="U303" pin="K15"/>
+      <node ref="R304" pin="2"/>
+      <node ref="U301" pin="3"/>
     </net>
     <net code="121" name="/FPGA/IOB14/QSPI_DQ1">
-      <node ref="U301" pin="2"/>
       <node ref="U303" pin="J14"/>
+      <node ref="U301" pin="2"/>
     </net>
     <net code="122" name="/FPGA/IOB14/QSPI_DQ0">
       <node ref="U303" pin="J13"/>
@@ -3904,465 +4144,456 @@
       <node ref="D301" pin="2"/>
       <node ref="R308" pin="2"/>
     </net>
-    <net code="124" name="FPGA_PROGRAM_B">
-      <node ref="U303" pin="L9"/>
-      <node ref="R302" pin="2"/>
-    </net>
-    <net code="125" name="/FPGA/TDO_JTAG">
-      <node ref="J301" pin="8"/>
+    <net code="124" name="/FPGA/TDO_JTAG">
       <node ref="U303" pin="N8"/>
       <node ref="U302" pin="1"/>
+      <node ref="J301" pin="8"/>
     </net>
-    <net code="126" name="/FPGA/TDI_JTAG">
+    <net code="125" name="/FPGA/TDI_JTAG">
       <node ref="U302" pin="3"/>
-      <node ref="J301" pin="10"/>
       <node ref="U303" pin="N7"/>
+      <node ref="J301" pin="10"/>
     </net>
-    <net code="127" name="/FPGA/TCK_JTAG">
-      <node ref="R306" pin="2"/>
+    <net code="126" name="/FPGA/TCK_JTAG">
       <node ref="U302" pin="4"/>
       <node ref="J301" pin="6"/>
       <node ref="U303" pin="L7"/>
+      <node ref="R306" pin="2"/>
     </net>
-    <net code="128" name="/FPGA/TMS_JTAG">
+    <net code="127" name="/FPGA/TMS_JTAG">
+      <node ref="J301" pin="4"/>
+      <node ref="U302" pin="6"/>
       <node ref="U303" pin="M7"/>
       <node ref="R303" pin="2"/>
-      <node ref="U302" pin="6"/>
-      <node ref="J301" pin="4"/>
     </net>
-    <net code="129" name="FPGA_DONE">
-      <node ref="U303" pin="H10"/>
-      <node ref="R308" pin="1"/>
-      <node ref="R307" pin="2"/>
-    </net>
-    <net code="130" name="VGA_G0">
-      <node ref="R503" pin="2"/>
+    <net code="128" name="VGA_G0">
       <node ref="U303" pin="P8"/>
+      <node ref="R503" pin="2"/>
     </net>
-    <net code="131" name="VGA_B1">
+    <net code="129" name="VGA_B1">
       <node ref="R515" pin="2"/>
       <node ref="U303" pin="P9"/>
     </net>
-    <net code="132" name="VGA_R2">
+    <net code="130" name="VGA_R2">
       <node ref="R502" pin="2"/>
       <node ref="U303" pin="R10"/>
     </net>
-    <net code="133" name="VGA_R3">
+    <net code="131" name="VGA_R3">
       <node ref="R512" pin="2"/>
       <node ref="U303" pin="R11"/>
     </net>
-    <net code="134" name="Net-(U303-PadR12)">
+    <net code="132" name="Net-(U303-PadR12)">
       <node ref="U303" pin="R12"/>
     </net>
-    <net code="135" name="VGA_R0">
-      <node ref="R501" pin="2"/>
+    <net code="133" name="VGA_R0">
       <node ref="U303" pin="R13"/>
+      <node ref="R501" pin="2"/>
     </net>
-    <net code="136" name="FPGA_EXT_IO5">
-      <node ref="U303" pin="R15"/>
+    <net code="134" name="FPGA_EXT_IO5">
       <node ref="R525" pin="2"/>
+      <node ref="U303" pin="R15"/>
     </net>
-    <net code="137" name="FPGA_EXT_IO6">
+    <net code="135" name="FPGA_EXT_IO6">
       <node ref="R522" pin="2"/>
       <node ref="U303" pin="R16"/>
     </net>
-    <net code="138" name="FPGA_LED0">
+    <net code="136" name="FPGA_LED0">
       <node ref="R507" pin="2"/>
       <node ref="U303" pin="R5"/>
     </net>
-    <net code="139" name="FPGA_LED2">
-      <node ref="R509" pin="2"/>
+    <net code="137" name="FPGA_LED2">
       <node ref="U303" pin="R6"/>
+      <node ref="R509" pin="2"/>
     </net>
-    <net code="140" name="Net-(U303-PadP6)">
+    <net code="138" name="Net-(U303-PadP6)">
       <node ref="U303" pin="P6"/>
     </net>
-    <net code="141" name="FPGA_EXT_IO4">
-      <node ref="U303" pin="P16"/>
+    <net code="139" name="FPGA_EXT_IO4">
       <node ref="R521" pin="2"/>
+      <node ref="U303" pin="P16"/>
     </net>
-    <net code="142" name="FPGA_EXT_IO3">
+    <net code="140" name="FPGA_EXT_IO3">
       <node ref="R524" pin="2"/>
       <node ref="U303" pin="P15"/>
     </net>
-    <net code="143" name="FPGA_EXT_IO12">
+    <net code="141" name="FPGA_EXT_IO12">
       <node ref="R532" pin="1"/>
       <node ref="U303" pin="P14"/>
     </net>
-    <net code="144" name="FPGA_EXT_IO10">
-      <node ref="R531" pin="1"/>
+    <net code="142" name="FPGA_EXT_IO10">
       <node ref="U303" pin="P13"/>
+      <node ref="R531" pin="1"/>
     </net>
-    <net code="145" name="Net-(U303-PadP11)">
+    <net code="143" name="Net-(U303-PadP11)">
       <node ref="U303" pin="P11"/>
     </net>
-    <net code="146" name="Net-(U303-PadP10)">
+    <net code="144" name="Net-(U303-PadP10)">
       <node ref="U303" pin="P10"/>
     </net>
-    <net code="147" name="VGA_B0">
-      <node ref="U303" pin="N9"/>
+    <net code="145" name="VGA_B0">
       <node ref="R505" pin="2"/>
+      <node ref="U303" pin="N9"/>
     </net>
-    <net code="148" name="VGA_B3">
-      <node ref="R516" pin="2"/>
+    <net code="146" name="VGA_B3">
       <node ref="U303" pin="N6"/>
+      <node ref="R516" pin="2"/>
     </net>
-    <net code="149" name="FPGA_EXT_IO2">
+    <net code="147" name="FPGA_EXT_IO2">
       <node ref="R520" pin="2"/>
       <node ref="U303" pin="N16"/>
     </net>
-    <net code="150" name="FPGA_EXT_IO11">
-      <node ref="U303" pin="N14"/>
+    <net code="148" name="FPGA_EXT_IO11">
       <node ref="R528" pin="1"/>
+      <node ref="U303" pin="N14"/>
     </net>
-    <net code="151" name="FPGA_LED3">
+    <net code="149" name="FPGA_LED3">
       <node ref="U303" pin="R7"/>
       <node ref="R510" pin="2"/>
     </net>
-    <net code="152" name="VGA_HS">
-      <node ref="U303" pin="T9"/>
+    <net code="150" name="VGA_HS">
       <node ref="R518" pin="2"/>
+      <node ref="U303" pin="T9"/>
     </net>
-    <net code="153" name="VGA_G3">
+    <net code="151" name="VGA_G3">
       <node ref="R514" pin="2"/>
       <node ref="U303" pin="T8"/>
     </net>
-    <net code="154" name="VGA_G2">
+    <net code="152" name="VGA_G2">
       <node ref="R504" pin="2"/>
       <node ref="U303" pin="T7"/>
     </net>
-    <net code="155" name="FPGA_LED1">
+    <net code="153" name="FPGA_LED1">
       <node ref="R508" pin="2"/>
       <node ref="U303" pin="T5"/>
     </net>
-    <net code="156" name="FPGA_EXT_IO8">
+    <net code="154" name="FPGA_EXT_IO8">
       <node ref="R533" pin="1"/>
       <node ref="U303" pin="T15"/>
     </net>
-    <net code="157" name="FPGA_EXT_IO7">
+    <net code="155" name="FPGA_EXT_IO7">
       <node ref="R530" pin="1"/>
       <node ref="U303" pin="T14"/>
     </net>
-    <net code="158" name="VGA_R1">
+    <net code="156" name="VGA_R1">
       <node ref="R511" pin="2"/>
       <node ref="U303" pin="T13"/>
     </net>
-    <net code="159" name="Net-(U303-PadT12)">
+    <net code="157" name="Net-(U303-PadT12)">
       <node ref="U303" pin="T12"/>
     </net>
-    <net code="160" name="VGA_VS">
+    <net code="158" name="VGA_VS">
       <node ref="R519" pin="2"/>
       <node ref="U303" pin="T10"/>
     </net>
-    <net code="161" name="VGA_G1">
-      <node ref="U303" pin="R8"/>
+    <net code="159" name="VGA_G1">
       <node ref="R513" pin="2"/>
+      <node ref="U303" pin="R8"/>
     </net>
-    <net code="162" name="Net-(U303-PadL14)">
+    <net code="160" name="Net-(U303-PadL14)">
       <node ref="U303" pin="L14"/>
     </net>
-    <net code="163" name="Net-(U303-PadM14)">
+    <net code="161" name="Net-(U303-PadM14)">
       <node ref="U303" pin="M14"/>
     </net>
-    <net code="164" name="Net-(U303-PadM15)">
+    <net code="162" name="Net-(U303-PadM15)">
       <node ref="U303" pin="M15"/>
     </net>
-    <net code="165" name="/FPGA/IOB14/GCLK100">
-      <node ref="U601" pin="3"/>
+    <net code="163" name="/FPGA/IOB14/GCLK100">
       <node ref="U303" pin="N12"/>
+      <node ref="U601" pin="3"/>
     </net>
-    <net code="166" name="FPGA_EXT_IO13">
+    <net code="164" name="FPGA_EXT_IO13">
       <node ref="R529" pin="1"/>
       <node ref="U303" pin="N11"/>
     </net>
-    <net code="167" name="VGA_B2">
-      <node ref="R506" pin="2"/>
+    <net code="165" name="VGA_B2">
       <node ref="U303" pin="M6"/>
+      <node ref="R506" pin="2"/>
     </net>
-    <net code="168" name="FPGA_EXT_IO1">
-      <node ref="R526" pin="2"/>
+    <net code="166" name="FPGA_EXT_IO1">
       <node ref="U303" pin="M16"/>
+      <node ref="R526" pin="2"/>
     </net>
-    <net code="169" name="FPGA_EXT_IO0">
+    <net code="167" name="FPGA_EXT_IO0">
       <node ref="U303" pin="M12"/>
       <node ref="R523" pin="2"/>
     </net>
-    <net code="170" name="FPGA_EXT_IO9">
-      <node ref="U303" pin="N13"/>
+    <net code="168" name="FPGA_EXT_IO9">
       <node ref="R527" pin="1"/>
+      <node ref="U303" pin="N13"/>
     </net>
-    <net code="171" name="Net-(U303-PadL13)">
+    <net code="169" name="Net-(U303-PadL13)">
       <node ref="U303" pin="L13"/>
     </net>
-    <net code="172" name="Net-(U303-PadK13)">
+    <net code="170" name="Net-(U303-PadK13)">
       <node ref="U303" pin="K13"/>
     </net>
-    <net code="173" name="FPGA_EXT_IO30">
+    <net code="171" name="FPGA_EXT_IO30">
       <node ref="U303" pin="K12"/>
     </net>
-    <net code="174" name="Net-(U601-Pad5)">
+    <net code="172" name="Net-(U601-Pad5)">
       <node ref="U601" pin="5"/>
     </net>
-    <net code="175" name="Net-(U303-PadA8)">
+    <net code="173" name="Net-(U303-PadA8)">
       <node ref="U303" pin="A8"/>
     </net>
-    <net code="176" name="Net-(U303-PadA13)">
+    <net code="174" name="Net-(U303-PadA13)">
       <node ref="U303" pin="A13"/>
     </net>
-    <net code="177" name="Net-(U303-PadA14)">
+    <net code="175" name="Net-(U303-PadA14)">
       <node ref="U303" pin="A14"/>
     </net>
-    <net code="178" name="Net-(U303-PadA15)">
+    <net code="176" name="Net-(U303-PadA15)">
       <node ref="U303" pin="A15"/>
     </net>
-    <net code="179" name="Net-(U303-PadA9)">
+    <net code="177" name="Net-(U303-PadA9)">
       <node ref="U303" pin="A9"/>
     </net>
-    <net code="180" name="Net-(U303-PadB11)">
+    <net code="178" name="Net-(U303-PadB11)">
       <node ref="U303" pin="B11"/>
     </net>
-    <net code="181" name="Net-(U303-PadB14)">
+    <net code="179" name="Net-(U303-PadB14)">
       <node ref="U303" pin="B14"/>
     </net>
-    <net code="182" name="Net-(U303-PadB15)">
+    <net code="180" name="Net-(U303-PadB15)">
       <node ref="U303" pin="B15"/>
     </net>
-    <net code="183" name="Net-(U303-PadB16)">
+    <net code="181" name="Net-(U303-PadB16)">
       <node ref="U303" pin="B16"/>
     </net>
-    <net code="184" name="Net-(U303-PadB9)">
+    <net code="182" name="Net-(U303-PadB9)">
       <node ref="U303" pin="B9"/>
     </net>
-    <net code="185" name="Net-(U303-PadF15)">
+    <net code="183" name="Net-(U303-PadF15)">
       <node ref="U303" pin="F15"/>
     </net>
-    <net code="186" name="Net-(U303-PadG14)">
+    <net code="184" name="Net-(U303-PadG14)">
       <node ref="U303" pin="G14"/>
     </net>
-    <net code="187" name="Net-(U303-PadF14)">
+    <net code="185" name="Net-(U303-PadF14)">
       <node ref="U303" pin="F14"/>
     </net>
-    <net code="188" name="Net-(U303-PadH16)">
+    <net code="186" name="Net-(U303-PadH16)">
       <node ref="U303" pin="H16"/>
     </net>
-    <net code="189" name="Net-(U303-PadG16)">
+    <net code="187" name="Net-(U303-PadG16)">
       <node ref="U303" pin="G16"/>
     </net>
-    <net code="190" name="Net-(U303-PadJ15)">
+    <net code="188" name="Net-(U303-PadJ15)">
       <node ref="U303" pin="J15"/>
     </net>
-    <net code="191" name="Net-(U303-PadJ16)">
+    <net code="189" name="Net-(U303-PadJ16)">
       <node ref="U303" pin="J16"/>
     </net>
-    <net code="192" name="Net-(U303-PadH14)">
+    <net code="190" name="Net-(U303-PadH14)">
       <node ref="U303" pin="H14"/>
     </net>
-    <net code="193" name="Net-(U303-PadG15)">
+    <net code="191" name="Net-(U303-PadG15)">
       <node ref="U303" pin="G15"/>
     </net>
-    <net code="194" name="Net-(U303-PadG11)">
+    <net code="192" name="Net-(U303-PadG11)">
       <node ref="U303" pin="G11"/>
     </net>
-    <net code="195" name="Net-(U303-PadE15)">
+    <net code="193" name="Net-(U303-PadE15)">
       <node ref="U303" pin="E15"/>
     </net>
-    <net code="196" name="Net-(U303-PadH11)">
+    <net code="194" name="Net-(U303-PadH11)">
       <node ref="U303" pin="H11"/>
     </net>
-    <net code="197" name="Net-(U303-PadG12)">
+    <net code="195" name="Net-(U303-PadG12)">
       <node ref="U303" pin="G12"/>
     </net>
-    <net code="198" name="Net-(U303-PadF12)">
+    <net code="196" name="Net-(U303-PadF12)">
       <node ref="U303" pin="F12"/>
     </net>
-    <net code="199" name="Net-(U303-PadH12)">
+    <net code="197" name="Net-(U303-PadH12)">
       <node ref="U303" pin="H12"/>
     </net>
-    <net code="200" name="Net-(U303-PadH13)">
+    <net code="198" name="Net-(U303-PadH13)">
       <node ref="U303" pin="H13"/>
     </net>
-    <net code="201" name="Net-(U303-PadC11)">
+    <net code="199" name="Net-(U303-PadC11)">
       <node ref="U303" pin="C11"/>
     </net>
-    <net code="202" name="Net-(U303-PadC12)">
+    <net code="200" name="Net-(U303-PadC12)">
       <node ref="U303" pin="C12"/>
     </net>
-    <net code="203" name="Net-(U303-PadC14)">
+    <net code="201" name="Net-(U303-PadC14)">
       <node ref="U303" pin="C14"/>
     </net>
-    <net code="204" name="Net-(U303-PadC16)">
+    <net code="202" name="Net-(U303-PadC16)">
       <node ref="U303" pin="C16"/>
     </net>
-    <net code="205" name="Net-(U303-PadC8)">
+    <net code="203" name="Net-(U303-PadC8)">
       <node ref="U303" pin="C8"/>
     </net>
-    <net code="206" name="Net-(U303-PadC9)">
+    <net code="204" name="Net-(U303-PadC9)">
       <node ref="U303" pin="C9"/>
     </net>
-    <net code="207" name="Net-(U303-PadD10)">
+    <net code="205" name="Net-(U303-PadD10)">
       <node ref="U303" pin="D10"/>
     </net>
-    <net code="208" name="Net-(U303-PadD11)">
+    <net code="206" name="Net-(U303-PadD11)">
       <node ref="U303" pin="D11"/>
     </net>
-    <net code="209" name="Net-(U303-PadD14)">
+    <net code="207" name="Net-(U303-PadD14)">
       <node ref="U303" pin="D14"/>
     </net>
-    <net code="210" name="Net-(U303-PadD15)">
+    <net code="208" name="Net-(U303-PadD15)">
       <node ref="U303" pin="D15"/>
     </net>
-    <net code="211" name="Net-(U303-PadD9)">
+    <net code="209" name="Net-(U303-PadD9)">
       <node ref="U303" pin="D9"/>
     </net>
-    <net code="212" name="Net-(U303-PadE11)">
+    <net code="210" name="Net-(U303-PadE11)">
       <node ref="U303" pin="E11"/>
     </net>
-    <net code="213" name="Net-(U303-PadE12)">
+    <net code="211" name="Net-(U303-PadE12)">
       <node ref="U303" pin="E12"/>
     </net>
-    <net code="214" name="Net-(U303-PadE13)">
+    <net code="212" name="Net-(U303-PadE13)">
       <node ref="U303" pin="E13"/>
     </net>
-    <net code="215" name="Net-(U504-Pad4)">
+    <net code="213" name="Net-(U504-Pad4)">
       <node ref="U504" pin="4"/>
     </net>
-    <net code="216" name="Net-(U501-Pad4)">
+    <net code="214" name="Net-(U501-Pad4)">
       <node ref="U501" pin="4"/>
     </net>
-    <net code="217" name="Net-(C501-Pad2)">
+    <net code="215" name="Net-(C501-Pad2)">
       <node ref="J501" pin="0"/>
       <node ref="C501" pin="2"/>
       <node ref="R517" pin="2"/>
     </net>
-    <net code="218" name="Net-(J501-Pad4)">
+    <net code="216" name="Net-(J501-Pad4)">
       <node ref="J501" pin="4"/>
     </net>
-    <net code="219" name="Net-(J501-Pad9)">
+    <net code="217" name="Net-(J501-Pad9)">
       <node ref="J501" pin="9"/>
     </net>
-    <net code="220" name="Net-(J501-Pad11)">
+    <net code="218" name="Net-(J501-Pad11)">
       <node ref="J501" pin="11"/>
     </net>
-    <net code="221" name="Net-(J501-Pad12)">
+    <net code="219" name="Net-(J501-Pad12)">
       <node ref="J501" pin="12"/>
     </net>
-    <net code="222" name="Net-(J501-Pad15)">
+    <net code="220" name="Net-(J501-Pad15)">
       <node ref="J501" pin="15"/>
     </net>
-    <net code="223" name="Net-(J502-Pad4)">
-      <node ref="J502" pin="4"/>
+    <net code="221" name="Net-(J502-Pad4)">
       <node ref="U503" pin="6"/>
+      <node ref="J502" pin="4"/>
       <node ref="R533" pin="2"/>
     </net>
-    <net code="224" name="Net-(J502-Pad8)">
-      <node ref="U503" pin="3"/>
+    <net code="222" name="Net-(J502-Pad8)">
       <node ref="R531" pin="2"/>
+      <node ref="U503" pin="3"/>
       <node ref="J502" pin="8"/>
     </net>
-    <net code="225" name="Net-(J502-Pad1)">
+    <net code="223" name="Net-(J502-Pad1)">
+      <node ref="R523" pin="1"/>
       <node ref="J502" pin="1"/>
       <node ref="U502" pin="1"/>
-      <node ref="R523" pin="1"/>
     </net>
-    <net code="226" name="Net-(J502-Pad6)">
-      <node ref="J502" pin="6"/>
-      <node ref="U503" pin="4"/>
+    <net code="224" name="Net-(J502-Pad6)">
       <node ref="R527" pin="2"/>
+      <node ref="U503" pin="4"/>
+      <node ref="J502" pin="6"/>
     </net>
-    <net code="227" name="Net-(J502-Pad2)">
+    <net code="225" name="Net-(J502-Pad2)">
+      <node ref="J502" pin="2"/>
       <node ref="U503" pin="1"/>
       <node ref="R530" pin="2"/>
-      <node ref="J502" pin="2"/>
     </net>
-    <net code="228" name="Net-(J501-Pad3)">
-      <node ref="R505" pin="1"/>
-      <node ref="R515" pin="1"/>
-      <node ref="R506" pin="1"/>
-      <node ref="R516" pin="1"/>
+    <net code="226" name="Net-(J501-Pad3)">
       <node ref="J501" pin="3"/>
+      <node ref="R516" pin="1"/>
+      <node ref="R506" pin="1"/>
+      <node ref="R515" pin="1"/>
+      <node ref="R505" pin="1"/>
     </net>
-    <net code="229" name="Net-(D504-Pad2)">
+    <net code="227" name="Net-(D504-Pad2)">
       <node ref="R510" pin="1"/>
       <node ref="D504" pin="2"/>
     </net>
-    <net code="230" name="Net-(J502-Pad13)">
-      <node ref="U501" pin="3"/>
+    <net code="228" name="Net-(J502-Pad13)">
       <node ref="R522" pin="1"/>
       <node ref="J502" pin="13"/>
+      <node ref="U501" pin="3"/>
     </net>
-    <net code="231" name="Net-(J502-Pad11)">
-      <node ref="J502" pin="11"/>
-      <node ref="R525" pin="1"/>
+    <net code="229" name="Net-(J502-Pad11)">
       <node ref="U501" pin="6"/>
+      <node ref="R525" pin="1"/>
+      <node ref="J502" pin="11"/>
     </net>
-    <net code="232" name="Net-(D503-Pad2)">
+    <net code="230" name="Net-(D503-Pad2)">
       <node ref="D503" pin="2"/>
       <node ref="R509" pin="1"/>
     </net>
-    <net code="233" name="Net-(D501-Pad2)">
-      <node ref="R507" pin="1"/>
+    <net code="231" name="Net-(D501-Pad2)">
       <node ref="D501" pin="2"/>
+      <node ref="R507" pin="1"/>
     </net>
-    <net code="234" name="Net-(D502-Pad2)">
-      <node ref="R508" pin="1"/>
+    <net code="232" name="Net-(D502-Pad2)">
       <node ref="D502" pin="2"/>
+      <node ref="R508" pin="1"/>
     </net>
-    <net code="235" name="Net-(J501-Pad1)">
-      <node ref="J501" pin="1"/>
+    <net code="233" name="Net-(J501-Pad1)">
       <node ref="R511" pin="1"/>
       <node ref="R502" pin="1"/>
+      <node ref="J501" pin="1"/>
       <node ref="R501" pin="1"/>
       <node ref="R512" pin="1"/>
     </net>
-    <net code="236" name="Net-(J502-Pad9)">
+    <net code="234" name="Net-(J502-Pad9)">
       <node ref="J502" pin="9"/>
       <node ref="R521" pin="1"/>
       <node ref="U501" pin="1"/>
     </net>
-    <net code="237" name="Net-(J501-Pad2)">
+    <net code="235" name="Net-(J501-Pad2)">
       <node ref="R503" pin="1"/>
-      <node ref="R514" pin="1"/>
       <node ref="R513" pin="1"/>
-      <node ref="R504" pin="1"/>
       <node ref="J501" pin="2"/>
+      <node ref="R504" pin="1"/>
+      <node ref="R514" pin="1"/>
     </net>
-    <net code="238" name="Net-(J502-Pad10)">
-      <node ref="R528" pin="2"/>
+    <net code="236" name="Net-(J502-Pad10)">
       <node ref="J502" pin="10"/>
+      <node ref="R528" pin="2"/>
       <node ref="U504" pin="1"/>
     </net>
-    <net code="239" name="Net-(J502-Pad12)">
+    <net code="237" name="Net-(J502-Pad12)">
       <node ref="J502" pin="12"/>
       <node ref="U504" pin="6"/>
       <node ref="R532" pin="2"/>
     </net>
-    <net code="240" name="Net-(J502-Pad14)">
+    <net code="238" name="Net-(J502-Pad14)">
       <node ref="J502" pin="14"/>
-      <node ref="R529" pin="2"/>
       <node ref="U504" pin="3"/>
+      <node ref="R529" pin="2"/>
     </net>
-    <net code="241" name="Net-(J501-Pad13)">
+    <net code="239" name="Net-(J501-Pad13)">
       <node ref="R518" pin="1"/>
       <node ref="J501" pin="13"/>
     </net>
-    <net code="242" name="Net-(J501-Pad14)">
-      <node ref="J501" pin="14"/>
+    <net code="240" name="Net-(J501-Pad14)">
       <node ref="R519" pin="1"/>
+      <node ref="J501" pin="14"/>
     </net>
-    <net code="243" name="Net-(J502-Pad3)">
-      <node ref="U502" pin="6"/>
+    <net code="241" name="Net-(J502-Pad3)">
       <node ref="J502" pin="3"/>
       <node ref="R526" pin="1"/>
+      <node ref="U502" pin="6"/>
     </net>
-    <net code="244" name="Net-(J502-Pad5)">
-      <node ref="R520" pin="1"/>
-      <node ref="U502" pin="4"/>
+    <net code="242" name="Net-(J502-Pad5)">
       <node ref="J502" pin="5"/>
+      <node ref="U502" pin="4"/>
+      <node ref="R520" pin="1"/>
     </net>
-    <net code="245" name="Net-(J502-Pad7)">
+    <net code="243" name="Net-(J502-Pad7)">
+      <node ref="U502" pin="3"/>
       <node ref="R524" pin="1"/>
       <node ref="J502" pin="7"/>
-      <node ref="U502" pin="3"/>
     </net>
   </nets>
 </export>

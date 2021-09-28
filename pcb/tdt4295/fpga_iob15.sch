@@ -37,6 +37,7 @@ F 2 "Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder" H 2438 900 50  0
 F 3 "https://www.farnell.com/datasheets/2047839.pdf" H 2400 1050 50  0001 C CNN
 F 4 "GRM32ER71A476ME15L" H 2400 1050 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/murata-electronics/GRM32ER71A476ME15L/490-6543-1-ND/3845740" H 2400 1050 50  0001 C CNN "DK_Detail_Page"
+F 6 "490-6543-1-ND" H 2400 1050 50  0001 C CNN "Digi-Key_PN"
 	1    2400 1050
 	1    0    0    -1  
 $EndComp
@@ -54,6 +55,7 @@ F 3 "" H 2700 1050 50  0001 C CNN
 F 4 "C2012X7R1A475K125AC" H 2700 1050 50  0001 C CNN "Component name"
 F 5 "" H 2700 1050 50  0001 C CNN "DK_Datasheet_Link"
 F 6 "https://www.digikey.no/product-detail/no/tdk-corporation/C2012X7R1A475K125AC/445-7591-1-ND/2733663" H 2700 1050 50  0001 C CNN "DK_Detail_Page"
+F 7 "445-7591-1-ND" H 2700 1050 50  0001 C CNN "Digi-Key_PN"
 	1    2700 1050
 	1    0    0    -1  
 $EndComp
@@ -71,6 +73,7 @@ F 3 "" H 3050 1050 50  0001 C CNN
 F 4 "C2012X7R1A475K125AC" H 3050 1050 50  0001 C CNN "Component name"
 F 5 "" H 3050 1050 50  0001 C CNN "DK_Datasheet_Link"
 F 6 "https://www.digikey.no/product-detail/no/tdk-corporation/C2012X7R1A475K125AC/445-7591-1-ND/2733663" H 3050 1050 50  0001 C CNN "DK_Detail_Page"
+F 7 "445-7591-1-ND" H 3050 1050 50  0001 C CNN "Digi-Key_PN"
 	1    3050 1050
 	1    0    0    -1  
 $EndComp
@@ -87,6 +90,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 3438 900 50  0
 F 3 "https://www.farnell.com/datasheets/2048812.pdf" H 3400 1050 50  0001 C CNN
 F 4 "GRM188R71C474KA88D" H 3400 1050 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836" H 3400 1050 50  0001 C CNN "DK_Detail_Page"
+F 6 "490-3295-1-ND" H 3400 1050 50  0001 C CNN "Digi-Key_PN"
 	1    3400 1050
 	1    0    0    -1  
 $EndComp
@@ -103,6 +107,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 3788 900 50  0
 F 3 "https://www.farnell.com/datasheets/2048812.pdf" H 3750 1050 50  0001 C CNN
 F 4 "GRM188R71C474KA88D" H 3750 1050 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836" H 3750 1050 50  0001 C CNN "DK_Detail_Page"
+F 6 "490-3295-1-ND" H 3750 1050 50  0001 C CNN "Digi-Key_PN"
 	1    3750 1050
 	1    0    0    -1  
 $EndComp
@@ -119,6 +124,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 4188 900 50  0
 F 3 "https://www.farnell.com/datasheets/2048812.pdf" H 4150 1050 50  0001 C CNN
 F 4 "GRM188R71C474KA88D" H 4150 1050 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836" H 4150 1050 50  0001 C CNN "DK_Detail_Page"
+F 6 "490-3295-1-ND" H 4150 1050 50  0001 C CNN "Digi-Key_PN"
 	1    4150 1050
 	1    0    0    -1  
 $EndComp
@@ -135,6 +141,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 4538 900 50  0
 F 3 "https://www.farnell.com/datasheets/2048812.pdf" H 4500 1050 50  0001 C CNN
 F 4 "GRM188R71C474KA88D" H 4500 1050 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836" H 4500 1050 50  0001 C CNN "DK_Detail_Page"
+F 6 "490-3295-1-ND" H 4500 1050 50  0001 C CNN "Digi-Key_PN"
 	1    4500 1050
 	1    0    0    -1  
 $EndComp

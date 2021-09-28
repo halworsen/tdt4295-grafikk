@@ -23,6 +23,7 @@ F 2 "Connector_PinHeader_2.54mm:PinHeader_2x08_P2.54mm_Vertical_SMD" H 6750 2050
 F 3 "~" H 6750 2050 50  0001 C CNN
 F 4 "0015910160" H 6750 2050 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/molex/0015910160/WM17462-ND/614778" H 6750 2050 50  0001 C CNN "DK_Detail_Page"
+F 6 "WM17462-ND" H 6750 2050 50  0001 C CNN "Digi-Key_PN"
 	1    6750 2050
 	1    0    0    -1  
 $EndComp
@@ -48,6 +49,7 @@ F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 4580 1750 50  0
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 4650 1750 50  0001 C CNN
 F 4 "3521200RFT" H 4650 1750 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 4650 1750 50  0001 C CNN "DK_Detail_Page"
+F 6 "A116015CT-ND" H 4650 1750 50  0001 C CNN "Digi-Key_PN"
 	1    4650 1750
 	0    1    1    0   
 $EndComp
@@ -61,6 +63,7 @@ F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 4830 1850 50  0
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 4900 1850 50  0001 C CNN
 F 4 "3521200RFT" H 4900 1850 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 4900 1850 50  0001 C CNN "DK_Detail_Page"
+F 6 "A116015CT-ND" H 4900 1850 50  0001 C CNN "Digi-Key_PN"
 	1    4900 1850
 	0    1    1    0   
 $EndComp
@@ -74,6 +77,7 @@ F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 4530 1950 50  0
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 4600 1950 50  0001 C CNN
 F 4 "3521200RFT" H 4600 1950 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 4600 1950 50  0001 C CNN "DK_Detail_Page"
+F 6 "A116015CT-ND" H 4600 1950 50  0001 C CNN "Digi-Key_PN"
 	1    4600 1950
 	0    1    1    0   
 $EndComp
@@ -87,6 +91,7 @@ F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 4780 2050 50  0
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 4850 2050 50  0001 C CNN
 F 4 "3521200RFT" H 4850 2050 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 4850 2050 50  0001 C CNN "DK_Detail_Page"
+F 6 "A116015CT-ND" H 4850 2050 50  0001 C CNN "Digi-Key_PN"
 	1    4850 2050
 	0    1    1    0   
 $EndComp
@@ -100,6 +105,7 @@ F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 4530 2150 50  0
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 4600 2150 50  0001 C CNN
 F 4 "3521200RFT" H 4600 2150 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 4600 2150 50  0001 C CNN "DK_Detail_Page"
+F 6 "A116015CT-ND" H 4600 2150 50  0001 C CNN "Digi-Key_PN"
 	1    4600 2150
 	0    1    1    0   
 $EndComp
@@ -113,6 +119,7 @@ F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 4780 2250 50  0
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 4850 2250 50  0001 C CNN
 F 4 "3521200RFT" H 4850 2250 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 4850 2250 50  0001 C CNN "DK_Detail_Page"
+F 6 "A116015CT-ND" H 4850 2250 50  0001 C CNN "Digi-Key_PN"
 	1    4850 2250
 	0    1    1    0   
 $EndComp
@@ -140,6 +147,7 @@ F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 4530 2350 50  0
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 4600 2350 50  0001 C CNN
 F 4 "3521200RFT" H 4600 2350 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 4600 2350 50  0001 C CNN "DK_Detail_Page"
+F 6 "A116015CT-ND" H 4600 2350 50  0001 C CNN "Digi-Key_PN"
 	1    4600 2350
 	0    1    1    0   
 $EndComp
@@ -157,6 +165,7 @@ F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 1650 1250 50  0001
 F 3 "~" H 1650 1250 50  0001 C CNN
 F 4 "150120BS75000" H 1650 1250 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/w%C3%BCrth-elektronik/150120BS75000/732-4989-1-ND/4489931" H 1650 1250 50  0001 C CNN "DK_Detail_Page"
+F 6 "732-4989-1-ND" H 1650 1250 50  0001 C CNN "Digi-Key_PN"
 	1    1650 1250
 	-1   0    0    1   
 $EndComp
@@ -172,6 +181,7 @@ F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1280 1250 50  0
 F 3 "https://www.koaspeer.com/pdfs/RK73H.pdf" H 1350 1250 50  0001 C CNN
 F 4 "RK73H2ATTD3300F" H 1350 1250 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/koa-speer-electronics-inc/RK73H2ATTD3300F/2019-RK73H2ATTD3300FCT-ND/10235463" H 1350 1250 50  0001 C CNN "DK_Detail_Page"
+F 6 "2019-RK73H2ATTD3300FCT-ND" H 1350 1250 50  0001 C CNN "Digi-Key_PN"
 	1    1350 1250
 	0    1    1    0   
 $EndComp
@@ -241,6 +251,7 @@ F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 1630 4650 50  0
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_11.pdf" H 1700 4650 50  0001 C CNN
 F 4 "RC1206FR-072KL" H 1700 4650 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/yageo/RC1206FR-072KL/311-2-00KFRCT-ND/731559" H 1700 4650 50  0001 C CNN "DK_Detail_Page"
+F 6 "311-2.00KFRCT-ND" H 1700 4650 50  0001 C CNN "Digi-Key_PN"
 	1    1700 4650
 	0    1    1    0   
 $EndComp
@@ -252,8 +263,9 @@ F 0 "R502" V 1380 4800 50  0000 C CNN
 F 1 "1k" V 1300 4800 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1230 4800 50  0001 C CNN
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 1300 4800 50  0001 C CNN
-F 4 "RR0510P-102-D" H 1300 4800 50  0001 C CNN "Component name"
+F 4 "RNCP0805FTD1K00" H 1300 4800 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/susumu/RR1220P-102-D/RR12P1-0KDCT-ND/432830" H 1300 4800 50  0001 C CNN "DK_Detail_Page"
+F 6 "RNCP0805FTD1K00CT-ND" H 1300 4800 50  0001 C CNN "Digi-Key_PN"
 	1    1300 4800
 	0    1    1    0   
 $EndComp
@@ -305,6 +317,7 @@ F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 1630 5300 50  0
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_11.pdf" H 1700 5300 50  0001 C CNN
 F 4 "RC1206FR-072KL" H 1700 5300 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/yageo/RC1206FR-072KL/311-2-00KFRCT-ND/731559" H 1700 5300 50  0001 C CNN "DK_Detail_Page"
+F 6 "311-2.00KFRCT-ND" H 1700 5300 50  0001 C CNN "Digi-Key_PN"
 	1    1700 5300
 	0    1    1    0   
 $EndComp
@@ -316,8 +329,9 @@ F 0 "R504" V 1380 5450 50  0000 C CNN
 F 1 "1k" V 1300 5450 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1230 5450 50  0001 C CNN
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 1300 5450 50  0001 C CNN
-F 4 "RR0510P-102-D" H 1300 5450 50  0001 C CNN "Component name"
+F 4 "RNCP0805FTD1K00" H 1300 5450 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/susumu/RR1220P-102-D/RR12P1-0KDCT-ND/432830" H 1300 5450 50  0001 C CNN "DK_Detail_Page"
+F 6 "RNCP0805FTD1K00CT-ND" H 1300 5450 50  0001 C CNN "Digi-Key_PN"
 	1    1300 5450
 	0    1    1    0   
 $EndComp
@@ -331,6 +345,7 @@ F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1630 5600 50  0
 F 3 "" H 1700 5600 50  0001 C CNN
 F 4 "ERA-6AED511V" H 1700 5600 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/panasonic-electronic-components/ERA-6AED511V/P123855CT-ND/9467784" H 1700 5600 50  0001 C CNN "DK_Detail_Page"
+F 6 "P123855CT-ND" H 1700 5600 50  0001 C CNN "Digi-Key_PN"
 	1    1700 5600
 	0    1    1    0   
 $EndComp
@@ -384,6 +399,7 @@ F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 1630 6000 50  0
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_11.pdf" H 1700 6000 50  0001 C CNN
 F 4 "RC1206FR-072KL" H 1700 6000 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/yageo/RC1206FR-072KL/311-2-00KFRCT-ND/731559" H 1700 6000 50  0001 C CNN "DK_Detail_Page"
+F 6 "311-2.00KFRCT-ND" H 1700 6000 50  0001 C CNN "Digi-Key_PN"
 	1    1700 6000
 	0    1    1    0   
 $EndComp
@@ -395,8 +411,9 @@ F 0 "R506" V 1380 6150 50  0000 C CNN
 F 1 "1k" V 1300 6150 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1230 6150 50  0001 C CNN
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 1300 6150 50  0001 C CNN
-F 4 "RR0510P-102-D" H 1300 6150 50  0001 C CNN "Component name"
+F 4 "RNCP0805FTD1K00" H 1300 6150 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/susumu/RR1220P-102-D/RR12P1-0KDCT-ND/432830" H 1300 6150 50  0001 C CNN "DK_Detail_Page"
+F 6 "RNCP0805FTD1K00CT-ND" H 1300 6150 50  0001 C CNN "Digi-Key_PN"
 	1    1300 6150
 	0    1    1    0   
 $EndComp
@@ -410,6 +427,7 @@ F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1630 6300 50  0
 F 3 "" H 1700 6300 50  0001 C CNN
 F 4 "ERA-6AED511V" H 1700 6300 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/panasonic-electronic-components/ERA-6AED511V/P123855CT-ND/9467784" H 1700 6300 50  0001 C CNN "DK_Detail_Page"
+F 6 "P123855CT-ND" H 1700 6300 50  0001 C CNN "Digi-Key_PN"
 	1    1700 6300
 	0    1    1    0   
 $EndComp
@@ -473,6 +491,7 @@ F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1280 900 50  00
 F 3 "https://www.koaspeer.com/pdfs/RK73H.pdf" H 1350 900 50  0001 C CNN
 F 4 "RK73H2ATTD3300F" H 1350 900 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/koa-speer-electronics-inc/RK73H2ATTD3300F/2019-RK73H2ATTD3300FCT-ND/10235463" H 1350 900 50  0001 C CNN "DK_Detail_Page"
+F 6 "2019-RK73H2ATTD3300FCT-ND" H 1350 900 50  0001 C CNN "Digi-Key_PN"
 	1    1350 900 
 	0    1    1    0   
 $EndComp
@@ -488,6 +507,7 @@ F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 1650 900 50  0001 
 F 3 "~" H 1650 900 50  0001 C CNN
 F 4 "150120BS75000" H 1650 900 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/w%C3%BCrth-elektronik/150120BS75000/732-4989-1-ND/4489931" H 1650 900 50  0001 C CNN "DK_Detail_Page"
+F 6 "732-4989-1-ND" H 1650 900 50  0001 C CNN "Digi-Key_PN"
 	1    1650 900 
 	-1   0    0    1   
 $EndComp
@@ -501,6 +521,7 @@ F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 1650 1600 50  0001
 F 3 "~" H 1650 1600 50  0001 C CNN
 F 4 "150120BS75000" H 1650 1600 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/w%C3%BCrth-elektronik/150120BS75000/732-4989-1-ND/4489931" H 1650 1600 50  0001 C CNN "DK_Detail_Page"
+F 6 "732-4989-1-ND" H 1650 1600 50  0001 C CNN "Digi-Key_PN"
 	1    1650 1600
 	-1   0    0    1   
 $EndComp
@@ -516,6 +537,7 @@ F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1280 1600 50  0
 F 3 "https://www.koaspeer.com/pdfs/RK73H.pdf" H 1350 1600 50  0001 C CNN
 F 4 "RK73H2ATTD3300F" H 1350 1600 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/koa-speer-electronics-inc/RK73H2ATTD3300F/2019-RK73H2ATTD3300FCT-ND/10235463" H 1350 1600 50  0001 C CNN "DK_Detail_Page"
+F 6 "2019-RK73H2ATTD3300FCT-ND" H 1350 1600 50  0001 C CNN "Digi-Key_PN"
 	1    1350 1600
 	0    1    1    0   
 $EndComp
@@ -533,6 +555,7 @@ F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 1650 1950 50  0001
 F 3 "~" H 1650 1950 50  0001 C CNN
 F 4 "150120BS75000" H 1650 1950 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/w%C3%BCrth-elektronik/150120BS75000/732-4989-1-ND/4489931" H 1650 1950 50  0001 C CNN "DK_Detail_Page"
+F 6 "732-4989-1-ND" H 1650 1950 50  0001 C CNN "Digi-Key_PN"
 	1    1650 1950
 	-1   0    0    1   
 $EndComp
@@ -548,6 +571,7 @@ F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1280 1950 50  0
 F 3 "https://www.koaspeer.com/pdfs/RK73H.pdf" H 1350 1950 50  0001 C CNN
 F 4 "RK73H2ATTD3300F" H 1350 1950 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/koa-speer-electronics-inc/RK73H2ATTD3300F/2019-RK73H2ATTD3300FCT-ND/10235463" H 1350 1950 50  0001 C CNN "DK_Detail_Page"
+F 6 "2019-RK73H2ATTD3300FCT-ND" H 1350 1950 50  0001 C CNN "Digi-Key_PN"
 	1    1350 1950
 	0    1    1    0   
 $EndComp
@@ -663,6 +687,7 @@ F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 8880 1750 50  0
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 8950 1750 50  0001 C CNN
 F 4 "3521200RFT" H 8950 1750 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 8950 1750 50  0001 C CNN "DK_Detail_Page"
+F 6 "A116015CT-ND" H 8950 1750 50  0001 C CNN "Digi-Key_PN"
 	1    8950 1750
 	0    1    1    0   
 $EndComp
@@ -676,6 +701,7 @@ F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 9130 1850 50  0
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 9200 1850 50  0001 C CNN
 F 4 "3521200RFT" H 9200 1850 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 9200 1850 50  0001 C CNN "DK_Detail_Page"
+F 6 "A116015CT-ND" H 9200 1850 50  0001 C CNN "Digi-Key_PN"
 	1    9200 1850
 	0    1    1    0   
 $EndComp
@@ -689,6 +715,7 @@ F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 8830 1950 50  0
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 8900 1950 50  0001 C CNN
 F 4 "3521200RFT" H 8900 1950 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 8900 1950 50  0001 C CNN "DK_Detail_Page"
+F 6 "A116015CT-ND" H 8900 1950 50  0001 C CNN "Digi-Key_PN"
 	1    8900 1950
 	0    1    1    0   
 $EndComp
@@ -702,6 +729,7 @@ F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 9080 2050 50  0
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 9150 2050 50  0001 C CNN
 F 4 "3521200RFT" H 9150 2050 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 9150 2050 50  0001 C CNN "DK_Detail_Page"
+F 6 "A116015CT-ND" H 9150 2050 50  0001 C CNN "Digi-Key_PN"
 	1    9150 2050
 	0    1    1    0   
 $EndComp
@@ -715,6 +743,7 @@ F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 8830 2150 50  0
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 8900 2150 50  0001 C CNN
 F 4 "3521200RFT" H 8900 2150 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 8900 2150 50  0001 C CNN "DK_Detail_Page"
+F 6 "A116015CT-ND" H 8900 2150 50  0001 C CNN "Digi-Key_PN"
 	1    8900 2150
 	0    1    1    0   
 $EndComp
@@ -728,6 +757,7 @@ F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 9080 2250 50  0
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 9150 2250 50  0001 C CNN
 F 4 "3521200RFT" H 9150 2250 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 9150 2250 50  0001 C CNN "DK_Detail_Page"
+F 6 "A116015CT-ND" H 9150 2250 50  0001 C CNN "Digi-Key_PN"
 	1    9150 2250
 	0    1    1    0   
 $EndComp
@@ -765,6 +795,7 @@ F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 8830 2350 50  0
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 8900 2350 50  0001 C CNN
 F 4 "3521200RFT" H 8900 2350 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 8900 2350 50  0001 C CNN "DK_Detail_Page"
+F 6 "A116015CT-ND" H 8900 2350 50  0001 C CNN "Digi-Key_PN"
 	1    8900 2350
 	0    1    1    0   
 $EndComp
@@ -892,6 +923,7 @@ F 2 "VGA_618015330923-footprint:618015330923" H 2100 5750 50  0001 C CNN
 F 3 " ~" H 2100 5750 50  0001 C CNN
 F 4 "618015330923" H 3050 5350 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/products/no?keywords=618015330923" H 3050 5350 50  0001 C CNN "DK_Detail_Page"
+F 6 "732-618015330923-ND" H 3050 5350 50  0001 C CNN "Digi-Key_PN"
 	1    3050 5350
 	1    0    0    -1  
 $EndComp
@@ -911,10 +943,11 @@ U 1 1 61651319
 P 3900 5550
 F 0 "R519" V 3980 5550 50  0000 C CNN
 F 1 "100" V 3900 5550 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 3830 5550 50  0001 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 3830 5550 50  0001 C CNN
 F 3 "https://www.vishay.com/docs/28758/tnpw_e3.pdf" H 3900 5550 50  0001 C CNN
-F 4 "TNPW0805100RBEEA" H 3900 5550 50  0001 C CNN "Component name"
+F 4 "RNCP1206FTD100R" H 3900 5550 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/vishay-dale/TNPW0805100RBEEA/TNP100ABCT-ND/1857094" H 3900 5550 50  0001 C CNN "DK_Detail_Page"
+F 6 "RNCP1206FTD100RCT-ND" H 3900 5550 50  0001 C CNN "Digi-Key_PN"
 	1    3900 5550
 	0    -1   -1   0   
 $EndComp
@@ -924,10 +957,11 @@ U 1 1 6164F5BC
 P 3500 5350
 F 0 "R518" V 3580 5350 50  0000 C CNN
 F 1 "100" V 3500 5350 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 3430 5350 50  0001 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 3430 5350 50  0001 C CNN
 F 3 "https://www.vishay.com/docs/28758/tnpw_e3.pdf" H 3500 5350 50  0001 C CNN
-F 4 "TNPW0805100RBEEA" H 3500 5350 50  0001 C CNN "Component name"
+F 4 "RNCP1206FTD100R" H 3500 5350 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/vishay-dale/TNPW0805100RBEEA/TNP100ABCT-ND/1857094" H 3500 5350 50  0001 C CNN "DK_Detail_Page"
+F 6 "RNCP1206FTD100RCT-ND" H 3500 5350 50  0001 C CNN "Digi-Key_PN"
 	1    3500 5350
 	0    -1   -1   0   
 $EndComp
@@ -956,6 +990,7 @@ F 2 "cap_8853522100131:8853522100131" H 3088 6050 50  0001 C CNN
 F 3 "~" H 3050 6200 50  0001 C CNN
 F 4 "8853522100131" H 3050 6200 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/w%C3%BCrth-elektronik/8853522100131/732-8853522100131CT-ND/6140854" H 3050 6200 50  0001 C CNN "DK_Detail_Page"
+F 6 "732-8853522100131CT-ND" H 3050 6200 50  0001 C CNN "Digi-Key_PN"
 	1    3050 6200
 	-1   0    0    1   
 $EndComp
@@ -972,6 +1007,7 @@ F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 3330 6050 50  0
 F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf" H 3400 6050 50  0001 C CNN
 F 4 "ERA-6AEB105V" H 3400 6050 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/panasonic-electronic-components/ERA-6AEB105V/P1MDACT-ND/1466019" H 3400 6050 50  0001 C CNN "DK_Detail_Page"
+F 6 "P1MDACT-ND" H 3400 6050 50  0001 C CNN "Digi-Key_PN"
 	1    3400 6050
 	0    1    1    0   
 $EndComp
@@ -1121,6 +1157,7 @@ F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1630 4950 50  0
 F 3 "" H 1700 4950 50  0001 C CNN
 F 4 "ERA-6AED511V" H 1700 4950 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/panasonic-electronic-components/ERA-6AED511V/P123855CT-ND/9467784" H 1700 4950 50  0001 C CNN "DK_Detail_Page"
+F 6 "P123855CT-ND" H 1700 4950 50  0001 C CNN "Digi-Key_PN"
 	1    1700 4950
 	0    1    1    0   
 $EndComp

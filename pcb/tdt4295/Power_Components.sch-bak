@@ -113,6 +113,7 @@ F 2 "Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder" H 4500 1750 50  
 F 3 "~" H 4500 1750 50  0001 C CNN
 F 4 "CL32A107MPVNNNE" H 4500 1750 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL32A107MPVNNNE/1276-3364-1-ND/3891450" H 4500 1750 50  0001 C CNN "DK_Detail_Page"
+F 6 "1276-3364-1-ND" H 4500 1750 50  0001 C CNN "Digi-Key_PN"
 	1    4500 1750
 	1    0    0    -1  
 $EndComp
@@ -127,6 +128,7 @@ F 3 "~" H 5000 1750 50  0001 C CNN
 F 4 "CL10A106KQ8NNNC" H 5000 1750 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A106KQ8NNNC/1276-1038-1-ND/3889124" H 5000 1750 50  0001 C CNN "DK_Datasheet_Link"
 F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A106KQ8NNNC/1276-1038-1-ND/3889124" H 5000 1750 50  0001 C CNN "DK_Detail_Page"
+F 7 "1276-1038-1-ND" H 5000 1750 50  0001 C CNN "Digi-Key_PN"
 	1    5000 1750
 	1    0    0    -1  
 $EndComp
@@ -141,6 +143,7 @@ F 3 "www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp" H 54
 F 4 "CL10B104KA8NNNC" H 5450 1750 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 5450 1750 50  0001 C CNN "DK_Detail_Page"
 F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 5450 1750 50  0001 C CNN "DK_Datasheet_Link"
+F 7 "1276-1006-1-ND" H 5450 1750 50  0001 C CNN "Digi-Key_PN"
 	1    5450 1750
 	1    0    0    -1  
 $EndComp
@@ -156,6 +159,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 9738 1650 50  
 F 3 "https://media.digikey.com/pdf/Data%20Sheets/Samsung%20PDFs/CL10A226MQ8NRNC_Spec.pdf" H 9700 1800 50  0001 C CNN
 F 4 "CL10A226MQ8NRNC" H 9700 1800 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A226MQ8NRNC/1276-1193-2-ND/3886851" H 9700 1800 50  0001 C CNN "DK_Detail_Page"
+F 6 "1276-1193-1-ND" H 9700 1800 50  0001 C CNN "Digi-Key_PN"
 	1    9700 1800
 	-1   0    0    1   
 $EndComp
@@ -169,6 +173,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 10038 1650 50 
 F 3 "https://media.digikey.com/pdf/Data%20Sheets/Samsung%20PDFs/CL10A226MQ8NRNC_Spec.pdf" H 10000 1800 50  0001 C CNN
 F 4 "CL10A226MQ8NRNC" H 10000 1800 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A226MQ8NRNC/1276-1193-2-ND/3886851" H 10000 1800 50  0001 C CNN "DK_Detail_Page"
+F 6 "1276-1193-1-ND" H 10000 1800 50  0001 C CNN "Digi-Key_PN"
 	1    10000 1800
 	-1   0    0    1   
 $EndComp
@@ -193,6 +198,7 @@ F 2 "Inductor_SMD:L_1008_2520Metric_Pad1.43x2.20mm_HandSolder" H 9450 1400 50  0
 F 3 "~" H 9450 1400 50  0001 C CNN
 F 4 "TFM252012ALMA1R5MTAA" H 9450 1400 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/tdk-corporation/TFM252012ALMA1R5MTAA/445-175184-6-ND/7795261" H 9450 1400 50  0001 C CNN "DK_Detail_Page"
+F 6 "445-175184-1-ND" H 9450 1400 50  0001 C CNN "Digi-Key_PN"
 	1    9450 1400
 	0    -1   -1   0   
 $EndComp
@@ -313,6 +319,7 @@ F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 1000 5350 50  0001
 F 3 "~" H 1000 5350 50  0001 C CNN
 F 4 "QTLP650D2TR" H 1000 5350 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/everlight-electronics-co-ltd/QTLP650D2TR/1080-1417-1-ND/2676151" H 1000 5350 50  0001 C CNN "DK_Detail_Page"
+F 6 "1080-1417-1-ND" H 1000 5350 50  0001 C CNN "Digi-Key_PN"
 	1    1000 5350
 	0    -1   -1   0   
 $EndComp
@@ -326,6 +333,7 @@ F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 1500 5350 50  0001
 F 3 "~" H 1500 5350 50  0001 C CNN
 F 4 "QTLP650C4TR" H 1500 5350 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/everlight-electronics-co-ltd/QTLP650C4TR/1080-1415-1-ND/2676149" H 1500 5350 50  0001 C CNN "DK_Detail_Page"
+F 6 "1080-1415-1-ND" H 1500 5350 50  0001 C CNN "Digi-Key_PN"
 	1    1500 5350
 	0    -1   -1   0   
 $EndComp
@@ -379,6 +387,7 @@ F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 930 5750 50  00
 F 3 "https://www.seielect.com/catalog/sei-rhc.pdf" H 1000 5750 50  0001 C CNN
 F 4 "RHC2512FT330R" H 1000 5750 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/stackpole-electronics-inc/RHC2512FT330R/RHC2512FT330RCT-ND/1646222" H 1000 5750 50  0001 C CNN "DK_Detail_Page"
+F 6 "RHC2512FT330RCT-ND" H 1000 5750 50  0001 C CNN "Digi-Key_PN"
 	1    1000 5750
 	1    0    0    -1  
 $EndComp
@@ -392,6 +401,7 @@ F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 1430 5750 50  0
 F 3 "https://www.seielect.com/catalog/sei-rhc.pdf" H 1500 5750 50  0001 C CNN
 F 4 "RHC2512FT330R" H 1500 5750 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/stackpole-electronics-inc/RHC2512FT330R/RHC2512FT330RCT-ND/1646222" H 1500 5750 50  0001 C CNN "DK_Detail_Page"
+F 6 "RHC2512FT330RCT-ND" H 1500 5750 50  0001 C CNN "Digi-Key_PN"
 	1    1500 5750
 	1    0    0    -1  
 $EndComp
@@ -453,6 +463,7 @@ F 2 "Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder" H 1088 1900 50  
 F 3 "~" H 1050 2050 50  0001 C CNN
 F 4 "CL32A107MPVNNNE" H 1050 2050 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL32A107MPVNNNE/1276-3364-1-ND/3891450" H 1050 2050 50  0001 C CNN "DK_Detail_Page"
+F 6 "1276-3364-1-ND" H 1050 2050 50  0001 C CNN "Digi-Key_PN"
 	1    1050 2050
 	1    0    0    -1  
 $EndComp
@@ -494,6 +505,7 @@ F 3 "~" H 5350 3950 50  0001 C CNN
 F 4 "CL10A106KQ8NNNC" H 5350 3950 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A106KQ8NNNC/1276-1038-1-ND/3889124" H 5350 3950 50  0001 C CNN "DK_Datasheet_Link"
 F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A106KQ8NNNC/1276-1038-1-ND/3889124" H 5350 3950 50  0001 C CNN "DK_Detail_Page"
+F 7 "1276-1038-1-ND" H 5350 3950 50  0001 C CNN "Digi-Key_PN"
 	1    5350 3950
 	1    0    0    -1  
 $EndComp
@@ -508,6 +520,7 @@ F 3 "www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp" H 56
 F 4 "CL10B104KA8NNNC" H 5650 3950 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 5650 3950 50  0001 C CNN "DK_Detail_Page"
 F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 5650 3950 50  0001 C CNN "DK_Datasheet_Link"
+F 7 "1276-1006-1-ND" H 5650 3950 50  0001 C CNN "Digi-Key_PN"
 	1    5650 3950
 	1    0    0    -1  
 $EndComp
@@ -554,6 +567,7 @@ F 3 "~" H 9000 3950 50  0001 C CNN
 F 4 "CL10A106KQ8NNNC" H 9000 3950 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A106KQ8NNNC/1276-1038-1-ND/3889124" H 9000 3950 50  0001 C CNN "DK_Datasheet_Link"
 F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A106KQ8NNNC/1276-1038-1-ND/3889124" H 9000 3950 50  0001 C CNN "DK_Detail_Page"
+F 7 "1276-1038-1-ND" H 9000 3950 50  0001 C CNN "Digi-Key_PN"
 	1    9000 3950
 	1    0    0    -1  
 $EndComp
@@ -568,6 +582,7 @@ F 3 "www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp" H 95
 F 4 "CL10B104KA8NNNC" H 9500 3950 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 9500 3950 50  0001 C CNN "DK_Detail_Page"
 F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 9500 3950 50  0001 C CNN "DK_Datasheet_Link"
+F 7 "1276-1006-1-ND" H 9500 3950 50  0001 C CNN "Digi-Key_PN"
 	1    9500 3950
 	1    0    0    -1  
 $EndComp
@@ -600,6 +615,7 @@ F 3 "www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp" H 86
 F 4 "CL10B104KA8NNNC" H 8650 4150 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 8650 4150 50  0001 C CNN "DK_Detail_Page"
 F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 8650 4150 50  0001 C CNN "DK_Datasheet_Link"
+F 7 "1276-1006-1-ND" H 8650 4150 50  0001 C CNN "Digi-Key_PN"
 	1    8650 4150
 	1    0    0    -1  
 $EndComp
@@ -623,6 +639,7 @@ F 2 "Inductor_SMD:L_1008_2520Metric_Pad1.43x2.20mm_HandSolder" H 9250 4300 50  0
 F 3 "~" H 9250 4300 50  0001 C CNN
 F 4 "LQM2HPN2R2MG0L" H 9250 4300 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/murata-electronics/LQM2HPN2R2MG0L/490-5114-1-ND/1893677" H 9250 4300 50  0001 C CNN "DK_Detail_Page"
+F 6 "490-5114-1-ND" H 9250 4300 50  0001 C CNN "Digi-Key_PN"
 	1    9250 4300
 	0    -1   -1   0   
 $EndComp
@@ -639,6 +656,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 9788 4650 50  
 F 3 "https://media.digikey.com/pdf/Data%20Sheets/Samsung%20PDFs/CL10A226MQ8NRNC_Spec.pdf" H 9750 4800 50  0001 C CNN
 F 4 "CL10A226MQ8NRNC" H 9750 4800 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A226MQ8NRNC/1276-1193-2-ND/3886851" H 9750 4800 50  0001 C CNN "DK_Detail_Page"
+F 6 "1276-1193-1-ND" H 9750 4800 50  0001 C CNN "Digi-Key_PN"
 	1    9750 4800
 	-1   0    0    1   
 $EndComp
@@ -652,6 +670,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 10038 4650 50 
 F 3 "https://media.digikey.com/pdf/Data%20Sheets/Samsung%20PDFs/CL10A226MQ8NRNC_Spec.pdf" H 10000 4800 50  0001 C CNN
 F 4 "CL10A226MQ8NRNC" H 10000 4800 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A226MQ8NRNC/1276-1193-2-ND/3886851" H 10000 4800 50  0001 C CNN "DK_Detail_Page"
+F 6 "1276-1193-1-ND" H 10000 4800 50  0001 C CNN "Digi-Key_PN"
 	1    10000 4800
 	-1   0    0    1   
 $EndComp
@@ -688,6 +707,7 @@ F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 10530 4550 50  
 F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf" H 10600 4550 50  0001 C CNN
 F 4 "ERA-6AEB7322V" H 10600 4550 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/panasonic-electronic-components/ERA-6AEB7322V/P73-2KDACT-ND/3075242" H 10600 4550 50  0001 C CNN "DK_Detail_Page"
+F 6 "P73.2KDACT-ND" H 10600 4550 50  0001 C CNN "Digi-Key_PN"
 	1    10600 4550
 	1    0    0    -1  
 $EndComp
@@ -701,6 +721,7 @@ F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 10530 5050 50  
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 10600 5050 50  0001 C CNN
 F 4 "RR1220P-2212-D-M" H 10600 5050 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/susumu/RR1220P-2212-D-M/RR12P22-1KDCT-ND/433125" H 10600 5050 50  0001 C CNN "DK_Detail_Page"
+F 6 "RR12P22.1KDCT-ND " H 10600 5050 50  0001 C CNN "Digi-Key_PN"
 	1    10600 5050
 	1    0    0    -1  
 $EndComp
@@ -754,6 +775,7 @@ F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 8630 4700 50  0
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 8700 4700 50  0001 C CNN
 F 4 "RR1220P-104-D" H 8700 4700 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/susumu/RR1220P-104-D/RR12P100KDCT-ND/432878" H 8700 4700 50  0001 C CNN "DK_Detail_Page"
+F 6 "RR12P100KDCT-ND" H 8700 4700 50  0001 C CNN "Digi-Key_PN"
 	1    8700 4700
 	1    0    0    -1  
 $EndComp
@@ -788,6 +810,7 @@ F 3 "www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp" H 84
 F 4 "CL21B105KOFNNNE" H 8450 4700 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL21B105KOFNNNE/1276-1026-1-ND/3889112" H 8450 4700 50  0001 C CNN "DK_Datasheet_Link"
 F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL21B105KOFNNNE/1276-1026-1-ND/3889112" H 8450 4700 50  0001 C CNN "DK_Detail_Page"
+F 7 "1276-1026-1-ND" H 8450 4700 50  0001 C CNN "Digi-Key_PN"
 	1    8450 4700
 	1    0    0    -1  
 $EndComp
@@ -802,6 +825,7 @@ F 3 "www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp" H 60
 F 4 "CL10B104KA8NNNC" H 6050 4150 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 6050 4150 50  0001 C CNN "DK_Detail_Page"
 F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 6050 4150 50  0001 C CNN "DK_Datasheet_Link"
+F 7 "1276-1006-1-ND" H 6050 4150 50  0001 C CNN "Digi-Key_PN"
 	1    6050 4150
 	1    0    0    -1  
 $EndComp
@@ -845,6 +869,7 @@ F 2 "Inductor_SMD:L_1008_2520Metric_Pad1.43x2.20mm_HandSolder" H 5100 4300 50  0
 F 3 "~" H 5100 4300 50  0001 C CNN
 F 4 "TFM252012ALMA1R5MTAA" H 5100 4300 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/tdk-corporation/TFM252012ALMA1R5MTAA/445-175184-6-ND/7795261" H 5100 4300 50  0001 C CNN "DK_Detail_Page"
+F 6 "445-175184-1-ND" H 5100 4300 50  0001 C CNN "Digi-Key_PN"
 	1    5100 4300
 	0    -1   -1   0   
 $EndComp
@@ -874,6 +899,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 4888 4650 50  
 F 3 "https://media.digikey.com/pdf/Data%20Sheets/Samsung%20PDFs/CL10A226MQ8NRNC_Spec.pdf" H 4850 4800 50  0001 C CNN
 F 4 "CL10A226MQ8NRNC" H 4850 4800 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A226MQ8NRNC/1276-1193-2-ND/3886851" H 4850 4800 50  0001 C CNN "DK_Detail_Page"
+F 6 "1276-1193-1-ND" H 4850 4800 50  0001 C CNN "Digi-Key_PN"
 	1    4850 4800
 	-1   0    0    1   
 $EndComp
@@ -887,6 +913,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 4638 4650 50  
 F 3 "https://media.digikey.com/pdf/Data%20Sheets/Samsung%20PDFs/CL10A226MQ8NRNC_Spec.pdf" H 4600 4800 50  0001 C CNN
 F 4 "CL10A226MQ8NRNC" H 4600 4800 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A226MQ8NRNC/1276-1193-2-ND/3886851" H 4600 4800 50  0001 C CNN "DK_Detail_Page"
+F 6 "1276-1193-1-ND" H 4600 4800 50  0001 C CNN "Digi-Key_PN"
 	1    4600 4800
 	-1   0    0    1   
 $EndComp
@@ -920,6 +947,7 @@ F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 4130 4550 50  0
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition01_en.pdf" H 4200 4550 50  0001 C CNN
 F 4 "RG2012P-3012-B-T5" H 4200 4550 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/susumu/RG2012P-3012-B-T5/RG20P30-1KBCT-ND/1241123" H 4200 4550 50  0001 C CNN "DK_Detail_Page"
+F 6 "RG20P30.1KBCT-ND" H 4200 4550 50  0001 C CNN "Digi-Key_PN"
 	1    4200 4550
 	1    0    0    -1  
 $EndComp
@@ -933,6 +961,7 @@ F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 4130 5050 50  0
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 4200 5050 50  0001 C CNN
 F 4 "RR1220P-2212-D-M" H 4200 5050 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/susumu/RR1220P-2212-D-M/RR12P22-1KDCT-ND/433125" H 4200 5050 50  0001 C CNN "DK_Detail_Page"
+F 6 "RR12P22.1KDCT-ND " H 4200 5050 50  0001 C CNN "Digi-Key_PN"
 	1    4200 5050
 	1    0    0    -1  
 $EndComp
@@ -1049,6 +1078,7 @@ F 3 "~" H 8700 1600 50  0001 C CNN
 F 4 "CL10B104KA8NNNC" H 8700 1600 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 8700 1600 50  0001 C CNN "DK_Datasheet_Link"
 F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 8700 1600 50  0001 C CNN "DK_Detail_Page"
+F 7 "1276-1006-1-ND" H 8700 1600 50  0001 C CNN "Digi-Key_PN"
 	1    8700 1600
 	-1   0    0    1   
 $EndComp
@@ -1077,6 +1107,7 @@ F 3 "www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp" H 82
 F 4 "CL21B105KOFNNNE" H 8200 2550 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL21B105KOFNNNE/1276-1026-1-ND/3889112" H 8200 2550 50  0001 C CNN "DK_Datasheet_Link"
 F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL21B105KOFNNNE/1276-1026-1-ND/3889112" H 8200 2550 50  0001 C CNN "DK_Detail_Page"
+F 7 "1276-1026-1-ND" H 8200 2550 50  0001 C CNN "Digi-Key_PN"
 	1    8200 2550
 	1    0    0    -1  
 $EndComp
@@ -1099,6 +1130,7 @@ F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 10530 2000 50  
 F 3 "https://media.digikey.com/pdf/Data%20Sheets/Susumu%20PDFs/RG_RM_RGH_Oct2012.pdf" H 10600 2000 50  0001 C CNN
 F 4 "RG1608P-6811-B-T5" H 10600 2000 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/susumu/RG1608P-6811-B-T5/RG16P6-81KBCT-ND/1241005" H 10600 2000 50  0001 C CNN "DK_Detail_Page"
+F 6 "RG16P6.81KBCT-ND" H 10600 2000 50  0001 C CNN "Digi-Key_PN"
 	1    10600 2000
 	1    0    0    -1  
 $EndComp
@@ -1112,6 +1144,7 @@ F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 10530 2500 50  
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 10600 2500 50  0001 C CNN
 F 4 "RR1220P-2212-D-M" H 10600 2500 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/susumu/RR1220P-2212-D-M/RR12P22-1KDCT-ND/433125" H 10600 2500 50  0001 C CNN "DK_Detail_Page"
+F 6 "RR12P22.1KDCT-ND " H 10600 2500 50  0001 C CNN "Digi-Key_PN"
 	1    10600 2500
 	1    0    0    -1  
 $EndComp
@@ -1288,6 +1321,7 @@ F 3 "~" H 2700 1750 50  0001 C CNN
 F 4 "BK0603HS330-T" H 2700 1750 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/en/products/detail/taiyo-yuden/BK0603HS330-T/957708" H 2700 1750 50  0001 C CNN "DK_Detail_Page"
 F 6 "See fig 2.5 https://www.ftdichip.com/Documents/AppNotes/AN_146_USB_Hardware_Design_Guidelines_for_FTDI_ICs.pdf" H 2700 1750 50  0001 C CNN "Description"
+F 7 "587-1828-1-ND" H 2700 1750 50  0001 C CNN "Digi-Key_PN"
 	1    2700 1750
 	0    1    1    0   
 $EndComp
@@ -1301,6 +1335,7 @@ F 2 "tdt4295:DFN2510A-10" H 2150 2950 50  0001 C CNN
 F 3 "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjq-uC3upjzAhUSmYsKHV0iBjEQFnoECAQQAQ&url=https%3A%2F%2Fassets.nexperia.com%2Fdocuments%2Fdata-sheet%2FPHDMI2AB4.pdf&usg=AOvVaw2t6nU9jF_TXAIowSn_9t4X" H 2150 2950 50  0001 C CNN
 F 4 "PHDMI2AB4Z" H 2150 3050 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/nexperia-usa-inc/PHDMI2AB4Z/1727-7820-1-ND/9092244" H 2150 3050 50  0001 C CNN "DK_Detail_Page"
+F 6 "1727-7820-1-ND" H 2150 3050 50  0001 C CNN "Digi-Key_PN"
 	1    2150 3050
 	-1   0    0    1   
 $EndComp

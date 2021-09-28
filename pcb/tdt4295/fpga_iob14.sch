@@ -80,6 +80,7 @@ F 2 "Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder" H 7188 950 50  0
 F 3 "https://www.farnell.com/datasheets/2047839.pdf" H 7150 1100 50  0001 C CNN
 F 4 "GRM32ER71A476ME15L" H 7150 1100 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/murata-electronics/GRM32ER71A476ME15L/490-6543-1-ND/3845740" H 7150 1100 50  0001 C CNN "DK_Detail_Page"
+F 6 "490-6543-1-ND" H 7150 1100 50  0001 C CNN "Digi-Key_PN"
 	1    7150 1100
 	1    0    0    -1  
 $EndComp
@@ -94,6 +95,7 @@ F 3 "" H 7450 1100 50  0001 C CNN
 F 4 "C2012X7R1A475K125AC" H 7450 1100 50  0001 C CNN "Component name"
 F 5 "" H 7450 1100 50  0001 C CNN "DK_Datasheet_Link"
 F 6 "https://www.digikey.no/product-detail/no/tdk-corporation/C2012X7R1A475K125AC/445-7591-1-ND/2733663" H 7450 1100 50  0001 C CNN "DK_Detail_Page"
+F 7 "445-7591-1-ND" H 7450 1100 50  0001 C CNN "Digi-Key_PN"
 	1    7450 1100
 	1    0    0    -1  
 $EndComp
@@ -108,6 +110,7 @@ F 3 "" H 7800 1100 50  0001 C CNN
 F 4 "C2012X7R1A475K125AC" H 7800 1100 50  0001 C CNN "Component name"
 F 5 "" H 7800 1100 50  0001 C CNN "DK_Datasheet_Link"
 F 6 "https://www.digikey.no/product-detail/no/tdk-corporation/C2012X7R1A475K125AC/445-7591-1-ND/2733663" H 7800 1100 50  0001 C CNN "DK_Detail_Page"
+F 7 "445-7591-1-ND" H 7800 1100 50  0001 C CNN "Digi-Key_PN"
 	1    7800 1100
 	1    0    0    -1  
 $EndComp
@@ -121,6 +124,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 8188 950 50  0
 F 3 "https://www.farnell.com/datasheets/2048812.pdf" H 8150 1100 50  0001 C CNN
 F 4 "GRM188R71C474KA88D" H 8150 1100 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836" H 8150 1100 50  0001 C CNN "DK_Detail_Page"
+F 6 "490-3295-1-ND" H 8150 1100 50  0001 C CNN "Digi-Key_PN"
 	1    8150 1100
 	1    0    0    -1  
 $EndComp
@@ -134,6 +138,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 8538 950 50  0
 F 3 "https://www.farnell.com/datasheets/2048812.pdf" H 8500 1100 50  0001 C CNN
 F 4 "GRM188R71C474KA88D" H 8500 1100 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836" H 8500 1100 50  0001 C CNN "DK_Detail_Page"
+F 6 "490-3295-1-ND" H 8500 1100 50  0001 C CNN "Digi-Key_PN"
 	1    8500 1100
 	1    0    0    -1  
 $EndComp
@@ -147,6 +152,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 8938 950 50  0
 F 3 "https://www.farnell.com/datasheets/2048812.pdf" H 8900 1100 50  0001 C CNN
 F 4 "GRM188R71C474KA88D" H 8900 1100 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836" H 8900 1100 50  0001 C CNN "DK_Detail_Page"
+F 6 "490-3295-1-ND" H 8900 1100 50  0001 C CNN "Digi-Key_PN"
 	1    8900 1100
 	1    0    0    -1  
 $EndComp
@@ -160,6 +166,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 9288 950 50  0
 F 3 "https://www.farnell.com/datasheets/2048812.pdf" H 9250 1100 50  0001 C CNN
 F 4 "GRM188R71C474KA88D" H 9250 1100 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836" H 9250 1100 50  0001 C CNN "DK_Detail_Page"
+F 6 "490-3295-1-ND" H 9250 1100 50  0001 C CNN "Digi-Key_PN"
 	1    9250 1100
 	1    0    0    -1  
 $EndComp
@@ -173,6 +180,7 @@ F 2 "DSC1001AL5-100.0000:DSC1001AL5-100.0000" H 2250 1990 60  0001 C CNN
 F 3 "https://rocelec.widen.net/view/pdf/4jp9qpy8qv/MCHP-S-A0003587227-1.pdf?t.download=true&u=5oefqw" H 1250 1750 60  0001 C CNN
 F 4 "DSC1001AL5-100.0000" H 1250 1750 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/microchip-technology/DSC1001AL5-100-0000/DSC1001AL5-100-0000-ND/5773489" H 1250 1750 50  0001 C CNN "DK_Detail_Page"
+F 6 "DSC1001AL5-100.0000-ND" H 1250 1750 50  0001 C CNN "Digi-Key_PN"
 	1    1250 1750
 	1    0    0    -1  
 $EndComp
@@ -188,6 +196,7 @@ F 3 "" H 850 1350 50  0001 C CNN
 F 4 "CL10B104KA8NNNC" H 850 1350 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 850 1350 50  0001 C CNN "DK_Detail_Page"
 F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 850 1350 50  0001 C CNN "DK_Datasheet_Link"
+F 7 "1276-1006-1-ND" H 850 1350 50  0001 C CNN "Digi-Key_PN"
 	1    850  1350
 	-1   0    0    1   
 $EndComp

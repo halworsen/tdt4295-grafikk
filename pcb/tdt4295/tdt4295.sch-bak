@@ -441,6 +441,7 @@ F 3 "~" H 9600 2250 50  0001 C CNN
 F 4 "CL10B104KA8NNNC" H 9600 2250 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 9600 2250 50  0001 C CNN "DK_Datasheet_Link"
 F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 9600 2250 50  0001 C CNN "DK_Detail_Page"
+F 7 "1276-1006-1-ND" H 9600 2250 50  0001 C CNN "Digi-Key_PN"
 	1    9600 2250
 	1    0    0    -1  
 $EndComp
@@ -472,6 +473,7 @@ F 3 "~" H 5200 4450 50  0001 C CNN
 F 4 "CL10B104KA8NNNC" H 5200 4450 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 5200 4450 50  0001 C CNN "DK_Datasheet_Link"
 F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 5200 4450 50  0001 C CNN "DK_Detail_Page"
+F 7 "1276-1006-1-ND" H 5200 4450 50  0001 C CNN "Digi-Key_PN"
 	1    5200 4450
 	1    0    0    -1  
 $EndComp
@@ -491,6 +493,7 @@ F 3 "~" H 5850 2450 50  0001 C CNN
 F 4 "CL10B104KA8NNNC" H 5850 2450 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 5850 2450 50  0001 C CNN "DK_Datasheet_Link"
 F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 5850 2450 50  0001 C CNN "DK_Detail_Page"
+F 7 "1276-1006-1-ND" H 5850 2450 50  0001 C CNN "Digi-Key_PN"
 	1    5850 2450
 	1    0    0    -1  
 $EndComp
@@ -515,6 +518,7 @@ F 3 "~" H 5550 2450 50  0001 C CNN
 F 4 "CL10A106KQ8NNNC" H 5550 2450 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A106KQ8NNNC/1276-1038-1-ND/3889124" H 5550 2450 50  0001 C CNN "DK_Datasheet_Link"
 F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A106KQ8NNNC/1276-1038-1-ND/3889124" H 5550 2450 50  0001 C CNN "DK_Detail_Page"
+F 7 "1276-1038-1-ND" H 5550 2450 50  0001 C CNN "Digi-Key_PN"
 	1    5550 2450
 	1    0    0    -1  
 $EndComp
@@ -541,6 +545,7 @@ F 3 "www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp" H 95
 F 4 "CL21B105KOFNNNE" H 9550 4200 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL21B105KOFNNNE/1276-1026-1-ND/3889112" H 9550 4200 50  0001 C CNN "DK_Datasheet_Link"
 F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL21B105KOFNNNE/1276-1026-1-ND/3889112" H 9550 4200 50  0001 C CNN "DK_Detail_Page"
+F 7 "1276-1026-1-ND" H 9550 4200 50  0001 C CNN "Digi-Key_PN"
 	1    9550 4200
 	1    0    0    -1  
 $EndComp
@@ -555,6 +560,7 @@ F 3 "~" H 5500 4450 50  0001 C CNN
 F 4 "CL10B103KB8NNNC" H 5500 4450 50  0001 C CNN "Component name"
 F 5 "https://media.digikey.com/pdf/Data%20Sheets/Samsung%20PDFs/CL10B103KB8NNNC_Spec.pdf" H 5500 4450 50  0001 C CNN "DK_Datasheet_Link"
 F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B103KB8NNNC/1276-1009-1-ND/3889095" H 5500 4450 50  0001 C CNN "DK_Detail_Page"
+F 7 "1276-1009-1-ND" H 5500 4450 50  0001 C CNN "Digi-Key_PN"
 	1    5500 4450
 	1    0    0    -1  
 $EndComp
@@ -569,6 +575,7 @@ F 3 "~" H 5750 4450 50  0001 C CNN
 F 4 "CL10A106KQ8NNNC" H 5750 4450 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A106KQ8NNNC/1276-1038-1-ND/3889124" H 5750 4450 50  0001 C CNN "DK_Datasheet_Link"
 F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A106KQ8NNNC/1276-1038-1-ND/3889124" H 5750 4450 50  0001 C CNN "DK_Detail_Page"
+F 7 "1276-1038-1-ND" H 5750 4450 50  0001 C CNN "Digi-Key_PN"
 	1    5750 4450
 	1    0    0    -1  
 $EndComp
@@ -606,6 +613,7 @@ F 3 "~" H 10400 4200 50  0001 C CNN
 F 4 "CL10A106KQ8NNNC" H 10400 4200 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A106KQ8NNNC/1276-1038-1-ND/3889124" H 10400 4200 50  0001 C CNN "DK_Datasheet_Link"
 F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A106KQ8NNNC/1276-1038-1-ND/3889124" H 10400 4200 50  0001 C CNN "DK_Detail_Page"
+F 7 "1276-1038-1-ND" H 10400 4200 50  0001 C CNN "Digi-Key_PN"
 	1    10400 4200
 	1    0    0    -1  
 $EndComp
@@ -620,6 +628,7 @@ F 3 "~" H 10150 4200 50  0001 C CNN
 F 4 "CL10B104KA8NNNC" H 10150 4200 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 10150 4200 50  0001 C CNN "DK_Datasheet_Link"
 F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 10150 4200 50  0001 C CNN "DK_Detail_Page"
+F 7 "1276-1006-1-ND" H 10150 4200 50  0001 C CNN "Digi-Key_PN"
 	1    10150 4200
 	1    0    0    -1  
 $EndComp
@@ -658,6 +667,7 @@ F 3 "~" H 9850 4200 50  0001 C CNN
 F 4 "CL10B104KA8NNNC" H 9850 4200 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 9850 4200 50  0001 C CNN "DK_Datasheet_Link"
 F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 9850 4200 50  0001 C CNN "DK_Detail_Page"
+F 7 "1276-1006-1-ND" H 9850 4200 50  0001 C CNN "Digi-Key_PN"
 	1    9850 4200
 	1    0    0    -1  
 $EndComp
@@ -759,6 +769,7 @@ F 2 "Connector_PinHeader_1.27mm:PinHeader_2x10_P1.27mm_Vertical_SMD" H 10900 145
 F 3 "~" H 10900 1450 50  0001 C CNN
 F 4 "FTSH-110-01-L-DV-K-TR" H 10900 1450 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samtec-inc/FTSH-110-01-L-DV-K-TR/SAM13960TR-ND/6693931" H 10900 1450 50  0001 C CNN "DK_Detail_Page"
+F 6 "SAM13960CT-ND" H 10900 1450 50  0001 C CNN "Digi-Key_PN"
 	1    10900 1450
 	0    1    -1   0   
 $EndComp
@@ -778,6 +789,7 @@ F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&
 F 4 "352215RFT" H 9100 3200 50  0001 C CNN "Category"
 F 5 "https://www.digikey.no/product-detail/no/te-connectivity-passive-product/352215RFT/A121147CT-ND/5245204" H 9100 3200 50  0001 C CNN "DK_Detail_Page"
 F 6 "352215RFT" H 9100 3200 50  0001 C CNN "Component name"
+F 7 "A121147CT-ND" H 9100 3200 50  0001 C CNN "Digi-Key_PN"
 	1    9100 3200
 	0    1    1    0   
 $EndComp
@@ -794,6 +806,7 @@ F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&
 F 4 "352215RFT" H 9100 3300 50  0001 C CNN "Category"
 F 5 "https://www.digikey.no/product-detail/no/te-connectivity-passive-product/352215RFT/A121147CT-ND/5245204" H 9100 3300 50  0001 C CNN "DK_Detail_Page"
 F 6 "352215RFT" H 9100 3300 50  0001 C CNN "Component name"
+F 7 "A121147CT-ND" H 9100 3300 50  0001 C CNN "Digi-Key_PN"
 	1    9100 3300
 	0    1    1    0   
 $EndComp
@@ -812,6 +825,7 @@ F 3 "www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp" H 95
 F 4 "CL21B105KOFNNNE" H 9500 3600 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL21B105KOFNNNE/1276-1026-1-ND/3889112" H 9500 3600 50  0001 C CNN "DK_Datasheet_Link"
 F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL21B105KOFNNNE/1276-1026-1-ND/3889112" H 9500 3600 50  0001 C CNN "DK_Detail_Page"
+F 7 "1276-1026-1-ND" H 9500 3600 50  0001 C CNN "Digi-Key_PN"
 	1    9500 3600
 	1    0    0    -1  
 $EndComp
@@ -891,6 +905,7 @@ F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 13730 1600 50  
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 13800 1600 50  0001 C CNN
 F 4 "RR1220P-104-D" H 13800 1600 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/susumu/RR1220P-104-D/RR12P100KDCT-ND/432878" H 13800 1600 50  0001 C CNN "DK_Detail_Page"
+F 6 "RR12P100KDCT-ND" H 13800 1600 50  0001 C CNN "Digi-Key_PN"
 	1    13800 1600
 	1    0    0    -1  
 $EndComp
@@ -950,6 +965,7 @@ F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 13930 1600 50  
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 14000 1600 50  0001 C CNN
 F 4 "RR1220P-104-D" H 14000 1600 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/susumu/RR1220P-104-D/RR12P100KDCT-ND/432878" H 14000 1600 50  0001 C CNN "DK_Detail_Page"
+F 6 "RR12P100KDCT-ND" H 14000 1600 50  0001 C CNN "Digi-Key_PN"
 	1    14000 1600
 	1    0    0    -1  
 $EndComp
@@ -963,6 +979,7 @@ F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 14130 1600 50  
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 14200 1600 50  0001 C CNN
 F 4 "RR1220P-104-D" H 14200 1600 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/susumu/RR1220P-104-D/RR12P100KDCT-ND/432878" H 14200 1600 50  0001 C CNN "DK_Detail_Page"
+F 6 "RR12P100KDCT-ND" H 14200 1600 50  0001 C CNN "Digi-Key_PN"
 	1    14200 1600
 	1    0    0    -1  
 $EndComp
@@ -976,6 +993,7 @@ F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 14330 1600 50  
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 14400 1600 50  0001 C CNN
 F 4 "RR1220P-104-D" H 14400 1600 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/susumu/RR1220P-104-D/RR12P100KDCT-ND/432878" H 14400 1600 50  0001 C CNN "DK_Detail_Page"
+F 6 "RR12P100KDCT-ND" H 14400 1600 50  0001 C CNN "Digi-Key_PN"
 	1    14400 1600
 	1    0    0    -1  
 $EndComp
@@ -995,6 +1013,7 @@ F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 3800 1950 50  0001
 F 3 "~" H 3800 1950 50  0001 C CNN
 F 4 "150120BS75000" H 3800 1950 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/w%C3%BCrth-elektronik/150120BS75000/732-4989-1-ND/4489931" H 3800 1950 50  0001 C CNN "DK_Detail_Page"
+F 6 "732-4989-1-ND" H 3800 1950 50  0001 C CNN "Digi-Key_PN"
 	1    3800 1950
 	0    -1   -1   0   
 $EndComp
@@ -1008,6 +1027,7 @@ F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 3730 2400 50  0
 F 3 "https://www.seielect.com/catalog/sei-rhc.pdf" H 3800 2400 50  0001 C CNN
 F 4 "RHC2512FT330R" H 3800 2400 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/stackpole-electronics-inc/RHC2512FT330R/RHC2512FT330RCT-ND/1646222" H 3800 2400 50  0001 C CNN "DK_Detail_Page"
+F 6 "RHC2512FT330RCT-ND" H 3800 2400 50  0001 C CNN "Digi-Key_PN"
 	1    3800 2400
 	1    0    0    -1  
 $EndComp
@@ -1038,6 +1058,7 @@ F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 4150 1950 50  0001
 F 3 "~" H 4150 1950 50  0001 C CNN
 F 4 "150120BS75000" H 4150 1950 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/w%C3%BCrth-elektronik/150120BS75000/732-4989-1-ND/4489931" H 4150 1950 50  0001 C CNN "DK_Detail_Page"
+F 6 "732-4989-1-ND" H 4150 1950 50  0001 C CNN "Digi-Key_PN"
 	1    4150 1950
 	0    -1   -1   0   
 $EndComp
@@ -1051,6 +1072,7 @@ F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 4080 2400 50  0
 F 3 "https://www.seielect.com/catalog/sei-rhc.pdf" H 4150 2400 50  0001 C CNN
 F 4 "RHC2512FT330R" H 4150 2400 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/stackpole-electronics-inc/RHC2512FT330R/RHC2512FT330RCT-ND/1646222" H 4150 2400 50  0001 C CNN "DK_Detail_Page"
+F 6 "RHC2512FT330RCT-ND" H 4150 2400 50  0001 C CNN "Digi-Key_PN"
 	1    4150 2400
 	1    0    0    -1  
 $EndComp
@@ -1070,6 +1092,7 @@ F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 4500 1950 50  0001
 F 3 "~" H 4500 1950 50  0001 C CNN
 F 4 "150120BS75000" H 4500 1950 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/w%C3%BCrth-elektronik/150120BS75000/732-4989-1-ND/4489931" H 4500 1950 50  0001 C CNN "DK_Detail_Page"
+F 6 "732-4989-1-ND" H 4500 1950 50  0001 C CNN "Digi-Key_PN"
 	1    4500 1950
 	0    -1   -1   0   
 $EndComp
@@ -1083,6 +1106,7 @@ F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 4430 2400 50  0
 F 3 "https://www.seielect.com/catalog/sei-rhc.pdf" H 4500 2400 50  0001 C CNN
 F 4 "RHC2512FT330R" H 4500 2400 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/stackpole-electronics-inc/RHC2512FT330R/RHC2512FT330RCT-ND/1646222" H 4500 2400 50  0001 C CNN "DK_Detail_Page"
+F 6 "RHC2512FT330RCT-ND" H 4500 2400 50  0001 C CNN "Digi-Key_PN"
 	1    4500 2400
 	1    0    0    -1  
 $EndComp
@@ -1102,6 +1126,7 @@ F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 4850 1950 50  0001
 F 3 "~" H 4850 1950 50  0001 C CNN
 F 4 "150120BS75000" H 4850 1950 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/w%C3%BCrth-elektronik/150120BS75000/732-4989-1-ND/4489931" H 4850 1950 50  0001 C CNN "DK_Detail_Page"
+F 6 "732-4989-1-ND" H 4850 1950 50  0001 C CNN "Digi-Key_PN"
 	1    4850 1950
 	0    -1   -1   0   
 $EndComp
@@ -1115,6 +1140,7 @@ F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 4780 2400 50  0
 F 3 "https://www.seielect.com/catalog/sei-rhc.pdf" H 4850 2400 50  0001 C CNN
 F 4 "RHC2512FT330R" H 4850 2400 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/no/stackpole-electronics-inc/RHC2512FT330R/RHC2512FT330RCT-ND/1646222" H 4850 2400 50  0001 C CNN "DK_Detail_Page"
+F 6 "RHC2512FT330RCT-ND" H 4850 2400 50  0001 C CNN "Digi-Key_PN"
 	1    4850 2400
 	1    0    0    -1  
 $EndComp
@@ -1330,6 +1356,7 @@ F 6 "Manufacturer Recommendations" H 15150 3100 50  0001 L BNN "STANDARD"
 F 7 "N/A" H 15150 2900 50  0001 L BNN "PARTREV"
 F 8 "COM-09032" H 14850 3300 50  0001 C CNN "Component name"
 F 9 "https://www.digikey.no/product-detail/no/sparkfun-electronics/COM-09032/1568-1526-ND/6823623" H 14850 3300 50  0001 C CNN "DK_Detail_Page"
+F 10 "1568-1526-ND" H 14850 3300 50  0001 C CNN "Digi-Key_PN"
 	1    14850 3300
 	1    0    0    -1  
 $EndComp
@@ -1445,6 +1472,7 @@ F 6 "Manufacturer Recommendations" H 15150 4500 50  0001 L BNN "STANDARD"
 F 7 "N/A" H 15150 4300 50  0001 L BNN "PARTREV"
 F 8 "COM-09032" H 14850 4700 50  0001 C CNN "Component name"
 F 9 "https://www.digikey.no/product-detail/no/sparkfun-electronics/COM-09032/1568-1526-ND/6823623" H 14850 4700 50  0001 C CNN "DK_Detail_Page"
+F 10 "1568-1526-ND" H 14850 4700 50  0001 C CNN "Digi-Key_PN"
 	1    14850 4700
 	1    0    0    -1  
 $EndComp
@@ -1534,6 +1562,7 @@ F 2 "Connector_PinSocket_2.54mm:PinSocket_1x07_P2.54mm_Vertical_SMD_Pin1Right" H
 F 3 "~" H 12550 3400 50  0001 C CNN
 F 4 "0878980726" H 12550 3400 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/molex/0878980726/WM20569-ND/3264913" H 12550 3400 50  0001 C CNN "DK_Detail_Page"
+F 6 "WM20569-ND" H 12550 3400 50  0001 C CNN "Digi-Key_PN"
 	1    12550 3400
 	1    0    0    -1  
 $EndComp
@@ -1624,10 +1653,12 @@ U 1 1 61539FA8
 P 12050 3200
 F 0 "R107" V 12100 3050 50  0000 C CNN
 F 1 "100" V 12050 3200 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 11980 3200 50  0001 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 11980 3200 50  0001 C CNN
 F 3 "https://www.vishay.com/docs/28705/mcx0x0xpro.pdf" H 12050 3200 50  0001 C CNN
 F 4 "MCU08050C1000FP500" H 12050 3200 50  0001 C CNN "Category"
 F 5 "https://www.digikey.no/product-detail/no/vishay-beyschlag-draloric-bc-components/MCU08050C1000FP500/MCU0805-100-CFCT-ND/2607922" H 12050 3200 50  0001 C CNN "DK_Detail_Page"
+F 6 "RNCP1206FTD100R" H 12050 3200 50  0001 C CNN "Component name"
+F 7 "RNCP1206FTD100RCT-ND" H 12050 3200 50  0001 C CNN "Digi-Key_PN"
 	1    12050 3200
 	0    1    1    0   
 $EndComp
@@ -1637,10 +1668,12 @@ U 1 1 6153A87C
 P 12050 3300
 F 0 "R108" V 12100 3150 50  0000 C CNN
 F 1 "100" V 12050 3300 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 11980 3300 50  0001 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 11980 3300 50  0001 C CNN
 F 3 "https://www.vishay.com/docs/28705/mcx0x0xpro.pdf" H 12050 3300 50  0001 C CNN
 F 4 "MCU08050C1000FP500" H 12050 3300 50  0001 C CNN "Category"
 F 5 "https://www.digikey.no/product-detail/no/vishay-beyschlag-draloric-bc-components/MCU08050C1000FP500/MCU0805-100-CFCT-ND/2607922" H 12050 3300 50  0001 C CNN "DK_Detail_Page"
+F 6 "RNCP1206FTD100R" H 12050 3300 50  0001 C CNN "Component name"
+F 7 "RNCP1206FTD100RCT-ND" H 12050 3300 50  0001 C CNN "Digi-Key_PN"
 	1    12050 3300
 	0    1    1    0   
 $EndComp
@@ -1650,10 +1683,12 @@ U 1 1 6153A9D4
 P 12050 3400
 F 0 "R109" V 12100 3250 50  0000 C CNN
 F 1 "100" V 12050 3400 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 11980 3400 50  0001 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 11980 3400 50  0001 C CNN
 F 3 "https://www.vishay.com/docs/28705/mcx0x0xpro.pdf" H 12050 3400 50  0001 C CNN
 F 4 "MCU08050C1000FP500" H 12050 3400 50  0001 C CNN "Category"
 F 5 "https://www.digikey.no/product-detail/no/vishay-beyschlag-draloric-bc-components/MCU08050C1000FP500/MCU0805-100-CFCT-ND/2607922" H 12050 3400 50  0001 C CNN "DK_Detail_Page"
+F 6 "RNCP1206FTD100R" H 12050 3400 50  0001 C CNN "Component name"
+F 7 "RNCP1206FTD100RCT-ND" H 12050 3400 50  0001 C CNN "Digi-Key_PN"
 	1    12050 3400
 	0    1    1    0   
 $EndComp
@@ -1684,6 +1719,7 @@ F 3 "https://www.hirose.com/product/document?clcode=CL0609-0004-8-72&productname
 F 4 "HRS" H 12200 4850 50  0001 L BNN "MANUFACTURER"
 F 5 "DM1AA-SF-PEJ-21" H 12200 4850 50  0001 C CNN "Component name"
 F 6 "https://www.digikey.no/product-detail/no/hirose-electric-co-ltd/DM1AA-SF-PEJ-21/HR845CT-ND/559985" H 12200 4850 50  0001 C CNN "DK_Detail_Page"
+F 7 "HR845CT-ND" H 12200 4850 50  0001 C CNN "Digi-Key_PN"
 	1    12200 4850
 	1    0    0    -1  
 $EndComp
@@ -1762,6 +1798,7 @@ F 2 "Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Vertical_SMD" H 12050 225
 F 3 "~" H 12050 2250 50  0001 C CNN
 F 4 "0015910120" H 12050 2250 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/molex/0015910120/WM17460-ND/614776" H 12050 2250 50  0001 C CNN "DK_Detail_Page"
+F 6 "WM17460-ND" H 12050 2250 50  0001 C CNN "Digi-Key_PN"
 	1    12050 2250
 	1    0    0    -1  
 $EndComp
