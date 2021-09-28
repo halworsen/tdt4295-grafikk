@@ -139,6 +139,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5488 1600 50  
 F 3 "www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp" H 5450 1750 50  0001 C CNN
 F 4 "CL10B104KA8NNNC" H 5450 1750 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 5450 1750 50  0001 C CNN "DK_Detail_Page"
+F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 5450 1750 50  0001 C CNN "DK_Datasheet_Link"
 	1    5450 1750
 	1    0    0    -1  
 $EndComp
@@ -187,8 +188,10 @@ U 1 1 61434EE2
 P 9450 1400
 F 0 "L203" V 9640 1400 50  0000 C CNN
 F 1 "1.5uH" V 9549 1400 50  0000 C CNN
-F 2 "" H 9450 1400 50  0001 C CNN
+F 2 "Inductor_SMD:L_1008_2520Metric_Pad1.43x2.20mm_HandSolder" H 9450 1400 50  0001 C CNN
 F 3 "~" H 9450 1400 50  0001 C CNN
+F 4 "TFM252012ALMA1R5MTAA" H 9450 1400 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/tdk-corporation/TFM252012ALMA1R5MTAA/445-175184-6-ND/7795261" H 9450 1400 50  0001 C CNN "DK_Detail_Page"
 	1    9450 1400
 	0    -1   -1   0   
 $EndComp
@@ -499,6 +502,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5688 3800 50  
 F 3 "www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp" H 5650 3950 50  0001 C CNN
 F 4 "CL10B104KA8NNNC" H 5650 3950 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 5650 3950 50  0001 C CNN "DK_Detail_Page"
+F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 5650 3950 50  0001 C CNN "DK_Datasheet_Link"
 	1    5650 3950
 	1    0    0    -1  
 $EndComp
@@ -558,6 +562,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 9538 3800 50  
 F 3 "www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp" H 9500 3950 50  0001 C CNN
 F 4 "CL10B104KA8NNNC" H 9500 3950 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 9500 3950 50  0001 C CNN "DK_Detail_Page"
+F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 9500 3950 50  0001 C CNN "DK_Datasheet_Link"
 	1    9500 3950
 	1    0    0    -1  
 $EndComp
@@ -589,6 +594,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 8688 4000 50  
 F 3 "www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp" H 8650 4150 50  0001 C CNN
 F 4 "CL10B104KA8NNNC" H 8650 4150 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 8650 4150 50  0001 C CNN "DK_Detail_Page"
+F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 8650 4150 50  0001 C CNN "DK_Datasheet_Link"
 	1    8650 4150
 	1    0    0    -1  
 $EndComp
@@ -608,8 +614,10 @@ U 1 1 6154C9A2
 P 9250 4300
 F 0 "L202" V 9440 4300 50  0000 C CNN
 F 1 "2.2uH" V 9349 4300 50  0000 C CNN
-F 2 "" H 9250 4300 50  0001 C CNN
+F 2 "Inductor_SMD:L_1008_2520Metric_Pad1.43x2.20mm_HandSolder" H 9250 4300 50  0001 C CNN
 F 3 "~" H 9250 4300 50  0001 C CNN
+F 4 "LQM2HPN2R2MG0L" H 9250 4300 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/murata-electronics/LQM2HPN2R2MG0L/490-5114-1-ND/1893677" H 9250 4300 50  0001 C CNN "DK_Detail_Page"
 	1    9250 4300
 	0    -1   -1   0   
 $EndComp
@@ -788,6 +796,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 6088 4000 50  
 F 3 "www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp" H 6050 4150 50  0001 C CNN
 F 4 "CL10B104KA8NNNC" H 6050 4150 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 6050 4150 50  0001 C CNN "DK_Detail_Page"
+F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 6050 4150 50  0001 C CNN "DK_Datasheet_Link"
 	1    6050 4150
 	1    0    0    -1  
 $EndComp
@@ -827,8 +836,10 @@ U 1 1 6170C171
 P 5100 4300
 F 0 "L201" V 5290 4300 50  0000 C CNN
 F 1 "1.5uH" V 5199 4300 50  0000 C CNN
-F 2 "" H 5100 4300 50  0001 C CNN
+F 2 "Inductor_SMD:L_1008_2520Metric_Pad1.43x2.20mm_HandSolder" H 5100 4300 50  0001 C CNN
 F 3 "~" H 5100 4300 50  0001 C CNN
+F 4 "TFM252012ALMA1R5MTAA" H 5100 4300 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/tdk-corporation/TFM252012ALMA1R5MTAA/445-175184-6-ND/7795261" H 5100 4300 50  0001 C CNN "DK_Detail_Page"
 	1    5100 4300
 	0    -1   -1   0   
 $EndComp
