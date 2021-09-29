@@ -1,4 +1,4 @@
-update=28/09/2021 18:03:51
+update=29-Sep-21 07:41:23
 version=1
 last_client=kicad
 [general]
@@ -73,19 +73,19 @@ Name=F.Cu
 Type=0
 Enabled=1
 [pcbnew/Layer.In1.Cu]
-Name=In1.Cu
+Name=3V3
 Type=1
 Enabled=1
 [pcbnew/Layer.In2.Cu]
-Name=In2.Cu
+Name=GND
 Type=1
 Enabled=1
 [pcbnew/Layer.In3.Cu]
-Name=In3.Cu
+Name=Sig1
 Type=0
 Enabled=1
 [pcbnew/Layer.In4.Cu]
-Name=In4.Cu
+Name=Sig2
 Type=0
 Enabled=1
 [pcbnew/Layer.In5.Cu]
