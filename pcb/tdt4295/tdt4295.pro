@@ -1,4 +1,4 @@
-update=29-Sep-21 07:41:23
+update=29/09/2021 10:23:43
 version=1
 last_client=kicad
 [general]
@@ -38,7 +38,7 @@ MinViaDrill=0.3
 MinMicroViaDiameter=0.2
 MinMicroViaDrill=0.09999999999999999
 MinHoleToHole=0.25
-TrackWidth1=0.3
+TrackWidth1=0.2
 ViaDiameter1=0.8
 ViaDrill1=0.4
 dPairWidth1=0.2
@@ -73,19 +73,19 @@ Name=F.Cu
 Type=0
 Enabled=1
 [pcbnew/Layer.In1.Cu]
-Name=3V3
+Name=In1.Cu
 Type=1
 Enabled=1
 [pcbnew/Layer.In2.Cu]
-Name=GND
+Name=In2.Cu
 Type=1
 Enabled=1
 [pcbnew/Layer.In3.Cu]
-Name=Sig1
+Name=In3.Cu
 Type=0
 Enabled=1
 [pcbnew/Layer.In4.Cu]
-Name=Sig2
+Name=In4.Cu
 Type=0
 Enabled=1
 [pcbnew/Layer.In5.Cu]
@@ -238,7 +238,7 @@ Enabled=0
 [pcbnew/Netclasses/Default]
 Name=Default
 Clearance=0.2
-TrackWidth=0.3
+TrackWidth=0.2
 ViaDiameter=0.8
 ViaDrill=0.4
 uViaDiameter=0.3
@@ -249,7 +249,7 @@ dPairViaGap=0.25
 [pcbnew/Netclasses/1]
 Name=Power
 Clearance=0.2
-TrackWidth=0.5
+TrackWidth=0.3
 ViaDiameter=0.8
 ViaDrill=0.4
 uViaDiameter=0.3
