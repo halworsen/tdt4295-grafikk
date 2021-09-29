@@ -4,28 +4,29 @@ import chisel3._
 
 import tools.helpers.log2
 
-class QSpiSlave extends Module {
-  // This module accurately represents a QSPI slave
+class SpiSlave extends Module {
+  // This module accurately represents a SPI slave
   // Mosi: Master Out, Slave In
   // Miso: Master In, Slave Out
   // SCLK: System Clock, 25MHz in our case
   // CS: Chip Select
   val io = IO(new Bundle {
-      val mosi = Input(Bool())
-      val miso = Output(Bool())
-      val sclk = Input(Bool())
-      val cs = Input(Bool())
+    val mosi = Input(Bool())
+    val miso = Output(Bool())
+    val sclk = Input(Bool())
+    val cs = Input(Bool())
+    val value = Output(UInt(log2(dWidth).W))
   })
 }
 
-/** [[Qspi]]
+/** [[Spi]]
  * @param dWidth
  */
-class QSpi(dWidth: Int = 8) extends Module {
+class Spi(dWidth: Int = 8) extends Module {
 
   val io = IO(new Bundle {
     // Spi signal
-    val spi = new QSpiSlave
+    val spi = new SpiSlave
   })
 
   println("Generate SPI for :")
@@ -39,6 +40,7 @@ class QSpi(dWidth: Int = 8) extends Module {
   mosiReg = RegInit(true.B)
 
   val misoReg = RegInit(true.B)
+  val valueReg = RegInit(0.U)
   sclkReg = RegInit(io.spi.sclk)
   val csReg = RegInit(io.spi.cs)
 
@@ -101,6 +103,8 @@ class QSpi(dWidth: Int = 8) extends Module {
 
   // QSPI Signals
   io.spi.miso := misoReg
-
+  // This should be a value
+  valueReg = io.mosi 
+  io.value := valueReg
 }
 
