@@ -6,6 +6,10 @@ import tools.helpers.log2
 
 class QSpiSlave extends Module {
   // This module accurately represents a QSPI slave
+  // Mosi: Master Out, Slave In
+  // Miso: Master In, Slave Out
+  // SCLK: System Clock, 25MHz in our case
+  // CS: Chip Select
   val io = IO(new Bundle {
       val mosi1 = Input(Bool())
       val mosi2 = Input(Bool())
@@ -17,11 +21,14 @@ class QSpiSlave extends Module {
       val miso4 = Output(Bool())
       val sclk = Input(Bool())
       val cs = Input(Bool())
-  })
+  })
 }
 
-
-class QSpi(dwidth: Int) extends Module {
+/** [[Qspi]]
+ * @param dWidth
+ *
+ */
+class QSpi(dWidth: Int) extends Module {
 
   val io = IO(new Bundle {
     // Spi signal
@@ -29,22 +36,22 @@ class QSpi(dwidth: Int) extends Module {
   })
 
   println("Generate SPI for :")
-  println("Data size : " + dwidth)
+  println("Data size : " + dWidth)
 
-  assert(dwidth == 8 || dwidth == 16, "Only 8 orr 16 bit support")
+  assert(dWidth == 8 || dWidth == 16, "Only 8 orr 16 bit support")
 
   mosi1Reg = RegInit(true.B)
   mosi2Reg = RegInit(true.B)
   mosi3Reg = RegInit(true.B)
   mosi4Reg = RegInit(true.B)
+  
   sclkReg = RegInit(io.spi.sclk)
   val csReg = RegInit(io.spi.cs)
 
-  val dataReg = RegInit("h00".U(dwidth.W))
+  val dataReg = RegInit("h00".U(dWidth.W))
 
-  val count = RegInit(0.U(dwidth.W))
+  val count = RegInit(0.U(dWidth.W))
 
-  
 
   // Clock Polarity, level of sck clock signal idle state
   val CPOL = false
@@ -61,7 +68,7 @@ class QSpi(dwidth: Int) extends Module {
 
 
 
-  val sinit = 0.U
+  val sInit = 0.U
   val stateReg = RegInit(S)
 
   // Definition of messages
@@ -69,20 +76,18 @@ class QSpi(dwidth: Int) extends Module {
 
   // State machine logic
   switch(stateReg) {
-    is(sinit) {
+    is(sInit) {
     
     }
     is(1.U) {
 
     }
-
-    
   }
 
-  // reset state machine to sinit when csn rise
-  // even if count is not right
-  when(risingedge(csnReg)){
-    stateReg := sinit
+  // Reset state machine to sInit when cs rise
+  // Count does not have to be right
+  when(risingEdge(csReg)){
+    stateReg := sInit
   }
 
 
