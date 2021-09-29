@@ -26,8 +26,9 @@ class QSpiSlave extends Module {
 
 /** [[Qspi]]
  * @param dWidth
+ * @param aWidth
  */
-class QSpi(dWidth: Int) extends Module {
+class QSpi(dWidth: Int, aWidth: Int) extends Module {
 
   val io = IO(new Bundle {
     // Spi signal
@@ -36,9 +37,12 @@ class QSpi(dWidth: Int) extends Module {
 
   println("Generate SPI for :")
   println("Data size : " + dWidth)
+  println("Addr size : " + aWidth)
 
   // TODO: Find out the length of the messages we're going to send between FPGA and MCU
   assert(dWidth == 8 || dWidth == 16, "Only 8 orr 16 bit support")
+
+  // TODO: Find out supported address lengths
 
   mosi1Reg = RegInit(true.B)
   mosi2Reg = RegInit(true.B)
@@ -58,11 +62,22 @@ class QSpi(dWidth: Int) extends Module {
 
 
   // Clock Polarity, level of sck clock signal idle state
+  // CPOL  | leading edge | trailing edge
+  // ------|--------------|--------------
+  // false | rising       | falling
+  // true  | falling      | rising
   val CPOL = false
 
   // Clock Phase, specifies whether or not sampling occurs on rising or falling edge
   // of sck clock
+  // CPHA  | data change    | data read
+  // ------|----------------|--------------
+  // false | trailling edge | leading edge
+  // true  | leading edge   | trailing edge
   val CPHA = true
+
+  // Current support, we can change whether or not we want to write or read on leading/trailing edge
+  assert(CPHA && !CPOL)
 
   def fallingEdge(x: Bool) = x && !RegNext(x)
   def risingEdge(x: Bool) = !x && RegNext(x)
