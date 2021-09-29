@@ -1624,7 +1624,7 @@ U 1 1 61539FA8
 P 12050 3200
 F 0 "R107" V 12100 3050 50  0000 C CNN
 F 1 "100" V 12050 3200 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 11980 3200 50  0001 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 11980 3200 50  0001 C CNN
 F 3 "https://www.vishay.com/docs/28705/mcx0x0xpro.pdf" H 12050 3200 50  0001 C CNN
 F 4 "MCU08050C1000FP500" H 12050 3200 50  0001 C CNN "Category"
 F 5 "https://www.digikey.no/product-detail/no/vishay-beyschlag-draloric-bc-components/MCU08050C1000FP500/MCU0805-100-CFCT-ND/2607922" H 12050 3200 50  0001 C CNN "DK_Detail_Page"
@@ -1637,7 +1637,7 @@ U 1 1 6153A87C
 P 12050 3300
 F 0 "R108" V 12100 3150 50  0000 C CNN
 F 1 "100" V 12050 3300 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 11980 3300 50  0001 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 11980 3300 50  0001 C CNN
 F 3 "https://www.vishay.com/docs/28705/mcx0x0xpro.pdf" H 12050 3300 50  0001 C CNN
 F 4 "MCU08050C1000FP500" H 12050 3300 50  0001 C CNN "Category"
 F 5 "https://www.digikey.no/product-detail/no/vishay-beyschlag-draloric-bc-components/MCU08050C1000FP500/MCU0805-100-CFCT-ND/2607922" H 12050 3300 50  0001 C CNN "DK_Detail_Page"
@@ -1650,7 +1650,7 @@ U 1 1 6153A9D4
 P 12050 3400
 F 0 "R109" V 12100 3250 50  0000 C CNN
 F 1 "100" V 12050 3400 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 11980 3400 50  0001 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 11980 3400 50  0001 C CNN
 F 3 "https://www.vishay.com/docs/28705/mcx0x0xpro.pdf" H 12050 3400 50  0001 C CNN
 F 4 "MCU08050C1000FP500" H 12050 3400 50  0001 C CNN "Category"
 F 5 "https://www.digikey.no/product-detail/no/vishay-beyschlag-draloric-bc-components/MCU08050C1000FP500/MCU0805-100-CFCT-ND/2607922" H 12050 3400 50  0001 C CNN "DK_Detail_Page"

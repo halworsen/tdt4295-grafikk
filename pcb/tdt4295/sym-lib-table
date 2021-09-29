@@ -165,4 +165,5 @@
   (lib (name COM-09032)(type Legacy)(uri ${KIPRJMOD}/symlib/com09032-joystick/COM-09032.lib)(options "")(descr ""))
   (lib (name MOLEX-104031-0811)(type Legacy)(uri ${KIPRJMOD}/symlib/MOLEX_104031-0811/104031-0811.lib)(options "")(descr ""))
   (lib (name DM1AA-SF-PEJ_21_)(type Legacy)(uri ${KIPRJMOD}/symlib/DM1AA-SF-PEJ_21/DM1AA-SF-PEJ_21_.lib)(options "")(descr ""))
+  (lib (name tdt4295-rescue)(type Legacy)(uri ${KIPRJMOD}/tdt4295-rescue.lib)(options "")(descr ""))
 )

@@ -42,8 +42,6 @@ Text GLabel 5200 6350 0    50   Output ~ 0
 FPGA_LED1
 Text GLabel 5200 6250 0    50   Output ~ 0
 FPGA_LED0
-Text GLabel 5200 1750 0    50   BiDi ~ 0
-FPGA_EXT_IO30
 Connection ~ 6100 950 
 Wire Wire Line
 	6100 950  6000 950 
@@ -383,4 +381,5 @@ F 3 "" H 4750 2250 50  0001 C CNN
 	1    4750 2250
 	1    0    0    -1  
 $EndComp
+NoConn ~ 5200 1750
 $EndSCHEMATC
