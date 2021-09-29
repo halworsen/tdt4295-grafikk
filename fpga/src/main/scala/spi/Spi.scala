@@ -38,7 +38,6 @@ class Spi(dWidth: Int = 8) extends Module {
   // TODO: Find out supported address lengths
 
   mosiReg = RegInit(true.B)
-
   val misoReg = RegInit(true.B)
   sclkReg = RegInit(io.spi.sclk)
   val csReg = RegInit(io.spi.cs)
@@ -65,14 +64,13 @@ class Spi(dWidth: Int = 8) extends Module {
   // Current support, we can change whether or not we want to write or read on leading/trailing edge
   assert(CPHA && !CPOL)
 
-  def fallingEdge(x: Bool) = x && !RegNext(x)
-  def risingEdge(x: Bool) = !x && RegNext(x)
+  // MCU sends on rising edge, FPGA reads on falling edge
+  // TODO: Don't know if we need these
+  def fallingEdge(x: Bool) = x & !RegNext(x)
+  def risingEdge(x: Bool) = !x & RegNext(x)
 
   // Read flag 
   val readReg  = RegInit(false.B)  
-
-  val sInit = 0.U
-  val stateReg = RegInit(S)
 
   // Definition of messages
   /*
@@ -80,21 +78,19 @@ class Spi(dWidth: Int = 8) extends Module {
   [111 | 110 | 101 | 100 | 011 | 010 | 001 | 000]
   */
 
-  // TODO: Find out how to differentiate between vertex and matrix values. 
-  // TODO: Maybe have counters for # of registers needed for vertex / matrix
-  valueReg := (valueReg ^ (io.mosi.asUInt() << count)).asUInt()
-  count := count + 1.U 
-
-  // Reset count when we've reached 8 bits
-  // Send this value to 
-  when (count == 7.U) {
-    count := 0.U;
-    when (isOut == true.B) {
+  // TODO: Find out how to differentiate between vertex and matrix values. Talk with Steffen and Erling
+  
+  // When master starts sending
+  when (sclkReg == true.B) {
+    valueReg := (valueReg ^ (io.mosi.asUInt() << count)).asUInt()
+    count := count + 1.U 
+    // Reset count when we've reached 8 bits
+    // Send this value to 
+    when (count == 7.U) {
       io.value := valueReg
-  } .otherwise {
-    io.value := 0.U
-  }
+      count := 0.U
     }
+  }
 
 
   // TODO: Send data from FPGA to MCU - MISO

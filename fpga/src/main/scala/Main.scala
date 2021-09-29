@@ -150,7 +150,13 @@ class Main extends Module {
     //val clkout = Output(Clock())
 
     val btn = Input(UInt(4.W))
+
+    // NEW FOR SPI COMMUNICATION
+    val mcuData = Input(UInt(8.W))
   })
+
+  // TODO: In main, make io.value (output of spi) the input to this code 
+  // io.mcuData := spi.io.value
 
   def tickGen(fac: Int) = {
     val reg = RegInit(0.U(log2Up(fac).W))
@@ -211,6 +217,24 @@ class Main extends Module {
     when(counter === 5.U) {
       counter := 0.U
     }
+
+    // SPI PART, USE FOR LEDS TO INDICATE value of byte
+    when(io.mcuData <= 255.U && io.mcuData >= 200.U) {
+      ledReg := "b0001".U
+    }
+    when(io.mcuData < 200.U && io.mcuData >= 128.U) {
+      ledReg := "b0010".U
+    }
+    when(io.mcuData < 128.U && io.mcuData >= 64.U) {
+      ledReg := "b0100".U
+    }
+     when(io.mcuData < 64.U && io.mcuData > 0.U) {
+      ledReg := "b1000".U
+    }
+    when(io.mcuData == 0.U) {
+      counter := 0.U
+    }
+
     io.led := ledReg
   }
 
