@@ -11,14 +11,8 @@ class QSpiSlave extends Module {
   // SCLK: System Clock, 25MHz in our case
   // CS: Chip Select
   val io = IO(new Bundle {
-      val mosi1 = Input(Bool())
-      val mosi2 = Input(Bool())
-      val mosi3 = Input(Bool())
-      val mosi4 = Input(Bool())
-      val miso1 = Output(Bool())
-      val miso2 = Output(Bool())
-      val miso3 = Output(Bool())
-      val miso4 = Output(Bool())
+      val mosi = Input(Bool())
+      val miso = Output(Bool())
       val sclk = Input(Bool())
       val cs = Input(Bool())
   })
@@ -26,9 +20,8 @@ class QSpiSlave extends Module {
 
 /** [[Qspi]]
  * @param dWidth
- * @param aWidth
  */
-class QSpi(dWidth: Int, aWidth: Int) extends Module {
+class QSpi(dWidth: Int = 8) extends Module {
 
   val io = IO(new Bundle {
     // Spi signal
@@ -37,22 +30,15 @@ class QSpi(dWidth: Int, aWidth: Int) extends Module {
 
   println("Generate SPI for :")
   println("Data size : " + dWidth)
-  println("Addr size : " + aWidth)
 
   // TODO: Find out the length of the messages we're going to send between FPGA and MCU
   assert(dWidth == 8 || dWidth == 16, "Only 8 orr 16 bit support")
 
   // TODO: Find out supported address lengths
 
-  mosi1Reg = RegInit(true.B)
-  mosi2Reg = RegInit(true.B)
-  mosi3Reg = RegInit(true.B)
-  mosi4Reg = RegInit(true.B)
+  mosiReg = RegInit(true.B)
 
-  val miso1Reg = RegInit(true.B)
-  val miso2Reg = RegInit(true.B)
-  val miso3Reg = RegInit(true.B)
-  val miso4Reg = RegInit(true.B)
+  val misoReg = RegInit(true.B)
   sclkReg = RegInit(io.spi.sclk)
   val csReg = RegInit(io.spi.cs)
 
@@ -85,8 +71,6 @@ class QSpi(dWidth: Int, aWidth: Int) extends Module {
   // Read flag 
   val readReg  = RegInit(false.B)  
 
-
-
   val sInit = 0.U
   val stateReg = RegInit(S)
 
@@ -95,10 +79,6 @@ class QSpi(dWidth: Int, aWidth: Int) extends Module {
   ----- 8 Bit -----
   [111 | 110 | 101 | 100 | 011 | 010 | 001 | 000]
 
-  ----- 16 Bit -----
-  [1111 | 1110 | 1101 | 1100 | 1011 | 1010 | 1001 | 1000 | 0111 | 0110 | 0101 | 0100 | 0011 | 0010 | 0001 | 0000]
-
-  
 
   */
   
@@ -120,13 +100,7 @@ class QSpi(dWidth: Int, aWidth: Int) extends Module {
   }
 
   // QSPI Signals
-  io.spi.miso1 := miso1Reg
-  io.spi.miso2 := miso2Reg
-  io.spi.miso3 := miso3Reg
-  io.spi.miso4 := miso4Reg
-
-
-
+  io.spi.miso := misoReg
 
 }
 
