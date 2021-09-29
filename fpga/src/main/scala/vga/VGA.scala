@@ -22,49 +22,15 @@ class VGA extends Module {
   })
 
   withClockAndReset(io.clock, io.reset) {
-
     val (counterHsync, counterHsyncWrap) = Counter(0 to 800)
     val (counterVsync, counterVsyncWrap) = Counter(counterHsyncWrap, 525)
 
+    io.hsync := counterHsync >= (640 + 16).U & counterHsync < (640 + 16 + 96).U
+    io.vsync := counterVsync >= (480 + 10).U & counterVsync < (480 + 10 + 2).U
+    io.out := counterHsync < 640.U & counterVsync < 480.U
+    io.enable := counterHsync < 640.U & counterVsync < 480.U
+
     io.selX := counterHsync
     io.selY := counterVsync
-    // Visible Area
-    when(counterHsync < 640.U & counterVsync < 480.U) {
-      io.hsync := false.B
-      io.vsync := false.B
-      io.out := io.data
-      io.enable := true.B
-    } // HSYNC and VSYNC
-      .elsewhen(
-        counterHsync >= (640 + 16).U & counterHsync < (640 + 16 + 96).U & counterVsync >= (480 + 10).U & counterVsync < (480 + 10 + 2).U
-      ) {
-        io.hsync := true.B
-        io.vsync := true.B
-        io.out := false.B
-        io.enable := false.B
-      } // HSYNC
-      .elsewhen(
-        counterHsync >= (640 + 16).U & counterHsync < (640 + 16 + 96).U
-      ) {
-        io.hsync := true.B
-        io.vsync := false.B
-        io.out := false.B
-        io.enable := false.B
-      } // VSYNC
-      .elsewhen(
-        counterVsync >= (480 + 10).U & counterVsync < (480 + 10 + 2).U
-      ) {
-        io.hsync := false.B
-        io.vsync := true.B
-        io.out := false.B
-        io.enable := false.B
-        // Porches
-      }
-      .otherwise {
-        io.hsync := false.B
-        io.vsync := false.B
-        io.out := false.B
-        io.enable := false.B
-      }
   }
 }
