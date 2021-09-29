@@ -15,7 +15,7 @@ class SpiSlave extends Module {
     val miso = Output(Bool())
     val sclk = Input(Bool())
     val cs = Input(Bool())
-    val value = Output(UInt(log2(dWidth).W))
+    val value = Output(UInt(dWidth.W))
   })
 }
 
@@ -40,13 +40,11 @@ class Spi(dWidth: Int = 8) extends Module {
   mosiReg = RegInit(true.B)
 
   val misoReg = RegInit(true.B)
-  val valueReg = RegInit(0.U)
   sclkReg = RegInit(io.spi.sclk)
   val csReg = RegInit(io.spi.cs)
 
-  val dataReg = RegInit("h00".U(dWidth.W))
-
-  val count = RegInit(0.U(dWidth.W))
+  val count = RegInit(0.U(dWidth.W)) // FIXME: maybe downsize this register
+  val valueReg = RegInit(0.U(dWidth.W))
 
 
   // Clock Polarity, level of sck clock signal idle state
@@ -80,31 +78,25 @@ class Spi(dWidth: Int = 8) extends Module {
   /*
   ----- 8 Bit -----
   [111 | 110 | 101 | 100 | 011 | 010 | 001 | 000]
-
-
   */
-  
 
-  // State machine logic
-  switch(stateReg) {
-    is(sInit) {
-    
-    }
-    is(1.U) {
+  // TODO: Find out how to differentiate between vertex and matrix values. 
+  // TODO: Maybe have counters for # of registers needed for vertex / matrix
+  valueReg := (valueReg ^ (io.mosi.asUInt() << count)).asUInt()
+  count := count + 1.U 
 
-    }
+  // Reset count when we've reached 8 bits
+  // Send this value to 
+  when (count == 7.U) {
+    count := 0.U;
+    when (isOut == true.B) {
+      io.value := valueReg
+  } .otherwise {
+    io.value := 0.U
   }
+    }
 
-  // Reset state machine to sInit when cs rise
-  // Count does not have to be right
-  when(risingEdge(csReg)){
-    stateReg := sInit
-  }
 
-  // QSPI Signals
-  io.spi.miso := misoReg
-  // This should be a value
-  valueReg = io.mosi 
-  io.value := valueReg
+  // TODO: Send data from FPGA to MCU - MISO
 }
 
