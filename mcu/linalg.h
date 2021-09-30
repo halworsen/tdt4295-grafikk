@@ -44,7 +44,7 @@ void transform(struct vec4 *ret
                struct vec4 *x);
 
 // Make a translation matrix
-void translation(struct mat4 *ret, struct vec4 *x)
+void translation(struct mat4 *ret, struct vec4 *x);
 
 // Make simple rotation matrices around the standard 
 // basis axes (sufficient for simple fps camera)
