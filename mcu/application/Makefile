@@ -31,6 +31,7 @@ CC = arm-none-eabi-gcc
 AR = arm-none-eabi-ar
 OBJCOPY = arm-none-eabi-objcopy
 FLASH = commander
+FORMATTER = clang-format
 
 # Flags
 SPECFLAGS = --specs=nosys.specs
@@ -65,12 +66,14 @@ program.elf: ${objects} libsdk.a
 libsdk.a: ${lib_objects}
 	$(AR) ${ARFLAGS} ${@} ${^}
 
-.PHONY: flash clean
+.PHONY: flash clean pretty
 
 clean:
 	rm -rf *.o *.elf *.bin
 allclean:
 	rm -rf *.o *.elf *.bin *.a; find ${GECKOSDKDIR}/ -type f -name '**.o' | xargs rm
+pretty:
+	${FORMATTER} -i ${wildcard *.c}
 
 flash: program.bin
 	$(FLASH) flash ${<}
