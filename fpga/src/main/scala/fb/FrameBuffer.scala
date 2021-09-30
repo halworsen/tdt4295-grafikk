@@ -29,7 +29,7 @@ class FrameBuffer(width: Int, height: Int) extends Module {
     }
     val r = fb.read(io.readY * width.U + io.readX)
 
-    when(r(0) === 0.U) {
+    when(r(0) === "h0".U && r(1) === "h0".U && r(2) === "h0".U) {
       io.readVal(0) := "hf".U
       io.readVal(1) := "h1".U
       io.readVal(2) := "h7".U

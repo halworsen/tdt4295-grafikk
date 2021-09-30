@@ -5,8 +5,9 @@ import chisel3.util.Counter
 
 class VGA extends Module {
 
-  /** We primaraly focus on a 640 x 480px implementation
-    */
+  /*
+   * We primaraly focus on a 640 x 480px implementation
+   */
   val io = IO(new Bundle {
     // Data is for now just a bool
     val data = Input(Vec(3, UInt(4.W)))
