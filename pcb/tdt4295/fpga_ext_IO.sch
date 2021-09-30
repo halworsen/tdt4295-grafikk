@@ -38,115 +38,10 @@ Text GLabel 4300 2150 0    50   BiDi ~ 0
 FPGA_EXT_IO4
 Text GLabel 4300 2250 0    50   BiDi ~ 0
 FPGA_EXT_IO5
-$Comp
-L Device:R R523
-U 1 1 61588075
-P 4650 1750
-F 0 "R523" V 4600 1600 50  0000 C CNN
-F 1 "200" V 4650 1750 50  0000 C CNN
-F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 4580 1750 50  0001 C CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 4650 1750 50  0001 C CNN
-F 4 "3521200RFT" H 4650 1750 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 4650 1750 50  0001 C CNN "DK_Detail_Page"
-	1    4650 1750
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R526
-U 1 1 6158807B
-P 4900 1850
-F 0 "R526" V 4850 2000 50  0000 C CNN
-F 1 "200" V 4900 1850 50  0000 C CNN
-F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 4830 1850 50  0001 C CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 4900 1850 50  0001 C CNN
-F 4 "3521200RFT" H 4900 1850 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 4900 1850 50  0001 C CNN "DK_Detail_Page"
-	1    4900 1850
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R520
-U 1 1 61588081
-P 4600 1950
-F 0 "R520" V 4550 1800 50  0000 C CNN
-F 1 "200" V 4600 1950 50  0000 C CNN
-F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 4530 1950 50  0001 C CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 4600 1950 50  0001 C CNN
-F 4 "3521200RFT" H 4600 1950 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 4600 1950 50  0001 C CNN "DK_Detail_Page"
-	1    4600 1950
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R524
-U 1 1 61588087
-P 4850 2050
-F 0 "R524" V 4800 2200 50  0000 C CNN
-F 1 "200" V 4850 2050 50  0000 C CNN
-F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 4780 2050 50  0001 C CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 4850 2050 50  0001 C CNN
-F 4 "3521200RFT" H 4850 2050 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 4850 2050 50  0001 C CNN "DK_Detail_Page"
-	1    4850 2050
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R521
-U 1 1 6158808D
-P 4600 2150
-F 0 "R521" V 4550 2000 50  0000 C CNN
-F 1 "200" V 4600 2150 50  0000 C CNN
-F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 4530 2150 50  0001 C CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 4600 2150 50  0001 C CNN
-F 4 "3521200RFT" H 4600 2150 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 4600 2150 50  0001 C CNN "DK_Detail_Page"
-	1    4600 2150
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R525
-U 1 1 61588093
-P 4850 2250
-F 0 "R525" V 4800 2400 50  0000 C CNN
-F 1 "200" V 4850 2250 50  0000 C CNN
-F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 4780 2250 50  0001 C CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 4850 2250 50  0001 C CNN
-F 4 "3521200RFT" H 4850 2250 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 4850 2250 50  0001 C CNN "DK_Detail_Page"
-	1    4850 2250
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	6550 2450 6500 2450
-Wire Wire Line
-	4700 2250 4300 2250
-Wire Wire Line
-	4300 2150 4450 2150
-Wire Wire Line
-	4700 2050 4300 2050
-Wire Wire Line
-	4300 1950 4450 1950
-Wire Wire Line
-	4750 1850 4300 1850
-Wire Wire Line
-	4500 1750 4300 1750
-$Comp
-L Device:R R522
-U 1 1 6158ADEF
-P 4600 2350
-F 0 "R522" V 4550 2200 50  0000 C CNN
-F 1 "200" V 4600 2350 50  0000 C CNN
-F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 4530 2350 50  0001 C CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 4600 2350 50  0001 C CNN
-F 4 "3521200RFT" H 4600 2350 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 4600 2350 50  0001 C CNN "DK_Detail_Page"
-	1    4600 2350
-	0    1    1    0   
-$EndComp
 Text GLabel 4300 2350 0    50   BiDi ~ 0
 FPGA_EXT_IO6
-Wire Wire Line
-	4450 2350 4300 2350
 $Comp
 L Device:LED D502
 U 1 1 615A0ABC
@@ -578,7 +473,7 @@ Wire Notes Line
 Text Notes 2500 4400 0    50   ~ 10
 VGA output
 $Comp
-L tdt4295-rescue:NUP4114UCW1T2G-NUP4114UCW1T2G-tdt4295-rescue U501
+L tdt4295-rescue:NUP4114UCW1T2G-NUP4114UCW1T2G-tdt4295-rescue-tdt4295-rescue U501
 U 1 1 61ADFC51
 P 5650 2900
 AR Path="/61ADFC51" Ref="U501"  Part="1" 
@@ -591,7 +486,7 @@ F 3 "https://www.onsemi.com/pdf/datasheet/nup4114-d.pdf" H 4850 1450 60  0001 C 
 	1    0    0    -1  
 $EndComp
 $Comp
-L tdt4295-rescue:NUP4114UCW1T2G-NUP4114UCW1T2G-tdt4295-rescue U502
+L tdt4295-rescue:NUP4114UCW1T2G-NUP4114UCW1T2G-tdt4295-rescue-tdt4295-rescue U502
 U 1 1 61B06D56
 P 5800 1100
 AR Path="/61B06D56" Ref="U502"  Part="1" 
@@ -603,16 +498,6 @@ F 3 "https://www.onsemi.com/pdf/datasheet/nup4114-d.pdf" H 5000 -350 60  0001 C 
 	1    5800 1100
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5050 1850 5100 1850
-Wire Wire Line
-	4800 1750 5050 1750
-Wire Wire Line
-	4750 2350 6200 2350
-Wire Wire Line
-	5000 2050 6300 2050
-Wire Wire Line
-	4750 1950 6250 1950
 Wire Wire Line
 	5350 950  5050 950 
 Wire Wire Line
@@ -635,13 +520,9 @@ Wire Wire Line
 Connection ~ 6300 2050
 Wire Wire Line
 	6300 2050 6550 2050
-Wire Wire Line
-	4750 2150 5200 2150
 Connection ~ 5200 2150
 Wire Wire Line
 	5200 2150 6550 2150
-Wire Wire Line
-	5000 2250 5100 2250
 Connection ~ 5100 2250
 Wire Wire Line
 	5100 2250 6550 2250
@@ -657,96 +538,6 @@ Text Notes 6600 800  0    50   ~ 10
 GPIO header \nwith ESD protection
 Text GLabel 9450 1750 2    50   BiDi ~ 0
 FPGA_EXT_IO7
-$Comp
-L Device:R R530
-U 1 1 61588045
-P 8950 1750
-F 0 "R530" V 8900 1600 50  0000 C CNN
-F 1 "200" V 8950 1750 50  0000 C CNN
-F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 8880 1750 50  0001 C CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 8950 1750 50  0001 C CNN
-F 4 "3521200RFT" H 8950 1750 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 8950 1750 50  0001 C CNN "DK_Detail_Page"
-	1    8950 1750
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R533
-U 1 1 6158804B
-P 9200 1850
-F 0 "R533" V 9150 2000 50  0000 C CNN
-F 1 "200" V 9200 1850 50  0000 C CNN
-F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 9130 1850 50  0001 C CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 9200 1850 50  0001 C CNN
-F 4 "3521200RFT" H 9200 1850 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 9200 1850 50  0001 C CNN "DK_Detail_Page"
-	1    9200 1850
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R527
-U 1 1 61588051
-P 8900 1950
-F 0 "R527" V 8850 1800 50  0000 C CNN
-F 1 "200" V 8900 1950 50  0000 C CNN
-F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 8830 1950 50  0001 C CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 8900 1950 50  0001 C CNN
-F 4 "3521200RFT" H 8900 1950 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 8900 1950 50  0001 C CNN "DK_Detail_Page"
-	1    8900 1950
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R531
-U 1 1 61588057
-P 9150 2050
-F 0 "R531" V 9100 2200 50  0000 C CNN
-F 1 "200" V 9150 2050 50  0000 C CNN
-F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 9080 2050 50  0001 C CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 9150 2050 50  0001 C CNN
-F 4 "3521200RFT" H 9150 2050 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 9150 2050 50  0001 C CNN "DK_Detail_Page"
-	1    9150 2050
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R528
-U 1 1 6158805D
-P 8900 2150
-F 0 "R528" V 8850 2000 50  0000 C CNN
-F 1 "200" V 8900 2150 50  0000 C CNN
-F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 8830 2150 50  0001 C CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 8900 2150 50  0001 C CNN
-F 4 "3521200RFT" H 8900 2150 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 8900 2150 50  0001 C CNN "DK_Detail_Page"
-	1    8900 2150
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R532
-U 1 1 61588063
-P 9150 2250
-F 0 "R532" V 9100 2400 50  0000 C CNN
-F 1 "200" V 9150 2250 50  0000 C CNN
-F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 9080 2250 50  0001 C CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 9150 2250 50  0001 C CNN
-F 4 "3521200RFT" H 9150 2250 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 9150 2250 50  0001 C CNN "DK_Detail_Page"
-	1    9150 2250
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	9100 1750 9450 1750
-Wire Wire Line
-	9450 1850 9350 1850
-Wire Wire Line
-	9050 1950 9450 1950
-Wire Wire Line
-	9450 2050 9300 2050
-Wire Wire Line
-	9050 2150 9450 2150
-Wire Wire Line
-	9450 2250 9300 2250
 Text GLabel 9450 2250 2    50   BiDi ~ 0
 FPGA_EXT_IO12
 Text GLabel 9450 2150 2    50   BiDi ~ 0
@@ -757,25 +548,10 @@ Text GLabel 9450 1950 2    50   BiDi ~ 0
 FPGA_EXT_IO9
 Text GLabel 9450 1850 2    50   BiDi ~ 0
 FPGA_EXT_IO8
-Wire Wire Line
-	9050 2350 9450 2350
-$Comp
-L Device:R R529
-U 1 1 61588069
-P 8900 2350
-F 0 "R529" V 8850 2200 50  0000 C CNN
-F 1 "200" V 8900 2350 50  0000 C CNN
-F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 8830 2350 50  0001 C CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-5&DocType=DS&DocLang=English" H 8900 2350 50  0001 C CNN
-F 4 "3521200RFT" H 8900 2350 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/product-detail/en/te-connectivity-passive-product/3521200RFT/A116015CT-ND/4280056" H 8900 2350 50  0001 C CNN "DK_Detail_Page"
-	1    8900 2350
-	0    1    1    0   
-$EndComp
 Text GLabel 9450 2350 2    50   BiDi ~ 0
 FPGA_EXT_IO13
 $Comp
-L tdt4295-rescue:NUP4114UCW1T2G-NUP4114UCW1T2G-tdt4295-rescue U504
+L tdt4295-rescue:NUP4114UCW1T2G-NUP4114UCW1T2G-tdt4295-rescue-tdt4295-rescue U504
 U 1 1 61B47BBA
 P 8000 3200
 AR Path="/61B47BBA" Ref="U504"  Part="1" 
@@ -792,7 +568,7 @@ Wire Wire Line
 Wire Wire Line
 	7050 2250 7400 2250
 $Comp
-L tdt4295-rescue:NUP4114UCW1T2G-NUP4114UCW1T2G-tdt4295-rescue U503
+L tdt4295-rescue:NUP4114UCW1T2G-NUP4114UCW1T2G-tdt4295-rescue-tdt4295-rescue U503
 U 1 1 61BB530D
 P 8000 1100
 AR Path="/61BB530D" Ref="U503"  Part="1" 
@@ -814,21 +590,15 @@ Wire Wire Line
 	7500 3050 7500 2150
 Connection ~ 7500 2150
 Wire Wire Line
-	7500 2150 8750 2150
-Wire Wire Line
 	7550 3200 7400 3200
 Wire Wire Line
 	7400 3200 7400 2250
 Connection ~ 7400 2250
 Wire Wire Line
-	7400 2250 9000 2250
-Wire Wire Line
 	8450 3050 8500 3050
 Wire Wire Line
 	8500 3050 8500 2350
 Connection ~ 8500 2350
-Wire Wire Line
-	8500 2350 8750 2350
 Wire Wire Line
 	6100 2750 6200 2750
 Wire Wire Line
@@ -1099,24 +869,16 @@ Wire Wire Line
 	7450 1100 7550 1100
 Connection ~ 7450 1850
 Wire Wire Line
-	7450 1850 9050 1850
-Wire Wire Line
 	7350 950  7350 1750
 Wire Wire Line
 	7350 950  7550 950 
 Connection ~ 7350 1750
 Wire Wire Line
-	7350 1750 8800 1750
-Wire Wire Line
 	8450 1100 8450 1950
 Connection ~ 8450 1950
 Wire Wire Line
-	8450 1950 8750 1950
-Wire Wire Line
 	8550 950  8550 2050
 Connection ~ 8550 2050
-Wire Wire Line
-	8550 2050 9000 2050
 Wire Wire Line
 	1450 4800 1950 4800
 $Comp
@@ -1132,4 +894,32 @@ F 5 "https://www.digikey.no/product-detail/en/panasonic-electronic-components/ER
 	1    1700 4950
 	0    1    1    0   
 $EndComp
+Wire Wire Line
+	8500 2350 9450 2350
+Wire Wire Line
+	7400 2250 9450 2250
+Wire Wire Line
+	7500 2150 9450 2150
+Wire Wire Line
+	8550 2050 9450 2050
+Wire Wire Line
+	8450 1950 9450 1950
+Wire Wire Line
+	7450 1850 9450 1850
+Wire Wire Line
+	7350 1750 9450 1750
+Wire Wire Line
+	4300 2050 6300 2050
+Wire Wire Line
+	4300 2150 5200 2150
+Wire Wire Line
+	4300 2250 5100 2250
+Wire Wire Line
+	4300 2350 6200 2350
+Wire Wire Line
+	4300 1950 6250 1950
+Wire Wire Line
+	4300 1850 5100 1850
+Wire Wire Line
+	4300 1750 5050 1750
 $EndSCHEMATC
