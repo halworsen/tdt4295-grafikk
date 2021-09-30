@@ -1326,10 +1326,10 @@ U 1 1 614FE6B3
 P 2700 1750
 F 0 "FB201" V 2426 1750 50  0000 C CNN
 F 1 "Ferrite_Bead" V 2517 1750 50  0000 C CNN
-F 2 "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder" V 2630 1750 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 2630 1750 50  0001 C CNN
 F 3 "~" H 2700 1750 50  0001 C CNN
-F 4 "BK0603HS330-T" H 2700 1750 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/en/products/detail/taiyo-yuden/BK0603HS330-T/957708" H 2700 1750 50  0001 C CNN "DK_Detail_Page"
+F 4 "74279201" H 2700 1750 50  0001 C CNN "Component name"
+F 5 "https://no.farnell.com/wurth-elektronik/74279201/ferrite-bead-0-15-ohm-0-5a-0805/dp/1635708" H 2700 1750 50  0001 C CNN "DK_Detail_Page"
 F 6 "See fig 2.5 https://www.ftdichip.com/Documents/AppNotes/AN_146_USB_Hardware_Design_Guidelines_for_FTDI_ICs.pdf" H 2700 1750 50  0001 C CNN "Description"
 	1    2700 1750
 	0    1    1    0   
