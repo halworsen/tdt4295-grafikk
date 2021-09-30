@@ -15,4 +15,5 @@
   (lib (name tdt4295)(type KiCad)(uri ${KIPRJMOD}/symlib/tdt4295.pretty)(options "")(descr ""))
   (lib (name MOLEX_104031-0811)(type KiCad)(uri ${KIPRJMOD}/symlib/MOLEX_104031-0811)(options "")(descr ""))
   (lib (name DM1AA-SF-PEJ_21)(type KiCad)(uri ${KIPRJMOD}/symlib/DM1AA-SF-PEJ_21)(options "")(descr ""))
+  (lib (name Graphics)(type KiCad)(uri ${KIPRJMOD}/symlib/graphics.pretty)(options "")(descr ""))
 )
