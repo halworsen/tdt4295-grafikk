@@ -29,4 +29,37 @@ void serialize_scalar(float x);
 void serialize_vec4(vec4 *m);
 void serialize_mat4(mat4 *m);
 
+
+// TODO implementations for these
+
+// Dot product ret = x . y
+float dot(struct vec4 *x, struct vec4 *y);
+
+// Matrix product ret = AB.
+void mmul(struct mat4 *ret, struct mat4 *A, struct mat4 *B);
+
+// Apply transformation ret = Tx
+void transform(struct vec4 *ret
+               struct mat4 *T,
+               struct vec4 *x);
+
+// Make a translation matrix
+void translation(struct mat4 *ret, struct vec4 *x)
+
+// Make simple rotation matrices around the standard 
+// basis axes (sufficient for simple fps camera)
+void rot_x(struct mat4 *ret, float th);
+void rot_y(struct mat4 *ret, float th);
+void rot_z(struct mat4 *ret, float th);
+
+// Rotation around arbitrary vector.
+void rotation(struct mat4 *ret, struct vec4 *r, float th);
+
+// Perspective projection matrix from FOV, aspect ratio and clip planes.
+void perspective(struct mat4 *ret,
+                 float fov_rad,
+                 float aspect,
+                 float near,
+                 float far);
+
 #endif

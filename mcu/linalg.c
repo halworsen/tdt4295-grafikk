@@ -19,14 +19,14 @@ void serialize_scalar(float x) {
 }
 
 
-void serialize_vec4(vec4 *v) {
+void serialize_vec4(struct vec4 *v) {
     serialize_scalar(v->x);
     serialize_scalar(v->y);
     serialize_scalar(v->z);
     serialize_scalar(v->w);
 }
 
-void serialize_mat4(mat4 *m) {
+void serialize_mat4(struct mat4 *m) {
     for (int i = 0; i < 16; i++) {
         serialize_scalar(m->data[i]);
     }
