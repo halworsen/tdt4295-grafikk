@@ -20,14 +20,41 @@
 //        1    | "18Kb"    | 16384       | 14-bit       | 1-bit      //
 ///////////////////////////////////////////////////////////////////////
 
+`default_nettype none
+`timescale 1ns / 1ps
+
+// BRAM_SDP_MACRO is documented in Xilinx UG472
+
+module bram #(
+    // See table above fot the correct configuration
+    parameter BRAM_SIZE="18kb",   // BRAM size
+    parameter WIDTH=12,
+    parameter DEPTH=1024,
+    localparam ADDRW=$clog2(DEPTH)
+) (
+    input  wire logic clk_read,        // read clock
+    input  wire logic clk_write,        // write clock
+    input  wire logic read_enable,
+    input  wire logic write_enable,
+
+    input  wire logic [ADDRW-1:0] read_addr,
+    input  wire logic [ADDRW-1:0] write_addr,
+    input  wire logic [WIDTH-1:0] data_in,        // data in
+    output wire logic [WIDTH-1:0] data_out,        // data out
+    );
+
+    logic clk_fb;         // internal clock feedback
+    logic clk_pix_unbuf;  // unbuffered pixel clock
+    logic locked;         // unsynced lock signal
+
 BRAM_SDP_MACRO #(
-    .BRAM_SIZE("18Kb"), // Target BRAM, "18Kb" or "36Kb"
+    .BRAM_SIZE(BRAM_SIZE), // Target BRAM, "18Kb" or "36Kb"
     .DEVICE("7SERIES"), // Target device: "7SERIES"
-    .WRITE_WIDTH(0), // Valid values are 1-72 (37-72 only valid when BRAM_SIZE="36Kb")
-    .READ_WIDTH(0), // Valid values are 1-72 (37-72 only valid when BRAM_SIZE="36Kb")
+    .WRITE_WIDTH(WIDTH), // Valid values are 1-72 (37-72 only valid when BRAM_SIZE="36Kb")
+    .READ_WIDTH(WIDTH), // Valid values are 1-72 (37-72 only valid when BRAM_SIZE="36Kb")
     .DO_REG(0), // Optional output register (0 or 1)
-    .INIT_FILE ("NONE"),
-    .SIM_COLLISION_CHECK ("ALL"), // Collision check enable "ALL", "WARNING_ONLY",
+    .INIT_FILE("NONE"),
+    .SIM_COLLISION_CHECK("ALL"), // Collision check enable "ALL", "WARNING_ONLY",
     // "GENERATE_X_ONLY" or "NONE"
     .SRVAL(72'h000000000000000000), // Set/Reset value forr port output
     .INIT(72'h000000000000000000), // Initial values on output port
@@ -181,16 +208,17 @@ BRAM_SDP_MACRO #(
     .INITP_0E(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INITP_0F(256'h0000000000000000000000000000000000000000000000000000000000000000)
 ) BRAM_SDP_MACRO_inst (
-    .DO(DO), // Output read data port, width defined by READ_WIDTH parameter
-    .DI(DI), // Input write data port, width defined by WRITE_WIDTH parameter
-    .RDADDR(RDADDR), // Input read address, width defined by read port depth
-    .RDCLK(RDCLK), // 1-bit input read clock
-    .RDEN(RDEN), // 1-bit input read port enable
-    .REGCE(REGCE), // 1-bit input read output register enable
-    .RST(RST), // 1-bit input reset
-    .WE(WE), // Input write enable, width defined by write port depth
-    .WRADDR(WRADDR), // Input write address, width defined by write port depth
-    .WRCLK(WRCLK), // 1-bit input write clock
-    .WREN(WREN) // 1-bit input write port enable
+    .DO(data_out),             // Output read data port, width defined by READ_WIDTH parameter
+    .DI(data_in),             // Input write data port, width defined by WRITE_WIDTH parameter
+    .RDADDR(read_addr),  // Input read address, width defined by read port depth
+    .RDCLK(clk_read),    // 1-bit input read clock
+    .RDEN(read_enable),  // 1-bit input read port enable
+    .REGCE(REGCE),       // 1-bit input read output register enable
+    .RST(reset),         // 1-bit input reset
+    .WE(write_enable),   // Input write enable, width defined by write port depth
+    .WRADDR(write_addr), // Input write address, width defined by write port depth
+    .WRCLK(clk_write),   // 1-bit input write clock
+    .WREN(WREN)          // 1-bit input write port enable
 );
 // End of BRAM_SDP_MACRO_inst instantiation
+endmodule
