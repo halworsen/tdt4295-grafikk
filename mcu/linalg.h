@@ -24,10 +24,13 @@ struct vec4 {
 };
 
 // Serialization functions. These will automatically reinterpret our float-based
-// structures as fixed-point before sending them over SPI.
+// structures as fixed-point before sending them over SPI where applicable.
 void serialize_scalar(float x);
 void serialize_vec4(vec4 *m);
 void serialize_mat4(mat4 *m);
+void serialize_index(uint32_t i);
+void serialize_vertex_buffer(vec4 *verts, int n);
+void serialize_index_buffer(uint32_t *indeces, int n);
 
 
 // TODO implementations for these

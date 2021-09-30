@@ -19,6 +19,11 @@ void serialize_scalar(float x) {
 }
 
 
+void serialize_index(uint32_t i) {
+    SPIDRV_MTransmitB(&handle, &i, 4);
+}
+
+
 void serialize_vec4(struct vec4 *v) {
     serialize_scalar(v->x);
     serialize_scalar(v->y);
@@ -29,5 +34,17 @@ void serialize_vec4(struct vec4 *v) {
 void serialize_mat4(struct mat4 *m) {
     for (int i = 0; i < 16; i++) {
         serialize_scalar(m->data[i]);
+    }
+}
+
+void serialize_vertex_buffer(vec4 *verts, int n) {
+    for (int i = 0; i < n; i++) {
+        serialize_vec4(verts[i]);
+    }
+}
+
+void serialize_index_buffer(uint32_t *indeces, int n) {
+    for (int i = 0; i < n; i++) {
+        serialize_index(indeces[i]);
     }
 }

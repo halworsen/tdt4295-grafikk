@@ -6,3 +6,6 @@
 .bsp/
 target/
 test_run_dir/
+
+# VIM swap files
+*.swp
