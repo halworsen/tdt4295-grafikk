@@ -1,4 +1,4 @@
-20001264005227417
+20004771356841331
 5177802-9
 5177802-9
 
@@ -48789,6 +48789,13 @@ HRS_DM1AA-SF-PEJ(21)
 0
 16
 16
+DM1AA-SF-PEJ_21
+HRS_DM1AA-SF-PEJ(21)-backup
+
+
+0
+16
+16
 DSC1001AL5-100.0000
 DSC1001AL5-100.0000
 
@@ -51605,6 +51612,13 @@ Fuse Fuseholder TR5 Littelfuse/Wickmann No. 460 No560
 2
 Graphics
 buggelogo
+
+
+0
+0
+0
+Graphics
+buggelogo_43mm
 
 
 0
