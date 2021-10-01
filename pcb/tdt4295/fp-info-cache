@@ -1,4 +1,4 @@
-19994730651839743
+20004771356841331
 5177802-9
 5177802-9
 
@@ -48789,6 +48789,13 @@ HRS_DM1AA-SF-PEJ(21)
 0
 16
 16
+DM1AA-SF-PEJ_21
+HRS_DM1AA-SF-PEJ(21)-backup
+
+
+0
+16
+16
 DSC1001AL5-100.0000
 DSC1001AL5-100.0000
 
@@ -51603,6 +51610,27 @@ Fuse Fuseholder TR5 Littelfuse/Wickmann No. 460 No560
 0
 2
 2
+Graphics
+buggelogo
+
+
+0
+0
+0
+Graphics
+buggelogo_43mm
+
+
+0
+0
+0
+Graphics
+buggelogo_inverted
+
+
+0
+0
+0
 Heatsink
 Heatsink_35x26mm_1xFixation3mm_Fischer-SK486-35
 Heatsink, 35mm x 26mm, 1x Fixation 3mm, Fischer SK486-35
@@ -76334,6 +76362,13 @@ rotary encoder
 0
 5
 4
+S25FL127SABMFV101-footprint
+S25FL127SABMFV101
+
+
+0
+8
+8
 SN74ALVC245PWR-footprint
 SN74ALVC245PWR
 
@@ -86371,11 +86406,18 @@ DFN2510A-10
 
 0
 10
-9
+10
+tdt4295
+RESC6332X120N
+
+
+0
+2
+2
 tdt4295
 TPS54294PWP
 
 
 0
-23
-18
+17
+17

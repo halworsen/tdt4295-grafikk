@@ -134,7 +134,7 @@ Wire Wire Line
 Wire Wire Line
 	4000 3900 4000 4000
 Wire Wire Line
-	4400 4350 4700 4350
+	4400 4350 4500 4350
 Wire Wire Line
 	4250 4150 4250 3900
 $Comp
@@ -167,6 +167,8 @@ F 0 "Y101" H 4350 4500 50  0000 L CNN
 F 1 "48MHz" H 4350 4250 50  0000 L CNN
 F 2 "Crystal:Crystal_SMD_2016-4Pin_2.0x1.6mm" H 4250 4350 50  0001 C CNN
 F 3 "https://www.farnell.com/datasheets/1883673.pdf" H 4250 4350 50  0001 C CNN
+F 4 "ABM11-48.000MHZ-D2X-T3" H 4250 4350 50  0001 C CNN "Component name"
+F 5 "https://no.farnell.com/abracon/abm11-48-000mhz-d2x-t3/crystal-48mhz-10pf-2-x-1-6mm/dp/2467782RL?st=krystall" H 4250 4350 50  0001 C CNN "DK_Detail_Page"
 	1    4250 4350
 	1    0    0    -1  
 $EndComp
@@ -248,16 +250,12 @@ F 3 "" H 10150 2500 50  0001 C CNN
 	1    10150 2500
 	1    0    0    -1  
 $EndComp
-Text GLabel 4700 4100 1    50   UnSpc ~ 0
+Text GLabel 4500 4350 2    50   UnSpc ~ 0
 48MHZ_P3
-Text GLabel 3800 4100 1    50   UnSpc ~ 0
+Text GLabel 4000 4350 0    50   UnSpc ~ 0
 48MHZ_P1
 Wire Wire Line
-	3800 4100 3800 4350
-Wire Wire Line
-	4700 4100 4700 4350
-Wire Wire Line
-	3800 4350 4100 4350
+	4000 4350 4100 4350
 Text GLabel 6750 4000 0    50   UnSpc ~ 0
 48MHZ_P3
 Text GLabel 6750 4100 0    50   UnSpc ~ 0
@@ -433,10 +431,10 @@ Wire Notes Line
 Wire Wire Line
 	10050 1950 10050 2100
 $Comp
-L Device:C C110
+L Device:C C108
 U 1 1 614780F2
 P 9600 2250
-F 0 "C110" H 9715 2296 50  0000 L CNN
+F 0 "C108" H 9715 2296 50  0000 L CNN
 F 1 "0.1uF" H 9715 2205 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 9638 2100 50  0001 C CNN
 F 3 "~" H 9600 2250 50  0001 C CNN
@@ -464,10 +462,10 @@ F 3 "" H 5200 4700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C103
+L Device:C C101
 U 1 1 614CD408
 P 5200 4450
-F 0 "C103" H 5200 4550 50  0000 L CNN
+F 0 "C101" H 5200 4550 50  0000 L CNN
 F 1 "0.1uF" H 5200 4350 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5238 4300 50  0001 C CNN
 F 3 "~" H 5200 4450 50  0001 C CNN
@@ -483,10 +481,10 @@ Wire Wire Line
 	5200 4300 5200 4200
 Connection ~ 5200 4200
 $Comp
-L Device:C C107
+L Device:C C105
 U 1 1 614EE588
 P 5850 2450
-F 0 "C107" H 5900 2550 50  0000 L CNN
+F 0 "C105" H 5900 2550 50  0000 L CNN
 F 1 "0.1uF" H 5900 2350 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5888 2300 50  0001 C CNN
 F 3 "~" H 5850 2450 50  0001 C CNN
@@ -507,10 +505,10 @@ Wire Wire Line
 	5850 2300 5850 2200
 Connection ~ 5850 2200
 $Comp
-L Device:C C105
+L Device:C C103
 U 1 1 6153B508
 P 5550 2450
-F 0 "C105" H 5600 2550 50  0000 L CNN
+F 0 "C103" H 5600 2550 50  0000 L CNN
 F 1 "10uF" H 5600 2350 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5588 2300 50  0001 C CNN
 F 3 "~" H 5550 2450 50  0001 C CNN
@@ -533,12 +531,12 @@ Wire Wire Line
 Wire Wire Line
 	5850 2200 6850 2200
 $Comp
-L Device:C C109
+L Device:C C107
 U 1 1 6145F357
 P 9550 4200
-F 0 "C109" H 9550 4300 50  0000 L CNN
+F 0 "C107" H 9550 4300 50  0000 L CNN
 F 1 "1uF" H 9550 4100 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 9588 4050 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 9588 4050 50  0001 C CNN
 F 3 "www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp" H 9550 4200 50  0001 C CNN
 F 4 "CL21B105KOFNNNE" H 9550 4200 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL21B105KOFNNNE/1276-1026-1-ND/3889112" H 9550 4200 50  0001 C CNN "DK_Datasheet_Link"
@@ -547,10 +545,10 @@ F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL21B105
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C104
+L Device:C C102
 U 1 1 615F1A43
 P 5500 4450
-F 0 "C104" H 5500 4550 50  0000 L CNN
+F 0 "C102" H 5500 4550 50  0000 L CNN
 F 1 "10nF" H 5500 4350 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5538 4300 50  0001 C CNN
 F 3 "~" H 5500 4450 50  0001 C CNN
@@ -561,10 +559,10 @@ F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B103
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C106
+L Device:C C104
 U 1 1 615F24C1
 P 5750 4450
-F 0 "C106" H 5750 4550 50  0000 L CNN
+F 0 "C104" H 5750 4550 50  0000 L CNN
 F 1 "10uF" H 5750 4350 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5788 4300 50  0001 C CNN
 F 3 "~" H 5750 4450 50  0001 C CNN
@@ -598,10 +596,10 @@ F 3 "" H 10400 3700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C113
+L Device:C C111
 U 1 1 61654772
 P 10400 4200
-F 0 "C113" H 10400 4300 50  0000 L CNN
+F 0 "C111" H 10400 4300 50  0000 L CNN
 F 1 "10uF" H 10400 4100 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 10438 4050 50  0001 C CNN
 F 3 "~" H 10400 4200 50  0001 C CNN
@@ -612,10 +610,10 @@ F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10A106
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C112
+L Device:C C110
 U 1 1 61654C00
 P 10150 4200
-F 0 "C112" H 10150 4300 50  0000 L CNN
+F 0 "C110" H 10150 4300 50  0000 L CNN
 F 1 "0.1uF" H 10150 4100 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 10188 4050 50  0001 C CNN
 F 3 "~" H 10150 4200 50  0001 C CNN
@@ -650,10 +648,10 @@ Connection ~ 10150 3950
 Wire Wire Line
 	10000 3950 10150 3950
 $Comp
-L Device:C C111
+L Device:C C109
 U 1 1 61724FBA
 P 9850 4200
-F 0 "C111" H 9850 4300 50  0000 L CNN
+F 0 "C109" H 9850 4300 50  0000 L CNN
 F 1 "0.1uF" H 9850 4100 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 9888 4050 50  0001 C CNN
 F 3 "~" H 9850 4200 50  0001 C CNN
@@ -757,8 +755,10 @@ U 1 1 614A6418
 P 10900 1450
 F 0 "J101" V 11100 1950 50  0000 L CNN
 F 1 "ARM 20 Pin Debug Header" V 11000 1950 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x10_P2.54mm_Vertical" H 10900 1450 50  0001 C CNN
+F 2 "Connector_PinHeader_1.27mm:PinHeader_2x10_P1.27mm_Vertical_SMD" H 10900 1450 50  0001 C CNN
 F 3 "~" H 10900 1450 50  0001 C CNN
+F 4 "FTSH-110-01-L-DV-K-TR" H 10900 1450 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/samtec-inc/FTSH-110-01-L-DV-K-TR/SAM13960TR-ND/6693931" H 10900 1450 50  0001 C CNN "DK_Detail_Page"
 	1    10900 1450
 	0    1    -1   0   
 $EndComp
@@ -773,9 +773,11 @@ U 1 1 618C2BE9
 P 9100 3200
 F 0 "R105" V 9150 3400 50  0000 C CNN
 F 1 "15" V 9100 3200 50  0000 C CNN
-F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 9030 3200 50  0001 C CNN
+F 2 "tdt4295:RESC6332X120N" V 9030 3200 50  0001 C CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-7&DocType=DS&DocLang=English" H 9100 3200 50  0001 C CNN
 F 4 "352215RFT" H 9100 3200 50  0001 C CNN "Category"
+F 5 "https://www.digikey.no/product-detail/no/te-connectivity-passive-product/352215RFT/A121147CT-ND/5245204" H 9100 3200 50  0001 C CNN "DK_Detail_Page"
+F 6 "352215RFT" H 9100 3200 50  0001 C CNN "Component name"
 	1    9100 3200
 	0    1    1    0   
 $EndComp
@@ -787,9 +789,11 @@ U 1 1 618CE8AE
 P 9100 3300
 F 0 "R106" V 9150 3500 50  0000 C CNN
 F 1 "15" V 9100 3300 50  0000 C CNN
-F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 9030 3300 50  0001 C CNN
+F 2 "tdt4295:RESC6332X120N" V 9030 3300 50  0001 C CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-7&DocType=DS&DocLang=English" H 9100 3300 50  0001 C CNN
 F 4 "352215RFT" H 9100 3300 50  0001 C CNN "Category"
+F 5 "https://www.digikey.no/product-detail/no/te-connectivity-passive-product/352215RFT/A121147CT-ND/5245204" H 9100 3300 50  0001 C CNN "DK_Detail_Page"
+F 6 "352215RFT" H 9100 3300 50  0001 C CNN "Component name"
 	1    9100 3300
 	0    1    1    0   
 $EndComp
@@ -798,12 +802,12 @@ Wire Wire Line
 Text Notes 9900 3300 0    50   ~ 0
 AN0046\n2.2
 $Comp
-L Device:C C108
+L Device:C C106
 U 1 1 618F8B31
 P 9500 3600
-F 0 "C108" H 9600 3650 50  0000 L CNN
+F 0 "C106" H 9600 3650 50  0000 L CNN
 F 1 "1uF" H 9600 3550 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 9538 3450 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 9538 3450 50  0001 C CNN
 F 3 "www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp" H 9500 3600 50  0001 C CNN
 F 4 "CL21B105KOFNNNE" H 9500 3600 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL21B105KOFNNNE/1276-1026-1-ND/3889112" H 9500 3600 50  0001 C CNN "DK_Datasheet_Link"
@@ -867,10 +871,10 @@ $EndComp
 Wire Wire Line
 	15150 1900 15000 1900
 $Comp
-L power:+3V3 #PWR0125
+L power:+3V3 #PWR0126
 U 1 1 614E0EAB
 P 14100 1250
-F 0 "#PWR0125" H 14100 1100 50  0001 C CNN
+F 0 "#PWR0126" H 14100 1100 50  0001 C CNN
 F 1 "+3V3" H 14115 1423 50  0000 C CNN
 F 2 "" H 14100 1250 50  0001 C CNN
 F 3 "" H 14100 1250 50  0001 C CNN
@@ -878,10 +882,10 @@ F 3 "" H 14100 1250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R112
+L Device:R R110
 U 1 1 614E2162
 P 13800 1600
-F 0 "R112" H 13800 1750 50  0000 L CNN
+F 0 "R110" H 13800 1750 50  0000 L CNN
 F 1 "100K" V 13800 1500 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 13730 1600 50  0001 C CNN
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 13800 1600 50  0001 C CNN
@@ -937,10 +941,10 @@ $EndComp
 Wire Wire Line
 	15000 2200 15150 2200
 $Comp
-L Device:R R113
+L Device:R R111
 U 1 1 6158865B
 P 14000 1600
-F 0 "R113" H 14000 1750 50  0000 L CNN
+F 0 "R111" H 14000 1750 50  0000 L CNN
 F 1 "100K" V 14000 1500 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 13930 1600 50  0001 C CNN
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 14000 1600 50  0001 C CNN
@@ -950,10 +954,10 @@ F 5 "https://www.digikey.no/product-detail/no/susumu/RR1220P-104-D/RR12P100KDCT-
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R114
+L Device:R R112
 U 1 1 615889F3
 P 14200 1600
-F 0 "R114" H 14200 1750 50  0000 L CNN
+F 0 "R112" H 14200 1750 50  0000 L CNN
 F 1 "100K" V 14200 1500 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 14130 1600 50  0001 C CNN
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 14200 1600 50  0001 C CNN
@@ -963,10 +967,10 @@ F 5 "https://www.digikey.no/product-detail/no/susumu/RR1220P-104-D/RR12P100KDCT-
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R115
+L Device:R R113
 U 1 1 61599A1D
 P 14400 1600
-F 0 "R115" H 14400 1750 50  0000 L CNN
+F 0 "R113" H 14400 1750 50  0000 L CNN
 F 1 "100K" V 14400 1500 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 14330 1600 50  0001 C CNN
 F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 14400 1600 50  0001 C CNN
@@ -987,8 +991,10 @@ U 1 1 617052D6
 P 3800 1950
 F 0 "D101" V 3839 1832 50  0000 R CNN
 F 1 "LED" V 3748 1832 50  0000 R CNN
-F 2 "LED_SMD:LED_2816_7142Metric_Pad3.20x4.45mm_HandSolder" H 3800 1950 50  0001 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 3800 1950 50  0001 C CNN
 F 3 "~" H 3800 1950 50  0001 C CNN
+F 4 "150120BS75000" H 3800 1950 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/no/w%C3%BCrth-elektronik/150120BS75000/732-4989-1-ND/4489931" H 3800 1950 50  0001 C CNN "DK_Detail_Page"
 	1    3800 1950
 	0    -1   -1   0   
 $EndComp
@@ -1028,8 +1034,10 @@ U 1 1 61724822
 P 4150 1950
 F 0 "D102" V 4189 1832 50  0000 R CNN
 F 1 "LED" V 4098 1832 50  0000 R CNN
-F 2 "LED_SMD:LED_2816_7142Metric_Pad3.20x4.45mm_HandSolder" H 4150 1950 50  0001 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 4150 1950 50  0001 C CNN
 F 3 "~" H 4150 1950 50  0001 C CNN
+F 4 "150120BS75000" H 4150 1950 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/no/w%C3%BCrth-elektronik/150120BS75000/732-4989-1-ND/4489931" H 4150 1950 50  0001 C CNN "DK_Detail_Page"
 	1    4150 1950
 	0    -1   -1   0   
 $EndComp
@@ -1058,8 +1066,10 @@ U 1 1 617323B7
 P 4500 1950
 F 0 "D103" V 4539 1832 50  0000 R CNN
 F 1 "LED" V 4448 1832 50  0000 R CNN
-F 2 "LED_SMD:LED_2816_7142Metric_Pad3.20x4.45mm_HandSolder" H 4500 1950 50  0001 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 4500 1950 50  0001 C CNN
 F 3 "~" H 4500 1950 50  0001 C CNN
+F 4 "150120BS75000" H 4500 1950 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/no/w%C3%BCrth-elektronik/150120BS75000/732-4989-1-ND/4489931" H 4500 1950 50  0001 C CNN "DK_Detail_Page"
 	1    4500 1950
 	0    -1   -1   0   
 $EndComp
@@ -1088,8 +1098,10 @@ U 1 1 617408B8
 P 4850 1950
 F 0 "D104" V 4889 1832 50  0000 R CNN
 F 1 "LED" V 4798 1832 50  0000 R CNN
-F 2 "LED_SMD:LED_2816_7142Metric_Pad3.20x4.45mm_HandSolder" H 4850 1950 50  0001 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 4850 1950 50  0001 C CNN
 F 3 "~" H 4850 1950 50  0001 C CNN
+F 4 "150120BS75000" H 4850 1950 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/no/w%C3%BCrth-elektronik/150120BS75000/732-4989-1-ND/4489931" H 4850 1950 50  0001 C CNN "DK_Detail_Page"
 	1    4850 1950
 	0    -1   -1   0   
 $EndComp
@@ -1171,8 +1183,8 @@ Text GLabel 8950 3700 2    50   Output ~ 0
 GPIO_LED2
 Text GLabel 8950 3600 2    50   Output ~ 0
 GPIO_LED3
-Text GLabel 6750 3000 0    50   UnSpc ~ 0
-GPIO_PB7
+Text GLabel 6750 3000 0    50   Input ~ 0
+FPGA_DONE
 Text GLabel 8950 1800 2    50   UnSpc ~ 0
 GPIO_PE13
 Text GLabel 8950 1900 2    50   UnSpc ~ 0
@@ -1274,10 +1286,10 @@ Wire Wire Line
 Wire Wire Line
 	11850 2550 11700 2550
 $Comp
-L power:GND #PWR0130
+L power:GND #PWR0131
 U 1 1 615042CB
 P 15150 2450
-F 0 "#PWR0130" H 15150 2200 50  0001 C CNN
+F 0 "#PWR0131" H 15150 2200 50  0001 C CNN
 F 1 "GND" H 15155 2277 50  0000 C CNN
 F 2 "" H 15150 2450 50  0001 C CNN
 F 3 "" H 15150 2450 50  0001 C CNN
@@ -1316,15 +1328,17 @@ F 4 "30.1mm" H 15150 3000 50  0001 L BNN "MAXIMUM_PACKAGE_HEIGHT"
 F 5 "SparkFun Electronics" H 15150 2750 50  0001 L BNN "MANUFACTURER"
 F 6 "Manufacturer Recommendations" H 15150 3100 50  0001 L BNN "STANDARD"
 F 7 "N/A" H 15150 2900 50  0001 L BNN "PARTREV"
+F 8 "COM-09032" H 14850 3300 50  0001 C CNN "Component name"
+F 9 "https://www.digikey.no/product-detail/no/sparkfun-electronics/COM-09032/1568-1526-ND/6823623" H 14850 3300 50  0001 C CNN "DK_Detail_Page"
 	1    14850 3300
 	1    0    0    -1  
 $EndComp
 NoConn ~ 14350 3900
 $Comp
-L power:+3V3 #PWR0126
+L power:+3V3 #PWR0127
 U 1 1 615D21D5
 P 14100 2700
-F 0 "#PWR0126" H 14100 2550 50  0001 C CNN
+F 0 "#PWR0127" H 14100 2550 50  0001 C CNN
 F 1 "+3V3" H 14115 2873 50  0000 C CNN
 F 2 "" H 14100 2700 50  0001 C CNN
 F 3 "" H 14100 2700 50  0001 C CNN
@@ -1343,10 +1357,10 @@ Connection ~ 14100 2900
 NoConn ~ 14350 3600
 NoConn ~ 14350 3700
 $Comp
-L power:GND #PWR0128
+L power:GND #PWR0129
 U 1 1 61621364
 P 14200 3500
-F 0 "#PWR0128" H 14200 3250 50  0001 C CNN
+F 0 "#PWR0129" H 14200 3250 50  0001 C CNN
 F 1 "GND" H 14205 3327 50  0000 C CNN
 F 2 "" H 14200 3500 50  0001 C CNN
 F 3 "" H 14200 3500 50  0001 C CNN
@@ -1370,10 +1384,10 @@ Text GLabel 13950 2900 0    50   UnSpc ~ 0
 GPIO_JSH0
 NoConn ~ 14350 5300
 $Comp
-L power:+3V3 #PWR0127
+L power:+3V3 #PWR0128
 U 1 1 616BCC96
 P 14100 4100
-F 0 "#PWR0127" H 14100 3950 50  0001 C CNN
+F 0 "#PWR0128" H 14100 3950 50  0001 C CNN
 F 1 "+3V3" H 14115 4273 50  0000 C CNN
 F 2 "" H 14100 4100 50  0001 C CNN
 F 3 "" H 14100 4100 50  0001 C CNN
@@ -1392,10 +1406,10 @@ Connection ~ 14100 4300
 NoConn ~ 14350 5000
 NoConn ~ 14350 5100
 $Comp
-L power:GND #PWR0129
+L power:GND #PWR0130
 U 1 1 616BCCA3
 P 14200 4900
-F 0 "#PWR0129" H 14200 4650 50  0001 C CNN
+F 0 "#PWR0130" H 14200 4650 50  0001 C CNN
 F 1 "GND" H 14205 4727 50  0000 C CNN
 F 2 "" H 14200 4900 50  0001 C CNN
 F 3 "" H 14200 4900 50  0001 C CNN
@@ -1429,6 +1443,8 @@ F 4 "30.1mm" H 15150 4400 50  0001 L BNN "MAXIMUM_PACKAGE_HEIGHT"
 F 5 "SparkFun Electronics" H 15150 4150 50  0001 L BNN "MANUFACTURER"
 F 6 "Manufacturer Recommendations" H 15150 4500 50  0001 L BNN "STANDARD"
 F 7 "N/A" H 15150 4300 50  0001 L BNN "PARTREV"
+F 8 "COM-09032" H 14850 4700 50  0001 C CNN "Component name"
+F 9 "https://www.digikey.no/product-detail/no/sparkfun-electronics/COM-09032/1568-1526-ND/6823623" H 14850 4700 50  0001 C CNN "DK_Detail_Page"
 	1    14850 4700
 	1    0    0    -1  
 $EndComp
@@ -1457,6 +1473,8 @@ S 750  2250 1150 950
 U 617F72AC
 F0 "FPGA" 50
 F1 "fpga.sch" 50
+F2 "DONE" O R 1900 2500 50 
+F3 "PROGRAM_B" I R 1900 3000 50 
 $EndSheet
 Text GLabel 1800 3900 0    50   BiDi ~ 0
 FPGA_MCU_USART_CLK
@@ -1512,8 +1530,10 @@ U 1 1 618E52FC
 P 12550 3400
 F 0 "J104" H 12630 3442 50  0000 L CNN
 F 1 "MCU GPIO Header" H 12630 3351 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x07_P2.54mm_Vertical" H 12550 3400 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x07_P2.54mm_Vertical_SMD_Pin1Right" H 12550 3400 50  0001 C CNN
 F 3 "~" H 12550 3400 50  0001 C CNN
+F 4 "0878980726" H 12550 3400 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/molex/0878980726/WM20569-ND/3264913" H 12550 3400 50  0001 C CNN "DK_Detail_Page"
 	1    12550 3400
 	1    0    0    -1  
 $EndComp
@@ -1547,8 +1567,6 @@ Wire Wire Line
 	12350 3700 12250 3700
 Wire Wire Line
 	12250 3700 12250 3800
-Text GLabel 11750 3600 0    50   UnSpc ~ 0
-GPIO_PB7
 Text GLabel 2300 4700 2    50   UnSpc ~ 0
 GPIO_PE13
 Text GLabel 2300 4800 2    50   UnSpc ~ 0
@@ -1575,14 +1593,12 @@ Wire Wire Line
 	2300 5000 1800 5000
 Text Notes 1400 3600 0    50   ~ 0
 FPGA <-> MCU connections
-Text GLabel 6750 3100 0    50   UnSpc ~ 0
-GPIO_PB8
+Text GLabel 6750 3100 0    50   Output ~ 0
+FPGA_PROGRAM_B
 Text GLabel 6750 3600 0    50   UnSpc ~ 0
 GPIO_PB11
 Text GLabel 6750 3700 0    50   UnSpc ~ 0
 GPIO_PB12
-Text GLabel 11750 3500 0    50   UnSpc ~ 0
-GPIO_PB8
 Text GLabel 11750 3400 0    50   UnSpc ~ 0
 GPIO_PB11
 Text GLabel 11750 3300 0    50   UnSpc ~ 0
@@ -1608,7 +1624,7 @@ U 1 1 61539FA8
 P 12050 3200
 F 0 "R107" V 12100 3050 50  0000 C CNN
 F 1 "100" V 12050 3200 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 11980 3200 50  0001 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 11980 3200 50  0001 C CNN
 F 3 "https://www.vishay.com/docs/28705/mcx0x0xpro.pdf" H 12050 3200 50  0001 C CNN
 F 4 "MCU08050C1000FP500" H 12050 3200 50  0001 C CNN "Category"
 F 5 "https://www.digikey.no/product-detail/no/vishay-beyschlag-draloric-bc-components/MCU08050C1000FP500/MCU0805-100-CFCT-ND/2607922" H 12050 3200 50  0001 C CNN "DK_Detail_Page"
@@ -1621,7 +1637,7 @@ U 1 1 6153A87C
 P 12050 3300
 F 0 "R108" V 12100 3150 50  0000 C CNN
 F 1 "100" V 12050 3300 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 11980 3300 50  0001 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 11980 3300 50  0001 C CNN
 F 3 "https://www.vishay.com/docs/28705/mcx0x0xpro.pdf" H 12050 3300 50  0001 C CNN
 F 4 "MCU08050C1000FP500" H 12050 3300 50  0001 C CNN "Category"
 F 5 "https://www.digikey.no/product-detail/no/vishay-beyschlag-draloric-bc-components/MCU08050C1000FP500/MCU0805-100-CFCT-ND/2607922" H 12050 3300 50  0001 C CNN "DK_Detail_Page"
@@ -1634,37 +1650,11 @@ U 1 1 6153A9D4
 P 12050 3400
 F 0 "R109" V 12100 3250 50  0000 C CNN
 F 1 "100" V 12050 3400 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 11980 3400 50  0001 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 11980 3400 50  0001 C CNN
 F 3 "https://www.vishay.com/docs/28705/mcx0x0xpro.pdf" H 12050 3400 50  0001 C CNN
 F 4 "MCU08050C1000FP500" H 12050 3400 50  0001 C CNN "Category"
 F 5 "https://www.digikey.no/product-detail/no/vishay-beyschlag-draloric-bc-components/MCU08050C1000FP500/MCU0805-100-CFCT-ND/2607922" H 12050 3400 50  0001 C CNN "DK_Detail_Page"
 	1    12050 3400
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R110
-U 1 1 6153AB74
-P 12050 3500
-F 0 "R110" V 12100 3350 50  0000 C CNN
-F 1 "100" V 12050 3500 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 11980 3500 50  0001 C CNN
-F 3 "https://www.vishay.com/docs/28705/mcx0x0xpro.pdf" H 12050 3500 50  0001 C CNN
-F 4 "MCU08050C1000FP500" H 12050 3500 50  0001 C CNN "Category"
-F 5 "https://www.digikey.no/product-detail/no/vishay-beyschlag-draloric-bc-components/MCU08050C1000FP500/MCU0805-100-CFCT-ND/2607922" H 12050 3500 50  0001 C CNN "DK_Detail_Page"
-	1    12050 3500
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R111
-U 1 1 6153ACD0
-P 12050 3600
-F 0 "R111" V 12100 3450 50  0000 C CNN
-F 1 "100" V 12050 3600 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 11980 3600 50  0001 C CNN
-F 3 "https://www.vishay.com/docs/28705/mcx0x0xpro.pdf" H 12050 3600 50  0001 C CNN
-F 4 "MCU08050C1000FP500" H 12050 3600 50  0001 C CNN "Category"
-F 5 "https://www.digikey.no/product-detail/no/vishay-beyschlag-draloric-bc-components/MCU08050C1000FP500/MCU0805-100-CFCT-ND/2607922" H 12050 3600 50  0001 C CNN "DK_Detail_Page"
-	1    12050 3600
 	0    1    1    0   
 $EndComp
 Wire Wire Line
@@ -1673,14 +1663,6 @@ Wire Wire Line
 	11750 3300 11900 3300
 Wire Wire Line
 	11900 3400 11750 3400
-Wire Wire Line
-	11750 3500 11900 3500
-Wire Wire Line
-	11900 3600 11750 3600
-Wire Wire Line
-	12200 3600 12350 3600
-Wire Wire Line
-	12350 3500 12200 3500
 Wire Wire Line
 	12200 3400 12350 3400
 Wire Wire Line
@@ -1692,14 +1674,16 @@ Wire Wire Line
 NoConn ~ 12700 5250
 NoConn ~ 12700 4850
 $Comp
-L DM1AA-SF-PEJ_21_:DM1AA-SF-PEJ(21) J102
+L DM1AA-SF-PEJ_21_:DM1AA-SF-PEJ(21) J103
 U 1 1 61599B42
 P 12200 4850
-F 0 "J102" H 12200 5517 50  0000 C CNN
+F 0 "J103" H 12200 5517 50  0000 C CNN
 F 1 "DM1AA-SF-PEJ(21)" H 12200 5426 50  0000 C CNN
-F 2 "HRS_DM1AA-SF-PEJ(21)" H 12200 4850 50  0001 L BNN
+F 2 "DM1AA-SF-PEJ_21:HRS_DM1AA-SF-PEJ(21)" H 12200 4850 50  0001 L BNN
 F 3 "https://www.hirose.com/product/document?clcode=CL0609-0004-8-72&productname=DM1AA-SF-PEJ(72)&series=DM1&documenttype=Catalog&lang=en&documentid=D31696_en" H 12200 4850 50  0001 L BNN
 F 4 "HRS" H 12200 4850 50  0001 L BNN "MANUFACTURER"
+F 5 "DM1AA-SF-PEJ-21" H 12200 4850 50  0001 C CNN "Component name"
+F 6 "https://www.digikey.no/product-detail/no/hirose-electric-co-ltd/DM1AA-SF-PEJ-21/HR845CT-ND/559985" H 12200 4850 50  0001 C CNN "DK_Detail_Page"
 	1    12200 4850
 	1    0    0    -1  
 $EndComp
@@ -1769,21 +1753,23 @@ SDIO_DAT0
 Text GLabel 11600 4550 0    50   Input ~ 0
 SDIO_CMD
 $Comp
-L Connector_Generic:Conn_02x06_Odd_Even J?
+L Connector_Generic:Conn_02x06_Odd_Even J102
 U 1 1 61568E09
 P 12050 2250
-F 0 "J?" H 12100 2667 50  0000 C CNN
+F 0 "J102" H 12100 2667 50  0000 C CNN
 F 1 "MCU USART1 Header" H 12100 2576 50  0000 C CNN
-F 2 "" H 12050 2250 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Vertical_SMD" H 12050 2250 50  0001 C CNN
 F 3 "~" H 12050 2250 50  0001 C CNN
+F 4 "0015910120" H 12050 2250 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/molex/0015910120/WM17460-ND/614776" H 12050 2250 50  0001 C CNN "DK_Detail_Page"
 	1    12050 2250
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0125
 U 1 1 61580AEB
 P 12450 2650
-F 0 "#PWR?" H 12450 2400 50  0001 C CNN
+F 0 "#PWR0125" H 12450 2400 50  0001 C CNN
 F 1 "GND" H 12455 2477 50  0000 C CNN
 F 2 "" H 12450 2650 50  0001 C CNN
 F 3 "" H 12450 2650 50  0001 C CNN
@@ -1821,4 +1807,14 @@ Wire Wire Line
 Connection ~ 12450 2150
 Wire Wire Line
 	4250 4550 4250 4900
+NoConn ~ 12350 3500
+NoConn ~ 12350 3600
+Text GLabel 2150 2500 2    50   Output ~ 0
+FPGA_DONE
+Text GLabel 2150 3000 2    50   Input ~ 0
+FPGA_PROGRAM_B
+Wire Wire Line
+	2150 2500 1900 2500
+Wire Wire Line
+	1900 3000 2150 3000
 $EndSCHEMATC

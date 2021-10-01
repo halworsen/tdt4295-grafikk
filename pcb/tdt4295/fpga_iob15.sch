@@ -86,6 +86,7 @@ F 1 "470nF" H 3425 950 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 3438 900 50  0001 C CNN
 F 3 "https://www.farnell.com/datasheets/2048812.pdf" H 3400 1050 50  0001 C CNN
 F 4 "GRM188R71C474KA88D" H 3400 1050 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836" H 3400 1050 50  0001 C CNN "DK_Detail_Page"
 	1    3400 1050
 	1    0    0    -1  
 $EndComp
@@ -101,6 +102,7 @@ F 1 "470nF" H 3775 950 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 3788 900 50  0001 C CNN
 F 3 "https://www.farnell.com/datasheets/2048812.pdf" H 3750 1050 50  0001 C CNN
 F 4 "GRM188R71C474KA88D" H 3750 1050 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836" H 3750 1050 50  0001 C CNN "DK_Detail_Page"
 	1    3750 1050
 	1    0    0    -1  
 $EndComp
@@ -116,6 +118,7 @@ F 1 "470nF" H 4175 950 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 4188 900 50  0001 C CNN
 F 3 "https://www.farnell.com/datasheets/2048812.pdf" H 4150 1050 50  0001 C CNN
 F 4 "GRM188R71C474KA88D" H 4150 1050 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836" H 4150 1050 50  0001 C CNN "DK_Detail_Page"
 	1    4150 1050
 	1    0    0    -1  
 $EndComp
@@ -131,6 +134,7 @@ F 1 "470nF" H 4525 950 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 4538 900 50  0001 C CNN
 F 3 "https://www.farnell.com/datasheets/2048812.pdf" H 4500 1050 50  0001 C CNN
 F 4 "GRM188R71C474KA88D" H 4500 1050 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836" H 4500 1050 50  0001 C CNN "DK_Detail_Page"
 	1    4500 1050
 	1    0    0    -1  
 $EndComp

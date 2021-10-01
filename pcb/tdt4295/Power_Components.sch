@@ -36,8 +36,6 @@ F 3 "" H 3300 1300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2850 1750 3300 1750
-Wire Wire Line
 	3300 1750 3300 1300
 Wire Wire Line
 	1050 1500 1050 1750
@@ -60,10 +58,11 @@ F 5 "690-005-299-043" H 2150 1100 60  0001 L CNN "MPN"
 F 6 "Connectors, Interconnects" H 2150 1200 60  0001 L CNN "Category"
 F 7 "USB, DVI, HDMI Connectors" H 2150 1300 60  0001 L CNN "Family"
 F 8 "http://files.edac.net/690-005-299-043.pdf" H 2150 1400 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/edac-inc/690-005-299-043/151-1206-1-ND/4312192" H 2150 1500 60  0001 L CNN "DK_Detail_Page"
+F 9 "https://www.digikey.no/product-detail/en/edac-inc/690-005-299-043/151-1206-1-ND/4312192" H 2150 1500 60  0001 L CNN "DK_Detail_Page"
 F 10 "CONN RCPT USB2.0 MINI B SMD R/A" H 2150 1600 60  0001 L CNN "Description"
 F 11 "EDAC Inc." H 2150 1700 60  0001 L CNN "Manufacturer"
 F 12 "Active" H 2150 1800 60  0001 L CNN "Status"
+F 13 "690-005-299-043" H 1950 600 50  0001 C CNN "Component name"
 	1    1950 600 
 	0    -1   1    0   
 $EndComp
@@ -139,6 +138,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5488 1600 50  
 F 3 "www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp" H 5450 1750 50  0001 C CNN
 F 4 "CL10B104KA8NNNC" H 5450 1750 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 5450 1750 50  0001 C CNN "DK_Detail_Page"
+F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 5450 1750 50  0001 C CNN "DK_Datasheet_Link"
 	1    5450 1750
 	1    0    0    -1  
 $EndComp
@@ -187,8 +187,10 @@ U 1 1 61434EE2
 P 9450 1400
 F 0 "L203" V 9640 1400 50  0000 C CNN
 F 1 "1.5uH" V 9549 1400 50  0000 C CNN
-F 2 "" H 9450 1400 50  0001 C CNN
+F 2 "Inductor_SMD:L_1008_2520Metric_Pad1.43x2.20mm_HandSolder" H 9450 1400 50  0001 C CNN
 F 3 "~" H 9450 1400 50  0001 C CNN
+F 4 "TFM252012ALMA1R5MTAA" H 9450 1400 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/tdk-corporation/TFM252012ALMA1R5MTAA/445-175184-6-ND/7795261" H 9450 1400 50  0001 C CNN "DK_Detail_Page"
 	1    9450 1400
 	0    -1   -1   0   
 $EndComp
@@ -305,8 +307,10 @@ U 1 1 61883CDD
 P 1000 5350
 F 0 "D201" V 1039 5232 50  0000 R CNN
 F 1 "LED" V 948 5232 50  0000 R CNN
-F 2 "Diode_SMD:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1000 5350 50  0001 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 1000 5350 50  0001 C CNN
 F 3 "~" H 1000 5350 50  0001 C CNN
+F 4 "QTLP650D2TR" H 1000 5350 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/no/everlight-electronics-co-ltd/QTLP650D2TR/1080-1417-1-ND/2676151" H 1000 5350 50  0001 C CNN "DK_Detail_Page"
 	1    1000 5350
 	0    -1   -1   0   
 $EndComp
@@ -316,8 +320,10 @@ U 1 1 6188F1B9
 P 1500 5350
 F 0 "D202" V 1539 5232 50  0000 R CNN
 F 1 "LED" V 1448 5232 50  0000 R CNN
-F 2 "Diode_SMD:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1500 5350 50  0001 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 1500 5350 50  0001 C CNN
 F 3 "~" H 1500 5350 50  0001 C CNN
+F 4 "QTLP650C4TR" H 1500 5350 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/no/everlight-electronics-co-ltd/QTLP650C4TR/1080-1415-1-ND/2676149" H 1500 5350 50  0001 C CNN "DK_Detail_Page"
 	1    1500 5350
 	0    -1   -1   0   
 $EndComp
@@ -499,6 +505,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5688 3800 50  
 F 3 "www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp" H 5650 3950 50  0001 C CNN
 F 4 "CL10B104KA8NNNC" H 5650 3950 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 5650 3950 50  0001 C CNN "DK_Detail_Page"
+F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 5650 3950 50  0001 C CNN "DK_Datasheet_Link"
 	1    5650 3950
 	1    0    0    -1  
 $EndComp
@@ -558,6 +565,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 9538 3800 50  
 F 3 "www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp" H 9500 3950 50  0001 C CNN
 F 4 "CL10B104KA8NNNC" H 9500 3950 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 9500 3950 50  0001 C CNN "DK_Detail_Page"
+F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 9500 3950 50  0001 C CNN "DK_Datasheet_Link"
 	1    9500 3950
 	1    0    0    -1  
 $EndComp
@@ -589,6 +597,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 8688 4000 50  
 F 3 "www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp" H 8650 4150 50  0001 C CNN
 F 4 "CL10B104KA8NNNC" H 8650 4150 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 8650 4150 50  0001 C CNN "DK_Detail_Page"
+F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 8650 4150 50  0001 C CNN "DK_Datasheet_Link"
 	1    8650 4150
 	1    0    0    -1  
 $EndComp
@@ -608,8 +617,10 @@ U 1 1 6154C9A2
 P 9250 4300
 F 0 "L202" V 9440 4300 50  0000 C CNN
 F 1 "2.2uH" V 9349 4300 50  0000 C CNN
-F 2 "" H 9250 4300 50  0001 C CNN
+F 2 "Inductor_SMD:L_1008_2520Metric_Pad1.43x2.20mm_HandSolder" H 9250 4300 50  0001 C CNN
 F 3 "~" H 9250 4300 50  0001 C CNN
+F 4 "LQM2HPN2R2MG0L" H 9250 4300 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/murata-electronics/LQM2HPN2R2MG0L/490-5114-1-ND/1893677" H 9250 4300 50  0001 C CNN "DK_Detail_Page"
 	1    9250 4300
 	0    -1   -1   0   
 $EndComp
@@ -770,7 +781,7 @@ U 1 1 6166834E
 P 8450 4700
 F 0 "C211" H 8500 4800 50  0000 L CNN
 F 1 "1uF" H 8500 4600 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 8488 4550 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 8488 4550 50  0001 C CNN
 F 3 "www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp" H 8450 4700 50  0001 C CNN
 F 4 "CL21B105KOFNNNE" H 8450 4700 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL21B105KOFNNNE/1276-1026-1-ND/3889112" H 8450 4700 50  0001 C CNN "DK_Datasheet_Link"
@@ -788,6 +799,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 6088 4000 50  
 F 3 "www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp" H 6050 4150 50  0001 C CNN
 F 4 "CL10B104KA8NNNC" H 6050 4150 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 6050 4150 50  0001 C CNN "DK_Detail_Page"
+F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 6050 4150 50  0001 C CNN "DK_Datasheet_Link"
 	1    6050 4150
 	1    0    0    -1  
 $EndComp
@@ -827,8 +839,10 @@ U 1 1 6170C171
 P 5100 4300
 F 0 "L201" V 5290 4300 50  0000 C CNN
 F 1 "1.5uH" V 5199 4300 50  0000 C CNN
-F 2 "" H 5100 4300 50  0001 C CNN
+F 2 "Inductor_SMD:L_1008_2520Metric_Pad1.43x2.20mm_HandSolder" H 5100 4300 50  0001 C CNN
 F 3 "~" H 5100 4300 50  0001 C CNN
+F 4 "TFM252012ALMA1R5MTAA" H 5100 4300 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/tdk-corporation/TFM252012ALMA1R5MTAA/445-175184-6-ND/7795261" H 5100 4300 50  0001 C CNN "DK_Detail_Page"
 	1    5100 4300
 	0    -1   -1   0   
 $EndComp
@@ -1056,7 +1070,7 @@ U 1 1 615D1BFB
 P 8200 2550
 F 0 "C210" H 8315 2596 50  0000 L CNN
 F 1 "1uF" H 8315 2505 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 8238 2400 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 8238 2400 50  0001 C CNN
 F 3 "www.samsungsem.com/kr/support/product-search/mlcc/CL21B105KOFNNNE.jsp" H 8200 2550 50  0001 C CNN
 F 4 "CL21B105KOFNNNE" H 8200 2550 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL21B105KOFNNNE/1276-1026-1-ND/3889112" H 8200 2550 50  0001 C CNN "DK_Datasheet_Link"
@@ -1127,7 +1141,7 @@ U 1 1 617D83E5
 P 3950 6450
 F 0 "TP201" H 4103 6551 50  0000 L CNN
 F 1 "TestPoint_Probe" H 4103 6460 50  0000 L CNN
-F 2 "" H 4150 6450 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_D4.0mm" H 4150 6450 50  0001 C CNN
 F 3 "~" H 4150 6450 50  0001 C CNN
 	1    3950 6450
 	1    0    0    -1  
@@ -1138,7 +1152,7 @@ U 1 1 617D910C
 P 3950 6650
 F 0 "TP202" H 4103 6751 50  0000 L CNN
 F 1 "TestPoint_Probe" H 4103 6660 50  0000 L CNN
-F 2 "" H 4150 6650 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_D4.0mm" H 4150 6650 50  0001 C CNN
 F 3 "~" H 4150 6650 50  0001 C CNN
 	1    3950 6650
 	1    0    0    -1  
@@ -1149,7 +1163,7 @@ U 1 1 617D9DC0
 P 3950 6850
 F 0 "TP203" H 4103 6951 50  0000 L CNN
 F 1 "TestPoint_Probe" H 4103 6860 50  0000 L CNN
-F 2 "" H 4150 6850 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_D4.0mm" H 4150 6850 50  0001 C CNN
 F 3 "~" H 4150 6850 50  0001 C CNN
 	1    3950 6850
 	1    0    0    -1  
@@ -1160,7 +1174,7 @@ U 1 1 617DA131
 P 3950 7050
 F 0 "TP204" H 4103 7151 50  0000 L CNN
 F 1 "TestPoint_Probe" H 4103 7060 50  0000 L CNN
-F 2 "" H 4150 7050 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_D4.0mm" H 4150 7050 50  0001 C CNN
 F 3 "~" H 4150 7050 50  0001 C CNN
 	1    3950 7050
 	1    0    0    -1  
@@ -1171,7 +1185,7 @@ U 1 1 617DA44A
 P 3950 7250
 F 0 "TP205" H 4103 7351 50  0000 L CNN
 F 1 "TestPoint_Probe" H 4103 7260 50  0000 L CNN
-F 2 "" H 4150 7250 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_D4.0mm" H 4150 7250 50  0001 C CNN
 F 3 "~" H 4150 7250 50  0001 C CNN
 	1    3950 7250
 	1    0    0    -1  
@@ -1262,20 +1276,6 @@ Wire Notes Line
 Text Notes 3650 6000 0    50   ~ 0
 Probe points
 $Comp
-L Device:Ferrite_Bead FB201
-U 1 1 614FE6B3
-P 2700 1750
-F 0 "FB201" V 2426 1750 50  0000 C CNN
-F 1 "Ferrite_Bead" V 2517 1750 50  0000 C CNN
-F 2 "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder" V 2630 1750 50  0001 C CNN
-F 3 "~" H 2700 1750 50  0001 C CNN
-F 4 "BK0603HS330-T" H 2700 1750 50  0001 C CNN "Component name"
-F 5 "https://www.digikey.no/en/products/detail/taiyo-yuden/BK0603HS330-T/957708" H 2700 1750 50  0001 C CNN "DK_Detail_Page"
-F 6 "See fig 2.5 https://www.ftdichip.com/Documents/AppNotes/AN_146_USB_Hardware_Design_Guidelines_for_FTDI_ICs.pdf" H 2700 1750 50  0001 C CNN "Description"
-	1    2700 1750
-	0    1    1    0   
-$EndComp
-$Comp
 L tdt4295:PHDMI2AB4 U201
 U 1 1 61657D49
 P 2150 3050
@@ -1283,6 +1283,8 @@ F 0 "U201" H 1912 2979 50  0000 R CNN
 F 1 "PHDMI2AB4" H 1912 3070 50  0000 R CNN
 F 2 "tdt4295:DFN2510A-10" H 2150 2950 50  0001 C CNN
 F 3 "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjq-uC3upjzAhUSmYsKHV0iBjEQFnoECAQQAQ&url=https%3A%2F%2Fassets.nexperia.com%2Fdocuments%2Fdata-sheet%2FPHDMI2AB4.pdf&usg=AOvVaw2t6nU9jF_TXAIowSn_9t4X" H 2150 2950 50  0001 C CNN
+F 4 "PHDMI2AB4Z" H 2150 3050 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/no/nexperia-usa-inc/PHDMI2AB4Z/1727-7820-1-ND/9092244" H 2150 3050 50  0001 C CNN "DK_Detail_Page"
 	1    2150 3050
 	-1   0    0    1   
 $EndComp
@@ -1307,8 +1309,6 @@ Wire Wire Line
 	2200 1750 2200 2650
 Connection ~ 2200 1750
 Wire Wire Line
-	2200 1750 2550 1750
-Wire Wire Line
 	1250 2150 2000 2150
 Wire Wire Line
 	2000 2150 2000 2650
@@ -1316,4 +1316,22 @@ Connection ~ 2000 2150
 Wire Wire Line
 	2000 2150 2800 2150
 NoConn ~ 1900 2650
+Wire Wire Line
+	2200 1750 2550 1750
+Wire Wire Line
+	2850 1750 3300 1750
+$Comp
+L Device:Ferrite_Bead FB201
+U 1 1 614FE6B3
+P 2700 1750
+F 0 "FB201" V 2426 1750 50  0000 C CNN
+F 1 "Ferrite_Bead" V 2517 1750 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 2630 1750 50  0001 C CNN
+F 3 "~" H 2700 1750 50  0001 C CNN
+F 4 "74279201" H 2700 1750 50  0001 C CNN "Component name"
+F 5 "https://no.farnell.com/wurth-elektronik/74279201/ferrite-bead-0-15-ohm-0-5a-0805/dp/1635708" H 2700 1750 50  0001 C CNN "DK_Detail_Page"
+F 6 "See fig 2.5 https://www.ftdichip.com/Documents/AppNotes/AN_146_USB_Hardware_Design_Guidelines_for_FTDI_ICs.pdf" H 2700 1750 50  0001 C CNN "Description"
+	1    2700 1750
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC
