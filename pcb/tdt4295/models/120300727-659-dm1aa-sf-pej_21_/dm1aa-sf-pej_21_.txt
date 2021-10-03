@@ -1,0 +1,13 @@
+﻿"Symbol";"Value";"Unit";
+"TraceParts.PartNumber";"90-10012020-046624";"";
+"REFERENCE";"DM1AA-SF-PEJ(21)";"";
+"TraceParts.PartTitle";"Connector, for SD memory card, standard";"";
+"TraceParts.InstanceId";"90-10012020-046624CY0QWMU8HU02N4A0UYTL02GQT";"";
+"DESIGN";"Connector, for SD memory card, standard";"";
+"TraceParts.PartStatus";"Published";"";
+"TraceParts.PartStatusId";"";"";
+"SUPPLIER";"HIROSE";"";
+"TraceParts.PartVersion";"1.0.0";"";
+"TRACEPARTS";"TRACEPARTS";"";
+"TraceParts.PartLanguage";"en";"";
+"TraceParts.ClassPath";"HIROSE:90-10012020-046624";"";
