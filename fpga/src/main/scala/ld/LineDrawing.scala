@@ -15,6 +15,7 @@ class LineDrawing(
     val ys = Input(UInt(log2(yStart).W))
     val xe = Input(UInt(log2(xEnd).W))
     val ye = Input(UInt(log2(yEnd).W))
+    // Todo: should we have an input that controls whether or not we should output? (output enable)
 
     // This is needed instead of setPixel
     val writeEnable = Output(Bool())
@@ -29,7 +30,7 @@ class LineDrawing(
   val y = Reg(UInt(log2(yStart).W)) // Drawing position
   val dx = Reg(SInt(log2(xEnd).W))
   val dy = Reg(SInt(log2(yEnd).W))
-  val e = Reg(SInt(log2(xStart).W))
+  val e = Reg(SInt(log2(xStart).W)) // Error value
 
   val writeEnable = RegInit(false.B)
   val writeX = Reg(UInt(log2(xEnd).W))
@@ -39,9 +40,9 @@ class LineDrawing(
   // Needed because Bresenham's algorithm is not 
   // symmertical, and we don't want gaps
   val xa = Wire(UInt())
-  val x1 = Wire(UInt())
-  val y0 = Wire(UInt())
-  val y1 = Wire(UInt())
+  val xb = Wire(UInt())
+  val ya = Wire(UInt())
+  val yb = Wire(UInt())
 
   // Swap points if y_start is less than y_end to ensure 
   // a consistent way to order the points. By swapping 
@@ -58,26 +59,18 @@ class LineDrawing(
     ya := ye;
     yb := ys;
   }
-  // todo: register end point. keep?
-  // val x_end = Reg(UInt(log2(xStart).W)) // todo, should maybe check enda value ttoo and take the bigger
-  // val y_end = Reg(UInt(log2(yStart).W)) // ^
 
-  x := io.xs
-  y := io.ys
-  dx := io.xe - io.xs
-  dy := io.ye - io.ys
-  e := -(dx >> 1.U).asSInt();
 
   when(io.done) {
     // Initialize registers
     io.done := false.B
-    x := io.xs
-    y := io.ys
-    dx := io.xe - io.xs
-    dy := io.ye - io.ys
+    x := io.xa
+    y := io.ya
+    dx := io.xb - io.xa // todo: må vi ha absoluttverdi her?
+    dy := io.yb - io.ya  
     e := -(dx >> 1.U).asSInt();
   }
-  when(x <= io.xe) {
+  when(x <= io.xb) {
     // Draw pixel
     writeEnable := true.B
     writeX := x.asUInt()
