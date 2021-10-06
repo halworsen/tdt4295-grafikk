@@ -15,6 +15,14 @@ typedef struct mat4 {
     float data[16];
 } mat4_t;
 
+// Initialize a matrix with given values.
+void mat4(mat4_t *ret,
+        float x11, float x12, float x13, float x14,
+        float x21, float x22, float x23, float x24,
+        float x31, float x32, float x33, float x34,
+        float x41, float x42, float x43, float x44);
+
+
 // 4D Vectors.
 typedef struct vec4 {
     float x;
@@ -22,6 +30,9 @@ typedef struct vec4 {
     float z;
     float w;
 } vec4_t;
+
+// Initialize a vector with given values.
+void vec4(vec4_t *ret, float x, float y, float z, float w);
 
 // Serialization functions. These will automatically reinterpret our float-based
 // structures as fixed-point before sending them over SPI where applicable.
@@ -34,8 +45,6 @@ void serialize_vertex_buffer(vec4_t *verts, int n);
 void serialize_index_buffer(uint32_t *indeces, int n);
 #endif
 
-
-// TODO implementations for these
 
 // Dot product ret = x . y
 float dot(vec4_t *x, vec4_t *y);

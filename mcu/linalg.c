@@ -4,11 +4,73 @@
 #include "linalg.h"
 #include <stdint.h>
 
+void mat4(mat4_t *ret,
+        float x11, float x12, float x13, float x14,
+        float x21, float x22, float x23, float x24,
+        float x31, float x32, float x33, float x34,
+        float x41, float x42, float x43, float x44)
+{
+    ret->data[ 0] = x11;
+    ret->data[ 1] = x12;
+    ret->data[ 2] = x13;
+    ret->data[ 3] = x14;
+
+    ret->data[ 4] = x21;
+    ret->data[ 5] = x22;
+    ret->data[ 6] = x23;
+    ret->data[ 7] = x24;
+
+    ret->data[ 8] = x31;
+    ret->data[ 9] = x32;
+    ret->data[10] = x33;
+    ret->data[11] = x34;
+
+    ret->data[12] = x41;
+    ret->data[13] = x42;
+    ret->data[14] = x43;
+    ret->data[15] = x44;
+}
+
+void vec4(vec4_t *ret, float x, float y, float z, float w) {
+    ret->x = x;
+    ret->y = y;
+    ret->z = z;
+    ret->w = w;
+}
+
+
 #ifdef NOEMBED
 // Debugging program (which can print).
 // ====================================
 #include <stdio.h>
+
+void print_mat4(mat4_t *m) {
+    puts("Matrix:");
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            printf("%f ", m->data[4*i + j]);
+        }
+        puts("");
+    }
+}
+
+void print_vec4(vec4_t *v) {
+    printf("Vector: (%f %f %f %f)\n", v->x, v->y, v->z, v->w);
+}
+
 int main() {
+    mat4_t A;
+    mat4(&A,
+        1.0, 0.0, 0.0, 0.0,
+        0.0, 1.0, 0.0, 0.0,
+        0.0, 0.0, 1.0, 0.0,
+        0.0, 0.0, 0.0, 1.0);
+    print_mat4(&A);
+
+    vec4_t v;
+    vec4(&v, 1.0, 2.0, 3.0, 1.0);
+    print_vec4(&v);
+
     return 0;
 }
 #endif
