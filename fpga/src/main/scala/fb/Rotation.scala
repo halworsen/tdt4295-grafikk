@@ -26,6 +26,7 @@ object Matrix {
       Array(sin(theta), cos(theta), 0.0),
       Array(0.0, 0.0, 1.0)
     )
+  /*
   val ladermanMultiply: Vec[Vec[SInt]] =
     (a: Vec[SInt], b: Vec[Vec[SInt]]) => {
       var m = RegInit(VecInit(Seq.fill(23)(0.S)));
@@ -75,7 +76,9 @@ object Matrix {
 
       return c
     }
+   */
 
+  /*
   def mvpMultiply: Vec[SInt] =
     // 4x1 * 4x4
     (U: Vec[SInt], MVP: Vec[Vec[SInt]]) => {
@@ -87,4 +90,5 @@ object Matrix {
       }
       return V
     }
+   */
 }
