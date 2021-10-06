@@ -25,8 +25,8 @@ class LineDrawing(
     val done = Output(RegInit(true.B))
   })
 
-  val x = Reg(UInt(log2(xStart).W))
-  val y = Reg(UInt(log2(yStart).W))
+  val x = Reg(UInt(log2(xStart).W)) // Drawing position
+  val y = Reg(UInt(log2(yStart).W)) // Drawing position
   val dx = Reg(SInt(log2(xEnd).W))
   val dy = Reg(SInt(log2(yEnd).W))
   val e = Reg(SInt(log2(xStart).W))
