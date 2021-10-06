@@ -4,3 +4,7 @@
 *.a
 *.tar
 Gecko_SDK/
+# Coc
+compile_commands.json
+.cache
+.ccls

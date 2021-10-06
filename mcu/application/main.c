@@ -1,73 +1,79 @@
-/**
- * @file    main.c
- * @brief   Simple LED Blink Demo for EFM32GG_STK3700
- * @version 1.1
- *
- * @note    Just blinks the LEDs of the STK3700
- *
- * @note    LEDs are on pins 2 and 3 of GPIO Port E
- *
- * @note    It uses a primitive delay mechanism. Do not use it.
- *
- * @author  Hans
- * @date    01/09/2018
- */
-
+#include "bsp.h"
+#include "em_chip.h"
 #include "em_cmu.h"
 #include "em_device.h"
+#include "em_emu.h"
 #include "em_gpio.h"
 #include "spidrv.h"
-#include <stdint.h>
 
-/**
- * @brief  Main function
- *
- * @note   Using default clock configuration
- * @note   HFCLK     = HFRCO 14 MHz
- * @note   HFCORECLK = HFCLK
- * @note   HFPERCLK  = HFCLK
+#define SPI_BITRATE 100000
 
- */
+uint8_t TRANSMIT = 0;
 SPIDRV_HandleData_t handleData;
 SPIDRV_Handle_t handle = &handleData;
 
-void TransferComplete(SPIDRV_Handle_t handle, Ecode_t transferStatus,
-                      int itemsTransferred) {
-  if (transferStatus == ECODE_EMDRV_SPIDRV_OK) {
-    // Success !
-  }
+struct mat4 {
+  float data[16];
+};
+
+struct vect {
+  float x;
+  float y;
+  float z;
+  float w;
+};
+
+void GPIO_EVEN_IRQHandler(void) {
+  GPIO_IntClear(0x5555);
+  TRANSMIT = 1;
+  GPIO_PinOutToggle(BSP_GPIO_LED1_PORT, BSP_GPIO_LED1_PIN);
+}
+
+void transmitGarbage() {
+  int16_t buffer[4] = {0, 0, 100, 100};
+  Ecode_t retval;
+
+  retval = SPIDRV_MTransmitB(handle, buffer, sizeof(buffer));
+  if (retval != ECODE_EMDRV_SPIDRV_OK)
+    GPIO_PinOutSet(BSP_GPIO_LED0_PORT, BSP_GPIO_LED0_PIN);
+  TRANSMIT = 0;
+}
+
+void initGPIO(void) {
+  CMU_ClockEnable(cmuClock_GPIO, true);
+
+  GPIO_PinModeSet(gpioPortB, BSP_GPIO_PB0_PIN, gpioModeInputPullFilter, 1);
+  GPIO_PinModeSet(gpioPortB, BSP_GPIO_PB1_PIN, gpioModeInputPullFilter, 1);
+
+  GPIO_PinModeSet(gpioPortE, BSP_GPIO_LED0_PIN, gpioModePushPull, 0);
+  GPIO_PinModeSet(gpioPortE, BSP_GPIO_LED1_PIN, gpioModePushPull, 0);
+
+  NVIC_EnableIRQ(GPIO_EVEN_IRQn);
+
+  GPIO_ExtIntConfig(BSP_GPIO_PB1_PORT, BSP_GPIO_PB1_PIN, BSP_GPIO_PB1_PIN, 0, 1,
+                    true);
 }
 
 int main(void) {
-  uint8_t buffer[10];
-  Ecode_t retval;
+  uint32_t bitrate = 0;
+
+  // Initializations
+  initGPIO();
   SPIDRV_Init_t initData = SPIDRV_MASTER_USART1;
-  CMU_ClockEnable(cmuClock_GPIO, true);
+  initData.bitOrder = spidrvBitOrderMsbFirst;
+  SPIDRV_Init(handle, &initData);
+  SPIDRV_SetBitrate(handle, SPI_BITRATE);
 
-  // Initialize an SPI driver instance.
-  retval = SPIDRV_Init(handle, &initData);
-  if (retval != ECODE_OK) {
-    GPIO_PinModeSet(gpioPortE, 2 /*pin 4*/,
-                    gpioModePushPull /*push-pull output*/, 1 /*output level*/);
-    return -1;
-  }
+  SPIDRV_GetBitrate(handle, &bitrate);
 
-  // Transmit data using a blocking transmit function.
-  SPIDRV_MTransmitB(handle, buffer, 10);
-  if (retval != ECODE_OK) {
-    GPIO_PinModeSet(gpioPortE, 2 /*pin 4*/,
-                    gpioModePushPull /*push-pull output*/, 1 /*output level*/);
-    return -1;
-  }
+  if (bitrate != SPI_BITRATE)
+    GPIO_PinOutSet(BSP_GPIO_LED0_PORT, BSP_GPIO_LED0_PIN);
+  /*
+  CMU_ClockSelectSet(cmuClock_HF, cmuSelect_HFXO);
+  */
 
-  // Transmit data using a callback to catch transfer completion.
-  SPIDRV_MTransmit(handle, buffer, 10, TransferComplete);
-  if (retval != ECODE_OK) {
-    GPIO_PinModeSet(gpioPortE, 2 /*pin 4*/,
-                    gpioModePushPull /*push-pull output*/, 1 /*output level*/);
-    return -1;
+  while (1) {
+    if (TRANSMIT)
+      transmitGarbage();
   }
-  GPIO_PinModeSet(gpioPortE, 2 /*pin 4*/, gpioModePushPull /*push-pull output*/,
-                  1 /*output level*/);
-  return 0;
 }
