@@ -11,55 +11,57 @@
 #define FP_SCALE 1000
 
 // 4x4 Matrices. Should be assumed row-major.
-struct mat4 {
+typedef struct mat4 {
     float data[16];
-};
+} mat4_t;
 
 // 4D Vectors.
-struct vec4 {
+typedef struct vec4 {
     float x;
     float y;
     float z;
     float w;
-};
+} vec4_t;
 
 // Serialization functions. These will automatically reinterpret our float-based
 // structures as fixed-point before sending them over SPI where applicable.
+#ifndef NOEMBED
 void serialize_scalar(float x);
-void serialize_vec4(vec4 *m);
-void serialize_mat4(mat4 *m);
+void serialize_vec4(vec4_t *m);
+void serialize_mat4(mat4_t *m);
 void serialize_index(uint32_t i);
-void serialize_vertex_buffer(vec4 *verts, int n);
+void serialize_vertex_buffer(vec4_t *verts, int n);
 void serialize_index_buffer(uint32_t *indeces, int n);
+#endif
 
 
 // TODO implementations for these
 
 // Dot product ret = x . y
-float dot(struct vec4 *x, struct vec4 *y);
+float dot(vec4_t *x, vec4_t *y);
 
 // Matrix product ret = AB.
-void mmul(struct mat4 *ret, struct mat4 *A, struct mat4 *B);
+void mmul(mat4_t *ret, mat4_t *A, mat4_t *B);
 
 // Apply transformation ret = Tx
-void transform(struct vec4 *ret
-               struct mat4 *T,
-               struct vec4 *x);
+void transform(vec4_t *ret,
+               mat4_t *T,
+               vec4_t *x);
 
 // Make a translation matrix
-void translation(struct mat4 *ret, struct vec4 *x);
+void translation(mat4_t *ret, vec4_t *x);
 
 // Make simple rotation matrices around the standard 
 // basis axes (sufficient for simple fps camera)
-void rot_x(struct mat4 *ret, float th);
-void rot_y(struct mat4 *ret, float th);
-void rot_z(struct mat4 *ret, float th);
+void rot_x(mat4_t *ret, float th);
+void rot_y(mat4_t *ret, float th);
+void rot_z(mat4_t *ret, float th);
 
 // Rotation around arbitrary vector.
-void rotation(struct mat4 *ret, struct vec4 *r, float th);
+void rotation(mat4_t *ret, vec4_t *r, float th);
 
 // Perspective projection matrix from FOV, aspect ratio and clip planes.
-void perspective(struct mat4 *ret,
+void perspective(mat4_t *ret,
                  float fov_rad,
                  float aspect,
                  float near,
