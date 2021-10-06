@@ -34,9 +34,9 @@ typedef struct vec4 {
 // Initialize a vector with given values.
 void vec4(vec4_t *ret, float x, float y, float z, float w);
 
+#ifndef NOEMBED
 // Serialization functions. These will automatically reinterpret our float-based
 // structures as fixed-point before sending them over SPI where applicable.
-#ifndef NOEMBED
 void serialize_scalar(float x);
 void serialize_vec4(vec4_t *m);
 void serialize_mat4(mat4_t *m);
@@ -46,19 +46,20 @@ void serialize_index_buffer(uint32_t *indeces, int n);
 #endif
 
 
-// Dot product ret = x . y
-float dot(vec4_t *x, vec4_t *y);
+// Dot product ret = x . y.
+float dot3(vec4_t *x, vec4_t *y); // Only 3D components.
+float dot4(vec4_t *x, vec4_t *y); // All 4 components.
 
 // Matrix product ret = AB.
 void mmul(mat4_t *ret, mat4_t *A, mat4_t *B);
 
-// Apply transformation ret = Tx
-void transform(vec4_t *ret,
-               mat4_t *T,
-               vec4_t *x);
+// Apply transformation ret = Tq.
+void transform(vec4_t *ret, mat4_t *T, vec4_t *q);
+
+// TODO the convenience functions to set up common matrices
 
 // Make a translation matrix
-void translation(mat4_t *ret, vec4_t *x);
+void translation(mat4_t *ret, vec4_t *t);
 
 // Make simple rotation matrices around the standard 
 // basis axes (sufficient for simple fps camera)

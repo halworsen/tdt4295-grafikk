@@ -38,17 +38,64 @@ void vec4(vec4_t *ret, float x, float y, float z, float w) {
     ret->w = w;
 }
 
+// 3D dot product.
+float dot3(vec4_t *p, vec4_t *q) {
+    return p->x * q->x
+        +  p->y * q->y
+        +  p->z * q->z;
+}
+
+// 4D dot product.
+float dot4(vec4_t *p, vec4_t *q) {
+    return dot3(p, q) +  p->w * q->w;
+}
+
+// Matrix product ret = AB.
+void mmul(mat4_t *ret, mat4_t *A, mat4_t *B) {
+    // Alias the pointers to make the loop more readable.
+    float* a = A->data;
+    float* b = B->data;
+
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            // Row vector from A, column vector from B.
+            float dot = a[4*i + 0] * b[ 0 + j]
+                      + a[4*i + 1] * b[ 4 + j]
+                      + a[4*i + 2] * b[ 8 + j]
+                      + a[4*i + 3] * b[12 + j];
+
+            ret->data[4*i + j] = dot;
+        }
+    }
+}
+
+void transform(vec4_t *ret, mat4_t *T, vec4_t *v) {
+    // Alias the pointer to the matrix data buffer.
+    float* t = T->data;
+
+    for (int i = 0; i < 4; i++) {
+        // i'th row vector from A, v is column vector.
+       float dot = t[4*i + 0] * v->x
+                 + t[4*i + 1] * v->y
+                 + t[4*i + 2] * v->z
+                 + t[4*i + 3] * v->w;
+       *((float*) ret + i) = dot;
+    }
+}
+
+
+
 
 #ifdef NOEMBED
 // Debugging program (which can print).
 // ====================================
 #include <stdio.h>
 
-void print_mat4(mat4_t *m) {
+void print_mat4(mat4_t *M) {
     puts("Matrix:");
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
-            printf("%f ", m->data[4*i + j]);
+            printf("%f ", M->data[4*i + j]);
         }
         puts("");
     }
@@ -59,17 +106,21 @@ void print_vec4(vec4_t *v) {
 }
 
 int main() {
-    mat4_t A;
-    mat4(&A,
-        1.0, 0.0, 0.0, 0.0,
-        0.0, 1.0, 0.0, 0.0,
-        0.0, 0.0, 1.0, 0.0,
-        0.0, 0.0, 0.0, 1.0);
-    print_mat4(&A);
+    mat4_t T;
+    mat4(&T, 2.0, 0.0, 0.0, 0.0,
+             1.0, 0.0, 0.0, 0.0,
+             0.0, 0.0, 4.0, 0.0,
+             0.0, 0.0, 0.0, 1.0);
 
-    vec4_t v;
-    vec4(&v, 1.0, 2.0, 3.0, 1.0);
+    vec4_t x_hat, z_hat, v, w;
+    vec4(&x_hat, 1.0, 0.0, 0.0, 1.0);
+    vec4(&z_hat, 0.0, 0.0, 1.0, 1.0);
+
+    transform(&v, &T, &x_hat);
+    transform(&w, &T, &z_hat);
+
     print_vec4(&v);
+    print_vec4(&w);
 
     return 0;
 }
