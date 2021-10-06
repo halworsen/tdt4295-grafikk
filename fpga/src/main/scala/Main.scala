@@ -59,6 +59,8 @@ class WriteBtn extends Module {
 }
 
 class Main extends Module {
+  def delay(x: UInt) = RegNext(x)
+
   val io = IO(new Bundle {
     val aresetn = Input(Bool())
 
@@ -79,15 +81,15 @@ class Main extends Module {
     bresenhams.io.ys := 200.U
     bresenhams.io.ye := 200.U
 
-    fb.io.writeEnable := bresenhams.io.writeEnable
+    //fb.io.writeEnable := bresenhams.io.writeEnable
+    bresenhams.io.writeEnable := DontCare
+    fb.io.writeEnable := false.B
     fb.io.writeX := bresenhams.io.writeX
     fb.io.writeY := bresenhams.io.writeY
     fb.io.writeVal := bresenhams.io.writeVal
 
     val vga = Module(new VGA)
     val vgaClock = Module(new VGAClock)
-    fb.io.readX := vga.io.selX
-    fb.io.readY := vga.io.selY
 
     val writeBtn = Module(new WriteBtn)
     writeBtn.io.aresetn := io.aresetn
@@ -95,23 +97,28 @@ class Main extends Module {
 
     //fb.io.writeEnable := writeBtn.io.writeEnable
 
-    vga.io.data := fb.io.readVal
-    vga.io.clock := vgaClock.io.clk_pix
-    vga.io.reset := ~io.aresetn
-
     //vga.io.out := DontCare
 
     vgaClock.io.clk := clock
-    fb.io.clock := vgaClock.io.clk_pix
 
     //val shouldDraw = vga.io.selX < 48.U && vga.io.selY < 48.U
     withClock(vgaClock.io.clk_pix) {
-      io.vga_hsync := vga.io.hsync
-      io.vga_vsync := vga.io.vsync
+      vga.io.clock := vgaClock.io.clk_pix
+      vga.io.reset := ~io.aresetn
+      fb.io.readEnable := vga.io.dataEnable
 
-      io.vga_r := vga.io.out(0)
-      io.vga_g := vga.io.out(1)
-      io.vga_b := vga.io.out(2)
+      vga.io.data := fb.io.readVal
+      fb.io.readClock := vgaClock.io.clk_pix
+      fb.io.readX := vga.io.selX
+      fb.io.readY := vga.io.selY
+
+      // Delay all VGA signals by 1 cycle due to 1 cycle delay from memory reads
+      io.vga_hsync := delay(vga.io.hsync)
+      io.vga_vsync := delay(vga.io.vsync)
+
+      io.vga_r := delay(vga.io.out(0))
+      io.vga_g := delay(vga.io.out(1))
+      io.vga_b := delay(vga.io.out(2))
 
       //when(~vga.io.enable) {
       //io.vga_r := "h0".U
