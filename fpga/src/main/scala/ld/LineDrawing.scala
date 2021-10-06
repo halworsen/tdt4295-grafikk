@@ -36,6 +36,32 @@ class LineDrawing(
   val writeY = Reg(UInt(log2(yEnd).W))
   val writeVal = RegInit(true.B)
 
+  // Needed because Bresenham's algorithm is not 
+  // symmertical, and we don't want gaps
+  val xa = Wire(UInt())
+  val x1 = Wire(UInt())
+  val y0 = Wire(UInt())
+  val y1 = Wire(UInt())
+
+  // Swap points if y_start is less than y_end to ensure 
+  // a consistent way to order the points. By swapping 
+  // y-coordinates if y_start is greater than y_end, we 
+  // will ensure that we always draw down ont he screen.
+  when (ys < ye){
+    xa := xs;
+    xb := xe;
+    ya := ys;
+    yb := ye;
+  } otherwise {
+    xa := xe;
+    xb := xs;
+    ya := ye;
+    yb := ys;
+  }
+  // todo: register end point. keep?
+  // val x_end = Reg(UInt(log2(xStart).W)) // todo, should maybe check enda value ttoo and take the bigger
+  // val y_end = Reg(UInt(log2(yStart).W)) // ^
+
   x := io.xs
   y := io.ys
   dx := io.xe - io.xs
