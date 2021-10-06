@@ -4,11 +4,8 @@
 #include "em_device.h"
 #include "em_emu.h"
 #include "em_gpio.h"
+#include "em_timer.h"
 #include "spidrv.h"
-
-uint8_t TRANSMIT = 0;
-SPIDRV_HandleData_t handleData;
-SPIDRV_Handle_t handle = &handleData;
 
 struct mat4 {
   float data[16];
@@ -23,18 +20,23 @@ struct vect {
 
 void GPIO_EVEN_IRQHandler(void) {
   GPIO_IntClear(0x5555);
-  TRANSMIT = 1;
   GPIO_PinOutToggle(BSP_GPIO_LED1_PORT, BSP_GPIO_LED1_PIN);
 }
 
-void transmitGarbage() {
-  Ecode_t retval;
-  uint8_t buffer = 130;
+void TIMER1_IRQHandler(void) {
+  TIMER_IntClear(TIMER1, 1);
+  GPIO_PinOutToggle(BSP_GPIO_LED1_PORT, BSP_GPIO_LED1_PIN);
+}
 
-  retval = SPIDRV_MTransmitB(handle, &buffer, 1);
-  if (retval != ECODE_EMDRV_SPIDRV_OK || buffer != 130)
-    GPIO_PinOutSet(BSP_GPIO_LED0_PORT, BSP_GPIO_LED0_PIN);
-  TRANSMIT = 0;
+void initTimer(void) {
+  CMU_ClockEnable(cmuClock_TIMER1, true);
+  TIMER_Init_TypeDef init = TIMER_INIT_DEFAULT;
+  init.enable = false;
+  init.prescale = timerPrescale1024;
+  TIMER_Init(TIMER1, &init);
+  TIMER_TopSet(TIMER1, 1000000000);
+  TIMER_IntEnable(TIMER1, 1);
+  NVIC_EnableIRQ(TIMER1_IRQn);
 }
 
 void initGPIO(void) {
@@ -56,12 +58,11 @@ int main(void) {
   // uint32_t bitrate = 0;
 
   // Initializations
-  initGPIO();
-  SPIDRV_Init_t initData = SPIDRV_MASTER_USART1;
-  initData.bitOrder = spidrvBitOrderMsbFirst;
-  SPIDRV_Init(handle, &initData);
-  /*
   CMU_ClockSelectSet(cmuClock_HF, cmuSelect_HFXO);
+  initGPIO();
+  initTimer();
+  TIMER_Enable(TIMER1, true);
+  /*
   SPIDRV_SetBitrate(handle, 6000000);
   SPIDRV_GetBitrate(handle, &bitrate);
   if (bitrate != 6000000)
@@ -69,7 +70,5 @@ int main(void) {
   */
 
   while (1) {
-    if (TRANSMIT)
-      transmitGarbage();
   }
 }
