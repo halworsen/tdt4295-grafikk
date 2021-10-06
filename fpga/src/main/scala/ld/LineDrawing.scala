@@ -37,40 +37,39 @@ class LineDrawing(
   val writeY = Reg(UInt(log2(yEnd).W))
   val writeVal = RegInit(true.B)
 
-  // Needed because Bresenham's algorithm is not 
+  // Needed because Bresenham's algorithm is not
   // symmertical, and we don't want gaps
   val xa = Wire(UInt())
   val xb = Wire(UInt())
   val ya = Wire(UInt())
   val yb = Wire(UInt())
 
-  // Swap points if y_start is less than y_end to ensure 
-  // a consistent way to order the points. By swapping 
-  // y-coordinates if y_start is greater than y_end, we 
+  // Swap points if y_start is less than y_end to ensure
+  // a consistent way to order the points. By swapping
+  // y-coordinates if y_start is greater than y_end, we
   // will ensure that we always draw down ont he screen.
-  when (ys < ye){
-    xa := xs;
-    xb := xe;
-    ya := ys;
-    yb := ye;
+  when(io.ys < io.ye) {
+    xa := io.xs;
+    xb := io.xe;
+    ya := io.ys;
+    yb := io.ye;
   } otherwise {
-    xa := xe;
-    xb := xs;
-    ya := ye;
-    yb := ys;
+    xa := io.xe;
+    xb := io.xs;
+    ya := io.ye;
+    yb := io.ys;
   }
-
 
   when(io.done) {
     // Initialize registers
     io.done := false.B
-    x := io.xa
-    y := io.ya
-    dx := io.xb - io.xa // todo: må vi ha absoluttverdi her?
-    dy := io.yb - io.ya  
+    x := xa
+    y := ya
+    dx := xb - xa // todo: må vi ha absoluttverdi her?
+    dy := yb - ya
     e := -(dx >> 1.U).asSInt();
   }
-  when(x <= io.xb) {
+  when(x <= xb) {
     // Draw pixel
     writeEnable := true.B
     writeX := x.asUInt()
