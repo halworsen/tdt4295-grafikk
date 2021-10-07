@@ -183,6 +183,12 @@ void print_vec4(vec4_t *v, const char *comment) {
 }
 
 int main() {
+    // float -> fixed point test
+    float x = 123.456789;
+    int32_t x_fp = (int32_t) (x * 1000);
+    printf("x=%f x_fp=%d\n", x, x_fp);
+
+
     return 0;
 }
 #endif
