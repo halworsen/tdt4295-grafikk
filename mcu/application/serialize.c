@@ -48,7 +48,7 @@ void serialize_index_buffer(uint8_t *indices, int n) {
     }
 }
 
-void transfer(struct fpga_data *d) {
+void transfer_fpga_data(struct fpga_data *d) {
     serialize_mat4(&d->VP);
     serialize_vertex_buffer(d->vertices, N_VERTICES);
     serialize_index_buffer(d->indices, N_INDICES);

@@ -58,6 +58,6 @@ void serialize_vertex_buffer(vec4_t *vertices, int n);
 void serialize_index_buffer(uint8_t *indices, int n);
 
 // Transfer the complete state.
-void transfer(struct fpga_data *d);
+void transfer_fpga_data(struct fpga_data *d);
 
 #endif /* include guard */
