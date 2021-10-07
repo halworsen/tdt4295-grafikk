@@ -1,4 +1,5 @@
 #ifndef LINALG_H
+#include <stdint.h>
 // linalg.h
 // ========
 // This file defines the functions and structures we need to represent
@@ -38,21 +39,17 @@ typedef struct vec4 {
 // Initialize a vector with given values.
 void vec4(vec4_t *ret, float x, float y, float z, float w);
 
-#ifndef NOEMBED
-// Serialization functions. These will automatically reinterpret our float-based
-// structures as fixed-point before sending them over SPI where applicable.
-void serialize_scalar(float x);
-void serialize_vec4(vec4_t *m);
-void serialize_mat4(mat4_t *m);
-void serialize_index(uint32_t i);
-void serialize_vertex_buffer(vec4_t *verts, int n);
-void serialize_index_buffer(uint32_t *indeces, int n);
-#endif
-
 
 // Dot product ret = x . y.
-float dot3(vec4_t *x, vec4_t *y); // Only 3D components.
+float dot3(vec4_t *x, vec4_t *y); // Only 3D component.
 float dot4(vec4_t *x, vec4_t *y); // All 4 components.
+
+// Norm ||p|| of the vector p. ("length")
+float norm3(vec4_t *p); // Norm of 3D component.
+float norm4(vec4_t *p);
+
+// Normalize the 3D component of p.
+void normalize(vec4_t *p);
 
 // Matrix product ret = AB.
 void mmul(mat4_t *ret, mat4_t *A, mat4_t *B);
@@ -85,4 +82,16 @@ void perspective(mat4_t *ret,
                  float z_near,
                  float z_far);
 
+#ifndef NOEMBED
+// Serialization functions. These will automatically reinterpret our float-based
+// structures as fixed-point before sending them over SPI where applicable.
+void serialize_scalar(float x);
+void serialize_vec4(vec4_t *m);
+void serialize_mat4(mat4_t *m);
+void serialize_index(uint32_t i);
+void serialize_vertex_buffer(vec4_t *verts, int n);
+void serialize_index_buffer(uint32_t *indeces, int n);
 #endif
+
+
+#endif /* incldue guard */

@@ -44,16 +44,29 @@ void vec4(vec4_t *ret, float x, float y, float z, float w) {
     ret->w = w;
 }
 
-// 3D dot product.
 float dot3(vec4_t *p, vec4_t *q) {
     return p->x * q->x
         +  p->y * q->y
         +  p->z * q->z;
 }
 
-// 4D dot product.
 float dot4(vec4_t *p, vec4_t *q) {
     return dot3(p, q) +  p->w * q->w;
+}
+
+float norm3(vec4_t *p) {
+    return sqrt(dot3(p, p));
+}
+
+float norm4(vec4_t *p) {
+    return sqrt(dot4(p, p));
+}
+
+void normalize(vec4_t *p) {
+    float norm = norm3(p);
+    p->x /= norm;
+    p->y /= norm;
+    p->z /= norm;
 }
 
 // Matrix product ret = AB.
@@ -168,31 +181,10 @@ void print_vec4(vec4_t *v, const char *comment) {
 }
 
 int main() {
-    vec4_t x, y, xp, yp;
-    mat4_t P; /* perspective matrix */
-    perspective(&P, 1.0, 640/480, 1.0, 150.0);
-    print_mat4(&P, "perspective matrix");
-
-    vec4(&x, -1, 1, 1, 1);
-    vec4(&y, -1, 1, 150, 1);
-
-    transform(&xp, &P, &x);
-    transform(&yp, &P, &y);
-
-    /* w-normalization */
-    xp.x /= xp.w;
-    xp.y /= xp.w;
-    xp.z /= xp.w;
-    xp.w /= xp.w;
-
-    yp.x /= yp.w;
-    yp.y /= yp.w;
-    yp.z /= yp.w;
-    yp.w /= yp.w;
-
-    print_vec4(&xp, "x after perspective");
-    print_vec4(&yp, "y after perspective");
-
+    vec4_t v;
+    vec4(&v, 1.0, 2.0, 3.0, 1.0);
+    normalize(&v);
+    print_vec4(&v, "[1 2 3] normalized");
     return 0;
 }
 #endif
@@ -208,34 +200,35 @@ extern SPIDRV_Handle_t handle; /* In main.c translation unit. */
 
 void serialize_scalar(float x) {
     // Reinterpret the float as a fixed-point decimal number.
+    // TODO figure out what scaling the fpga wants
     int32_t x_fp = (int32_t) (FP_SCALE * x);
 
     // Send it. (4 bytes)
-    SPIDRV_MTransmitB(&handle, &x_fp, 4);
+    SPIDRV_MTransmitB(handle, &x_fp, 4);
 }
 
 void serialize_index(uint32_t i) {
     // Serialize a 32-bit integer (4 bytes).
     // Used for sending index buffers.
-    SPIDRV_MTransmitB(&handle, &i, 4);
+    SPIDRV_MTransmitB(handle, &i, 4);
 }
 
-void serialize_vec4(struct vec4 *v) {
+void serialize_vec4(vec4_t *v) {
     serialize_scalar(v->x);
     serialize_scalar(v->y);
     serialize_scalar(v->z);
     serialize_scalar(v->w);
 }
 
-void serialize_mat4(struct mat4 *m) {
+void serialize_mat4(mat4_t *m) {
     for (int i = 0; i < 16; i++) {
         serialize_scalar(m->data[i]);
     }
 }
 
-void serialize_vertex_buffer(vec4 *verts, int n) {
+void serialize_vertex_buffer(vec4_t *verts, int n) {
     for (int i = 0; i < n; i++) {
-        serialize_vec4(verts[i]);
+        serialize_vec4(&verts[i]);
     }
 }
 
