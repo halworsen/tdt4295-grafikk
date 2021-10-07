@@ -163,6 +163,9 @@ void perspective(mat4_t *ret,
 #ifdef NOEMBED
 // Debugging program (which can print).
 // ====================================
+// To run this, compile linalg.c alone with -DNOEMBED with
+// clang or normal gcc to get an executable that runs on
+// your OS and not on the MCU.
 #include <stdio.h>
 
 void print_mat4(mat4_t *M, const char *comment) {
@@ -189,55 +192,6 @@ int main() {
 }
 #endif
 
-#ifndef NOEMBED
-// Serialization functions.
-// ========================
-#include "em_cmu.h"
-#include "em_device.h"
-#include "em_gpio.h"
-#include "spidrv.h"
-extern SPIDRV_Handle_t handle; /* In main.c translation unit. */
-
-void serialize_scalar(float x) {
-    // Reinterpret the float as a fixed-point decimal number.
-    // TODO figure out what scaling the fpga wants
-    int32_t x_fp = (int32_t) (FP_SCALE * x);
-
-    // Send it. (4 bytes)
-    SPIDRV_MTransmitB(handle, &x_fp, 4);
-}
-
-void serialize_index(uint32_t i) {
-    // Serialize a 32-bit integer (4 bytes).
-    // Used for sending index buffers.
-    SPIDRV_MTransmitB(handle, &i, 4);
-}
-
-void serialize_vec4(vec4_t *v) {
-    serialize_scalar(v->x);
-    serialize_scalar(v->y);
-    serialize_scalar(v->z);
-    serialize_scalar(v->w);
-}
-
-void serialize_mat4(mat4_t *m) {
-    for (int i = 0; i < 16; i++) {
-        serialize_scalar(m->data[i]);
-    }
-}
-
-void serialize_vertex_buffer(vec4_t *verts, int n) {
-    for (int i = 0; i < n; i++) {
-        serialize_vec4(&verts[i]);
-    }
-}
-
-void serialize_index_buffer(uint32_t *indeces, int n) {
-    for (int i = 0; i < n; i++) {
-        serialize_index(indeces[i]);
-    }
-}
-#endif
 
 
 

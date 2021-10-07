@@ -1,15 +1,13 @@
 #ifndef LINALG_H
+#define LINALG_H
 #include <stdint.h>
 // linalg.h
 // ========
-// This file defines the functions and structures we need to represent
-// 3D space and transformations on it using the typical w-augmented
-// vectors and matrices found in OpenGL to make the math clean.
+// This file defines the functions and structures we need to 
+// represent 3D space and transformations on it using the 
+// typical w-augmented vectors and matrices found in mainstream 
+// graphics APIs.
 
-// The scale at which we transmit fixed point decimal numbers.
-// Essentially 1/FP_SCALE is our precision, and should be increased
-// if we need higher resoulution numbers.
-#define FP_SCALE 1000
 
 // 4x4 Matrices. Should be assumed row-major.
 typedef struct mat4 {
@@ -75,23 +73,12 @@ void rot_z(mat4_t *ret, float th);
 // TODO Rotation around arbitrary vector.
 void rotation(mat4_t *ret, vec4_t *r, float th);
 
-// Perspective projection matrix from FOV, aspect ratio and clip planes.
+// Perspective projection matrix from FOV, aspect ratio 
+// and clip planes.
 void perspective(mat4_t *ret,
                  float fov_rad,
                  float aspect,
                  float z_near,
                  float z_far);
-
-#ifndef NOEMBED
-// Serialization functions. These will automatically reinterpret our float-based
-// structures as fixed-point before sending them over SPI where applicable.
-void serialize_scalar(float x);
-void serialize_vec4(vec4_t *m);
-void serialize_mat4(mat4_t *m);
-void serialize_index(uint32_t i);
-void serialize_vertex_buffer(vec4_t *verts, int n);
-void serialize_index_buffer(uint32_t *indeces, int n);
-#endif
-
 
 #endif /* incldue guard */
