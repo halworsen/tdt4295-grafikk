@@ -8,7 +8,6 @@
 // typical w-augmented vectors and matrices found in mainstream 
 // graphics APIs.
 
-
 // 4x4 Matrices. Should be assumed row-major.
 typedef struct mat4 {
     float data[16];
@@ -36,7 +35,6 @@ typedef struct vec4 {
 
 // Initialize a vector with given values.
 void vec4(vec4_t *ret, float x, float y, float z, float w);
-
 
 // Dot product ret = x . y.
 float dot3(vec4_t *x, vec4_t *y); // Only 3D component.

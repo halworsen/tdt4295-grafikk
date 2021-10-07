@@ -69,7 +69,6 @@ void normalize(vec4_t *p) {
     p->z /= norm;
 }
 
-// Matrix product ret = AB.
 void mmul(mat4_t *ret, mat4_t *A, mat4_t *B) {
     // Alias the pointers to make the loop more readable.
     float* a = A->data;
@@ -184,19 +183,6 @@ void print_vec4(vec4_t *v, const char *comment) {
 }
 
 int main() {
-    vec4_t v;
-    vec4(&v, 1.0, 2.0, 3.0, 1.0);
-    normalize(&v);
-    print_vec4(&v, "[1 2 3] normalized");
     return 0;
 }
 #endif
-
-
-
-
-
-
-
-
-

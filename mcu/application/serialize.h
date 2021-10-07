@@ -36,6 +36,4 @@ void serialize_index_buffer(uint8_t *indeces, int n);
 // Transfer the complete state.
 void transfer(struct fpga_data *d);
 
-
-
 #endif /* include guard */
