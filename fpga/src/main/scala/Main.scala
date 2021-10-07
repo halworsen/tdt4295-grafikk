@@ -2,9 +2,10 @@ import chisel3._
 import chisel3.util._
 import tools.WriteBtn
 import fb.FrameBuffer
-import ld.LineDrawing
+// import ld.LineDrawing
 import vga.VGA
 import vga.VGAClock
+import spi._
 
 class Main extends Module {
   def delay(x: UInt) = RegNext(x)
@@ -19,6 +20,9 @@ class Main extends Module {
     val vga_r = Output(UInt(4.W))
     val vga_g = Output(UInt(4.W))
     val vga_b = Output(UInt(4.W))
+
+    val spi = Input(new SpiSlave())
+    val led = Output(UInt(4.W))
   })
 
   withReset(~io.aresetn) {
@@ -67,6 +71,11 @@ class Main extends Module {
       io.vga_b := delay(vga.io.out(2))
 
     }
+
+    val spi = Module(new Spi)
+    spi.io.spi := io.spi
+    io.led := spi.io.value
+
   }
 }
 
@@ -95,7 +104,7 @@ class Main extends Module {
     val mcuData = Input(UInt(8.W))
   })
 
-  // TODO: In main, make io.value (output of spi) the input to this code 
+  // TODO: In main, make io.value (output of spi) the input to this code
   // io.mcuData := spi.io.value
 
   def tickGen(fac: Int) = {
