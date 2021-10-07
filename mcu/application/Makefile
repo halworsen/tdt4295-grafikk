@@ -37,7 +37,7 @@ FORMATTER = clang-format
 SPECFLAGS = --specs=nosys.specs
 MACHFLAGS = -mcpu=cortex-m3 -mthumb
 CFLAGS += ${addprefix -I, ${INCLUDEPATH}} ${MACHFLAGS} ${SPECFLAGS} -Wall -Werror -D ${MCU} 
-LDFLAGS += ${MACHFLAGS} -T${LINKERSCRIPT} ${SPECFLAGS} -Wl,--print-memory-usage
+LDFLAGS += ${MACHFLAGS} -T${LINKERSCRIPT} ${SPECFLAGS} -Wl,--print-memory-usage -lm
 ARFLAGS = cr
 
 ifeq ($(debug),true)
