@@ -10,9 +10,7 @@ class MVP extends Module {
   })
 
   for (r <- 0 to 3) {
-    for (c <- 0 to 3) {
-      io.outVec4(r) := io.outVec4(r) + (io.mat4(r)(c) * io.vec4(c))
-    }
+    io.outVec4(r) := (io.mat4(r)(0) * io.vec4(0) + io.mat4(r)(1) * io.vec4(1) + io.mat4(r)(2) * io.vec4(2) + io.mat4(r)(3) * io.vec4(3))
   }
 }
 
@@ -23,12 +21,18 @@ class Mat4Multiply extends Module {
     val C = Output(Vec(4, Vec(4, SInt(32.W))))
   })
 
+  val matC = RegInit(VecInit(Seq.fill(4)(VecInit(Seq.fill(4)(0.S(32.W))))))
+  var sum = 0.S
+
   for (r <- 0 to 3) {
     for (c <- 0 to 3) {
-      io.C(r) := 0.S
+      sum = 0.S
       for (k <- 0 to 3) {
-        io.C(r)(c) := io.A(r)(k) * io.B(k)(c)
+        sum = sum + io.A(r)(k) * io.B(k)(c)
       }
+      println(sum)
+      matC(r)(c) := sum
     }
   }
+  io.C := matC
 }
