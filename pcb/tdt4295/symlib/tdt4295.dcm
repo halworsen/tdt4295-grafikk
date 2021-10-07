@@ -10,6 +10,12 @@ D Power symbol creates a global label with name "+3V3"
 K power-flag
 $ENDCMP
 #
+$CMP DB15_Female_HighDensity_MountingHoles
+D 15-pin female D-SUB connector, High density (3 columns), Triple Row, Generic, VGA-connector, Mounting Hole
+K connector db15 female D-SUB VGA
+F  ~
+$ENDCMP
+#
 $CMP MOLEX_Connector
 D SD Card Reader
 K connector SD

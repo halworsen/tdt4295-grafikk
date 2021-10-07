@@ -42,8 +42,6 @@ Text GLabel 5200 6350 0    50   Output ~ 0
 FPGA_LED1
 Text GLabel 5200 6250 0    50   Output ~ 0
 FPGA_LED0
-Text GLabel 5200 1750 0    50   BiDi ~ 0
-FPGA_EXT_IO30
 Connection ~ 6100 950 
 Wire Wire Line
 	6100 950  6000 950 
@@ -120,6 +118,7 @@ F 1 "470nF" H 8175 1000 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 8188 950 50  0001 C CNN
 F 3 "https://www.farnell.com/datasheets/2048812.pdf" H 8150 1100 50  0001 C CNN
 F 4 "GRM188R71C474KA88D" H 8150 1100 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836" H 8150 1100 50  0001 C CNN "DK_Detail_Page"
 	1    8150 1100
 	1    0    0    -1  
 $EndComp
@@ -132,6 +131,7 @@ F 1 "470nF" H 8525 1000 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 8538 950 50  0001 C CNN
 F 3 "https://www.farnell.com/datasheets/2048812.pdf" H 8500 1100 50  0001 C CNN
 F 4 "GRM188R71C474KA88D" H 8500 1100 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836" H 8500 1100 50  0001 C CNN "DK_Detail_Page"
 	1    8500 1100
 	1    0    0    -1  
 $EndComp
@@ -144,6 +144,7 @@ F 1 "470nF" H 8925 1000 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 8938 950 50  0001 C CNN
 F 3 "https://www.farnell.com/datasheets/2048812.pdf" H 8900 1100 50  0001 C CNN
 F 4 "GRM188R71C474KA88D" H 8900 1100 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836" H 8900 1100 50  0001 C CNN "DK_Detail_Page"
 	1    8900 1100
 	1    0    0    -1  
 $EndComp
@@ -156,6 +157,7 @@ F 1 "470nF" H 9275 1000 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 9288 950 50  0001 C CNN
 F 3 "https://www.farnell.com/datasheets/2048812.pdf" H 9250 1100 50  0001 C CNN
 F 4 "GRM188R71C474KA88D" H 9250 1100 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/en/murata-electronics/GRM188R71C474KA88D/490-3295-1-ND/702836" H 9250 1100 50  0001 C CNN "DK_Detail_Page"
 	1    9250 1100
 	1    0    0    -1  
 $EndComp
@@ -167,6 +169,8 @@ F 0 "U601" H 2250 2150 60  0000 C CNN
 F 1 "DSC1001AL5-100.0000" H 2250 2050 60  0000 C CNN
 F 2 "DSC1001AL5-100.0000:DSC1001AL5-100.0000" H 2250 1990 60  0001 C CNN
 F 3 "https://rocelec.widen.net/view/pdf/4jp9qpy8qv/MCHP-S-A0003587227-1.pdf?t.download=true&u=5oefqw" H 1250 1750 60  0001 C CNN
+F 4 "DSC1001AL5-100.0000" H 1250 1750 50  0001 C CNN "Component name"
+F 5 "https://www.digikey.no/product-detail/no/microchip-technology/DSC1001AL5-100-0000/DSC1001AL5-100-0000-ND/5773489" H 1250 1750 50  0001 C CNN "DK_Detail_Page"
 	1    1250 1750
 	1    0    0    -1  
 $EndComp
@@ -181,6 +185,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 888 1200 50  0
 F 3 "" H 850 1350 50  0001 C CNN
 F 4 "CL10B104KA8NNNC" H 850 1350 50  0001 C CNN "Component name"
 F 5 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 850 1350 50  0001 C CNN "DK_Detail_Page"
+F 6 "https://www.digikey.no/product-detail/en/samsung-electro-mechanics/CL10B104KA8NNNC/1276-1006-1-ND/3889092" H 850 1350 50  0001 C CNN "DK_Datasheet_Link"
 	1    850  1350
 	-1   0    0    1   
 $EndComp
@@ -335,10 +340,10 @@ Wire Wire Line
 Wire Wire Line
 	9600 950  9600 800 
 $Comp
-L power:GND #PWR0605
+L power:GND #PWR0606
 U 1 1 614B3B58
 P 9600 1350
-F 0 "#PWR0605" H 9600 1100 50  0001 C CNN
+F 0 "#PWR0606" H 9600 1100 50  0001 C CNN
 F 1 "GND" H 9605 1177 50  0000 C CNN
 F 2 "" H 9600 1350 50  0001 C CNN
 F 3 "" H 9600 1350 50  0001 C CNN
@@ -346,10 +351,10 @@ F 3 "" H 9600 1350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:+3V3 #PWR0604
+L power:+3V3 #PWR0605
 U 1 1 614741B9
 P 9600 800
-F 0 "#PWR0604" H 9600 650 50  0001 C CNN
+F 0 "#PWR0605" H 9600 650 50  0001 C CNN
 F 1 "+3V3" H 9450 850 50  0000 C CNN
 F 2 "" H 9600 800 50  0001 C CNN
 F 3 "" H 9600 800 50  0001 C CNN
@@ -366,14 +371,15 @@ NoConn ~ 5200 6650
 Wire Wire Line
 	5200 2250 4750 2250
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0604
 U 1 1 6158A76A
 P 4750 2250
-F 0 "#PWR?" H 4750 2000 50  0001 C CNN
+F 0 "#PWR0604" H 4750 2000 50  0001 C CNN
 F 1 "GND" H 4755 2077 50  0000 C CNN
 F 2 "" H 4750 2250 50  0001 C CNN
 F 3 "" H 4750 2250 50  0001 C CNN
 	1    4750 2250
 	1    0    0    -1  
 $EndComp
+NoConn ~ 5200 1750
 $EndSCHEMATC
