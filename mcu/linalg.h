@@ -60,8 +60,6 @@ void mmul(mat4_t *ret, mat4_t *A, mat4_t *B);
 // Apply transformation ret = Tp.
 void transform(vec4_t *ret, mat4_t *T, vec4_t *p);
 
-// TODO the convenience functions to set up common matrices
-
 // Make an identity matrix.
 void identity(mat4_t *ret);
 
@@ -70,7 +68,9 @@ void identity(mat4_t *ret);
 void translation(mat4_t *ret, vec4_t *t);
 
 // Make simple rotation matrices around the standard 
-// basis axes (sufficient for simple fps camera)
+// basis axes. This is sufficient for a lot of simple
+// animation, as long as one is aware of the problem
+// with gimbal lock.
 void rot_x(mat4_t *ret, float th);
 void rot_y(mat4_t *ret, float th);
 void rot_z(mat4_t *ret, float th);
@@ -82,7 +82,7 @@ void rotation(mat4_t *ret, vec4_t *r, float th);
 void perspective(mat4_t *ret,
                  float fov_rad,
                  float aspect,
-                 float near,
-                 float far);
+                 float z_near,
+                 float z_far);
 
 #endif

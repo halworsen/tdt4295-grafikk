@@ -129,6 +129,21 @@ void rot_z(mat4_t *ret, float th) {
     *at(ret, 1, 1) =  cos(th);
 }
 
+void perspective(mat4_t *ret,
+        float fov_rad, float aspect, float z_near, float z_far)
+{
+    // Straight ripoff from the glm rust crate.
+    float q = 1.0 / tan(fov_rad / 2);
+    float a = q / aspect;
+    float b = (z_near + z_far) / (z_near - z_far);
+    float c = (2 * z_near * z_far) / (z_near - z_far);
+
+    mat4(ret,   a, 0.0, 0.0,  0.0,
+              0.0,   q, 0.0,  0.0,
+              0.0, 0.0,   b, -1.0,
+              0.0, 0.0,   c,  0.0);
+}
+
 
 
 
@@ -153,16 +168,34 @@ void print_vec4(vec4_t *v, const char *comment) {
 }
 
 int main() {
-    vec4_t v, x;
-    mat4_t R; /* rotation matrix */
-    rot_x(&R, 3.1415 / 2.0);
-    print_mat4(&R, "rotation matrix");
+    vec4_t x, y, xp, yp;
+    mat4_t P; /* perspective matrix */
+    perspective(&P, 1.0, 640/480, 1.0, 150.0);
+    print_mat4(&P, "perspective matrix");
 
-    vec4(&v, 0.0, 0.0, 1.0, 1.0);
-    print_vec4(&v, "original");
+    vec4(&x, -1, 1, 1, 1);
+    vec4(&y, -1, 1, 75, 1);
 
-    transform(&x, &R, &v);
-    print_vec4(&x, "rotated around x");
+    transform(&xp, &P, &x);
+    transform(&yp, &P, &y);
+
+
+    /* w-normalization */
+    xp.x /= xp.w;
+    xp.y /= xp.w;
+    xp.z /= xp.w;
+    xp.w /= xp.w;
+
+    yp.x /= yp.w;
+    yp.y /= yp.w;
+    yp.z /= yp.w;
+    yp.w /= yp.w;
+
+    
+
+
+    print_vec4(&xp, "x after perspective");
+    print_vec4(&yp, "y after perspective");
 
     return 0;
 }
