@@ -174,11 +174,10 @@ int main() {
     print_mat4(&P, "perspective matrix");
 
     vec4(&x, -1, 1, 1, 1);
-    vec4(&y, -1, 1, 75, 1);
+    vec4(&y, -1, 1, 150, 1);
 
     transform(&xp, &P, &x);
     transform(&yp, &P, &y);
-
 
     /* w-normalization */
     xp.x /= xp.w;
@@ -190,9 +189,6 @@ int main() {
     yp.y /= yp.w;
     yp.z /= yp.w;
     yp.w /= yp.w;
-
-    
-
 
     print_vec4(&xp, "x after perspective");
     print_vec4(&yp, "y after perspective");
