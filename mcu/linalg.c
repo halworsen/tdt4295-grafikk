@@ -2,6 +2,7 @@
 // so we get printing functions and a main-function to
 // run debugging code.
 #include "linalg.h"
+#include <math.h>
 #include <stdint.h>
 
 void mat4(mat4_t *ret,
@@ -29,6 +30,11 @@ void mat4(mat4_t *ret,
     ret->data[13] = x42;
     ret->data[14] = x43;
     ret->data[15] = x44;
+}
+
+
+float *at(mat4_t *M, int i, int j) {
+    return &M->data[4*i + j];
 }
 
 void vec4(vec4_t *ret, float x, float y, float z, float w) {
@@ -85,6 +91,44 @@ void transform(vec4_t *ret, mat4_t *T, vec4_t *p) {
     }
 }
 
+void identity(mat4_t *ret) {
+    mat4(ret, 1.0, 0.0, 0.0, 0.0,
+              0.0, 1.0, 0.0, 0.0,
+              0.0, 0.0, 1.0, 0.0,
+              0.0, 0.0, 0.0, 1.0);
+}
+
+void translation(mat4_t *ret, vec4_t *t) {
+    identity(ret);
+    *at(ret, 0, 3) = t->x;
+    *at(ret, 1, 3) = t->y;
+    *at(ret, 2, 3) = t->z;
+}
+
+void rot_x(mat4_t *ret, float th) {
+    identity(ret);
+    *at(ret, 1, 1) =  cos(th);
+    *at(ret, 1, 2) = -sin(th);
+    *at(ret, 2, 1) =  sin(th);
+    *at(ret, 2, 2) =  cos(th);
+}
+
+void rot_y(mat4_t *ret, float th) {
+    identity(ret);
+    *at(ret, 0, 0) =  cos(th);
+    *at(ret, 0, 2) =  sin(th);
+    *at(ret, 2, 0) = -sin(th);
+    *at(ret, 2, 2) =  cos(th);
+}
+
+void rot_z(mat4_t *ret, float th) {
+    identity(ret);
+    *at(ret, 0, 0) =  cos(th);
+    *at(ret, 0, 1) = -sin(th);
+    *at(ret, 1, 0) =  sin(th);
+    *at(ret, 1, 1) =  cos(th);
+}
+
 
 
 
@@ -93,36 +137,32 @@ void transform(vec4_t *ret, mat4_t *T, vec4_t *p) {
 // ====================================
 #include <stdio.h>
 
-void print_mat4(mat4_t *M) {
-    puts("Matrix:");
+void print_mat4(mat4_t *M, const char *comment) {
+    printf("Matrix: (%s)\n", comment);
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
-            printf("%f ", M->data[4*i + j]);
+            printf("%f ", *at(M, i, j));
         }
         puts("");
     }
 }
 
-void print_vec4(vec4_t *v) {
-    printf("Vector: (%f %f %f %f)\n", v->x, v->y, v->z, v->w);
+void print_vec4(vec4_t *v, const char *comment) {
+    printf("Vector: [%f %f %f %f] (%s)\n",
+           v->x, v->y, v->z, v->w, comment);
 }
 
 int main() {
-    mat4_t T;
-    mat4(&T, 2.0, 0.0, 0.0, 0.0,
-             1.0, 0.0, 0.0, 0.0,
-             0.0, 0.0, 4.0, 0.0,
-             0.0, 0.0, 0.0, 1.0);
+    vec4_t v, x;
+    mat4_t R; /* rotation matrix */
+    rot_x(&R, 3.1415 / 2.0);
+    print_mat4(&R, "rotation matrix");
 
-    vec4_t x_hat, z_hat, v, w;
-    vec4(&x_hat, 1.0, 0.0, 0.0, 1.0);
-    vec4(&z_hat, 0.0, 0.0, 1.0, 1.0);
+    vec4(&v, 0.0, 0.0, 1.0, 1.0);
+    print_vec4(&v, "original");
 
-    transform(&v, &T, &x_hat);
-    transform(&w, &T, &z_hat);
-
-    print_vec4(&v);
-    print_vec4(&w);
+    transform(&x, &R, &v);
+    print_vec4(&x, "rotated around x");
 
     return 0;
 }

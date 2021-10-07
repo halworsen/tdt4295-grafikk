@@ -22,6 +22,10 @@ void mat4(mat4_t *ret,
         float x31, float x32, float x33, float x34,
         float x41, float x42, float x43, float x44);
 
+// Pointer to the element at i,j in the matrix M.
+// (Bounds unchecked)
+float *at(mat4_t *M, int i, int j);
+
 
 // 4D Vectors.
 typedef struct vec4 {
@@ -58,7 +62,11 @@ void transform(vec4_t *ret, mat4_t *T, vec4_t *p);
 
 // TODO the convenience functions to set up common matrices
 
-// Make a translation matrix
+// Make an identity matrix.
+void identity(mat4_t *ret);
+
+// Make a translation matrix.
+// Only uses the 3D component of the vector.
 void translation(mat4_t *ret, vec4_t *t);
 
 // Make simple rotation matrices around the standard 
@@ -67,7 +75,7 @@ void rot_x(mat4_t *ret, float th);
 void rot_y(mat4_t *ret, float th);
 void rot_z(mat4_t *ret, float th);
 
-// Rotation around arbitrary vector.
+// TODO Rotation around arbitrary vector.
 void rotation(mat4_t *ret, vec4_t *r, float th);
 
 // Perspective projection matrix from FOV, aspect ratio and clip planes.
