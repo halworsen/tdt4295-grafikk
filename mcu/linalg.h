@@ -53,8 +53,8 @@ float dot4(vec4_t *x, vec4_t *y); // All 4 components.
 // Matrix product ret = AB.
 void mmul(mat4_t *ret, mat4_t *A, mat4_t *B);
 
-// Apply transformation ret = Tq.
-void transform(vec4_t *ret, mat4_t *T, vec4_t *q);
+// Apply transformation ret = Tp.
+void transform(vec4_t *ret, mat4_t *T, vec4_t *p);
 
 // TODO the convenience functions to set up common matrices
 

@@ -69,17 +69,19 @@ void mmul(mat4_t *ret, mat4_t *A, mat4_t *B) {
     }
 }
 
-void transform(vec4_t *ret, mat4_t *T, vec4_t *v) {
+void transform(vec4_t *ret, mat4_t *T, vec4_t *p) {
     // Alias the pointer to the matrix data buffer.
     float* t = T->data;
 
     for (int i = 0; i < 4; i++) {
-        // i'th row vector from A, v is column vector.
-       float dot = t[4*i + 0] * v->x
-                 + t[4*i + 1] * v->y
-                 + t[4*i + 2] * v->z
-                 + t[4*i + 3] * v->w;
-       *((float*) ret + i) = dot;
+       // i'th row vector from A, v is column vector.
+       float dot = t[4*i + 0] * p->x
+                 + t[4*i + 1] * p->y
+                 + t[4*i + 2] * p->z
+                 + t[4*i + 3] * p->w;
+
+       // Reinterpret return pointer as a float array to index.
+       ((float*) ret)[i] = dot;
     }
 }
 
