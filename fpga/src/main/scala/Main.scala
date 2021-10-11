@@ -74,7 +74,7 @@ class Main extends Module {
 
     val spi = Module(new Spi)
     spi.io.spi := io.spi
-    io.led := spi.io.value
+    io.led := spi.io.value(3, 0)
 
   }
 }

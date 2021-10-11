@@ -14,32 +14,35 @@ class SpiSlave extends Bundle {
   // CS: Chip Select
   val mosi = Bool()
   val miso = Bool()
-  val sclk = Clock()
+  val sclk = Bool()
   val cs = Bool()
 }
 
 /** [[Spi]]
  * @param dWidth
  */
-class Spi(dWidth: Int = 4) extends Module {
+class Spi(dWidth: Int = 8) extends Module {
 
   val io = IO(new Bundle {
     // Spi signal
     val spi = Input(new SpiSlave())
     val value = Output(UInt(dWidth.W))
   })
+
+  val count = RegInit(0.U(dWidth.W)) // FIXME: maybe downsize this register
+  val valueReg = RegInit(0.U(dWidth.W))
+  val valueOutput = RegInit(0.U(dWidth.W))
+  io.value := valueOutput
+  val clockReg = RegInit(false.B)
+  clockReg := io.spi.sclk
   
   // When master starts sending
-  withClock (io.spi.sclk) {
-    val count = RegInit(0.U(dWidth.W)) // FIXME: maybe downsize this register
-    val valueReg = RegInit(0.U(dWidth.W))
-    val valueOutput = RegInit(0.U(dWidth.W))
-    io.value := valueOutput
-    valueReg := (valueReg & (io.spi.mosi.asUInt() << count)).asUInt()
+  when(!clockReg & io.spi.sclk) {
+    valueReg := (valueReg ^ (io.spi.mosi << count))
     count := count + 1.U 
     // Reset count when we've reached 8 bits
     // Send this value to 
-    when (count === 3.U) {
+    when (count === (dWidth-1).U) {
       valueOutput := valueReg
       valueReg := 0.U
       count := 0.U
