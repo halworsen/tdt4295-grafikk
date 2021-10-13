@@ -11,5 +11,5 @@ class VGAClock extends BlackBox with HasBlackBoxResource {
     val clk_pix = Output(Clock())
     val clk_locked = Output(Bool())
   })
-  addResource("/clock_gen.sv")
+  addResource("/clock_gen.v")
 }

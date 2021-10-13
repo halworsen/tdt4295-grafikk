@@ -21,9 +21,9 @@ class LineDrawing(
     val writeEnable = Output(Bool())
     val writeX = Output(UInt(log2Up(xEnd).W))
     val writeY = Output(UInt(log2Up(yEnd).W))
-    val writeVal = Output(Vec(3, UInt(4.W)))
+    val writeVal = Output(Bool())
 
-    val done = Output(Bool())
+    val done = Output(RegInit(true.B))
   })
 
   val x = Reg(UInt(log2Up(xStart).W)) // Drawing position
@@ -70,9 +70,10 @@ class LineDrawing(
   }
   when(x <= xb) {
     // Draw pixel
-    io.writeEnable := true.B
-    io.writeX := x.asUInt()
-    io.writeY := y.asUInt()
+    writeEnable := true.B
+    writeX := x.asUInt()
+    writeY := y.asUInt()
+    writeVal := true.B
 
     x := x + 1.U;
     e := e + dy;
@@ -80,13 +81,11 @@ class LineDrawing(
       y := y + 1.U;
       e := e - dx;
     }
-
-    io.done := false.B
   }.otherwise {
-    io.writeX := DontCare
-    io.writeY := DontCare
-    io.writeEnable := false.B
     io.done := true.B
+    io.writeEnable := writeEnable
+    io.writeX := writeX
+    io.writeY := writeY
+    io.writeVal := writeVal
   }
-  io.writeVal := writeVal
 }
