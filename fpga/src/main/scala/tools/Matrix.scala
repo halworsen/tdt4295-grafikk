@@ -9,7 +9,7 @@
 // // Theta is in radians
 // // TODO: Should probably use 4d vectors, but it's late and Im too tired to change: https://tenor.com/view/pooh-dancing-excited-winnie-the-pooh-gangnam-style-gif-7703016
 // class Matrix {
-  
+
 //   val rotateX = (theta: SInt) => {
 //     val mat = RegInit(VecInit(Seq.fill(3)(VecInit(Seq.fill(3)(0.S)))))
 //     mat(0)(1) = 1.S;
@@ -31,7 +31,7 @@
 
 //     return mat
 //   }
-  
+
 //   val rotateZ = (theta: SInt) => {
 //     val mat = RegInit(VecInit(Seq.fill(4)(VecInit(Seq.fill(3)(0.S)))))
 //     mat(2)(2) = 1.S;

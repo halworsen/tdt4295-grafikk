@@ -2,7 +2,7 @@ import chisel3._
 import chisel3.util._
 import tools.WriteBtn
 import fb.FrameBuffer
-// import ld.LineDrawing
+import ld.LineDrawing
 import vga.VGA
 import vga.VGAClock
 import spi._

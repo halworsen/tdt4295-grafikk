@@ -12,7 +12,7 @@ class SpiSpec extends FreeSpec with ChiselScalatestTester {
       dut.io.spi.cs.poke(true.B)
       dut.io.spi.miso.poke(false.B)
       dut.io.spi.mosi.poke(false.B)
-      for (i <- 0 to 7){
+      for (i <- 0 to 7) {
         dut.io.value.expect(toExpect)
         dut.io.spi.sclk.poke(false.B)
         dut.clock.step(25)
