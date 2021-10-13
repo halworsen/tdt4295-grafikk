@@ -24,9 +24,9 @@ class Main extends Module {
   withReset(~io.aresetn) {
     val fb = Module(new FrameBuffer(640, 480))
     val bresenhams = Module(new LineDrawing)
-    bresenhams.io.xs := 0.S
+    bresenhams.io.xs := 500.S
     bresenhams.io.ys := 0.S
-    bresenhams.io.xe := 600.S
+    bresenhams.io.xe := 0.S
     bresenhams.io.ye := 400.S
 
     fb.io.writeEnable := bresenhams.io.writeEnable

@@ -32,29 +32,39 @@ class LineDrawing(
   val ys = Wire(SInt())
   val ye = Wire(SInt())
 
-  // Swap points if x_start is less than x_end to ensure
+  // Swap points if y_end is less than y_start to ensure
   // a consistent way to order the points. This way
   // ensures that we always draw down on the screen.
-  when(io.xs < io.xe) {
-    xs := io.xs;
-    xe := io.xe;
+  xs := io.xs;
+  xe := io.xe;
+  when(io.ys < io.ye) {
     ys := io.ys;
     ye := io.ye;
   }.otherwise {
-    xs := io.xe;
-    xe := io.xs;
     ys := io.ye;
-    ye := io.ys;
+    ye := io.ye;
   }
 
-  val init :: draw :: idle :: Nil = Enum(3)
+  val init1 :: init2 :: draw :: idle :: Nil = Enum(4)
   val state = RegInit(idle)
+  val right = Reg(Bool())
 
   val x = Reg(SInt(coordWidth.W))
   val y = Reg(SInt(coordWidth.W))
   val dx = Reg(SInt((coordWidth + 1).W))
   val dy = Reg(SInt((coordWidth + 1).W))
   val e = Reg(SInt((coordWidth + 1).W))
+
+  // These signals say whether we should inc/dec x and/or inc y
+  // based on the error value
+  val updX = Reg(Bool())
+  val updY = Reg(Bool())
+
+  val drawDone = Reg(Bool())
+  drawDone := Mux(right, x >= xe, x <= xe) && y >= ye
+
+  updX := (2.S * e >= dy);
+  updY := (2.S * e <= dx);
 
   io.writeVal(0) := "h1".U
   io.writeVal(1) := "h2".U
@@ -68,37 +78,47 @@ class LineDrawing(
       io.done := false.B
       io.writeEnable := false.B
       when(io.start) {
-        state := init
+        state := init1
+        right := xe > xs
       }
     }
-    is(init) {
+    is(init1) {
       io.done := false.B
+      dx := Mux(right, xe - xs, xs - xe)
+      dy := ys - ye
+      state := init2
+    }
+    is(init2) {
       io.writeEnable := true.B
-      x := io.xs
-      y := io.ys
-      dx := io.xe - io.xs
-      dy := io.ye - io.ys
-      e := delay(-(dx >> 1.U))
+      e := dx + dy
+      x := xs
+      y := ys
       state := draw
     }
     is(draw) {
       // Draw pixel
-      when(x <= io.xe && y <= io.ye) {
-        io.done := false.B
-        io.writeEnable := true.B
-
-        x := x + 1.S;
-        e := e + dy;
-
-        when(e >= 0.S) {
-          y := y + 1.S;
-          e := e + dx;
-        }
-
-      }.otherwise {
+      when(drawDone) {
         state := idle
         io.done := true.B
         io.writeEnable := false.B
+      }.otherwise {
+        io.done := false.B
+        io.writeEnable := true.B
+
+        when(updX && updY) {
+          x := Mux(right, x + 1.S, x - 1.S)
+          y := y + 1.S;
+          e := e + dy + dx;
+        }.otherwise {
+          when(updX) {
+            x := Mux(right, x + 1.S, x - 1.S)
+            e := e + dy;
+          }
+          when(updY) {
+            y := y + 1.S;
+            e := e + dx;
+          }
+        }
       }
     }
   }
