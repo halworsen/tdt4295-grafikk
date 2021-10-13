@@ -66,21 +66,6 @@ class Main extends Module {
       io.vga_g := delay(vga.io.out(1))
       io.vga_b := delay(vga.io.out(2))
 
-      //when(~vga.io.enable) {
-      //io.vga_r := "h0".U
-      //io.vga_g := "h0".U
-      //io.vga_b := "h0".U
-
-      //}.elsewhen(shouldDraw) {
-      //io.vga_r := "hf".U
-      //io.vga_g := "h8".U
-      //io.vga_b := "h0".U
-      //}.otherwise {
-      //io.vga_r := "h0".U + vga.io.selX
-      //io.vga_g := "h8".U + vga.io.selX
-      //io.vga_b := "hf".U
-      //}
-
     }
   }
 }
