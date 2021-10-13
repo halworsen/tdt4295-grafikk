@@ -1,28 +1,59 @@
 package fb
 
 import chisel3._
-
-import tools.helpers.log2
+import chisel3.util._
+import chisel3.util.experimental.loadMemoryFromFileInline
 
 class FrameBuffer(width: Int, height: Int) extends Module {
 
+  val colorDepth: Int = 4 // Bit width of a single color channel
+
   val io = IO(new Bundle {
-    val writeX = Input(UInt(log2(width).W))
-    val writeY = Input(UInt(log2(height).W))
-    val writeVal = Input(Bool())
+    val writeX = Input(UInt(log2Up(width).W))
+    val writeY = Input(UInt(log2Up(height).W))
+    val writeVal = Input(Vec(3, UInt(colorDepth.W)))
     val writeEnable = Input(Bool())
-    val readX = Input(UInt(log2(width).W))
-    val readY = Input(UInt(log2(height).W))
-    val readVal = Output(Bool())
+    val readX = Input(UInt((log2Up(width) + 1).W))
+    val readY = Input(UInt((log2Up(height) + 1).W))
+    val readVal = Output(Vec(3, UInt(colorDepth.W)))
+    val readEnable = Input(Bool())
+
+    val readClock = Input(Clock())
   })
 
-  // Init framebuffer -> Vec[Vec[UInt]]
-  val fb = RegInit(VecInit(Seq.fill(height)(VecInit(Seq.fill(width)(false.B)))))
+  withClock(io.readClock) {
 
-  when(io.writeEnable) {
-    fb(io.writeX)(io.writeY) := io.writeVal
+    val fb = Module(new Bram_sdp(1, width * height, "./bugge_large.mem"))
+    fb.io.clk_write := clock
+    //fb.io.reset := reset
+    io.readEnable := DontCare
+    //fb.io.read_enable := io.readEnable
+
+    fb.io.write_enable := io.writeEnable
+    fb.io.write_addr := io.writeY * width.U + io.writeX
+    fb.io.data_in := io.writeVal.asUInt()
+
+    //fb.io.writeport_enable := DontCare
+    //fb.io.read_out_reg_en := true.B
+
+    val read_addr = RegInit(0.U(20.W))
+    fb.io.clk_read := io.readClock
+    fb.io.read_addr := read_addr
+    when(io.readY === 0.U && io.readX === 0.U) {
+      read_addr := 0.U
+    }
+      .elsewhen(io.readY < height.U && io.readX < width.U) {
+        read_addr := read_addr + 1.U
+      }
+
+    val r = Wire(Vec(3, UInt(colorDepth.W)))
+    r(0) := fb.io.data_out
+    r(1) := fb.io.data_out
+    r(2) := fb.io.data_out
+    //r(0) := fb.io.data_out(colorDepth - 1, 0)
+    //r(1) := fb.io.data_out(2 * colorDepth - 1, colorDepth)
+    //r(2) := fb.io.data_out(3 * colorDepth - 1, 2 * colorDepth)
+
+    io.readVal := r
   }
-
-  // 2D Array Indexing
-  io.readVal := fb(io.readX)(io.readY)
 }
