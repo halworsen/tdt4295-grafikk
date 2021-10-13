@@ -23,15 +23,15 @@ class Main extends Module {
 
   withReset(~io.aresetn) {
     val fb = Module(new FrameBuffer(640, 480))
-    val bresenhams = Module(new LineDrawing(10, 500, 200, 250))
-    bresenhams.io.xs := 0.U
-    bresenhams.io.xe := 400.U
-    bresenhams.io.ys := 200.U
-    bresenhams.io.ye := 200.U
+    val bresenhams = Module(new LineDrawing)
+    bresenhams.io.xs := 500.S
+    bresenhams.io.ys := 0.S
+    bresenhams.io.xe := 0.S
+    bresenhams.io.ye := 400.S
 
-    //fb.io.writeEnable := bresenhams.io.writeEnable
-    bresenhams.io.writeEnable := DontCare
-    fb.io.writeEnable := false.B
+    fb.io.writeEnable := bresenhams.io.writeEnable
+    //bresenhams.io.writeEnable := DontCare
+    //fb.io.writeEnable := false.B
     fb.io.writeX := bresenhams.io.writeX
     fb.io.writeY := bresenhams.io.writeY
     fb.io.writeVal := bresenhams.io.writeVal
@@ -43,9 +43,7 @@ class Main extends Module {
     writeBtn.io.aresetn := io.aresetn
     writeBtn.io.btn := io.btn
 
-    //fb.io.writeEnable := writeBtn.io.writeEnable
-
-    //vga.io.out := DontCare
+    bresenhams.io.start := writeBtn.io.writeEnable
 
     vgaClock.io.clk := clock
 
@@ -67,21 +65,6 @@ class Main extends Module {
       io.vga_r := delay(vga.io.out(0))
       io.vga_g := delay(vga.io.out(1))
       io.vga_b := delay(vga.io.out(2))
-
-      //when(~vga.io.enable) {
-      //io.vga_r := "h0".U
-      //io.vga_g := "h0".U
-      //io.vga_b := "h0".U
-
-      //}.elsewhen(shouldDraw) {
-      //io.vga_r := "hf".U
-      //io.vga_g := "h8".U
-      //io.vga_b := "h0".U
-      //}.otherwise {
-      //io.vga_r := "h0".U + vga.io.selX
-      //io.vga_g := "h8".U + vga.io.selX
-      //io.vga_b := "hf".U
-      //}
 
     }
   }
