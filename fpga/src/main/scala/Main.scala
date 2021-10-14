@@ -2,6 +2,7 @@ import chisel3._
 import chisel3.util._
 import tools.WriteBtn
 import fb.FrameBuffer
+import fb.Bram_sdp
 import ld.LineDrawing
 import vga.VGA
 import vga.VGAClock
@@ -27,6 +28,20 @@ class Main extends Module {
 
   withReset(~io.aresetn) {
     val fb = Module(new FrameBuffer(640, 480))
+
+    def clearBuffer(buffer: SInt) = {
+      // todo
+    }
+
+    // Use this to store vales from SPI
+    val spi_buffer = Module(new Bram_sdp(1, 640*480, "./bugge_large.mem"))
+    spi_buffer.write_enable := true.B
+    // clear buffer 
+    for (i <- 640*480) {
+      spi_buffer.write_addr = i.U
+      spi_buffer.data_in := 0.U // TODO: check if this is okay and I don't have to rewrite to bits
+    }
+
     val bresenhams = Module(new LineDrawing)
     bresenhams.io.xs := 500.S
     bresenhams.io.ys := 0.S
