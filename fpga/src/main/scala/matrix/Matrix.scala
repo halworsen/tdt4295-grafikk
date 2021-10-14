@@ -10,9 +10,9 @@ class MVP extends Module {
   })
 
   for (r <- 0 to 3) {
-    for (c <- 0 to 3) {
-      io.outVec4(r) := io.outVec4(r) + (io.mat4(r)(c) * io.vec4(c))
-    }
+    io.outVec4(r) := (io.mat4(r)(0) * io.vec4(0) + io.mat4(r)(1) * io.vec4(
+      1
+    ) + io.mat4(r)(2) * io.vec4(2) + io.mat4(r)(3) * io.vec4(3))
   }
 }
 
@@ -25,10 +25,11 @@ class Mat4Multiply extends Module {
 
   for (r <- 0 to 3) {
     for (c <- 0 to 3) {
-      io.C(r) := 0.S
-      for (k <- 0 to 3) {
-        io.C(r)(c) := io.A(r)(k) * io.B(k)(c)
-      }
+      io.C(r)(c) :=
+        io.A(r)(0) * io.B(0)(c) +
+          io.A(r)(1) * io.B(1)(c) +
+          io.A(r)(2) * io.B(2)(c) +
+          io.A(r)(3) * io.B(3)(c)
     }
   }
 }
