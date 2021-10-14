@@ -5,6 +5,8 @@ import fb.FrameBuffer
 import ld.LineDrawing
 import vga.VGA
 import vga.VGAClock
+import matrix.MVP
+import matrix.Mat4Multiply
 
 class Main extends Module {
   def delay(x: UInt) = RegNext(x)
@@ -38,6 +40,9 @@ class Main extends Module {
 
     val vga = Module(new VGA)
     val vgaClock = Module(new VGAClock)
+    
+    // val pPV := MVP(vec, mat)
+    // val mat4 := Mat4Multiply(A, B)
 
     val writeBtn = Module(new WriteBtn)
     writeBtn.io.aresetn := io.aresetn
