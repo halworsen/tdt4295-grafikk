@@ -1,7 +1,6 @@
 package tools
 
 import chisel3._
-import fb.FrameBuffer
 
 import scala.math.log10
 
