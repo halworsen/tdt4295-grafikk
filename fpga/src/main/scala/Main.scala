@@ -7,6 +7,8 @@ import vga.VGA
 import vga.VGAClock
 import matrix.MVP
 import matrix.Mat4Multiply
+import spi._
+
 
 class Main extends Module {
   def delay(x: UInt) = RegNext(x)
@@ -21,6 +23,9 @@ class Main extends Module {
     val vga_r = Output(UInt(4.W))
     val vga_g = Output(UInt(4.W))
     val vga_b = Output(UInt(4.W))
+
+    val spi = Input(new SpiSlave())
+    val led = Output(UInt(4.W))
   })
 
   withReset(~io.aresetn) {
@@ -72,6 +77,11 @@ class Main extends Module {
       io.vga_b := delay(vga.io.out(2))
 
     }
+
+    val spi = Module(new Spi)
+    spi.io.spi := io.spi
+    io.led := spi.io.value(3, 0)
+
   }
 }
 
@@ -95,7 +105,13 @@ class Main extends Module {
     //val clkout = Output(Clock())
 
     val btn = Input(UInt(4.W))
+
+    // NEW FOR SPI COMMUNICATION
+    val mcuData = Input(UInt(8.W))
   })
+
+  // TODO: In main, make io.value (output of spi) the input to this code
+  // io.mcuData := spi.io.value
 
   def tickGen(fac: Int) = {
     val reg = RegInit(0.U(log2Up(fac).W))
@@ -156,6 +172,24 @@ class Main extends Module {
     when(counter === 5.U) {
       counter := 0.U
     }
+
+    // SPI PART, USE FOR LEDS TO INDICATE value of byte
+    when(io.mcuData <= 255.U && io.mcuData >= 200.U) {
+      ledReg := "b0001".U
+    }
+    when(io.mcuData < 200.U && io.mcuData >= 128.U) {
+      ledReg := "b0010".U
+    }
+    when(io.mcuData < 128.U && io.mcuData >= 64.U) {
+      ledReg := "b0100".U
+    }
+     when(io.mcuData < 64.U && io.mcuData > 0.U) {
+      ledReg := "b1000".U
+    }
+    when(io.mcuData == 0.U) {
+      counter := 0.U
+    }
+
     io.led := ledReg
   }
 
