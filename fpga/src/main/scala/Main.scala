@@ -26,21 +26,25 @@ class Main extends Module {
     val led = Output(UInt(4.W))
   })
 
+  def clearBuffer(buffer: Bram_sdp) = {
+    buffer.write_enable := true.B
+    // clear buffer 
+    for (i <- 640*480) {
+      buffer.write_addr = i.U
+      buffer.data_in := 0.U // TODO: check if this is okay and I don't have to rewrite to bits
+    }
+  }
+
   withReset(~io.aresetn) {
     val fb = Module(new FrameBuffer(640, 480))
 
-    def clearBuffer(buffer: SInt) = {
-      // todo
-    }
+    
 
     // Use this to store vales from SPI
     val spi_buffer = Module(new Bram_sdp(1, 640*480, "./bugge_large.mem"))
-    spi_buffer.write_enable := true.B
-    // clear buffer 
-    for (i <- 640*480) {
-      spi_buffer.write_addr = i.U
-      spi_buffer.data_in := 0.U // TODO: check if this is okay and I don't have to rewrite to bits
-    }
+    clearBuffer(spi_buffer)
+
+    
 
     val bresenhams = Module(new LineDrawing)
     bresenhams.io.xs := 500.S
