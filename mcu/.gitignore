@@ -6,3 +6,4 @@
 .cache
 Gecko_SDK/
 compile_commands.json
+.ccls
