@@ -96,9 +96,9 @@ void TIMER1_IRQHandler(void) {
 
   TIMER_IntClear(TIMER1, 1);
   if (adcChannel)
-    initSingle.input = adcSingleInputCh0;
+    initSingle.input = adcSingleInputCh4;
   else
-    initSingle.input = adcSingleInputCh1;
+    initSingle.input = adcSingleInputCh5;
   ADC_InitSingle(ADC0, &initSingle);
   ADC_Start(ADC0, adcStartSingle);
   adcChannel = !adcChannel;
