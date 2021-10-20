@@ -5,7 +5,7 @@ import chisel3.util._
 
 // https://www.google.com/search?q=bresenham%27s+line+algorithm&sxsrf=AOaemvL1TxCiXvAjdJEoqqyHit-YOLiabQ:1633605785405&source=lnms&tbm=isch&sa=X&sqi=2&ved=2ahUKEwjQtqrkl7jzAhXnQvEDHVxHC0AQ_AUoAXoECAEQAw&biw=1440&bih=788&dpr=2#imgrc=MemqMsI7g2nbiM
 class LineDrawing(
-    coordWidth: Int = 16
+    coordWidth: Uint = 16
 ) extends Module {
   def delay(x: SInt) = RegNext(x)
   val io = IO(new Bundle {
