@@ -33,3 +33,19 @@ class Mat4Multiply extends Module {
     }
   }
 }
+
+class MatrixPipeline(size: Int = 8) extends Module {
+  val io = IO(new Bundle {
+    val vectors = Input(Vec(size, Vec(4, SInt(32.W))))
+    val M = Input(Vec(4, Vec(4, SInt(32.W))))
+    val C = Output(Vec(size, Vec(4, SInt(32.W))))
+  })
+
+  val multiplier = Module(new MVP)
+  multiplier.io.mat4 := io.M
+
+  for (i <- 0 until size) {
+    multiplier.io.vec4 := io.vectors(i)
+    io.C(i) := multiplier.io.outVec4
+  }
+}
