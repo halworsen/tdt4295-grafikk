@@ -4,7 +4,7 @@ import chisel3._
 import chisel3.util._
 import ld.LineDrawing
 
-class TriangleDrawer(coordWidth: Uint: 16) extends Module {
+class TriangleDrawer(coordWidth: Int: 16) extends Module {
 
   val io = IO(new Bundle {
     val firstX = Input(SInt(coordWidth.W))
@@ -57,7 +57,6 @@ class TriangleDrawer(coordWidth: Uint: 16) extends Module {
 
     // Set up ld2
   } .elsewhen (ld1.io.done === true.B) {
-
     ld2.io.xs := io.secondX
     ld2.io.ys := io.secondY
     ld2.io.xe := io.thirdX
@@ -74,7 +73,6 @@ class TriangleDrawer(coordWidth: Uint: 16) extends Module {
     
     // Set up ld1
   } .otherwise {
-
     ld1.io.xs := io.firstX
     ld1.io.ys := io.firstY
     ld1.io.xe := io.secondX
