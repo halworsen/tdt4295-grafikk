@@ -11,15 +11,17 @@
 #include "spidrv.h"
 #include "timer.h"
 
+#define SPI_BITRATE 1000000
+
 #define MAX_SAMPLE 4096
 
 #define DISPLAY_HEIGHT 480
 #define DISPLAY_WIDTH 640
 
-#define MIN_X 40
-#define MIN_Y 60
-#define MAX_X 440
-#define MAX_Y 600
+#define MIN_X 60
+#define MIN_Y 40
+#define MAX_X 600
+#define MAX_Y 440
 
 #define max(a, b)                                                              \
   ({                                                                           \
@@ -39,6 +41,8 @@ uint32_t ch1_sample;
 uint32_t ch2_sample;
 uint32_t adcChannel = 0;
 ADC_InitSingle_TypeDef initSingle = ADC_INITSINGLE_DEFAULT;
+SPIDRV_HandleData_t handleData;
+SPIDRV_Handle_t handle = &handleData;
 
 void calc_points(uint32_t ch1_sample, uint32_t ch2_sample, int *coordinates) {
   double scale;
@@ -59,13 +63,36 @@ void calc_points(uint32_t ch1_sample, uint32_t ch2_sample, int *coordinates) {
   coordinates[1] = y;
 }
 
+void transmit_coordinates(int *coordinates) {
+  int16_t buffer[4] = {0};
+
+  buffer[0] = coordinates[0];
+  buffer[1] = coordinates[1];
+
+  for (int i = 0; i < sizeof(buffer) / sizeof(buffer[0]); i++) {
+    uint8_t bitstream[2];
+    bitstream[0] = (buffer[i] >> 8) & 0xFF;
+    bitstream[1] = buffer[i] & 0xFF;
+    SPIDRV_MTransmitB(handle, bitstream, sizeof(bitstream));
+  }
+  if (coordinates[0] > DISPLAY_WIDTH / 2)
+    GPIO_PinOutSet(BSP_GPIO_LED1_PORT, BSP_GPIO_LED1_PIN);
+  else
+    GPIO_PinOutClear(BSP_GPIO_LED1_PORT, BSP_GPIO_LED1_PIN);
+
+  if (coordinates[1] > DISPLAY_HEIGHT / 2)
+    GPIO_PinOutSet(BSP_GPIO_LED0_PORT, BSP_GPIO_LED0_PIN);
+  else
+    GPIO_PinOutClear(BSP_GPIO_LED0_PORT, BSP_GPIO_LED0_PIN);
+}
+
 void GPIO_EVEN_IRQHandler(void) {
   GPIO_IntClear(0x5555);
   GPIO_PinOutToggle(BSP_GPIO_LED1_PORT, BSP_GPIO_LED1_PIN);
 }
 
 void TIMER1_IRQHandler(void) {
-  int coordinates[2] = {MIN_X, MIN_Y};
+  int coordinates[2] = {0};
 
   TIMER_IntClear(TIMER1, 1);
   if (adcChannel)
@@ -75,7 +102,9 @@ void TIMER1_IRQHandler(void) {
   ADC_InitSingle(ADC0, &initSingle);
   ADC_Start(ADC0, adcStartSingle);
   adcChannel = !adcChannel;
+
   calc_points(ch1_sample, ch2_sample, coordinates);
+  transmit_coordinates(coordinates);
 }
 
 void ADC0_IRQHandler(void) {
@@ -88,12 +117,21 @@ void ADC0_IRQHandler(void) {
 }
 
 int main(void) {
+  uint32_t bitrate = 0;
   // Initializations
   CMU_ClockSelectSet(cmuClock_HF, cmuSelect_HFXO);
   initGPIO();
   initTimer(30);
   initADC_single(adcRefVDD);
   TIMER_Enable(TIMER1, true);
+
+  SPIDRV_Init_t initData = SPIDRV_MASTER_USART1;
+  SPIDRV_Init(handle, &initData);
+  SPIDRV_SetBitrate(handle, SPI_BITRATE);
+  SPIDRV_GetBitrate(handle, &bitrate);
+
+  if (bitrate != SPI_BITRATE)
+    GPIO_PinOutSet(BSP_GPIO_LED0_PORT, BSP_GPIO_LED0_PIN);
 
   while (1) {
   }
