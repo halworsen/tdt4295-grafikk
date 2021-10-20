@@ -4,6 +4,7 @@ import tools.WriteBtn
 import fb.FrameBuffer
 import fb.Bram_sdp
 import ld.LineDrawing
+// import drawers.TriangleDrawer
 import vga.VGA
 import vga.VGAClock
 import spi._
@@ -15,6 +16,8 @@ class Main extends Module {
     val aresetn = Input(Bool())
 
     val btn = Input(UInt(4.W))
+    val clearBufferFb = Input(Bool())
+    val clearBufferSb = Input(Bool())
 
     val vga_hsync = Output(Bool())
     val vga_vsync = Output(Bool())
@@ -26,31 +29,51 @@ class Main extends Module {
     val led = Output(UInt(4.W))
   })
 
-  def clearBuffer(buffer: Bram_sdp) = {
-    buffer.write_enable := true.B
-    // clear buffer 
-    for (i <- 640*480) {
-      buffer.write_addr = i.U
-      buffer.data_in := 0.U // TODO: check if this is okay and I don't have to rewrite to bits
-    }
-  }
+
 
   withReset(~io.aresetn) {
+
+    // Cleaning buffers
+    when (clearBufferFb === true.B) {
+      clearBufferFb.write_enable := true.B
+      // clear buffer 
+      for (i <- 640*480) {
+        clearBufferFb.write_addr = i.U
+        clearBufferFb.data_in := 0.U // TODO: check if this is okay and I don't have to rewrite to bits
+      }
+    }
+
+    when (clearBufferSb === true.B) {
+      clearBufferSb.write_enable := true.B
+      // clear buffer 
+      for (i <- 640*480) {
+        clearBufferSb.write_addr = i.U
+        clearBufferSb.data_in := 0.U 
+      }
+    }
+
     val fb = Module(new FrameBuffer(640, 480))
 
-    
-
     // Use this to store vales from SPI
-    val spi_buffer = Module(new Bram_sdp(1, 640*480, "./bugge_large.mem"))
-    clearBuffer(spi_buffer)
-
-    
+    val sb = Module(new Bram_sdp(1, 640*480, "./bugge_large.mem"))
 
     val bresenhams = Module(new LineDrawing)
     bresenhams.io.xs := 500.S
     bresenhams.io.ys := 0.S
     bresenhams.io.xe := 0.S
     bresenhams.io.ye := 400.S
+    
+    /*
+    val bresenTri = Module(new TriangleDrawer)
+    bresenTri.io.firstX := 200.S
+    bresenTri.io.firstY := 50.S
+
+    bresenTri.io.secondX := 400.S
+    bresenTri.io.SecondY := 50.S
+
+    bresenTri.io.thirdX := 300.S
+    bresenTri.io.thirdY := 100.S
+    */
 
     fb.io.writeEnable := bresenhams.io.writeEnable
     //bresenhams.io.writeEnable := DontCare
@@ -58,6 +81,15 @@ class Main extends Module {
     fb.io.writeX := bresenhams.io.writeX
     fb.io.writeY := bresenhams.io.writeY
     fb.io.writeVal := bresenhams.io.writeVal
+
+    /*
+    fb.io.writeEnable := bresenTri.io.writeEnable
+    //bresenTri.io.writeEnable := DontCare
+    //fb.io.writeEnable := false.B
+    fb.io.writeX := bresenTri.io.writeX
+    fb.io.writeY := bresenTri.io.writeY
+    fb.io.writeVal := bresenTri.io.writeVal
+    */
 
     val vga = Module(new VGA)
     val vgaClock = Module(new VGAClock)
