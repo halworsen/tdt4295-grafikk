@@ -6,7 +6,7 @@
 #include "em_gpio.h"
 #include "spidrv.h"
 
-#define SPI_BITRATE 100000
+#define SPI_BITRATE 1000000
 
 uint8_t TRANSMIT = 0;
 SPIDRV_HandleData_t handleData;
@@ -30,10 +30,14 @@ void GPIO_EVEN_IRQHandler(void) {
 }
 
 void transmitGarbage() {
-  int16_t buffer[4] = {0, 0, 100, 100};
   Ecode_t retval;
-
-  retval = SPIDRV_MTransmitB(handle, buffer, sizeof(buffer));
+  int16_t buffer[4] = {0xABCD, 0xABCD, 0xABCD, 0xABCD};
+  for (int i = 0; i < sizeof(buffer) / sizeof(buffer[0]); i++) {
+    uint8_t bitstream[2];
+    bitstream[0] = (buffer[i] >> 8) & 0xFF;
+    bitstream[1] = buffer[i] & 0xFF;
+    retval = SPIDRV_MTransmitB(handle, bitstream, sizeof(bitstream));
+  }
   if (retval != ECODE_EMDRV_SPIDRV_OK)
     GPIO_PinOutSet(BSP_GPIO_LED0_PORT, BSP_GPIO_LED0_PIN);
   TRANSMIT = 0;
@@ -58,6 +62,7 @@ int main(void) {
   uint32_t bitrate = 0;
 
   // Initializations
+  CMU_ClockSelectSet(cmuClock_HF, cmuSelect_HFXO);
   initGPIO();
   SPIDRV_Init_t initData = SPIDRV_MASTER_USART1;
   initData.bitOrder = spidrvBitOrderMsbFirst;
@@ -68,9 +73,6 @@ int main(void) {
 
   if (bitrate != SPI_BITRATE)
     GPIO_PinOutSet(BSP_GPIO_LED0_PORT, BSP_GPIO_LED0_PIN);
-  /*
-  CMU_ClockSelectSet(cmuClock_HF, cmuSelect_HFXO);
-  */
 
   while (1) {
     if (TRANSMIT)
