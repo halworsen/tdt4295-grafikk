@@ -47,7 +47,7 @@ class TriangleDrawer(coordWidth: Uint: 16) extends Module {
     ld3.io.ye := io.firstY
 
     when (io.start) {
-      ld3.io.start := io.start // TODO: best practise to use io.start or true.B here?
+      ld3.io.start := true.B
     }
 
     io.writeEnable := ld3.io.writeEnable
@@ -64,7 +64,7 @@ class TriangleDrawer(coordWidth: Uint: 16) extends Module {
     ld2.io.ye := io.thirdY
 
     when (io.start) {
-      ld2.io.start := io.start
+      ld2.io.start := true.B
     }
 
     io.writeEnable := ld2.io.writeEnable
@@ -81,7 +81,7 @@ class TriangleDrawer(coordWidth: Uint: 16) extends Module {
     ld1.io.ye := io.secondY
 
     when (io.start) {
-      ld1.io.start := io.start
+      ld1.io.start := true.B
     }
 
     io.writeEnable := ld1.io.writeEnable
