@@ -40,6 +40,26 @@ class Main extends Module {
     fb.io.writeY := bresenhams.io.writeY
     fb.io.writeVal := bresenhams.io.writeVal
 
+    /* Testing for triangle drawing
+
+    val bresenTri = Module(new TriangleDrawer)
+    bresenTri.io.firstX := 200.S
+    bresenTri.io.firstY := 50.S
+
+    bresenTri.io.secondX := 400.S
+    bresenTri.io.SecondY := 50.S
+
+    bresenTri.io.thirdX := 300.S
+    bresenTri.io.thirdY := 100.S
+    
+    fb.io.writeEnable := bresenTri.io.writeEnable
+    //bresenTri.io.writeEnable := DontCare
+    //fb.io.writeEnable := false.B
+    fb.io.writeX := bresenTri.io.writeX
+    fb.io.writeY := bresenTri.io.writeY
+    fb.io.writeVal := bresenTri.io.writeVal
+    */
+
     val vga = Module(new VGA)
     val vgaClock = Module(new VGAClock)
 
@@ -47,8 +67,8 @@ class Main extends Module {
     writeBtn.io.aresetn := io.aresetn
     writeBtn.io.btn := io.btn
 
-    bresenhams.io.start := writeBtn.io.writeEnable
-    // bresenTri.io.start := writeBtn.io.writeEnable
+    // bresenhams.io.start := writeBtn.io.writeEnable
+    bresenTri.io.start := writeBtn.io.writeEnable
 
     vgaClock.io.clk := clock
 
