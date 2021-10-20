@@ -35,10 +35,13 @@ class TriangleDrawer(coordWidth: Uint: 16) extends Module {
   // 3 POINTS
   // DRAW 1 -> 2, 2 -> 3 and finally 3 -> 1
   // TODO: Do we need to check which direction we're drawing the lines?
+  
+  io.start := true
 
   // When everything is set up
   when (ld1.io.done === true && ld2.io.done === true && ld3.io.done === true)
   {
+    io.start := false
     io.done := true
     // Set up ld3
   } .elsewhen (ld1.io.done === true && ld2.io.done === true) {
@@ -76,9 +79,6 @@ class TriangleDrawer(coordWidth: Uint: 16) extends Module {
     // Set up ld1
   } .otherwise {
 
-
-
-
     ld1.io.xs := io.firstX
     ld1.io.ys := io.firstY
     ld1.io.xe := io.secondX
@@ -94,11 +94,4 @@ class TriangleDrawer(coordWidth: Uint: 16) extends Module {
     io.writeVal := ld1.io.writeVal
   }
 
-  /*
-  - connect to framebuffer
-  - Set up bresenham 3 times
-  - let framebuffer draw
-
-  */
-  
 }
