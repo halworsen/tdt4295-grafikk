@@ -18,6 +18,8 @@ class Main extends Module {
     val btn = Input(UInt(4.W))
     val clearBufferFb = Input(Bool())
     val clearBufferSb = Input(Bool())
+    val clearBufferFbAddr = Input(UInt(12.W))
+    val clearBufferSbAddr = Input(UInt(12.W))
 
     val vga_hsync = Output(Bool())
     val vga_vsync = Output(Bool())
@@ -36,6 +38,8 @@ class Main extends Module {
     // Cleaning buffers
     when (clearBufferFb === true.B) {
       clearBufferFb.write_enable := true.B
+      // clearBufferFb.write_addr = clearBufferFbAddr
+      // clearBufferFb.data_in := 0.U 
       // clear buffer 
       for (i <- 640*480) {
         clearBufferFb.write_addr = i.U
@@ -45,6 +49,8 @@ class Main extends Module {
 
     when (clearBufferSb === true.B) {
       clearBufferSb.write_enable := true.B
+      // clearBufferSb.write_addr = clearBufferSbAddr
+      // clearBufferSb.data_in := 0.U 
       // clear buffer 
       for (i <- 640*480) {
         clearBufferSb.write_addr = i.U
