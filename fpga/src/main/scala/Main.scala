@@ -48,6 +48,7 @@ class Main extends Module {
     writeBtn.io.btn := io.btn
 
     bresenhams.io.start := writeBtn.io.writeEnable
+    // bresenTri.io.start := writeBtn.io.writeEnable
 
     vgaClock.io.clk := clock
 

@@ -17,7 +17,6 @@ class TriangleDrawer(coordWidth: Uint: 16) extends Module {
     val thirdY = Input(SInt(coordWidth.W))
     // TODO: should we have an input that controls whether or not we should output? (output enable)
     
-
     val start = Input(Bool())
 
     val writeEnable = Output(Bool())
@@ -35,23 +34,20 @@ class TriangleDrawer(coordWidth: Uint: 16) extends Module {
   // 3 POINTS
   // DRAW 1 -> 2, 2 -> 3 and finally 3 -> 1
   // TODO: Do we need to check which direction we're drawing the lines?
-  
-  io.start := true
 
   // When everything is set up
-  when (ld1.io.done === true && ld2.io.done === true && ld3.io.done === true)
+  when (ld1.io.done === true.B && ld2.io.done === true.B && ld3.io.done === true.B)
   {
-    io.start := false
-    io.done := true
+    io.done := true.B
     // Set up ld3
-  } .elsewhen (ld1.io.done === true && ld2.io.done === true) {
+  } .elsewhen (ld1.io.done === true.B && ld2.io.done === true.B) {
     ld3.io.xs := io.thirdX
     ld3.io.ys := io.thirdY
     ld3.io.xe := io.firstX
     ld3.io.ye := io.firstY
 
     when (io.start) {
-      ld3.io.start := io.start
+      ld3.io.start := io.start // TODO: best practise to use io.start or true.B here?
     }
 
     io.writeEnable := ld3.io.writeEnable
@@ -60,7 +56,7 @@ class TriangleDrawer(coordWidth: Uint: 16) extends Module {
     io.writeVal := ld3.io.writeVal
 
     // Set up ld2
-  } .elsewhen (ld1.io.done === true) {
+  } .elsewhen (ld1.io.done === true.B) {
 
     ld2.io.xs := io.secondX
     ld2.io.ys := io.secondY
@@ -93,5 +89,4 @@ class TriangleDrawer(coordWidth: Uint: 16) extends Module {
     io.writeY := ld1.io.writeY
     io.writeVal := ld1.io.writeVal
   }
-
 }
