@@ -48,13 +48,13 @@ class FrameBuffer(width: Int, height: Int) extends Module {
     }
 
     when (io.clearBuffer === true.B) {
-      io.write_enable := true.B
+      fb.io.write_enable := true.B
       // fb.write_addr = clearBufferFbAddr
       // fb.data_in := 0.U 
       // clear buffer 
-      for (i <- 640*480) {
-        io.write_addr = i.U
-        io.data_in := 0.U 
+      for (i <- 0 until 640*480) {
+        fb.io.write_addr := i.U
+        fb.io.data_in := 0.U 
       }
     }  
 

@@ -48,7 +48,7 @@ class Main extends Module {
     fb.io.writeY := bresenhams.io.writeY
     fb.io.writeVal := bresenhams.io.writeVal
 
-
+    fb.io.clearBuffer := io.clearBufferFb
     val vga = Module(new VGA)
     val vgaClock = Module(new VGAClock)
 
