@@ -275,35 +275,25 @@ void print_vec4(vec4_t *v, const char *comment) {
 }
 
 int main() {
-    vec3_t a, b, c, d;
-    mat3_t rot;
+    vec3_t v[4];
+    mat3_t R;
 
     // 4 points of a square.
-    vec3(&a, -1.0,  1.0, 1.0);
-    vec3(&b, -1.0, -1.0, 1.0);
-    vec3(&c,  1.0, -1.0, 1.0);
-    vec3(&d,  1.0,  1.0, 1.0);
+    vec3(&v[0], -1.0,  1.0, 1.0);
+    vec3(&v[1], -1.0, -1.0, 1.0);
+    vec3(&v[2],  1.0, -1.0, 1.0);
+    vec3(&v[3],  1.0,  1.0, 1.0);
 
-    // rotation matrix by PI/4
-    rot3(&rot, 3.1415/4);
+    // rotation matrix by PI/4.
+    rot3(&R, 3.1415/4);
 
-    vec3_t v;
-
-    transform3(&v, &rot, &a);
-    printf("(%f, %f), ", v.x, v.y);
-
-    transform3(&v, &rot, &b);
-    printf("(%f, %f), ", v.x, v.y);
-
-    transform3(&v, &rot, &c);
-    printf("(%f, %f), ", v.x, v.y);
-
-    transform3(&v, &rot, &d);
-    printf("(%f, %f)\n", v.x, v.y);
+    // print the rotated corners.
+    vec3_t q;
+    for (int i = 0; i < 4; i++) {
+        transform3(&q, &R, &v[i]);
+        printf("R(v[%d]) = (%.2f %.2f)\n", i, q.x, q.y);
+    }
     
-
-
-
     return 0;
 }
 #endif
