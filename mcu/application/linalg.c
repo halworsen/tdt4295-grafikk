@@ -110,11 +110,11 @@ void identity(mat4_t *ret) {
               0.0, 0.0, 0.0, 1.0);
 }
 
-void translation(mat4_t *ret, vec4_t *t) {
+void translation(mat4_t *ret, float dx, float dy, float dz) {
     identity(ret);
-    *at(ret, 0, 3) = t->x;
-    *at(ret, 1, 3) = t->y;
-    *at(ret, 2, 3) = t->z;
+    *at(ret, 0, 3) = dx;
+    *at(ret, 1, 3) = dy;
+    *at(ret, 2, 3) = dz;
 }
 
 void rot_x(mat4_t *ret, float th) {

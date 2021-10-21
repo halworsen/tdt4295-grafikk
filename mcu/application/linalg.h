@@ -106,7 +106,7 @@ void identity(mat4_t *ret);
 
 // Make a translation matrix.
 // Only uses the 3D component of the vector.
-void translation(mat4_t *ret, vec4_t *t);
+void translation(mat4_t *ret, float dx, float dy, float dz);
 
 // Make simple rotation matrices around the standard 
 // basis axes. This is sufficient for a lot of simple
