@@ -28,14 +28,7 @@ class Main extends Module {
   withReset(~io.aresetn) {
     val fb = Module(new FrameBuffer(640, 480))
     val bresenhams = Module(new LineDrawing)
-    bresenhams.io.xs := 500.S
-    bresenhams.io.ys := 0.S
-    bresenhams.io.xe := 0.S
-    bresenhams.io.ye := 400.S
-
     fb.io.writeEnable := bresenhams.io.writeEnable
-    //bresenhams.io.writeEnable := DontCare
-    //fb.io.writeEnable := false.B
     fb.io.writeX := bresenhams.io.writeX
     fb.io.writeY := bresenhams.io.writeY
     fb.io.writeVal := bresenhams.io.writeVal
@@ -47,11 +40,8 @@ class Main extends Module {
     writeBtn.io.aresetn := io.aresetn
     writeBtn.io.btn := io.btn
 
-    bresenhams.io.start := writeBtn.io.writeEnable
-
     vgaClock.io.clk := clock
 
-    //val shouldDraw = vga.io.selX < 48.U && vga.io.selY < 48.U
     withClock(vgaClock.io.clk_pix) {
       vga.io.clock := vgaClock.io.clk_pix
       vga.io.reset := ~io.aresetn
@@ -72,10 +62,94 @@ class Main extends Module {
 
     }
 
-    val spi = Module(new Spi)
-    spi.io.spi := io.spi
-    io.led := spi.io.value(3, 0)
+    val spiDataWidth = 64;
+    val spiSIntWidth = 16;
 
+    val spi = Module(new Spi(spiDataWidth))
+    spi.io.spi := io.spi
+
+    val spiBuffer = RegInit(0.U(spiDataWidth.W))
+
+    when(spi.io.outputReady) {
+      spiBuffer := spi.io.value
+    }
+
+    bresenhams.io.start := delay(spi.io.outputReady)
+    bresenhams.io.xs := spiBuffer(
+      spiDataWidth - 1,
+      spiDataWidth - spiSIntWidth
+    ).asSInt
+    bresenhams.io.ys := spiBuffer(
+      spiDataWidth - spiSIntWidth - 1,
+      spiDataWidth - 2 * spiSIntWidth
+    ).asSInt
+    bresenhams.io.xe := spiBuffer(
+      spiDataWidth - 2 * spiSIntWidth - 1,
+      spiDataWidth - 3 * spiSIntWidth
+    ).asSInt
+    bresenhams.io.ye := spiBuffer(
+      spiDataWidth - 3 * spiSIntWidth - 1,
+      spiDataWidth - 4 * spiSIntWidth
+    ).asSInt
+
+    //io.led <> spiBuffer(
+    //spiDataWidth - 2 * spiSIntWidth - 1,
+    //spiDataWidth - 2 * spiSIntWidth - 5
+    //)
+    io.led := DontCare
+
+    // Draw border around FB
+    val top :: right :: left :: bottom :: done :: Nil = Enum(5)
+    val state = RegInit(top)
+    switch(state) {
+      is(top) {
+        bresenhams.io.xs := 0.S
+        bresenhams.io.ys := 0.S
+        bresenhams.io.xe := 640.S
+        bresenhams.io.ye := 0.S
+        when(bresenhams.io.done) {
+          state := right
+        }.otherwise {
+          bresenhams.io.start := true.B
+        }
+      }
+      is(right) {
+        bresenhams.io.xs := 640.S
+        bresenhams.io.ys := 0.S
+        bresenhams.io.xe := 640.S
+        bresenhams.io.ye := 480.S
+        when(bresenhams.io.done) {
+          state := left
+        }.otherwise {
+          bresenhams.io.start := true.B
+        }
+
+      }
+      is(left) {
+        bresenhams.io.xs := 0.S
+        bresenhams.io.ys := 0.S
+        bresenhams.io.xe := 0.S
+        bresenhams.io.ye := 480.S
+        when(bresenhams.io.done) {
+          state := bottom
+        }.otherwise {
+          bresenhams.io.start := true.B
+        }
+
+      }
+      is(bottom) {
+        bresenhams.io.xs := 0.S
+        bresenhams.io.ys := 480.S
+        bresenhams.io.xe := 640.S
+        bresenhams.io.ye := 480.S
+        when(bresenhams.io.done) {
+          state := done
+        }.otherwise {
+          bresenhams.io.start := true.B
+        }
+
+      }
+    }
   }
 }
 
@@ -84,109 +158,3 @@ object Main extends App {
   (new chisel3.stage.ChiselStage)
     .emitVerilog(new Main(), Array("--target-dir", "verilog/"))
 }
-
-/*
-
-TEST CODE
-
-import chisel3.util._
-
-class Main extends Module {
-  val io = IO(new Bundle {
-    val aresetn = Input(Bool())
-
-    val led = Output(Bits(4.W))
-    //val clkout = Output(Clock())
-
-    val btn = Input(UInt(4.W))
-
-    // NEW FOR SPI COMMUNICATION
-    val mcuData = Input(UInt(8.W))
-  })
-
-  // TODO: In main, make io.value (output of spi) the input to this code
-  // io.mcuData := spi.io.value
-
-  def tickGen(fac: Int) = {
-    val reg = RegInit(0.U(log2Up(fac).W))
-    val tick = reg === (fac - 1).U
-    reg := Mux(tick, 0.U, reg + 1.U)
-    tick
-  }
-
-  def rising(v: Bool) = v & !RegNext(v)
-
-  def filter(v: Bool, t: Bool) = {
-    val reg = RegInit(0.U(3.W))
-    when(t) {
-      reg := Cat(reg(1, 0), v)
-    }
-    (reg(2) & reg(1)) | (reg(2) & reg(0)) | (reg(1) & reg(0))
-  }
-
-  withReset(~io.aresetn) {
-    val btnCnt = (io.btn(0)).asBool
-
-    val btnSync = RegNext(RegNext(btnCnt))
-    val tick = tickGen(100000000 / 100)
-    val btnDeb = Reg(Bool())
-
-    when(tick) {
-      btnDeb := btnSync
-    }
-    val btnClean = filter(btnDeb, tick)
-    val risingEdge = rising(btnClean)
-
-    var counter = RegInit(0.U(4.W))
-
-    //var clocks = Module(new Clock())
-    //io.clkout := clocks.io.clkout
-    val ledReg = RegInit(0.U(4.W))
-
-    when(risingEdge) {
-      counter := counter + 1.U
-    }
-    when(counter === 0.U) {
-      ledReg := 0.U
-    }
-
-    when(counter === 1.U) {
-      ledReg := "b0001".U
-    }
-    when(counter === 2.U) {
-      ledReg := "b0010".U
-    }
-    when(counter === 3.U) {
-      ledReg := "b0100".U
-    }
-
-    when(counter === 4.U) {
-      ledReg := "b1000".U
-    }
-    when(counter === 5.U) {
-      counter := 0.U
-    }
-
-    // SPI PART, USE FOR LEDS TO INDICATE value of byte
-    when(io.mcuData <= 255.U && io.mcuData >= 200.U) {
-      ledReg := "b0001".U
-    }
-    when(io.mcuData < 200.U && io.mcuData >= 128.U) {
-      ledReg := "b0010".U
-    }
-    when(io.mcuData < 128.U && io.mcuData >= 64.U) {
-      ledReg := "b0100".U
-    }
-     when(io.mcuData < 64.U && io.mcuData > 0.U) {
-      ledReg := "b1000".U
-    }
-    when(io.mcuData == 0.U) {
-      counter := 0.U
-    }
-
-    io.led := ledReg
-  }
-
-}
-
- */

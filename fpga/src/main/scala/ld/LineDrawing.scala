@@ -70,12 +70,11 @@ class LineDrawing(
   io.writeVal(1) := "h2".U
   io.writeVal(2) := "h0".U
 
-  io.done := true.B
+  io.done := false.B
   io.writeEnable := false.B
 
   switch(state) {
     is(idle) {
-      io.done := false.B
       io.writeEnable := false.B
       when(io.start) {
         state := init1
@@ -83,7 +82,6 @@ class LineDrawing(
       }
     }
     is(init1) {
-      io.done := false.B
       dx := Mux(right, xe - xs, xs - xe)
       dy := ys - ye
       state := init2
@@ -102,7 +100,6 @@ class LineDrawing(
         io.done := true.B
         io.writeEnable := false.B
       }.otherwise {
-        io.done := false.B
         io.writeEnable := true.B
 
         when(updX && updY) {
