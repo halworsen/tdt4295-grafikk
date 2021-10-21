@@ -5,6 +5,98 @@
 #include <math.h>
 #include <stdint.h>
 
+// ========= //
+// 3D LINALG //
+// ========= //
+
+void mat3(mat3_t *ret,
+        float x11, float x12, float x13,
+        float x21, float x22, float x23,
+        float x31, float x32, float x33) {
+    ret->data[0] = x11;
+    ret->data[1] = x12;
+    ret->data[2] = x13;
+
+    ret->data[3] = x21;
+    ret->data[4] = x22;
+    ret->data[5] = x23;
+
+    ret->data[6] = x31;
+    ret->data[7] = x32;
+    ret->data[8] = x33;
+}
+
+void vec3(vec3_t *ret, float x, float y, float w) {
+    ret->x = x;
+    ret->y = y;
+    ret->w = w;
+}
+
+void mmul3(mat3_t *ret, mat3_t *A, mat3_t *B) {
+    // Alias the pointers to make the loop more readable.
+    float* a = A->data;
+    float* b = B->data;
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            // Row vector from A, column vector from B.
+            float dot = a[3*i + 0] * b[0 + j]
+                      + a[3*i + 1] * b[3 + j]
+                      + a[3*i + 2] * b[6 + j];
+
+            // The i,j entry is the dot product.
+            ret->data[3*i + j] = dot;
+        }
+    }
+}
+
+// ret <- Tv (apply T to v)
+void transform3(vec3_t *ret, mat3_t *T, vec3_t *v) {
+    // Alias the pointer to the matrix data buffer.
+    float* t = T->data;
+
+    // Reinterpret *ret as a float array.
+    float* r = (float*) ret;
+
+    for (int i = 0; i < 4; i++) {
+       // ith row vector from A, v is column vector.
+       float dot = t[3*i + 0] * v->x
+                 + t[3*i + 1] * v->y
+                 + t[3*i + 2] * v->w;
+
+       // ith element is the dot product.
+       r[i] = dot;
+    }
+}
+
+// make a 3D identity matrix.
+void identity3(mat3_t *ret) {
+    mat3(ret,
+        1.0, 0.0, 0.0,
+        0.0, 1.0, 0.0,
+        0.0, 0.0, 1.0);
+}
+
+// rotation matrix (around w-axis essentially)
+void rot3(mat3_t *ret, float th) {
+    identity3(ret);
+    ret->data[0] /* 0,0 */ =  cos(th);
+    ret->data[1] /* 0,1 */ = -sin(th);
+    ret->data[3] /* 1,0 */ =  sin(th);
+    ret->data[4] /* 1,1 */ =  cos(th);
+}
+
+// translation by delta (dx dy)
+void translation3(mat3_t *ret, float dx, float dy) {
+    identity3(ret);
+    ret->data[2] /* 0,2 */ = dx;
+    ret->data[5] /* 1,2 */ = dy;
+}
+
+// ========= //
+// 4D LINALG //
+// ========= //
+
 void mat4(mat4_t *ret,
         float x11, float x12, float x13, float x14,
         float x21, float x22, float x23, float x24,
@@ -92,7 +184,7 @@ void transform(vec4_t *ret, mat4_t *T, vec4_t *p) {
     float* t = T->data;
 
     for (int i = 0; i < 4; i++) {
-       // i'th row vector from A, v is column vector.
+       // i'th row vector from A, p is column vector.
        float dot = t[4*i + 0] * p->x
                  + t[4*i + 1] * p->y
                  + t[4*i + 2] * p->z
@@ -183,10 +275,33 @@ void print_vec4(vec4_t *v, const char *comment) {
 }
 
 int main() {
-    // float -> fixed point test
-    float x = 123.456789;
-    int32_t x_fp = (int32_t) (x * 1000);
-    printf("x=%f x_fp=%d\n", x, x_fp);
+    vec3_t a, b, c, d;
+    mat3_t rot;
+
+    // 4 points of a square.
+    vec3(&a, -1.0,  1.0, 1.0);
+    vec3(&b, -1.0, -1.0, 1.0);
+    vec3(&c,  1.0, -1.0, 1.0);
+    vec3(&d,  1.0,  1.0, 1.0);
+
+    // rotation matrix by PI/4
+    rot3(&rot, 3.1415/4);
+
+    vec3_t v;
+
+    transform3(&v, &rot, &a);
+    printf("(%f, %f), ", v.x, v.y);
+
+    transform3(&v, &rot, &b);
+    printf("(%f, %f), ", v.x, v.y);
+
+    transform3(&v, &rot, &c);
+    printf("(%f, %f), ", v.x, v.y);
+
+    transform3(&v, &rot, &d);
+    printf("(%f, %f)\n", v.x, v.y);
+    
+
 
 
     return 0;

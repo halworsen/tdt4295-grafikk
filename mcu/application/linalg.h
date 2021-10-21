@@ -55,7 +55,7 @@ typedef struct vec3 {
 } vec3_t;
 
 // Initialize a vector (x y w).
-void vec3(vec3_t *ret, float x, float y);
+void vec3(vec3_t *ret, float x, float y, float w);
 
 // ========= //
 // 3D LINALG //
@@ -68,10 +68,10 @@ void vec3(vec3_t *ret, float x, float y);
 void mmul3(mat3_t *ret, mat3_t *A, mat3_t *B);
 
 // ret <- Tv
-void transform3(vec3_t *ret, mat3_t *T, mat3_t v);
+void transform3(vec3_t *ret, mat3_t *T, vec3_t *v);
 
 // rotation matrix (around w-axis essentially)
-void rot2(mat3_t *ret, float th);
+void rot3(mat3_t *ret, float th);
 
 // translation by delta (dx dy)
 void translation3(mat3_t *ret, float dx, float dy);
