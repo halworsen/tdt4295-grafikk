@@ -12,6 +12,8 @@ class Bram_sdp(width: Int, depth: Int, init_file: String = "")
     val clk_read = Input(Clock())
     val clk_write = Input(Clock())
     val write_enable = Input(Bool())
+    // TODO: Implement this when we want to parallelize clearing out the buffer
+    // val clearBuffer = Input(Bool())
 
     val write_addr = Input(UInt(log2Up(depth).W))
     val read_addr = Input(UInt(log2Up(depth).W))

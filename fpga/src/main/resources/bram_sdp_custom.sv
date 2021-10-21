@@ -13,7 +13,7 @@ module Bram_sdp #(
     ) (
     input wire logic clk_write,                 // write clock (port a)
     input wire logic clk_read,                  // read clock (port b)
-    input wire logic write_enable,                        // write enable (port a)
+    input wire logic write_enable,              // write enable (port a)
     input wire logic [ADDRW-1:0] write_addr,    // write address (port a)
     input wire logic [ADDRW-1:0] read_addr,     // read address (port b)
     input wire logic [WIDTH-1:0] data_in,       // data in (port a)

@@ -23,4 +23,27 @@ class FrameBufferSpec extends FreeSpec with ChiselScalatestTester {
     }
     println("Success!")
   }
+
+  "Should initialize correct graphics array while enabling writing and then clear it" in {
+    test(new FrameBuffer(4, 4)) { dut =>
+      dut.io.writeX.poke(1.S)
+      dut.io.writeY.poke(1.S)
+      dut.io.writeEnable.poke(true.B)
+      dut.io.writeVal(0).poke(1.U)
+      dut.io.writeVal(1).poke(1.U)
+      dut.io.writeVal(2).poke(1.U)
+      dut.clock.step(1)
+      dut.io.readX.poke(1.U)
+      dut.io.readY.poke(1.U)
+      dut.clock.step(1)
+      dut.io.clearBuffer.poke(true.B)
+      dut.io.readX.poke(1.U)
+      dut.io.readY.poke(1.U)
+      dut.clock.step(1)
+      dut.io.readVal(0).expect(0.U)
+      dut.io.readVal(1).expect(0.U)
+      dut.io.readVal(2).expect(0.U)
+    }
+    println("Success!")
+  }
 }

@@ -17,9 +17,9 @@ class Main extends Module {
 
     val btn = Input(UInt(4.W))
     val clearBufferFb = Input(Bool())
-    val clearBufferSb = Input(Bool())
     val clearBufferFbAddr = Input(UInt(12.W))
-    val clearBufferSbAddr = Input(UInt(12.W))
+
+    val drawing = Input(Bool())
 
     val vga_hsync = Output(Bool())
     val vga_vsync = Output(Bool())
@@ -31,38 +31,10 @@ class Main extends Module {
     val led = Output(UInt(4.W))
   })
 
-
-
   withReset(~io.aresetn) {
 
-    // Cleaning buffers
-    when (clearBufferFb === true.B) {
-      clearBufferFb.write_enable := true.B
-      // clearBufferFb.write_addr = clearBufferFbAddr
-      // clearBufferFb.data_in := 0.U 
-      // clear buffer 
-      for (i <- 640*480) {
-        clearBufferFb.write_addr = i.U
-        clearBufferFb.data_in := 0.U // TODO: check if this is okay and I don't have to rewrite to bits
-      }
-    }
-
-    when (clearBufferSb === true.B) {
-      clearBufferSb.write_enable := true.B
-      // clearBufferSb.write_addr = clearBufferSbAddr
-      // clearBufferSb.data_in := 0.U 
-      // clear buffer 
-      for (i <- 640*480) {
-        clearBufferSb.write_addr = i.U
-        clearBufferSb.data_in := 0.U 
-      }
-    }
-
     val fb = Module(new FrameBuffer(640, 480))
-
-    // Use this to store vales from SPI
-    val sb = Module(new Bram_sdp(1, 640*480, "./bugge_large.mem"))
-
+  
     val bresenhams = Module(new LineDrawing)
     bresenhams.io.xs := 500.S
     bresenhams.io.ys := 0.S
@@ -87,6 +59,15 @@ class Main extends Module {
     bresenhams.io.start := writeBtn.io.writeEnable
 
     vgaClock.io.clk := clock
+
+    // Need to make sure we're only drawing while we're supposed to
+    /*
+    when (io.drawing === true.B) {
+
+    } .otherwise {
+
+    }
+    */
 
     //val shouldDraw = vga.io.selX < 48.U && vga.io.selY < 48.U
     withClock(vgaClock.io.clk_pix) {
