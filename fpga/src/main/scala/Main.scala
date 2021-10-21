@@ -2,7 +2,7 @@ import chisel3._
 import chisel3.util._
 import tools.WriteBtn
 import fb.FrameBuffer
-import fb.Bram_sdp
+// import fb.Bram_sdp
 import ld.LineDrawing
 // import drawers.TriangleDrawer
 import vga.VGA
