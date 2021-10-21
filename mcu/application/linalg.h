@@ -1,6 +1,7 @@
 #ifndef LINALG_H
 #define LINALG_H
 #include <stdint.h>
+
 // linalg.h
 // ========
 // This file defines the functions and structures we need to 
@@ -36,7 +37,54 @@ typedef struct vec4 {
 // Initialize a vector with given values.
 void vec4(vec4_t *ret, float x, float y, float z, float w);
 
-// Dot product ret = x . y.
+// 3D matrix (w-augmented 2D matrix).
+typedef struct mat3 {
+    float data[9];
+} mat3_t;
+
+void mat3(mat3_t *ret,
+        float x11, float x12, float x13,
+        float x21, float x22, float x23,
+        float x31, float x32, float x33);
+
+// 3D vectors (w-augmented 2D vectors).
+typedef struct vec3 {
+    float x;
+    float y;
+    float w;
+} vec3_t;
+
+// Initialize a vector (x y w).
+void vec3(vec3_t *ret, float x, float y);
+
+// ========= //
+// 3D LINALG //
+// ========= //
+// The 3D linalg is a bit more limited, since everything
+// related to perspective would be nonsense in 2D, and
+// the 3D linalg is only used for 2D scenes.
+
+// ret <- AB
+void mmul3(mat3_t *ret, mat3_t *A, mat3_t *B);
+
+// ret <- Tv
+void transform3(vec3_t *ret, mat3_t *T, mat3_t v);
+
+// rotation matrix (around w-axis essentially)
+void rot2(mat3_t *ret, float th);
+
+// translation by delta (dx dy)
+void translation3(mat3_t *ret, float dx, float dy);
+
+// make a 3D identity matrix.
+void identity3(mat3_t *ret);
+
+
+// ========= //
+// 4D LINALG //
+// ========= //
+
+// Dot product ret = x `dot` y.
 float dot3(vec4_t *x, vec4_t *y); // Only 3D component.
 float dot4(vec4_t *x, vec4_t *y); // All 4 components.
 
@@ -67,9 +115,6 @@ void translation(mat4_t *ret, vec4_t *t);
 void rot_x(mat4_t *ret, float th);
 void rot_y(mat4_t *ret, float th);
 void rot_z(mat4_t *ret, float th);
-
-// TODO Rotation around arbitrary vector.
-void rotation(mat4_t *ret, vec4_t *r, float th);
 
 // Perspective projection matrix from FOV, aspect ratio 
 // and clip planes.
