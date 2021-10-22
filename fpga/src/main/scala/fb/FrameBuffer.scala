@@ -41,21 +41,19 @@ class FrameBuffer(width: Int, height: Int) extends Module {
     val read_addr = RegInit(0.U(20.W))
     fb.io.clk_read := io.readClock
     fb.io.read_addr := read_addr
-    when(io.readY === 0.U && io.readX === 0.U) {
-      read_addr := 0.U
-    } .elsewhen(io.readY < height.U && io.readX < width.U) {
-        read_addr := read_addr + 1.U
+    when(io.readY === 0.U && io.readX === 0.U) { read_addr := 0.U } 
+      .elsewhen(io.readY < height.U && io.readX < width.U) { read_addr := read_addr + 1.U
     }
+    
 
     when (io.clearBuffer === true.B) {
+      io.writeEnable := true.B
+      val countOn = true.B
+      val (counterValue, counterWrap) = Counter(countOn, 640*480) 
+      fb.io.write_addr := counterValue
       fb.io.write_enable := true.B
       // fb.write_addr = clearBufferFbAddr
-      // fb.data_in := 0.U 
-      // clear buffer 
-      for (i <- 0 until 640*480) {
-        fb.io.write_addr := i.U
-        fb.io.data_in := 0.U 
-      }
+      fb.data_in := 0.U  
     }  
 
     val r = Wire(Vec(3, UInt(colorDepth.W)))
