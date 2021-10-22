@@ -1,73 +1,138 @@
-/**
- * @file    main.c
- * @brief   Simple LED Blink Demo for EFM32GG_STK3700
- * @version 1.1
- *
- * @note    Just blinks the LEDs of the STK3700
- *
- * @note    LEDs are on pins 2 and 3 of GPIO Port E
- *
- * @note    It uses a primitive delay mechanism. Do not use it.
- *
- * @author  Hans
- * @date    01/09/2018
- */
-
+#include "adc.h"
+#include "bsp.h"
+#include "em_adc.h"
+#include "em_chip.h"
 #include "em_cmu.h"
 #include "em_device.h"
+#include "em_emu.h"
 #include "em_gpio.h"
+#include "em_timer.h"
+#include "gpio.h"
 #include "spidrv.h"
-#include <stdint.h>
+#include "timer.h"
 
-/**
- * @brief  Main function
- *
- * @note   Using default clock configuration
- * @note   HFCLK     = HFRCO 14 MHz
- * @note   HFCORECLK = HFCLK
- * @note   HFPERCLK  = HFCLK
+#define SPI_BITRATE 1000000
 
- */
+#define MAX_SAMPLE 4096
+
+#define DISPLAY_HEIGHT 480
+#define DISPLAY_WIDTH 640
+
+#define MIN_X 60
+#define MIN_Y 40
+#define MAX_X 600
+#define MAX_Y 440
+
+#define max(a, b)                                                              \
+  ({                                                                           \
+    __typeof__(a) _a = (a);                                                    \
+    __typeof__(b) _b = (b);                                                    \
+    _a > _b ? _a : _b;                                                         \
+  })
+
+#define min(a, b)                                                              \
+  ({                                                                           \
+    __typeof__(a) _a = (a);                                                    \
+    __typeof__(b) _b = (b);                                                    \
+    _a < _b ? _a : _b;                                                         \
+  })
+
+uint32_t ch1_sample;
+uint32_t ch2_sample;
+uint32_t adcChannel = 0;
+ADC_InitSingle_TypeDef initSingle = ADC_INITSINGLE_DEFAULT;
 SPIDRV_HandleData_t handleData;
 SPIDRV_Handle_t handle = &handleData;
 
-void TransferComplete(SPIDRV_Handle_t handle, Ecode_t transferStatus,
-                      int itemsTransferred) {
-  if (transferStatus == ECODE_EMDRV_SPIDRV_OK) {
-    // Success !
+void calc_points(uint32_t ch1_sample, uint32_t ch2_sample, int *coordinates) {
+  double scale;
+  int x;
+  int y;
+
+  scale = (double)ch1_sample / MAX_SAMPLE;
+  x = scale * MAX_X;
+  x = min(x, MAX_X);
+  x = max(x, MIN_X);
+
+  scale = (double)ch2_sample / MAX_SAMPLE;
+  y = scale * MAX_Y;
+  y = min(y, MAX_Y);
+  y = max(y, MIN_Y);
+
+  coordinates[0] = x;
+  coordinates[1] = y;
+}
+
+void transmit_coordinates(int *coordinates) {
+  int16_t buffer[4] = {0};
+
+  buffer[0] = coordinates[0];
+  buffer[1] = coordinates[1];
+
+  for (int i = 0; i < sizeof(buffer) / sizeof(buffer[0]); i++) {
+    uint8_t bitstream[2];
+    bitstream[0] = (buffer[i] >> 8) & 0xFF;
+    bitstream[1] = buffer[i] & 0xFF;
+    SPIDRV_MTransmitB(handle, bitstream, sizeof(bitstream));
   }
+  if (coordinates[0] > DISPLAY_WIDTH / 2)
+    GPIO_PinOutSet(BSP_GPIO_LED1_PORT, BSP_GPIO_LED1_PIN);
+  else
+    GPIO_PinOutClear(BSP_GPIO_LED1_PORT, BSP_GPIO_LED1_PIN);
+
+  if (coordinates[1] > DISPLAY_HEIGHT / 2)
+    GPIO_PinOutSet(BSP_GPIO_LED0_PORT, BSP_GPIO_LED0_PIN);
+  else
+    GPIO_PinOutClear(BSP_GPIO_LED0_PORT, BSP_GPIO_LED0_PIN);
+}
+
+void GPIO_EVEN_IRQHandler(void) {
+  GPIO_IntClear(0x5555);
+  GPIO_PinOutToggle(BSP_GPIO_LED1_PORT, BSP_GPIO_LED1_PIN);
+}
+
+void TIMER1_IRQHandler(void) {
+  int coordinates[2] = {0};
+
+  TIMER_IntClear(TIMER1, 1);
+  if (adcChannel)
+    initSingle.input = adcSingleInputCh4;
+  else
+    initSingle.input = adcSingleInputCh5;
+  ADC_InitSingle(ADC0, &initSingle);
+  ADC_Start(ADC0, adcStartSingle);
+  adcChannel = !adcChannel;
+
+  calc_points(ch1_sample, ch2_sample, coordinates);
+  transmit_coordinates(coordinates);
+}
+
+void ADC0_IRQHandler(void) {
+  ADC_IntClear(ADC0, ADC_IFC_SINGLE);
+  uint32_t sample = ADC_DataSingleGet(ADC0);
+  if (adcChannel)
+    ch1_sample = sample;
+  else
+    ch2_sample = sample;
 }
 
 int main(void) {
-  uint8_t buffer[10];
-  Ecode_t retval;
+  uint32_t bitrate = 0;
+  // Initializations
+  CMU_ClockSelectSet(cmuClock_HF, cmuSelect_HFXO);
+  initGPIO();
+  initTimer(30);
+  initADC_single(adcRefVDD);
+  TIMER_Enable(TIMER1, true);
+
   SPIDRV_Init_t initData = SPIDRV_MASTER_USART1;
-  CMU_ClockEnable(cmuClock_GPIO, true);
+  SPIDRV_Init(handle, &initData);
+  SPIDRV_SetBitrate(handle, SPI_BITRATE);
+  SPIDRV_GetBitrate(handle, &bitrate);
 
-  // Initialize an SPI driver instance.
-  retval = SPIDRV_Init(handle, &initData);
-  if (retval != ECODE_OK) {
-    GPIO_PinModeSet(gpioPortE, 2 /*pin 4*/,
-                    gpioModePushPull /*push-pull output*/, 1 /*output level*/);
-    return -1;
-  }
+  if (bitrate != SPI_BITRATE)
+    GPIO_PinOutSet(BSP_GPIO_LED0_PORT, BSP_GPIO_LED0_PIN);
 
-  // Transmit data using a blocking transmit function.
-  SPIDRV_MTransmitB(handle, buffer, 10);
-  if (retval != ECODE_OK) {
-    GPIO_PinModeSet(gpioPortE, 2 /*pin 4*/,
-                    gpioModePushPull /*push-pull output*/, 1 /*output level*/);
-    return -1;
+  while (1) {
   }
-
-  // Transmit data using a callback to catch transfer completion.
-  SPIDRV_MTransmit(handle, buffer, 10, TransferComplete);
-  if (retval != ECODE_OK) {
-    GPIO_PinModeSet(gpioPortE, 2 /*pin 4*/,
-                    gpioModePushPull /*push-pull output*/, 1 /*output level*/);
-    return -1;
-  }
-  GPIO_PinModeSet(gpioPortE, 2 /*pin 4*/, gpioModePushPull /*push-pull output*/,
-                  1 /*output level*/);
-  return 0;
 }
