@@ -88,6 +88,8 @@ void calc_points(uint32_t ch1_sample, uint32_t ch2_sample, int16_t *coordinates)
       transform3(&q, &TSR, &square[i]);
 
       // Put the transformed coordinates in the coordinate buffer.
+      // These are already floats in pixel-coordinates, so we only
+      // need to cast them to int16, and then they are ready.
       coordinates[i]     = (int16_t) q.x;
       coordinates[i + 1] = (int16_t) q.y;
   }
