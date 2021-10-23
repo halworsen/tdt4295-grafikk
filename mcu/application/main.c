@@ -88,7 +88,7 @@ void calc_points(uint32_t ch1_sample, uint32_t ch2_sample, int16_t *coordinates)
     mmul3(&TSR, &T, &SR);
 
     // Iterate over the vertices.
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 8; i = i + 2) {
         // Calculate transformed vertex q = (TSR)v for all v in the square.
         vec3_t q;
         transform3(&q, &TSR, &square[i]);
