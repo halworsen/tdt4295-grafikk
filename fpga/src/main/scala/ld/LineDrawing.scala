@@ -3,27 +3,36 @@ package ld
 import chisel3._
 import chisel3.util._
 
+
+class BufferInput(colorWidth: Int = 16) extends Bundle {
+    val xs = SInt(coordWidth.W)
+    val ys = SInt(coordWidth.W)
+    val xe = SInt(coordWidth.W)
+    val ye = SInt(coordWidth.W)
+    // Todo: should we have an input that controls whether or not we should output? (output enable)
+
+    val start = Bool()
+
+}
+
 // https://www.google.com/search?q=bresenham%27s+line+algorithm&sxsrf=AOaemvL1TxCiXvAjdJEoqqyHit-YOLiabQ:1633605785405&source=lnms&tbm=isch&sa=X&sqi=2&ved=2ahUKEwjQtqrkl7jzAhXnQvEDHVxHC0AQ_AUoAXoECAEQAw&biw=1440&bih=788&dpr=2#imgrc=MemqMsI7g2nbiM
 class LineDrawing(
     coordWidth: Int = 16
 ) extends Module {
   def delay(x: SInt) = RegNext(x)
   val io = IO(new Bundle {
-    val xs = Input(SInt(coordWidth.W))
-    val ys = Input(SInt(coordWidth.W))
-    val xe = Input(SInt(coordWidth.W))
-    val ye = Input(SInt(coordWidth.W))
-    // Todo: should we have an input that controls whether or not we should output? (output enable)
-
-    val start = Input(Bool())
-
+    val in = Input(new BufferInput(colorWidth))
     val writeEnable = Output(Bool())
     val writeX = Output(SInt(coordWidth.W))
     val writeY = Output(SInt(coordWidth.W))
     val writeVal = Output(Vec(3, UInt(4.W)))
 
     val done = Output(Bool())
-  })
+  }
+  def setActiveBuffer(buffer: BufferInput) => {
+    this.io.in = buffer
+  }
+}
 
   // Needed because Bresenham's algorithm is not
   // symmetrical, and we don't want gaps

@@ -4,20 +4,22 @@ import tools.WriteBtn
 import fb.FrameBuffer
 // import fb.Bram_sdp
 import ld.LineDrawing
+import ld.BufferBundle
 // import drawers.TriangleDrawer
 import vga.VGA
 import vga.VGAClock
 import spi._
 
 class Main extends Module {
+  val WIDTH = 640
+  val HEIGHT = 480
   def delay(x: UInt) = RegNext(x)
 
   val io = IO(new Bundle {
     val aresetn = Input(Bool())
 
     val btn = Input(UInt(4.W))
-    val clearBufferFb = Input(Bool())
-    val clearBufferFbAddr = Input(UInt(12.W))
+    //val clearBufferFbAddr = Input(UInt(12.W)) TODO: Use this when we want to clear specific address
 
     val drawing = Input(Bool())
 
@@ -33,8 +35,12 @@ class Main extends Module {
 
   withReset(~io.aresetn) {
 
-    val fb = Module(new FrameBuffer(640, 480))
-  
+    val fb = Module(new FrameBuffer(WIDTH, HEIGHT))
+    val fb2 = Module(new FrameBuffer(WIDTH, HEIGHT))
+    val bufferInput = new BufferInput
+
+
+
     val bresenhams = Module(new LineDrawing)
     bresenhams.io.xs := 500.S
     bresenhams.io.ys := 0.S
@@ -47,8 +53,6 @@ class Main extends Module {
     fb.io.writeX := bresenhams.io.writeX
     fb.io.writeY := bresenhams.io.writeY
     fb.io.writeVal := bresenhams.io.writeVal
-
-    fb.io.clearBuffer := io.clearBufferFb
     val vga = Module(new VGA)
     val vgaClock = Module(new VGAClock)
 
@@ -59,15 +63,17 @@ class Main extends Module {
     bresenhams.io.start := writeBtn.io.writeEnable
 
     vgaClock.io.clk := clock
-
-    // Need to make sure we're only drawing while we're supposed to
-    /*
-    when (io.drawing === true.B) {
-
-    } .otherwise {
+  
+    // Which buffer is beeing drawn to
+    val activeBuffer = RegInit(false.B)
+  
+    // When bresenham is doen drawing, we want to clear one of the buffers
+    when (bresenham.io.done === true.B) {
+      // sel: fb 1 - double_buffer 0 
+      activeBuffer := !activeBuffer
+      fb.setActiveBuffer(bufferInput)
 
     }
-    */
 
     //val shouldDraw = vga.io.selX < 48.U && vga.io.selY < 48.U
     withClock(vgaClock.io.clk_pix) {

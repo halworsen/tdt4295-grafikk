@@ -24,7 +24,7 @@ class FrameBuffer(width: Int, height: Int) extends Module {
 
   withClock(io.readClock) {
 
-    val fb = Module(new Bram_sdp(1, width * height, "./bugge_large.mem"))
+    val fb = Module(new Bram_sdp(1, width * height, "../../resources/bugge_large.mem"))
     fb.io.clk_write := clock
     //fb.io.reset := reset
     io.readEnable := DontCare
@@ -35,9 +35,6 @@ class FrameBuffer(width: Int, height: Int) extends Module {
     fb.io.data_in := 1.U
     io.writeVal := DontCare
 
-    //fb.io.writeport_enable := DontCare
-    //fb.io.read_out_reg_en := true.B
-
     val read_addr = RegInit(0.U(20.W))
     fb.io.clk_read := io.readClock
     fb.io.read_addr := read_addr
@@ -45,12 +42,10 @@ class FrameBuffer(width: Int, height: Int) extends Module {
       .elsewhen(io.readY < height.U && io.readX < width.U) { read_addr := read_addr + 1.U
     }
     
-
     when (io.clearBuffer === true.B) {
       val (counterValue, counterWrap) = Counter(0 until 640*480) 
-      fb.io.write_addr := counterValue
       fb.io.write_enable := true.B
-      // fb.write_addr = clearBufferFbAddr
+      fb.io.write_addr := counterValue
       fb.io.data_in := 0.U  
     }  
 
@@ -58,9 +53,6 @@ class FrameBuffer(width: Int, height: Int) extends Module {
     r(0) := fb.io.data_out
     r(1) := fb.io.data_out
     r(2) := fb.io.data_out
-    //r(0) := fb.io.data_out(colorDepth - 1, 0)
-    //r(1) := fb.io.data_out(2 * colorDepth - 1, colorDepth)
-    //r(2) := fb.io.data_out(3 * colorDepth - 1, 2 * colorDepth)
 
     io.readVal := r
   }
