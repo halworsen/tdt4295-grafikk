@@ -74,7 +74,7 @@ class Main extends Module {
       spiBuffer := spi.io.value
     }
 
-    bresenhams.io.start := delay(spi.io.outputReady)
+    bresenhams.io.start := delay(spi.io.outputReady && !bresenhams.io.busy)
     bresenhams.io.xs := spiBuffer(
       spiDataWidth - 1,
       spiDataWidth - spiSIntWidth
@@ -105,7 +105,7 @@ class Main extends Module {
       is(top) {
         bresenhams.io.xs := 0.S
         bresenhams.io.ys := 0.S
-        bresenhams.io.xe := 640.S
+        bresenhams.io.xe := 639.S
         bresenhams.io.ye := 0.S
         when(bresenhams.io.done) {
           state := right
@@ -114,10 +114,10 @@ class Main extends Module {
         }
       }
       is(right) {
-        bresenhams.io.xs := 640.S
+        bresenhams.io.xs := 638.S
         bresenhams.io.ys := 0.S
-        bresenhams.io.xe := 640.S
-        bresenhams.io.ye := 480.S
+        bresenhams.io.xe := 638.S
+        bresenhams.io.ye := 479.S
         when(bresenhams.io.done) {
           state := left
         }.otherwise {
@@ -129,7 +129,7 @@ class Main extends Module {
         bresenhams.io.xs := 0.S
         bresenhams.io.ys := 0.S
         bresenhams.io.xe := 0.S
-        bresenhams.io.ye := 480.S
+        bresenhams.io.ye := 479.S
         when(bresenhams.io.done) {
           state := bottom
         }.otherwise {
@@ -139,9 +139,9 @@ class Main extends Module {
       }
       is(bottom) {
         bresenhams.io.xs := 0.S
-        bresenhams.io.ys := 480.S
-        bresenhams.io.xe := 640.S
-        bresenhams.io.ye := 480.S
+        bresenhams.io.ys := 479.S
+        bresenhams.io.xe := 639.S
+        bresenhams.io.ye := 479.S
         when(bresenhams.io.done) {
           state := done
         }.otherwise {

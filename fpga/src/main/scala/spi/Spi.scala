@@ -40,6 +40,7 @@ class Spi(dWidth: Int = 8) extends Module {
   io.value := valueOutput
   val clockReg = RegInit(0.U(3.W))
   val inputReg = RegInit(0.U(2.W))
+  val csReg = RegInit(0.U(2.W))
 
   // Synchronize SPI clock and detect edges
   // Use a shift register to poll values from spi clk
@@ -51,21 +52,22 @@ class Spi(dWidth: Int = 8) extends Module {
 
   inputReg := Cat(inputReg(0), io.spi.mosi)
   val input = inputReg(1)
+  csReg := Cat(csReg(0), io.spi.cs)
+  val csActive = !csReg(1)
 
   io.outputReady := false.B
 
-  // When master starts sending
-  when(spi_rising) {
-    valueReg := Cat(valueReg(dWidth - 2, 0), input)
-    count := count + 1.U
-    // Reset count when we've reached the desired bit count
-    // Send this value to
-    when(count === dWidth.U) {
-      //valueReg := 0.U
-      count := 0.U
-      io.outputReady := true.B
-    }
+  when(!csActive) {
+    // Reset count on CS inactive (active low)
+    count := 0.U
+  }.elsewhen(count === dWidth.U) {
+    io.outputReady := true.B
   }
+    // When master starts sending
+    .elsewhen(spi_rising) {
+      valueReg := Cat(valueReg(dWidth - 2, 0), input)
+      count := count + 1.U
+    }
 
   valueOutput := valueReg
 

@@ -5,7 +5,7 @@ module draw_line_tb ();
 
     parameter CLK_PERIOD = 10;  // 10 ns == 100 MHz
 
-    logic reset;
+    logic reset, io_aresetn;
     logic clock;
 
     localparam CORDW = 16;
@@ -38,9 +38,11 @@ module draw_line_tb ();
     end
 
     initial begin
+        io_aresetn = 0;
         reset = 1;
         clock = 1;
         #100    reset = 0;
+                io_aresetn = 1;
                 io_writeEnable = 1;
 
         #10     $display("case 0: points (0,0) (32,17) (255,255)");

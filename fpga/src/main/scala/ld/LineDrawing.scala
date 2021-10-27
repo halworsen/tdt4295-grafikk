@@ -7,7 +7,7 @@ import chisel3.util._
 class LineDrawing(
     coordWidth: Int = 16
 ) extends Module {
-  def delay(x: SInt) = RegNext(x)
+  def delay(x: UInt) = RegNext(x)
   val io = IO(new Bundle {
     val xs = Input(SInt(coordWidth.W))
     val ys = Input(SInt(coordWidth.W))
@@ -23,6 +23,7 @@ class LineDrawing(
     val writeVal = Output(Vec(3, UInt(4.W)))
 
     val done = Output(Bool())
+    val busy = Output(Bool())
   })
 
   // Needed because Bresenham's algorithm is not
@@ -35,22 +36,28 @@ class LineDrawing(
   // Swap points if y_end is less than y_start to ensure
   // a consistent way to order the points. This way
   // ensures that we always draw down on the screen.
-  xs := io.xs;
-  xe := io.xe;
-  when(io.ys < io.ye) {
+  when(io.ys <= io.ye) {
+    xs := io.xs;
+    xe := io.xe;
     ys := io.ys;
     ye := io.ye;
   }.otherwise {
+    xs := io.xe;
+    xe := io.xs;
     ys := io.ye;
-    ye := io.ye;
+    ye := io.ys;
   }
 
-  val init1 :: init2 :: draw :: idle :: Nil = Enum(4)
+  val idle :: init1 :: init2 :: init3 :: draw :: Nil = Enum(5)
   val state = RegInit(idle)
   val right = Reg(Bool())
 
   val x = Reg(SInt(coordWidth.W))
   val y = Reg(SInt(coordWidth.W))
+  val x_end = Reg(SInt(coordWidth.W))
+  val y_end = Reg(SInt(coordWidth.W))
+  io.writeX := x
+  io.writeY := y
   val dx = Reg(SInt((coordWidth + 1).W))
   val dy = Reg(SInt((coordWidth + 1).W))
   val e = Reg(SInt((coordWidth + 1).W))
@@ -60,9 +67,6 @@ class LineDrawing(
   val updX = Reg(Bool())
   val updY = Reg(Bool())
 
-  val drawDone = Reg(Bool())
-  drawDone := Mux(right, x >= xe, x <= xe) && y >= ye
-
   updX := (2.S * e >= dy);
   updY := (2.S * e <= dx);
 
@@ -70,12 +74,12 @@ class LineDrawing(
   io.writeVal(1) := "h2".U
   io.writeVal(2) := "h0".U
 
+  io.busy := state =/= idle
   io.done := false.B
   io.writeEnable := false.B
 
   switch(state) {
     is(idle) {
-      io.writeEnable := false.B
       when(io.start) {
         state := init1
         right := xe > xs
@@ -91,11 +95,16 @@ class LineDrawing(
       e := dx + dy
       x := xs
       y := ys
+      x_end := xe
+      y_end := ye
+      state := init3
+    }
+    is(init3) {
       state := draw
     }
     is(draw) {
       // Draw pixel
-      when(drawDone) {
+      when(x === x_end && y === y_end) {
         state := idle
         io.done := true.B
         io.writeEnable := false.B
@@ -119,8 +128,5 @@ class LineDrawing(
       }
     }
   }
-
-  io.writeX := x
-  io.writeY := y
 
 }
