@@ -36,13 +36,15 @@ module main_spi_tb ();
         reset = 1;
         io_aresetn = 0;
         clock = 1;
+        io_spi_cs = 1;
 
         #100    reset = 0;
                 io_aresetn = 1;
                 io_spi_sclk = 0;
+                io_spi_cs = 0;
+                io_spi_mosi = 0;
 
         #10     $display("case 0: ");
-                io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
@@ -109,8 +111,11 @@ module main_spi_tb ();
         #500    io_spi_mosi = 1;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
+        #100    io_spi_cs = 1;
 
         #10     $display("case 1: ");
+        #100    io_spi_cs = 0;
+
                 io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
@@ -182,6 +187,7 @@ module main_spi_tb ();
         #500    io_spi_mosi = 0;
 
         #500    io_spi_mosi = 0;
+        #10     io_spi_cs = 1;
 
         #4000   $finish;
     end

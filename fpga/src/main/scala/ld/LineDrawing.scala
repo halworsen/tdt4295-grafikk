@@ -5,7 +5,9 @@ import chisel3.util._
 
 // https://www.google.com/search?q=bresenham%27s+line+algorithm&sxsrf=AOaemvL1TxCiXvAjdJEoqqyHit-YOLiabQ:1633605785405&source=lnms&tbm=isch&sa=X&sqi=2&ved=2ahUKEwjQtqrkl7jzAhXnQvEDHVxHC0AQ_AUoAXoECAEQAw&biw=1440&bih=788&dpr=2#imgrc=MemqMsI7g2nbiM
 class LineDrawing(
-    coordWidth: Int = 16
+    coordWidth: Int = 16,
+    maxWidth: Int = 640,
+    maxHeight: Int = 480
 ) extends Module {
   def delay(x: UInt) = RegNext(x)
   val io = IO(new Bundle {
@@ -104,7 +106,13 @@ class LineDrawing(
     }
     is(draw) {
       // Draw pixel
-      when(x === x_end && y === y_end) {
+      when(
+        (x === x_end && y === y_end) || Mux(
+          right,
+          x < xs || x > x_end,
+          x > xs || x < x_end
+        ) || y < ys || y > y_end
+      ) {
         state := idle
         io.done := true.B
         io.writeEnable := false.B

@@ -3,49 +3,63 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="draw_line_tb_behav.wdb" id="1">
+      <db_ref path="main_spi_tb_behav.wdb" id="1">
          <top_modules>
-            <top_module name="draw_line_tb" />
             <top_module name="glbl" />
+            <top_module name="main_spi_tb" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="705.952 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,690.245 ns"></ZoomEndTime>
-      <Cursor1Time time="870.000 ns"></Cursor1Time>
+      <ZoomStartTime time="30,720.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="34,020.001 ns"></ZoomEndTime>
+      <Cursor1Time time="31,730.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="264"></NameColumnWidth>
-      <ValueColumnWidth column_width="108"></ValueColumnWidth>
+      <ValueColumnWidth column_width="104"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="7" />
-   <wvobject type="array" fp_name="/draw_line_tb/io_writeX">
-      <obj_property name="ElementShortName">io_writeX[15:0]</obj_property>
-      <obj_property name="ObjectShortName">io_writeX[15:0]</obj_property>
+   <WVObjectSize size="10" />
+   <wvobject type="logic" fp_name="/main_spi_tb/clock">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/draw_line_tb/io_writeY">
-      <obj_property name="ElementShortName">io_writeY[15:0]</obj_property>
-      <obj_property name="ObjectShortName">io_writeY[15:0]</obj_property>
+   <wvobject type="logic" fp_name="/main_spi_tb/main/io_spi_mosi">
+      <obj_property name="ElementShortName">io_spi_mosi</obj_property>
+      <obj_property name="ObjectShortName">io_spi_mosi</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/draw_line_tb/io_start">
-      <obj_property name="ElementShortName">io_start</obj_property>
-      <obj_property name="ObjectShortName">io_start</obj_property>
+   <wvobject type="logic" fp_name="/main_spi_tb/main/io_spi_miso">
+      <obj_property name="ElementShortName">io_spi_miso</obj_property>
+      <obj_property name="ObjectShortName">io_spi_miso</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/draw_line_tb/io_writeEnable">
-      <obj_property name="ElementShortName">io_writeEnable</obj_property>
-      <obj_property name="ObjectShortName">io_writeEnable</obj_property>
+   <wvobject type="logic" fp_name="/main_spi_tb/main/io_spi_sclk">
+      <obj_property name="ElementShortName">io_spi_sclk</obj_property>
+      <obj_property name="ObjectShortName">io_spi_sclk</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/draw_line_tb/io_drawing">
-      <obj_property name="ElementShortName">io_drawing</obj_property>
-      <obj_property name="ObjectShortName">io_drawing</obj_property>
+   <wvobject type="logic" fp_name="/main_spi_tb/main/io_spi_cs">
+      <obj_property name="ElementShortName">io_spi_cs</obj_property>
+      <obj_property name="ObjectShortName">io_spi_cs</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/draw_line_tb/io_busy">
-      <obj_property name="ElementShortName">io_busy</obj_property>
-      <obj_property name="ObjectShortName">io_busy</obj_property>
+   <wvobject type="array" fp_name="/main_spi_tb/main/spi/count">
+      <obj_property name="ElementShortName">count[6:0]</obj_property>
+      <obj_property name="ObjectShortName">count[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/draw_line_tb/io_done">
-      <obj_property name="ElementShortName">io_done</obj_property>
-      <obj_property name="ObjectShortName">io_done</obj_property>
+   <wvobject type="array" fp_name="/main_spi_tb/main/spi/valueReg">
+      <obj_property name="ElementShortName">valueReg[63:0]</obj_property>
+      <obj_property name="ObjectShortName">valueReg[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/main_spi_tb/main/spi/spi_rising">
+      <obj_property name="ElementShortName">spi_rising</obj_property>
+      <obj_property name="ObjectShortName">spi_rising</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/main_spi_tb/main/spi/csActive">
+      <obj_property name="ElementShortName">csActive</obj_property>
+      <obj_property name="ObjectShortName">csActive</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/main_spi_tb/main/spi/io_outputReady">
+      <obj_property name="ElementShortName">io_outputReady</obj_property>
+      <obj_property name="ObjectShortName">io_outputReady</obj_property>
    </wvobject>
 </wave_config>
