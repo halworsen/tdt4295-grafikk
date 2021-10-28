@@ -1,10 +1,9 @@
-package fb
+package drawers
 
 import chisel3._
-import chisel3.util._
 import ld.LineDrawing
 
-class TriangleDrawer(coordWidth: Int: 16) extends Module {
+class TriangleDrawer(coordWidth: Int = 16) extends Module {
 
   val io = IO(new Bundle {
     val firstX = Input(SInt(coordWidth.W))
