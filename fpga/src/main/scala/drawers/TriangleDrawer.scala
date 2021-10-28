@@ -14,8 +14,7 @@ class TriangleDrawer(coordWidth: Int = 16) extends Module {
 
     val thirdX = Input(SInt(coordWidth.W))
     val thirdY = Input(SInt(coordWidth.W))
-    // TODO: should we have an input that controls whether or not we should output? (output enable)
-    
+
     val start = Input(Bool())
 
     val writeEnable = Output(Bool())
@@ -32,7 +31,6 @@ class TriangleDrawer(coordWidth: Int = 16) extends Module {
 
   // 3 POINTS
   // DRAW 1 -> 2, 2 -> 3 and finally 3 -> 1
-  // TODO: Do we need to check which direction we're drawing the lines?
 
   // When everything is set up
   when (ld1.io.done === true.B && ld2.io.done === true.B && ld3.io.done === true.B)
