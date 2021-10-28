@@ -6,7 +6,7 @@ import chisel3.util.Counter
 class VGA extends Module {
 
   /*
-   * We primaraly focus on a 640 x 480px implementation
+   * We primarily focus on a 640 x 480px implementation
    */
   val io = IO(new Bundle {
     val data = Input(Vec(3, UInt(4.W)))
@@ -19,6 +19,8 @@ class VGA extends Module {
 
     val clock = Input(Clock())
     val reset = Input(Bool())
+
+    val done = Output(Bool())
   })
 
   withClockAndReset(io.clock, io.reset) {
@@ -31,6 +33,8 @@ class VGA extends Module {
 
     io.selX := counterHsync
     io.selY := counterVsync
+
+    io.done := counterVsyncWrap
 
     when(~io.dataEnable) {
       io.data := DontCare

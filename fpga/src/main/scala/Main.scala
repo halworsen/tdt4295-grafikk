@@ -1,25 +1,20 @@
 import chisel3._
-import chisel3.util._
-import tools.WriteBtn
-import fb.FrameBuffer
-// import fb.Bram_sdp
+import fb.{BufferInput, FrameBuffer}
 import ld.LineDrawing
-import ld.BufferBundle
+import tools.WriteBtn
 // import drawers.TriangleDrawer
-import vga.VGA
-import vga.VGAClock
+// import drawers.QuadDrawer
 import spi._
+import vga.{VGA, VGAClock}
 
 class Main extends Module {
   val WIDTH = 640
   val HEIGHT = 480
-  def delay(x: UInt) = RegNext(x)
-
   val io = IO(new Bundle {
     val aresetn = Input(Bool())
 
     val btn = Input(UInt(4.W))
-    //val clearBufferFbAddr = Input(UInt(12.W)) TODO: Use this when we want to clear specific address
+    //val clearBufferFbAddr = Input(UInt(12.W))
 
     val drawing = Input(Bool())
 
@@ -33,26 +28,29 @@ class Main extends Module {
     val led = Output(UInt(4.W))
   })
 
+  def delay(x: UInt) = RegNext(x)
+
   withReset(~io.aresetn) {
 
     val fb = Module(new FrameBuffer(WIDTH, HEIGHT))
     val fb2 = Module(new FrameBuffer(WIDTH, HEIGHT))
-    val bufferInput = new BufferInput
-
-
+    // Control signals from vga to control what gets written to screen
+    val vgaFbIn = Module(new BufferInput)
+    // clear then draw
+    val bresenhamFbIn = Module(new BufferInput)
 
     val bresenhams = Module(new LineDrawing)
     bresenhams.io.xs := 500.S
     bresenhams.io.ys := 0.S
     bresenhams.io.xe := 0.S
     bresenhams.io.ye := 400.S
-    
-    fb.io.writeEnable := bresenhams.io.writeEnable
+
+    bresenhamFbIn.writeEnable := bresenhams.io.writeEnable
     //bresenhams.io.writeEnable := DontCare
     //fb.io.writeEnable := false.B
-    fb.io.writeX := bresenhams.io.writeX
-    fb.io.writeY := bresenhams.io.writeY
-    fb.io.writeVal := bresenhams.io.writeVal
+    bresenhamFbIn.writeX := bresenhams.io.writeX
+    bresenhamFbIn.writeY := bresenhams.io.writeY
+    bresenhamFbIn.writeVal := bresenhams.io.writeVal
     val vga = Module(new VGA)
     val vgaClock = Module(new VGAClock)
 
@@ -62,29 +60,31 @@ class Main extends Module {
 
     bresenhams.io.start := writeBtn.io.writeEnable
 
-    vgaClock.io.clk := clock
-  
-    // Which buffer is beeing drawn to
-    val activeBuffer = RegInit(false.B)
-  
-    // When bresenham is doen drawing, we want to clear one of the buffers
-    when (bresenham.io.done === true.B) {
-      // sel: fb 1 - double_buffer 0 
-      activeBuffer := !activeBuffer
-      fb.setActiveBuffer(bufferInput)
+    // Which buffer is being drawn to
+    val fbReadBresenham = RegInit(false.B)
 
-    }
+    // TODO: Make available data
+    bresenhams.io.start := Mux(fbReadBresenham, fb.io.done, fb2.io.done)
+    vgaClock.io.clk := clock
+
+    fb.io.input := Mux(fbReadBresenham, bresenhamFbIn, vgaFbIn)
+    fb2.io.input := Mux(!fbReadBresenham, bresenhamFbIn, vgaFbIn)
+
+    // When bresenham is done drawing, we want to clear one of the buffers
+    fbReadBresenham := !fbReadBresenham ^ vga.io.done
+    bresenhamFbIn.clearBuffer := RegNext(vga.io.done)
 
     //val shouldDraw = vga.io.selX < 48.U && vga.io.selY < 48.U
     withClock(vgaClock.io.clk_pix) {
       vga.io.clock := vgaClock.io.clk_pix
       vga.io.reset := ~io.aresetn
-      fb.io.readEnable := vga.io.dataEnable
+      vgaFbIn.readEnable := vga.io.dataEnable
 
-      vga.io.data := fb.io.readVal
-      fb.io.readClock := vgaClock.io.clk_pix
-      fb.io.readX := vga.io.selX
-      fb.io.readY := vga.io.selY
+      // Select which output we are currently reading from
+      vga.io.data := Mux(fbReadBresenham, fb2.io.readVal, fb.io.readVal)
+      vgaFbIn.readClock := vgaClock.io.clk_pix
+      vgaFbIn.readX := vga.io.selX
+      vgaFbIn.readY := vga.io.selY
 
       // Delay all VGA signals by 1 cycle due to 1 cycle delay from memory reads
       io.vga_hsync := delay(vga.io.hsync)
@@ -93,13 +93,11 @@ class Main extends Module {
       io.vga_r := delay(vga.io.out(0))
       io.vga_g := delay(vga.io.out(1))
       io.vga_b := delay(vga.io.out(2))
-
     }
 
     val spi = Module(new Spi)
     spi.io.spi := io.spi
     io.led := spi.io.value(3, 0)
-
   }
 }
 
@@ -108,109 +106,3 @@ object Main extends App {
   (new chisel3.stage.ChiselStage)
     .emitVerilog(new Main(), Array("--target-dir", "verilog/"))
 }
-
-/*
-
-TEST CODE
-
-import chisel3.util._
-
-class Main extends Module {
-  val io = IO(new Bundle {
-    val aresetn = Input(Bool())
-
-    val led = Output(Bits(4.W))
-    //val clkout = Output(Clock())
-
-    val btn = Input(UInt(4.W))
-
-    // NEW FOR SPI COMMUNICATION
-    val mcuData = Input(UInt(8.W))
-  })
-
-  // TODO: In main, make io.value (output of spi) the input to this code
-  // io.mcuData := spi.io.value
-
-  def tickGen(fac: Int) = {
-    val reg = RegInit(0.U(log2Up(fac).W))
-    val tick = reg === (fac - 1).U
-    reg := Mux(tick, 0.U, reg + 1.U)
-    tick
-  }
-
-  def rising(v: Bool) = v & !RegNext(v)
-
-  def filter(v: Bool, t: Bool) = {
-    val reg = RegInit(0.U(3.W))
-    when(t) {
-      reg := Cat(reg(1, 0), v)
-    }
-    (reg(2) & reg(1)) | (reg(2) & reg(0)) | (reg(1) & reg(0))
-  }
-
-  withReset(~io.aresetn) {
-    val btnCnt = (io.btn(0)).asBool
-
-    val btnSync = RegNext(RegNext(btnCnt))
-    val tick = tickGen(100000000 / 100)
-    val btnDeb = Reg(Bool())
-
-    when(tick) {
-      btnDeb := btnSync
-    }
-    val btnClean = filter(btnDeb, tick)
-    val risingEdge = rising(btnClean)
-
-    var counter = RegInit(0.U(4.W))
-
-    //var clocks = Module(new Clock())
-    //io.clkout := clocks.io.clkout
-    val ledReg = RegInit(0.U(4.W))
-
-    when(risingEdge) {
-      counter := counter + 1.U
-    }
-    when(counter === 0.U) {
-      ledReg := 0.U
-    }
-
-    when(counter === 1.U) {
-      ledReg := "b0001".U
-    }
-    when(counter === 2.U) {
-      ledReg := "b0010".U
-    }
-    when(counter === 3.U) {
-      ledReg := "b0100".U
-    }
-
-    when(counter === 4.U) {
-      ledReg := "b1000".U
-    }
-    when(counter === 5.U) {
-      counter := 0.U
-    }
-
-    // SPI PART, USE FOR LEDS TO INDICATE value of byte
-    when(io.mcuData <= 255.U && io.mcuData >= 200.U) {
-      ledReg := "b0001".U
-    }
-    when(io.mcuData < 200.U && io.mcuData >= 128.U) {
-      ledReg := "b0010".U
-    }
-    when(io.mcuData < 128.U && io.mcuData >= 64.U) {
-      ledReg := "b0100".U
-    }
-     when(io.mcuData < 64.U && io.mcuData > 0.U) {
-      ledReg := "b1000".U
-    }
-    when(io.mcuData == 0.U) {
-      counter := 0.U
-    }
-
-    io.led := ledReg
-  }
-
-}
-
- */

@@ -1,45 +1,33 @@
 package ld
 
 import chisel3._
-import chisel3.util._
-
-
-class BufferInput(colorWidth: Int = 16) extends Bundle {
-    val xs = SInt(coordWidth.W)
-    val ys = SInt(coordWidth.W)
-    val xe = SInt(coordWidth.W)
-    val ye = SInt(coordWidth.W)
-    // Todo: should we have an input that controls whether or not we should output? (output enable)
-
-    val start = Bool()
-
-}
+import chisel3.util.{Enum, is, switch}
 
 // https://www.google.com/search?q=bresenham%27s+line+algorithm&sxsrf=AOaemvL1TxCiXvAjdJEoqqyHit-YOLiabQ:1633605785405&source=lnms&tbm=isch&sa=X&sqi=2&ved=2ahUKEwjQtqrkl7jzAhXnQvEDHVxHC0AQ_AUoAXoECAEQAw&biw=1440&bih=788&dpr=2#imgrc=MemqMsI7g2nbiM
 class LineDrawing(
     coordWidth: Int = 16
 ) extends Module {
-  def delay(x: SInt) = RegNext(x)
   val io = IO(new Bundle {
-    val in = Input(new BufferInput(colorWidth))
+    val xs = SInt(coordWidth.W)
+    val ys = SInt(coordWidth.W)
+    val xe = SInt(coordWidth.W)
+    val ye = SInt(coordWidth.W)
+    val start = Bool()
+
     val writeEnable = Output(Bool())
     val writeX = Output(SInt(coordWidth.W))
     val writeY = Output(SInt(coordWidth.W))
     val writeVal = Output(Vec(3, UInt(4.W)))
 
     val done = Output(Bool())
-  }
-  def setActiveBuffer(buffer: BufferInput) => {
-    this.io.in = buffer
-  }
-}
-
+  })
   // Needed because Bresenham's algorithm is not
   // symmetrical, and we don't want gaps
   val xs = Wire(SInt())
   val xe = Wire(SInt())
   val ys = Wire(SInt())
   val ye = Wire(SInt())
+  val init1 :: init2 :: draw :: idle :: Nil = Enum(4)
 
   // Swap points if y_end is less than y_start to ensure
   // a consistent way to order the points. This way
@@ -53,23 +41,20 @@ class LineDrawing(
     ys := io.ye;
     ye := io.ye;
   }
-
-  val init1 :: init2 :: draw :: idle :: Nil = Enum(4)
   val state = RegInit(idle)
   val right = Reg(Bool())
-
   val x = Reg(SInt(coordWidth.W))
   val y = Reg(SInt(coordWidth.W))
   val dx = Reg(SInt((coordWidth + 1).W))
   val dy = Reg(SInt((coordWidth + 1).W))
   val e = Reg(SInt((coordWidth + 1).W))
-
   // These signals say whether we should inc/dec x and/or inc y
   // based on the error value
   val updX = Reg(Bool())
   val updY = Reg(Bool())
-
   val drawDone = Reg(Bool())
+
+  def delay(x: SInt) = RegNext(x)
   drawDone := Mux(right, x >= xe, x <= xe) && y >= ye
 
   updX := (2.S * e >= dy);
