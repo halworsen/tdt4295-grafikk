@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-10-29T12:00:14.670Z" agent="5.0 (Windows)" etag="n83CLyixJGMATxhIwr_C" version="15.6.1" type="github">
+<mxfile host="app.diagrams.net" modified="2021-10-29T12:03:49.031Z" agent="5.0 (Windows)" etag="kYHA20tmYJBJObKolyqF" version="15.6.1" type="github">
   <diagram id="q9Ps-RnnYnzRldawcZBS" name="Page-1">
     <mxGraphModel dx="1117" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -274,7 +274,7 @@
             <mxPoint x="-1" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="cCv3r7rXpcqw24vT97UZ-62" value="Start next frame" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cCv3r7rXpcqw24vT97UZ-55" target="1H7v9yOLT2mySPb2tCpm-9">
+        <mxCell id="cCv3r7rXpcqw24vT97UZ-62" value="Read next Frame" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cCv3r7rXpcqw24vT97UZ-55" target="1H7v9yOLT2mySPb2tCpm-9">
           <mxGeometry x="0.6981" relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="590" y="210" />
