@@ -22,7 +22,8 @@ class LineDrawing(
     val writeEnable = Output(Bool())
     val writeX = Output(SInt(coordWidth.W))
     val writeY = Output(SInt(coordWidth.W))
-    val writeVal = Output(Vec(3, UInt(4.W)))
+    val writeVal = Output(UInt(1.W))
+    val clear = Input(Bool())
 
     val done = Output(Bool())
     val busy = Output(Bool())
@@ -69,9 +70,7 @@ class LineDrawing(
   val updX = 2.S * e >= dy;
   val updY = 2.S * e <= dx;
 
-  io.writeVal(0) := "h1".U
-  io.writeVal(1) := "h2".U
-  io.writeVal(2) := "h0".U
+  io.writeVal := ~io.clear.asUInt()
 
   io.busy := state =/= idle
   io.done := false.B

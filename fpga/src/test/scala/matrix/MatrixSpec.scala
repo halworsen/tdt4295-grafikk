@@ -1,6 +1,7 @@
 package matrix
 
 import chisel3._
+import chisel3.experimental._
 import chisel3.tester._
 import org.scalatest.FreeSpec
 
@@ -9,10 +10,10 @@ class MVPSpec extends FreeSpec with ChiselScalatestTester {
     test(new MVP) { dut =>
       for (i <- 0 to 3) {
         dut.io.vec4(i).poke((i + 1).S)
-        dut.io.mat4(0)(i).poke((i + 1).S)
-        dut.io.mat4(1)(i).poke((i + 1).S)
-        dut.io.mat4(2)(i).poke((i + 1).S)
-        dut.io.mat4(3)(i).poke((i + 1).S)
+        dut.io.mat4(0)(i).poke(FixedPoint(i + 1, 8.W, 4.BP))
+        dut.io.mat4(1)(i).poke(FixedPoint(i + 1, 8.W, 4.BP))
+        dut.io.mat4(2)(i).poke(FixedPoint(i + 1, 8.W, 4.BP))
+        dut.io.mat4(3)(i).poke(FixedPoint(i + 1, 8.W, 4.BP))
       }
 
       dut.io.outVec4(0).expect(30.S)
