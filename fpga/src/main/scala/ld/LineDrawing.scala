@@ -66,11 +66,8 @@ class LineDrawing(
 
   // These signals say whether we should inc/dec x and/or inc y
   // based on the error value
-  val updX = Reg(Bool())
-  val updY = Reg(Bool())
-
-  updX := (2.S * e >= dy);
-  updY := (2.S * e <= dx);
+  val updX = 2.S * e >= dy;
+  val updY = 2.S * e <= dx;
 
   io.writeVal(0) := "h1".U
   io.writeVal(1) := "h2".U
