@@ -31,11 +31,19 @@ class Main extends Module {
 
   withReset(~io.aresetn) {
     val fb = Module(new FrameBuffer(640, 480))
+    /*
     val bresenhams = Module(new LineDrawing)
     fb.io.writeEnable := bresenhams.io.writeEnable
     fb.io.writeX := bresenhams.io.writeX
     fb.io.writeY := bresenhams.io.writeY
     fb.io.writeVal := bresenhams.io.writeVal
+     */
+
+    val square = Module(new RecDrawer)
+    fb.io.writeEnable := square.io.writeEnable
+    fb.io.writeX := square.io.writeX
+    fb.io.writeY := square.io.writeY
+    fb.io.writeVal := square.io.writeVal
 
     val vga = Module(new VGA)
     val vgaClock = Module(new VGAClock)
@@ -84,7 +92,17 @@ class Main extends Module {
       spiBuffer := spi.io.value
     }
 
-    bresenhams.io.start := delay(spi.io.outputReady && !bresenhams.io.busy)
+    square.io.start := delay(spi.io.outputReady && !square.io.busy)
+    square.io.firstX := bitNr(spiBuffer, 0, 128).asSInt
+    square.io.firstY := bitNr(spiBuffer, 1, 128).asSInt
+    square.io.secondX := bitNr(spiBuffer, 2, 128).asSInt
+    square.io.secondY := bitNr(spiBuffer, 3, 128).asSInt
+    square.io.thirdX := bitNr(spiBuffer, 4, 128).asSInt
+    square.io.thirdY := bitNr(spiBuffer, 5, 128).asSInt
+    square.io.fourthX := bitNr(spiBuffer, 6, 128).asSInt
+    square.io.fourthY := bitNr(spiBuffer, 7, 128).asSInt
+
+    /*
     bresenhams.io.xs := spiBuffer(
       spiDataWidth - 1,
       spiDataWidth - spiSIntWidth
@@ -106,8 +124,10 @@ class Main extends Module {
     //spiDataWidth - 2 * spiSIntWidth - 1,
     //spiDataWidth - 2 * spiSIntWidth - 5
     //)
-    io.led := DontCare
+    //io.led := DontCare
+     */
 
+    /*
     // Draw border around FB
     val top :: right :: left :: bottom :: done :: Nil = Enum(5)
     val state = RegInit(top)
@@ -160,6 +180,7 @@ class Main extends Module {
 
       }
     }
+     */
   }
 }
 

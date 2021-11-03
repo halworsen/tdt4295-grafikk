@@ -27,6 +27,7 @@ class RecDrawer(coordWidth: Int = 16) extends Module {
     val writeVal = Output(Vec(3, UInt(4.W)))
 
     val done = Output(Bool())
+    val busy = Output(Bool())
   })
 
   val ld1 = Module(new LineDrawing)
@@ -34,6 +35,12 @@ class RecDrawer(coordWidth: Int = 16) extends Module {
   val ld3 = Module(new LineDrawing)
   val ld4 = Module(new LineDrawing)
 
+  ld1.io.writeEnable := DontCare
+  ld2.io.writeEnable := DontCare
+  ld3.io.writeEnable := DontCare
+  ld4.io.writeEnable := DontCare
+
+  io.busy := ld1.io.busy | ld2.io.busy | ld3.io.busy | ld4.io.busy
   // 4 POINTS
   // DRAW 1 -> 2, 2 -> 3, 3->4 and finally 4 -> 1
 
