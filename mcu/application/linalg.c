@@ -58,7 +58,7 @@ void transform3(vec3_t *ret, mat3_t *T, vec3_t *v) {
     // Reinterpret *ret as a float array.
     float* r = (float*) ret;
 
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 3; i++) {
        // ith row vector from A, v is column vector.
        float dot = t[3*i + 0] * v->x
                  + t[3*i + 1] * v->y
@@ -276,7 +276,7 @@ void print_vec4(vec4_t *v, const char *comment) {
 
 int main() {
     vec3_t v[4];
-    mat3_t R;
+    mat3_t R, T_y;
 
     // 4 points of a square.
     vec3(&v[0], -1.0,  1.0, 1.0);
@@ -287,11 +287,18 @@ int main() {
     // rotation matrix by PI/4.
     rot3(&R, 3.1415/4);
 
+    // translation matrix T_y by dy=1.0
+    translation3(&T_y, 0.0, 1.0);
+
     // print the rotated corners.
-    vec3_t q;
+    vec3_t q, p;
     for (int i = 0; i < 4; i++) {
         transform3(&q, &R, &v[i]);
-        printf("R(v[%d]) = (%.2f %.2f)\n", i, q.x, q.y);
+
+        p = q;
+        transform3(&q, &T_y, &p);
+
+        printf("R(v[%d]) = (%.2f, %.2f)\n", i, q.x, q.y);
     }
     
     return 0;

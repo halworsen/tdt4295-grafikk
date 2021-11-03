@@ -91,7 +91,7 @@ void calc_points(uint32_t ch1_sample, uint32_t ch2_sample, int16_t *coordinates)
     for (int i = 0; i < 8; i = i + 2) {
         // Calculate transformed vertex q = (TSR)v for all v in the square.
         vec3_t q;
-        transform3(&q, &TSR, &square[i]);
+        transform3(&q, &TSR, &square[i/2]);
 
         // Put the transformed coordinates in the coordinate buffer.
         // These are already floats in pixel-coordinates, so we only
@@ -149,6 +149,12 @@ void ADC0_IRQHandler(void) {
 }
 
 int main(void) {
+  // Create the model (the square with w=1).
+  vec3(&square[0], -1.0,  1.0, 1.0);
+  vec3(&square[1], -1.0, -1.0, 1.0);
+  vec3(&square[2],  1.0, -1.0, 1.0);
+  vec3(&square[3],  1.0,  1.0, 1.0);
+
   uint32_t bitrate = 0;
   // Initializations
   CMU_ClockSelectSet(cmuClock_HF, cmuSelect_HFXO);
@@ -156,12 +162,6 @@ int main(void) {
   initTimer(30);
   initADC_single(adcRefVDD);
   TIMER_Enable(TIMER1, true);
-
-  // Create the model (the square with w=1).
-  vec3(&square[0], -1.0,  1.0, 1.0);
-  vec3(&square[1], -1.0, -1.0, 1.0);
-  vec3(&square[2],  1.0, -1.0, 1.0);
-  vec3(&square[3],  1.0,  1.0, 1.0);
 
   SPIDRV_Init_t initData = SPIDRV_MASTER_USART1;
   SPIDRV_Init(handle, &initData);
