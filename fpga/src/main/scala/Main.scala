@@ -1,11 +1,15 @@
 import chisel3._
 import chisel3.util._
 import tools.WriteBtn
+import tools.generators._
+import tools.helpers._
 import fb.FrameBuffer
 import ld.LineDrawing
+import fb.RecDrawer
 import vga.VGA
 import vga.VGAClock
 import spi._
+import matrix.MVP
 
 class Main extends Module {
   def delay(x: UInt) = RegNext(x)
@@ -62,7 +66,13 @@ class Main extends Module {
 
     }
 
-    val spiDataWidth = 64;
+    val mvp = Module(new MVP)
+
+    mvp.io.mat4 := genMat(4, 4)
+    mvp.io.vec4 := genVec(4, Array.range(1, 5))
+    io.led := mvp.io.outVec4(0)(3, 0)
+
+    val spiDataWidth = 128;
     val spiSIntWidth = 16;
 
     val spi = Module(new Spi(spiDataWidth))
