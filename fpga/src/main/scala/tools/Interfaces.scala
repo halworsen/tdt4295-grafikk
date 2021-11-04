@@ -11,13 +11,12 @@ object STD {
   val binaryPoint = 4.BP
   val colorEnabled = true
   val colorWidth = 3.W
-  val dataFrameWidth = (new DataFrame).getWidth
 
   val screenWidth = 640
   val screenHeight = 480
   val coordWidth = 16.W
-  val black = 0.U.asTypeOf(new Color)
-  val yellow = "h1".U(this.colorWidth)##"h2".U(this.colorWidth)##"h0".U(this.colorWidth)
+  val bgColor = "b001001001".U
+  val yellow = "h1".U(colorWidth)##"h2".U(colorWidth)##"h0".U(colorWidth)
 }
 
 

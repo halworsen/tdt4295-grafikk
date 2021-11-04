@@ -33,7 +33,7 @@ class Main extends Module {
   withReset(~io.aresetn) {
 
     val stateMachine = Module(new StateMachine)
-    val spi = Module(new Spi(STD.dataFrameWidth))
+    val spi = Module(new Spi((new DataFrame).getWidth))
     spi.io.spi := io.spi
     stateMachine.io.newFrameRecieved := spi.io.outputReady
 
@@ -50,8 +50,7 @@ class Main extends Module {
     val fb = Module(new FrameBuffer(STD.screenWidth, STD.screenHeight))
     val bresenhams = Module(new LineDrawing)
     fb.io.writeEnable := bresenhams.io.writeEnable
-    fb.io.writeX := bresenhams.io.writePixel.x
-    fb.io.writeY := bresenhams.io.writePixel.y
+    fb.io.writePixel := bresenhams.io.writePixel
     fb.io.writeVal := bresenhams.io.writeVal
 
     bresenhams.io.start := stateMachine.io.bhStartRegular

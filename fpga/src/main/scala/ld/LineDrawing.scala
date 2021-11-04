@@ -30,17 +30,18 @@ class LineDrawing extends Module {
   val ps = RegInit(0.U.asTypeOf(new Pixel)) //Pixel start
   val pe = RegInit(0.U.asTypeOf(new Pixel)) //Pixel end
 
-  val x = Reg(UInt(STD.coordWidth))
-  val y = Reg(UInt(STD.coordWidth))
-  val e  = Reg(SInt(STD.coordWidth + 1.W))
-  val color = RegInit(new Color)
+  val x = RegInit(0.U(STD.coordWidth))
+  val y = RegInit(0.U(STD.coordWidth))
+  val e  = RegInit(0.S(STD.coordWidth + 1.W))
+  val color = RegInit(STD.bgColor.asTypeOf(new Color))
 
   // Calculated functions
+  val right = pe.x > ps.x
   val dx = Mux(right, pe.x - ps.x, ps.x - pe.x).asSInt
   val dy = (ps.y - pe.y).asSInt
-  val right = pe.x > ps.x
   val updX = 2.S * e >= dy;
   val updY = 2.S * e <= dx;
+
 
 
 
@@ -62,7 +63,7 @@ class LineDrawing extends Module {
         ps := Mux(io.p1.y <= io.p2.y, io.p1, io.p2)
         pe := Mux(io.p1.y <= io.p2.y, io.p2, io.p1)
         state := init
-        color := Mux(io.startClear, STD.black, io.color)
+        color := Mux(io.startClear, STD.bgColor.asTypeOf(new Color), io.color)
       }
     }
     is(init) {

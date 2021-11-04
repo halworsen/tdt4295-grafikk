@@ -35,7 +35,7 @@ class VGA extends Module {
 
     when(~io.dataEnable) {
       io.data := DontCare
-      io.out := STD.black
+      io.out := 0.U.asTypeOf(new Color)
     }.otherwise {
       //io.out := io.data
       io.out := io.data

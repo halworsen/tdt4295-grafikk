@@ -10,8 +10,7 @@ class FrameBuffer(width: Int, height: Int) extends Module {
   val colorDepth: Int = 4 // Bit width of a single color channel
 
   val io = IO(new Bundle {
-    val writeX = Input(SInt(log2Up(width).W))
-    val writeY = Input(SInt(log2Up(height).W))
+    val writePixel = Input(new Pixel)
     val writeVal = Input(new Color)
     val writeEnable = Input(Bool())
     val readX = Input(UInt((log2Up(width) + 1).W))
@@ -31,7 +30,7 @@ class FrameBuffer(width: Int, height: Int) extends Module {
     //fb.io.read_enable := io.readEnable
 
     fb_internal.io.write_enable := io.writeEnable
-    fb_internal.io.write_addr := io.writeY.asUInt() * width.U + io.writeX.asUInt()
+    fb_internal.io.write_addr := io.writePixel.y * width.U + io.writePixel.x
     fb_internal.io.data_in := io.writeVal.asUInt()
     io.writeVal := DontCare
 

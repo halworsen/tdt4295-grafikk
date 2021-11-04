@@ -2,7 +2,7 @@ package stateMachine
 
 import chisel3._
 import chisel3.util._
-import tools.STD
+import tools._
 
 class StateMachine extends Module{
     val io = IO(new Bundle{
