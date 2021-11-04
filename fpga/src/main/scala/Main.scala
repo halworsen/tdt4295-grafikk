@@ -35,9 +35,9 @@ class Main extends Module {
     val fb = Module(new FrameBuffer(WIDTH, HEIGHT))
     val fb2 = Module(new FrameBuffer(WIDTH, HEIGHT))
     // Control signals from vga to control what gets written to screen
-    val vgaFbIn = Module(new BufferInput)
+    val vgaFbIn = Wire(new BufferInput)
     // clear then draw
-    val bresenhamFbIn = Module(new BufferInput)
+    val bresenhamFbIn = Wire(new BufferInput)
 
     val bresenhams = Module(new LineDrawing)
     bresenhams.io.xs := 500.S

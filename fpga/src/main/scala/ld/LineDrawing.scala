@@ -8,11 +8,11 @@ class LineDrawing(
     coordWidth: Int = 16
 ) extends Module {
   val io = IO(new Bundle {
-    val xs = SInt(coordWidth.W)
-    val ys = SInt(coordWidth.W)
-    val xe = SInt(coordWidth.W)
-    val ye = SInt(coordWidth.W)
-    val start = Bool()
+    val xs = Input(SInt(coordWidth.W))
+    val ys = Input(SInt(coordWidth.W))
+    val xe = Input(SInt(coordWidth.W))
+    val ye = Input(SInt(coordWidth.W))
+    val start = Input(Bool())
 
     val writeEnable = Output(Bool())
     val writeX = Output(SInt(coordWidth.W))

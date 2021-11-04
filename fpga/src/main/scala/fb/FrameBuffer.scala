@@ -14,6 +14,8 @@ class BufferInput(colorDepth: Int = 4, width: Int = 640, height: Int = 480)
   val readClock = Clock()
   val readX = UInt((log2Up(width) + 1).W)
   val readY = UInt((log2Up(height) + 1).W)
+
+  
 }
 
 class FrameBuffer(width: Int, height: Int) extends Module {
