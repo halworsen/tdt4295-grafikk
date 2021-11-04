@@ -7,10 +7,9 @@ import org.scalatest.FreeSpec
 class FrameBufferSpec extends FreeSpec with ChiselScalatestTester {
   "Should initialize correct graphics array while enabling writing" in {
     test(new FrameBuffer(4, 4)) { dut =>
-      dut.io.writeX.poke(1.S)
-      dut.io.writeY.poke(1.S)
+      dut.io.writePixel.x.poke(1.U)
+      dut.io.writePixel.y.poke(1.U)
       dut.io.writeEnable.poke(true.B)
-      dut.io.writeVal.poke(1.U)
       dut.clock.step(1)
       dut.io.readX.poke(1.U)
       dut.io.readY.poke(1.U)
