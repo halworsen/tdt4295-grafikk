@@ -1,15 +1,16 @@
 import chisel3._
 import chisel3.util._
 import tools.WriteBtn
+import tools._
 import tools.generators._
 import tools.helpers._
 import fb.FrameBuffer
 import ld.LineDrawing
-import fb.RecDrawer
 import vga.VGA
 import vga.VGAClock
 import spi._
 import matrix.MVP
+import stateMachine.StateMachine
 
 class Main extends Module {
   def delay(x: UInt) = RegNext(x)
@@ -30,19 +31,40 @@ class Main extends Module {
   })
 
   withReset(~io.aresetn) {
-    val fb = Module(new FrameBuffer(640, 480))
+
+    val stateMachine = Module(new StateMachine)
+    val spi = Module(new Spi(STD.dataFrameWidth))
+    spi.io.spi := io.spi
+    stateMachine.io.newFrameRecieved := spi.io.outputReady
+
+    val lastRecievedFrame = RegInit(0.U.asTypeOf(new DataFrame))
+    when(spi.io.outputReady){
+      lastRecievedFrame := Reverse(spi.io.value).asTypeOf(new DataFrame)
+    }
+    val renderingFrame = RegInit(0.U.asTypeOf(new DataFrame))
+    when(stateMachine.io.loadNextFrame){
+      renderingFrame := lastRecievedFrame
+    }
+
+
+    val fb = Module(new FrameBuffer(STD.screenWidth, STD.screenHeight))
     val bresenhams = Module(new LineDrawing)
     fb.io.writeEnable := bresenhams.io.writeEnable
-    fb.io.writeX := bresenhams.io.writeX
-    fb.io.writeY := bresenhams.io.writeY
+    fb.io.writeX := bresenhams.io.writePixel.x
+    fb.io.writeY := bresenhams.io.writePixel.y
     fb.io.writeVal := bresenhams.io.writeVal
+
+    bresenhams.io.start := stateMachine.io.bhStartRegular
+    bresenhams.io.startClear := stateMachine.io.bhStartClear
+    bresenhams.io.p1 := renderingFrame.points(renderingFrame.lines(stateMachine.io.lineIndex).index1)
+    bresenhams.io.p2 := renderingFrame.points(renderingFrame.lines(stateMachine.io.lineIndex).index2)
+    bresenhams.io.color := renderingFrame.lines(stateMachine.io.lineIndex).color
+
+    stateMachine.io.bhDone := bresenhams.io.done
+
 
     val vga = Module(new VGA)
     val vgaClock = Module(new VGAClock)
-
-    val writeBtn = Module(new WriteBtn)
-    writeBtn.io.aresetn := io.aresetn
-    writeBtn.io.btn := io.btn
 
     vgaClock.io.clk := clock
 
@@ -60,106 +82,13 @@ class Main extends Module {
       io.vga_hsync := delay(vga.io.hsync)
       io.vga_vsync := delay(vga.io.vsync)
 
-      io.vga_r := delay(vga.io.out(0))
-      io.vga_g := delay(vga.io.out(1))
-      io.vga_b := delay(vga.io.out(2))
+      io.vga_r := delay(vga.io.out.r)
+      io.vga_g := delay(vga.io.out.g)
+      io.vga_b := delay(vga.io.out.b)
 
     }
 
-    val mvp = Module(new MVP)
-
-    mvp.io.mat4 := genMat(4, 4)
-    mvp.io.vec4 := genVec(4, Array.range(1, 5))
-    io.led := mvp.io.outVec4(0)(3, 0)
-
-    val spiDataWidth = 128;
-    val spiSIntWidth = 16;
-
-    val spi = Module(new Spi(spiDataWidth))
-    spi.io.spi := io.spi
-
-    val spiBuffer = RegInit(0.U(spiDataWidth.W))
-
-    when(spi.io.outputReady) {
-      spiBuffer := spi.io.value
-    }
-
-    bresenhams.io.start := delay(spi.io.outputReady && !bresenhams.io.busy)
-    bresenhams.io.xs := spiBuffer(
-      spiDataWidth - 1,
-      spiDataWidth - spiSIntWidth
-    ).asSInt
-    bresenhams.io.ys := spiBuffer(
-      spiDataWidth - spiSIntWidth - 1,
-      spiDataWidth - 2 * spiSIntWidth
-    ).asSInt
-    bresenhams.io.xe := spiBuffer(
-      spiDataWidth - 2 * spiSIntWidth - 1,
-      spiDataWidth - 3 * spiSIntWidth
-    ).asSInt
-    bresenhams.io.ye := spiBuffer(
-      spiDataWidth - 3 * spiSIntWidth - 1,
-      spiDataWidth - 4 * spiSIntWidth
-    ).asSInt
-
-    //io.led <> spiBuffer(
-    //spiDataWidth - 2 * spiSIntWidth - 1,
-    //spiDataWidth - 2 * spiSIntWidth - 5
-    //)
     io.led := DontCare
-
-    // Draw border around FB
-    val top :: right :: left :: bottom :: done :: Nil = Enum(5)
-    val state = RegInit(top)
-    switch(state) {
-      is(top) {
-        bresenhams.io.xs := 0.S
-        bresenhams.io.ys := 0.S
-        bresenhams.io.xe := 639.S
-        bresenhams.io.ye := 0.S
-        when(bresenhams.io.done) {
-          state := right
-        }.otherwise {
-          bresenhams.io.start := true.B
-        }
-      }
-      is(right) {
-        bresenhams.io.xs := 638.S
-        bresenhams.io.ys := 0.S
-        bresenhams.io.xe := 638.S
-        bresenhams.io.ye := 479.S
-        when(bresenhams.io.done) {
-          state := left
-        }.otherwise {
-          bresenhams.io.start := true.B
-        }
-
-      }
-      is(left) {
-        bresenhams.io.xs := 0.S
-        bresenhams.io.ys := 0.S
-        bresenhams.io.xe := 0.S
-        bresenhams.io.ye := 479.S
-        when(bresenhams.io.done) {
-          state := bottom
-        }.otherwise {
-          bresenhams.io.start := true.B
-        }
-
-      }
-      is(bottom) {
-        bresenhams.io.xs := 0.S
-        bresenhams.io.ys := 479.S
-        bresenhams.io.xe := 639.S
-        bresenhams.io.ye := 479.S
-        when(bresenhams.io.done) {
-          state := done
-        }.otherwise {
-          bresenhams.io.start := true.B
-        }
-
-      }
-    }
   }
 }
 
