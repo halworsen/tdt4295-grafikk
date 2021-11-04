@@ -89,7 +89,6 @@ class LineDrawing(
       state := init2
     }
     is(init2) {
-      io.writeEnable := true.B
       e := dx + dy
       x := xs
       y := ys
@@ -98,6 +97,7 @@ class LineDrawing(
       state := init3
     }
     is(init3) {
+      io.writeEnable := true.B
       state := draw
     }
     is(draw) {
