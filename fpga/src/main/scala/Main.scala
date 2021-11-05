@@ -1,6 +1,7 @@
 import chisel3._
 import chisel3.util._
 import tools.WriteBtn
+import tools._
 import tools.generators._
 import tools.helpers._
 import fb.FrameBuffer
@@ -9,7 +10,7 @@ import fb.RecDrawer
 import vga.VGA
 import vga.VGAClock
 import spi._
-import matrix.MVP
+import matrix._
 
 class Main extends Module {
   def delay(x: UInt) = RegNext(x)
@@ -127,66 +128,13 @@ class Main extends Module {
     square.io.fourthX := bitNr(spiBuffer, 6, 128).asSInt
     square.io.fourthY := bitNr(spiBuffer, 7, 128).asSInt
 
-    /*
-    val mvp = Module(new MVP)
-    io.led := mvp.io.outVec4(0)(3, 0)
+    val rotator = Module(new Rotator)
+    rotator.io.mat4 := DontCare
+    rotator.io.inPoints := spiBuffer.asTypeOf(Vec(4, new Pixel))
 
-    mvp.io.mat4 := VecInit(
-      VecInit(
-        0.54.F(8.W, 4.BP),
-        0.84.F(8.W, 4.BP),
-        1.F(8.W, 4.BP),
-        1.F(8.W, 4.BP)
-      ),
-      VecInit(
-        -0.84.F(8.W, 4.BP),
-        0.54.F(8.W, 4.BP),
-        1.F(8.W, 4.BP),
-        1.F(8.W, 4.BP)
-      ),
-      VecInit(
-        1.F(8.W, 4.BP),
-        1.F(8.W, 4.BP),
-        1.F(8.W, 4.BP),
-        1.F(8.W, 4.BP)
-      ),
-      VecInit(1.F(8.W, 4.BP), 1.F(8.W, 4.BP), 1.F(8.W, 4.BP), 1.F(8.W, 4.BP))
-    )
-    mvp.io.vec4 := DontCare
-
-    val count = RegInit(0.U)
-
-    switch(state) {
-      is(idle) {}
-      is(draw) {
-        square.io.start := true.B
-        countOn := true.B
-        when(count === 90000000.U) {
-          state := rotate
-        }
-      }
-      is(rotate) {
-        mvp.io.vec4(0) := bitNrHW(spiBuffer, count * 2.U, 128).asSInt
-        mvp.io.vec4(1) := bitNrHW(spiBuffer, count * 2.U + 1.U, 128).asSInt
-        mvp.io.vec4(2) := 1.S
-        mvp.io.vec4(3) := 1.S
-        count := count + 1.U
-        when(count > 0.U) {
-          spiBuffer := spiBuffer & mvp.io
-            .outVec4(0)
-            .asUInt << (spiDataWidth.U - (count * 2.U) * spiSIntWidth.U - 1.U)
-
-          spiBuffer := spiBuffer & mvp.io
-            .outVec4(1)
-            .asUInt << (spiDataWidth.U - (count * 2.U + 1.U) * spiSIntWidth.U - 1.U)
-        }
-        when(count === 5.U) {
-          count := 0.U
-          state := draw
-        }
-      }
+    when(writeBtn.io.writeEnable) {
+      spiBuffer := rotator.io.outPoints.asUInt()
     }
-     */
 
     /*
     bresenhams.io.xs := spiBuffer(

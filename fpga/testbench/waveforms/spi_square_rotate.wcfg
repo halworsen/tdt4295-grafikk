@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="spi_square_rotate_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="spi_square_rotate" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="59,676.666 ns"></ZoomStartTime>
+      <ZoomEndTime time="66,676.667 ns"></ZoomEndTime>
+      <Cursor1Time time="65,510.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="172"></NameColumnWidth>
+      <ValueColumnWidth column_width="96"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="36" />
+   <wvobject type="array" fp_name="/spi_square_rotate/main/io_btn">
+      <obj_property name="ElementShortName">io_btn[3:0]</obj_property>
+      <obj_property name="ObjectShortName">io_btn[3:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_square_rotate/main/spiBuffer">
+      <obj_property name="ElementShortName">spiBuffer[127:0]</obj_property>
+      <obj_property name="ObjectShortName">spiBuffer[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider331" type="divider">
+      <obj_property name="label">SQUARE</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_square_rotate/main/square/io_firstX">
+      <obj_property name="ElementShortName">io_firstX[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_firstX[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_square_rotate/main/square/io_firstY">
+      <obj_property name="ElementShortName">io_firstY[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_firstY[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_square_rotate/main/square/io_secondX">
+      <obj_property name="ElementShortName">io_secondX[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_secondX[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_square_rotate/main/square/io_secondY">
+      <obj_property name="ElementShortName">io_secondY[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_secondY[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_square_rotate/main/square/io_thirdX">
+      <obj_property name="ElementShortName">io_thirdX[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_thirdX[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_square_rotate/main/square/io_thirdY">
+      <obj_property name="ElementShortName">io_thirdY[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_thirdY[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_square_rotate/main/square/io_fourthX">
+      <obj_property name="ElementShortName">io_fourthX[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_fourthX[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_square_rotate/main/square/io_fourthY">
+      <obj_property name="ElementShortName">io_fourthY[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_fourthY[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/spi_square_rotate/main/square/io_start">
+      <obj_property name="ElementShortName">io_start</obj_property>
+      <obj_property name="ObjectShortName">io_start</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/spi_square_rotate/main/square/io_clear">
+      <obj_property name="ElementShortName">io_clear</obj_property>
+      <obj_property name="ObjectShortName">io_clear</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider332" type="divider">
+      <obj_property name="label">LD</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider315" type="divider">
+      <obj_property name="label">SPI</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_square_rotate/main/spi/count">
+      <obj_property name="ElementShortName">count[7:0]</obj_property>
+      <obj_property name="ObjectShortName">count[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/spi_square_rotate/main/io_spi_mosi">
+      <obj_property name="ElementShortName">io_spi_mosi</obj_property>
+      <obj_property name="ObjectShortName">io_spi_mosi</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/spi_square_rotate/main/io_spi_miso">
+      <obj_property name="ElementShortName">io_spi_miso</obj_property>
+      <obj_property name="ObjectShortName">io_spi_miso</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/spi_square_rotate/main/io_spi_sclk">
+      <obj_property name="ElementShortName">io_spi_sclk</obj_property>
+      <obj_property name="ObjectShortName">io_spi_sclk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/spi_square_rotate/main/io_spi_cs">
+      <obj_property name="ElementShortName">io_spi_cs</obj_property>
+      <obj_property name="ObjectShortName">io_spi_cs</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_square_rotate/main/rotator/io_inPoints_0_x">
+      <obj_property name="ElementShortName">io_inPoints_0_x[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_inPoints_0_x[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_square_rotate/main/rotator/io_inPoints_0_y">
+      <obj_property name="ElementShortName">io_inPoints_0_y[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_inPoints_0_y[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_square_rotate/main/rotator/io_inPoints_1_x">
+      <obj_property name="ElementShortName">io_inPoints_1_x[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_inPoints_1_x[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_square_rotate/main/rotator/io_inPoints_1_y">
+      <obj_property name="ElementShortName">io_inPoints_1_y[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_inPoints_1_y[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_square_rotate/main/rotator/io_inPoints_2_x">
+      <obj_property name="ElementShortName">io_inPoints_2_x[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_inPoints_2_x[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_square_rotate/main/rotator/io_inPoints_2_y">
+      <obj_property name="ElementShortName">io_inPoints_2_y[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_inPoints_2_y[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_square_rotate/main/rotator/io_inPoints_3_x">
+      <obj_property name="ElementShortName">io_inPoints_3_x[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_inPoints_3_x[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_square_rotate/main/rotator/io_inPoints_3_y">
+      <obj_property name="ElementShortName">io_inPoints_3_y[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_inPoints_3_y[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_square_rotate/main/rotator/io_outPoints_0_x">
+      <obj_property name="ElementShortName">io_outPoints_0_x[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_outPoints_0_x[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_square_rotate/main/rotator/io_outPoints_0_y">
+      <obj_property name="ElementShortName">io_outPoints_0_y[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_outPoints_0_y[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_square_rotate/main/rotator/io_outPoints_1_x">
+      <obj_property name="ElementShortName">io_outPoints_1_x[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_outPoints_1_x[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_square_rotate/main/rotator/io_outPoints_1_y">
+      <obj_property name="ElementShortName">io_outPoints_1_y[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_outPoints_1_y[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_square_rotate/main/rotator/io_outPoints_2_x">
+      <obj_property name="ElementShortName">io_outPoints_2_x[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_outPoints_2_x[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_square_rotate/main/rotator/io_outPoints_2_y">
+      <obj_property name="ElementShortName">io_outPoints_2_y[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_outPoints_2_y[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_square_rotate/main/rotator/io_outPoints_3_x">
+      <obj_property name="ElementShortName">io_outPoints_3_x[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_outPoints_3_x[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_square_rotate/main/rotator/io_outPoints_3_y">
+      <obj_property name="ElementShortName">io_outPoints_3_y[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_outPoints_3_y[15:0]</obj_property>
+   </wvobject>
+</wave_config>

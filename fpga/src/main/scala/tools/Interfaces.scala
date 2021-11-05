@@ -23,10 +23,9 @@ class Line(width: Int) extends Bundle {
   val color = new Pixel
 }
 
-class Pixel extends Bundle {
-  val r = UInt(3.W)
-  val g = UInt(3.W)
-  val b = UInt(3.W)
+class Pixel(width: Int = 16) extends Bundle {
+  val x = UInt(width.W)
+  val y = UInt(width.W)
 }
 
 class Point extends Bundle {
