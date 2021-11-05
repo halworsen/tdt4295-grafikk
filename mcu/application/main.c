@@ -11,6 +11,9 @@
 #include "spidrv.h"
 #include "timer.h"
 
+#include <math.h>
+#include "linalg.h"
+
 #define SPI_BITRATE 1000000
 
 #define MAX_SAMPLE 4096
@@ -18,10 +21,7 @@
 #define DISPLAY_HEIGHT 480
 #define DISPLAY_WIDTH 640
 
-#define MIN_X 60
-#define MIN_Y 40
-#define MAX_X 600
-#define MAX_Y 440
+#define MAX_DY 200 /* maximal y-offset from the center */
 
 #define max(a, b)                                                              \
   ({                                                                           \
@@ -44,46 +44,77 @@ ADC_InitSingle_TypeDef initSingle = ADC_INITSINGLE_DEFAULT;
 SPIDRV_HandleData_t handleData;
 SPIDRV_Handle_t handle = &handleData;
 
-void calc_points(uint32_t ch1_sample, uint32_t ch2_sample, int *coordinates) {
-  double scale;
-  int x;
-  int y;
+vec3_t square[4];
 
-  scale = (double)ch1_sample / MAX_SAMPLE;
-  x = scale * MAX_X;
-  x = min(x, MAX_X);
-  x = max(x, MIN_X);
+void calc_points(uint32_t ch1_sample, uint32_t ch2_sample, int16_t *coordinates) {
+    // This starts with our model square [-1, 1] x [-1, 1], and
+    // applies a scale-, a rotation-, and a translation-transform
+    // defined by potentiometer positions so that changing one
+    // will move the square vertically, and changing the other
+    // will rotate the square.
+    //
+    // In total, we end up doing 2 matrix multiplications and
+    // 4 matrix-vector multiplications, which is around 60
+    // floating point operations per interrupt. At 60 FPS, this
+    // means the processor needs to do ~4000 FLOPS.
 
-  scale = (double)ch2_sample / MAX_SAMPLE;
-  y = scale * MAX_Y;
-  y = min(y, MAX_Y);
-  y = max(y, MIN_Y);
+    double scale; // normalized potentiometer position [0, 1]
 
-  coordinates[0] = x;
-  coordinates[1] = y;
+    // Channel 1 determines vertical offset y.
+    scale = (double)ch1_sample / MAX_SAMPLE;
+    float y = (2 * scale - 1.0) * MAX_DY; // [-MAX_DY, MAX_DY]
+
+    // Channel 2 determines rotation theta.
+    scale = (double)ch2_sample / MAX_SAMPLE;
+    float th = (2 * scale - 1.0) * M_PI;
+
+    float zoom = 30.0;
+    mat3_t S, R, T; // scaling, rotation and translation matrices.
+
+    // Scale x,y coordinates by zoom level.
+    mat3(&S, zoom,  0.0, 0.0,
+              0.0, zoom, 0.0,
+              0.0,  0.0, 1.0);
+
+    // Rotate by theta radians.
+    rot3(&R, th);
+
+    // Translate to center of the screen +/- y-offset.
+    translation3(&T, DISPLAY_WIDTH / 2, (DISPLAY_HEIGHT / 2) + y);
+
+    // Create the "final" transformation matrix.
+    mat3_t SR, TSR;
+    mmul3(&SR, &S, &R);
+    mmul3(&TSR, &T, &SR);
+
+    // Iterate over the vertices.
+    for (int i = 0; i < 8; i = i + 2) {
+        // Calculate transformed vertex q = (TSR)v for all v in the square.
+        vec3_t q;
+        transform3(&q, &TSR, &square[i/2]);
+
+        // Put the transformed coordinates in the coordinate buffer.
+        // These are already floats in pixel-coordinates, so we only
+        // need to cast them to int16, and then they are ready.
+        coordinates[i]     = (int16_t) q.x;
+        coordinates[i + 1] = (int16_t) q.y;
+    }
 }
 
-void transmit_coordinates(int *coordinates) {
-  int16_t buffer[4] = {0};
+void transmit_square(int16_t *coordinates) {
+    // Transmit the coordinates of a square as 4 pairs of
+    // 16-bit integers. This handles changing the byte-
+    // order.
 
-  buffer[0] = coordinates[0];
-  buffer[1] = coordinates[1];
+    for (int i = 0; i < 8; i++) {
+        // Flip the order of the bytes.
+        uint8_t bitstream[2];
+        bitstream[0] = (coordinates[i] >> 8) & 0xFF;
+        bitstream[1] =  coordinates[i]       & 0xFF;
 
-  for (int i = 0; i < sizeof(buffer) / sizeof(buffer[0]); i++) {
-    uint8_t bitstream[2];
-    bitstream[0] = (buffer[i] >> 8) & 0xFF;
-    bitstream[1] = buffer[i] & 0xFF;
-    SPIDRV_MTransmitB(handle, bitstream, sizeof(bitstream));
-  }
-  if (coordinates[0] > DISPLAY_WIDTH / 2)
-    GPIO_PinOutSet(BSP_GPIO_LED1_PORT, BSP_GPIO_LED1_PIN);
-  else
-    GPIO_PinOutClear(BSP_GPIO_LED1_PORT, BSP_GPIO_LED1_PIN);
-
-  if (coordinates[1] > DISPLAY_HEIGHT / 2)
-    GPIO_PinOutSet(BSP_GPIO_LED0_PORT, BSP_GPIO_LED0_PIN);
-  else
-    GPIO_PinOutClear(BSP_GPIO_LED0_PORT, BSP_GPIO_LED0_PIN);
+        // Invoke the SPI driver to transfer the bitstream.
+        SPIDRV_MTransmitB(handle, bitstream, sizeof(bitstream));
+    }
 }
 
 void GPIO_EVEN_IRQHandler(void) {
@@ -92,19 +123,20 @@ void GPIO_EVEN_IRQHandler(void) {
 }
 
 void TIMER1_IRQHandler(void) {
-  int coordinates[2] = {0};
+    // The square has 8 coordinates.
+    int16_t coordinates[8] = {0};
 
-  TIMER_IntClear(TIMER1, 1);
-  if (adcChannel)
-    initSingle.input = adcSingleInputCh4;
-  else
-    initSingle.input = adcSingleInputCh5;
-  ADC_InitSingle(ADC0, &initSingle);
-  ADC_Start(ADC0, adcStartSingle);
-  adcChannel = !adcChannel;
+    TIMER_IntClear(TIMER1, 1);
+    if (adcChannel)
+        initSingle.input = adcSingleInputCh4;
+    else
+        initSingle.input = adcSingleInputCh5;
+    ADC_InitSingle(ADC0, &initSingle);
+    ADC_Start(ADC0, adcStartSingle);
+    adcChannel = !adcChannel;
 
-  calc_points(ch1_sample, ch2_sample, coordinates);
-  transmit_coordinates(coordinates);
+    calc_points(ch1_sample, ch2_sample, coordinates);
+    transmit_square(coordinates);
 }
 
 void ADC0_IRQHandler(void) {
@@ -117,6 +149,12 @@ void ADC0_IRQHandler(void) {
 }
 
 int main(void) {
+  // Create the model (the square with w=1).
+  vec3(&square[0], -1.0,  1.0, 1.0);
+  vec3(&square[1], -1.0, -1.0, 1.0);
+  vec3(&square[2],  1.0, -1.0, 1.0);
+  vec3(&square[3],  1.0,  1.0, 1.0);
+
   uint32_t bitrate = 0;
   // Initializations
   CMU_ClockSelectSet(cmuClock_HF, cmuSelect_HFXO);
