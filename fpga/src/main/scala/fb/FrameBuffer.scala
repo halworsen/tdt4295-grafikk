@@ -11,11 +11,11 @@ class FrameBuffer(width: Int, height: Int) extends Module {
 
   val io = IO(new Bundle {
     val writePixel = Input(new Pixel)
-    val writeVal = Input(new Color)
+    val writeVal = Input(Bool())
     val writeEnable = Input(Bool())
     val readX = Input(UInt((log2Up(width) + 1).W))
     val readY = Input(UInt((log2Up(height) + 1).W))
-    val readVal = Output(new Color)
+    val readVal = Output(Bool())
     val readEnable = Input(Bool())
 
     val readClock = Input(Clock())
@@ -23,7 +23,7 @@ class FrameBuffer(width: Int, height: Int) extends Module {
 
   withClock(io.readClock) {
 
-    val fb_internal = Module(new Bram_sdp((new Color).getWidth, width * height, "./bugge_large.mem"))
+    val fb_internal = Module(new Bram_sdp(1, width * height, "./bugge_large.mem"))
     fb_internal.io.clk_write := clock
     //fb.io.reset := reset
     io.readEnable := DontCare
@@ -50,6 +50,6 @@ class FrameBuffer(width: Int, height: Int) extends Module {
     //r(1) := fb.io.data_out(2 * colorDepth - 1, colorDepth)
     //r(2) := fb.io.data_out(3 * colorDepth - 1, 2 * colorDepth)
 
-    io.readVal := fb_internal.io.data_out.asTypeOf(new Color)
+    io.readVal := fb_internal.io.data_out.asBool()
   }
 }

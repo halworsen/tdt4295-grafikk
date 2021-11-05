@@ -10,14 +10,13 @@ class LineDrawing extends Module {
   val io = IO(new Bundle {
     val p1 = Input(new Pixel)
     val p2 = Input(new Pixel)
-    val color = Input(new Color)
 
     val start = Input(Bool())
     val startClear = Input(Bool())
 
     val writeEnable = Output(Bool())
     val writePixel = Output(new Pixel)
-    val writeVal = Output(new Color)
+    val writeVal = Output(Bool())
 
     val done = Output(Bool())
     val busy = Output(Bool())
@@ -33,7 +32,7 @@ class LineDrawing extends Module {
   val x = RegInit(0.U(STD.coordWidth))
   val y = RegInit(0.U(STD.coordWidth))
   val e  = RegInit(0.S(STD.coordWidth + 1.W))
-  val color = RegInit(STD.bgColor.asTypeOf(new Color))
+  val writeVal = RegInit(false.B)
 
   // Calculated functions
   val right = pe.x > ps.x
@@ -42,14 +41,9 @@ class LineDrawing extends Module {
   val updX = 2.S * e >= dy;
   val updY = 2.S * e <= dx;
 
-
-
-
-  
-
   
   //Defalut IO values
-  io.writeVal := color
+  io.writeVal := writeVal
   io.writePixel.x := x
   io.writePixel.y := y
 
@@ -63,7 +57,7 @@ class LineDrawing extends Module {
         ps := Mux(io.p1.y <= io.p2.y, io.p1, io.p2)
         pe := Mux(io.p1.y <= io.p2.y, io.p2, io.p1)
         state := init
-        color := Mux(io.startClear, STD.bgColor.asTypeOf(new Color), io.color)
+        writeVal := Mux(io.startClear, false.B, true.B)
       }
     }
     is(init) {

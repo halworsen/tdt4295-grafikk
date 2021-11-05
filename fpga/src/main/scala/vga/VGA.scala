@@ -10,7 +10,7 @@ class VGA extends Module {
    * We primaraly focus on a 640 x 480px implementation
    */
   val io = IO(new Bundle {
-    val data = Input(new Color)
+    val data = Input(Bool())
     val dataEnable = Output(Bool()) // Data enable. We can write to pixel.
     val selX = Output(UInt(16.W))
     val selY = Output(UInt(16.W))
@@ -38,7 +38,7 @@ class VGA extends Module {
       io.out := 0.U.asTypeOf(new Color)
     }.otherwise {
       //io.out := io.data
-      io.out := io.data
+      io.out := Mux(io.data, STD.mainColor.asTypeOf(new Color), STD.bgColor.asTypeOf(new Color))
     }
   }
 }

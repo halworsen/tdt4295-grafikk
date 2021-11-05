@@ -57,7 +57,6 @@ class Main extends Module {
     bresenhams.io.startClear := stateMachine.io.bhStartClear
     bresenhams.io.p1 := renderingFrame.points(renderingFrame.lines(stateMachine.io.lineIndex).index1)
     bresenhams.io.p2 := renderingFrame.points(renderingFrame.lines(stateMachine.io.lineIndex).index2)
-    bresenhams.io.color := renderingFrame.lines(stateMachine.io.lineIndex).color
 
     stateMachine.io.bhDone := bresenhams.io.done
 
