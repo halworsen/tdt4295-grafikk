@@ -39,7 +39,7 @@ class Main extends Module {
 
     val lastRecievedFrame = RegInit(0.U.asTypeOf(new DataFrame))
     when(spi.io.outputReady){
-      lastRecievedFrame := Reverse(spi.io.value).asTypeOf(new DataFrame)
+      lastRecievedFrame := spi.io.value.asTypeOf(new DataFrame)
     }
     val renderingFrame = RegInit(0.U.asTypeOf(new DataFrame))
     when(stateMachine.io.loadNextFrame){

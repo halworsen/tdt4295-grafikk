@@ -6,17 +6,17 @@ import chisel3.experimental.FixedPoint
 object STD {
   val pointNum = 8
   val linenum = 12
-  val lineIndexWidth = 8.W
+  val lineIndexWidth = 16.W
   val fixedWidth = 16.W
   val binaryPoint = 4.BP
   val colorEnabled = true
   val colorWidth = 3.W
+  val colorPadWidth = 7.W
 
   val screenWidth = 640
   val screenHeight = 480
   val coordWidth = 16.W
   val bgColor = "b001001001".U
-  val yellow = "h1".U(colorWidth)##"h2".U(colorWidth)##"h0".U(colorWidth)
 }
 
 
@@ -36,9 +36,9 @@ object STD {
 
 
 class DataFrame extends Bundle{
-  val MPV = Vec(4, Vec(4, FixedPoint(STD.fixedWidth, STD.binaryPoint)))
-  val lines = Vec(STD.linenum, new Line)
+  // val MPV = Vec(4, Vec(4, FixedPoint(STD.fixedWidth, STD.binaryPoint)))
   val points = Vec(STD.pointNum, new Pixel)
+  val lines = Vec(STD.linenum, new Line)
 }
 
 class Line extends Bundle {
@@ -51,6 +51,7 @@ class Color extends Bundle {
   val r = UInt(STD.colorWidth)
   val g = UInt(STD.colorWidth)
   val b = UInt(STD.colorWidth)
+  val padding = UInt(STD.colorPadWidth)
 }
 
 class Point extends Bundle {
