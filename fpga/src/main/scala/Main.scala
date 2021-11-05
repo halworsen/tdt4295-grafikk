@@ -9,8 +9,8 @@ import ld.LineDrawing
 import vga.VGA
 import vga.VGAClock
 import spi._
-import matrix.MVP
 import stateMachine.StateMachine
+import matrix._
 
 class Main extends Module {
   def delay(x: UInt) = RegNext(x)
@@ -114,6 +114,19 @@ class Main extends Module {
     }
 
     io.led := led
+
+    val rotator = Module(new Rotator)
+    rotator.io.mat4 := DontCare
+    rotator.io.inPoints := spiBuffer.asTypeOf(Vec(4, new Pixel))
+
+    val writeBtn = Module(new WriteBtn)
+    writeBtn.io.btn := io.btn(0)
+    writeBtn.io.aresetn := reset
+
+    when(writeBtn.io.writeEnable) {
+      spiBuffer := rotator.io.out
+    }
+
   }
 }
 
