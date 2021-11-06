@@ -7,7 +7,7 @@ import chisel3.experimental.FixedPoint
 object STD {
   val pointNum = 4
   val linenum = 4
-  val lineIndexWidth = 16.W
+  val pointIndexWidth = 16.W
   val fixedWidth = 16.W
   val binaryPoint = 4.BP
   val colorEnabled = true
@@ -16,10 +16,9 @@ object STD {
   val screenWidth = 640
   val screenHeight = 480
   val coordWidth = 16.W
-  val bgColor =   "b000100010001".U
+  val bgColor = "b000100010001".U
   val mainColor = "b110010010001".U
 }
-
 
 // Classes for multiple objects
 // class DataFrame(objectsNum: Int = 1, lineNum: Int, pointNum: Int)
@@ -34,17 +33,15 @@ object STD {
 //   val MMatrix = Vec(4, Vec(4, FixedPoint(12.W, 10.BP)))
 // }
 
-
-
-class DataFrame extends Bundle{
+class DataFrame extends Bundle {
   // val MPV = Vec(4, Vec(4, FixedPoint(STD.fixedWidth, STD.binaryPoint)))
   val points = Vec(STD.pointNum, new Pixel)
   val lines = Vec(STD.linenum, new Line)
 }
 
 class Line extends Bundle {
-  val index1 = UInt(STD.lineIndexWidth)
-  val index2 = UInt(STD.lineIndexWidth)
+  val index1 = UInt(STD.pointIndexWidth)
+  val index2 = UInt(STD.pointIndexWidth)
 }
 
 class Color extends Bundle {
@@ -64,4 +61,3 @@ class Pixel extends Bundle {
   val x = UInt(STD.coordWidth)
   val y = UInt(STD.coordWidth)
 }
-

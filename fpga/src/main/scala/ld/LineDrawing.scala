@@ -29,7 +29,7 @@ class LineDrawing extends Module {
 
   val x = RegInit(0.U(STD.coordWidth))
   val y = RegInit(0.U(STD.coordWidth))
-  val e  = RegInit(0.S(STD.coordWidth + 1.W))
+  val e = RegInit(0.S(STD.coordWidth + 1.W))
   val writeVal = RegInit(false.B)
 
   // Calculated functions

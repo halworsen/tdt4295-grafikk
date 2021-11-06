@@ -38,7 +38,11 @@ class VGA extends Module {
       io.out := 0.U.asTypeOf(new Color)
     }.otherwise {
       //io.out := io.data
-      io.out := Mux(io.data, STD.mainColor.asTypeOf(new Color), STD.bgColor.asTypeOf(new Color))
+      io.out := Mux(
+        io.data,
+        STD.mainColor.asTypeOf(new Color),
+        STD.bgColor.asTypeOf(new Color)
+      )
     }
   }
 }
