@@ -65,6 +65,8 @@ class LineDrawing extends Module {
     }
     is(draw) {
       // Draw pixel
+      io.writeEnable := true.B
+
       when(
         (x === pe.x && y === pe.y) || Mux(
           right,
@@ -75,8 +77,6 @@ class LineDrawing extends Module {
         state := idle
         io.done := true.B
       }.otherwise {
-        io.writeEnable := true.B
-
         when(updX && updY) {
           x := Mux(right, x + 1.U, x - 1.U)
           y := y + 1.U;
