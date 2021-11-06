@@ -22,8 +22,6 @@ class LineDrawing extends Module {
     val busy = Output(Bool())
   })
 
-  
-
   val idle :: init :: draw :: Nil = Enum(3)
   val state = RegInit(idle)
   val ps = RegInit(0.U.asTypeOf(new Pixel)) //Pixel start
@@ -31,7 +29,7 @@ class LineDrawing extends Module {
 
   val x = RegInit(0.U(STD.coordWidth))
   val y = RegInit(0.U(STD.coordWidth))
-  val e  = RegInit(0.S(STD.coordWidth + 1.W))
+  val e = RegInit(0.S(STD.coordWidth + 1.W))
   val writeVal = RegInit(false.B)
 
   // Calculated functions
@@ -41,7 +39,6 @@ class LineDrawing extends Module {
   val updX = 2.S * e >= dy;
   val updY = 2.S * e <= dx;
 
-  
   //Defalut IO values
   io.writeVal := writeVal
   io.writePixel.x := x

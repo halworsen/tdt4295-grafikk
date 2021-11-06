@@ -23,7 +23,8 @@ class FrameBuffer(width: Int, height: Int) extends Module {
 
   withClock(io.readClock) {
 
-    val fb_internal = Module(new Bram_sdp(1, width * height, "./bugge_large.mem"))
+    val fb_internal =
+      Module(new Bram_sdp(1, width * height, "./bugge_large.mem"))
     fb_internal.io.clk_write := clock
     //fb.io.reset := reset
     io.readEnable := DontCare

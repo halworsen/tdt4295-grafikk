@@ -36,9 +36,10 @@ class Main extends Module {
     val spi = Module(new Spi((new DataFrame).getWidth))
     spi.io.spi := io.spi
     stateMachine.io.newFrameRecieved := spi.io.outputReady
+    // stateMachine.io.newFrameRecieved := true.B
 
     val lastRecievedFrame = RegInit(0.U.asTypeOf(new DataFrame))
-    when(spi.io.outputReady){
+    when(spi.io.outputReady) {
       lastRecievedFrame := spi.io.value.asTypeOf(new DataFrame)
     }
     val renderingFrame = RegInit(0.U.asTypeOf(new DataFrame))
@@ -65,24 +66,32 @@ class Main extends Module {
     // renderingFrame.lines(3).index1 := 3.U
     // renderingFrame.lines(3).index2 := 0.U
 
-
     val fb = Module(new FrameBuffer(STD.screenWidth, STD.screenHeight))
     val bresenhams = Module(new LineDrawing)
     fb.io.writeEnable := bresenhams.io.writeEnable
     fb.io.writePixel := bresenhams.io.writePixel
     fb.io.writeVal := bresenhams.io.writeVal
 
-    bresenhams.io.start := stateMachine.io.bhStartRegular
-    bresenhams.io.startClear := stateMachine.io.bhStartClear
-    bresenhams.io.p1 := renderingFrame.points(renderingFrame.lines(stateMachine.io.lineIndex).index1)
-    bresenhams.io.p2 := renderingFrame.points(renderingFrame.lines(stateMachine.io.lineIndex).index2)
+    //Delay start by 2 as the data uses 2 cycles to become ready.
+    bresenhams.io.start := RegNext(RegNext(stateMachine.io.bhStartRegular))
+    bresenhams.io.startClear := RegNext(RegNext(stateMachine.io.bhStartClear))
+    // bresenhams.io.start := !bresenhams.io.busy
+    // bresenhams.io.startClear := false.B
+    bresenhams.io.p1 := renderingFrame.points(
+      renderingFrame.lines(stateMachine.io.lineIndex).index1
+    )
+    bresenhams.io.p2 := renderingFrame.points(
+      renderingFrame.lines(stateMachine.io.lineIndex).index2
+    )
+
+
 
     // bresenhams.io.start := RegNext(!bresenhams.io.busy)
     // bresenhams.io.startClear := false.B
     // bresenhams.io.p1.x := 100.U
     // bresenhams.io.p1.y := 100.U
-    // bresenhams.io.p2.x := 200.U
-    // bresenhams.io.p2.y := 200.U
+    // bresenhams.io.p2.x := 100.U
+    // bresenhams.io.p2.y := 100.U
 
     stateMachine.io.bhDone := bresenhams.io.done
 
