@@ -26,7 +26,8 @@ class StateMachine extends Module {
     unrenderedFrame := true.B
   }
 
-  val waiting :: clearSetup :: clearing ::renderSetup :: rendering :: Nil = Enum(5)
+  val waiting :: clearSetup :: clearing :: renderSetup :: rendering :: Nil =
+    Enum(5)
   val state = RegInit(waiting)
 
   switch(state) {
@@ -36,10 +37,10 @@ class StateMachine extends Module {
         state := clearSetup
       }
     }
-    is(clearSetup){
-        // Wait 1 cycle for bh inputs to become valid
-        io.bhStartClear := true.B
-        state := clearing
+    is(clearSetup) {
+      // Wait 1 cycle for bh inputs to become valid
+      io.bhStartClear := true.B
+      state := clearing
     }
     is(clearing) {
       when(!io.bhBussy && lineIndex < STD.linenum.U) {
@@ -53,10 +54,10 @@ class StateMachine extends Module {
         state := renderSetup
       }
     }
-    is(renderSetup){
-        // Wait 1 cycle for bh inputs to become valid
-        io.bhStartRegular := true.B
-        state := rendering
+    is(renderSetup) {
+      // Wait 1 cycle for bh inputs to become valid
+      io.bhStartRegular := true.B
+      state := rendering
     }
     is(rendering) {
       when(!io.bhBussy && lineIndex < STD.linenum.U) {
