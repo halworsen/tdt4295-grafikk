@@ -2,8 +2,8 @@ import chisel3._
 import chisel3.util._
 import tools.WriteBtn
 import tools._
-import tools.generators._
-import tools.helpers._
+import tools.Generators._
+import tools.Helpers._
 import fb.FrameBuffer
 import ld.LineDrawing
 import vga.VGA
@@ -11,6 +11,7 @@ import vga.VGAClock
 import spi._
 import matrix.MVP
 import stateMachine.StateMachine
+import matrix.Normalizer
 
 class Main extends Module {
   def delay(x: UInt) = RegNext(x)
@@ -32,6 +33,10 @@ class Main extends Module {
 
   withReset(~io.aresetn) {
 
+    val writeBtn = Module(new WriteBtn)
+    writeBtn.io.aresetn := io.aresetn
+    writeBtn.io.btn := io.btn
+
     val stateMachine = Module(new StateMachine)
     val spi = Module(new Spi((new DataFrame).getWidth))
     spi.io.spi := io.spi
@@ -50,9 +55,22 @@ class Main extends Module {
     // Test code for use without SPI
     val (counter, counterWrap) = Counter(true.B, 1666667) // 60 fps
     stateMachine.io.newFrameRecieved := counterWrap
-    val (frameNum, framesDone) =
-      Counter(stateMachine.io.loadNextFrame, ExampleDataFrames.frames.length)
-    val renderingFrame = ExampleDataFrames.frames(frameNum)
+    // stateMachine.io.newFrameRecieved := writeBtn.io.writeEnable
+    // val (frameNum, framesDone) =
+    //   Counter(stateMachine.io.loadNextFrame, ExampleDataFrames.frames.length)
+    // val renderingFrame = ExampleDataFrames.frames(frameNum)
+    val renderingFrame = ExampleDataFrames.square1
+
+    val normalizer1 = Module(new Normalizer)
+    val normalizer2 = Module(new Normalizer)
+
+    normalizer1.io.point := renderingFrame.points(
+      renderingFrame.lines(stateMachine.io.lineIndex).index1
+    )
+    normalizer2.io.point := renderingFrame.points(
+      renderingFrame.lines(stateMachine.io.lineIndex).index2
+    )
+
 
     val fb = Module(new FrameBuffer(STD.screenWidth, STD.screenHeight))
     val bresenhams = Module(new LineDrawing)
@@ -63,12 +81,8 @@ class Main extends Module {
     bresenhams.io.start := stateMachine.io.bhStartRegular
     bresenhams.io.startClear := stateMachine.io.bhStartClear
 
-    bresenhams.io.p1 := renderingFrame.points(
-      renderingFrame.lines(stateMachine.io.lineIndex).index1
-    )
-    bresenhams.io.p2 := renderingFrame.points(
-      renderingFrame.lines(stateMachine.io.lineIndex).index2
-    )
+    bresenhams.io.p1 := normalizer1.io.pixel
+    bresenhams.io.p2 := normalizer2.io.pixel
 
     stateMachine.io.bhBussy := bresenhams.io.busy
 

@@ -1,8 +1,9 @@
 package tools
 
 import chisel3._
+import tools.Helpers.toFP
 
-object generators {
+object Generators {
 
   /** Generate a chisel Vec[Vec[SInt]] of dimension nxm
     *

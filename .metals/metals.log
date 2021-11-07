@@ -1,0 +1,17 @@
+[0m2021.09.08 13:11:22 INFO  Started: Metals version 0.10.6 in workspace 'C:\Users\Eirik\Files\skole\dmPro\tdt4295-grafikk' for client Visual Studio Code 1.60.0.[0m
+[0m2021.09.08 13:11:23 INFO  time: initialize in 1.51s[0m
+[0m2021.09.08 13:11:23 WARN  Build server is not auto-connectable.[0m
+[0m2021.09.08 13:11:23 WARN  no build tool detected in workspace 'C:\Users\Eirik\Files\skole\dmPro\tdt4295-grafikk'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.09.08 13:11:41 WARN  no build target for: C:\Users\Eirik\Files\skole\dmPro\tdt4295-grafikk\fpga\src\test\scala\gcd\GCDSpec.scala[0m
+[0m2021.09.08 13:11:46 INFO  no build target: using presentation compiler with only scala-library: 2.12.14[0m
+[0m2021.09.08 13:11:48 INFO  time: code lens generation in 5.72s[0m
+[0m2021.09.08 13:11:48 INFO  time: code lens generation in 5.72s[0m
+Sep 08, 2021 1:12:21 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 39
+[0m2021.09.08 13:12:21 WARN  no build target for: C:\Users\Eirik\Files\skole\dmPro\tdt4295-grafikk\fpga\build.sbt[0m
+[0m2021.09.08 17:54:29 INFO  shutting down Metals[0m
+[0m2021.11.03 15:51:59 INFO  Started: Metals version 0.10.8 in workspace 'C:\Users\Eirik\Files\skole\dmPro\tdt4295-grafikk' for client Visual Studio Code 1.61.2.[0m
+[0m2021.11.03 15:52:02 INFO  time: initialize in 2.57s[0m
+[0m2021.11.03 15:52:03 WARN  Build server is not auto-connectable.[0m
+[0m2021.11.03 15:52:03 WARN  no build tool detected in workspace 'C:\Users\Eirik\Files\skole\dmPro\tdt4295-grafikk'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.11.03 15:52:16 INFO  shutting down Metals[0m

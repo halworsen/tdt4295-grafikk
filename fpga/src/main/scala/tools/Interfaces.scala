@@ -1,15 +1,15 @@
 package tools
 import chisel3._
-import tools.helpers.log2
 import Chisel.log2Up
 import chisel3.experimental.FixedPoint
 
 object STD {
+
   val pointNum = 4
   val linenum = 4
   val pointIndexWidth = 16.W
   val fixedWidth = 16.W
-  val binaryPoint = 4.BP
+  val binaryPoint = 4
   val colorEnabled = true
   val colorWidth = 4.W
 
@@ -19,6 +19,9 @@ object STD {
   val bgColor = "b000100010001".U
   val mainColor = "b110010010001".U
 }
+
+
+
 
 // Classes for multiple objects
 // class DataFrame(objectsNum: Int = 1, lineNum: Int, pointNum: Int)
@@ -34,8 +37,8 @@ object STD {
 // }
 
 class DataFrame extends Bundle {
-  // val MPV = Vec(4, Vec(4, FixedPoint(STD.fixedWidth, STD.binaryPoint)))
-  val points = Vec(STD.pointNum, new Pixel)
+  // val MPV = Vec(4, Vec(4, FixedPoint(STD.fixedWidth, STD.binaryPoint.BP)))
+  val points = Vec(STD.pointNum, new Point)
   val lines = Vec(STD.linenum, new Line)
 }
 
@@ -51,10 +54,10 @@ class Color extends Bundle {
 }
 
 class Point extends Bundle {
-  val x = FixedPoint(STD.fixedWidth, STD.binaryPoint)
-  val y = FixedPoint(STD.fixedWidth, STD.binaryPoint)
-  val z = FixedPoint(STD.fixedWidth, STD.binaryPoint)
-  val w = FixedPoint(STD.fixedWidth, STD.binaryPoint)
+  val x = FixedPoint(STD.fixedWidth, STD.binaryPoint.BP)
+  val y = FixedPoint(STD.fixedWidth, STD.binaryPoint.BP)
+  val z = FixedPoint(STD.fixedWidth, STD.binaryPoint.BP)
+  val w = FixedPoint(STD.fixedWidth, STD.binaryPoint.BP)
 }
 
 class Pixel extends Bundle {
