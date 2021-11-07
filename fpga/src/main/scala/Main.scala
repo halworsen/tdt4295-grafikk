@@ -35,37 +35,24 @@ class Main extends Module {
     val stateMachine = Module(new StateMachine)
     val spi = Module(new Spi((new DataFrame).getWidth))
     spi.io.spi := io.spi
-    // stateMachine.io.newFrameRecieved := spi.io.outputReady
-    val (counter, counterWrap) = Counter(true.B, 10000)
-    stateMachine.io.newFrameRecieved := counterWrap
-
     val lastRecievedFrame = RegInit(0.U.asTypeOf(new DataFrame))
     when(spi.io.outputReady) {
       lastRecievedFrame := spi.io.value.asTypeOf(new DataFrame)
     }
+
+    // Code for use with SPI
+    // stateMachine.io.newFrameRecieved := spi.io.outputReady
     // val renderingFrame = RegInit(0.U.asTypeOf(new DataFrame))
     // when(stateMachine.io.loadNextFrame){
     //   renderingFrame := lastRecievedFrame
     // }
 
-    // Testvalue for renderingFrame
-    val renderingFrame = Wire(new DataFrame)
-    renderingFrame.points(0).x := 100.U
-    renderingFrame.points(0).y := 100.U
-    renderingFrame.points(1).x := 100.U
-    renderingFrame.points(1).y := 200.U
-    renderingFrame.points(2).x := 200.U
-    renderingFrame.points(2).y := 200.U
-    renderingFrame.points(3).x := 200.U
-    renderingFrame.points(3).y := 100.U
-    renderingFrame.lines(0).index1 := 0.U
-    renderingFrame.lines(0).index2 := 1.U
-    renderingFrame.lines(1).index1 := 1.U
-    renderingFrame.lines(1).index2 := 2.U
-    renderingFrame.lines(2).index1 := 2.U
-    renderingFrame.lines(2).index2 := 3.U
-    renderingFrame.lines(3).index1 := 3.U
-    renderingFrame.lines(3).index2 := 0.U
+    // Test code for use without SPI
+    val (counter, counterWrap) = Counter(true.B, 1666667) // 60 fps
+    stateMachine.io.newFrameRecieved := counterWrap
+    val (frameNum, framesDone) =
+      Counter(stateMachine.io.loadNextFrame, ExampleDataFrames.frames.length)
+    val renderingFrame = ExampleDataFrames.frames(frameNum)
 
     val fb = Module(new FrameBuffer(STD.screenWidth, STD.screenHeight))
     val bresenhams = Module(new LineDrawing)
@@ -75,8 +62,6 @@ class Main extends Module {
 
     bresenhams.io.start := stateMachine.io.bhStartRegular
     bresenhams.io.startClear := stateMachine.io.bhStartClear
-    // bresenhams.io.start := !bresenhams.io.busy
-    // bresenhams.io.startClear := false.B
 
     bresenhams.io.p1 := renderingFrame.points(
       renderingFrame.lines(stateMachine.io.lineIndex).index1
@@ -84,23 +69,8 @@ class Main extends Module {
     bresenhams.io.p2 := renderingFrame.points(
       renderingFrame.lines(stateMachine.io.lineIndex).index2
     )
-    // val (lineIndex, temp) = Counter(bresenhams.io.done, STD.linenum)
-    // bresenhams.io.p1 := renderingFrame.points(
-    //   renderingFrame.lines(lineIndex).index1
-    // )
-    // bresenhams.io.p2 := renderingFrame.points(
-    //   renderingFrame.lines(lineIndex).index2
-    // )
-
-    // bresenhams.io.start := RegNext(!bresenhams.io.busy)
-    // bresenhams.io.startClear := false.B
-    // bresenhams.io.p1.x := 100.U
-    // bresenhams.io.p1.y := 100.U
-    // bresenhams.io.p2.x := 100.U
-    // bresenhams.io.p2.y := 100.U
 
     stateMachine.io.bhBussy := bresenhams.io.busy
-
 
     val vga = Module(new VGA)
     val vgaClock = Module(new VGAClock)
