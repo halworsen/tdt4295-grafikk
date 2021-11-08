@@ -13,4 +13,13 @@ object helpers {
       bufferWidth - (nr + 1) * dataWidth
     )
   }
+
+  def bitNrHW(
+      reg: UInt,
+      nr: UInt,
+      bufferWidth: Int = 64,
+      dataWidth: Int = 16
+  ) = {
+    (reg << (bufferWidth.U - nr * dataWidth.U - 1.U))
+  }
 }

@@ -11,7 +11,7 @@ class FrameBuffer(width: Int, height: Int) extends Module {
   val io = IO(new Bundle {
     val writeX = Input(SInt(log2Up(width).W))
     val writeY = Input(SInt(log2Up(height).W))
-    val writeVal = Input(Vec(3, UInt(colorDepth.W)))
+    val writeVal = Input(UInt(1.W))
     val writeEnable = Input(Bool())
     val readX = Input(UInt((log2Up(width) + 1).W))
     val readY = Input(UInt((log2Up(height) + 1).W))
@@ -31,7 +31,7 @@ class FrameBuffer(width: Int, height: Int) extends Module {
 
     fb.io.write_enable := io.writeEnable
     fb.io.write_addr := io.writeY.asUInt() * width.U + io.writeX.asUInt()
-    fb.io.data_in := 1.U
+    fb.io.data_in := io.writeVal
     io.writeVal := DontCare
 
     //fb.io.writeport_enable := DontCare
