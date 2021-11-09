@@ -22,5 +22,5 @@ object Helpers {
       bufferWidth - nr * dataWidth - 1,
       bufferWidth - (nr + 1) * dataWidth
     )
-  }
+  } 
 }
