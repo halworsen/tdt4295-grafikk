@@ -1,6 +1,7 @@
 package tools
 
 import chisel3._
+import chisel3.Experimental.FixedPoint
 
 import scala.math.log10
 
