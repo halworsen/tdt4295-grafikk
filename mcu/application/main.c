@@ -1,5 +1,4 @@
 #include "adc.h"
-#include "bsp.h"
 #include "em_adc.h"
 #include "em_chip.h"
 #include "em_cmu.h"
@@ -149,7 +148,7 @@ void transmit_fpga_package() {
   for (int i = 0; i < 4; i++) {
     bitstream[line_offset + 4 * i] = (fpga_package.lines[i].start >> 8) & 0xFF;
     bitstream[line_offset + 4 * i + 1] = fpga_package.lines[i].start & 0xFF;
-    bitstream[line_ofsfet + 4 * i + 2] =
+    bitstream[line_offset + 4 * i + 2] =
         (fpga_package.lines[i].end >> 8) & 0xFF;
     bitstream[line_offset + 4 * i + 3] = fpga_package.lines[i].end & 0xFF;
   }
@@ -158,8 +157,8 @@ void transmit_fpga_package() {
 }
 
 void GPIO_EVEN_IRQHandler(void) {
-  GPIO_IntClear(0x5555);
-  GPIO_PinOutToggle(BSP_GPIO_LED1_PORT, BSP_GPIO_LED1_PIN);
+  GPIO_IntClear(0xFFFF);
+  GPIO_PinOutToggle(gpioPortE, LED1_PIN);
 }
 
 void TIMER1_IRQHandler(void) {
@@ -167,15 +166,6 @@ void TIMER1_IRQHandler(void) {
   ADC_Start(ADC0, adcStartScan);
   calc_points(ch1_sample, ch2_sample);
   transmit_fpga_package();
-
-  if (ch1_sample > 2048)
-    GPIO_PinOutSet(BSP_GPIO_LED0_PORT, BSP_GPIO_LED0_PIN);
-  else
-    GPIO_PinOutClear(BSP_GPIO_LED0_PORT, BSP_GPIO_LED0_PIN);
-  if (ch2_sample > 2048)
-    GPIO_PinOutSet(BSP_GPIO_LED1_PORT, BSP_GPIO_LED1_PIN);
-  else
-    GPIO_PinOutClear(BSP_GPIO_LED1_PORT, BSP_GPIO_LED1_PIN);
 }
 
 void ADC0_IRQHandler(void) {
@@ -215,13 +205,13 @@ int main(void) {
   initADC_scan(adcRefVDD);
   TIMER_Enable(TIMER1, true);
 
-  SPIDRV_Init_t initData = SPIDRV_MASTER_USART1;
+  SPIDRV_Init_t initData = SPIDRV_MASTER_USART3;
   SPIDRV_Init(handle, &initData);
   SPIDRV_SetBitrate(handle, SPI_BITRATE);
   SPIDRV_GetBitrate(handle, &bitrate);
 
   if (bitrate != SPI_BITRATE)
-    GPIO_PinOutSet(BSP_GPIO_LED0_PORT, BSP_GPIO_LED0_PIN);
+    GPIO_PinOutSet(gpioPortE, LED0_PIN);
 
   while (1) {
   }
