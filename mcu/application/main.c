@@ -164,25 +164,27 @@ void GPIO_EVEN_IRQHandler(void) {
 
 void TIMER1_IRQHandler(void) {
   TIMER_IntClear(TIMER1, 1);
-  if (adcChannel)
-    initSingle.input = adcSingleInputCh4;
-  else
-    initSingle.input = adcSingleInputCh5;
-  ADC_InitSingle(ADC0, &initSingle);
-  ADC_Start(ADC0, adcStartSingle);
-  adcChannel = !adcChannel;
-
+  ADC_Start(ADC0, adcStartScan);
   calc_points(ch1_sample, ch2_sample);
   transmit_fpga_package();
+
+  if (ch1_sample > 2048)
+    GPIO_PinOutSet(BSP_GPIO_LED0_PORT, BSP_GPIO_LED0_PIN);
+  else
+    GPIO_PinOutClear(BSP_GPIO_LED0_PORT, BSP_GPIO_LED0_PIN);
+  if (ch2_sample > 2048)
+    GPIO_PinOutSet(BSP_GPIO_LED1_PORT, BSP_GPIO_LED1_PIN);
+  else
+    GPIO_PinOutClear(BSP_GPIO_LED1_PORT, BSP_GPIO_LED1_PIN);
 }
 
 void ADC0_IRQHandler(void) {
-  ADC_IntClear(ADC0, ADC_IFC_SINGLE);
-  uint32_t sample = ADC_DataSingleGet(ADC0);
-  if (adcChannel)
-    ch1_sample = sample;
-  else
-    ch2_sample = sample;
+  ADC_IntClear(ADC0, ADC_IF_SCAN);
+  ADC_IntClear(ADC0, ADC_IF_SCANOF);
+  uint32_t sample = ADC_DataScanGet(ADC0);
+  ch1_sample = sample;
+  sample = ADC_DataScanGet(ADC0);
+  ch2_sample = sample;
 }
 
 int main(void) {
@@ -210,7 +212,7 @@ int main(void) {
   CMU_ClockSelectSet(cmuClock_HF, cmuSelect_HFXO);
   initGPIO();
   initTimer(30);
-  initADC_single(adcRefVDD);
+  initADC_scan(adcRefVDD);
   TIMER_Enable(TIMER1, true);
 
   SPIDRV_Init_t initData = SPIDRV_MASTER_USART1;

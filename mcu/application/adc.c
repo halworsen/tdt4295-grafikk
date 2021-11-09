@@ -1,4 +1,3 @@
-#include "bsp.h"
 #include "em_adc.h"
 #include "em_chip.h"
 #include "em_cmu.h"
@@ -12,7 +11,10 @@ void initADC_scan(int ref) {
   init.prescale = 255;
   ADC_Init(ADC0, &init);
   initScan.reference = ref;
-  initScan.input = ADC_SCANCTRL_INPUTMASK_CH4;
+  // H joystick 0
+  ADC_ScanSingleEndedInputAdd(&initScan, 0, adcPosSelAPORT1XCH14);
+  ADC_ScanSingleEndedInputAdd(&initScan, 0, adcPosSelAPORT1XCH8);
+
   ADC_InitScan(ADC0, &initScan);
 
   // Enable interrupts
