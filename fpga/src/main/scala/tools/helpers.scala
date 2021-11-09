@@ -10,7 +10,7 @@ object Helpers {
   val toFP = (v: SInt) => (v << STD.binaryPoint).asFixedPoint(STD.binaryPoint.BP) : FixedPoint
   val divFP = (a: FixedPoint, w: FixedPoint) => ((a.asUInt()<<STD.binaryPoint) / w.asUInt()).asFixedPoint(STD.binaryPoint.BP)
 
-  /** Generate a chisel FixedPoiny from a decimal number (double)
+  /** Generate a chisel FixedPoint from a decimal number (double)
     *
     * @return 
     *   The newly created fixedpoint

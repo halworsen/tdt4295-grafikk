@@ -17,7 +17,7 @@ object Generators {
     )
   }
 
-  /** Generate a chisel Vec[SInt] of dimension n
+  /** Generate a chisel Vec[SInt] of dimension n from an array of values
     *
     * @returns
     *   The vector

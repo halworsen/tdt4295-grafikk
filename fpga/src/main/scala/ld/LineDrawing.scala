@@ -63,6 +63,7 @@ class LineDrawing extends Module {
       y := ps.y
       state := draw
     }
+
     is(draw) {
       // Draw pixel
       io.writeEnable := true.B
