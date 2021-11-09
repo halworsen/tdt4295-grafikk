@@ -94,7 +94,11 @@ void calc_points(uint32_t ch1_sample, uint32_t ch2_sample) {
   scale = (double)ch2_sample / MAX_SAMPLE;
   float th = (2 * scale - 1.0) * M_PI;
 
-  mat3_t R, T; // rotation and translation matrices.
+  float zoom = 30.0;
+  mat3_t S, R, T; // scaling, rotation and translation matrices.
+
+  // Scale x,y coordinates by zoom level.
+  mat3(&S, zoom, 0.0, 0.0, 0.0, zoom, 0.0, 0.0, 0.0, 1.0);
 
   // Rotate by theta radians.
   rot3(&R, th);
