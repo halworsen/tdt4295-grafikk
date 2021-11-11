@@ -213,6 +213,19 @@ int main(void) {
   fpga_package.lines[3].start = 3;
   fpga_package.lines[3].end = 0;
 
+  // Hard coded to lines connect the lines sequentially.
+  fpga_package.lines[0].start = 0;
+  fpga_package.lines[0].end = 1;
+
+  fpga_package.lines[1].start = 1;
+  fpga_package.lines[1].end = 2;
+
+  fpga_package.lines[2].start = 2;
+  fpga_package.lines[2].end = 3;
+
+  fpga_package.lines[3].start = 3;
+  fpga_package.lines[3].end = 0;
+
   uint32_t bitrate = 0;
   // Initializations
   CMU_ClockSelectSet(cmuClock_HF, cmuSelect_HFXO);
