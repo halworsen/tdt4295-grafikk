@@ -46,7 +46,22 @@ SPIDRV_Handle_t handle = &handleData;
 
 vec3_t square[4];
 
-void calc_points(uint32_t ch1_sample, uint32_t ch2_sample, int16_t *coordinates) {
+typedef struct point {
+    int16_t x;
+    int16_t y;
+} point_t;
+
+typedef struct line {
+    uint16_t start;
+    uint16_t end;
+} line_t;
+
+struct {
+    point_t points[4];
+    line_t  lines[4];
+} fpga_package;
+
+void calc_points(uint32_t ch1_sample, uint32_t ch2_sample) {
     // This starts with our model square [-1, 1] x [-1, 1], and
     // applies a scale-, a rotation-, and a translation-transform
     // defined by potentiometer positions so that changing one
@@ -57,6 +72,20 @@ void calc_points(uint32_t ch1_sample, uint32_t ch2_sample, int16_t *coordinates)
     // 4 matrix-vector multiplications, which is around 60
     // floating point operations per interrupt. At 60 FPS, this
     // means the processor needs to do ~4000 FLOPS.
+
+
+    // Hard coded to lines connect the lines sequentially.
+    fpga_package.lines[0].start = 0;
+    fpga_package.lines[0].end   = 1;
+
+    fpga_package.lines[1].start = 1;
+    fpga_package.lines[1].end   = 2;
+
+    fpga_package.lines[2].start = 2;
+    fpga_package.lines[2].end   = 3;
+
+    fpga_package.lines[3].start = 3;
+    fpga_package.lines[3].end   = 0;
 
     double scale; // normalized potentiometer position [0, 1]
 
@@ -88,33 +117,42 @@ void calc_points(uint32_t ch1_sample, uint32_t ch2_sample, int16_t *coordinates)
     mmul3(&TSR, &T, &SR);
 
     // Iterate over the vertices.
-    for (int i = 0; i < 8; i = i + 2) {
+    for (int i = 0; i < 4; i++) {
         // Calculate transformed vertex q = (TSR)v for all v in the square.
         vec3_t q;
-        transform3(&q, &TSR, &square[i/2]);
+        transform3(&q, &TSR, &square[i]);
 
         // Put the transformed coordinates in the coordinate buffer.
         // These are already floats in pixel-coordinates, so we only
         // need to cast them to int16, and then they are ready.
-        coordinates[i]     = (int16_t) q.x;
-        coordinates[i + 1] = (int16_t) q.y;
+        fpga_package.points[i].x = (int16_t) q.x;
+        fpga_package.points[i].y = (int16_t) q.y;
     }
 }
 
-void transmit_square(int16_t *coordinates) {
+void transmit_fpga_package() {
     // Transmit the coordinates of a square as 4 pairs of
     // 16-bit integers. This handles changing the byte-
     // order.
+    uint8_t bitstream[sizeof (fpga_package)];
 
-    for (int i = 0; i < 8; i++) {
-        // Flip the order of the bytes.
-        uint8_t bitstream[2];
-        bitstream[0] = (coordinates[i] >> 8) & 0xFF;
-        bitstream[1] =  coordinates[i]       & 0xFF;
-
-        // Invoke the SPI driver to transfer the bitstream.
-        SPIDRV_MTransmitB(handle, bitstream, sizeof(bitstream));
+    // Prepare the verts.
+    for (int i = 0; i < 4; i++) {
+        bitstream[4*i    ] = (fpga_package.points[i].x >> 8) & 0xFF;
+        bitstream[4*i + 1] =  fpga_package.points[i].x       & 0xFF;
+        bitstream[4*i + 2] = (fpga_package.points[i].y >> 8) & 0xFF;
+        bitstream[4*i + 3] =  fpga_package.points[i].y       & 0xFF;
     }
+
+    // Prepare the lines.
+    for (int i = 0; i < 4; i++) {
+        bitstream[4*i     + 16] = (fpga_package.lines[i].start >> 8) & 0xFF;
+        bitstream[4*i + 1 + 16] =  fpga_package.lines[i].start       & 0xFF;
+        bitstream[4*i + 2 + 16] = (fpga_package.lines[i].end >> 8)   & 0xFF;
+        bitstream[4*i + 3 + 16] =  fpga_package.lines[i].end         & 0xFF;
+    }
+
+    SPIDRV_MTransmitB(handle, bitstream, sizeof (bitstream));
 }
 
 void GPIO_EVEN_IRQHandler(void) {
@@ -123,9 +161,6 @@ void GPIO_EVEN_IRQHandler(void) {
 }
 
 void TIMER1_IRQHandler(void) {
-    // The square has 8 coordinates.
-    int16_t coordinates[8] = {0};
-
     TIMER_IntClear(TIMER1, 1);
     if (adcChannel)
         initSingle.input = adcSingleInputCh4;
@@ -135,8 +170,8 @@ void TIMER1_IRQHandler(void) {
     ADC_Start(ADC0, adcStartSingle);
     adcChannel = !adcChannel;
 
-    calc_points(ch1_sample, ch2_sample, coordinates);
-    transmit_square(coordinates);
+    calc_points(ch1_sample, ch2_sample);
+    transmit_fpga_package();
 }
 
 void ADC0_IRQHandler(void) {
