@@ -8,7 +8,7 @@ import chisel3.experimental.FixedPoint
 object Helpers {
   var log2 = (x: Int) => (log10(x) / log10(2.0)).toInt : Int
   val toFP = (v: SInt) => (v << STD.binaryPoint).asFixedPoint(STD.binaryPoint.BP) : FixedPoint
-  val divFP = (a: FixedPoint, w: FixedPoint) => ((a.asUInt()<<STD.binaryPoint).asUInt() / w.asUInt()).asFixedPoint(STD.binaryPoint.BP)
+  val divFP = (a: FixedPoint, w: FixedPoint) => ((a<<STD.binaryPoint).asSInt() / w.asSInt()).asFixedPoint(STD.binaryPoint.BP)
 
   /** Generate a chisel FixedPoint from a decimal number (double)
     *
