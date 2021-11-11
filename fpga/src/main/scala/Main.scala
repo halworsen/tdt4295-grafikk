@@ -1,15 +1,16 @@
 import chisel3._
 import chisel3.util._
 import tools.WriteBtn
+import tools._
 import tools.generators._
 import tools.helpers._
 import fb.FrameBuffer
 import ld.LineDrawing
-import fb.RecDrawer
 import vga.VGA
 import vga.VGAClock
 import spi._
 import matrix.MVP
+import stateMachine.StateMachine
 
 class Main extends Module {
   def delay(x: UInt) = RegNext(x)
@@ -30,27 +31,49 @@ class Main extends Module {
   })
 
   withReset(~io.aresetn) {
-    val fb = Module(new FrameBuffer(640, 480))
-    /*
+
+    val stateMachine = Module(new StateMachine)
+    val spi = Module(new Spi((new DataFrame).getWidth))
+    spi.io.spi := io.spi
+    val lastRecievedFrame = RegInit(0.U.asTypeOf(new DataFrame))
+    when(spi.io.outputReady) {
+      lastRecievedFrame := spi.io.value.asTypeOf(new DataFrame)
+    }
+
+    // Code for use with SPI
+    // stateMachine.io.newFrameRecieved := spi.io.outputReady
+    // val renderingFrame = RegInit(0.U.asTypeOf(new DataFrame))
+    // when(stateMachine.io.loadNextFrame){
+    //   renderingFrame := lastRecievedFrame
+    // }
+
+    // Test code for use without SPI
+    val (counter, counterWrap) = Counter(true.B, 1666667) // 60 fps
+    stateMachine.io.newFrameRecieved := counterWrap
+    val (frameNum, framesDone) =
+      Counter(stateMachine.io.loadNextFrame, ExampleDataFrames.frames.length)
+    val renderingFrame = ExampleDataFrames.frames(frameNum)
+
+    val fb = Module(new FrameBuffer(STD.screenWidth, STD.screenHeight))
     val bresenhams = Module(new LineDrawing)
     fb.io.writeEnable := bresenhams.io.writeEnable
-    fb.io.writeX := bresenhams.io.writeX
-    fb.io.writeY := bresenhams.io.writeY
+    fb.io.writePixel := bresenhams.io.writePixel
     fb.io.writeVal := bresenhams.io.writeVal
-     */
 
-    val square = Module(new RecDrawer)
-    fb.io.writeEnable := square.io.writeEnable
-    fb.io.writeX := square.io.writeX
-    fb.io.writeY := square.io.writeY
-    fb.io.writeVal := square.io.writeVal
+    bresenhams.io.start := stateMachine.io.bhStartRegular
+    bresenhams.io.startClear := stateMachine.io.bhStartClear
+
+    bresenhams.io.p1 := renderingFrame.points(
+      renderingFrame.lines(stateMachine.io.lineIndex).index1
+    )
+    bresenhams.io.p2 := renderingFrame.points(
+      renderingFrame.lines(stateMachine.io.lineIndex).index2
+    )
+
+    stateMachine.io.bhBussy := bresenhams.io.busy
 
     val vga = Module(new VGA)
     val vgaClock = Module(new VGAClock)
-
-    val writeBtn = Module(new WriteBtn)
-    writeBtn.io.aresetn := io.aresetn
-    writeBtn.io.btn := io.btn
 
     vgaClock.io.clk := clock
 
@@ -68,205 +91,13 @@ class Main extends Module {
       io.vga_hsync := delay(vga.io.hsync)
       io.vga_vsync := delay(vga.io.vsync)
 
-      io.vga_r := delay(vga.io.out(0))
-      io.vga_g := delay(vga.io.out(1))
-      io.vga_b := delay(vga.io.out(2))
+      io.vga_r := delay(vga.io.out.r)
+      io.vga_g := delay(vga.io.out.g)
+      io.vga_b := delay(vga.io.out.b)
 
     }
 
     io.led := DontCare
-
-    val spiDataWidth = 128;
-    val spiSIntWidth = 16;
-
-    val spi = Module(new Spi(spiDataWidth))
-    spi.io.spi := io.spi
-
-    val spiBuffer = RegInit(0.U(spiDataWidth.W))
-
-    val idle :: draw :: wait :: rotate :: clear :: Nil = Enum(5)
-    val state = RegInit(idle)
-    val countOn = RegInit(false.B)
-
-    val (counter, wrap) = Counter(countOn, 100000000)
-
-    when(spi.io.outputReady && !square.io.busy) {
-      state := clear
-      //state := draw
-    }
-
-    square.io.start := false.B
-    square.io.clear := false.B
-
-    switch(state) {
-      is(clear) {
-        square.io.start := true.B
-        square.io.clear := true.B
-        when(square.io.done) {
-          state := wait
-        }
-
-      }
-      is(wait) {
-        spiBuffer := spi.io.value
-        state := draw
-      }
-      is(draw) {
-        square.io.start := true.B
-        state := idle
-      }
-    }
-
-    //square.io.start := delay(spi.io.outputReady && !square.io.busy)
-    square.io.firstX := bitNr(spiBuffer, 0, 128).asSInt
-    square.io.firstY := bitNr(spiBuffer, 1, 128).asSInt
-    square.io.secondX := bitNr(spiBuffer, 2, 128).asSInt
-    square.io.secondY := bitNr(spiBuffer, 3, 128).asSInt
-    square.io.thirdX := bitNr(spiBuffer, 4, 128).asSInt
-    square.io.thirdY := bitNr(spiBuffer, 5, 128).asSInt
-    square.io.fourthX := bitNr(spiBuffer, 6, 128).asSInt
-    square.io.fourthY := bitNr(spiBuffer, 7, 128).asSInt
-
-    /*
-    val mvp = Module(new MVP)
-    io.led := mvp.io.outVec4(0)(3, 0)
-
-    mvp.io.mat4 := VecInit(
-      VecInit(
-        0.54.F(8.W, 4.BP),
-        0.84.F(8.W, 4.BP),
-        1.F(8.W, 4.BP),
-        1.F(8.W, 4.BP)
-      ),
-      VecInit(
-        -0.84.F(8.W, 4.BP),
-        0.54.F(8.W, 4.BP),
-        1.F(8.W, 4.BP),
-        1.F(8.W, 4.BP)
-      ),
-      VecInit(
-        1.F(8.W, 4.BP),
-        1.F(8.W, 4.BP),
-        1.F(8.W, 4.BP),
-        1.F(8.W, 4.BP)
-      ),
-      VecInit(1.F(8.W, 4.BP), 1.F(8.W, 4.BP), 1.F(8.W, 4.BP), 1.F(8.W, 4.BP))
-    )
-    mvp.io.vec4 := DontCare
-
-    val count = RegInit(0.U)
-
-    switch(state) {
-      is(idle) {}
-      is(draw) {
-        square.io.start := true.B
-        countOn := true.B
-        when(count === 90000000.U) {
-          state := rotate
-        }
-      }
-      is(rotate) {
-        mvp.io.vec4(0) := bitNrHW(spiBuffer, count * 2.U, 128).asSInt
-        mvp.io.vec4(1) := bitNrHW(spiBuffer, count * 2.U + 1.U, 128).asSInt
-        mvp.io.vec4(2) := 1.S
-        mvp.io.vec4(3) := 1.S
-        count := count + 1.U
-        when(count > 0.U) {
-          spiBuffer := spiBuffer & mvp.io
-            .outVec4(0)
-            .asUInt << (spiDataWidth.U - (count * 2.U) * spiSIntWidth.U - 1.U)
-
-          spiBuffer := spiBuffer & mvp.io
-            .outVec4(1)
-            .asUInt << (spiDataWidth.U - (count * 2.U + 1.U) * spiSIntWidth.U - 1.U)
-        }
-        when(count === 5.U) {
-          count := 0.U
-          state := draw
-        }
-      }
-    }
-     */
-
-    /*
-    bresenhams.io.xs := spiBuffer(
-      spiDataWidth - 1,
-      spiDataWidth - spiSIntWidth
-    ).asSInt
-    bresenhams.io.ys := spiBuffer(
-      spiDataWidth - spiSIntWidth - 1,
-      spiDataWidth - 2 * spiSIntWidth
-    ).asSInt
-    bresenhams.io.xe := spiBuffer(
-      spiDataWidth - 2 * spiSIntWidth - 1,
-      spiDataWidth - 3 * spiSIntWidth
-    ).asSInt
-    bresenhams.io.ye := spiBuffer(
-      spiDataWidth - 3 * spiSIntWidth - 1,
-      spiDataWidth - 4 * spiSIntWidth
-    ).asSInt
-
-    //io.led <> spiBuffer(
-    //spiDataWidth - 2 * spiSIntWidth - 1,
-    //spiDataWidth - 2 * spiSIntWidth - 5
-    //)
-    //io.led := DontCare
-     */
-
-    /*
-    // Draw border around FB
-    val top :: right :: left :: bottom :: done :: Nil = Enum(5)
-    val state = RegInit(top)
-    switch(state) {
-      is(top) {
-        bresenhams.io.xs := 0.S
-        bresenhams.io.ys := 0.S
-        bresenhams.io.xe := 639.S
-        bresenhams.io.ye := 0.S
-        when(bresenhams.io.done) {
-          state := right
-        }.otherwise {
-          bresenhams.io.start := true.B
-        }
-      }
-      is(right) {
-        bresenhams.io.xs := 638.S
-        bresenhams.io.ys := 0.S
-        bresenhams.io.xe := 638.S
-        bresenhams.io.ye := 479.S
-        when(bresenhams.io.done) {
-          state := left
-        }.otherwise {
-          bresenhams.io.start := true.B
-        }
-
-      }
-      is(left) {
-        bresenhams.io.xs := 0.S
-        bresenhams.io.ys := 0.S
-        bresenhams.io.xe := 0.S
-        bresenhams.io.ye := 479.S
-        when(bresenhams.io.done) {
-          state := bottom
-        }.otherwise {
-          bresenhams.io.start := true.B
-        }
-
-      }
-      is(bottom) {
-        bresenhams.io.xs := 0.S
-        bresenhams.io.ys := 479.S
-        bresenhams.io.xe := 639.S
-        bresenhams.io.ye := 479.S
-        when(bresenhams.io.done) {
-          state := done
-        }.otherwise {
-          bresenhams.io.start := true.B
-        }
-
-      }
-    }
-     */
   }
 }
 
