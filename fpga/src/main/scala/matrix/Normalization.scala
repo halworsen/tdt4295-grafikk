@@ -2,6 +2,7 @@ package matrix
 
 import chisel3._
 import chisel3.util._
+import chisel3.experimental.FixedPoint
 import tools._
 import tools.Helpers._
 

@@ -3,7 +3,7 @@ package matrix
 import chisel3._
 import chisel3.tester._
 import org.scalatest.FreeSpec
-
+/*
 class MVPSpec extends FreeSpec with ChiselScalatestTester {
   "Should multiply 4x1 with 4x4" in {
     test(new MVP) { dut =>
@@ -49,3 +49,4 @@ class Mat4MultiplySpec extends FreeSpec with ChiselScalatestTester {
     println("Successfully multiplied 4x4 with 4x4 matrix!")
   }
 }
+*/
