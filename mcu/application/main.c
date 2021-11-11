@@ -20,8 +20,6 @@
 #define DISPLAY_HEIGHT 480
 #define DISPLAY_WIDTH 640
 
-#define MAX_DY 200 /* maximal y-offset from the center */
-
 #define max(a, b)                                                              \
   ({                                                                           \
     __typeof__(a) _a = (a);                                                    \
@@ -53,10 +51,10 @@ vec3_t square[4];
 // instead of the "proper" linalg structures, just to get a simple
 // indexed MVP going.
 
-// A Point (essentially a pixel coordinate).
+// A Point (generally in [-1, 1] x [-1, 1])
 typedef struct point {
-  int16_t x;
-  int16_t y;
+  float x;
+  float y;
 } point_t;
 
 // A Line is two indexes into the array of points.
@@ -74,8 +72,8 @@ struct {
 } fpga_package;
 
 void calc_points(uint32_t ch1_sample, uint32_t ch2_sample) {
-  // This starts with our model square [-1, 1] x [-1, 1], and
-  // applies a scale-, a rotation-, and a translation-transform
+  // This starts with our model square [-.5, .5] x [-.5, .5], and
+  // applies a rotation- and translation-transform
   // defined by potentiometer positions so that changing one
   // will move the square vertically, and changing the other
   // will rotate the square.
@@ -89,40 +87,36 @@ void calc_points(uint32_t ch1_sample, uint32_t ch2_sample) {
 
   // Channel 1 determines vertical offset y.
   scale = (double)ch1_sample / MAX_SAMPLE;
-  float y = (2 * scale - 1.0) * MAX_DY; // [-MAX_DY, MAX_DY]
+  float max_dy = 0.33;
+  float dy = (2 * scale - 1.0) * max_dy; // [-max_dy, max_dy]
 
   // Channel 2 determines rotation theta.
   scale = (double)ch2_sample / MAX_SAMPLE;
   float th = (2 * scale - 1.0) * M_PI;
 
-  float zoom = 30.0;
-  mat3_t S, R, T; // scaling, rotation and translation matrices.
-
-  // Scale x,y coordinates by zoom level.
-  mat3(&S, zoom, 0.0, 0.0, 0.0, zoom, 0.0, 0.0, 0.0, 1.0);
+  mat3_t R, T; // rotation and translation matrices.
 
   // Rotate by theta radians.
   rot3(&R, th);
 
-  // Translate to center of the screen +/- y-offset.
-  translation3(&T, DISPLAY_WIDTH / 2, (DISPLAY_HEIGHT / 2) + y);
+  // Translate to x=0,y=dy, dy in [-max_dy, max_dy]
+  translation3(&T, 0, dy);
 
   // Create the "final" transformation matrix.
-  mat3_t SR, TSR;
-  mmul3(&SR, &S, &R);
-  mmul3(&TSR, &T, &SR);
+  mat3_t TR;
+  mmul3(&TR, &T, &R);
 
   // Iterate over the vertices.
   for (int i = 0; i < NUM_POINTS; i++) {
     // Calculate transformed vertex q = (TSR)v for all v in the square.
     vec3_t q;
-    transform3(&q, &TSR, &square[i]);
+    transform3(&q, &TR, &square[i]);
 
     // Put the transformed coordinates in the package point array.
     // These are already floats in pixel-coordinates, so we only
     // need to cast them to int16, and then they are ready.
-    fpga_package.points[i].x = (int16_t)q.x;
-    fpga_package.points[i].y = (int16_t)q.y;
+    fpga_package.points[i].x = (float)q.x;
+    fpga_package.points[i].y = (float)q.y;
   }
 }
 
@@ -136,10 +130,15 @@ void transmit_fpga_package() {
   /* Prepare the verts. */
 
   for (int i = 0; i < 4; i++) {
-    bitstream[4 * i] = (fpga_package.points[i].x >> 8) & 0xFF;
-    bitstream[4 * i + 1] = fpga_package.points[i].x & 0xFF;
-    bitstream[4 * i + 2] = (fpga_package.points[i].y >> 8) & 0xFF;
-    bitstream[4 * i + 3] = fpga_package.points[i].y & 0xFF;
+    // Calculate fixpoint representation with 12-bit scaling.
+    int16_t x = fpga_package.points[i].x * (1 << 12);
+    int16_t y = fpga_package.points[i].y * (1 << 12);
+
+    // Put the fixpoint number in the bitstream.
+    bitstream[4 * i] = (x >> 8) & 0xFF;
+    bitstream[4 * i + 1] = x & 0xFF;
+    bitstream[4 * i + 2] = (y >> 8) & 0xFF;
+    bitstream[4 * i + 3] = y & 0xFF;
   }
 
   /* Prepare the lines. */
@@ -192,10 +191,10 @@ void ADC0_IRQHandler(void) {
 
 int main(void) {
   // Create the model (the square with w=1).
-  vec3(&square[0], -1.0, 1.0, 1.0);
-  vec3(&square[1], -1.0, -1.0, 1.0);
-  vec3(&square[2], 1.0, -1.0, 1.0);
-  vec3(&square[3], 1.0, 1.0, 1.0);
+  vec3(&square[0], -.5, .5, 1.0);
+  vec3(&square[1], -.5, -.5, 1.0);
+  vec3(&square[2], .5, -.5, 1.0);
+  vec3(&square[3], .5, .5, 1.0);
 
   // Hard coded to lines connect the lines sequentially.
   fpga_package.lines[0].start = 0;
