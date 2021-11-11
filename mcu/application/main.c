@@ -44,21 +44,32 @@ ADC_InitSingle_TypeDef initSingle = ADC_INITSINGLE_DEFAULT;
 SPIDRV_HandleData_t handleData;
 SPIDRV_Handle_t handle = &handleData;
 
+// Array containing the verts of the model (in model coordinates).
 vec3_t square[4];
 
+/* FPGA package. */
+// For now this uses some structs representing pixel coordinates,
+// instead of the "proper" linalg structures, just to get a simple
+// indexed MVP going.
+
+// A Point (essentially a pixel coordinate).
 typedef struct point {
     int16_t x;
     int16_t y;
 } point_t;
 
+// A Line is two indexes into the array of points.
 typedef struct line {
     uint16_t start;
     uint16_t end;
 } line_t;
 
+// The complete fpga package.
+#define NUM_POINTS 4
+#define NUM_LINES  4
 struct {
-    point_t points[4];
-    line_t  lines[4];
+    point_t points[NUM_POINTS];
+    line_t  lines[NUM_LINES];
 } fpga_package;
 
 void calc_points(uint32_t ch1_sample, uint32_t ch2_sample) {
@@ -72,20 +83,6 @@ void calc_points(uint32_t ch1_sample, uint32_t ch2_sample) {
     // 4 matrix-vector multiplications, which is around 60
     // floating point operations per interrupt. At 60 FPS, this
     // means the processor needs to do ~4000 FLOPS.
-
-
-    // Hard coded to lines connect the lines sequentially.
-    fpga_package.lines[0].start = 0;
-    fpga_package.lines[0].end   = 1;
-
-    fpga_package.lines[1].start = 1;
-    fpga_package.lines[1].end   = 2;
-
-    fpga_package.lines[2].start = 2;
-    fpga_package.lines[2].end   = 3;
-
-    fpga_package.lines[3].start = 3;
-    fpga_package.lines[3].end   = 0;
 
     double scale; // normalized potentiometer position [0, 1]
 
@@ -117,12 +114,12 @@ void calc_points(uint32_t ch1_sample, uint32_t ch2_sample) {
     mmul3(&TSR, &T, &SR);
 
     // Iterate over the vertices.
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < NUM_POINTS; i++) {
         // Calculate transformed vertex q = (TSR)v for all v in the square.
         vec3_t q;
         transform3(&q, &TSR, &square[i]);
 
-        // Put the transformed coordinates in the coordinate buffer.
+        // Put the transformed coordinates in the package point array.
         // These are already floats in pixel-coordinates, so we only
         // need to cast them to int16, and then they are ready.
         fpga_package.points[i].x = (int16_t) q.x;
@@ -131,12 +128,14 @@ void calc_points(uint32_t ch1_sample, uint32_t ch2_sample) {
 }
 
 void transmit_fpga_package() {
-    // Transmit the coordinates of a square as 4 pairs of
-    // 16-bit integers. This handles changing the byte-
-    // order.
+    // Transmit the FPGA package.
+    // This works by first preparing the bitstream as a byte-array,
+    // by iterating over the package and manually placing the bytes
+    // from the package in the right order.
     uint8_t bitstream[sizeof (fpga_package)];
 
-    // Prepare the verts.
+    /* Prepare the verts. */
+
     for (int i = 0; i < 4; i++) {
         bitstream[4*i    ] = (fpga_package.points[i].x >> 8) & 0xFF;
         bitstream[4*i + 1] =  fpga_package.points[i].x       & 0xFF;
@@ -144,12 +143,16 @@ void transmit_fpga_package() {
         bitstream[4*i + 3] =  fpga_package.points[i].y       & 0xFF;
     }
 
-    // Prepare the lines.
+    /* Prepare the lines. */
+
+    // The lines start directly after the points.
+    int line_offset = NUM_POINTS * sizeof (point_t);
+
     for (int i = 0; i < 4; i++) {
-        bitstream[4*i     + 16] = (fpga_package.lines[i].start >> 8) & 0xFF;
-        bitstream[4*i + 1 + 16] =  fpga_package.lines[i].start       & 0xFF;
-        bitstream[4*i + 2 + 16] = (fpga_package.lines[i].end >> 8)   & 0xFF;
-        bitstream[4*i + 3 + 16] =  fpga_package.lines[i].end         & 0xFF;
+        bitstream[line_offset + 4*i    ] = (fpga_package.lines[i].start >> 8) & 0xFF;
+        bitstream[line_offset + 4*i + 1] =  fpga_package.lines[i].start       & 0xFF;
+        bitstream[line_ofsfet + 4*i + 2] = (fpga_package.lines[i].end   >> 8) & 0xFF;
+        bitstream[line_offset + 4*i + 3] =  fpga_package.lines[i].end         & 0xFF;
     }
 
     SPIDRV_MTransmitB(handle, bitstream, sizeof (bitstream));
@@ -175,37 +178,50 @@ void TIMER1_IRQHandler(void) {
 }
 
 void ADC0_IRQHandler(void) {
-  ADC_IntClear(ADC0, ADC_IFC_SINGLE);
-  uint32_t sample = ADC_DataSingleGet(ADC0);
-  if (adcChannel)
-    ch1_sample = sample;
-  else
-    ch2_sample = sample;
+    ADC_IntClear(ADC0, ADC_IFC_SINGLE);
+    uint32_t sample = ADC_DataSingleGet(ADC0);
+    if (adcChannel)
+        ch1_sample = sample;
+    else
+        ch2_sample = sample;
 }
 
 int main(void) {
-  // Create the model (the square with w=1).
-  vec3(&square[0], -1.0,  1.0, 1.0);
-  vec3(&square[1], -1.0, -1.0, 1.0);
-  vec3(&square[2],  1.0, -1.0, 1.0);
-  vec3(&square[3],  1.0,  1.0, 1.0);
+    // Create the model (the square with w=1).
+    vec3(&square[0], -1.0,  1.0, 1.0);
+    vec3(&square[1], -1.0, -1.0, 1.0);
+    vec3(&square[2],  1.0, -1.0, 1.0);
+    vec3(&square[3],  1.0,  1.0, 1.0);
 
-  uint32_t bitrate = 0;
-  // Initializations
-  CMU_ClockSelectSet(cmuClock_HF, cmuSelect_HFXO);
-  initGPIO();
-  initTimer(30);
-  initADC_single(adcRefVDD);
-  TIMER_Enable(TIMER1, true);
+    // Hard coded to lines connect the lines sequentially.
+    fpga_package.lines[0].start = 0;
+    fpga_package.lines[0].end   = 1;
 
-  SPIDRV_Init_t initData = SPIDRV_MASTER_USART1;
-  SPIDRV_Init(handle, &initData);
-  SPIDRV_SetBitrate(handle, SPI_BITRATE);
-  SPIDRV_GetBitrate(handle, &bitrate);
+    fpga_package.lines[1].start = 1;
+    fpga_package.lines[1].end   = 2;
 
-  if (bitrate != SPI_BITRATE)
-    GPIO_PinOutSet(BSP_GPIO_LED0_PORT, BSP_GPIO_LED0_PIN);
+    fpga_package.lines[2].start = 2;
+    fpga_package.lines[2].end   = 3;
 
-  while (1) {
-  }
+    fpga_package.lines[3].start = 3;
+    fpga_package.lines[3].end   = 0;
+
+    uint32_t bitrate = 0;
+    // Initializations
+    CMU_ClockSelectSet(cmuClock_HF, cmuSelect_HFXO);
+    initGPIO();
+    initTimer(30);
+    initADC_single(adcRefVDD);
+    TIMER_Enable(TIMER1, true);
+
+    SPIDRV_Init_t initData = SPIDRV_MASTER_USART1;
+    SPIDRV_Init(handle, &initData);
+    SPIDRV_SetBitrate(handle, SPI_BITRATE);
+    SPIDRV_GetBitrate(handle, &bitrate);
+
+    if (bitrate != SPI_BITRATE)
+        GPIO_PinOutSet(BSP_GPIO_LED0_PORT, BSP_GPIO_LED0_PIN);
+
+    while (1) {
+    }
 }
