@@ -4,6 +4,7 @@ import tools.WriteBtn
 import tools._
 import tools.generators._
 import tools.helpers._
+import tools.CDC
 import fb.FrameBuffer
 import ld.LineDrawing
 import vga.VGA
@@ -40,19 +41,21 @@ class Main extends Module {
       lastRecievedFrame := spi.io.value.asTypeOf(new DataFrame)
     }
 
-    // Code for use with SPI
-    // stateMachine.io.newFrameRecieved := spi.io.outputReady
-    // val renderingFrame = RegInit(0.U.asTypeOf(new DataFrame))
-    // when(stateMachine.io.loadNextFrame){
-    //   renderingFrame := lastRecievedFrame
-    // }
+    //Code for use with SPI
+    stateMachine.io.newFrameRecieved := spi.io.outputReady
+    val renderingFrame = RegInit(0.U.asTypeOf(new DataFrame))
+    when(stateMachine.io.loadNextFrame) {
+      renderingFrame := lastRecievedFrame
+    }
 
     // Test code for use without SPI
-    val (counter, counterWrap) = Counter(true.B, 1666667) // 60 fps
+    /*
+    val (counter, counterWrap) = Counter(true.B, 10000000) // 10 fps
     stateMachine.io.newFrameRecieved := counterWrap
     val (frameNum, framesDone) =
       Counter(stateMachine.io.loadNextFrame, ExampleDataFrames.frames.length)
     val renderingFrame = ExampleDataFrames.frames(frameNum)
+    */
 
     val fb = Module(new FrameBuffer(STD.screenWidth, STD.screenHeight))
     val bresenhams = Module(new LineDrawing)
@@ -70,10 +73,17 @@ class Main extends Module {
       renderingFrame.lines(stateMachine.io.lineIndex).index2
     )
 
+    val vgaBlanking = Module(new CDC)
+
     stateMachine.io.bhBussy := bresenhams.io.busy
+    stateMachine.io.inBlanking := vgaBlanking.io.output
 
     val vga = Module(new VGA)
     val vgaClock = Module(new VGAClock)
+
+    vgaBlanking.io.clk_in := vgaClock.io.clk_pix
+    vgaBlanking.io.clk_out := clock
+    vgaBlanking.io.input := vga.io.blanking
 
     vgaClock.io.clk := clock
 
