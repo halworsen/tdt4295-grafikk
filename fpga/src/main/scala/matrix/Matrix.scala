@@ -7,7 +7,7 @@ class MVP extends Module {
   val io = IO(new Bundle {
     val vec4 = Input(Vec(4, FixedPoint(8.W, 7.BP)))
     val mat4 = Input(Vec(4, Vec(4, FixedPoint(8.W, 7.BP))))
-    val outVec4 = Output(Vec(4, FixedPoint(16.W, 7.BP)))
+    val outVec4 = Output(Vec(4, FixedPoint(8.W, 7.BP)))
   })
 
   val toFP = (v: SInt) => (v << 4.U).asFixedPoint(4.BP)
