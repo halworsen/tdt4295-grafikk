@@ -117,14 +117,14 @@ class Main extends Module {
 
     val rotator = Module(new Rotator)
     rotator.io.mat4 := DontCare
-    rotator.io.inPoints := spiBuffer.asTypeOf(Vec(4, new Pixel))
+    rotator.io.inPoints := lastRecievedFrame.points
 
     val writeBtn = Module(new WriteBtn)
     writeBtn.io.btn := io.btn(0)
     writeBtn.io.aresetn := reset
 
     when(writeBtn.io.writeEnable) {
-      spiBuffer := rotator.io.out
+      renderingFrame.points := rotator.io.out
     }
 
   }
