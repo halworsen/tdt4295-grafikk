@@ -8,6 +8,7 @@ class StateMachine extends Module {
   val io = IO(new Bundle {
     val newFrameRecieved = Input(Bool())
     val bhBussy = Input(Bool())
+    val inBlanking = Input(Bool())
 
     val bhStartRegular = Output(Bool())
     val bhStartClear = Output(Bool())
@@ -32,7 +33,7 @@ class StateMachine extends Module {
 
   switch(state) {
     is(waiting) {
-      when(unrenderedFrame) {
+      when(unrenderedFrame & io.inBlanking) {
         lineIndex := 0.U
         state := clearSetup
       }
