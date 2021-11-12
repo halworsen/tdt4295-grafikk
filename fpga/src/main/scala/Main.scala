@@ -4,7 +4,6 @@ import tools.WriteBtn
 import tools._
 import tools.generators._
 import tools.helpers._
-import tools.CDC
 import fb.FrameBuffer
 import ld.LineDrawing
 import vga.VGA
@@ -55,7 +54,7 @@ class Main extends Module {
     val (frameNum, framesDone) =
       Counter(stateMachine.io.loadNextFrame, ExampleDataFrames.frames.length)
     val renderingFrame = ExampleDataFrames.frames(frameNum)
-    */
+     */
 
     val fb = Module(new FrameBuffer(STD.screenWidth, STD.screenHeight))
     val bresenhams = Module(new LineDrawing)
@@ -107,7 +106,14 @@ class Main extends Module {
 
     }
 
-    io.led := DontCare
+    val (cnt, cntWrap) = Counter(true.B, 100000000)
+
+    val led = RegInit(1.U(4.W))
+    when(cntWrap) {
+      led := led + 1.U
+    }
+
+    io.led := led
   }
 }
 
