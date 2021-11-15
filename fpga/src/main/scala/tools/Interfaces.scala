@@ -9,7 +9,7 @@ object STD {
   val linenum = 4
   val pointIndexWidth = 16.W
   val fixedWidth = 16.W
-  val binaryPoint = 4.BP
+  val binaryPoint = 6.BP
   val colorEnabled = true
   val colorWidth = 4.W
 
@@ -18,6 +18,7 @@ object STD {
   val coordWidth = 16.W
   val bgColor = "b000100010001".U
   val mainColor = "b110010010001".U
+  def FP = FixedPoint(STD.fixedWidth, STD.binaryPoint)
 }
 
 // Classes for multiple objects
@@ -35,6 +36,11 @@ object STD {
 
 class DataFrame extends Bundle {
   // val MPV = Vec(4, Vec(4, FixedPoint(STD.fixedWidth, STD.binaryPoint)))
+  val points = Vec(STD.pointNum, new Point)
+  val lines = Vec(STD.linenum, new Line)
+}
+
+class PixelFrame extends Bundle {
   val points = Vec(STD.pointNum, new Pixel)
   val lines = Vec(STD.linenum, new Line)
 }
@@ -51,10 +57,10 @@ class Color extends Bundle {
 }
 
 class Point extends Bundle {
-  val x = FixedPoint(STD.fixedWidth, STD.binaryPoint)
-  val y = FixedPoint(STD.fixedWidth, STD.binaryPoint)
-  val z = FixedPoint(STD.fixedWidth, STD.binaryPoint)
-  val w = FixedPoint(STD.fixedWidth, STD.binaryPoint)
+  val x = STD.FP
+  val y = STD.FP
+  val z = STD.FP
+  val w = STD.FP
 }
 
 class Pixel extends Bundle {

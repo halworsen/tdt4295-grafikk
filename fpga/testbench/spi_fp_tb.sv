@@ -1,7 +1,7 @@
 `default_nettype none
 `timescale 1ns / 1ps
 
-module spi_square_rotate ();
+module spi_fp_tb ();
 
     parameter CLK_PERIOD = 10;  // 10 ns == 100 MHz
     parameter SPI_CLK_PERIOD = 500;
@@ -43,43 +43,50 @@ module spi_square_rotate ();
                 io_aresetn = 1;
                 io_spi_sclk = 0;
                 io_spi_cs = 0;
-                io_spi_mosi = 0;
+                io_spi_mosi = 1; // OPS: First bit sent
 
-        #10     $display("case 0: (0,0) - (0, 100) - (100,100) - (100, 0)");
-        #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 0;
-
-        #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 0;
+        #10     $display("case 0: (-0.5,-0.5) - (0.5, -0.5) - (0.5,0.5) - (-0.5, 0.5)");
+        // Point 1
+        // x
+        //#500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
 
+        // y
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+
+        // z
+        #500    io_spi_mosi = 0;
+        #7500
+        // w
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
@@ -89,7 +96,7 @@ module spi_square_rotate ();
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 1;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
@@ -97,6 +104,10 @@ module spi_square_rotate ();
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
 
+        // Point 2
+
+        // x
+        #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
@@ -107,13 +118,33 @@ module spi_square_rotate ();
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 1;
-        #500    io_spi_mosi = 1;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
 
+        // y
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1; // BP
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        // z
+        #500    io_spi_mosi = 0;
+        #7500
+        // w
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
@@ -124,13 +155,16 @@ module spi_square_rotate ();
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 1;
-        #500    io_spi_mosi = 1;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
 
+        // point 3
+        // x
+        #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
@@ -141,13 +175,33 @@ module spi_square_rotate ();
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 1;
-        #500    io_spi_mosi = 1;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
 
+        // y
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        // z
+        #500    io_spi_mosi = 0;
+        #7500
+        // w
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
@@ -158,13 +212,32 @@ module spi_square_rotate ();
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 1;
-        #500    io_spi_mosi = 1;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
-        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
 
+        // Point 4
+        // x
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        // y
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
@@ -175,23 +248,38 @@ module spi_square_rotate ();
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        // z
+        #500    io_spi_mosi = 0;
+        #7500
+        // w
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
         #500    io_spi_mosi = 0;
-        
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 1;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+        #500    io_spi_mosi = 0;
+
         // Lines
-        #64000
+        // 500 cycles * 4 lines * 2 points * 16bits + 100 for cs
 
+        #64500
         #100    io_spi_cs = 1;
-
-        #100    io_btn[0] = 1;
-        #100    io_btn[0] = 0;
-        
-        #100    io_btn[0] = 1;
-        #100    io_btn[0] = 0;
 
 
         #500   $finish;

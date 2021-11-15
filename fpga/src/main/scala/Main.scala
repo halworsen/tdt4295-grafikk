@@ -42,9 +42,15 @@ class Main extends Module {
 
     //Code for use with SPI
     stateMachine.io.newFrameRecieved := spi.io.outputReady
-    val renderingFrame = RegInit(0.U.asTypeOf(new DataFrame))
+    val renderingFrame = RegInit(0.U.asTypeOf(new PixelFrame))
+
+    val rotator = Module(new Rotator)
+    rotator.io.mat4 := DontCare
+    rotator.io.inPoints := lastRecievedFrame.points
+
     when(stateMachine.io.loadNextFrame) {
-      renderingFrame := lastRecievedFrame
+      renderingFrame.lines := lastRecievedFrame.lines
+      renderingFrame.points := rotator.io.out
     }
 
     // Test code for use without SPI
@@ -114,18 +120,7 @@ class Main extends Module {
     }
 
     io.led := led
-
-    val rotator = Module(new Rotator)
-    rotator.io.mat4 := DontCare
-    rotator.io.inPoints := lastRecievedFrame.points
-
-    val writeBtn = Module(new WriteBtn)
-    writeBtn.io.btn := io.btn(0)
-    writeBtn.io.aresetn := reset
-
-    when(writeBtn.io.writeEnable) {
-      renderingFrame.points := rotator.io.out
-    }
+    io.btn := DontCare
 
   }
 }
