@@ -108,8 +108,8 @@ set_property -dict {PACKAGE_PIN N6 IOSTANDARD LVCMOS33} [get_ports {io_vga_b[3]}
 #set_property -dict { PACKAGE_PIN U13   IOSTANDARD LVCMOS33 } [get_ports { jc[7] }]; #IO_L23N_T3_A02_D18_14 Sch=jc_n[4]
 
 ## Pmod Header JD
-set_property -dict { PACKAGE_PIN A10    IOSTANDARD LVCMOS33 } [get_ports { io_spi_mosi }]; #IO_L11N_T1_SRCC_35 Sch=jd[1]
-set_property -dict { PACKAGE_PIN B10    IOSTANDARD LVCMOS33 } [get_ports { io_spi_miso }]; #IO_L12N_T1_MRCC_35 Sch=jd[2]
+set_property -dict { PACKAGE_PIN B10    IOSTANDARD LVCMOS33 } [get_ports { io_spi_mosi }]; #IO_L11N_T1_SRCC_35 Sch=jd[1]
+set_property -dict { PACKAGE_PIN A10    IOSTANDARD LVCMOS33 } [get_ports { io_spi_miso }]; #IO_L12N_T1_MRCC_35 Sch=jd[2]
 set_property -dict { PACKAGE_PIN D13    IOSTANDARD LVCMOS33 } [get_ports { io_spi_sclk }]; #IO_L13P_T2_MRCC_35 Sch=jd[3]
 set_property -dict { PACKAGE_PIN B12    IOSTANDARD LVCMOS33 } [get_ports { io_spi_cs }]; #IO_L13N_T2_MRCC_35 Sch=jd[4]
 #set_property -dict { PACKAGE_PIN E2    IOSTANDARD LVCMOS33 } [get_ports { jd[4] }]; #IO_L14P_T2_SRCC_35 Sch=jd[7]
