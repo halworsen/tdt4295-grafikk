@@ -36,8 +36,10 @@
     _a < _b ? _a : _b;                                                         \
   })
 
-uint32_t ch1_sample;
-uint32_t ch2_sample;
+uint32_t left_vertical;
+uint32_t left_horizontal;
+uint32_t right_vertical;
+uint32_t right_horizontal;
 uint32_t adcChannel = 0;
 SPIDRV_HandleData_t handleData;
 SPIDRV_Handle_t handle = &handleData;
@@ -164,17 +166,28 @@ void GPIO_EVEN_IRQHandler(void) {
 void TIMER1_IRQHandler(void) {
   TIMER_IntClear(TIMER1, 1);
   ADC_Start(ADC0, adcStartScan);
-  calc_points(ch1_sample, ch2_sample);
-  transmit_fpga_package();
+  calc_points(MAX_SAMPLE - right_vertical, MAX_SAMPLE - left_horizontal);
+  if (GPIO_PinInGet(gpioPortB, FPGA_DONE_PIN))
+    transmit_fpga_package();
 }
 
 void ADC0_IRQHandler(void) {
+  uint32_t sample;
+  uint32_t id;
+
   ADC_IntClear(ADC0, ADC_IF_SCAN);
   ADC_IntClear(ADC0, ADC_IF_SCANOF);
-  uint32_t sample = ADC_DataScanGet(ADC0);
-  ch1_sample = sample;
-  sample = ADC_DataScanGet(ADC0);
-  ch2_sample = sample;
+  for (int i = 0; i < 4; i++) {
+    sample = ADC_DataIdScanGet(ADC0, &id);
+    if (id == 0)
+      right_horizontal = sample;
+    else if (id == 4)
+      left_vertical = sample;
+    else if (id == 6)
+      left_horizontal = sample;
+    else if (id == 14)
+      right_vertical = sample;
+  }
 }
 
 int main(void) {
@@ -210,8 +223,9 @@ int main(void) {
   SPIDRV_SetBitrate(handle, SPI_BITRATE);
   SPIDRV_GetBitrate(handle, &bitrate);
 
+  GPIO_PinOutSet(gpioPortE, LED1_PIN);
   if (bitrate != SPI_BITRATE)
-    GPIO_PinOutSet(gpioPortE, LED0_PIN);
+    GPIO_PinOutSet(gpioPortE, LED2_PIN);
 
   while (1) {
   }

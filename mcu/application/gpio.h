@@ -8,6 +8,8 @@
 #define BTN1_PIN 4
 #define BTN2_PIN 5
 #define BTN3_PIN 6
+
+#define FPGA_DONE_PIN 7
 #endif
 
 void initGPIO(void);
