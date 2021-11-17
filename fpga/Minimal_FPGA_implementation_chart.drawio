@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-11-04T14:01:17.459Z" agent="5.0 (Windows)" etag="WlP_RaSAJxwDRjFjmWxJ" version="15.6.8" type="github">
+<mxfile host="app.diagrams.net" modified="2021-11-17T13:13:57.561Z" agent="5.0 (Windows)" etag="RTRsAUqpeedpiDV7ThQy" version="15.7.4" type="github">
   <diagram id="q9Ps-RnnYnzRldawcZBS" name="Page-1">
-    <mxGraphModel dx="920" dy="494" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="782" dy="420" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -115,7 +115,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ZKv37jcsLmG-ChblOMZN-1" value="Color" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="1H7v9yOLT2mySPb2tCpm-15" target="cCv3r7rXpcqw24vT97UZ-17">
+        <mxCell id="ZKv37jcsLmG-ChblOMZN-1" value="Color" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0;entryDx=0;entryDy=0;" parent="1" source="1H7v9yOLT2mySPb2tCpm-15" target="cCv3r7rXpcqw24vT97UZ-17" edge="1">
           <mxGeometry x="-0.5152" relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="410" y="500" />
@@ -177,7 +177,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="cCv3r7rXpcqw24vT97UZ-58" value="Done" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="cCv3r7rXpcqw24vT97UZ-17" target="cCv3r7rXpcqw24vT97UZ-55" edge="1">
+        <mxCell id="cCv3r7rXpcqw24vT97UZ-58" value="Bussy" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="cCv3r7rXpcqw24vT97UZ-17" target="cCv3r7rXpcqw24vT97UZ-55" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="485" y="530" as="targetPoint" />
           </mxGeometry>
@@ -217,6 +217,11 @@
               <mxPoint x="289.33" y="820" />
               <mxPoint x="289.33" y="820" />
             </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="y5_JxzXq5zQG_3taMquB-1" value="In Blanking" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="cCv3r7rXpcqw24vT97UZ-52" target="cCv3r7rXpcqw24vT97UZ-55">
+          <mxGeometry x="0.8313" relative="1" as="geometry">
+            <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="cCv3r7rXpcqw24vT97UZ-52" value="VGA DAC" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
