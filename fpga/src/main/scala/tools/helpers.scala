@@ -16,6 +16,8 @@ object Helpers {
     *   The newly created fixedpoint
     */
   val doubleToFP = (v: Double) => FixedPoint.fromDouble(v, STD.fixedWidth, STD.binaryPoint.BP) : FixedPoint
+
+  // Convert scala int to fixed point
   val intToFP = (v: Int) => FixedPoint.fromBigInt(v) : FixedPoint
 
   def bitNr(reg: UInt, nr: Int, bufferWidth: Int = 64, dataWidth: Int = 16) = {

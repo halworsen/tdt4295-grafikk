@@ -47,13 +47,16 @@ class StateMachine extends Module {
     }
     is(clearing) {
       when(!io.bhBussy){
+        // Start reverse bresenham
         io.bhStartClear := true.B
 
+        // When line index at end, load next frame and reset line index
         when(lineIndex === STD.linenum.U){
           io.loadNextFrame := true.B
           lineIndex := 0.U
           state := renderSetup
         }
+        // Else increment line index and set state to clear setup 
         .otherwise{
           lineIndex := lineIndex + 1.U
           state := clearSetup
@@ -68,12 +71,15 @@ class StateMachine extends Module {
     }
     is(rendering) {
       when(!io.bhBussy){
+        // Draw lines via bresenham
         io.bhStartRegular := true.B
 
+        // When we're at end, reset line index and set state to waiting
         when(lineIndex === STD.linenum.U){
           lineIndex := 0.U
           state := waiting
         }
+        // Increment lineindex and set stte to render setup
         .otherwise{
           lineIndex := lineIndex + 1.U
           state := renderSetup
@@ -81,5 +87,4 @@ class StateMachine extends Module {
       }
     }
   }
-
 }

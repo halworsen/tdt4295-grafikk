@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="normalize_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="normalize_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="30,720.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="34,020.001 ns"></ZoomEndTime>
+      <Cursor1Time time="31,730.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="264"></NameColumnWidth>
+      <ValueColumnWidth column_width="104"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="10" />
+   <wvobject type="logic" fp_name="/normalize_tb/clock">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/normalize_tb/main/io_stateMachine_newFrameRecieved">
+      <obj_property name="ElementShortName">io_stateMachine_newFrameRecieved</obj_property>
+      <obj_property name="ObjectShortName">io_stateMachine_newFrameRecieved</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/normalize_tb/main/io_stateMachine_bhBussy">
+      <obj_property name="ElementShortName">io_stateMachine_bhBussy</obj_property>
+      <obj_property name="ObjectShortName">io_stateMachine_bhBussy</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/normalize_tb/main/normalizer1/point/x">
+      <obj_property name="ElementShortName">p_x</obj_property>
+      <obj_property name="ObjectShortName">p_x</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/normalize_tb/main/normalizer1/point/y">
+      <obj_property name="ElementShortName">p_y</obj_property>
+      <obj_property name="ObjectShortName">p_y</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/normalize_tb/main/normalizer1/point/z">
+      <obj_property name="ElementShortName">p_z</obj_property>
+      <obj_property name="ObjectShortName">p_z</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/normalize_tb/main/normalizer1/point/w">
+      <obj_property name="ElementShortName">p_w</obj_property>
+      <obj_property name="ObjectShortName">p_w</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/normalize_tb/main/normalizer1/pixel/x">
+      <obj_property name="ElementShortName">pixX</obj_property>
+      <obj_property name="ObjectShortName">pixX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/normalize_tb/main/normalizer1/pixel/y">
+      <obj_property name="ElementShortName">pixY</obj_property>
+      <obj_property name="ObjectShortName">pixY</obj_property>
+   </wvobject>
+</wave_config>

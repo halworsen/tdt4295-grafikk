@@ -13,11 +13,8 @@ class Normalizer extends Module {
     val pixel = Output(new Pixel)
   })
 
-
   val divx = Wire(FixedPoint(STD.fixedWidth, STD.binaryPoint.BP))
   val divy = Wire(FixedPoint(STD.fixedWidth, STD.binaryPoint.BP))
-
-  
 
   divx := divFP(io.point.x, io.point.w)
   divy := divFP(io.point.y, io.point.w)

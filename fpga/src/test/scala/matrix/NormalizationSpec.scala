@@ -45,6 +45,6 @@ class NormalizationSpec extends FreeSpec with ChiselScalatestTester {
       println(dut.io.pixel.y.peek())
 
     }
-    println("Successfully converted point to pixel!")
+    println("Successfully normalized point to pixel!")
   }
 }
