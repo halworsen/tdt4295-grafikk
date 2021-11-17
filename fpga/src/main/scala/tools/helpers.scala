@@ -15,7 +15,8 @@ object Helpers {
     * @return 
     *   The newly created fixedpoint
     */
-  val decToFP = (v: Double) => FixedPoint.fromDouble(v, STD.fixedWidth, STD.binaryPoint.BP) : FixedPoint
+  val doubleToFP = (v: Double) => FixedPoint.fromDouble(v, STD.fixedWidth, STD.binaryPoint.BP) : FixedPoint
+  val intToFP = (v: Int) => FixedPoint.fromBigInt(v) : FixedPoint
 
   def bitNr(reg: UInt, nr: Int, bufferWidth: Int = 64, dataWidth: Int = 16) = {
     reg(

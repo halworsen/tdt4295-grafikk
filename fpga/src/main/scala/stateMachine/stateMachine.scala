@@ -29,6 +29,8 @@ class StateMachine extends Module {
   val waiting :: clearSetup :: clearing :: renderSetup :: rendering :: Nil =
     Enum(5)
   val state = RegInit(waiting)
+  val (cPropCounter, cPropDone) = Counter(state === clearSetup, 30) 
+  val (rPropCounter, rPropDone) = Counter(state === renderSetup, 30) 
 
   switch(state) {
     is(waiting) {
@@ -38,34 +40,44 @@ class StateMachine extends Module {
       }
     }
     is(clearSetup) {
-      // Wait 1 cycle for bh inputs to become valid
-      io.bhStartClear := true.B
-      state := clearing
+      // Wait 30 cycles for linalg
+      when(cPropDone){
+        state := clearing
+      }
     }
     is(clearing) {
-      when(!io.bhBussy && lineIndex < STD.linenum.U) {
-        lineIndex := lineIndex + 1.U
-        state := clearSetup
-      }
-      when(!io.bhBussy && lineIndex >= STD.linenum.U) {
-        io.loadNextFrame := true.B
-        unrenderedFrame := false.B
-        lineIndex := 0.U
-        state := renderSetup
+      when(!io.bhBussy){
+        io.bhStartClear := true.B
+
+        when(lineIndex === STD.linenum.U){
+          io.loadNextFrame := true.B
+          lineIndex := 0.U
+          state := renderSetup
+        }
+        .otherwise{
+          lineIndex := lineIndex + 1.U
+          state := clearSetup
+        }
       }
     }
     is(renderSetup) {
-      // Wait 1 cycle for bh inputs to become valid
-      io.bhStartRegular := true.B
-      state := rendering
+      // Wait 30 cycles for linalg
+      when(rPropDone){
+        state := clearing
+      }
     }
     is(rendering) {
-      when(!io.bhBussy && lineIndex < STD.linenum.U) {
-        lineIndex := lineIndex + 1.U
-        state := renderSetup
-      }
-      when(!io.bhBussy && lineIndex >= STD.linenum.U) {
-        state := waiting
+      when(!io.bhBussy){
+        io.bhStartRegular := true.B
+
+        when(lineIndex === STD.linenum.U){
+          lineIndex := 0.U
+          state := waiting
+        }
+        .otherwise{
+          lineIndex := lineIndex + 1.U
+          state := renderSetup
+        }
       }
     }
   }

@@ -46,15 +46,17 @@ class Main extends Module {
     }
 
     // Code for use with SPI
-    // stateMachine.io.newFrameRecieved := spi.io.outputReady
-    // val renderingFrame = RegInit(0.U.asTypeOf(new DataFrame))
-    // when(stateMachine.io.loadNextFrame){
-    //   renderingFrame := lastRecievedFrame
-    // }
+
+    /* stateMachine.io.newFrameRecieved := spi.io.outputReady
+    val renderingFrame = RegInit(0.U.asTypeOf(new DataFrame))
+    when(stateMachine.io.loadNextFrame){
+      renderingFrame := lastRecievedFrame
+    } */
+    
 
     // Test code for use without SPI
-    val (counter, counterWrap) = Counter(true.B, 1666667) // 60 fps
-    stateMachine.io.newFrameRecieved := counterWrap
+    val (simulatedInputCounter, simulatedInputWrap) = Counter(true.B, 1666667) // 60 fps
+    stateMachine.io.newFrameRecieved := simulatedInputWrap
     // stateMachine.io.newFrameRecieved := writeBtn.io.writeEnable
     // val (frameNum, framesDone) =
     //   Counter(stateMachine.io.loadNextFrame, ExampleDataFrames.frames.length)
