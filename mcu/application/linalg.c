@@ -217,6 +217,18 @@ void perspective(mat4_t *ret, float fov_rad, float aspect, float z_near,
        0.0);
 }
 
+// Right handed orthographic projection
+void ortho(mat4_t *ret, float left, float right, float bottom, float top,
+           float z_near, float z_far) {
+  identity(ret);
+  *at(ret, 0, 0) = 2.0 / (right - left);
+  *at(ret, 0, 3) = -(right + left) / (right - left);
+  *at(ret, 1, 1) = 2.0 / (top - bottom);
+  *at(ret, 1, 3) = -(top + bottom) / (top - bottom);
+  *at(ret, 2, 2) = -2.0 / (z_far - z_near);
+  *at(ret, 2, 3) = -(z_far + z_near) / (z_far / z_near);
+}
+
 #ifdef NOEMBED
 // Debugging program (which can print).
 // ====================================

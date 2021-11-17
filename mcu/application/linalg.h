@@ -124,4 +124,6 @@ void perspective(mat4_t *ret,
                  float z_near,
                  float z_far);
 
+void ortho(mat4_t *ret, float left, float right, float bottom, float top, float z_near, float z_far);
+
 #endif /* incldue guard */
