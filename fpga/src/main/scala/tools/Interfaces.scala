@@ -9,7 +9,8 @@ object STD {
   val linenum = 4
   val pointIndexWidth = 16.W
   val fixedWidth = 16.W
-  val binaryPoint = 6.BP
+  val binaryPoint = 12.BP
+  val binaryPointVal = 12
   val colorEnabled = true
   val colorWidth = 4.W
 

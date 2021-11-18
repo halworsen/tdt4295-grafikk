@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="190,453.333 ns"></ZoomStartTime>
-      <ZoomEndTime time="193,293.334 ns"></ZoomEndTime>
-      <Cursor1Time time="192,325.333 ns"></Cursor1Time>
+      <ZoomStartTime time="191,720.800 ns"></ZoomStartTime>
+      <ZoomEndTime time="191,877.601 ns"></ZoomEndTime>
+      <Cursor1Time time="191,780.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="172"></NameColumnWidth>
-      <ValueColumnWidth column_width="76"></ValueColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="67" />
+   <WVObjectSize size="63" />
    <wvobject type="logic" fp_name="/spi_fp_tb/main/io_btn[0]">
       <obj_property name="ElementShortName">[0]</obj_property>
       <obj_property name="ObjectShortName">[0]</obj_property>
@@ -190,70 +190,6 @@
       <obj_property name="radix_fractionWidth">6</obj_property>
       <obj_property name="radix_otherWidth">0</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/spi_fp_tb/main/rotator/io_out_0_x">
-      <obj_property name="ElementShortName">io_out_0_x[15:0]</obj_property>
-      <obj_property name="ObjectShortName">io_out_0_x[15:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-      <obj_property name="radix_fractionWidth">6</obj_property>
-      <obj_property name="radix_otherWidth">0</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/spi_fp_tb/main/rotator/io_out_0_y">
-      <obj_property name="ElementShortName">io_out_0_y[15:0]</obj_property>
-      <obj_property name="ObjectShortName">io_out_0_y[15:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-      <obj_property name="radix_fractionWidth">6</obj_property>
-      <obj_property name="radix_otherWidth">0</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/spi_fp_tb/main/rotator/io_out_1_x">
-      <obj_property name="ElementShortName">io_out_1_x[15:0]</obj_property>
-      <obj_property name="ObjectShortName">io_out_1_x[15:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-      <obj_property name="radix_fractionWidth">6</obj_property>
-      <obj_property name="radix_otherWidth">0</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/spi_fp_tb/main/rotator/io_out_1_y">
-      <obj_property name="ElementShortName">io_out_1_y[15:0]</obj_property>
-      <obj_property name="ObjectShortName">io_out_1_y[15:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-      <obj_property name="radix_fractionWidth">6</obj_property>
-      <obj_property name="radix_otherWidth">0</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/spi_fp_tb/main/rotator/io_out_2_x">
-      <obj_property name="ElementShortName">io_out_2_x[15:0]</obj_property>
-      <obj_property name="ObjectShortName">io_out_2_x[15:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-      <obj_property name="radix_fractionWidth">6</obj_property>
-      <obj_property name="radix_otherWidth">0</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/spi_fp_tb/main/rotator/io_out_2_y">
-      <obj_property name="ElementShortName">io_out_2_y[15:0]</obj_property>
-      <obj_property name="ObjectShortName">io_out_2_y[15:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-      <obj_property name="radix_fractionWidth">6</obj_property>
-      <obj_property name="radix_otherWidth">0</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/spi_fp_tb/main/rotator/io_out_3_x">
-      <obj_property name="ElementShortName">io_out_3_x[15:0]</obj_property>
-      <obj_property name="ObjectShortName">io_out_3_x[15:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-      <obj_property name="radix_fractionWidth">6</obj_property>
-      <obj_property name="radix_otherWidth">0</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/spi_fp_tb/main/rotator/io_out_3_y">
-      <obj_property name="ElementShortName">io_out_3_y[15:0]</obj_property>
-      <obj_property name="ObjectShortName">io_out_3_y[15:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-      <obj_property name="radix_fractionWidth">6</obj_property>
-      <obj_property name="radix_otherWidth">0</obj_property>
-   </wvobject>
    <wvobject fp_name="divider315" type="divider">
       <obj_property name="label">Rendering frame</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -325,6 +261,26 @@
       <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
       <obj_property name="radix_fractionWidth">6</obj_property>
       <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_fp_tb/main/normalizer/io_pixel_x">
+      <obj_property name="ElementShortName">io_pixel_x[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_pixel_x[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_fp_tb/main/normalizer/io_pixel_y">
+      <obj_property name="ElementShortName">io_pixel_y[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_pixel_y[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_fp_tb/main/normalizer_1/io_pixel_x">
+      <obj_property name="ElementShortName">io_pixel_x[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_pixel_x[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/spi_fp_tb/main/normalizer_1/io_pixel_y">
+      <obj_property name="ElementShortName">io_pixel_y[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_pixel_y[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="divider315" type="divider">
       <obj_property name="label">MVP_0</obj_property>

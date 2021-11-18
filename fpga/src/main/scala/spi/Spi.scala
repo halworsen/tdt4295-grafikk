@@ -36,7 +36,8 @@ class Spi(dWidth: Int = 8) extends Module {
     0.U((log2Up(dWidth) + 1).W)
   )
   val valueReg = RegInit(0.U(dWidth.W))
-  val outputReady = RegNext(count === dWidth.U)
+  val valueOutput = RegInit(0.U(dWidth.W))
+  io.value := valueOutput
   val clockReg = RegInit(0.U(3.W))
   val inputReg = RegInit(0.U(2.W))
   val csReg = RegInit(0.U(2.W))
@@ -54,19 +55,21 @@ class Spi(dWidth: Int = 8) extends Module {
   csReg := Cat(csReg(0), io.spi.cs)
   val csActive = !csReg(1)
 
-  io.outputReady := outputReady
+  io.outputReady := false.B
 
   when(!csActive) {
     // Reset count on CS inactive (active low)
     count := 0.U
+  }.elsewhen(count === dWidth.U) {
+    io.outputReady := true.B
   }
     // When master starts sending
-    .elsewhen(spi_rising & !outputReady) {
+    .elsewhen(spi_rising) {
       valueReg := Cat(valueReg(dWidth - 2, 0), input)
       count := count + 1.U
     }
 
-  io.value := valueReg
+  valueOutput := valueReg
 
   // TODO: Send data from FPGA to MCU - MISO
 }

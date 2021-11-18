@@ -11,16 +11,26 @@ class Normalizer extends Module {
     val pixel = Output(new Pixel)
   })
 
-  val pX = divFP(io.point.x, io.point.w)
-  val pY = divFP(io.point.y, io.point.w)
+  val pX = io.point.x // divFP(io.point.x, io.point.w)
+  val pY = io.point.y //divFP(io.point.y, io.point.w)
 
-  val testOutX = Wire(FixedPoint(16.W, 0.BP))
-  val testOutY = Wire(FixedPoint(16.W, 0.BP))
+  val testOutX = Wire(FixedPoint(32.W, 0.BP))
+  val testOutY = Wire(FixedPoint(32.W, 0.BP))
 
   // Converting coordinate system [-1, 1] -> [0, 640] , [0, 480]
-  testOutX := ((pX + fp(1)) * fp(STD.screenWidth / 2)) // 640
-  testOutY := ((pY * fp(-1.0) + fp(1)) * fp(
-    STD.screenHeight / 2
+  testOutX := ((pX + FixedPoint.fromBigInt(1, 0.BP)) * FixedPoint.fromBigInt(
+    STD.screenWidth / 2,
+    16.W,
+    0.BP
+  )) // 640
+  testOutY := ((pY * FixedPoint.fromDouble(-1.0, 2.W, 0.BP) + FixedPoint
+    .fromBigInt(
+      1,
+      0.BP
+    )) * FixedPoint.fromBigInt(
+    STD.screenHeight / 2,
+    16.W,
+    0.BP
   ))
 
   io.pixel.x := testOutX.asUInt()

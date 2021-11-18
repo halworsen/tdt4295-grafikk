@@ -7,37 +7,42 @@ import chisel3.experimental._
 import tools._
 import tools.helpers.{fp}
 
-class Rotator(points: Int = STD.pointNum, coordWidth: Int = 16) extends Module {
+class Rotator(points: Int = STD.pointNum) extends Module {
   val io = IO(new Bundle {
     val inPoints = Input(Vec(points, new Point))
     val mat4 = Input(Vec(points, Vec(points, STD.FP)))
+    val outFP = Output(Vec(points, new Point))
     val out = Output(Vec(points, new Pixel))
   })
 
-  // 45 deg rotaton counter clockwize
+  // 5 deg rotation counter clockwize
   val rotMat = VecInit(
     VecInit(
-      fp(0.54),
-      fp(0.84),
+      //fp(0.996),
+      //fp(0.087),
       fp(1),
-      fp(1)
+      fp(0),
+      fp(0),
+      fp(0)
     ),
     VecInit(
-      fp(-0.84),
-      fp(0.54),
+      //fp(-0.087),
+      //fp(0.996),
+      fp(0),
       fp(1),
-      fp(1)
+      fp(0),
+      fp(0)
     ),
     VecInit(
+      fp(0),
+      fp(0),
       fp(1),
-      fp(1),
-      fp(1),
-      fp(1)
+      fp(0)
     ),
     VecInit(
-      fp(1),
-      fp(1),
-      fp(1),
+      fp(0),
+      fp(0),
+      fp(0),
       fp(1)
     )
   )
@@ -49,6 +54,11 @@ class Rotator(points: Int = STD.pointNum, coordWidth: Int = 16) extends Module {
     mvp.io.vec4(1) := io.inPoints(i).y
     mvp.io.vec4(2) := fp(0)
     mvp.io.vec4(3) := fp(0)
+
+    io.outFP(i).x := mvp.io.outVec4(0)
+    io.outFP(i).y := mvp.io.outVec4(1)
+    io.outFP(i).z := fp(0)
+    io.outFP(i).w := io.inPoints(i).w
 
     val normalizer = Module(new Normalizer)
 
