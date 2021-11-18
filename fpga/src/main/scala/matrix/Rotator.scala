@@ -15,21 +15,23 @@ class Rotator(points: Int = STD.pointNum) extends Module {
     val out = Output(Vec(points, new Pixel))
   })
 
+  val mat = RegNext(io.mat4)
+
   // 5 deg rotation counter clockwize
   val rotMat = VecInit(
     VecInit(
-      //fp(0.996),
-      //fp(0.087),
-      fp(1),
-      fp(0),
+      fp(0.996),
+      fp(0.087),
+      //fp(1),
+      //fp(0),
       fp(0),
       fp(0)
     ),
     VecInit(
-      //fp(-0.087),
-      //fp(0.996),
-      fp(0),
-      fp(1),
+      fp(-0.087),
+      fp(0.996),
+      //fp(0),
+      //fp(1),
       fp(0),
       fp(0)
     ),
@@ -49,28 +51,26 @@ class Rotator(points: Int = STD.pointNum) extends Module {
 
   for (i <- 0 to points - 1) {
     val mvp = Module(new MVP)
-    mvp.io.mat4 := rotMat
+    mvp.io.mat4 := mat
+    //mvp.io.mat4 := rotMat
     mvp.io.vec4(0) := io.inPoints(i).x
     mvp.io.vec4(1) := io.inPoints(i).y
-    mvp.io.vec4(2) := fp(0)
-    mvp.io.vec4(3) := fp(0)
+    mvp.io.vec4(2) := io.inPoints(i).z
+    mvp.io.vec4(3) := io.inPoints(i).w
 
     io.outFP(i).x := mvp.io.outVec4(0)
     io.outFP(i).y := mvp.io.outVec4(1)
-    io.outFP(i).z := fp(0)
-    io.outFP(i).w := io.inPoints(i).w
+    io.outFP(i).z := mvp.io.outVec4(2)
+    io.outFP(i).w := mvp.io.outVec4(3)
 
     val normalizer = Module(new Normalizer)
 
     normalizer.io.point.x := mvp.io.outVec4(0)
     normalizer.io.point.y := mvp.io.outVec4(1)
-    normalizer.io.point.z := fp(0)
-    normalizer.io.point.w := io.inPoints(i).w
+    normalizer.io.point.z := mvp.io.outVec4(2)
+    normalizer.io.point.w := mvp.io.outVec4(3)
 
     io.out(i).x := normalizer.io.pixel.x
     io.out(i).y := normalizer.io.pixel.y
   }
-
-  io.mat4 := DontCare
-
 }

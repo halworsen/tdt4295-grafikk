@@ -36,9 +36,12 @@ object STD {
 // }
 
 class DataFrame extends Bundle {
-  // val MPV = Vec(4, Vec(4, FixedPoint(STD.fixedWidth, STD.binaryPoint)))
   val points = Vec(STD.pointNum, new Point)
   val lines = Vec(STD.linenum, new Line)
+  val matrix = Vec(
+    STD.pointNum,
+    Vec(STD.pointNum, STD.FP)
+  )
 }
 
 class PixelFrame extends Bundle {

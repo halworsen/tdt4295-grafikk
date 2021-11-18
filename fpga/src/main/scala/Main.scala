@@ -35,37 +35,31 @@ class Main extends Module {
     val stateMachine = Module(new StateMachine)
     val spi = Module(new Spi((new DataFrame).getWidth))
     spi.io.spi := io.spi
+
+    //Code for use with SPI
+    // ------------------------------------------------------------
     val lastRecievedFrame = RegInit(0.U.asTypeOf(new DataFrame))
     when(spi.io.outputReady) {
       lastRecievedFrame := spi.io.value.asTypeOf(new DataFrame)
       //lastRecievedFrame := ExampleDataFramesFP.frames(0)
     }
 
-    //Code for use with SPI
     stateMachine.io.newFrameRecieved := spi.io.outputReady
     val renderingFrame = RegInit(0.U.asTypeOf(new PixelFrame))
 
     val rotator = Module(new Rotator)
-    rotator.io.mat4 := DontCare
+    rotator.io.mat4 := lastRecievedFrame.matrix
     rotator.io.inPoints := lastRecievedFrame.points
-
-    val normalized = Wire(new PixelFrame)
-    normalized.lines := DontCare
-    for (i <- 0 to 3) {
-      val normalizer = Module(new Normalizer)
-
-      normalizer.io.point := lastRecievedFrame.points(i)
-      normalized.points(i) := normalizer.io.pixel
-    }
 
     when(stateMachine.io.loadNextFrame) {
       renderingFrame.lines := lastRecievedFrame.lines
-      //renderingFrame.points := rotator.io.out
-      renderingFrame.points := normalized.points
+      renderingFrame.points := rotator.io.out
     }
+    // ------------------------------------------------------------
 
     // Test code for use without SPI
     /*
+    // ------------------------------------------------------------
     val lastRecievedFrame = RegInit(ExampleDataFramesFP.frames(0))
 
     val (counter, counterWrap) = Counter(true.B, 10000000) // 10 fps
@@ -85,7 +79,7 @@ class Main extends Module {
       renderingFrame.points := rotator.io.out
     }
      */
-    // ------------------------------------------
+    // ------------------------------------------------------------
 
     val fb = Module(new FrameBuffer(STD.screenWidth, STD.screenHeight))
     val bresenhams = Module(new LineDrawing)
