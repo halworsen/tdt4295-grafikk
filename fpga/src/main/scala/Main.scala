@@ -45,15 +45,10 @@ class Main extends Module {
     }
 
     stateMachine.io.newFrameRecieved := spi.io.outputReady
-    val renderingFrame = RegInit(0.U.asTypeOf(new PixelFrame))
-
-    val rotator = Module(new Rotator)
-    rotator.io.mat4 := lastRecievedFrame.matrix
-    rotator.io.inPoints := lastRecievedFrame.points
+    val renderingFrame = RegInit(0.U.asTypeOf(new DataFrame))
 
     when(stateMachine.io.loadNextFrame) {
-      renderingFrame.lines := lastRecievedFrame.lines
-      renderingFrame.points := rotator.io.out
+      renderingFrame := lastRecievedFrame
     }
     // ------------------------------------------------------------
 
@@ -81,6 +76,31 @@ class Main extends Module {
      */
     // ------------------------------------------------------------
 
+    val rotator = Module(new Rotator(2))
+    rotator.io.mat4 := renderingFrame.matrix
+    //rotator.io.mat4 := DontCare
+    // Inputs to rotator are ready one cycle after loadNextFrame
+    rotator.io.inputReady := RegNext(RegNext(stateMachine.io.loadNextPoints))
+    rotator.io.inPoints(0) := renderingFrame.points(
+      renderingFrame.lines(stateMachine.io.lineIndex).index1
+    )
+    rotator.io.inPoints(1) := renderingFrame.points(
+      renderingFrame.lines(stateMachine.io.lineIndex).index2
+    )
+    stateMachine.io.pixelCalculationReady := rotator.io.outputReady
+
+    val renderedPixels = Reg(Vec(STD.pointNum, new Pixel))
+
+    // Load computed pixels into this frame's rendered points for immediate access later
+    when(stateMachine.io.loadNextPixels) {
+      renderedPixels(
+        renderingFrame.lines(stateMachine.io.lineIndex).index1
+      ) := rotator.io.out(0)
+      renderedPixels(
+        renderingFrame.lines(stateMachine.io.lineIndex).index2
+      ) := rotator.io.out(1)
+    }
+
     val fb = Module(new FrameBuffer(STD.screenWidth, STD.screenHeight))
     val bresenhams = Module(new LineDrawing)
     fb.io.writeEnable := bresenhams.io.writeEnable
@@ -90,10 +110,10 @@ class Main extends Module {
     bresenhams.io.start := stateMachine.io.bhStartRegular
     bresenhams.io.startClear := stateMachine.io.bhStartClear
 
-    bresenhams.io.p1 := renderingFrame.points(
+    bresenhams.io.p1 := renderedPixels(
       renderingFrame.lines(stateMachine.io.lineIndex).index1
     )
-    bresenhams.io.p2 := renderingFrame.points(
+    bresenhams.io.p2 := renderedPixels(
       renderingFrame.lines(stateMachine.io.lineIndex).index2
     )
 

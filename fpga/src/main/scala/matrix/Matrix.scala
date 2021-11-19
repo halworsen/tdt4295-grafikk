@@ -4,7 +4,7 @@ import chisel3._
 import chisel3.experimental._
 import tools._
 
-class MVP(dim: Int = STD.pointNum) extends Module {
+class MVP(dim: Int = STD.pointDimension) extends Module {
   val io = IO(new Bundle {
     val vec4 = Input(Vec(dim, STD.FP))
     val mat4 = Input(Vec(dim, Vec(dim, STD.FP)))

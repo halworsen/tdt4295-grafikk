@@ -13,22 +13,27 @@ class StateMachine extends Module {
     val bhStartRegular = Output(Bool())
     val bhStartClear = Output(Bool())
     val loadNextFrame = Output(Bool())
-    val lineIndex = Output(UInt(STD.linenum.W))
+    val loadNextPoints = Output(Bool())
+    val pixelCalculationReady = Input(Bool())
+    val loadNextPixels = Output(Bool())
+    val lineIndex = Output(UInt(log2Up(STD.linenum).W))
   })
 
   io.bhStartRegular := false.B
   io.bhStartClear := false.B
   io.loadNextFrame := false.B
+  io.loadNextPixels := false.B
+  io.loadNextPoints := false.B
 
-  val lineIndex = RegInit(0.U(STD.linenum.W))
+  val lineIndex = RegInit(0.U(log2Up(STD.linenum).W))
   io.lineIndex := lineIndex
   val unrenderedFrame = RegInit(false.B)
   when(io.newFrameRecieved) {
     unrenderedFrame := true.B
   }
 
-  val waiting :: clearSetup :: clearing :: renderSetup :: rendering :: Nil =
-    Enum(5)
+  val waiting :: clearSetup :: clearing :: calculationWait :: loadPoints :: loadPixels :: renderSetup :: rendering :: Nil =
+    Enum(8)
   val state = RegInit(waiting)
 
   switch(state) {
@@ -52,8 +57,22 @@ class StateMachine extends Module {
         io.loadNextFrame := true.B
         unrenderedFrame := false.B
         lineIndex := 0.U
-        state := renderSetup
+        state := loadPoints
       }
+    }
+    is(loadPoints) {
+      io.loadNextPoints := true.B
+      state := calculationWait
+    }
+    is(calculationWait) {
+      when(io.pixelCalculationReady) {
+        state := loadPixels
+        io.loadNextPixels := true.B // Load calculated pixels
+      }
+    }
+    is(loadPixels) {
+      // Wait for pixel registers to be updated
+      state := renderSetup
     }
     is(renderSetup) {
       // Wait 1 cycle for bh inputs to become valid
@@ -63,7 +82,7 @@ class StateMachine extends Module {
     is(rendering) {
       when(!io.bhBussy && lineIndex < STD.linenum.U) {
         lineIndex := lineIndex + 1.U
-        state := renderSetup
+        state := loadPoints
       }
       when(!io.bhBussy && lineIndex >= STD.linenum.U) {
         state := waiting
