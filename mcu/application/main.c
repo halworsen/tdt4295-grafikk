@@ -34,36 +34,34 @@
     _a < _b ? _a : _b;                                                         \
   })
 
+// Joystick ADC voltage samples.
 uint32_t left_vertical;
 uint32_t left_horizontal;
 uint32_t right_vertical;
 uint32_t right_horizontal;
 uint32_t adcChannel = 0;
 
+// Model position.
 float x = 0;
 float y = 0;
+
+// Handle for the FPGA output.
 SPIDRV_HandleData_t handleData;
 SPIDRV_Handle_t handle = &handleData;
 
+// Handle for the debug output.
 SPIDRV_HandleData_t handleData2;
 SPIDRV_Handle_t handle2 = &handleData;
-ADC_InitScan_TypeDef initScan = ADC_INITSCAN_DEFAULT;
 
-// Array containing the verts of the model (in model coordinates).
-vec3_t square[4];
+ADC_InitScan_TypeDef initScan = ADC_INITSCAN_DEFAULT;
 
 /* FPGA package. */
 // For now this uses some structs representing pixel coordinates,
 // instead of the "proper" linalg structures, just to get a simple
 // indexed MVP going.
 
-// A Point (generally in [-1, 1] x [-1, 1])
-typedef struct point {
-  float x;
-  float y;
-  float w;
-} point_t;
-
+// A points representation in the fpga package.
+// This is used to calculate offsets with `sizeof`.
 typedef struct fpga_point {
   int16_t x;
   int16_t y;
@@ -72,41 +70,40 @@ typedef struct fpga_point {
 } fpga_point_t;
 
 // A Line is two indexes into the array of points.
+// A line has identical size in its package representation, so
+// offsets can be calculated by taking the `sizeof` this struct.
 typedef struct line {
   uint16_t start;
   uint16_t end;
 } line_t;
 
+// FPGA package representation of a matrix. This is used to
+// calculate offsets using `sizeof`.
 typedef struct mat4_send {
   int16_t data[16];
 } mat4_send_t;
 
+
 // The complete fpga package.
-#define NUM_POINTS 4
-#define NUM_LINES 4
+#define NUM_VERTS 8
+#define NUM_LINES 12
 struct {
-  point_t points[NUM_POINTS];
+  vec4_t verts[NUM_VERTS];
   line_t lines[NUM_LINES];
   mat4_t mat;
 } fpga_package;
 
+// The bitstream representation of the package. This is used
+// to calculate offsets using `sizeof`.
 struct {
-  fpga_point_t points[NUM_POINTS];
+  fpga_point_t points[NUM_VERTS];
   line_t lines[NUM_LINES];
   mat4_send_t mat;
 } fpga_package_send;
 
-void calc_points() {
-  // This starts with our model square [-.5, .5] x [-.5, .5], and
-  // applies a rotation- and translation-transform
-  // defined by potentiometer positions so that changing one
-  // will move the square vertically, and changing the other
-  // will rotate the square.
-  //
-  // In total, we end up doing 2 matrix multiplications and
-  // 4 matrix-vector multiplications, which is around 60
-  // floating point operations per interrupt. At 60 FPS, this
-  // means the processor needs to do ~4000 FLOPS.
+void calc_mvp() {
+  // Calculates the MVP matrix and stores it in the fpga
+  // package.
 
   double scale; // normalized potentiometer position [0, 1]
 
@@ -128,28 +125,36 @@ void calc_points() {
   scale = (double)right_vertical / MAX_SAMPLE;
   float q = (2 * scale - 1.0);
 
+  // Theta is the current angle of the joystick.
   float th = -atan2(q, p);
 
-  mat4_t R,
-      T; // scaling, rotation and translation matrices.
+  mat4_t M, Ryz, Rz, Ry, T; // rotation and translation matrices.
 
-  // Rotate by theta radians.
-  rot_z(&R, th);
+  // Rotate by theta radians, with slight tilt.
+  rot_y(&Ry, th);
+  rot_z(&Rz, M_PI / 6.0);
+  mmul(&Ryz, &Ry, &Rz);
 
   // Translate to x=0,y=dy, dy in [-max_dy, max_dy]
-  translation(&T, x, y, 0);
+  float z = 10.0; // move into the clip box.
+  translation(&T, x, y, z);
+
+  // Create the model matrix; a combination of rotation and translation.
+  mmul(&M, &T, &Ryz);
+
+  // Projection matrix.
+  mat4_t P;
+  // Aspect ratio and clipping planes.
+  float aspect = DISPLAY_WIDTH / ((float) DISPLAY_HEIGHT);
+
+  //ortho(&P, -aspect, aspect, -1.0, 1.0, -2.0, 100.0);
+  perspective(&P, 1.0 /* FOV, radians */, aspect, 0.1 /* z_near */, 100.0 /* z_far */);
+
+
+
 
   // Create the "final" transformation matrix.
-  mmul(&fpga_package.mat, &T, &R);
-  for (int i = 0; i < NUM_POINTS; i++) {
-
-    // Put the transformed coordinates in the package point array.
-    // These are already floats in pixel-coordinates, so we only
-    // need to cast them to int16, and then they are ready.
-    fpga_package.points[i].x = (float)square[i].x;
-    fpga_package.points[i].y = (float)square[i].y;
-    fpga_package.points[i].w = (float)square[i].w;
-  }
+  mmul(&fpga_package.mat, &P, &M);
 }
 
 void transmit_fpga_package() {
@@ -160,13 +165,12 @@ void transmit_fpga_package() {
 
   uint8_t bitstream[sizeof(fpga_package_send)] = {0};
 
-
-  for (int i = 0; i < 4; i++) {
+  for (int i = 0; i < NUM_VERTS; i++) {
     // Calculate fixpoint representation with 12-bit scaling.
-    int16_t x = fpga_package.points[i].x * (1 << 12);
-    int16_t y = fpga_package.points[i].y * (1 << 12);
-    int16_t z = 0;
-    int16_t w = fpga_package.points[i].w * (1 << 12);
+    int16_t x = fpga_package.verts[i].x * (1 << 12);
+    int16_t y = fpga_package.verts[i].y * (1 << 12);
+    int16_t z = fpga_package.verts[i].z * (1 << 12);
+    int16_t w = fpga_package.verts[i].w * (1 << 12);
 
     // Put the fixpoint number in the bitstream.
     bitstream[sizeof(fpga_point_t) * i] = (x >> 8) & 0xFF;
@@ -181,12 +185,10 @@ void transmit_fpga_package() {
 
   /* Prepare the lines. */
 
-  // The lines start directly after the points.
-  int line_offset = NUM_POINTS * sizeof(fpga_point_t);
-  int matrix_offset = line_offset + NUM_LINES * sizeof(line_t);
+  // The lines start directly after the vertices.
+  int line_offset = NUM_VERTS * sizeof(fpga_point_t);
 
-
-  for (int i = 0; i < 4; i++) {
+  for (int i = 0; i < NUM_LINES; i++) {
     bitstream[line_offset + 4 * i] = (fpga_package.lines[i].start >> 8) & 0xFF;
     bitstream[line_offset + 4 * i + 1] = fpga_package.lines[i].start & 0xFF;
     bitstream[line_offset + 4 * i + 2] =
@@ -194,6 +196,14 @@ void transmit_fpga_package() {
     bitstream[line_offset + 4 * i + 3] = fpga_package.lines[i].end & 0xFF;
   }
 
+  /* Prepare the matrix. */
+
+  // The matrix starts after the verts and lines.
+  int matrix_offset = line_offset + NUM_LINES * sizeof(line_t);
+
+  // Note: Our matrices are row-major, but we have to send them in
+  // reverse order to accomodate the easiest way to index the matrix
+  // on the FPGA side.
   for (int i = 0; i < 16; i++) {
     int k = 15 - i;
     int16_t fix_point_data = fpga_package.mat.data[i] * (1 << 12);
@@ -212,7 +222,10 @@ void GPIO_EVEN_IRQHandler(void) {
 void TIMER1_IRQHandler(void) {
   TIMER_IntClear(TIMER1, 1);
   ADC_Start(ADC0, adcStartScan);
-  calc_points();
+
+  // the model (verts and lines) are already in the package,
+  // al we need to do is re-calculate the MVP and sen.
+  calc_mvp();
   if (GPIO_PinInGet(gpioPortB, FPGA_DONE_PIN))
     transmit_fpga_package();
 }
@@ -241,29 +254,50 @@ void ADC0_IRQHandler(void) {
 
 int main(void) {
   // Create the model (the square with w=1).
-  vec3(&square[0], -.1, .1, 1.0);
-  vec3(&square[1], -.1, -.1, 1.0);
-  vec3(&square[2], .1, -.1, 1.0);
-  vec3(&square[3], .1, .1, 1.0);
+  vec4_t* cube = fpga_package.verts;
+  vec4(&cube[0], -.1, .1, .1, 1.0);
+  vec4(&cube[1], -.1, -.1, .1, 1.0);
+  vec4(&cube[2], .1, -.1, .1, 1.0);
+  vec4(&cube[3], .1, .1, .1, 1.0);
+
+  vec4(&cube[4], -.1, .1, -.1, 1.0);
+  vec4(&cube[5], -.1, -.1, -.1, 1.0);
+  vec4(&cube[6], .1, -.1, -.1, 1.0);
+  vec4(&cube[7], .1, .1, -.1, 1.0);
 
   // Hard coded to lines connect the lines sequentially.
   fpga_package.lines[0].start = 0;
   fpga_package.lines[0].end = 1;
-
   fpga_package.lines[1].start = 1;
   fpga_package.lines[1].end = 2;
-
   fpga_package.lines[2].start = 2;
   fpga_package.lines[2].end = 3;
-
   fpga_package.lines[3].start = 3;
   fpga_package.lines[3].end = 0;
+
+  fpga_package.lines[4].start = 4;
+  fpga_package.lines[4].end = 5;
+  fpga_package.lines[5].start = 5;
+  fpga_package.lines[5].end = 6;
+  fpga_package.lines[6].start = 6;
+  fpga_package.lines[6].end = 7;
+  fpga_package.lines[7].start = 7;
+  fpga_package.lines[7].end = 4;
+
+  fpga_package.lines[8].start = 0;
+  fpga_package.lines[8].end = 4;
+  fpga_package.lines[9].start = 1;
+  fpga_package.lines[9].end = 5;
+  fpga_package.lines[10].start = 2;
+  fpga_package.lines[10].end = 6;
+  fpga_package.lines[11].start = 3;
+  fpga_package.lines[11].end = 7;
 
   uint32_t bitrate = 0;
   // Initializations
   CMU_ClockSelectSet(cmuClock_HF, cmuSelect_HFXO);
   initGPIO();
-  initTimer(15);
+  initTimer(30);
   initADC_scan(adcRefVDD);
   TIMER_Enable(TIMER1, true);
 
