@@ -160,6 +160,7 @@ void transmit_fpga_package() {
 
   uint8_t bitstream[sizeof(fpga_package_send)] = {0};
 
+
   for (int i = 0; i < 4; i++) {
     // Calculate fixpoint representation with 12-bit scaling.
     int16_t x = fpga_package.points[i].x * (1 << 12);
@@ -184,6 +185,7 @@ void transmit_fpga_package() {
   int line_offset = NUM_POINTS * sizeof(fpga_point_t);
   int matrix_offset = line_offset + NUM_LINES * sizeof(line_t);
 
+
   for (int i = 0; i < 4; i++) {
     bitstream[line_offset + 4 * i] = (fpga_package.lines[i].start >> 8) & 0xFF;
     bitstream[line_offset + 4 * i + 1] = fpga_package.lines[i].start & 0xFF;
@@ -191,6 +193,7 @@ void transmit_fpga_package() {
         (fpga_package.lines[i].end >> 8) & 0xFF;
     bitstream[line_offset + 4 * i + 3] = fpga_package.lines[i].end & 0xFF;
   }
+
   for (int i = 0; i < 16; i++) {
     int k = 15 - i;
     int16_t fix_point_data = fpga_package.mat.data[i] * (1 << 12);
@@ -242,19 +245,6 @@ int main(void) {
   vec3(&square[1], -.1, -.1, 1.0);
   vec3(&square[2], .1, -.1, 1.0);
   vec3(&square[3], .1, .1, 1.0);
-
-  // Hard coded to lines connect the lines sequentially.
-  fpga_package.lines[0].start = 0;
-  fpga_package.lines[0].end = 1;
-
-  fpga_package.lines[1].start = 1;
-  fpga_package.lines[1].end = 2;
-
-  fpga_package.lines[2].start = 2;
-  fpga_package.lines[2].end = 3;
-
-  fpga_package.lines[3].start = 3;
-  fpga_package.lines[3].end = 0;
 
   // Hard coded to lines connect the lines sequentially.
   fpga_package.lines[0].start = 0;
