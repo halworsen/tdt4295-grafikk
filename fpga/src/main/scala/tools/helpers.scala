@@ -1,6 +1,7 @@
 package tools
 
 import chisel3._
+import chisel3.experimental._
 
 import scala.math.log10
 
@@ -22,4 +23,10 @@ object helpers {
   ) = {
     (reg << (bufferWidth.U - nr * dataWidth.U - 1.U))
   }
+
+  def fp = (v: Double) => v.F(STD.fixedWidth, STD.binaryPoint)
+
+  val divFP = (a: FixedPoint, w: FixedPoint) =>
+    ((a << STD.binaryPointVal).asSInt() / w.asSInt())
+      .asFixedPoint(STD.binaryPoint)
 }

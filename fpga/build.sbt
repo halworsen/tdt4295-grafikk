@@ -9,7 +9,8 @@ lazy val root = (project in file("."))
     name := "TDT4295_GRAPHICS",
     libraryDependencies ++= Seq(
       "edu.berkeley.cs" %% "chisel3" % "3.4.3",
-      "edu.berkeley.cs" %% "chiseltest" % "0.3.3" % "test"
+      "edu.berkeley.cs" %% "chiseltest" % "0.3.3" % "test",
+      "edu.berkeley.cs" %% "dsptools" % "1.4.3"
     ),
     scalacOptions ++= Seq(
       "-Xsource:2.11",

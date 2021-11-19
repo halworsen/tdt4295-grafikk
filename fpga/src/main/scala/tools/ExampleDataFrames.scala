@@ -1,8 +1,8 @@
 package tools
 import chisel3._
-import tools.helpers.log2
 import Chisel.log2Up
 import chisel3.experimental.FixedPoint
+import tools.helpers.{log2, fp}
 
 object ExampleDataFrames {
   val square1 = {
@@ -217,5 +217,69 @@ object ExampleDataFrames {
     square8,
     square9,
     square10
+  )
+}
+
+object ExampleDataFramesFP {
+  val square1 = {
+    val bundle = Wire(new DataFrame)
+    bundle.points(0).x := fp(-0.2)
+    bundle.points(0).y := fp(-0.2)
+    bundle.points(0).z := fp(0)
+    bundle.points(0).w := fp(1)
+    bundle.points(1).x := fp(0.2)
+    bundle.points(1).y := fp(-0.2)
+    bundle.points(1).z := fp(0)
+    bundle.points(1).w := fp(1)
+    bundle.points(2).x := fp(0.2)
+    bundle.points(2).y := fp(0.2)
+    bundle.points(2).z := fp(0)
+    bundle.points(2).w := fp(1)
+    bundle.points(3).x := fp(-0.2)
+    bundle.points(3).y := fp(0.2)
+    bundle.points(3).z := fp(0)
+    bundle.points(3).w := fp(1)
+    bundle.lines(0).index1 := 0.U
+    bundle.lines(0).index2 := 1.U
+    bundle.lines(1).index1 := 1.U
+    bundle.lines(1).index2 := 2.U
+    bundle.lines(2).index1 := 2.U
+    bundle.lines(2).index2 := 3.U
+    bundle.lines(3).index1 := 3.U
+    bundle.lines(3).index2 := 0.U
+    bundle
+  }
+  val square2 = {
+    val bundle = Wire(new DataFrame)
+    bundle.points(0).x := fp(-0.5)
+    bundle.points(0).y := fp(-0.5)
+    bundle.points(0).z := fp(0)
+    bundle.points(0).w := fp(1)
+    bundle.points(1).x := fp(0.5)
+    bundle.points(1).y := fp(-0.5)
+    bundle.points(1).z := fp(0)
+    bundle.points(1).w := fp(1)
+    bundle.points(2).x := fp(0.5)
+    bundle.points(2).y := fp(0.5)
+    bundle.points(2).z := fp(0)
+    bundle.points(2).w := fp(1)
+    bundle.points(3).x := fp(-0.5)
+    bundle.points(3).y := fp(0.5)
+    bundle.points(3).z := fp(0)
+    bundle.points(3).w := fp(1)
+    bundle.lines(0).index1 := 0.U
+    bundle.lines(0).index2 := 1.U
+    bundle.lines(1).index1 := 1.U
+    bundle.lines(1).index2 := 2.U
+    bundle.lines(2).index1 := 2.U
+    bundle.lines(2).index2 := 3.U
+    bundle.lines(3).index1 := 3.U
+    bundle.lines(3).index2 := 0.U
+    bundle
+  }
+
+  val frames = VecInit(
+    square1,
+    square2
   )
 }
