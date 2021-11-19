@@ -3,213 +3,138 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="Main_behav.wdb" id="1">
+      <db_ref path="spi_square_tb_behav.wdb" id="1">
          <top_modules>
-            <top_module name="Main" />
             <top_module name="glbl" />
+            <top_module name="spi_square_tb" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="204.583 ns"></ZoomStartTime>
-      <ZoomEndTime time="271.084 ns"></ZoomEndTime>
-      <Cursor1Time time="260.000 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="698.001 ns"></ZoomEndTime>
+      <Cursor1Time time="0.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="244"></NameColumnWidth>
-      <ValueColumnWidth column_width="119"></ValueColumnWidth>
+      <NameColumnWidth column_width="172"></NameColumnWidth>
+      <ValueColumnWidth column_width="100"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="48" />
-   <wvobject type="logic" fp_name="/Main/clock">
+   <WVObjectSize size="29" />
+   <wvobject type="logic" fp_name="/spi_square_tb/main/square/clock">
       <obj_property name="ElementShortName">clock</obj_property>
       <obj_property name="ObjectShortName">clock</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/Main/reset">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
+   <wvobject type="array" fp_name="/spi_square_tb/main/square/io_firstX">
+      <obj_property name="ElementShortName">io_firstX[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_firstX[15:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/Main/io_aresetn">
-      <obj_property name="ElementShortName">io_aresetn</obj_property>
-      <obj_property name="ObjectShortName">io_aresetn</obj_property>
+   <wvobject type="array" fp_name="/spi_square_tb/main/square/io_firstY">
+      <obj_property name="ElementShortName">io_firstY[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_firstY[15:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/Main/io_btn">
-      <obj_property name="ElementShortName">io_btn[3:0]</obj_property>
-      <obj_property name="ObjectShortName">io_btn[3:0]</obj_property>
+   <wvobject type="array" fp_name="/spi_square_tb/main/square/io_secondX">
+      <obj_property name="ElementShortName">io_secondX[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_secondX[15:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/Main/io_vga_hsync">
-      <obj_property name="ElementShortName">io_vga_hsync</obj_property>
-      <obj_property name="ObjectShortName">io_vga_hsync</obj_property>
+   <wvobject type="array" fp_name="/spi_square_tb/main/square/io_secondY">
+      <obj_property name="ElementShortName">io_secondY[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_secondY[15:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/Main/io_vga_vsync">
-      <obj_property name="ElementShortName">io_vga_vsync</obj_property>
-      <obj_property name="ObjectShortName">io_vga_vsync</obj_property>
+   <wvobject type="array" fp_name="/spi_square_tb/main/square/io_thirdX">
+      <obj_property name="ElementShortName">io_thirdX[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_thirdX[15:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/Main/io_vga_r">
-      <obj_property name="ElementShortName">io_vga_r[3:0]</obj_property>
-      <obj_property name="ObjectShortName">io_vga_r[3:0]</obj_property>
+   <wvobject type="array" fp_name="/spi_square_tb/main/square/io_thirdY">
+      <obj_property name="ElementShortName">io_thirdY[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_thirdY[15:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/Main/io_vga_g">
-      <obj_property name="ElementShortName">io_vga_g[3:0]</obj_property>
-      <obj_property name="ObjectShortName">io_vga_g[3:0]</obj_property>
+   <wvobject type="array" fp_name="/spi_square_tb/main/square/io_fourthX">
+      <obj_property name="ElementShortName">io_fourthX[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_fourthX[15:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/Main/io_vga_b">
-      <obj_property name="ElementShortName">io_vga_b[3:0]</obj_property>
-      <obj_property name="ObjectShortName">io_vga_b[3:0]</obj_property>
+   <wvobject type="array" fp_name="/spi_square_tb/main/square/io_fourthY">
+      <obj_property name="ElementShortName">io_fourthY[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_fourthY[15:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/Main/fb_clock">
-      <obj_property name="ElementShortName">fb_clock</obj_property>
-      <obj_property name="ObjectShortName">fb_clock</obj_property>
+   <wvobject type="logic" fp_name="/spi_square_tb/main/square/io_writeEnable">
+      <obj_property name="ElementShortName">io_writeEnable</obj_property>
+      <obj_property name="ObjectShortName">io_writeEnable</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/Main/fb_reset">
-      <obj_property name="ElementShortName">fb_reset</obj_property>
-      <obj_property name="ObjectShortName">fb_reset</obj_property>
+   <wvobject type="array" fp_name="/spi_square_tb/main/square/io_writeX">
+      <obj_property name="ElementShortName">io_writeX[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_writeX[15:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/Main/fb_io_writeX">
-      <obj_property name="ElementShortName">fb_io_writeX[9:0]</obj_property>
-      <obj_property name="ObjectShortName">fb_io_writeX[9:0]</obj_property>
+   <wvobject type="array" fp_name="/spi_square_tb/main/square/io_writeY">
+      <obj_property name="ElementShortName">io_writeY[15:0]</obj_property>
+      <obj_property name="ObjectShortName">io_writeY[15:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/Main/fb_io_writeY">
-      <obj_property name="ElementShortName">fb_io_writeY[8:0]</obj_property>
-      <obj_property name="ObjectShortName">fb_io_writeY[8:0]</obj_property>
+   <wvobject fp_name="divider331" type="divider">
+      <obj_property name="label">SQUARE</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/Main/fb_io_writeEnable">
-      <obj_property name="ElementShortName">fb_io_writeEnable</obj_property>
-      <obj_property name="ObjectShortName">fb_io_writeEnable</obj_property>
+   <wvobject type="logic" fp_name="/spi_square_tb/main/square/io_writeVal">
+      <obj_property name="ElementShortName">io_writeVal</obj_property>
+      <obj_property name="ObjectShortName">io_writeVal</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/Main/fb_io_readX">
-      <obj_property name="ElementShortName">fb_io_readX[10:0]</obj_property>
-      <obj_property name="ObjectShortName">fb_io_readX[10:0]</obj_property>
+   <wvobject type="logic" fp_name="/spi_square_tb/main/square/io_start">
+      <obj_property name="ElementShortName">io_start</obj_property>
+      <obj_property name="ObjectShortName">io_start</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/Main/fb_io_readY">
-      <obj_property name="ElementShortName">fb_io_readY[9:0]</obj_property>
-      <obj_property name="ObjectShortName">fb_io_readY[9:0]</obj_property>
+   <wvobject type="logic" fp_name="/spi_square_tb/main/square/io_done">
+      <obj_property name="ElementShortName">io_done</obj_property>
+      <obj_property name="ObjectShortName">io_done</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/Main/fb_io_readVal_0">
-      <obj_property name="ElementShortName">fb_io_readVal_0[3:0]</obj_property>
-      <obj_property name="ObjectShortName">fb_io_readVal_0[3:0]</obj_property>
+   <wvobject type="logic" fp_name="/spi_square_tb/main/square/io_busy">
+      <obj_property name="ElementShortName">io_busy</obj_property>
+      <obj_property name="ObjectShortName">io_busy</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/Main/fb_io_readClock">
-      <obj_property name="ElementShortName">fb_io_readClock</obj_property>
-      <obj_property name="ObjectShortName">fb_io_readClock</obj_property>
+   <wvobject fp_name="divider332" type="divider">
+      <obj_property name="label">LD</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/Main/bresenhams_clock">
-      <obj_property name="ElementShortName">bresenhams_clock</obj_property>
-      <obj_property name="ObjectShortName">bresenhams_clock</obj_property>
+   <wvobject type="array" fp_name="/spi_square_tb/main/square/ld/state">
+      <obj_property name="ElementShortName">state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">state[2:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/Main/bresenhams_reset">
-      <obj_property name="ElementShortName">bresenhams_reset</obj_property>
-      <obj_property name="ObjectShortName">bresenhams_reset</obj_property>
+   <wvobject type="logic" fp_name="/spi_square_tb/main/square/ld/io_start">
+      <obj_property name="ElementShortName">io_start</obj_property>
+      <obj_property name="ObjectShortName">io_start</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/Main/bresenhams_io_start">
-      <obj_property name="ElementShortName">bresenhams_io_start</obj_property>
-      <obj_property name="ObjectShortName">bresenhams_io_start</obj_property>
+   <wvobject type="logic" fp_name="/spi_square_tb/main/square/ld/io_writeEnable">
+      <obj_property name="ElementShortName">io_writeEnable</obj_property>
+      <obj_property name="ObjectShortName">io_writeEnable</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/Main/bresenhams_io_writeEnable">
-      <obj_property name="ElementShortName">bresenhams_io_writeEnable</obj_property>
-      <obj_property name="ObjectShortName">bresenhams_io_writeEnable</obj_property>
+   <wvobject fp_name="divider315" type="divider">
+      <obj_property name="label">SPI</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/Main/bresenhams_io_writeX">
-      <obj_property name="ElementShortName">bresenhams_io_writeX[15:0]</obj_property>
-      <obj_property name="ObjectShortName">bresenhams_io_writeX[15:0]</obj_property>
+   <wvobject type="array" fp_name="/spi_square_tb/main/spi/io_value">
+      <obj_property name="ElementShortName">io_value[127:0]</obj_property>
+      <obj_property name="ObjectShortName">io_value[127:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/Main/bresenhams_io_writeY">
-      <obj_property name="ElementShortName">bresenhams_io_writeY[15:0]</obj_property>
-      <obj_property name="ObjectShortName">bresenhams_io_writeY[15:0]</obj_property>
+   <wvobject type="logic" fp_name="/spi_square_tb/io_spi_cs">
+      <obj_property name="ElementShortName">io_spi_cs</obj_property>
+      <obj_property name="ObjectShortName">io_spi_cs</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/Main/vga_io_data_0">
-      <obj_property name="ElementShortName">vga_io_data_0[3:0]</obj_property>
-      <obj_property name="ObjectShortName">vga_io_data_0[3:0]</obj_property>
+   <wvobject type="logic" fp_name="/spi_square_tb/main/spi/io_outputReady">
+      <obj_property name="ElementShortName">io_outputReady</obj_property>
+      <obj_property name="ObjectShortName">io_outputReady</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/Main/vga_io_dataEnable">
-      <obj_property name="ElementShortName">vga_io_dataEnable</obj_property>
-      <obj_property name="ObjectShortName">vga_io_dataEnable</obj_property>
+   <wvobject type="logic" fp_name="/spi_square_tb/main/spi/io_spi_mosi">
+      <obj_property name="ElementShortName">io_spi_mosi</obj_property>
+      <obj_property name="ObjectShortName">io_spi_mosi</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/Main/vga_io_selX">
-      <obj_property name="ElementShortName">vga_io_selX[15:0]</obj_property>
-      <obj_property name="ObjectShortName">vga_io_selX[15:0]</obj_property>
+   <wvobject type="logic" fp_name="/spi_square_tb/main/spi/io_spi_sclk">
+      <obj_property name="ElementShortName">io_spi_sclk</obj_property>
+      <obj_property name="ObjectShortName">io_spi_sclk</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/Main/vga_io_selY">
-      <obj_property name="ElementShortName">vga_io_selY[15:0]</obj_property>
-      <obj_property name="ObjectShortName">vga_io_selY[15:0]</obj_property>
+   <wvobject type="logic" fp_name="/spi_square_tb/main/spi/io_spi_cs">
+      <obj_property name="ElementShortName">io_spi_cs</obj_property>
+      <obj_property name="ObjectShortName">io_spi_cs</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/Main/vga_io_hsync">
-      <obj_property name="ElementShortName">vga_io_hsync</obj_property>
-      <obj_property name="ObjectShortName">vga_io_hsync</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/Main/vga_io_vsync">
-      <obj_property name="ElementShortName">vga_io_vsync</obj_property>
-      <obj_property name="ObjectShortName">vga_io_vsync</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/Main/vga_io_out_0">
-      <obj_property name="ElementShortName">vga_io_out_0[3:0]</obj_property>
-      <obj_property name="ObjectShortName">vga_io_out_0[3:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/Main/vga_io_out_1">
-      <obj_property name="ElementShortName">vga_io_out_1[3:0]</obj_property>
-      <obj_property name="ObjectShortName">vga_io_out_1[3:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/Main/vga_io_out_2">
-      <obj_property name="ElementShortName">vga_io_out_2[3:0]</obj_property>
-      <obj_property name="ObjectShortName">vga_io_out_2[3:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/Main/vga_io_clock">
-      <obj_property name="ElementShortName">vga_io_clock</obj_property>
-      <obj_property name="ObjectShortName">vga_io_clock</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/Main/vga_io_reset">
-      <obj_property name="ElementShortName">vga_io_reset</obj_property>
-      <obj_property name="ObjectShortName">vga_io_reset</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/Main/vgaClock_clk">
-      <obj_property name="ElementShortName">vgaClock_clk</obj_property>
-      <obj_property name="ObjectShortName">vgaClock_clk</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/Main/vgaClock_rst">
-      <obj_property name="ElementShortName">vgaClock_rst</obj_property>
-      <obj_property name="ObjectShortName">vgaClock_rst</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/Main/vgaClock_clk_pix">
-      <obj_property name="ElementShortName">vgaClock_clk_pix</obj_property>
-      <obj_property name="ObjectShortName">vgaClock_clk_pix</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/Main/vgaClock_clk_locked">
-      <obj_property name="ElementShortName">vgaClock_clk_locked</obj_property>
-      <obj_property name="ObjectShortName">vgaClock_clk_locked</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/Main/writeBtn_clock">
-      <obj_property name="ElementShortName">writeBtn_clock</obj_property>
-      <obj_property name="ObjectShortName">writeBtn_clock</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/Main/writeBtn_io_aresetn">
-      <obj_property name="ElementShortName">writeBtn_io_aresetn</obj_property>
-      <obj_property name="ObjectShortName">writeBtn_io_aresetn</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/Main/writeBtn_io_btn">
-      <obj_property name="ElementShortName">writeBtn_io_btn[3:0]</obj_property>
-      <obj_property name="ObjectShortName">writeBtn_io_btn[3:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/Main/writeBtn_io_writeEnable">
-      <obj_property name="ElementShortName">writeBtn_io_writeEnable</obj_property>
-      <obj_property name="ObjectShortName">writeBtn_io_writeEnable</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/Main/io_vga_hsync_REG">
-      <obj_property name="ElementShortName">io_vga_hsync_REG</obj_property>
-      <obj_property name="ObjectShortName">io_vga_hsync_REG</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/Main/io_vga_vsync_REG">
-      <obj_property name="ElementShortName">io_vga_vsync_REG</obj_property>
-      <obj_property name="ObjectShortName">io_vga_vsync_REG</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/Main/io_vga_r_REG">
-      <obj_property name="ElementShortName">io_vga_r_REG[3:0]</obj_property>
-      <obj_property name="ObjectShortName">io_vga_r_REG[3:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/Main/io_vga_g_REG">
-      <obj_property name="ElementShortName">io_vga_g_REG[3:0]</obj_property>
-      <obj_property name="ObjectShortName">io_vga_g_REG[3:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/Main/io_vga_b_REG">
-      <obj_property name="ElementShortName">io_vga_b_REG[3:0]</obj_property>
-      <obj_property name="ObjectShortName">io_vga_b_REG[3:0]</obj_property>
+   <wvobject type="array" fp_name="/spi_square_tb/main/spi/count">
+      <obj_property name="ElementShortName">count[7:0]</obj_property>
+      <obj_property name="ObjectShortName">count[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

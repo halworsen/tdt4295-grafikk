@@ -1,11 +1,16 @@
 import chisel3._
 import chisel3.util._
 import tools.WriteBtn
+import tools._
+import tools.generators._
+import tools.helpers._
 import fb.FrameBuffer
 import ld.LineDrawing
 import vga.VGA
 import vga.VGAClock
 import spi._
+import stateMachine.StateMachine
+import matrix._
 
 class Main extends Module {
   def delay(x: UInt) = RegNext(x)
@@ -26,32 +31,86 @@ class Main extends Module {
   })
 
   withReset(~io.aresetn) {
-    val fb = Module(new FrameBuffer(640, 480))
-    val bresenhams = Module(new LineDrawing)
-    bresenhams.io.xs := 500.S
-    bresenhams.io.ys := 0.S
-    bresenhams.io.xe := 0.S
-    bresenhams.io.ye := 400.S
 
+    val stateMachine = Module(new StateMachine)
+    val spi = Module(new Spi((new DataFrame).getWidth))
+    spi.io.spi := io.spi
+
+    //Code for use with SPI
+    // ------------------------------------------------------------
+    val lastRecievedFrame = RegInit(0.U.asTypeOf(new DataFrame))
+    when(spi.io.outputReady) {
+      lastRecievedFrame := spi.io.value.asTypeOf(new DataFrame)
+      //lastRecievedFrame := ExampleDataFramesFP.frames(0)
+    }
+
+    stateMachine.io.newFrameRecieved := spi.io.outputReady
+    val renderingFrame = RegInit(0.U.asTypeOf(new PixelFrame))
+
+    val rotator = Module(new Rotator)
+    rotator.io.mat4 := lastRecievedFrame.matrix
+    rotator.io.inPoints := lastRecievedFrame.points
+
+    when(stateMachine.io.loadNextFrame) {
+      renderingFrame.lines := lastRecievedFrame.lines
+      renderingFrame.points := rotator.io.out
+    }
+    // ------------------------------------------------------------
+
+    // Test code for use without SPI
+    /*
+    // ------------------------------------------------------------
+    val lastRecievedFrame = RegInit(ExampleDataFramesFP.frames(0))
+
+    val (counter, counterWrap) = Counter(true.B, 10000000) // 10 fps
+    stateMachine.io.newFrameRecieved := counterWrap
+
+    val rotator = Module(new Rotator)
+    rotator.io.mat4 := DontCare
+
+    rotator.io.inPoints := lastRecievedFrame.points
+    when(counter === 1000000.U) {
+      lastRecievedFrame.points := rotator.io.outFP
+    }
+
+    val renderingFrame = Reg(new PixelFrame)
+    when(stateMachine.io.loadNextFrame) {
+      renderingFrame.lines := lastRecievedFrame.lines
+      renderingFrame.points := rotator.io.out
+    }
+     */
+    // ------------------------------------------------------------
+
+    val fb = Module(new FrameBuffer(STD.screenWidth, STD.screenHeight))
+    val bresenhams = Module(new LineDrawing)
     fb.io.writeEnable := bresenhams.io.writeEnable
-    //bresenhams.io.writeEnable := DontCare
-    //fb.io.writeEnable := false.B
-    fb.io.writeX := bresenhams.io.writeX
-    fb.io.writeY := bresenhams.io.writeY
+    fb.io.writePixel := bresenhams.io.writePixel
     fb.io.writeVal := bresenhams.io.writeVal
+
+    bresenhams.io.start := stateMachine.io.bhStartRegular
+    bresenhams.io.startClear := stateMachine.io.bhStartClear
+
+    bresenhams.io.p1 := renderingFrame.points(
+      renderingFrame.lines(stateMachine.io.lineIndex).index1
+    )
+    bresenhams.io.p2 := renderingFrame.points(
+      renderingFrame.lines(stateMachine.io.lineIndex).index2
+    )
+
+    val vgaBlanking = Module(new CDC)
+
+    stateMachine.io.bhBussy := bresenhams.io.busy
+    stateMachine.io.inBlanking := vgaBlanking.io.output
 
     val vga = Module(new VGA)
     val vgaClock = Module(new VGAClock)
 
-    val writeBtn = Module(new WriteBtn)
-    writeBtn.io.aresetn := io.aresetn
-    writeBtn.io.btn := io.btn
-
-    bresenhams.io.start := writeBtn.io.writeEnable
+    vgaBlanking.io.clk_in := vgaClock.io.clk_pix
+    vgaBlanking.io.clk_out := clock
+    vgaBlanking.io.input := vga.io.blanking
 
     vgaClock.io.clk := clock
 
-    //val shouldDraw = vga.io.selX < 48.U && vga.io.selY < 48.U
     withClock(vgaClock.io.clk_pix) {
       vga.io.clock := vgaClock.io.clk_pix
       vga.io.reset := ~io.aresetn
@@ -66,15 +125,21 @@ class Main extends Module {
       io.vga_hsync := delay(vga.io.hsync)
       io.vga_vsync := delay(vga.io.vsync)
 
-      io.vga_r := delay(vga.io.out(0))
-      io.vga_g := delay(vga.io.out(1))
-      io.vga_b := delay(vga.io.out(2))
+      io.vga_r := delay(vga.io.out.r)
+      io.vga_g := delay(vga.io.out.g)
+      io.vga_b := delay(vga.io.out.b)
 
     }
 
-    val spi = Module(new Spi)
-    spi.io.spi := io.spi
-    io.led := spi.io.value(3, 0)
+    val (cnt, cntWrap) = Counter(true.B, 100000000)
+
+    val led = RegInit(1.U(4.W))
+    when(cntWrap) {
+      led := led + 1.U
+    }
+
+    io.led := led
+    io.btn := DontCare
 
   }
 }
@@ -84,109 +149,3 @@ object Main extends App {
   (new chisel3.stage.ChiselStage)
     .emitVerilog(new Main(), Array("--target-dir", "verilog/"))
 }
-
-/*
-
-TEST CODE
-
-import chisel3.util._
-
-class Main extends Module {
-  val io = IO(new Bundle {
-    val aresetn = Input(Bool())
-
-    val led = Output(Bits(4.W))
-    //val clkout = Output(Clock())
-
-    val btn = Input(UInt(4.W))
-
-    // NEW FOR SPI COMMUNICATION
-    val mcuData = Input(UInt(8.W))
-  })
-
-  // TODO: In main, make io.value (output of spi) the input to this code
-  // io.mcuData := spi.io.value
-
-  def tickGen(fac: Int) = {
-    val reg = RegInit(0.U(log2Up(fac).W))
-    val tick = reg === (fac - 1).U
-    reg := Mux(tick, 0.U, reg + 1.U)
-    tick
-  }
-
-  def rising(v: Bool) = v & !RegNext(v)
-
-  def filter(v: Bool, t: Bool) = {
-    val reg = RegInit(0.U(3.W))
-    when(t) {
-      reg := Cat(reg(1, 0), v)
-    }
-    (reg(2) & reg(1)) | (reg(2) & reg(0)) | (reg(1) & reg(0))
-  }
-
-  withReset(~io.aresetn) {
-    val btnCnt = (io.btn(0)).asBool
-
-    val btnSync = RegNext(RegNext(btnCnt))
-    val tick = tickGen(100000000 / 100)
-    val btnDeb = Reg(Bool())
-
-    when(tick) {
-      btnDeb := btnSync
-    }
-    val btnClean = filter(btnDeb, tick)
-    val risingEdge = rising(btnClean)
-
-    var counter = RegInit(0.U(4.W))
-
-    //var clocks = Module(new Clock())
-    //io.clkout := clocks.io.clkout
-    val ledReg = RegInit(0.U(4.W))
-
-    when(risingEdge) {
-      counter := counter + 1.U
-    }
-    when(counter === 0.U) {
-      ledReg := 0.U
-    }
-
-    when(counter === 1.U) {
-      ledReg := "b0001".U
-    }
-    when(counter === 2.U) {
-      ledReg := "b0010".U
-    }
-    when(counter === 3.U) {
-      ledReg := "b0100".U
-    }
-
-    when(counter === 4.U) {
-      ledReg := "b1000".U
-    }
-    when(counter === 5.U) {
-      counter := 0.U
-    }
-
-    // SPI PART, USE FOR LEDS TO INDICATE value of byte
-    when(io.mcuData <= 255.U && io.mcuData >= 200.U) {
-      ledReg := "b0001".U
-    }
-    when(io.mcuData < 200.U && io.mcuData >= 128.U) {
-      ledReg := "b0010".U
-    }
-    when(io.mcuData < 128.U && io.mcuData >= 64.U) {
-      ledReg := "b0100".U
-    }
-     when(io.mcuData < 64.U && io.mcuData > 0.U) {
-      ledReg := "b1000".U
-    }
-    when(io.mcuData == 0.U) {
-      counter := 0.U
-    }
-
-    io.led := ledReg
-  }
-
-}
-
- */

@@ -1,10 +1,10 @@
 # Div
-#EFM_MODEL = EFM32GG12B
-#EFM_NAME = efm32gg12b
-#MCU = EFM32GG12B810F1024GQ64
-EFM_MODEL = EFM32GG
-EFM_NAME = efm32gg
-MCU = EFM32GG990F1024
+EFM_MODEL = EFM32GG12B
+EFM_NAME = efm32gg12b
+MCU = EFM32GG12B810F1024GQ64
+#EFM_MODEL = EFM32GG
+#EFM_NAME = efm32gg
+#MCU = EFM32GG990F1024
 LINKERSCRIPT = ${GECKOSDKDIR}/platform/Device/SiliconLabs/${EFM_MODEL}/Source/GCC/${EFM_NAME}.ld
 GECKOSDKDIR = ../Gecko_SDK
 debug = true
@@ -35,7 +35,7 @@ FORMATTER = clang-format
 
 # Flags
 SPECFLAGS = --specs=nosys.specs
-MACHFLAGS = -mcpu=cortex-m3 -mthumb
+MACHFLAGS = -mcpu=cortex-m4 -mthumb
 CFLAGS += ${addprefix -I, ${INCLUDEPATH}} ${MACHFLAGS} ${SPECFLAGS} -Wall -Werror -D ${MCU} 
 LDFLAGS += ${MACHFLAGS} -T${LINKERSCRIPT} ${SPECFLAGS} -Wl,--print-memory-usage -lm
 ARFLAGS = cr

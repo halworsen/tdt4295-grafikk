@@ -29,3 +29,6 @@ jobs:
 
       - name: Run tests
         run: sbt test
+
+      - name: Check build
+        run: sbt run

@@ -2,128 +2,97 @@ package ld
 
 import chisel3._
 import chisel3.util._
+import tools._
 
 // https://www.google.com/search?q=bresenham%27s+line+algorithm&sxsrf=AOaemvL1TxCiXvAjdJEoqqyHit-YOLiabQ:1633605785405&source=lnms&tbm=isch&sa=X&sqi=2&ved=2ahUKEwjQtqrkl7jzAhXnQvEDHVxHC0AQ_AUoAXoECAEQAw&biw=1440&bih=788&dpr=2#imgrc=MemqMsI7g2nbiM
-class LineDrawing(
-    coordWidth: Int = 16
-) extends Module {
-  def delay(x: SInt) = RegNext(x)
+class LineDrawing extends Module {
+  def delay(x: UInt) = RegNext(x)
   val io = IO(new Bundle {
-    val xs = Input(SInt(coordWidth.W))
-    val ys = Input(SInt(coordWidth.W))
-    val xe = Input(SInt(coordWidth.W))
-    val ye = Input(SInt(coordWidth.W))
-    // Todo: should we have an input that controls whether or not we should output? (output enable)
+    val p1 = Input(new Pixel)
+    val p2 = Input(new Pixel)
 
     val start = Input(Bool())
+    val startClear = Input(Bool())
 
     val writeEnable = Output(Bool())
-    val writeX = Output(SInt(coordWidth.W))
-    val writeY = Output(SInt(coordWidth.W))
-    val writeVal = Output(Vec(3, UInt(4.W)))
+    val writePixel = Output(new Pixel)
+    val writeVal = Output(Bool())
 
     val done = Output(Bool())
+    val busy = Output(Bool())
   })
 
-  // Needed because Bresenham's algorithm is not
-  // symmetrical, and we don't want gaps
-  val xs = Wire(SInt())
-  val xe = Wire(SInt())
-  val ys = Wire(SInt())
-  val ye = Wire(SInt())
-
-  // Swap points if y_end is less than y_start to ensure
-  // a consistent way to order the points. This way
-  // ensures that we always draw down on the screen.
-  xs := io.xs;
-  xe := io.xe;
-  when(io.ys < io.ye) {
-    ys := io.ys;
-    ye := io.ye;
-  }.otherwise {
-    ys := io.ye;
-    ye := io.ye;
-  }
-
-  val init1 :: init2 :: draw :: idle :: Nil = Enum(4)
+  val idle :: init :: draw :: Nil = Enum(3)
   val state = RegInit(idle)
-  val right = Reg(Bool())
+  val ps = RegInit(0.U.asTypeOf(new Pixel)) //Pixel start
+  val pe = RegInit(0.U.asTypeOf(new Pixel)) //Pixel end
 
-  val x = Reg(SInt(coordWidth.W))
-  val y = Reg(SInt(coordWidth.W))
-  val dx = Reg(SInt((coordWidth + 1).W))
-  val dy = Reg(SInt((coordWidth + 1).W))
-  val e = Reg(SInt((coordWidth + 1).W))
+  val x = RegInit(0.U(STD.coordWidth))
+  val y = RegInit(0.U(STD.coordWidth))
+  val e = RegInit(0.S(STD.coordWidth + 1.W))
+  val writeVal = RegInit(false.B)
 
-  // These signals say whether we should inc/dec x and/or inc y
-  // based on the error value
-  val updX = Reg(Bool())
-  val updY = Reg(Bool())
+  // Calculated functions
+  val right = pe.x > ps.x
+  val dx = Mux(right, pe.x - ps.x, ps.x - pe.x).asSInt
+  val dy = (ps.y - pe.y).asSInt
+  val updX = 2.S * e >= dy;
+  val updY = 2.S * e <= dx;
 
-  val drawDone = Reg(Bool())
-  drawDone := Mux(right, x >= xe, x <= xe) && y >= ye
+  //Defalut IO values
+  io.writeVal := writeVal
+  io.writePixel.x := x
+  io.writePixel.y := y
 
-  updX := (2.S * e >= dy);
-  updY := (2.S * e <= dx);
-
-  io.writeVal(0) := "h1".U
-  io.writeVal(1) := "h2".U
-  io.writeVal(2) := "h0".U
-
-  io.done := true.B
+  io.busy := state =/= idle
+  io.done := false.B
   io.writeEnable := false.B
 
   switch(state) {
     is(idle) {
-      io.done := false.B
-      io.writeEnable := false.B
-      when(io.start) {
-        state := init1
-        right := xe > xs
+      when(io.start || io.startClear) {
+        ps := Mux(io.p1.y <= io.p2.y, io.p1, io.p2)
+        pe := Mux(io.p1.y <= io.p2.y, io.p2, io.p1)
+        state := init
+        writeVal := Mux(io.startClear, false.B, true.B)
       }
     }
-    is(init1) {
-      io.done := false.B
-      dx := Mux(right, xe - xs, xs - xe)
-      dy := ys - ye
-      state := init2
-    }
-    is(init2) {
-      io.writeEnable := true.B
+    is(init) {
       e := dx + dy
-      x := xs
-      y := ys
+      x := ps.x
+      y := ps.y
       state := draw
     }
     is(draw) {
       // Draw pixel
-      when(drawDone) {
+      io.writeEnable := true.B
+
+      when(
+        (x === pe.x && y === pe.y) || Mux(
+          right,
+          x < ps.x || x > pe.x,
+          x > ps.x || x < pe.x
+        ) || y < ps.y || y > pe.y
+      ) {
         state := idle
         io.done := true.B
-        io.writeEnable := false.B
       }.otherwise {
-        io.done := false.B
-        io.writeEnable := true.B
-
         when(updX && updY) {
-          x := Mux(right, x + 1.S, x - 1.S)
-          y := y + 1.S;
+          x := Mux(right, x + 1.U, x - 1.U)
+          y := y + 1.U;
           e := e + dy + dx;
         }.otherwise {
           when(updX) {
-            x := Mux(right, x + 1.S, x - 1.S)
+            x := Mux(right, x + 1.U, x - 1.U)
             e := e + dy;
           }
           when(updY) {
-            y := y + 1.S;
+            y := y + 1.U;
             e := e + dx;
           }
         }
       }
     }
   }
-
-  io.writeX := x
-  io.writeY := y
 
 }
