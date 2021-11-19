@@ -1,5 +1,4 @@
 #include "adc.h"
-#include "bsp.h"
 #include "em_adc.h"
 #include "em_chip.h"
 #include "em_cmu.h"
@@ -37,17 +36,44 @@
     _a < _b ? _a : _b;                                                         \
   })
 
-uint32_t ch1_sample;
-uint32_t ch2_sample;
+uint32_t left_vertical;
+uint32_t left_horizontal;
+uint32_t right_vertical;
+uint32_t right_horizontal;
 uint32_t adcChannel = 0;
 SPIDRV_HandleData_t handleData;
 SPIDRV_Handle_t handle = &handleData;
 ADC_InitScan_TypeDef initScan = ADC_INITSCAN_DEFAULT;
 
+// Array containing the verts of the model (in model coordinates).
 vec3_t square[4];
 
-void calc_points(uint32_t ch1_sample, uint32_t ch2_sample,
-                 int16_t *coordinates) {
+/* FPGA package. */
+// For now this uses some structs representing pixel coordinates,
+// instead of the "proper" linalg structures, just to get a simple
+// indexed MVP going.
+
+// A Point (essentially a pixel coordinate).
+typedef struct point {
+  int16_t x;
+  int16_t y;
+} point_t;
+
+// A Line is two indexes into the array of points.
+typedef struct line {
+  uint16_t start;
+  uint16_t end;
+} line_t;
+
+// The complete fpga package.
+#define NUM_POINTS 4
+#define NUM_LINES 4
+struct {
+  point_t points[NUM_POINTS];
+  line_t lines[NUM_LINES];
+} fpga_package;
+
+void calc_points(uint32_t ch1_sample, uint32_t ch2_sample) {
   // This starts with our model square [-1, 1] x [-1, 1], and
   // applies a scale-, a rotation-, and a translation-transform
   // defined by potentiometer positions so that changing one
@@ -87,73 +113,81 @@ void calc_points(uint32_t ch1_sample, uint32_t ch2_sample,
   mmul3(&TSR, &T, &SR);
 
   // Iterate over the vertices.
-  for (int i = 0; i < 8; i = i + 2) {
+  for (int i = 0; i < NUM_POINTS; i++) {
     // Calculate transformed vertex q = (TSR)v for all v in the square.
     vec3_t q;
-    transform3(&q, &TSR, &square[i / 2]);
+    transform3(&q, &TSR, &square[i]);
 
-    // Put the transformed coordinates in the coordinate buffer.
+    // Put the transformed coordinates in the package point array.
     // These are already floats in pixel-coordinates, so we only
     // need to cast them to int16, and then they are ready.
-    coordinates[i] = (int16_t)q.x;
-    coordinates[i + 1] = (int16_t)q.y;
+    fpga_package.points[i].x = (int16_t)q.x;
+    fpga_package.points[i].y = (int16_t)q.y;
   }
 }
 
-void transmit_square(int16_t *coordinates) {
-  // Transmit the coordinates of a square as 4 pairs of
-  // 16-bit integers. This handles changing the byte-
-  // order.
+void transmit_fpga_package() {
+  // Transmit the FPGA package.
+  // This works by first preparing the bitstream as a byte-array,
+  // by iterating over the package and manually placing the bytes
+  // from the package in the right order.
+  uint8_t bitstream[sizeof(fpga_package)];
 
-  for (int i = 0; i < 8; i++) {
-    // Flip the order of the bytes.
-    uint8_t bitstream[2];
-    bitstream[0] = (coordinates[i] >> 8) & 0xFF;
-    bitstream[1] = coordinates[i] & 0xFF;
+  /* Prepare the verts. */
 
-    // Invoke the SPI driver to transfer the bitstream.
-    SPIDRV_MTransmitB(handle, bitstream, sizeof(bitstream));
+  for (int i = 0; i < 4; i++) {
+    bitstream[4 * i] = (fpga_package.points[i].x >> 8) & 0xFF;
+    bitstream[4 * i + 1] = fpga_package.points[i].x & 0xFF;
+    bitstream[4 * i + 2] = (fpga_package.points[i].y >> 8) & 0xFF;
+    bitstream[4 * i + 3] = fpga_package.points[i].y & 0xFF;
   }
+
+  /* Prepare the lines. */
+
+  // The lines start directly after the points.
+  int line_offset = NUM_POINTS * sizeof(point_t);
+
+  for (int i = 0; i < 4; i++) {
+    bitstream[line_offset + 4 * i] = (fpga_package.lines[i].start >> 8) & 0xFF;
+    bitstream[line_offset + 4 * i + 1] = fpga_package.lines[i].start & 0xFF;
+    bitstream[line_offset + 4 * i + 2] =
+        (fpga_package.lines[i].end >> 8) & 0xFF;
+    bitstream[line_offset + 4 * i + 3] = fpga_package.lines[i].end & 0xFF;
+  }
+
+  SPIDRV_MTransmitB(handle, bitstream, sizeof(bitstream));
 }
 
 void GPIO_EVEN_IRQHandler(void) {
-  GPIO_IntClear(0x5555);
-  GPIO_PinOutToggle(BSP_GPIO_LED1_PORT, BSP_GPIO_LED1_PIN);
+  GPIO_IntClear(0xFFFF);
+  GPIO_PinOutToggle(gpioPortE, LED1_PIN);
 }
 
 void TIMER1_IRQHandler(void) {
-  // The square has 8 coordinates.
-  int16_t coordinates[8] = {0};
-
   TIMER_IntClear(TIMER1, 1);
   ADC_Start(ADC0, adcStartScan);
-
-  calc_points(ch1_sample, ch2_sample, coordinates);
-  transmit_square(coordinates);
-  if (ch1_sample > 2048)
-    GPIO_PinOutSet(BSP_GPIO_LED0_PORT, BSP_GPIO_LED0_PIN);
-  else
-    GPIO_PinOutClear(BSP_GPIO_LED0_PORT, BSP_GPIO_LED0_PIN);
-  if (ch2_sample > 2048)
-    GPIO_PinOutSet(BSP_GPIO_LED1_PORT, BSP_GPIO_LED1_PIN);
-  else
-    GPIO_PinOutClear(BSP_GPIO_LED1_PORT, BSP_GPIO_LED1_PIN);
+  calc_points(MAX_SAMPLE - right_vertical, MAX_SAMPLE - left_horizontal);
+  if (GPIO_PinInGet(gpioPortB, FPGA_DONE_PIN))
+    transmit_fpga_package();
 }
 
 void ADC0_IRQHandler(void) {
-  ADC_IntClear(ADC0, ADC_IFC_SCAN);
-  ADC_IntClear(ADC0, ADC_IFC_SCANOF);
-  uint32_t sample = ADC_DataScanGet(ADC0);
-  if ((ADC0->STATUS & 0x0F000000) == 0x04000000)
-    ch1_sample = sample;
-  if ((ADC0->STATUS & 0x0F000000) == 0x05000000)
-    ch2_sample = sample;
-  if (adcChannel)
-    initScan.input = ADC_SCANCTRL_INPUTMASK_CH4;
-  else
-    initScan.input = ADC_SCANCTRL_INPUTMASK_CH5;
-  ADC_InitScan(ADC0, &initScan);
-  adcChannel = !adcChannel;
+  uint32_t sample;
+  uint32_t id;
+
+  ADC_IntClear(ADC0, ADC_IF_SCAN);
+  ADC_IntClear(ADC0, ADC_IF_SCANOF);
+  for (int i = 0; i < 4; i++) {
+    sample = ADC_DataIdScanGet(ADC0, &id);
+    if (id == 0)
+      right_horizontal = sample;
+    else if (id == 4)
+      left_vertical = sample;
+    else if (id == 6)
+      left_horizontal = sample;
+    else if (id == 14)
+      right_vertical = sample;
+  }
 }
 
 int main(void) {
@@ -163,6 +197,19 @@ int main(void) {
   vec3(&square[2], 1.0, -1.0, 1.0);
   vec3(&square[3], 1.0, 1.0, 1.0);
 
+  // Hard coded to lines connect the lines sequentially.
+  fpga_package.lines[0].start = 0;
+  fpga_package.lines[0].end = 1;
+
+  fpga_package.lines[1].start = 1;
+  fpga_package.lines[1].end = 2;
+
+  fpga_package.lines[2].start = 2;
+  fpga_package.lines[2].end = 3;
+
+  fpga_package.lines[3].start = 3;
+  fpga_package.lines[3].end = 0;
+
   uint32_t bitrate = 0;
   // Initializations
   CMU_ClockSelectSet(cmuClock_HF, cmuSelect_HFXO);
@@ -171,13 +218,14 @@ int main(void) {
   initADC_scan(adcRefVDD);
   TIMER_Enable(TIMER1, true);
 
-  SPIDRV_Init_t initData = SPIDRV_MASTER_USART1;
+  SPIDRV_Init_t initData = SPIDRV_MASTER_USART3;
   SPIDRV_Init(handle, &initData);
   SPIDRV_SetBitrate(handle, SPI_BITRATE);
   SPIDRV_GetBitrate(handle, &bitrate);
 
+  GPIO_PinOutSet(gpioPortE, LED1_PIN);
   if (bitrate != SPI_BITRATE)
-    GPIO_PinOutSet(BSP_GPIO_LED0_PORT, BSP_GPIO_LED0_PIN);
+    GPIO_PinOutSet(gpioPortE, LED2_PIN);
 
   while (1) {
   }

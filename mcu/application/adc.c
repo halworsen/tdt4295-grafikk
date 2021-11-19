@@ -1,8 +1,12 @@
-#include "bsp.h"
 #include "em_adc.h"
 #include "em_chip.h"
 #include "em_cmu.h"
 #include "em_gpio.h"
+
+#define js0_vertical adcPosSelAPORT1XCH12
+#define js0_horizontal adcPosSelAPORT1XCH14
+#define js1_vertical adcPosSelAPORT0XCH6
+#define js1_horizontal adcPosSelAPORT1XCH8
 
 extern ADC_InitScan_TypeDef initScan;
 
@@ -12,7 +16,12 @@ void initADC_scan(int ref) {
   init.prescale = 255;
   ADC_Init(ADC0, &init);
   initScan.reference = ref;
-  initScan.input = ADC_SCANCTRL_INPUTMASK_CH4;
+  // H joystick 0
+  ADC_ScanSingleEndedInputAdd(&initScan, 0, js0_vertical);
+  ADC_ScanSingleEndedInputAdd(&initScan, 0, js0_horizontal);
+  ADC_ScanSingleEndedInputAdd(&initScan, 1, js1_vertical);
+  ADC_ScanSingleEndedInputAdd(&initScan, 0, js1_horizontal);
+
   ADC_InitScan(ADC0, &initScan);
 
   // Enable interrupts
