@@ -32,7 +32,8 @@ class FrameBuffer(width: Int, height: Int) extends Module {
   frame_done.io.clk_in := io.readClock
   frame_done.io.clk_out := clock
   frame_done.io.input := io.frameDone
-  val frameDone = frame_done.io.output ^ RegNext(frame_done.io.output)
+  // frame_done will be high for many clock cycles. Trigger only on edge in system clock
+  val frameDone = frame_done.io.output
 
   val fb_internal =
     Module(
@@ -69,8 +70,9 @@ class FrameBuffer(width: Int, height: Int) extends Module {
     is(clear) {
       when(fb_clear_addr === (pixel_count - 1).U) {
         state := active
+      }.otherwise {
+        fb_clear_addr := fb_clear_addr + 1.U
       }
-      fb_clear_addr := fb_clear_addr + 1.U
     }
 
     is(idle) {
@@ -94,7 +96,8 @@ class FrameBuffer(width: Int, height: Int) extends Module {
     write_val := io.writeVal
   }
 
-  val out_of_frame = io.writePixel.x > width.U || io.writePixel.y > height.U
+  val out_of_frame =
+    io.writePixel.x >= width.U || io.writePixel.x < 0.U || io.writePixel.y >= height.U || io.writePixel.y < 0.U
 
   fb_internal.io.clk_write := clock
   //fb.io.reset := reset
@@ -111,18 +114,9 @@ class FrameBuffer(width: Int, height: Int) extends Module {
   //fb.io.read_out_reg_en := true.B
 
   withClock(io.readClock) {
-    val read_addr = RegInit(0.U(20.W))
+    val read_addr = io.readY * width.U + io.readX
     fb_internal.io.clk_read := io.readClock
     fb_internal.io.read_addr := Cat(~current_buffer, read_addr)
-    when(io.readY === 0.U && io.readX === 0.U) {
-      read_addr := 0.U
-    }
-      .elsewhen(io.readY < height.U && io.readX < width.U) {
-        read_addr := read_addr + 1.U
-      }
-    //r(0) := fb.io.data_out(colorDepth - 1, 0)
-    //r(1) := fb.io.data_out(2 * colorDepth - 1, colorDepth)
-    //r(2) := fb.io.data_out(3 * colorDepth - 1, 2 * colorDepth)
   }
 
   io.readVal := fb_internal.io.data_out.asBool()

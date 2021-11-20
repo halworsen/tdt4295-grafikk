@@ -30,14 +30,14 @@ class VGA extends Module {
     val (counterHsync, counterHsyncWrap) = Counter(0 to 800)
     val (counterVsync, counterVsyncWrap) = Counter(counterHsyncWrap, 525)
 
-    io.hsync := counterHsync >= (640 + 16).U & counterHsync < (640 + 16 + 96).U
-    io.vsync := counterVsync >= (480 + 10).U & counterVsync < (480 + 10 + 2).U
+    io.hsync := !(counterHsync >= (640 + 16).U & counterHsync < (640 + 16 + 96).U)
+    io.vsync := !(counterVsync >= (480 + 10).U & counterVsync < (480 + 10 + 2).U)
     io.dataEnable := counterHsync < 640.U & counterVsync < 480.U
 
     // Output high when we are in this space in the blanking interval
     // To implement verical sync & avoid tearing
     io.blanking := counterVsync > 480.U & counterVsync < 522.U
-    io.frameDone := counterVsync === 480.U && counterHsync === 640.U
+    io.frameDone := counterVsync === 480.U && counterHsync === 800.U
 
     io.selX := counterHsync
     io.selY := counterVsync
