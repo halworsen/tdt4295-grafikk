@@ -106,6 +106,10 @@ class Main extends Module {
     fb.io.writeEnable := bresenhams.io.writeEnable
     fb.io.writePixel := bresenhams.io.writePixel
     fb.io.writeVal := bresenhams.io.writeVal
+    fb.io.clear := stateMachine.io.fbClear
+
+    stateMachine.io.fbReady := fb.io.ready
+    stateMachine.io.fbClearStarted := fb.io.clearStarted
 
     bresenhams.io.start := stateMachine.io.bhStartRegular
     bresenhams.io.startClear := stateMachine.io.bhStartClear
@@ -128,6 +132,8 @@ class Main extends Module {
     vgaBlanking.io.clk_in := vgaClock.io.clk_pix
     vgaBlanking.io.clk_out := clock
     vgaBlanking.io.input := vga.io.blanking
+
+    fb.io.frameDone := vga.io.frameDone
 
     vgaClock.io.clk := clock
 

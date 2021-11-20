@@ -20,6 +20,7 @@ class VGA extends Module {
 
     // Is the current output in the blanking interval
     val blanking = Output(Bool())
+    val frameDone = Output(Bool())
 
     val clock = Input(Clock())
     val reset = Input(Bool())
@@ -36,6 +37,7 @@ class VGA extends Module {
     // Output high when we are in this space in the blanking interval
     // To implement verical sync & avoid tearing
     io.blanking := counterVsync > 480.U & counterVsync < 522.U
+    io.frameDone := counterVsync === 480.U && counterHsync === 640.U
 
     io.selX := counterHsync
     io.selY := counterVsync
