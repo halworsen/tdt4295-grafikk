@@ -7,12 +7,15 @@ import chisel3.experimental._
 import tools._
 import tools.helpers.{fp}
 
-class Rotator(points: Int = STD.pointNum) extends Module {
+class Rotator(points: Int = STD.pointNum, dimension: Int = STD.pointDimension)
+    extends Module {
   val io = IO(new Bundle {
     val inPoints = Input(Vec(points, new Point))
-    val mat4 = Input(Vec(points, Vec(points, STD.FP)))
+    val mat4 = Input(Vec(dimension, Vec(dimension, STD.FP)))
     val outFP = Output(Vec(points, new Point))
     val out = Output(Vec(points, new Pixel))
+    val inputReady = Input(Bool())
+    val outputReady = Output(Bool())
   })
 
   val mat = RegNext(io.mat4)
@@ -49,6 +52,8 @@ class Rotator(points: Int = STD.pointNum) extends Module {
     )
   )
 
+  val outputs = Wire(Vec(points, Bool()))
+
   for (i <- 0 to points - 1) {
     val mvp = Module(new MVP)
     mvp.io.mat4 := mat
@@ -64,6 +69,8 @@ class Rotator(points: Int = STD.pointNum) extends Module {
     io.outFP(i).w := mvp.io.outVec4(3)
 
     val normalizer = Module(new Normalizer)
+    normalizer.io.inputReady := io.inputReady
+    outputs(i) := normalizer.io.outputReady
 
     normalizer.io.point.x := mvp.io.outVec4(0)
     normalizer.io.point.y := mvp.io.outVec4(1)
@@ -73,4 +80,6 @@ class Rotator(points: Int = STD.pointNum) extends Module {
     io.out(i).x := normalizer.io.pixel.x
     io.out(i).y := normalizer.io.pixel.y
   }
+
+  io.outputReady := outputs.reduce((a, b) => a & b)
 }

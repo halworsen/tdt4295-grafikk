@@ -5,12 +5,13 @@ import Chisel.log2Up
 import chisel3.experimental.FixedPoint
 
 object STD {
-  val pointNum = 4
-  val linenum = 4
+  val pointNum = 8
+  val linenum = 12
+  val pointDimension = 4
   val pointIndexWidth = 16.W
   val fixedWidth = 16.W
-  val binaryPoint = 12.BP
   val binaryPointVal = 12
+  val binaryPoint = binaryPointVal.BP
   val colorEnabled = true
   val colorWidth = 4.W
 
@@ -39,8 +40,8 @@ class DataFrame extends Bundle {
   val points = Vec(STD.pointNum, new Point)
   val lines = Vec(STD.linenum, new Line)
   val matrix = Vec(
-    STD.pointNum,
-    Vec(STD.pointNum, STD.FP)
+    STD.pointDimension,
+    Vec(STD.pointDimension, STD.FP)
   )
 }
 

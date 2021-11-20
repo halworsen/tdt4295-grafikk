@@ -26,7 +26,10 @@ object helpers {
 
   def fp = (v: Double) => v.F(STD.fixedWidth, STD.binaryPoint)
 
-  val divFP = (a: FixedPoint, w: FixedPoint) =>
-    ((a << STD.binaryPointVal).asSInt() / w.asSInt())
+  def divFP = (a: FixedPoint, w: FixedPoint) => {
+    val divisor = RegNext(a << STD.binaryPointVal).asSInt()
+    val divident = RegNext(w).asSInt()
+    (divisor / divident)
       .asFixedPoint(STD.binaryPoint)
+  }
 }

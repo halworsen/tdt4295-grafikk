@@ -4,15 +4,31 @@ import chisel3._
 import chisel3.experimental._
 import tools._
 import tools.helpers.{divFP, fp}
+import dsptools.numbers._
 
 class Normalizer extends Module {
   val io = IO(new Bundle {
     val point = Input(new Point)
     val pixel = Output(new Pixel)
+
+    val inputReady = Input(Bool())
+    val outputReady = Output(Bool())
   })
 
-  val pX = io.point.x // divFP(io.point.x, io.point.w)
-  val pY = io.point.y //divFP(io.point.y, io.point.w)
+  val fixdivX = Module(new FixPointDivision)
+  val fixdivY = Module(new FixPointDivision)
+
+  fixdivX.io.divident := io.point.x
+  fixdivX.io.divisor := io.point.w
+  fixdivX.io.inputReady := io.inputReady
+  val pX = fixdivX.io.result
+
+  fixdivY.io.divident := io.point.y
+  fixdivY.io.divisor := io.point.w
+  fixdivY.io.inputReady := io.inputReady
+  val pY = fixdivY.io.result
+
+  io.outputReady := fixdivX.io.resultReady & fixdivY.io.resultReady
 
   val testOutX = Wire(FixedPoint(32.W, 0.BP))
   val testOutY = Wire(FixedPoint(32.W, 0.BP))
