@@ -18,9 +18,6 @@ class SpiSlave extends Bundle {
   val cs = Bool()
 }
 
-/** [[Spi]]
-  * @param dWidth
-  */
 class Spi(dWidth: Int = 8) extends Module {
 
   def delay(x: Bool) = RegNext(x)
@@ -72,4 +69,5 @@ class Spi(dWidth: Int = 8) extends Module {
   valueOutput := valueReg
 
   // TODO: Send data from FPGA to MCU - MISO
+  // Won't be implemented.
 }

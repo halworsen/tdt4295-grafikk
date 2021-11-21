@@ -44,8 +44,6 @@ class WriteBtn extends Module {
     var counter = RegInit(0.U(4.W))
     val write = RegInit(false.B)
 
-    //var clocks = Module(new Clock())
-    //io.clkout := clocks.io.clkout
     val ledReg = RegInit(0.U(4.W))
 
     when(risingEdge) {

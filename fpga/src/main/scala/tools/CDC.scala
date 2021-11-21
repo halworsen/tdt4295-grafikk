@@ -29,5 +29,4 @@ class CDC extends Module {
     // The output is high when we detect a pulse
     io.output := out_reg(3) ^ out_reg(2)
   }
-
 }

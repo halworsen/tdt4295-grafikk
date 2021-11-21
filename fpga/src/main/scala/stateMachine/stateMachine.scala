@@ -67,9 +67,10 @@ class StateMachine extends Module {
       state := calculationWait
     }
     is(calculationWait) {
+     // Load calculated pixels
       when(io.pixelCalculationReady) {
         state := loadPixels
-        io.loadNextPixels := true.B // Load calculated pixels
+        io.loadNextPixels := true.B
       }
     }
     is(loadPixels) {
