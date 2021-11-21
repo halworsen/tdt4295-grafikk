@@ -106,6 +106,10 @@ class Main extends Module {
     fb.io.writeEnable := bresenhams.io.writeEnable
     fb.io.writePixel := bresenhams.io.writePixel
     fb.io.writeVal := bresenhams.io.writeVal
+    fb.io.clear := stateMachine.io.fbClear
+
+    stateMachine.io.fbReady := fb.io.ready
+    stateMachine.io.fbClearStarted := fb.io.clearStarted
 
     bresenhams.io.start := stateMachine.io.bhStartRegular
     bresenhams.io.startClear := stateMachine.io.bhStartClear
@@ -129,27 +133,30 @@ class Main extends Module {
     vgaBlanking.io.clk_out := clock
     vgaBlanking.io.input := vga.io.blanking
 
+    val frame_done = Module(new CDC)
+    frame_done.io.clk_in := vgaClock.io.clk_pix
+    frame_done.io.clk_out := clock
+    frame_done.io.input := vga.io.frameDone
+    fb.io.frameDone := frame_done.io.output
+
     vgaClock.io.clk := clock
 
-    withClock(vgaClock.io.clk_pix) {
-      vga.io.clock := vgaClock.io.clk_pix
-      vga.io.reset := ~io.aresetn
-      fb.io.readEnable := vga.io.dataEnable
+    vga.io.clock := vgaClock.io.clk_pix
+    vga.io.reset := ~io.aresetn
+    fb.io.readEnable := vga.io.dataEnable
 
-      vga.io.data := fb.io.readVal
-      fb.io.readClock := vgaClock.io.clk_pix
-      fb.io.readX := vga.io.selX
-      fb.io.readY := vga.io.selY
+    vga.io.data := fb.io.readVal
+    fb.io.readClock := vgaClock.io.clk_pix
+    fb.io.readX := vga.io.selX
+    fb.io.readY := vga.io.selY
 
-      // Delay all VGA signals by 1 cycle due to 1 cycle delay from memory reads
-      io.vga_hsync := delay(vga.io.hsync)
-      io.vga_vsync := delay(vga.io.vsync)
+    // Delay all VGA signals by 1 cycle due to 1 cycle delay from memory reads
+    io.vga_hsync := delay(vga.io.hsync)
+    io.vga_vsync := delay(vga.io.vsync)
 
-      io.vga_r := delay(vga.io.out.r)
-      io.vga_g := delay(vga.io.out.g)
-      io.vga_b := delay(vga.io.out.b)
-
-    }
+    io.vga_r := delay(vga.io.out.r)
+    io.vga_g := delay(vga.io.out.g)
+    io.vga_b := delay(vga.io.out.b)
 
     val (cnt, cntWrap) = Counter(true.B, 100000000)
 

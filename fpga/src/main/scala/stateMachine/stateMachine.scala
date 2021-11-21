@@ -9,9 +9,12 @@ class StateMachine extends Module {
     val newFrameRecieved = Input(Bool())
     val bhBussy = Input(Bool())
     val inBlanking = Input(Bool())
+    val fbReady = Input(Bool())
+    val fbClearStarted = Input(Bool())
 
     val bhStartRegular = Output(Bool())
     val bhStartClear = Output(Bool())
+    val fbClear = Output(Bool())
     val loadNextFrame = Output(Bool())
     val loadNextPoints = Output(Bool())
     val pixelCalculationReady = Input(Bool())
@@ -24,6 +27,7 @@ class StateMachine extends Module {
   io.loadNextFrame := false.B
   io.loadNextPixels := false.B
   io.loadNextPoints := false.B
+  io.fbClear := false.B
 
   val lineIndex = RegInit(0.U(log2Up(STD.linenum).W))
   io.lineIndex := lineIndex
@@ -38,22 +42,20 @@ class StateMachine extends Module {
 
   switch(state) {
     is(waiting) {
-      when(unrenderedFrame & io.inBlanking) {
-        lineIndex := 0.U
+      when(unrenderedFrame) {
         state := clearSetup
       }
     }
     is(clearSetup) {
-      // Wait 1 cycle for bh inputs to become valid
-      io.bhStartClear := true.B
-      state := clearing
+      // Wait for fb clearing to start
+      io.fbClear := true.B
+      when(io.fbClearStarted) {
+        state := clearing
+      }
     }
     is(clearing) {
-      when(!io.bhBussy && lineIndex < STD.linenum.U) {
-        lineIndex := lineIndex + 1.U
-        state := clearSetup
-      }
-      when(!io.bhBussy && lineIndex >= STD.linenum.U) {
+      // Wait for fb clearing to finish
+      when(io.fbReady) {
         io.loadNextFrame := true.B
         unrenderedFrame := false.B
         lineIndex := 0.U
@@ -72,7 +74,9 @@ class StateMachine extends Module {
     }
     is(loadPixels) {
       // Wait for pixel registers to be updated
-      state := renderSetup
+      when(io.fbReady) {
+        state := renderSetup
+      }
     }
     is(renderSetup) {
       // Wait 1 cycle for bh inputs to become valid
@@ -89,5 +93,4 @@ class StateMachine extends Module {
       }
     }
   }
-
 }
