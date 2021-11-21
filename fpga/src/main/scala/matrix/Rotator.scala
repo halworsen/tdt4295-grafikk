@@ -20,21 +20,19 @@ class Rotator(points: Int = STD.pointNum, dimension: Int = STD.pointDimension)
 
   val mat = RegNext(io.mat4)
 
+  // Hardcoded matrix to test with when
+  // no access to spi
   // 5 deg rotation counter clockwize
   val rotMat = VecInit(
     VecInit(
       fp(0.996),
       fp(0.087),
-      //fp(1),
-      //fp(0),
       fp(0),
       fp(0)
     ),
     VecInit(
       fp(-0.087),
       fp(0.996),
-      //fp(0),
-      //fp(1),
       fp(0),
       fp(0)
     ),

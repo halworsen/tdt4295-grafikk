@@ -36,7 +36,7 @@ class Main extends Module {
     val spi = Module(new Spi((new DataFrame).getWidth))
     spi.io.spi := io.spi
 
-    //Code for use with SPI
+    // Code for use with SPI
     // ------------------------------------------------------------
     val lastRecievedFrame = RegInit(0.U.asTypeOf(new DataFrame))
     when(spi.io.outputReady) {
@@ -50,8 +50,9 @@ class Main extends Module {
     when(stateMachine.io.loadNextFrame) {
       renderingFrame := lastRecievedFrame
     }
-    // ------------------------------------------------------------
 
+    // ------------------------------------------------------------
+    /*
     // Test code for use without SPI
     /*
     // ------------------------------------------------------------

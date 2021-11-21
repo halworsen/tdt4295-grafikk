@@ -6,9 +6,7 @@ import tools._
 
 class VGA extends Module {
 
-  /*
-   * We primaraly focus on a 640 x 480px implementation
-   */
+  // 640 * 480 display @ 60fps
   val io = IO(new Bundle {
     val data = Input(Bool())
     val dataEnable = Output(Bool()) // Data enable. We can write to pixel.
@@ -46,7 +44,6 @@ class VGA extends Module {
       io.data := DontCare
       io.out := 0.U.asTypeOf(new Color)
     }.otherwise {
-      //io.out := io.data
       io.out := Mux(
         io.data,
         STD.mainColor.asTypeOf(new Color),

@@ -33,7 +33,8 @@ class Normalizer extends Module {
   val testOutX = Wire(FixedPoint(32.W, 0.BP))
   val testOutY = Wire(FixedPoint(32.W, 0.BP))
 
-  // Converting coordinate system [-1, 1] -> [0, 640] , [0, 480]
+  // Converting coordinate system 
+  // [-1, 1], [-1, 1] -> [0, 2], [0, 2] -> [0, 640] , [0, 480]
   testOutX := ((pX + FixedPoint.fromBigInt(1, 0.BP)) * FixedPoint.fromBigInt(
     STD.screenWidth / 2,
     16.W,
