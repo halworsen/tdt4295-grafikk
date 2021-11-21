@@ -217,6 +217,19 @@ void perspective(mat4_t *ret, float fov_rad, float aspect, float z_near,
        0.0);
 }
 
+// Perspecive projection matrix
+void proj_trans(mat4_t *ret, float n, float r, float l, float t, float f, float b) {
+  // OpenGL implementation
+  identity(ret);
+  *at(ret, 0, 0) = 2*n/r*l;
+  *at(ret, 1, 1 ) =2*n / (t-b);
+  *at(ret, 0, 2) = (r+l) / (r-l);
+  *at(ret, 1, 2) = (t+b) / (t-b);
+  *at(ret, 2, 2) = -(f+n) / (f-n);
+  *at(ret, 2, 3) = (-2*f*n) / (f-n);
+  *at(ret, 3, 2) = -1.0;
+}
+
 // Right handed orthographic projection
 void ortho(mat4_t *ret, float left, float right, float bottom, float top,
            float z_near, float z_far) {
