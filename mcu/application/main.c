@@ -46,6 +46,9 @@ uint32_t adcChannel = 0;
 float x = 0;
 float y = 0;
 
+float th_y = 0;
+float th_x = 0;
+
 // Handle for the FPGA output.
 SPIDRV_HandleData_t handleData;
 SPIDRV_Handle_t handle = &handleData;
@@ -95,16 +98,18 @@ void calc_mvp(struct fpga_package *fpga_package) {
   float q = (2 * scale - 1.0);
 
   // Theta is the current angle of the joystick.
-  float th = -atan2(q, p);
+  th_y += p * 0.01;
+  th_x += q * 0.01;
 
-  mat4_t M, Ryz, Rz, Ry, T; // rotation and translation matrices.
+  mat4_t M, Ryz, Rx, Rz, Ry, T; // rotation and translation matrices.
 
   // Rotate by theta radians, with slight tilt.
-  rot_y(&Ry, th);
+  rot_y(&Ry, th_y);
+  rot_x(&Rx, th_x);
   // rot_z(&Rz, M_PI / 6.0);
   rot_z(&Rz, 0);
 
-  mmul(&Ryz, &Ry, &Rz);
+  mmul(&Ryz, &Ry, &Rx);
 
   // Translate to x=x,y=dy, dy in [-max_dy, max_dy]
   float z = 15.0 - y * 15; // move into the clip box.
@@ -156,9 +161,11 @@ void ADC0_IRQHandler(void) {
     if (sample > 2000 && sample < 2150)
       sample = 2048;
 
-    if (id == 0)
+    if (id == 0) {
+      if (sample > 2000 && sample < 2200)
+        sample = 2048;
       right_horizontal = sample;
-    else if (id == 4)
+    } else if (id == 4)
       left_vertical = sample;
     else if (id == 6)
       left_horizontal = sample;
@@ -170,16 +177,16 @@ void ADC0_IRQHandler(void) {
 int main(void) {
   // Create the model (the square with w=1).
   vec4_t *cube = fpga_package_plane.verts;
-  vec4(&cube[0], -.2, .5, -1, 1.0);
-  vec4(&cube[1], 0, .5, -1, 1.0);
-  vec4(&cube[2], .2, .5, -1, 1.0);
+  vec4(&cube[0], -1, .5, 1, 1.0);
+  vec4(&cube[1], 0, .5, 1, 1.0);
+  vec4(&cube[2], 1, .5, 1, 1.0);
 
-  vec4(&cube[3], -.2, .5, -2, 1.0);
-  vec4(&cube[4], .2, .5, -2, 1.0);
+  vec4(&cube[3], -1, .5, 0, 1.0);
+  vec4(&cube[4], 1, .5, 0, 1.0);
 
-  vec4(&cube[5], -.2, .5, -3, 1.0);
-  vec4(&cube[6], 0, .5, -3, 1.0);
-  vec4(&cube[7], .2, .5, -3, 1.0);
+  vec4(&cube[5], -1, .5, -1, 1.0);
+  vec4(&cube[6], 0, .5, -1, 1.0);
+  vec4(&cube[7], 1, .5, -1, 1.0);
 
   cube = fpga_package_square.verts;
   vec4(&cube[0], -.1, .1, .1, 1.0);
