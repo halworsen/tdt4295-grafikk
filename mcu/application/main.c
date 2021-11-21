@@ -83,7 +83,6 @@ typedef struct mat4_send {
   int16_t data[16];
 } mat4_send_t;
 
-
 // The complete fpga package.
 #define NUM_VERTS 8
 #define NUM_LINES 12
@@ -145,13 +144,11 @@ void calc_mvp() {
   // Projection matrix.
   mat4_t P;
   // Aspect ratio and clipping planes.
-  float aspect = DISPLAY_WIDTH / ((float) DISPLAY_HEIGHT);
+  float aspect = DISPLAY_WIDTH / ((float)DISPLAY_HEIGHT);
 
-  //ortho(&P, -aspect, aspect, -1.0, 1.0, -2.0, 100.0);
-  perspective(&P, 1.0 /* FOV, radians */, aspect, 0.1 /* z_near */, 100.0 /* z_far */);
-
-
-
+  // ortho(&P, -aspect, aspect, -1.0, 1.0, -2.0, 100.0);
+  perspective(&P, 1.0 /* FOV, radians */, aspect, 0.1 /* z_near */,
+              100.0 /* z_far */);
 
   // Create the "final" transformation matrix.
   mmul(&fpga_package.mat, &P, &M);
@@ -205,10 +202,9 @@ void transmit_fpga_package() {
   // reverse order to accomodate the easiest way to index the matrix
   // on the FPGA side.
   for (int i = 0; i < 16; i++) {
-    int k = 15 - i;
     int16_t fix_point_data = fpga_package.mat.data[i] * (1 << 12);
-    bitstream[matrix_offset + 2 * k] = (fix_point_data >> 8) & 0xFF;
-    bitstream[matrix_offset + 2 * k + 1] = fix_point_data & 0xFF;
+    bitstream[matrix_offset + 2 * i] = (fix_point_data >> 8) & 0xFF;
+    bitstream[matrix_offset + 2 * i + 1] = fix_point_data & 0xFF;
   }
 
   SPIDRV_MTransmitB(handle, bitstream, sizeof(bitstream));
@@ -254,7 +250,7 @@ void ADC0_IRQHandler(void) {
 
 int main(void) {
   // Create the model (the square with w=1).
-  vec4_t* cube = fpga_package.verts;
+  vec4_t *cube = fpga_package.verts;
   vec4(&cube[0], -.1, .1, .1, 1.0);
   vec4(&cube[1], -.1, -.1, .1, 1.0);
   vec4(&cube[2], .1, -.1, .1, 1.0);
