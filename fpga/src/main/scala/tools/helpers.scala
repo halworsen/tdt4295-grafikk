@@ -1,6 +1,7 @@
 package tools
 
 import chisel3._
+import chisel3.util.Reverse
 import chisel3.experimental._
 
 import scala.math.log10
@@ -26,10 +27,16 @@ object helpers {
 
   def fp = (v: Double) => v.F(STD.fixedWidth, STD.binaryPoint)
 
-  def divFP = (a: FixedPoint, w: FixedPoint) => {
-    val divisor = RegNext(a << STD.binaryPointVal).asSInt()
-    val divident = RegNext(w).asSInt()
-    (divisor / divident)
-      .asFixedPoint(STD.binaryPoint)
+  def spiToDataframe = (data: Bits) => {
+    val dataFrame = Wire(new DataFrame)
+    val rawData = data.asTypeOf(new DataFrame)
+    dataFrame.points := rawData.points.reverse
+    dataFrame.lines := rawData.lines.reverse
+    val matrixRev = rawData.matrix.reverse
+    for (i <- 0 until dataFrame.matrix.length) {
+      dataFrame.matrix(i) := matrixRev(i).reverse
+    }
+
+    dataFrame
   }
 }

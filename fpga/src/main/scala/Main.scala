@@ -40,7 +40,7 @@ class Main extends Module {
     // ------------------------------------------------------------
     val lastRecievedFrame = RegInit(0.U.asTypeOf(new DataFrame))
     when(spi.io.outputReady) {
-      lastRecievedFrame := spi.io.value.asTypeOf(new DataFrame)
+      lastRecievedFrame := spiToDataframe(spi.io.value)
       //lastRecievedFrame := ExampleDataFramesFP.frames(0)
     }
 
