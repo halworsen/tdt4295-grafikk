@@ -37,7 +37,10 @@ object STD {
 // }
 
 class DataFrameHeader extends Bundle {
-  val command = Bits(16.W)
+  val unused = Bits(6.W)
+  val frameStart = Bool()
+  val clear = Bool()
+  val lines = UInt(8.W)
 }
 
 class DataFrame extends Bundle {
