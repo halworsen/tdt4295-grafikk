@@ -36,7 +36,15 @@ object STD {
 //   val MMatrix = Vec(4, Vec(4, FixedPoint(12.W, 10.BP)))
 // }
 
+class DataFrameHeader extends Bundle {
+  val unused = Bits(6.W)
+  val frameStart = Bool()
+  val clear = Bool()
+  val lines = UInt(8.W)
+}
+
 class DataFrame extends Bundle {
+  val header = new DataFrameHeader
   val points = Vec(STD.pointNum, new Point)
   val lines = Vec(STD.linenum, new Line)
   val matrix = Vec(
@@ -69,6 +77,6 @@ class Point extends Bundle {
 }
 
 class Pixel extends Bundle {
-  val x = UInt(STD.coordWidth)
-  val y = UInt(STD.coordWidth)
+  val x = SInt(STD.coordWidth)
+  val y = SInt(STD.coordWidth)
 }

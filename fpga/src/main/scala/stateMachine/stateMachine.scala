@@ -7,6 +7,9 @@ import tools._
 class StateMachine extends Module {
   val io = IO(new Bundle {
     val newFrameRecieved = Input(Bool())
+    val currentHeader = Input(new DataFrameHeader)
+    val newHeader = Input(new DataFrameHeader)
+
     val bhBussy = Input(Bool())
     val inBlanking = Input(Bool())
     val fbReady = Input(Bool())
@@ -36,14 +39,21 @@ class StateMachine extends Module {
     unrenderedFrame := true.B
   }
 
-  val waiting :: clearSetup :: clearing :: calculationWait :: loadPoints :: loadPixels :: renderSetup :: rendering :: Nil =
-    Enum(8)
+  val waitingFrame :: waiting :: clearSetup :: clearing :: calculationWait :: loadPoints :: loadPixels :: renderSetup :: rendering :: Nil =
+    Enum(9)
   val state = RegInit(waiting)
 
   switch(state) {
+    is(waitingFrame) {
+      when(unrenderedFrame && io.newHeader.frameStart) {
+        state := waiting
+      }
+    }
+
     is(waiting) {
       when(unrenderedFrame) {
-        state := clearSetup
+        unrenderedFrame := false.B
+        state := renderSetup
       }
     }
     is(clearSetup) {
@@ -56,11 +66,13 @@ class StateMachine extends Module {
     is(clearing) {
       // Wait for fb clearing to finish
       when(io.fbReady) {
-        io.loadNextFrame := true.B
-        unrenderedFrame := false.B
-        lineIndex := 0.U
-        state := loadPoints
+        state := waitingFrame
       }
+    }
+    is(renderSetup) {
+      io.loadNextFrame := true.B
+      lineIndex := 0.U
+      state := loadPoints
     }
     is(loadPoints) {
       io.loadNextPoints := true.B
@@ -75,13 +87,9 @@ class StateMachine extends Module {
     is(loadPixels) {
       // Wait for pixel registers to be updated
       when(io.fbReady) {
-        state := renderSetup
+        io.bhStartRegular := true.B
+        state := rendering
       }
-    }
-    is(renderSetup) {
-      // Wait 1 cycle for bh inputs to become valid
-      io.bhStartRegular := true.B
-      state := rendering
     }
     is(rendering) {
       when(!io.bhBussy && lineIndex < STD.linenum.U) {
@@ -89,7 +97,11 @@ class StateMachine extends Module {
         state := loadPoints
       }
       when(!io.bhBussy && lineIndex >= STD.linenum.U) {
-        state := waiting
+        when(io.currentHeader.clear) {
+          state := clearSetup
+        }.otherwise {
+          state := waiting
+        }
       }
     }
   }
