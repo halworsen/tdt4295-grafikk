@@ -67,6 +67,18 @@ void vec3(vec3_t *ret, float x, float y, float w);
 // ret <- AB
 void mmul3(mat3_t *ret, mat3_t *A, mat3_t *B);
 
+// ret <- A - B
+void vsub3(vec3_t *ret, vec3_t *A, vec3_t *B);
+
+// naive cross multipy, origin needs to be 0,0,0
+void vcross3(vec3_t *ret, vec3_t *A, vec3_t *B);
+
+// Normalize 3d vector
+float norm3(vec3_t *p);
+
+// Dot product of 3d vector
+float dot3(vec3_t *p, vec3_t *q);
+
 // ret <- Tv
 void transform3(vec3_t *ret, mat3_t *T, vec3_t *v);
 
@@ -116,6 +128,10 @@ void rot_x(mat4_t *ret, float th);
 void rot_y(mat4_t *ret, float th);
 void rot_z(mat4_t *ret, float th);
 
+
+// lookAt matrix
+void view_mat(mat4_t *ret, vec3_t *eye, vec3_t *target, vec3_t *updir);
+
 // Perspective projection matrix from FOV, aspect ratio 
 // and clip planes.
 void perspective(mat4_t *ret,
@@ -123,6 +139,9 @@ void perspective(mat4_t *ret,
                  float aspect,
                  float z_near,
                  float z_far);
+
+// Perspective projection
+void proj_trans(mat4_t *ret, float left, float right, float bottom, float top, float z_near, float z_far);
 
 void ortho(mat4_t *ret, float left, float right, float bottom, float top, float z_near, float z_far);
 
