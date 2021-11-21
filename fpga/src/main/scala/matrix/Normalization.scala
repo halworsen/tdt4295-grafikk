@@ -3,7 +3,7 @@ package matrix
 import chisel3._
 import chisel3.experimental._
 import tools._
-import tools.helpers.{divFP, fp}
+import tools.helpers.fp
 import dsptools.numbers._
 
 class Normalizer extends Module {
