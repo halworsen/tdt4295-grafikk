@@ -225,10 +225,20 @@ void rot_z(mat4_t *ret, float th) {
   *at(ret, 1, 1) = cos(th);
 }
 
-// Camera or View Matrix, Also called lookAt in openGL
-void view_mat(mat4_t *ret, vec3_t *eye, vec3_t *target, vec3_t *updir) {
-  // http://www.songho.ca/opengl/gl_camera.html
+void set_camera(mat4_t *ret, vec3_t *trans, float pitch, float yaw) {
+  // https://stackoverflow.com/questions/26248804/opengl-camera-implementation-which-is-right
+  float yawRad = yaw * 2*pi / 180;
+  float pitchRad = pitch * 2*pi / 180;
+  
+  rot_y(ret, -yawRad);
+  rot_x(ret, -pitchRad);
 
+  translation(ret, -trans->x, -trans->y, -trans->z);
+}
+
+void lookAt(mat4_t *ret, vec3_t *eye, vec3_t *target, vec3_t *up) {
+  // http://www.songho.ca/opengl/gl_camera.html
+  // updir is often (0, 1, 0) or (0, 0, 1)
   // vector between target and eye
   vec3_t *forward;
   vsub3(forward, eye, target);
@@ -236,9 +246,9 @@ void view_mat(mat4_t *ret, vec3_t *eye, vec3_t *target, vec3_t *updir) {
 
   // compute left vec 
   vec3_t *left;
-  cross3(left, updir, forward);
+  cross3(left, up, forward);
   norm3(left);
-
+	
   // Orthonomal up
   vec3_t up;
   cross3(up, forward, left);

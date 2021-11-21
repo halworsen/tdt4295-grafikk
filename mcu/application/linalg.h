@@ -128,9 +128,11 @@ void rot_x(mat4_t *ret, float th);
 void rot_y(mat4_t *ret, float th);
 void rot_z(mat4_t *ret, float th);
 
+// Set camera based on translation, pitch and yaw
+void set_camera(mat4_t *ret, vec3_t *trans, float pitch, float yaw);
 
-// lookAt matrix
-void view_mat(mat4_t *ret, vec3_t *eye, vec3_t *target, vec3_t *updir);
+// lookAt implementation from openGL
+void lookAt(mat4_t *ret, vec3_t *eye, vec3_t *target, vec3_t *updir);
 
 // Perspective projection matrix from FOV, aspect ratio 
 // and clip planes.
