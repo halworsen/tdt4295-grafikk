@@ -82,12 +82,12 @@ class Main extends Module {
     rotator.io.mat4 := renderingFrame.matrix
     //rotator.io.mat4 := DontCare
     // Inputs to rotator are ready one cycle after loadNextFrame
-    rotator.io.inputReady := RegNext(RegNext(stateMachine.io.loadNextPoints))
+    rotator.io.inputReady := RegNext(stateMachine.io.loadNextPoints)
     rotator.io.inPoints(0) := renderingFrame.points(
-      renderingFrame.lines(stateMachine.io.lineIndex).index1
+      renderingFrame.lines(stateMachine.io.calcLineIndex).index1
     )
     rotator.io.inPoints(1) := renderingFrame.points(
-      renderingFrame.lines(stateMachine.io.lineIndex).index2
+      renderingFrame.lines(stateMachine.io.calcLineIndex).index2
     )
     stateMachine.io.pixelCalculationReady := rotator.io.outputReady
 
@@ -96,10 +96,10 @@ class Main extends Module {
     // Load computed pixels into this frame's rendered points for immediate access later
     when(stateMachine.io.loadNextPixels) {
       renderedPixels(
-        renderingFrame.lines(stateMachine.io.lineIndex).index1
+        renderingFrame.lines(stateMachine.io.calcLineIndex).index1
       ) := rotator.io.out(0)
       renderedPixels(
-        renderingFrame.lines(stateMachine.io.lineIndex).index2
+        renderingFrame.lines(stateMachine.io.calcLineIndex).index2
       ) := rotator.io.out(1)
     }
 
