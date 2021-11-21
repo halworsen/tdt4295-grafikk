@@ -74,6 +74,6 @@ class Point extends Bundle {
 }
 
 class Pixel extends Bundle {
-  val x = UInt(STD.coordWidth)
-  val y = UInt(STD.coordWidth)
+  val x = SInt(STD.coordWidth)
+  val y = SInt(STD.coordWidth)
 }

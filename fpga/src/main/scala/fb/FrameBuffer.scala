@@ -88,12 +88,12 @@ class FrameBuffer(width: Int, height: Int) extends Module {
     fb_write_addr := fb_clear_addr
     write_val := false.B
   }.otherwise {
-    fb_write_addr := io.writePixel.y * width.U + io.writePixel.x
+    fb_write_addr := io.writePixel.y.asUInt * width.U + io.writePixel.x.asUInt
     write_val := io.writeVal
   }
 
   val out_of_frame =
-    io.writePixel.x >= width.U || io.writePixel.x < 0.U || io.writePixel.y >= height.U || io.writePixel.y < 0.U
+    io.writePixel.x >= width.S || io.writePixel.x < 0.S || io.writePixel.y >= height.S || io.writePixel.y < 0.S
 
   fb_internal.io.clk_write := clock
   //fb.io.reset := reset

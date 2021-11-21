@@ -27,8 +27,8 @@ class LineDrawing extends Module {
   val ps = RegInit(0.U.asTypeOf(new Pixel)) //Pixel start
   val pe = RegInit(0.U.asTypeOf(new Pixel)) //Pixel end
 
-  val x = RegInit(0.U(STD.coordWidth))
-  val y = RegInit(0.U(STD.coordWidth))
+  val x = RegInit(0.S(STD.coordWidth))
+  val y = RegInit(0.S(STD.coordWidth))
   val e = RegInit(0.S(STD.coordWidth + 1.W))
   val writeVal = RegInit(false.B)
 
@@ -78,16 +78,16 @@ class LineDrawing extends Module {
         io.done := true.B
       }.otherwise {
         when(updX && updY) {
-          x := Mux(right, x + 1.U, x - 1.U)
-          y := y + 1.U;
+          x := Mux(right, x + 1.S, x - 1.S)
+          y := y + 1.S;
           e := e + dy + dx;
         }.otherwise {
           when(updX) {
-            x := Mux(right, x + 1.U, x - 1.U)
+            x := Mux(right, x + 1.S, x - 1.S)
             e := e + dy;
           }
           when(updY) {
-            y := y + 1.U;
+            y := y + 1.S;
             e := e + dx;
           }
         }

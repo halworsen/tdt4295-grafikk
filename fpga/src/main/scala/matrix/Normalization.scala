@@ -49,6 +49,6 @@ class Normalizer extends Module {
     0.BP
   ))
 
-  io.pixel.x := testOutX.asUInt()
-  io.pixel.y := testOutY.asUInt()
+  io.pixel.x := testOutX.asSInt()
+  io.pixel.y := testOutY.asSInt()
 }
