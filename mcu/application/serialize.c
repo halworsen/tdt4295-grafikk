@@ -4,12 +4,6 @@
 #include "spidrv.h"
 extern SPIDRV_Handle_t handle;
 
-void transmit_clear() {
-  uint8_t bitstream[PACKAGE_SIZE] = {0};
-  bitstream[0] = INDICATOR_BYTE_CLEAR;
-  SPIDRV_MTransmitB(handle, bitstream, sizeof(bitstream));
-}
-
 // Transmit a draw command to the FPGA.
 void transmit_draw(struct fpga_package *cmd) {
   uint8_t bitstream[PACKAGE_SIZE] = {0};
