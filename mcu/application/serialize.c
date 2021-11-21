@@ -14,8 +14,9 @@ void transmit_clear() {
 void transmit_draw(struct fpga_package *cmd) {
   uint8_t bitstream[PACKAGE_SIZE] = {0};
   bitstream[0] = INDICATOR_BYTE_DRAW;
+  bitstream[1] = 12; // for now its hard coded that we send 12 lines.
 
-  int vert_offset = 1; // Vertex buffer starts after the indicator byte.
+  int vert_offset = HEADER_SIZE; // Vertex buffer starts after the indicator byte.
   int line_offset = vert_offset + NUM_VERTS * VERT_SIZE;
   int mat4_offset = line_offset + NUM_LINES * LINE_SIZE;
 

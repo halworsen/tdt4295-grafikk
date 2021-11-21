@@ -35,13 +35,23 @@ typedef struct fpga_mat4_send {
   int16_t data[16];
 } mat4_send_t;
 
-struct fpga_package_send {
+// IMPORTANT. Keep this struct 2-byte aligned, so
+// it doesnt get padded in the fpga_package_send struct,
+// (or at least be aware that it can happen) since this
+// will make `sizeof` give you too many bytes.
+struct fpga_package_header {
   uint8_t indicator_byte;
+  uint8_t meta;
+};
+
+struct fpga_package_send {
+  struct fpga_package_header header;
   fpga_point_t points[NUM_VERTS];
   line_t lines[NUM_LINES];
   mat4_send_t mat;
 };
 
+#define HEADER_SIZE (sizeof(struct fpga_package_header))
 #define VERT_SIZE (sizeof(struct fpga_vert_send))
 #define LINE_SIZE (sizeof(line_t))
 #define PACKAGE_SIZE (sizeof(struct fpga_package_send))
