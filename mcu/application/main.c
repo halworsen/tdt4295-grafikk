@@ -122,7 +122,6 @@ void TIMER1_IRQHandler(void) {
   TIMER_IntClear(TIMER1, 1);
   ADC_Start(ADC0, adcStartScan);
 
-  transmit_clear();
   // the model (verts and lines) are already in the package,
   // al we need to do is re-calculate the MVP and sen.
   calc_mvp();

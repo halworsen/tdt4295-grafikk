@@ -13,10 +13,11 @@ void transmit_clear() {
 // Transmit a draw command to the FPGA.
 void transmit_draw(struct fpga_package *cmd) {
   uint8_t bitstream[PACKAGE_SIZE] = {0};
-  bitstream[0] = INDICATOR_BYTE_DRAW;
+  bitstream[0] = INDICATOR_BYTE_DRAW | INDICATOR_BYTE_CLEAR;
   bitstream[1] = 12; // for now its hard coded that we send 12 lines.
 
-  int vert_offset = HEADER_SIZE; // Vertex buffer starts after the indicator byte.
+  // Vertex buffer starts after the indicator byte.
+  int vert_offset = HEADER_SIZE;
   int line_offset = vert_offset + NUM_VERTS * VERT_SIZE;
   int mat4_offset = line_offset + NUM_LINES * LINE_SIZE;
 
@@ -60,15 +61,12 @@ void transmit_draw(struct fpga_package *cmd) {
   // on the FPGA side.
 
   for (int i = 0; i < 16; i++) {
-    // Index in reverse order.
-    int k = 15 - i;
-
     // Convert the ith matrix element to fixpoint.
     int16_t fix_point_data = cmd->mat.data[i] * (1 << 12);
 
     // Put it in the bitstream at the kth index.
-    bitstream[mat4_offset + 2 * k + 0] = (fix_point_data >> 8) & 0xFF;
-    bitstream[mat4_offset + 2 * k + 1] = fix_point_data & 0xFF;
+    bitstream[mat4_offset + 2 * i + 0] = (fix_point_data >> 8) & 0xFF;
+    bitstream[mat4_offset + 2 * i + 1] = fix_point_data & 0xFF;
   }
 
   // Send the bitstream.

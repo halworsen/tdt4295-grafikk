@@ -56,8 +56,8 @@ struct fpga_package_send {
 #define LINE_SIZE (sizeof(line_t))
 #define PACKAGE_SIZE (sizeof(struct fpga_package_send))
 
-#define INDICATOR_BYTE_CLEAR 0x00
-#define INDICATOR_BYTE_DRAW  0x01
+#define INDICATOR_BYTE_CLEAR 0x01
+#define INDICATOR_BYTE_DRAW  0x02
 
 void transmit_clear();
 void transmit_draw(struct fpga_package *drawcall);
