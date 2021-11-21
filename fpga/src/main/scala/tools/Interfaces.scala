@@ -36,7 +36,12 @@ object STD {
 //   val MMatrix = Vec(4, Vec(4, FixedPoint(12.W, 10.BP)))
 // }
 
+class DataFrameHeader extends Bundle {
+  val command = Bits(16.W)
+}
+
 class DataFrame extends Bundle {
+  val header = new DataFrameHeader
   val points = Vec(STD.pointNum, new Point)
   val lines = Vec(STD.linenum, new Line)
   val matrix = Vec(

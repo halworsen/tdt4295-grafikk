@@ -37,6 +37,8 @@ object helpers {
       dataFrame.matrix(i) := matrixRev(i).reverse
     }
 
+    dataFrame.header := rawData.header
+
     dataFrame
   }
 }

@@ -45,6 +45,7 @@ class Main extends Module {
     }
 
     stateMachine.io.newFrameRecieved := spi.io.outputReady
+    stateMachine.io.newCommand := lastRecievedFrame.header.command
     val renderingFrame = RegInit(0.U.asTypeOf(new DataFrame))
 
     when(stateMachine.io.loadNextFrame) {

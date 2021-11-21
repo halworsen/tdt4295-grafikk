@@ -7,6 +7,7 @@ import tools._
 class StateMachine extends Module {
   val io = IO(new Bundle {
     val newFrameRecieved = Input(Bool())
+    val newCommand = Input(UInt((new DataFrameHeader).command.getWidth.W))
     val bhBussy = Input(Bool())
     val inBlanking = Input(Bool())
     val fbReady = Input(Bool())
@@ -43,7 +44,11 @@ class StateMachine extends Module {
   switch(state) {
     is(waiting) {
       when(unrenderedFrame) {
-        state := clearSetup
+        when(io.newCommand === 0.U) {
+          state := clearSetup
+        }.otherwise {
+          state := clearing
+        }
       }
     }
     is(clearSetup) {
