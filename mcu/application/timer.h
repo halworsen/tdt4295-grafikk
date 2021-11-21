@@ -1,3 +1,3 @@
 
 // Initialize timer
-void initTimer(int ints_per_second);
+void initTimer1(int ints_per_second);

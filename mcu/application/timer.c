@@ -7,7 +7,7 @@
 extern uint32_t adcChannel;
 extern ADC_InitSingle_TypeDef initSingle;
 
-void initTimer(int ints_per_second) {
+void initTimer1(int ints_per_second) {
   CMU_ClockEnable(cmuClock_TIMER1, true);
   TIMER_Init_TypeDef init = TIMER_INIT_DEFAULT;
   init.enable = false;

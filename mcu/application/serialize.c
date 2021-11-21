@@ -7,7 +7,7 @@ extern SPIDRV_Handle_t handle;
 // Transmit a draw command to the FPGA.
 void transmit_draw(struct fpga_package *cmd) {
   uint8_t bitstream[PACKAGE_SIZE] = {0};
-  bitstream[0] = INDICATOR_BYTE_DRAW | INDICATOR_BYTE_CLEAR;
+  bitstream[0] = cmd->header.indicator_byte;
   bitstream[1] = 12; // for now its hard coded that we send 12 lines.
 
   // Vertex buffer starts after the indicator byte.

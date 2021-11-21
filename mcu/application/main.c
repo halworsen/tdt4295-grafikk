@@ -14,7 +14,7 @@
 #include "serialize.h"
 #include <math.h>
 
-#define SPI_BITRATE 4000000
+#define SPI_BITRATE 100000
 
 #define MAX_SAMPLE 4096
 
@@ -57,9 +57,10 @@ SPIDRV_Handle_t handle2 = &handleData;
 ADC_InitScan_TypeDef initScan = ADC_INITSCAN_DEFAULT;
 
 // todo: fix type/variable name conflict
-struct fpga_package fpga_package;
+struct fpga_package fpga_package_square;
+struct fpga_package fpga_package_plane;
 
-void calc_mvp() {
+void calc_mvp(struct fpga_package *fpga_package) {
   // Calculates the MVP matrix and stores it in the fpga
   // package.
 
@@ -68,13 +69,23 @@ void calc_mvp() {
   // Channel 1 determines vertical offset y.
   scale = (double)left_vertical / MAX_SAMPLE;
   float max_dy = 0.03;
-  float dy = (2 * scale - 1.0) * max_dy; // [-max_dy, max_dy]
+  float dy = -(2 * scale - 1.0) * max_dy; // [-max_dy, max_dy]
   y += dy;
+
+  float min_y = -0.9;
+  float max_y = 0.9;
+  y = fminf(max_y, y);
+  y = fmaxf(min_y, y);
 
   scale = (double)left_horizontal / MAX_SAMPLE;
   float max_dx = 0.03;
-  float dx = -(2 * scale - 1.0) * max_dx; // [-max_dy, max_dy]
+  float dx = (2 * scale - 1.0) * max_dx; // [-max_dy, max_dy]
   x += dx;
+
+  float min_x = -0.95;
+  float max_x = 0.95;
+  x = fminf(max_x, x);
+  x = fmaxf(min_x, x);
 
   // Channel 2 determines rotation theta.
   scale = (double)right_horizontal / MAX_SAMPLE;
@@ -90,12 +101,14 @@ void calc_mvp() {
 
   // Rotate by theta radians, with slight tilt.
   rot_y(&Ry, th);
-  rot_z(&Rz, M_PI / 6.0);
+  // rot_z(&Rz, M_PI / 6.0);
+  rot_z(&Rz, 0);
+
   mmul(&Ryz, &Ry, &Rz);
 
-  // Translate to x=0,y=dy, dy in [-max_dy, max_dy]
-  float z = 10.0; // move into the clip box.
-  translation(&T, x, y, z);
+  // Translate to x=x,y=dy, dy in [-max_dy, max_dy]
+  float z = 15.0 - y * 15; // move into the clip box.
+  translation(&T, x, 0, z);
 
   // Create the model matrix; a combination of rotation and translation.
   mmul(&M, &T, &Ryz);
@@ -110,7 +123,7 @@ void calc_mvp() {
               100.0 /* z_far */);
 
   // Create the "final" transformation matrix.
-  mmul(&fpga_package.mat, &P, &M);
+  mmul(&(fpga_package->mat), &P, &M);
 }
 
 void GPIO_EVEN_IRQHandler(void) {
@@ -124,9 +137,12 @@ void TIMER1_IRQHandler(void) {
 
   // the model (verts and lines) are already in the package,
   // al we need to do is re-calculate the MVP and sen.
-  calc_mvp();
-  if (GPIO_PinInGet(gpioPortB, FPGA_DONE_PIN))
-    transmit_draw(&fpga_package);
+  if (GPIO_PinInGet(gpioPortB, FPGA_DONE_PIN)) {
+    calc_mvp(&fpga_package_plane);
+    transmit_draw(&fpga_package_plane);
+    calc_mvp(&fpga_package_square);
+    transmit_draw(&fpga_package_square);
+  }
 }
 
 void ADC0_IRQHandler(void) {
@@ -153,7 +169,19 @@ void ADC0_IRQHandler(void) {
 
 int main(void) {
   // Create the model (the square with w=1).
-  vec4_t *cube = fpga_package.verts;
+  vec4_t *cube = fpga_package_plane.verts;
+  vec4(&cube[0], -.2, .5, -1, 1.0);
+  vec4(&cube[1], 0, .5, -1, 1.0);
+  vec4(&cube[2], .2, .5, -1, 1.0);
+
+  vec4(&cube[3], -.2, .5, -2, 1.0);
+  vec4(&cube[4], .2, .5, -2, 1.0);
+
+  vec4(&cube[5], -.2, .5, -3, 1.0);
+  vec4(&cube[6], 0, .5, -3, 1.0);
+  vec4(&cube[7], .2, .5, -3, 1.0);
+
+  cube = fpga_package_square.verts;
   vec4(&cube[0], -.1, .1, .1, 1.0);
   vec4(&cube[1], -.1, -.1, .1, 1.0);
   vec4(&cube[2], .1, -.1, .1, 1.0);
@@ -164,39 +192,70 @@ int main(void) {
   vec4(&cube[6], .1, -.1, -.1, 1.0);
   vec4(&cube[7], .1, .1, -.1, 1.0);
 
+  fpga_package_plane.header.indicator_byte = 0x2;
   // Hard coded to lines connect the lines sequentially.
-  fpga_package.lines[0].start = 0;
-  fpga_package.lines[0].end = 1;
-  fpga_package.lines[1].start = 1;
-  fpga_package.lines[1].end = 2;
-  fpga_package.lines[2].start = 2;
-  fpga_package.lines[2].end = 3;
-  fpga_package.lines[3].start = 3;
-  fpga_package.lines[3].end = 0;
+  fpga_package_plane.lines[0].start = 0;
+  fpga_package_plane.lines[0].end = 2;
+  fpga_package_plane.lines[1].start = 3;
+  fpga_package_plane.lines[1].end = 4;
+  fpga_package_plane.lines[2].start = 5;
+  fpga_package_plane.lines[2].end = 7;
+  fpga_package_plane.lines[3].start = 0;
+  fpga_package_plane.lines[3].end = 5;
 
-  fpga_package.lines[4].start = 4;
-  fpga_package.lines[4].end = 5;
-  fpga_package.lines[5].start = 5;
-  fpga_package.lines[5].end = 6;
-  fpga_package.lines[6].start = 6;
-  fpga_package.lines[6].end = 7;
-  fpga_package.lines[7].start = 7;
-  fpga_package.lines[7].end = 4;
+  fpga_package_plane.lines[4].start = 1;
+  fpga_package_plane.lines[4].end = 6;
+  fpga_package_plane.lines[5].start = 2;
+  fpga_package_plane.lines[5].end = 7;
 
-  fpga_package.lines[8].start = 0;
-  fpga_package.lines[8].end = 4;
-  fpga_package.lines[9].start = 1;
-  fpga_package.lines[9].end = 5;
-  fpga_package.lines[10].start = 2;
-  fpga_package.lines[10].end = 6;
-  fpga_package.lines[11].start = 3;
-  fpga_package.lines[11].end = 7;
+  fpga_package_plane.lines[6].start = 0;
+  fpga_package_plane.lines[6].end = 0;
+  fpga_package_plane.lines[7].start = 0;
+  fpga_package_plane.lines[7].end = 0;
+
+  fpga_package_plane.lines[8].start = 0;
+  fpga_package_plane.lines[8].end = 0;
+  fpga_package_plane.lines[9].start = 0;
+  fpga_package_plane.lines[9].end = 0;
+  fpga_package_plane.lines[10].start = 0;
+  fpga_package_plane.lines[10].end = 0;
+  fpga_package_plane.lines[11].start = 0;
+  fpga_package_plane.lines[11].end = 0;
+
+  fpga_package_square.header.indicator_byte = 0x1;
+
+  fpga_package_square.lines[0].start = 0;
+  fpga_package_square.lines[0].end = 1;
+  fpga_package_square.lines[1].start = 1;
+  fpga_package_square.lines[1].end = 2;
+  fpga_package_square.lines[2].start = 2;
+  fpga_package_square.lines[2].end = 3;
+  fpga_package_square.lines[3].start = 3;
+  fpga_package_square.lines[3].end = 0;
+
+  fpga_package_square.lines[4].start = 4;
+  fpga_package_square.lines[4].end = 5;
+  fpga_package_square.lines[5].start = 5;
+  fpga_package_square.lines[5].end = 6;
+  fpga_package_square.lines[6].start = 6;
+  fpga_package_square.lines[6].end = 7;
+  fpga_package_square.lines[7].start = 7;
+  fpga_package_square.lines[7].end = 4;
+
+  fpga_package_square.lines[8].start = 0;
+  fpga_package_square.lines[8].end = 4;
+  fpga_package_square.lines[9].start = 1;
+  fpga_package_square.lines[9].end = 5;
+  fpga_package_square.lines[10].start = 2;
+  fpga_package_square.lines[10].end = 6;
+  fpga_package_square.lines[11].start = 3;
+  fpga_package_square.lines[11].end = 7;
 
   uint32_t bitrate = 0;
   // Initializations
   CMU_ClockSelectSet(cmuClock_HF, cmuSelect_HFXO);
   initGPIO();
-  initTimer(30);
+  initTimer1(60);
   initADC_scan(adcRefVDD);
   TIMER_Enable(TIMER1, true);
 
