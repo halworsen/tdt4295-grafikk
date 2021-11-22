@@ -24,6 +24,7 @@ class StateMachine extends Module {
     val loadNextPixels = Output(Bool())
     val lineIndex = Output(UInt(log2Up(STD.linenum).W))
     val calcLineIndex = Output(UInt(log2Up(STD.linenum).W))
+    val debug_state = Output(UInt(3.W))
   })
 
   io.bhStartRegular := false.B
@@ -42,12 +43,13 @@ class StateMachine extends Module {
 
   val waitingFrame :: waiting :: clearSetup :: clearing :: calculationWait :: loadPixels :: renderSetup :: rendering :: Nil =
     Enum(8)
-  val state = RegInit(waiting)
+  val state = RegInit(waitingFrame)
+  io.debug_state := state
 
   val pixelCalcReady = RegInit(0.U.asTypeOf(Vec(STD.linenum, Bool())))
   val calcInit :: calcWait :: calcLoadPixels :: calcIdle :: Nil = Enum(4)
   val calcState = RegInit(calcIdle)
-  val calcLineIndex = RegInit(0.U(log2Up(STD.linenum).W))
+  val calcLineIndex = RegInit(0.U(log2Up(STD.linenum + 1).W))
   io.calcLineIndex := calcLineIndex
   switch(calcState) {
     is(calcInit) {
@@ -118,11 +120,10 @@ class StateMachine extends Module {
       }
     }
     is(rendering) {
-      when(!io.bhBussy && lineIndex < STD.linenum.U) {
+      when(!io.bhBussy && lineIndex < (STD.linenum - 1).U) {
         lineIndex := lineIndex + 1.U
         state := calculationWait
-      }
-      when(!io.bhBussy && lineIndex >= STD.linenum.U) {
+      }.elsewhen(!io.bhBussy && lineIndex >= (STD.linenum - 1).U) {
         when(io.currentHeader.clear) {
           state := clearSetup
         }.otherwise {
