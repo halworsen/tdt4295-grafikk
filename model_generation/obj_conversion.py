@@ -63,6 +63,7 @@ for edge in edges:
 if frameEdges:
     frameList.append((frameVetecies, frameEdges))
 print(f"Generated model frames: {len(frameList)}")
+print(f"")
 
 
 
@@ -86,9 +87,11 @@ with open(f"{args.obj_file}.c", "w") as bugge_file:
         unused += 3*(POINT_NUM-len(frameVerticies))
         
         
-        bugge_file.writelines(f"  figures[{frameIndex}].lines[{index}].start = {edge[0]};\n  figures[{frameIndex}].lines[{index}].end = {edge[1]};\n" for index, edge in enumerate(frameEdges))
+        bugge_file.writelines(f"  figures[{frameIndex}].lines[{index}].start = {mapping[edge[0]]};\n  figures[{frameIndex}].lines[{index}].end = {mapping[edge[1]]};\n" for index, edge in enumerate(frameEdges))
         bugge_file.writelines(f"  figures[{frameIndex}].lines[{index}].start = 0;\n  figures[{frameIndex}].lines[{index}].end = 0;\n" for index in range(len(frameEdges)-1, LINE_NUM))
         unused += 2*(LINE_NUM-len(frameEdges))
+    
+    bugge_file.write("}\n")
         
 print(f"{unused} ints in the dataframes are redundant/unused")
         
