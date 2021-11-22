@@ -10,6 +10,7 @@
 #include "spidrv.h"
 #include "timer.h"
 
+#include "figures.h"
 #include "linalg.h"
 #include "serialize.h"
 #include <math.h>
@@ -20,6 +21,8 @@
 
 #define DISPLAY_HEIGHT 480
 #define DISPLAY_WIDTH 640
+
+#define NUM_FIGURES 3
 
 #define max(a, b)                                                              \
   ({                                                                           \
@@ -60,8 +63,7 @@ SPIDRV_Handle_t handle2 = &handleData;
 ADC_InitScan_TypeDef initScan = ADC_INITSCAN_DEFAULT;
 
 // todo: fix type/variable name conflict
-struct fpga_package fpga_package_square;
-struct fpga_package fpga_package_plane;
+struct fpga_package figures[NUM_FIGURES];
 
 void calc_mvp(struct fpga_package *fpga_package) {
   // Calculates the MVP matrix and stores it in the fpga
@@ -143,10 +145,11 @@ void TIMER1_IRQHandler(void) {
   // the model (verts and lines) are already in the package,
   // al we need to do is re-calculate the MVP and sen.
   if (GPIO_PinInGet(gpioPortB, FPGA_DONE_PIN)) {
-    calc_mvp(&fpga_package_plane);
-    transmit_draw(&fpga_package_plane);
-    calc_mvp(&fpga_package_square);
-    transmit_draw(&fpga_package_square);
+    for (int i = 0; i < NUM_FIGURES; i++) {
+      struct fpga_package figure = figures[i];
+      calc_mvp(&figure);
+      transmit_draw(&figure);
+    }
   }
 }
 
@@ -175,90 +178,9 @@ void ADC0_IRQHandler(void) {
 }
 
 int main(void) {
-  // Create the model (the square with w=1).
-  vec4_t *cube = fpga_package_plane.verts;
-  vec4(&cube[0], -1, .5, 1, 1.0);
-  vec4(&cube[1], 0, .5, 1, 1.0);
-  vec4(&cube[2], 1, .5, 1, 1.0);
-
-  vec4(&cube[3], -1, .5, 0, 1.0);
-  vec4(&cube[4], 1, .5, 0, 1.0);
-
-  vec4(&cube[5], -1, .5, -1, 1.0);
-  vec4(&cube[6], 0, .5, -1, 1.0);
-  vec4(&cube[7], 1, .5, -1, 1.0);
-
-  cube = fpga_package_square.verts;
-  vec4(&cube[0], -.1, .1, .1, 1.0);
-  vec4(&cube[1], -.1, -.1, .1, 1.0);
-  vec4(&cube[2], .1, -.1, .1, 1.0);
-  vec4(&cube[3], .1, .1, .1, 1.0);
-
-  vec4(&cube[4], -.1, .1, -.1, 1.0);
-  vec4(&cube[5], -.1, -.1, -.1, 1.0);
-  vec4(&cube[6], .1, -.1, -.1, 1.0);
-  vec4(&cube[7], .1, .1, -.1, 1.0);
-
-  fpga_package_plane.header.indicator_byte = 0x2;
-  // Hard coded to lines connect the lines sequentially.
-  fpga_package_plane.lines[0].start = 0;
-  fpga_package_plane.lines[0].end = 2;
-  fpga_package_plane.lines[1].start = 3;
-  fpga_package_plane.lines[1].end = 4;
-  fpga_package_plane.lines[2].start = 5;
-  fpga_package_plane.lines[2].end = 7;
-  fpga_package_plane.lines[3].start = 0;
-  fpga_package_plane.lines[3].end = 5;
-
-  fpga_package_plane.lines[4].start = 1;
-  fpga_package_plane.lines[4].end = 6;
-  fpga_package_plane.lines[5].start = 2;
-  fpga_package_plane.lines[5].end = 7;
-
-  fpga_package_plane.lines[6].start = 0;
-  fpga_package_plane.lines[6].end = 0;
-  fpga_package_plane.lines[7].start = 0;
-  fpga_package_plane.lines[7].end = 0;
-
-  fpga_package_plane.lines[8].start = 0;
-  fpga_package_plane.lines[8].end = 0;
-  fpga_package_plane.lines[9].start = 0;
-  fpga_package_plane.lines[9].end = 0;
-  fpga_package_plane.lines[10].start = 0;
-  fpga_package_plane.lines[10].end = 0;
-  fpga_package_plane.lines[11].start = 0;
-  fpga_package_plane.lines[11].end = 0;
-
-  fpga_package_square.header.indicator_byte = 0x1;
-
-  fpga_package_square.lines[0].start = 0;
-  fpga_package_square.lines[0].end = 1;
-  fpga_package_square.lines[1].start = 1;
-  fpga_package_square.lines[1].end = 2;
-  fpga_package_square.lines[2].start = 2;
-  fpga_package_square.lines[2].end = 3;
-  fpga_package_square.lines[3].start = 3;
-  fpga_package_square.lines[3].end = 0;
-
-  fpga_package_square.lines[4].start = 4;
-  fpga_package_square.lines[4].end = 5;
-  fpga_package_square.lines[5].start = 5;
-  fpga_package_square.lines[5].end = 6;
-  fpga_package_square.lines[6].start = 6;
-  fpga_package_square.lines[6].end = 7;
-  fpga_package_square.lines[7].start = 7;
-  fpga_package_square.lines[7].end = 4;
-
-  fpga_package_square.lines[8].start = 0;
-  fpga_package_square.lines[8].end = 4;
-  fpga_package_square.lines[9].start = 1;
-  fpga_package_square.lines[9].end = 5;
-  fpga_package_square.lines[10].start = 2;
-  fpga_package_square.lines[10].end = 6;
-  fpga_package_square.lines[11].start = 3;
-  fpga_package_square.lines[11].end = 7;
 
   uint32_t bitrate = 0;
+  init_figures();
   // Initializations
   CMU_ClockSelectSet(cmuClock_HF, cmuSelect_HFXO);
   initGPIO();
