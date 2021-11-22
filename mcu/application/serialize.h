@@ -20,8 +20,8 @@ struct fpga_package_header {
 };
 
 // The complete fpga package.
-#define NUM_VERTS 8
-#define NUM_LINES 12
+#define NUM_VERTS 70
+#define NUM_LINES 100
 
 struct fpga_package {
   struct fpga_package_header header;
