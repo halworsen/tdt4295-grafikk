@@ -69,17 +69,18 @@ class Rotator(points: Int = STD.pointNum, dimension: Int = STD.pointDimension)
     io.outFP(i).w := mvp.io.outVec4(3)
 
     val normalizer = Module(new Normalizer)
-    normalizer.io.inputReady := io.inputReady
     outputs(i) := normalizer.io.outputReady
 
-    normalizer.io.point.x := mvp.io.outVec4(0)
-    normalizer.io.point.y := mvp.io.outVec4(1)
-    normalizer.io.point.z := mvp.io.outVec4(2)
-    normalizer.io.point.w := mvp.io.outVec4(3)
+    // RegNext to not break timing
+    normalizer.io.inputReady := RegNext(io.inputReady)
+    normalizer.io.point.x := RegNext(mvp.io.outVec4(0))
+    normalizer.io.point.y := RegNext(mvp.io.outVec4(1))
+    normalizer.io.point.z := RegNext(mvp.io.outVec4(2))
+    normalizer.io.point.w := RegNext(mvp.io.outVec4(3))
 
-    io.out(i).x := normalizer.io.pixel.x
-    io.out(i).y := normalizer.io.pixel.y
+    io.out(i).x := RegNext(normalizer.io.pixel.x)
+    io.out(i).y := RegNext(normalizer.io.pixel.y)
   }
 
-  io.outputReady := outputs.reduce((a, b) => a & b)
+  io.outputReady := RegNext(outputs.reduce((a, b) => a & b))
 }
