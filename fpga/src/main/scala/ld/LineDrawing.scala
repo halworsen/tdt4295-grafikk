@@ -72,7 +72,7 @@ class LineDrawing extends Module {
           right,
           x < ps.x || x > pe.x,
           x > ps.x || x < pe.x
-        ) || y < ps.y || y > pe.y
+        ) || y < ps.y || y > pe.y || (p1.behind && p2.behind)
       ) {
         state := idle
         io.done := true.B

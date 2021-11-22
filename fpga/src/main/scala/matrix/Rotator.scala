@@ -14,6 +14,7 @@ class Rotator(points: Int = STD.pointNum, dimension: Int = STD.pointDimension)
     val mat4 = Input(Vec(dimension, Vec(dimension, STD.FP)))
     val outFP = Output(Vec(points, new Point))
     val out = Output(Vec(points, new Pixel))
+    val behindPoints = Output(Vec(points, Bool()))
     val inputReady = Input(Bool())
     val outputReady = Output(Bool())
   })
@@ -80,6 +81,7 @@ class Rotator(points: Int = STD.pointNum, dimension: Int = STD.pointDimension)
 
     io.out(i).x := RegNext(normalizer.io.pixel.x)
     io.out(i).y := RegNext(normalizer.io.pixel.y)
+    io.out(i).behind := RegNext(normalizer.io.pixel.behind)
   }
 
   io.outputReady := RegNext(outputs.reduce((a, b) => a & b))
