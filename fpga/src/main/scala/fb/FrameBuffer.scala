@@ -39,7 +39,8 @@ class FrameBuffer(width: Int, height: Int) extends Module {
     Module(
       new Bram_sdp(
         1,
-        2 * buf_width /*, "./bugge_large.mem"*/
+        2 * buf_width,
+        "./bugge_large_boot.mem"
       )
     )
 
