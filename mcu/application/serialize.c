@@ -66,3 +66,19 @@ void transmit_draw(struct fpga_package *cmd) {
   // Send the bitstream.
   SPIDRV_MTransmitB(handle, bitstream, sizeof(bitstream));
 }
+
+void transmit_figures(struct fpga_package *figures, int num_figures,
+                      mat4_t *matrix) {
+  for (int i = 0; i < num_figures; i++) {
+    struct fpga_package *figure = figures + i;
+    memcpy(&figure->mat, matrix, sizeof(mat4_t));
+    if (i == num_figures - 1)
+      figure->header.indicator_byte = INDICATOR_BYTE_CLEAR;
+    else if (i == 0)
+      figure->header.indicator_byte = INDICATOR_BYTE_DRAW;
+    else
+      figure->header.indicator_byte = 0;
+
+    transmit_draw(figure);
+  }
+}

@@ -2,6 +2,7 @@
 #define SERIALIZE_H
 /* FPGA package. */
 #include "linalg.h"
+#include <string.h>
 
 // A line connecting to vertices in an fpga package.
 typedef struct line {
@@ -63,5 +64,6 @@ struct fpga_package_send {
 
 void transmit_clear();
 void transmit_draw(struct fpga_package *drawcall);
+void transmit_figures(struct fpga_package *figures, int num_figures, mat4_t *matrix);
 
 #endif /* include guard */

@@ -14,7 +14,6 @@
 #include "linalg.h"
 #include "serialize.h"
 #include <math.h>
-#include <string.h>
 
 #define SPI_BITRATE 1000000
 
@@ -23,7 +22,7 @@
 #define DISPLAY_HEIGHT 480
 #define DISPLAY_WIDTH 640
 
-#define NUM_FIGURES 3
+#define NUM_FIGURES 5
 
 #define max(a, b)                                                              \
   ({                                                                           \
@@ -80,20 +79,10 @@ void calc_pos() {
   float dy = -(2 * scale - 1.0) * max_dy; // [-max_dy, max_dy]
   y += dy;
 
-  float min_y = -0.9;
-  float max_y = 0.9;
-  y = fminf(max_y, y);
-  y = fmaxf(min_y, y);
-
   scale = (double)left_horizontal / MAX_SAMPLE;
   float max_dx = 0.03;
   float dx = (2 * scale - 1.0) * max_dx; // [-max_dy, max_dy]
   x += dx;
-
-  float min_x = -0.95;
-  float max_x = 0.95;
-  x = fminf(max_x, x);
-  x = fmaxf(min_x, x);
 
   // Channel 2 determines rotation theta.
   scale = (double)right_horizontal / MAX_SAMPLE;
@@ -145,24 +134,20 @@ void GPIO_EVEN_IRQHandler(void) {
 }
 
 void TIMER1_IRQHandler(void) {
-  TIMER_IntClear(TIMER1, 1);
+  TIMER_IntClear(TIMER1, TIMER_IF_OF);
   ADC_Start(ADC0, adcStartScan);
-  calc_pos();
-  calc_mat(&matrix);
 
   // the model (verts and lines) are already in the package,
   // al we need to do is re-calculate the MVP and sen.
   if (GPIO_PinInGet(gpioPortB, FPGA_DONE_PIN)) {
-    for (int i = 0; i < NUM_FIGURES; i++) {
-      struct fpga_package *figure = figures + i;
-      memcpy(&figure->mat, &matrix, sizeof(mat4_t));
-      if (i != NUM_FIGURES - 1)
-        figure->header.indicator_byte = INDICATOR_BYTE_DRAW;
-      else
-        figure->header.indicator_byte = INDICATOR_BYTE_CLEAR;
-      transmit_draw(figure);
-    }
+    transmit_figures(figures, NUM_FIGURES, &matrix);
   }
+}
+
+void TIMER2_IRQHandler(void) {
+  TIMER_IntClear(TIMER2, TIMER_IF_OF);
+  calc_pos();
+  calc_mat(&matrix);
 }
 
 void ADC0_IRQHandler(void) {
@@ -196,9 +181,11 @@ int main(void) {
   // Initializations
   CMU_ClockSelectSet(cmuClock_HF, cmuSelect_HFXO);
   initGPIO();
-  initTimer1(58);
+  initTimer1(60);
+  initTimer2(30);
   initADC_scan(adcRefVDD);
   TIMER_Enable(TIMER1, true);
+  TIMER_Enable(TIMER2, true);
 
   SPIDRV_Init_t initData = SPIDRV_MASTER_USART3;
   initData.bitOrder = spidrvBitOrderMsbFirst;
