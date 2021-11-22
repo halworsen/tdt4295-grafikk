@@ -27,6 +27,10 @@ class FrameBuffer(width: Int, height: Int) extends Module {
     val frameDone = Input(Bool())
   })
 
+  val read_addr_cdc = Module(new CDC)
+  read_addr_cdc.io.clk_in := io.readClock
+  read_addr_cdc.io.clk_out := clock
+
   io.clearStarted := false.B
 
   val frameDone = io.frameDone
@@ -44,12 +48,14 @@ class FrameBuffer(width: Int, height: Int) extends Module {
   val fb_clear_addr = RegInit(0.U(log2Up(buf_width).W))
   val fb_write_addr = RegInit(0.U(log2Up(buf_width).W))
   val current_buffer = RegInit(0.U)
+  val clearWhileDraw = RegInit(false.B)
   val write_val = Wire(Bool())
 
   io.ready := state === active
 
-  when(frameDone && io.clear) {
+  when(frameDone && (io.clear || clearWhileDraw)) {
     current_buffer := ~current_buffer
+    clearWhileDraw := false.B
   }
 
   switch(state) {
@@ -57,7 +63,6 @@ class FrameBuffer(width: Int, height: Int) extends Module {
       when(io.clear) {
         io.clearStarted := true.B
         state := clear
-        fb_clear_addr := 0.U
       }.otherwise {
         state := active
       }
@@ -66,8 +71,16 @@ class FrameBuffer(width: Int, height: Int) extends Module {
     is(clear) {
       when(fb_clear_addr === (pixel_count - 1).U) {
         state := active
+        fb_clear_addr := 0.U
+        clearWhileDraw := false.B
       }.otherwise {
-        fb_clear_addr := fb_clear_addr + 1.U
+        when(clearWhileDraw) {
+          when(read_addr_cdc.io.output > fb_clear_addr + 10.U) {
+            fb_clear_addr := fb_clear_addr + 1.U
+          }
+        }.otherwise {
+          fb_clear_addr := fb_clear_addr + 1.U
+        }
       }
     }
 
@@ -79,6 +92,9 @@ class FrameBuffer(width: Int, height: Int) extends Module {
 
     is(active) {
       when(frameDone) {
+        state := init
+      }.elsewhen(io.clear) {
+        clearWhileDraw := true.B
         state := init
       }
     }
@@ -96,21 +112,20 @@ class FrameBuffer(width: Int, height: Int) extends Module {
     io.writePixel.x >= width.S || io.writePixel.x < 0.S || io.writePixel.y >= height.S || io.writePixel.y < 0.S
 
   fb_internal.io.clk_write := clock
-  //fb.io.reset := reset
   io.readEnable := DontCare
-  //fb.io.read_enable := io.readEnable
 
   fb_internal.io.write_enable := RegNext(
     io.writeEnable && !out_of_frame && io.ready
   ) || (state === clear)
-  fb_internal.io.write_addr := Cat(~current_buffer, fb_write_addr)
+  fb_internal.io.write_addr := Cat(
+    ~current_buffer ^ clearWhileDraw,
+    fb_write_addr
+  )
   fb_internal.io.data_in := write_val.asUInt()
-
-  //fb.io.writeport_enable := DontCare
-  //fb.io.read_out_reg_en := true.B
 
   withClock(io.readClock) {
     val read_addr = Wire(UInt(log2Up(buf_width).W))
+    read_addr_cdc.io.input := read_addr
     read_addr := io.readY * width.U + io.readX
     fb_internal.io.clk_read := io.readClock
     fb_internal.io.read_addr := Cat(current_buffer, read_addr)
