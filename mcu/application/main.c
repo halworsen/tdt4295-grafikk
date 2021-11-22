@@ -15,7 +15,7 @@
 #include "serialize.h"
 #include <math.h>
 
-#define SPI_BITRATE 24000000
+#define SPI_BITRATE 12500000
 
 #define MAX_SAMPLE 4096
 
@@ -144,13 +144,13 @@ void GPIO_EVEN_IRQHandler(void) {
   GPIO_IntClear(0xFFFF);
   GPIO_PinOutToggle(gpioPortE, LED1_PIN);
   figure_num = !figure_num;
-  initTimer1(figure_num == 0 ? 15 : 60);
-  TIMER_Enable(TIMER1, true);
 }
 
 void TIMER1_IRQHandler(void) {
   TIMER_IntClear(TIMER1, TIMER_IF_OF);
   TIMER_IntDisable(TIMER1, TIMER_IF_OF);
+  calc_pos();
+  calc_mat(&matrix);
   ADC_Start(ADC0, adcStartScan);
 
   // the model (verts and lines) are already in the package,
@@ -160,12 +160,6 @@ void TIMER1_IRQHandler(void) {
                      num_figures[figure_num], &matrix);
   }
   TIMER_IntEnable(TIMER1, TIMER_IF_OF);
-}
-
-void TIMER2_IRQHandler(void) {
-  TIMER_IntClear(TIMER2, TIMER_IF_OF);
-  calc_pos();
-  calc_mat(&matrix);
 }
 
 void ADC0_IRQHandler(void) {
@@ -202,11 +196,9 @@ int main(void) {
   // Initializations
   CMU_ClockSelectSet(cmuClock_HF, cmuSelect_HFXO);
   initGPIO();
-  initTimer1(15);
-  initTimer2(30);
+  initTimer1(60);
   initADC_scan(adcRefVDD);
   TIMER_Enable(TIMER1, true);
-  TIMER_Enable(TIMER2, true);
 
   SPIDRV_Init_t initData = SPIDRV_MASTER_USART3;
   initData.bitOrder = spidrvBitOrderMsbFirst;
