@@ -24,6 +24,8 @@
 
 #define NUM_FIGURES1 320
 #define NUM_FIGURES2 3
+#define NUM_FIGURES3 5
+#define NUM_FIGURES4 35
 
 #define Z_STEP_SIZE 0.03
 #define X_STEP_SIZE 0.03
@@ -48,6 +50,8 @@
     __typeof__(b) _b = (b);                                                    \
     _a < _b ? _a : _b;                                                         \
   })
+
+#define ARRAY_SIZE(array) (sizeof(array) / sizeof(*array))
 
 // Joystick ADC voltage samples.
 uint32_t left_vertical;
@@ -78,7 +82,10 @@ ADC_InitScan_TypeDef initScan = ADC_INITSCAN_DEFAULT;
 // todo: fix type/variable name conflict
 struct fpga_package figures1[NUM_FIGURES1];
 struct fpga_package figures2[NUM_FIGURES2];
-int num_figures[2] = {NUM_FIGURES1, NUM_FIGURES2};
+struct fpga_package figures3[NUM_FIGURES3];
+struct fpga_package figures4[NUM_FIGURES4];
+int num_figures[4] = {NUM_FIGURES1, NUM_FIGURES2, NUM_FIGURES3, NUM_FIGURES4};
+struct fpga_package *figures[4] = {figures1, figures2, figures3, figures4};
 int figure_num = 0;
 
 void calc_pos() {
@@ -143,7 +150,7 @@ void calc_mat(mat4_t *mat) {
 void GPIO_EVEN_IRQHandler(void) {
   GPIO_IntClear(0xFFFF);
   GPIO_PinOutToggle(gpioPortE, LED1_PIN);
-  figure_num = !figure_num;
+  figure_num = figure_num == (ARRAY_SIZE(num_figures) - 1) ? 0 : figure_num + 1;
 }
 
 void TIMER1_IRQHandler(void) {
@@ -156,8 +163,7 @@ void TIMER1_IRQHandler(void) {
   // the model (verts and lines) are already in the package,
   // al we need to do is re-calculate the MVP and sen.
   if (GPIO_PinInGet(gpioPortB, FPGA_DONE_PIN)) {
-    transmit_figures(figure_num == 0 ? figures1 : figures2,
-                     num_figures[figure_num], &matrix);
+    transmit_figures(figures[figure_num], num_figures[figure_num], &matrix);
   }
   TIMER_IntEnable(TIMER1, TIMER_IF_OF);
 }
@@ -193,6 +199,8 @@ int main(void) {
   uint32_t bitrate = 0;
   init_figures1(figures1);
   init_figures2(figures2);
+  init_figures3(figures3);
+  init_figures4(figures4);
   // Initializations
   CMU_ClockSelectSet(cmuClock_HF, cmuSelect_HFXO);
   initGPIO();
