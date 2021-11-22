@@ -13,7 +13,6 @@ class Normalizer extends Module {
 
     val inputReady = Input(Bool())
     val outputReady = Output(Bool())
-    val behind = Output(Bool())
   })
 
   val fixdivX = Module(new FixPointDivision)
@@ -53,5 +52,5 @@ class Normalizer extends Module {
   io.pixel.x := testOutX.asSInt()
   io.pixel.y := testOutY.asSInt()
   // Check if a point is behind z axis (-1 since openGL uses this)
-  io.pixel.behind := io.point.z <= -1.asSInt().B
+  io.pixel.behind := (io.point.z <= fp(-1))
 }

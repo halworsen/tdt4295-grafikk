@@ -6,7 +6,6 @@ import tools._
 
 // https://www.google.com/search?q=bresenham%27s+line+algorithm&sxsrf=AOaemvL1TxCiXvAjdJEoqqyHit-YOLiabQ:1633605785405&source=lnms&tbm=isch&sa=X&sqi=2&ved=2ahUKEwjQtqrkl7jzAhXnQvEDHVxHC0AQ_AUoAXoECAEQAw&biw=1440&bih=788&dpr=2#imgrc=MemqMsI7g2nbiM
 class LineDrawing extends Module {
-  def delay(x: UInt) = RegNext(x)
   val io = IO(new Bundle {
     val p1 = Input(new Pixel)
     val p2 = Input(new Pixel)
@@ -21,17 +20,14 @@ class LineDrawing extends Module {
     val done = Output(Bool())
     val busy = Output(Bool())
   })
-
   val idle :: init :: draw :: Nil = Enum(3)
   val state = RegInit(idle)
   val ps = RegInit(0.U.asTypeOf(new Pixel)) //Pixel start
   val pe = RegInit(0.U.asTypeOf(new Pixel)) //Pixel end
-
   val x = RegInit(0.S(STD.coordWidth))
   val y = RegInit(0.S(STD.coordWidth))
   val e = RegInit(0.S(STD.coordWidth + 1.W))
   val writeVal = RegInit(false.B)
-
   // Calculated functions
   val right = pe.x > ps.x
   val dx = Mux(right, pe.x - ps.x, ps.x - pe.x).asSInt
@@ -39,10 +35,13 @@ class LineDrawing extends Module {
   val updX = 2.S * e >= dy;
   val updY = 2.S * e <= dx;
 
+  def delay(x: UInt) = RegNext(x)
+
   //Defalut IO values
   io.writeVal := writeVal
   io.writePixel.x := x
   io.writePixel.y := y
+  io.writePixel.behind := DontCare
 
   io.busy := state =/= idle
   io.done := false.B
@@ -55,6 +54,9 @@ class LineDrawing extends Module {
         pe := Mux(io.p1.y <= io.p2.y, io.p2, io.p1)
         state := init
         writeVal := Mux(io.startClear, false.B, true.B)
+      }.elsewhen(io.p1.behind & io.p2.behind) {
+        state := idle
+        io.done := true.B
       }
     }
     is(init) {
@@ -72,7 +74,7 @@ class LineDrawing extends Module {
           right,
           x < ps.x || x > pe.x,
           x > ps.x || x < pe.x
-        ) || y < ps.y || y > pe.y || (p1.behind && p2.behind)
+        ) || y < ps.y || y > pe.y
       ) {
         state := idle
         io.done := true.B
