@@ -54,6 +54,7 @@ for FILE in FILES:
     frameEdges = []
 
     for edge in edges:
+        if len(edge) == 1: continue
         if (len(frameEdges) == LINE_NUM or
         (edge[0] in frameVetecies) + (edge[1] in frameVetecies) + len(frameVetecies) > POINT_NUM ):
             frameList.append((frameVetecies, frameEdges))
