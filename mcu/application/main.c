@@ -15,14 +15,15 @@
 #include "serialize.h"
 #include <math.h>
 
-#define SPI_BITRATE 1000000
+#define SPI_BITRATE 24000000
 
 #define MAX_SAMPLE 4096
 
 #define DISPLAY_HEIGHT 480
 #define DISPLAY_WIDTH 640
 
-#define NUM_FIGURES 5
+#define NUM_FIGURES1 320
+#define NUM_FIGURES2 3
 
 #define Z_STEP_SIZE 0.03
 #define X_STEP_SIZE 0.03
@@ -75,7 +76,10 @@ SPIDRV_Handle_t handle2 = &handleData;
 ADC_InitScan_TypeDef initScan = ADC_INITSCAN_DEFAULT;
 
 // todo: fix type/variable name conflict
-struct fpga_package figures[NUM_FIGURES];
+struct fpga_package figures1[NUM_FIGURES1];
+struct fpga_package figures2[NUM_FIGURES2];
+int num_figures[2] = {NUM_FIGURES1, NUM_FIGURES2};
+int figure_num = 0;
 
 void calc_pos() {
   // Calculates the MVP matrix
@@ -84,7 +88,7 @@ void calc_pos() {
   // Change Z-position
   scale = (double)left_vertical / MAX_SAMPLE;
   float dz = -(2 * scale - 1.0) * Z_STEP_SIZE;
-  z += dz;
+  z -= dz;
   z = fmaxf(MIN_Z, z);
   z = fminf(MAX_Z, z);
 
@@ -139,17 +143,23 @@ void calc_mat(mat4_t *mat) {
 void GPIO_EVEN_IRQHandler(void) {
   GPIO_IntClear(0xFFFF);
   GPIO_PinOutToggle(gpioPortE, LED1_PIN);
+  figure_num = !figure_num;
+  initTimer1(figure_num == 0 ? 15 : 60);
+  TIMER_Enable(TIMER1, true);
 }
 
 void TIMER1_IRQHandler(void) {
   TIMER_IntClear(TIMER1, TIMER_IF_OF);
+  TIMER_IntDisable(TIMER1, TIMER_IF_OF);
   ADC_Start(ADC0, adcStartScan);
 
   // the model (verts and lines) are already in the package,
   // al we need to do is re-calculate the MVP and sen.
   if (GPIO_PinInGet(gpioPortB, FPGA_DONE_PIN)) {
-    transmit_figures(figures, NUM_FIGURES, &matrix);
+    transmit_figures(figure_num == 0 ? figures1 : figures2,
+                     num_figures[figure_num], &matrix);
   }
+  TIMER_IntEnable(TIMER1, TIMER_IF_OF);
 }
 
 void TIMER2_IRQHandler(void) {
@@ -187,11 +197,12 @@ void ADC0_IRQHandler(void) {
 int main(void) {
 
   uint32_t bitrate = 0;
-  init_figures();
+  init_figures1(figures1);
+  init_figures2(figures2);
   // Initializations
   CMU_ClockSelectSet(cmuClock_HF, cmuSelect_HFXO);
   initGPIO();
-  initTimer1(60);
+  initTimer1(15);
   initTimer2(30);
   initADC_scan(adcRefVDD);
   TIMER_Enable(TIMER1, true);
