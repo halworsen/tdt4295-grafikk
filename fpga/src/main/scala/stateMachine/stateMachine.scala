@@ -23,6 +23,7 @@ class StateMachine extends Module {
     val pixelCalculationReady = Input(Bool())
     val loadNextPixels = Output(Bool())
     val lineIndex = Output(UInt(log2Up(STD.linenum).W))
+    val calcLineIndex = Output(UInt(log2Up(STD.linenum).W))
   })
 
   io.bhStartRegular := false.B
@@ -39,9 +40,36 @@ class StateMachine extends Module {
     unrenderedFrame := true.B
   }
 
-  val waitingFrame :: waiting :: clearSetup :: clearing :: calculationWait :: loadPoints :: loadPixels :: renderSetup :: rendering :: Nil =
-    Enum(9)
+  val waitingFrame :: waiting :: clearSetup :: clearing :: calculationWait :: loadPixels :: renderSetup :: rendering :: Nil =
+    Enum(8)
   val state = RegInit(waiting)
+
+  val pixelCalcReady = RegInit(0.U.asTypeOf(Vec(STD.linenum, Bool())))
+  val calcInit :: calcWait :: calcLoadPixels :: calcIdle :: Nil = Enum(4)
+  val calcState = RegInit(calcIdle)
+  val calcLineIndex = RegInit(0.U(log2Up(STD.linenum).W))
+  io.calcLineIndex := calcLineIndex
+  switch(calcState) {
+    is(calcInit) {
+      when(calcLineIndex >= STD.linenum.U) {
+        calcState := calcIdle
+      }.otherwise {
+        io.loadNextPoints := true.B
+        calcState := calcWait
+      }
+    }
+    is(calcWait) {
+      when(io.pixelCalculationReady) {
+        pixelCalcReady(calcLineIndex) := true.B
+        io.loadNextPixels := true.B // Load calculated pixels
+        calcState := calcLoadPixels
+      }
+    }
+    is(calcLoadPixels) {
+      calcLineIndex := calcLineIndex + 1.U
+      calcState := calcInit
+    }
+  }
 
   switch(state) {
     is(waitingFrame) {
@@ -70,18 +98,16 @@ class StateMachine extends Module {
       }
     }
     is(renderSetup) {
+      pixelCalcReady := 0.U.asTypeOf(Vec(STD.linenum, Bool()))
+      calcState := calcInit
       io.loadNextFrame := true.B
       lineIndex := 0.U
-      state := loadPoints
-    }
-    is(loadPoints) {
-      io.loadNextPoints := true.B
+      calcLineIndex := 0.U
       state := calculationWait
     }
     is(calculationWait) {
-      when(io.pixelCalculationReady) {
+      when(pixelCalcReady(lineIndex)) {
         state := loadPixels
-        io.loadNextPixels := true.B // Load calculated pixels
       }
     }
     is(loadPixels) {
@@ -94,7 +120,7 @@ class StateMachine extends Module {
     is(rendering) {
       when(!io.bhBussy && lineIndex < STD.linenum.U) {
         lineIndex := lineIndex + 1.U
-        state := loadPoints
+        state := calculationWait
       }
       when(!io.bhBussy && lineIndex >= STD.linenum.U) {
         when(io.currentHeader.clear) {
@@ -105,4 +131,5 @@ class StateMachine extends Module {
       }
     }
   }
+
 }
