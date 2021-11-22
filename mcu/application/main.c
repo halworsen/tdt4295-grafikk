@@ -22,10 +22,10 @@
 #define DISPLAY_HEIGHT 480
 #define DISPLAY_WIDTH 640
 
-#define NUM_FIGURES1 320
+#define NUM_FIGURES1 22
 #define NUM_FIGURES2 3
 #define NUM_FIGURES3 5
-#define NUM_FIGURES4 35
+#define NUM_FIGURES4 3
 
 #define Z_STEP_SIZE 0.03
 #define X_STEP_SIZE 0.03
@@ -213,6 +213,7 @@ void ADC0_IRQHandler(void) {
 int main(void) {
 
   uint32_t bitrate = 0;
+  uint32_t clock_freq = 0;
   init_figures1(figures1);
   init_figures2(figures2);
   init_figures3(figures3);
@@ -229,9 +230,10 @@ int main(void) {
   SPIDRV_Init(handle, &initData);
   SPIDRV_SetBitrate(handle, SPI_BITRATE);
   SPIDRV_GetBitrate(handle, &bitrate);
+  clock_freq = CMU_ClockFreqGet(cmuClock_HF);
 
   GPIO_PinOutSet(gpioPortE, LED1_PIN);
-  if (bitrate != SPI_BITRATE)
+  if (bitrate != SPI_BITRATE || clock_freq != 50000000)
     GPIO_PinOutSet(gpioPortE, LED2_PIN);
 
   while (1) {

@@ -8,7 +8,7 @@ extern SPIDRV_Handle_t handle;
 void transmit_draw(struct fpga_package *cmd) {
   uint8_t bitstream[PACKAGE_SIZE] = {0};
   bitstream[0] = cmd->header.indicator_byte;
-  bitstream[1] = 12; // for now its hard coded that we send 12 lines.
+  bitstream[1] = 0;
 
   // Vertex buffer starts after the indicator byte.
   int vert_offset = HEADER_SIZE;
@@ -72,12 +72,11 @@ void transmit_figures(struct fpga_package *figures, int num_figures,
   for (int i = 0; i < num_figures; i++) {
     struct fpga_package *figure = figures + i;
     memcpy(&figure->mat, matrix, sizeof(mat4_t));
+    figure->header.indicator_byte = 0;
     if (i == num_figures - 1)
-      figure->header.indicator_byte = INDICATOR_BYTE_CLEAR;
-    else if (i == 0)
-      figure->header.indicator_byte = INDICATOR_BYTE_DRAW;
-    else
-      figure->header.indicator_byte = 0;
+      figure->header.indicator_byte |= INDICATOR_BYTE_CLEAR;
+    if (i == 0)
+      figure->header.indicator_byte |= INDICATOR_BYTE_DRAW;
 
     transmit_draw(figure);
   }
