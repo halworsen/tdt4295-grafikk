@@ -52,5 +52,5 @@ class Normalizer extends Module {
   io.pixel.x := testOutX.asSInt()
   io.pixel.y := testOutY.asSInt()
   // Check if a point is behind z axis (-1 since openGL uses this)
-  io.pixel.behind := (io.point.z <= fp(-1))
+  io.pixel.behind := (io.point.z <= -io.point.w)
 }
