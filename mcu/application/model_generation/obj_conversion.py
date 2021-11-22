@@ -24,7 +24,7 @@ parser.add_argument("-l", "--lines", type=int, default=12 ,help="Number of lines
 args = parser.parse_args()
 POINT_NUM = args.points
 LINE_NUM = args.lines
-FILES = args.obj_file
+FILES = args.obj_files
 
 verticies = []
 edges_with_duplicates = []
@@ -73,10 +73,10 @@ for FILE in FILES:
 
 
     unused = 0
-    with open(f"{args.obj_file}.c", "w") as bugge_file:
+    with open(f"{FILE}.c", "w") as bugge_file:
         bugge_file.write('#include "linalg.h"\n')
         bugge_file.write('#include "serialize.h"\n')
-        bugge_file.write(f'void init_{path.basename(args.obj_file).split(".")[0]}(struct fpga_package *figures) {{\n')
+        bugge_file.write(f'void init_{path.basename(FILE).split(".")[0]}(struct fpga_package *figures) {{\n')
         
         
         for frameIndex, (frameVerticies, frameEdges) in enumerate(frameList):
