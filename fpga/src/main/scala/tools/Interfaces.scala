@@ -79,4 +79,5 @@ class Point extends Bundle {
 class Pixel extends Bundle {
   val x = SInt(STD.coordWidth)
   val y = SInt(STD.coordWidth)
+  val behind = Bool()
 }

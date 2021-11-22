@@ -80,6 +80,7 @@ class Rotator(points: Int = STD.pointNum, dimension: Int = STD.pointDimension)
 
     io.out(i).x := RegNext(normalizer.io.pixel.x)
     io.out(i).y := RegNext(normalizer.io.pixel.y)
+    io.out(i).behind := RegNext(normalizer.io.pixel.behind)
   }
 
   io.outputReady := RegNext(outputs.reduce((a, b) => a & b))
