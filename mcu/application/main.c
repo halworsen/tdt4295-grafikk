@@ -147,6 +147,10 @@ void TIMER1_IRQHandler(void) {
   if (GPIO_PinInGet(gpioPortB, FPGA_DONE_PIN)) {
     for (int i = 0; i < NUM_FIGURES; i++) {
       struct fpga_package figure = figures[i];
+      if (i != NUM_FIGURES - 1)
+        figure.header.indicator_byte = INDICATOR_BYTE_DRAW;
+      else
+        figure.header.indicator_byte = INDICATOR_BYTE_CLEAR;
       calc_mvp(&figure);
       transmit_draw(&figure);
     }

@@ -40,7 +40,6 @@ void init_figures() {
   vec4(&cube[6], .1, -.1, -.1, 1.0);
   vec4(&cube[7], .1, .1, -.1, 1.0);
 
-  figures[0].header.indicator_byte = INDICATOR_BYTE_DRAW;
   // Hard coded to lines connect the lines sequentially.
   figures[0].lines[0].start = 0;
   figures[0].lines[0].end = 1;
@@ -70,7 +69,6 @@ void init_figures() {
   figures[0].lines[11].start = 0;
   figures[0].lines[11].end = 0;
 
-  figures[1].header.indicator_byte = INDICATOR_BYTE_DRAW;
   // Hard coded to lines connect the lines sequentially.
   figures[1].lines[0].start = 0;
   figures[1].lines[0].end = 1;
@@ -99,8 +97,6 @@ void init_figures() {
   figures[1].lines[10].end = 0;
   figures[1].lines[11].start = 0;
   figures[1].lines[11].end = 0;
-
-  figures[2].header.indicator_byte = INDICATOR_BYTE_CLEAR;
 
   figures[2].lines[0].start = 0;
   figures[2].lines[0].end = 1;
