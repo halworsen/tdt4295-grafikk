@@ -1,7 +1,6 @@
 #include "linalg.h"
 #include "serialize.h"
-extern struct fpga_package figures[77];
-void init_figures() {
+void init_figures(struct fpga_package *figures) {
   vec4_t *figure0 = figures[0].verts;
   vec4(&figure0[0], -0.0726, 0.1720, -0.0248, 1.0);
   vec4(&figure0[1], -0.1015, 0.1478, -0.0004, 1.0);

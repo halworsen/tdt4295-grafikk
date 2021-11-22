@@ -73,8 +73,7 @@ unused = 0
 with open(f"{args.obj_file}.c", "w") as bugge_file:
     bugge_file.write('#include "linalg.h"\n')
     bugge_file.write('#include "serialize.h"\n')
-    bugge_file.write(f'extern struct fpga_package figures[{len(frameList)}];\n')
-    bugge_file.write('void init_figures() {\n')
+    bugge_file.write('void init_figures(struct fpga_package *figures) {\n')
     
     
     for frameIndex, (frameVerticies, frameEdges) in enumerate(frameList):
