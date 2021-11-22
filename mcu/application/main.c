@@ -24,6 +24,16 @@
 
 #define NUM_FIGURES 5
 
+#define Z_STEP_SIZE 0.03
+#define X_STEP_SIZE 0.03
+#define ROTATION_STEP_SIZE 0.03
+
+#define MAX_Z 0.95
+#define MIN_Z -0.95
+
+#define MAX_X 0.9
+#define MIN_X -0.9
+
 #define max(a, b)                                                              \
   ({                                                                           \
     __typeof__(a) _a = (a);                                                    \
@@ -47,7 +57,7 @@ uint32_t adcChannel = 0;
 
 // Model position.
 float x = 0;
-float y = 0;
+float z = 0;
 
 float th_y = 0;
 float th_x = 0;
@@ -68,23 +78,24 @@ ADC_InitScan_TypeDef initScan = ADC_INITSCAN_DEFAULT;
 struct fpga_package figures[NUM_FIGURES];
 
 void calc_pos() {
-  // Calculates the MVP matrix and stores it in the fpga
-  // package.
+  // Calculates the MVP matrix
+  double scale;
 
-  double scale; // normalized potentiometer position [0, 1]
-
-  // Channel 1 determines vertical offset y.
+  // Change Z-position
   scale = (double)left_vertical / MAX_SAMPLE;
-  float max_dy = 0.03;
-  float dy = -(2 * scale - 1.0) * max_dy; // [-max_dy, max_dy]
-  y += dy;
+  float dz = -(2 * scale - 1.0) * Z_STEP_SIZE;
+  z += dz;
+  z = fmaxf(MIN_Z, z);
+  z = fminf(MAX_Z, z);
 
+  // Change X-position
   scale = (double)left_horizontal / MAX_SAMPLE;
-  float max_dx = 0.03;
-  float dx = (2 * scale - 1.0) * max_dx; // [-max_dy, max_dy]
+  float dx = (2 * scale - 1.0) * X_STEP_SIZE;
   x += dx;
+  x = fmaxf(MIN_X, x);
+  x = fminf(MAX_X, x);
 
-  // Channel 2 determines rotation theta.
+  // Change rotation
   scale = (double)right_horizontal / MAX_SAMPLE;
   float p = (2 * scale - 1.0);
 
@@ -92,28 +103,25 @@ void calc_pos() {
   float q = (2 * scale - 1.0);
 
   // Theta is the current angle of the joystick.
-  th_y += p * 0.03;
-  th_x += q * 0.03;
+  th_y += p * ROTATION_STEP_SIZE;
+  th_x += q * ROTATION_STEP_SIZE;
 }
 
 void calc_mat(mat4_t *mat) {
 
-  mat4_t M, Ryz, Rx, Rz, Ry, T; // rotation and translation matrices.
+  mat4_t M, Ryx, Rx, Ry, T; // rotation and translation matrices.
 
   // Rotate by theta radians, with slight tilt.
   rot_y(&Ry, th_y);
   rot_x(&Rx, th_x);
-  // rot_z(&Rz, M_PI / 6.0);
-  rot_z(&Rz, 0);
 
-  mmul(&Ryz, &Ry, &Rx);
+  mmul(&Ryx, &Ry, &Rx);
 
-  // Translate to x=x,y=dy, dy in [-max_dy, max_dy]
-  float z = 15.0 - y * 15; // move into the clip box.
-  translation(&T, x, 0, z);
+  float trans_z = 15.0 - z * 15; // move into the clip box.
+  translation(&T, x, 0, trans_z);
 
   // Create the model matrix; a combination of rotation and translation.
-  mmul(&M, &T, &Ryz);
+  mmul(&M, &T, &Ryx);
 
   // Projection matrix.
   mat4_t P;
@@ -158,10 +166,12 @@ void ADC0_IRQHandler(void) {
   ADC_IntClear(ADC0, ADC_IF_SCANOF);
   for (int i = 0; i < 4; i++) {
     sample = ADC_DataIdScanGet(ADC0, &id);
+    // dead zone for joysticks
     if (sample > 2000 && sample < 2150)
       sample = 2048;
 
     if (id == 0) {
+      // Increased dead for right_horizontal
       if (sample > 2000 && sample < 2200)
         sample = 2048;
       right_horizontal = sample;
