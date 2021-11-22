@@ -28,6 +28,10 @@ class Main extends Module {
 
     val spi = Input(new SpiSlave())
     val led = Output(UInt(4.W))
+    val debug_spiready = Output(Bool())
+    val debug_loadframe = Output(Bool())
+    val debug_pixel = Output(Bool())
+    val debug_state = Output(UInt(3.W))
   })
 
   withReset(~io.aresetn) {
@@ -96,6 +100,10 @@ class Main extends Module {
       currentCalcPointIndex(1)
     )
     stateMachine.io.pixelCalculationReady := rotator.io.outputReady
+    io.debug_loadframe := stateMachine.io.loadNextFrame
+    io.debug_pixel := rotator.io.outputReady
+    io.debug_spiready := spi.io.outputReady
+    io.debug_state := stateMachine.io.debug_state
 
     val renderedPixels = Reg(Vec(STD.pointNum, new Pixel))
 

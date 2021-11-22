@@ -5,8 +5,8 @@ import Chisel.log2Up
 import chisel3.experimental.FixedPoint
 
 object STD {
-  val pointNum = 8
-  val linenum = 12
+  val pointNum = 70
+  val linenum = 100
   val pointDimension = 4
   val pointIndexWidth = 16.W
   val fixedWidth = 16.W
