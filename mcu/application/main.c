@@ -14,8 +14,9 @@
 #include "linalg.h"
 #include "serialize.h"
 #include <math.h>
+#include <string.h>
 
-#define SPI_BITRATE 100000
+#define SPI_BITRATE 1000000
 
 #define MAX_SAMPLE 4096
 
@@ -52,6 +53,8 @@ float y = 0;
 float th_y = 0;
 float th_x = 0;
 
+mat4_t matrix;
+
 // Handle for the FPGA output.
 SPIDRV_HandleData_t handleData;
 SPIDRV_Handle_t handle = &handleData;
@@ -65,7 +68,7 @@ ADC_InitScan_TypeDef initScan = ADC_INITSCAN_DEFAULT;
 // todo: fix type/variable name conflict
 struct fpga_package figures[NUM_FIGURES];
 
-void calc_mvp(struct fpga_package *fpga_package) {
+void calc_pos() {
   // Calculates the MVP matrix and stores it in the fpga
   // package.
 
@@ -100,8 +103,11 @@ void calc_mvp(struct fpga_package *fpga_package) {
   float q = (2 * scale - 1.0);
 
   // Theta is the current angle of the joystick.
-  th_y += p * 0.01;
-  th_x += q * 0.01;
+  th_y += p * 0.03;
+  th_x += q * 0.03;
+}
+
+void calc_mat(mat4_t *mat) {
 
   mat4_t M, Ryz, Rx, Rz, Ry, T; // rotation and translation matrices.
 
@@ -130,7 +136,7 @@ void calc_mvp(struct fpga_package *fpga_package) {
               100.0 /* z_far */);
 
   // Create the "final" transformation matrix.
-  mmul(&(fpga_package->mat), &P, &M);
+  mmul(mat, &P, &M);
 }
 
 void GPIO_EVEN_IRQHandler(void) {
@@ -141,18 +147,20 @@ void GPIO_EVEN_IRQHandler(void) {
 void TIMER1_IRQHandler(void) {
   TIMER_IntClear(TIMER1, 1);
   ADC_Start(ADC0, adcStartScan);
+  calc_pos();
+  calc_mat(&matrix);
 
   // the model (verts and lines) are already in the package,
   // al we need to do is re-calculate the MVP and sen.
   if (GPIO_PinInGet(gpioPortB, FPGA_DONE_PIN)) {
     for (int i = 0; i < NUM_FIGURES; i++) {
-      struct fpga_package figure = figures[i];
+      struct fpga_package *figure = figures + i;
+      memcpy(&figure->mat, &matrix, sizeof(mat4_t));
       if (i != NUM_FIGURES - 1)
-        figure.header.indicator_byte = INDICATOR_BYTE_DRAW;
+        figure->header.indicator_byte = INDICATOR_BYTE_DRAW;
       else
-        figure.header.indicator_byte = INDICATOR_BYTE_CLEAR;
-      calc_mvp(&figure);
-      transmit_draw(&figure);
+        figure->header.indicator_byte = INDICATOR_BYTE_CLEAR;
+      transmit_draw(figure);
     }
   }
 }
@@ -188,7 +196,7 @@ int main(void) {
   // Initializations
   CMU_ClockSelectSet(cmuClock_HF, cmuSelect_HFXO);
   initGPIO();
-  initTimer1(60);
+  initTimer1(58);
   initADC_scan(adcRefVDD);
   TIMER_Enable(TIMER1, true);
 
