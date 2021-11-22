@@ -88,6 +88,9 @@ int num_figures[4] = {NUM_FIGURES1, NUM_FIGURES2, NUM_FIGURES3, NUM_FIGURES4};
 struct fpga_package *figures[4] = {figures1, figures2, figures3, figures4};
 int figure_num = 0;
 
+bool start = false;
+volatile bool can_press = false;
+
 void calc_pos() {
   // Calculates the MVP matrix
   double scale;
@@ -147,24 +150,37 @@ void calc_mat(mat4_t *mat) {
   mmul(mat, &P, &M);
 }
 
-void GPIO_EVEN_IRQHandler(void) {
+void btn_handler() {
   GPIO_IntClear(0xFFFF);
-  GPIO_PinOutToggle(gpioPortE, LED1_PIN);
-  figure_num = figure_num == (ARRAY_SIZE(num_figures) - 1) ? 0 : figure_num + 1;
+  if (can_press) {
+    GPIO_PinOutToggle(gpioPortE, LED1_PIN);
+    if (start)
+      figure_num =
+          figure_num == (ARRAY_SIZE(num_figures) - 1) ? 0 : figure_num + 1;
+    start = true;
+    can_press = false;
+  }
 }
+
+void GPIO_EVEN_IRQHandler(void) { btn_handler(); }
+
+void GPIO_ODD_IRQHandler(void) { btn_handler(); }
 
 void TIMER1_IRQHandler(void) {
   TIMER_IntClear(TIMER1, TIMER_IF_OF);
   TIMER_IntDisable(TIMER1, TIMER_IF_OF);
-  calc_pos();
-  calc_mat(&matrix);
-  ADC_Start(ADC0, adcStartScan);
+  if (start) {
+    calc_pos();
+    calc_mat(&matrix);
+    ADC_Start(ADC0, adcStartScan);
 
-  // the model (verts and lines) are already in the package,
-  // al we need to do is re-calculate the MVP and sen.
-  if (GPIO_PinInGet(gpioPortB, FPGA_DONE_PIN)) {
-    transmit_figures(figures[figure_num], num_figures[figure_num], &matrix);
+    // the model (verts and lines) are already in the package,
+    // al we need to do is re-calculate the MVP and sen.
+    if (GPIO_PinInGet(gpioPortB, FPGA_DONE_PIN)) {
+      transmit_figures(figures[figure_num], num_figures[figure_num], &matrix);
+    }
   }
+  can_press = true;
   TIMER_IntEnable(TIMER1, TIMER_IF_OF);
 }
 
