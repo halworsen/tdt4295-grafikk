@@ -36,7 +36,7 @@ FORMATTER = clang-format
 # Flags
 SPECFLAGS = --specs=nosys.specs
 MACHFLAGS = -mcpu=cortex-m4 -mthumb
-CFLAGS += ${addprefix -I, ${INCLUDEPATH}} ${MACHFLAGS} ${SPECFLAGS} -Wall -Werror -D ${MCU} 
+CFLAGS += ${addprefix -I, ${INCLUDEPATH}} ${MACHFLAGS} ${SPECFLAGS} -O3 -Wall -Werror -D ${MCU} 
 LDFLAGS += ${MACHFLAGS} -T${LINKERSCRIPT} ${SPECFLAGS} -Wl,--print-memory-usage -lm
 ARFLAGS = cr
 

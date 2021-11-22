@@ -19,6 +19,7 @@ void initGPIO(void) {
   GPIO_PinModeSet(gpioPortE, LED3_PIN, gpioModePushPull, 0);
 
   NVIC_EnableIRQ(GPIO_EVEN_IRQn);
+  NVIC_EnableIRQ(GPIO_ODD_IRQn);
 
   GPIO_ExtIntConfig(gpioPortB, BTN0_PIN, BTN0_PIN, 1, 1, true);
   GPIO_ExtIntConfig(gpioPortB, BTN1_PIN, BTN1_PIN, 1, 1, true);
