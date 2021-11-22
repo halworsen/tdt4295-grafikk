@@ -10,7 +10,6 @@ void init_figures() {
   vec4(&figure0[4], 1.0979, -1.6173, 1.5623, 1.0);
   vec4(&figure0[5], 1.1377, -1.4074, 1.6874, 1.0);
   vec4(&figure0[6], 1.1877, -1.4373, 1.5574, 1.0);
-  vec4(&figure0[6], 0, 0, 0, 1.0);
   vec4(&figure0[7], 0, 0, 0, 1.0);
   figures[0].lines[0].start = 0;
   figures[0].lines[0].end = 1;
@@ -26,8 +25,6 @@ void init_figures() {
   figures[0].lines[5].end = 5;
   figures[0].lines[6].start = 4;
   figures[0].lines[6].end = 6;
-  figures[0].lines[6].start = 0;
-  figures[0].lines[6].end = 0;
   figures[0].lines[7].start = 0;
   figures[0].lines[7].end = 0;
   figures[0].lines[8].start = 0;
@@ -47,7 +44,6 @@ void init_figures() {
   vec4(&figure1[5], -1.3278, -0.5240, 1.4576, 1.0);
   vec4(&figure1[6], -0.7720, -1.7037, 1.7522, 1.0);
   vec4(&figure1[7], -0.9570, -1.7138, 1.7022, 1.0);
-  vec4(&figure1[7], 0, 0, 0, 1.0);
   figures[1].lines[0].start = 1;
   figures[1].lines[0].end = 2;
   figures[1].lines[1].start = 0;
@@ -62,8 +58,6 @@ void init_figures() {
   figures[1].lines[5].end = 5;
   figures[1].lines[6].start = 6;
   figures[1].lines[6].end = 7;
-  figures[1].lines[6].start = 0;
-  figures[1].lines[6].end = 0;
   figures[1].lines[7].start = 0;
   figures[1].lines[7].end = 0;
   figures[1].lines[8].start = 0;
@@ -82,7 +76,6 @@ void init_figures() {
   vec4(&figure2[4], 1.4826, -1.1870, 1.4474, 1.0);
   vec4(&figure2[5], 1.4276, -1.1871, 1.5724, 1.0);
   vec4(&figure2[6], 1.3727, -1.3321, 1.4874, 1.0);
-  vec4(&figure2[6], 0, 0, 0, 1.0);
   vec4(&figure2[7], 0, 0, 0, 1.0);
   figures[2].lines[0].start = 1;
   figures[2].lines[0].end = 2;
@@ -96,8 +89,6 @@ void init_figures() {
   figures[2].lines[4].end = 5;
   figures[2].lines[5].start = 6;
   figures[2].lines[5].end = 5;
-  figures[2].lines[5].start = 0;
-  figures[2].lines[5].end = 0;
   figures[2].lines[6].start = 0;
   figures[2].lines[6].end = 0;
   figures[2].lines[7].start = 0;
@@ -118,7 +109,6 @@ void init_figures() {
   vec4(&figure3[4], -1.0721, -1.5939, 1.6922, 1.0);
   vec4(&figure3[5], -1.1472, -1.4089, 1.6923, 1.0);
   vec4(&figure3[6], -1.1071, -1.6189, 1.5672, 1.0);
-  vec4(&figure3[6], 0, 0, 0, 1.0);
   vec4(&figure3[7], 0, 0, 0, 1.0);
   figures[3].lines[0].start = 2;
   figures[3].lines[0].end = 0;
@@ -130,8 +120,6 @@ void init_figures() {
   figures[3].lines[3].end = 5;
   figures[3].lines[4].start = 5;
   figures[3].lines[4].end = 6;
-  figures[3].lines[4].start = 0;
-  figures[3].lines[4].end = 0;
   figures[3].lines[5].start = 0;
   figures[3].lines[5].end = 0;
   figures[3].lines[6].start = 0;
@@ -155,7 +143,6 @@ void init_figures() {
   vec4(&figure4[5], -1.1972, -1.4389, 1.5623, 1.0);
   vec4(&figure4[6], -1.5325, -1.0241, 1.4324, 1.0);
   vec4(&figure4[7], -1.4874, -1.1841, 1.4524, 1.0);
-  vec4(&figure4[7], 0, 0, 0, 1.0);
   figures[4].lines[0].start = 2;
   figures[4].lines[0].end = 4;
   figures[4].lines[1].start = 3;
@@ -168,8 +155,6 @@ void init_figures() {
   figures[4].lines[4].end = 6;
   figures[4].lines[5].start = 6;
   figures[4].lines[5].end = 7;
-  figures[4].lines[5].start = 0;
-  figures[4].lines[5].end = 0;
   figures[4].lines[6].start = 0;
   figures[4].lines[6].end = 0;
   figures[4].lines[7].start = 0;
@@ -191,7 +176,6 @@ void init_figures() {
   vec4(&figure5[5], 1.5124, -0.8670, 1.4226, 1.0);
   vec4(&figure5[6], 1.3222, -0.6022, 1.5776, 1.0);
   vec4(&figure5[7], 1.3221, -0.5272, 1.4527, 1.0);
-  vec4(&figure5[7], 0, 0, 0, 1.0);
   figures[5].lines[0].start = 0;
   figures[5].lines[0].end = 1;
   figures[5].lines[1].start = 2;
@@ -206,8 +190,6 @@ void init_figures() {
   figures[5].lines[5].end = 5;
   figures[5].lines[6].start = 6;
   figures[5].lines[6].end = 7;
-  figures[5].lines[6].start = 0;
-  figures[5].lines[6].end = 0;
   figures[5].lines[7].start = 0;
   figures[5].lines[7].end = 0;
   figures[5].lines[8].start = 0;
@@ -226,7 +208,6 @@ void init_figures() {
   vec4(&figure6[4], 1.3221, -0.5272, 1.4527, 1.0);
   vec4(&figure6[5], 1.0024, -0.8925, 1.7625, 1.0);
   vec4(&figure6[6], 1.0024, -0.8924, 1.6375, 1.0);
-  vec4(&figure6[6], 0, 0, 0, 1.0);
   vec4(&figure6[7], 0, 0, 0, 1.0);
   figures[6].lines[0].start = 4;
   figures[6].lines[0].end = 5;
@@ -240,8 +221,6 @@ void init_figures() {
   figures[6].lines[4].end = 1;
   figures[6].lines[5].start = 1;
   figures[6].lines[5].end = 2;
-  figures[6].lines[5].start = 0;
-  figures[6].lines[5].end = 0;
   figures[6].lines[6].start = 0;
   figures[6].lines[6].end = 0;
   figures[6].lines[7].start = 0;
@@ -262,7 +241,6 @@ void init_figures() {
   vec4(&figure7[4], -1.0076, -0.8939, 1.7675, 1.0);
   vec4(&figure7[5], 1.0024, -0.8925, 1.7625, 1.0);
   vec4(&figure7[6], 1.0024, -0.8924, 1.6375, 1.0);
-  vec4(&figure7[6], 0, 0, 0, 1.0);
   vec4(&figure7[7], 0, 0, 0, 1.0);
   figures[7].lines[0].start = 0;
   figures[7].lines[0].end = 2;
@@ -278,8 +256,6 @@ void init_figures() {
   figures[7].lines[5].end = 6;
   figures[7].lines[6].start = 4;
   figures[7].lines[6].end = 3;
-  figures[7].lines[6].start = 0;
-  figures[7].lines[6].end = 0;
   figures[7].lines[7].start = 0;
   figures[7].lines[7].end = 0;
   figures[7].lines[8].start = 0;
@@ -298,7 +274,6 @@ void init_figures() {
   vec4(&figure8[4], 0.6031, -1.9027, 1.6822, 1.0);
   vec4(&figure8[5], -1.0076, -0.8938, 1.6425, 1.0);
   vec4(&figure8[6], 0.7679, -1.7026, 1.7472, 1.0);
-  vec4(&figure8[6], 0, 0, 0, 1.0);
   vec4(&figure8[7], 0, 0, 0, 1.0);
   figures[8].lines[0].start = 0;
   figures[8].lines[0].end = 2;
@@ -308,8 +283,6 @@ void init_figures() {
   figures[8].lines[2].end = 4;
   figures[8].lines[3].start = 4;
   figures[8].lines[3].end = 6;
-  figures[8].lines[3].start = 0;
-  figures[8].lines[3].end = 0;
   figures[8].lines[4].start = 0;
   figures[8].lines[4].end = 0;
   figures[8].lines[5].start = 0;
@@ -351,8 +324,6 @@ void init_figures() {
   figures[9].lines[5].end = 9;
   figures[9].lines[6].start = 4;
   figures[9].lines[6].end = 5;
-  figures[9].lines[6].start = 0;
-  figures[9].lines[6].end = 0;
   figures[9].lines[7].start = 0;
   figures[9].lines[7].end = 0;
   figures[9].lines[8].start = 0;
@@ -371,7 +342,6 @@ void init_figures() {
   vec4(&figure10[4], -1.5176, -0.8641, 1.4275, 1.0);
   vec4(&figure10[5], -1.3823, -1.3340, 1.4923, 1.0);
   vec4(&figure10[6], -1.1472, -1.4089, 1.6923, 1.0);
-  vec4(&figure10[6], 0, 0, 0, 1.0);
   vec4(&figure10[7], 0, 0, 0, 1.0);
   figures[10].lines[0].start = 0;
   figures[10].lines[0].end = 1;
@@ -383,8 +353,6 @@ void init_figures() {
   figures[10].lines[3].end = 5;
   figures[10].lines[4].start = 6;
   figures[10].lines[4].end = 5;
-  figures[10].lines[4].start = 0;
-  figures[10].lines[4].end = 0;
   figures[10].lines[5].start = 0;
   figures[10].lines[5].end = 0;
   figures[10].lines[6].start = 0;
@@ -408,7 +376,6 @@ void init_figures() {
   vec4(&figure11[5], 0.9529, -1.7125, 1.6973, 1.0);
   vec4(&figure11[6], -1.1472, -1.4089, 1.6923, 1.0);
   vec4(&figure11[7], -1.1972, -1.4389, 1.5623, 1.0);
-  vec4(&figure11[7], 0, 0, 0, 1.0);
   figures[11].lines[0].start = 2;
   figures[11].lines[0].end = 6;
   figures[11].lines[1].start = 3;
@@ -421,8 +388,6 @@ void init_figures() {
   figures[11].lines[4].end = 1;
   figures[11].lines[5].start = 0;
   figures[11].lines[5].end = 5;
-  figures[11].lines[5].start = 0;
-  figures[11].lines[5].end = 0;
   figures[11].lines[6].start = 0;
   figures[11].lines[6].end = 0;
   figures[11].lines[7].start = 0;
@@ -444,7 +409,6 @@ void init_figures() {
   vec4(&figure12[5], -0.3769, -1.9184, 1.7471, 1.0);
   vec4(&figure12[6], 0.0180, -1.7482, 1.7922, 1.0);
   vec4(&figure12[7], 0.0180, -1.7532, 1.9822, 1.0);
-  vec4(&figure12[7], 0, 0, 0, 1.0);
   figures[12].lines[0].start = 0;
   figures[12].lines[0].end = 1;
   figures[12].lines[1].start = 2;
@@ -459,8 +423,6 @@ void init_figures() {
   figures[12].lines[5].end = 5;
   figures[12].lines[6].start = 6;
   figures[12].lines[6].end = 7;
-  figures[12].lines[6].start = 0;
-  figures[12].lines[6].end = 0;
   figures[12].lines[7].start = 0;
   figures[12].lines[7].end = 0;
   figures[12].lines[8].start = 0;
@@ -498,8 +460,6 @@ void init_figures() {
   figures[13].lines[6].end = 2;
   figures[13].lines[7].start = 3;
   figures[13].lines[7].end = 0;
-  figures[13].lines[7].start = 0;
-  figures[13].lines[7].end = 0;
   figures[13].lines[8].start = 0;
   figures[13].lines[8].end = 0;
   figures[13].lines[9].start = 0;
@@ -528,8 +488,6 @@ void init_figures() {
   figures[14].lines[3].end = 3;
   figures[14].lines[4].start = 7;
   figures[14].lines[4].end = 4;
-  figures[14].lines[4].start = 0;
-  figures[14].lines[4].end = 0;
   figures[14].lines[5].start = 0;
   figures[14].lines[5].end = 0;
   figures[14].lines[6].start = 0;
@@ -567,8 +525,6 @@ void init_figures() {
   figures[15].lines[4].end = 4;
   figures[15].lines[5].start = 0;
   figures[15].lines[5].end = 3;
-  figures[15].lines[5].start = 0;
-  figures[15].lines[5].end = 0;
   figures[15].lines[6].start = 0;
   figures[15].lines[6].end = 0;
   figures[15].lines[7].start = 0;
@@ -604,8 +560,6 @@ void init_figures() {
   figures[16].lines[4].end = 9;
   figures[16].lines[5].start = 6;
   figures[16].lines[5].end = 7;
-  figures[16].lines[5].start = 0;
-  figures[16].lines[5].end = 0;
   figures[16].lines[6].start = 0;
   figures[16].lines[6].end = 0;
   figures[16].lines[7].start = 0;
@@ -626,7 +580,6 @@ void init_figures() {
   vec4(&figure17[4], -0.0220, -1.7532, 1.9822, 1.0);
   vec4(&figure17[5], 0.3731, -1.9179, 1.7422, 1.0);
   vec4(&figure17[6], 0.3380, -1.8680, 1.8972, 1.0);
-  vec4(&figure17[6], 0, 0, 0, 1.0);
   vec4(&figure17[7], 0, 0, 0, 1.0);
   figures[17].lines[0].start = 0;
   figures[17].lines[0].end = 4;
@@ -636,8 +589,6 @@ void init_figures() {
   figures[17].lines[2].end = 6;
   figures[17].lines[3].start = 2;
   figures[17].lines[3].end = 6;
-  figures[17].lines[3].start = 0;
-  figures[17].lines[3].end = 0;
   figures[17].lines[4].start = 0;
   figures[17].lines[4].end = 0;
   figures[17].lines[5].start = 0;
@@ -663,7 +614,6 @@ void init_figures() {
   vec4(&figure18[5], 0.0180, -1.7532, 1.9822, 1.0);
   vec4(&figure18[6], 0.3731, -1.9179, 1.7422, 1.0);
   vec4(&figure18[7], 0.3380, -1.8680, 1.8972, 1.0);
-  vec4(&figure18[7], 0, 0, 0, 1.0);
   figures[18].lines[0].start = 4;
   figures[18].lines[0].end = 6;
   figures[18].lines[1].start = 5;
@@ -674,8 +624,6 @@ void init_figures() {
   figures[18].lines[3].end = 2;
   figures[18].lines[4].start = 1;
   figures[18].lines[4].end = 3;
-  figures[18].lines[4].start = 0;
-  figures[18].lines[4].end = 0;
   figures[18].lines[5].start = 0;
   figures[18].lines[5].end = 0;
   figures[18].lines[6].start = 0;
@@ -699,7 +647,6 @@ void init_figures() {
   vec4(&figure19[5], -0.0220, -1.7532, 1.9822, 1.0);
   vec4(&figure19[6], 0.3731, -1.9179, 1.7422, 1.0);
   vec4(&figure19[7], 0.3380, -1.8680, 1.8972, 1.0);
-  vec4(&figure19[7], 0, 0, 0, 1.0);
   figures[19].lines[0].start = 2;
   figures[19].lines[0].end = 6;
   figures[19].lines[1].start = 2;
@@ -714,8 +661,6 @@ void init_figures() {
   figures[19].lines[5].end = 5;
   figures[19].lines[6].start = 1;
   figures[19].lines[6].end = 5;
-  figures[19].lines[6].start = 0;
-  figures[19].lines[6].end = 0;
   figures[19].lines[7].start = 0;
   figures[19].lines[7].end = 0;
   figures[19].lines[8].start = 0;
@@ -755,8 +700,6 @@ void init_figures() {
   figures[20].lines[7].end = 6;
   figures[20].lines[8].start = 1;
   figures[20].lines[8].end = 7;
-  figures[20].lines[8].start = 0;
-  figures[20].lines[8].end = 0;
   figures[20].lines[9].start = 0;
   figures[20].lines[9].end = 0;
   figures[20].lines[10].start = 0;
@@ -771,7 +714,6 @@ void init_figures() {
   vec4(&figure21[4], -0.3419, -1.8684, 1.9022, 1.0);
   vec4(&figure21[5], -1.0721, -1.5939, 1.6922, 1.0);
   vec4(&figure21[6], -1.1472, -1.4089, 1.6923, 1.0);
-  vec4(&figure21[6], 0, 0, 0, 1.0);
   vec4(&figure21[7], 0, 0, 0, 1.0);
   figures[21].lines[0].start = 0;
   figures[21].lines[0].end = 2;
@@ -787,8 +729,6 @@ void init_figures() {
   figures[21].lines[5].end = 3;
   figures[21].lines[6].start = 1;
   figures[21].lines[6].end = 6;
-  figures[21].lines[6].start = 0;
-  figures[21].lines[6].end = 0;
   figures[21].lines[7].start = 0;
   figures[21].lines[7].end = 0;
   figures[21].lines[8].start = 0;
@@ -822,8 +762,6 @@ void init_figures() {
   figures[22].lines[4].end = 9;
   figures[22].lines[5].start = 2;
   figures[22].lines[5].end = 3;
-  figures[22].lines[5].start = 0;
-  figures[22].lines[5].end = 0;
   figures[22].lines[6].start = 0;
   figures[22].lines[6].end = 0;
   figures[22].lines[7].start = 0;
@@ -859,8 +797,6 @@ void init_figures() {
   figures[23].lines[4].end = 9;
   figures[23].lines[5].start = 5;
   figures[23].lines[5].end = 8;
-  figures[23].lines[5].start = 0;
-  figures[23].lines[5].end = 0;
   figures[23].lines[6].start = 0;
   figures[23].lines[6].end = 0;
   figures[23].lines[7].start = 0;
@@ -882,7 +818,6 @@ void init_figures() {
   vec4(&figure24[5], -1.1071, -1.6189, 1.5672, 1.0);
   vec4(&figure24[6], 1.5124, -0.8670, 1.4226, 1.0);
   vec4(&figure24[7], 1.0024, -0.8924, 1.6375, 1.0);
-  vec4(&figure24[7], 0, 0, 0, 1.0);
   figures[24].lines[0].start = 4;
   figures[24].lines[0].end = 5;
   figures[24].lines[1].start = 6;
@@ -893,8 +828,6 @@ void init_figures() {
   figures[24].lines[3].end = 4;
   figures[24].lines[4].start = 2;
   figures[24].lines[4].end = 3;
-  figures[24].lines[4].start = 0;
-  figures[24].lines[4].end = 0;
   figures[24].lines[5].start = 0;
   figures[24].lines[5].end = 0;
   figures[24].lines[6].start = 0;
@@ -918,7 +851,6 @@ void init_figures() {
   vec4(&figure25[5], 1.4826, -1.1870, 1.4474, 1.0);
   vec4(&figure25[6], 1.3727, -1.3321, 1.4874, 1.0);
   vec4(&figure25[7], 1.5124, -0.8670, 1.4226, 1.0);
-  vec4(&figure25[7], 0, 0, 0, 1.0);
   figures[25].lines[0].start = 0;
   figures[25].lines[0].end = 1;
   figures[25].lines[1].start = 7;
@@ -929,8 +861,6 @@ void init_figures() {
   figures[25].lines[3].end = 2;
   figures[25].lines[4].start = 3;
   figures[25].lines[4].end = 4;
-  figures[25].lines[4].start = 0;
-  figures[25].lines[4].end = 0;
   figures[25].lines[5].start = 0;
   figures[25].lines[5].end = 0;
   figures[25].lines[6].start = 0;
@@ -967,8 +897,6 @@ void init_figures() {
   figures[26].lines[4].end = 5;
   figures[26].lines[5].start = 7;
   figures[26].lines[5].end = 8;
-  figures[26].lines[5].start = 0;
-  figures[26].lines[5].end = 0;
   figures[26].lines[6].start = 0;
   figures[26].lines[6].end = 0;
   figures[26].lines[7].start = 0;
@@ -989,7 +917,6 @@ void init_figures() {
   vec4(&figure27[4], -0.7900, 1.0025, 1.5225, 1.0);
   vec4(&figure27[5], -0.9000, 0.9975, 1.2875, 1.0);
   vec4(&figure27[6], -0.7100, 1.0425, 1.3525, 1.0);
-  vec4(&figure27[6], 0, 0, 0, 1.0);
   vec4(&figure27[7], 0, 0, 0, 1.0);
   figures[27].lines[0].start = 1;
   figures[27].lines[0].end = 2;
@@ -1003,8 +930,6 @@ void init_figures() {
   figures[27].lines[4].end = 5;
   figures[27].lines[5].start = 5;
   figures[27].lines[5].end = 6;
-  figures[27].lines[5].start = 0;
-  figures[27].lines[5].end = 0;
   figures[27].lines[6].start = 0;
   figures[27].lines[6].end = 0;
   figures[27].lines[7].start = 0;
@@ -1042,8 +967,6 @@ void init_figures() {
   figures[28].lines[5].end = 2;
   figures[28].lines[6].start = 3;
   figures[28].lines[6].end = 4;
-  figures[28].lines[6].start = 0;
-  figures[28].lines[6].end = 0;
   figures[28].lines[7].start = 0;
   figures[28].lines[7].end = 0;
   figures[28].lines[8].start = 0;
@@ -1063,7 +986,6 @@ void init_figures() {
   vec4(&figure29[5], -0.7900, 0.9175, 1.5275, 1.0);
   vec4(&figure29[6], -1.0600, 0.7975, 1.4125, 1.0);
   vec4(&figure29[7], -0.3800, 0.7275, 1.6425, 1.0);
-  vec4(&figure29[7], 0, 0, 0, 1.0);
   figures[29].lines[0].start = 0;
   figures[29].lines[0].end = 2;
   figures[29].lines[1].start = 0;
@@ -1076,8 +998,6 @@ void init_figures() {
   figures[29].lines[4].end = 4;
   figures[29].lines[5].start = 6;
   figures[29].lines[5].end = 5;
-  figures[29].lines[5].start = 0;
-  figures[29].lines[5].end = 0;
   figures[29].lines[6].start = 0;
   figures[29].lines[6].end = 0;
   figures[29].lines[7].start = 0;
@@ -1099,7 +1019,6 @@ void init_figures() {
   vec4(&figure30[5], -0.5200, 1.0275, 1.4325, 1.0);
   vec4(&figure30[6], -0.4050, 0.8825, 1.6525, 1.0);
   vec4(&figure30[7], -1.1400, 0.8375, 1.2125, 1.0);
-  vec4(&figure30[7], 0, 0, 0, 1.0);
   figures[30].lines[0].start = 2;
   figures[30].lines[0].end = 3;
   figures[30].lines[1].start = 3;
@@ -1112,8 +1031,6 @@ void init_figures() {
   figures[30].lines[4].end = 6;
   figures[30].lines[5].start = 0;
   figures[30].lines[5].end = 7;
-  figures[30].lines[5].start = 0;
-  figures[30].lines[5].end = 0;
   figures[30].lines[6].start = 0;
   figures[30].lines[6].end = 0;
   figures[30].lines[7].start = 0;
@@ -1148,8 +1065,6 @@ void init_figures() {
   figures[31].lines[4].end = 3;
   figures[31].lines[5].start = 6;
   figures[31].lines[5].end = 4;
-  figures[31].lines[5].start = 0;
-  figures[31].lines[5].end = 0;
   figures[31].lines[6].start = 0;
   figures[31].lines[6].end = 0;
   figures[31].lines[7].start = 0;
@@ -1187,8 +1102,6 @@ void init_figures() {
   figures[32].lines[5].end = 1;
   figures[32].lines[6].start = 5;
   figures[32].lines[6].end = 9;
-  figures[32].lines[6].start = 0;
-  figures[32].lines[6].end = 0;
   figures[32].lines[7].start = 0;
   figures[32].lines[7].end = 0;
   figures[32].lines[8].start = 0;
@@ -1208,7 +1121,6 @@ void init_figures() {
   vec4(&figure33[5], -0.6200, 0.9875, 1.5775, 1.0);
   vec4(&figure33[6], -0.3800, 0.7275, 1.6425, 1.0);
   vec4(&figure33[7], -0.7100, 1.0425, 1.3525, 1.0);
-  vec4(&figure33[7], 0, 0, 0, 1.0);
   figures[33].lines[0].start = 5;
   figures[33].lines[0].end = 7;
   figures[33].lines[1].start = 5;
@@ -1219,8 +1131,6 @@ void init_figures() {
   figures[33].lines[3].end = 4;
   figures[33].lines[4].start = 4;
   figures[33].lines[4].end = 2;
-  figures[33].lines[4].start = 0;
-  figures[33].lines[4].end = 0;
   figures[33].lines[5].start = 0;
   figures[33].lines[5].end = 0;
   figures[33].lines[6].start = 0;
@@ -1243,7 +1153,6 @@ void init_figures() {
   vec4(&figure34[4], -1.1550, 0.8225, 1.3725, 1.0);
   vec4(&figure34[5], -0.9500, 0.9325, 1.4525, 1.0);
   vec4(&figure34[6], -0.7900, 1.0025, 1.5225, 1.0);
-  vec4(&figure34[6], 0, 0, 0, 1.0);
   vec4(&figure34[7], 0, 0, 0, 1.0);
   figures[34].lines[0].start = 3;
   figures[34].lines[0].end = 0;
@@ -1259,8 +1168,6 @@ void init_figures() {
   figures[34].lines[5].end = 5;
   figures[34].lines[6].start = 2;
   figures[34].lines[6].end = 4;
-  figures[34].lines[6].start = 0;
-  figures[34].lines[6].end = 0;
   figures[34].lines[7].start = 0;
   figures[34].lines[7].end = 0;
   figures[34].lines[8].start = 0;
@@ -1294,8 +1201,6 @@ void init_figures() {
   figures[35].lines[4].end = 6;
   figures[35].lines[5].start = 7;
   figures[35].lines[5].end = 4;
-  figures[35].lines[5].start = 0;
-  figures[35].lines[5].end = 0;
   figures[35].lines[6].start = 0;
   figures[35].lines[6].end = 0;
   figures[35].lines[7].start = 0;
@@ -1328,8 +1233,6 @@ void init_figures() {
   figures[36].lines[3].end = 8;
   figures[36].lines[4].start = 2;
   figures[36].lines[4].end = 1;
-  figures[36].lines[4].start = 0;
-  figures[36].lines[4].end = 0;
   figures[36].lines[5].start = 0;
   figures[36].lines[5].end = 0;
   figures[36].lines[6].start = 0;
@@ -1353,7 +1256,6 @@ void init_figures() {
   vec4(&figure37[5], 0.9565, 0.9325, 1.4150, 1.0);
   vec4(&figure37[6], 1.2565, 0.6825, 1.2750, 1.0);
   vec4(&figure37[7], 1.1615, 0.8225, 1.3350, 1.0);
-  vec4(&figure37[7], 0, 0, 0, 1.0);
   figures[37].lines[0].start = 0;
   figures[37].lines[0].end = 1;
   figures[37].lines[1].start = 1;
@@ -1368,8 +1270,6 @@ void init_figures() {
   figures[37].lines[5].end = 5;
   figures[37].lines[6].start = 6;
   figures[37].lines[6].end = 7;
-  figures[37].lines[6].start = 0;
-  figures[37].lines[6].end = 0;
   figures[37].lines[7].start = 0;
   figures[37].lines[7].end = 0;
   figures[37].lines[8].start = 0;
@@ -1389,7 +1289,6 @@ void init_figures() {
   vec4(&figure38[5], 0.3815, 0.7275, 1.6100, 1.0);
   vec4(&figure38[6], 0.7965, 1.0025, 1.4850, 1.0);
   vec4(&figure38[7], 0.7165, 1.0425, 1.3150, 1.0);
-  vec4(&figure38[7], 0, 0, 0, 1.0);
   figures[38].lines[0].start = 2;
   figures[38].lines[0].end = 3;
   figures[38].lines[1].start = 1;
@@ -1402,8 +1301,6 @@ void init_figures() {
   figures[38].lines[4].end = 4;
   figures[38].lines[5].start = 6;
   figures[38].lines[5].end = 7;
-  figures[38].lines[5].start = 0;
-  figures[38].lines[5].end = 0;
   figures[38].lines[6].start = 0;
   figures[38].lines[6].end = 0;
   figures[38].lines[7].start = 0;
@@ -1425,7 +1322,6 @@ void init_figures() {
   vec4(&figure39[5], 0.7965, 1.0025, 1.4850, 1.0);
   vec4(&figure39[6], 0.7165, 1.0425, 1.3150, 1.0);
   vec4(&figure39[7], 0.4615, 0.8075, 1.4350, 1.0);
-  vec4(&figure39[7], 0, 0, 0, 1.0);
   figures[39].lines[0].start = 3;
   figures[39].lines[0].end = 6;
   figures[39].lines[1].start = 3;
@@ -1438,8 +1334,6 @@ void init_figures() {
   figures[39].lines[4].end = 7;
   figures[39].lines[5].start = 1;
   figures[39].lines[5].end = 4;
-  figures[39].lines[5].start = 0;
-  figures[39].lines[5].end = 0;
   figures[39].lines[6].start = 0;
   figures[39].lines[6].end = 0;
   figures[39].lines[7].start = 0;
@@ -1461,7 +1355,6 @@ void init_figures() {
   vec4(&figure40[5], 0.9565, 0.9325, 1.4150, 1.0);
   vec4(&figure40[6], 1.1615, 0.8225, 1.3350, 1.0);
   vec4(&figure40[7], 1.1715, 0.6525, 1.3100, 1.0);
-  vec4(&figure40[7], 0, 0, 0, 1.0);
   figures[40].lines[0].start = 7;
   figures[40].lines[0].end = 1;
   figures[40].lines[1].start = 0;
@@ -1474,8 +1367,6 @@ void init_figures() {
   figures[40].lines[4].end = 5;
   figures[40].lines[5].start = 4;
   figures[40].lines[5].end = 3;
-  figures[40].lines[5].start = 0;
-  figures[40].lines[5].end = 0;
   figures[40].lines[6].start = 0;
   figures[40].lines[6].end = 0;
   figures[40].lines[7].start = 0;
@@ -1497,7 +1388,6 @@ void init_figures() {
   vec4(&figure41[5], 1.1715, 0.6525, 1.3100, 1.0);
   vec4(&figure41[6], 0.3015, 0.7575, 1.6300, 1.0);
   vec4(&figure41[7], 0.7965, 1.0025, 1.4850, 1.0);
-  vec4(&figure41[7], 0, 0, 0, 1.0);
   figures[41].lines[0].start = 6;
   figures[41].lines[0].end = 0;
   figures[41].lines[1].start = 5;
@@ -1508,8 +1398,6 @@ void init_figures() {
   figures[41].lines[3].end = 7;
   figures[41].lines[4].start = 7;
   figures[41].lines[4].end = 3;
-  figures[41].lines[4].start = 0;
-  figures[41].lines[4].end = 0;
   figures[41].lines[5].start = 0;
   figures[41].lines[5].end = 0;
   figures[41].lines[6].start = 0;
@@ -1533,7 +1421,6 @@ void init_figures() {
   vec4(&figure42[5], 1.1715, 0.6525, 1.3100, 1.0);
   vec4(&figure42[6], 0.3815, 0.7275, 1.6100, 1.0);
   vec4(&figure42[7], 0.7965, 1.0025, 1.4850, 1.0);
-  vec4(&figure42[7], 0, 0, 0, 1.0);
   figures[42].lines[0].start = 2;
   figures[42].lines[0].end = 3;
   figures[42].lines[1].start = 7;
@@ -1545,8 +1432,6 @@ void init_figures() {
   figures[42].lines[4].start = 4;
   figures[42].lines[4].end = 0;
   figures[42].lines[5].start = 5;
-  figures[42].lines[5].end = 0;
-  figures[42].lines[5].start = 0;
   figures[42].lines[5].end = 0;
   figures[42].lines[6].start = 0;
   figures[42].lines[6].end = 0;
@@ -1583,8 +1468,6 @@ void init_figures() {
   figures[43].lines[4].end = 8;
   figures[43].lines[5].start = 4;
   figures[43].lines[5].end = 3;
-  figures[43].lines[5].start = 0;
-  figures[43].lines[5].end = 0;
   figures[43].lines[6].start = 0;
   figures[43].lines[6].end = 0;
   figures[43].lines[7].start = 0;
@@ -1606,7 +1489,6 @@ void init_figures() {
   vec4(&figure44[5], 0.9565, 0.9325, 1.4150, 1.0);
   vec4(&figure44[6], 0.3015, 0.7575, 1.6300, 1.0);
   vec4(&figure44[7], 0.3815, 0.7275, 1.6100, 1.0);
-  vec4(&figure44[7], 0, 0, 0, 1.0);
   figures[44].lines[0].start = 2;
   figures[44].lines[0].end = 7;
   figures[44].lines[1].start = 7;
@@ -1617,8 +1499,6 @@ void init_figures() {
   figures[44].lines[3].end = 0;
   figures[44].lines[4].start = 4;
   figures[44].lines[4].end = 6;
-  figures[44].lines[4].start = 0;
-  figures[44].lines[4].end = 0;
   figures[44].lines[5].start = 0;
   figures[44].lines[5].end = 0;
   figures[44].lines[6].start = 0;
@@ -1641,7 +1521,6 @@ void init_figures() {
   vec4(&figure45[4], 1.2515, 0.6475, 1.1500, 1.0);
   vec4(&figure45[5], 0.4115, 0.8825, 1.6150, 1.0);
   vec4(&figure45[6], 1.2565, 0.6825, 1.2750, 1.0);
-  vec4(&figure45[6], 0, 0, 0, 1.0);
   vec4(&figure45[7], 0, 0, 0, 1.0);
   figures[45].lines[0].start = 3;
   figures[45].lines[0].end = 1;
@@ -1653,8 +1532,6 @@ void init_figures() {
   figures[45].lines[3].end = 4;
   figures[45].lines[4].start = 5;
   figures[45].lines[4].end = 2;
-  figures[45].lines[4].start = 0;
-  figures[45].lines[4].end = 0;
   figures[45].lines[5].start = 0;
   figures[45].lines[5].end = 0;
   figures[45].lines[6].start = 0;
@@ -1690,8 +1567,6 @@ void init_figures() {
   figures[46].lines[3].end = 2;
   figures[46].lines[4].start = 5;
   figures[46].lines[4].end = 4;
-  figures[46].lines[4].start = 0;
-  figures[46].lines[4].end = 0;
   figures[46].lines[5].start = 0;
   figures[46].lines[5].end = 0;
   figures[46].lines[6].start = 0;
@@ -1726,8 +1601,6 @@ void init_figures() {
   figures[47].lines[3].end = 7;
   figures[47].lines[4].start = 3;
   figures[47].lines[4].end = 8;
-  figures[47].lines[4].start = 0;
-  figures[47].lines[4].end = 0;
   figures[47].lines[5].start = 0;
   figures[47].lines[5].end = 0;
   figures[47].lines[6].start = 0;
@@ -1750,7 +1623,6 @@ void init_figures() {
   vec4(&figure48[4], -0.5337, -0.0900, 1.2902, 1.0);
   vec4(&figure48[5], -0.4608, -0.1697, 1.3196, 1.0);
   vec4(&figure48[6], -0.5278, -0.0453, 1.2861, 1.0);
-  vec4(&figure48[6], 0, 0, 0, 1.0);
   vec4(&figure48[7], 0, 0, 0, 1.0);
   figures[48].lines[0].start = 0;
   figures[48].lines[0].end = 1;
@@ -1766,8 +1638,6 @@ void init_figures() {
   figures[48].lines[5].end = 5;
   figures[48].lines[6].start = 6;
   figures[48].lines[6].end = 4;
-  figures[48].lines[6].start = 0;
-  figures[48].lines[6].end = 0;
   figures[48].lines[7].start = 0;
   figures[48].lines[7].end = 0;
   figures[48].lines[8].start = 0;
@@ -1786,7 +1656,6 @@ void init_figures() {
   vec4(&figure49[4], -0.4364, -0.0163, 1.3132, 1.0);
   vec4(&figure49[5], -0.4234, -0.1441, 1.3296, 1.0);
   vec4(&figure49[6], -0.4099, -0.0348, 1.3267, 1.0);
-  vec4(&figure49[6], 0, 0, 0, 1.0);
   vec4(&figure49[7], 0, 0, 0, 1.0);
   figures[49].lines[0].start = 1;
   figures[49].lines[0].end = 0;
@@ -1808,8 +1677,6 @@ void init_figures() {
   figures[49].lines[8].end = 0;
   figures[49].lines[9].start = 4;
   figures[49].lines[9].end = 6;
-  figures[49].lines[9].start = 0;
-  figures[49].lines[9].end = 0;
   figures[49].lines[10].start = 0;
   figures[49].lines[10].end = 0;
   figures[49].lines[11].start = 0;
@@ -1822,7 +1689,6 @@ void init_figures() {
   vec4(&figure50[4], -0.4058, -0.1210, 1.3319, 1.0);
   vec4(&figure50[5], -0.4368, -0.3587, 1.3119, 1.0);
   vec4(&figure50[6], -0.3486, -0.3142, 1.3387, 1.0);
-  vec4(&figure50[6], 0, 0, 0, 1.0);
   vec4(&figure50[7], 0, 0, 0, 1.0);
   figures[50].lines[0].start = 1;
   figures[50].lines[0].end = 2;
@@ -1838,8 +1704,6 @@ void init_figures() {
   figures[50].lines[5].end = 0;
   figures[50].lines[6].start = 5;
   figures[50].lines[6].end = 6;
-  figures[50].lines[6].start = 0;
-  figures[50].lines[6].end = 0;
   figures[50].lines[7].start = 0;
   figures[50].lines[7].end = 0;
   figures[50].lines[8].start = 0;
@@ -1859,7 +1723,6 @@ void init_figures() {
   vec4(&figure51[5], -0.5365, -0.3362, 1.2789, 1.0);
   vec4(&figure51[6], -0.6046, -0.2473, 1.2603, 1.0);
   vec4(&figure51[7], -0.6355, -0.1023, 1.2417, 1.0);
-  vec4(&figure51[7], 0, 0, 0, 1.0);
   figures[51].lines[0].start = 4;
   figures[51].lines[0].end = 2;
   figures[51].lines[1].start = 5;
@@ -1873,8 +1736,6 @@ void init_figures() {
   figures[51].lines[5].start = 5;
   figures[51].lines[5].end = 1;
   figures[51].lines[6].start = 7;
-  figures[51].lines[6].end = 0;
-  figures[51].lines[6].start = 0;
   figures[51].lines[6].end = 0;
   figures[51].lines[7].start = 0;
   figures[51].lines[7].end = 0;
@@ -1894,7 +1755,6 @@ void init_figures() {
   vec4(&figure52[4], -0.6355, -0.1023, 1.2417, 1.0);
   vec4(&figure52[5], -0.6277, 0.0379, 1.2331, 1.0);
   vec4(&figure52[6], -0.5711, 0.1369, 1.2408, 1.0);
-  vec4(&figure52[6], 0, 0, 0, 1.0);
   vec4(&figure52[7], 0, 0, 0, 1.0);
   figures[52].lines[0].start = 3;
   figures[52].lines[0].end = 4;
@@ -1908,8 +1768,6 @@ void init_figures() {
   figures[52].lines[4].end = 4;
   figures[52].lines[5].start = 2;
   figures[52].lines[5].end = 6;
-  figures[52].lines[5].start = 0;
-  figures[52].lines[5].end = 0;
   figures[52].lines[6].start = 0;
   figures[52].lines[6].end = 0;
   figures[52].lines[7].start = 0;
@@ -1931,7 +1789,6 @@ void init_figures() {
   vec4(&figure53[5], -0.6277, 0.0379, 1.2331, 1.0);
   vec4(&figure53[6], -0.5711, 0.1369, 1.2408, 1.0);
   vec4(&figure53[7], -0.4724, 0.1802, 1.2638, 1.0);
-  vec4(&figure53[7], 0, 0, 0, 1.0);
   figures[53].lines[0].start = 5;
   figures[53].lines[0].end = 6;
   figures[53].lines[1].start = 2;
@@ -1948,8 +1805,6 @@ void init_figures() {
   figures[53].lines[6].end = 7;
   figures[53].lines[7].start = 1;
   figures[53].lines[7].end = 4;
-  figures[53].lines[7].start = 0;
-  figures[53].lines[7].end = 0;
   figures[53].lines[8].start = 0;
   figures[53].lines[8].end = 0;
   figures[53].lines[9].start = 0;
@@ -1966,7 +1821,6 @@ void init_figures() {
   vec4(&figure54[4], -0.4364, -0.0163, 1.3132, 1.0);
   vec4(&figure54[5], -0.4099, -0.0348, 1.3267, 1.0);
   vec4(&figure54[6], -0.4058, -0.1210, 1.3319, 1.0);
-  vec4(&figure54[6], 0, 0, 0, 1.0);
   vec4(&figure54[7], 0, 0, 0, 1.0);
   figures[54].lines[0].start = 0;
   figures[54].lines[0].end = 1;
@@ -1980,8 +1834,6 @@ void init_figures() {
   figures[54].lines[4].end = 5;
   figures[54].lines[5].start = 3;
   figures[54].lines[5].end = 6;
-  figures[54].lines[5].start = 0;
-  figures[54].lines[5].end = 0;
   figures[54].lines[6].start = 0;
   figures[54].lines[6].end = 0;
   figures[54].lines[7].start = 0;
@@ -2003,7 +1855,6 @@ void init_figures() {
   vec4(&figure55[5], -0.4058, -0.1210, 1.3319, 1.0);
   vec4(&figure55[6], -0.3486, -0.3142, 1.3387, 1.0);
   vec4(&figure55[7], -0.6355, -0.1023, 1.2417, 1.0);
-  vec4(&figure55[7], 0, 0, 0, 1.0);
   figures[55].lines[0].start = 0;
   figures[55].lines[0].end = 1;
   figures[55].lines[1].start = 0;
@@ -2018,8 +1869,6 @@ void init_figures() {
   figures[55].lines[5].end = 4;
   figures[55].lines[6].start = 7;
   figures[55].lines[6].end = 2;
-  figures[55].lines[6].start = 0;
-  figures[55].lines[6].end = 0;
   figures[55].lines[7].start = 0;
   figures[55].lines[7].end = 0;
   figures[55].lines[8].start = 0;
@@ -2038,7 +1887,6 @@ void init_figures() {
   vec4(&figure56[4], -0.1350, -0.2780, 1.2909, 1.0);
   vec4(&figure56[5], -0.5243, -0.1315, 1.2963, 1.0);
   vec4(&figure56[6], -0.6355, -0.1023, 1.2417, 1.0);
-  vec4(&figure56[6], 0, 0, 0, 1.0);
   vec4(&figure56[7], 0, 0, 0, 1.0);
   figures[56].lines[0].start = 5;
   figures[56].lines[0].end = 6;
@@ -2051,8 +1899,6 @@ void init_figures() {
   figures[56].lines[4].start = 0;
   figures[56].lines[4].end = 3;
   figures[56].lines[5].start = 4;
-  figures[56].lines[5].end = 0;
-  figures[56].lines[5].start = 0;
   figures[56].lines[5].end = 0;
   figures[56].lines[6].start = 0;
   figures[56].lines[6].end = 0;
@@ -2074,7 +1920,6 @@ void init_figures() {
   vec4(&figure57[4], -0.2109, 0.1333, 1.3178, 1.0);
   vec4(&figure57[5], -0.3111, 0.2667, 1.2750, 1.0);
   vec4(&figure57[6], -0.1636, 0.1188, 1.2533, 1.0);
-  vec4(&figure57[6], 0, 0, 0, 1.0);
   vec4(&figure57[7], 0, 0, 0, 1.0);
   figures[57].lines[0].start = 1;
   figures[57].lines[0].end = 0;
@@ -2092,8 +1937,6 @@ void init_figures() {
   figures[57].lines[6].end = 5;
   figures[57].lines[7].start = 4;
   figures[57].lines[7].end = 6;
-  figures[57].lines[7].start = 0;
-  figures[57].lines[7].end = 0;
   figures[57].lines[8].start = 0;
   figures[57].lines[8].end = 0;
   figures[57].lines[9].start = 0;
@@ -2111,7 +1954,6 @@ void init_figures() {
   vec4(&figure58[5], -0.5851, 0.2215, 1.1132, 1.0);
   vec4(&figure58[6], -0.7156, 0.0797, 1.1664, 1.0);
   vec4(&figure58[7], -0.6677, 0.0653, 1.0969, 1.0);
-  vec4(&figure58[7], 0, 0, 0, 1.0);
   figures[58].lines[0].start = 0;
   figures[58].lines[0].end = 1;
   figures[58].lines[1].start = 0;
@@ -2130,8 +1972,6 @@ void init_figures() {
   figures[58].lines[7].end = 6;
   figures[58].lines[8].start = 4;
   figures[58].lines[8].end = 7;
-  figures[58].lines[8].start = 0;
-  figures[58].lines[8].end = 0;
   figures[58].lines[9].start = 0;
   figures[58].lines[9].end = 0;
   figures[58].lines[10].start = 0;
@@ -2146,7 +1986,6 @@ void init_figures() {
   vec4(&figure59[4], -0.6863, -0.3171, 1.1990, 1.0);
   vec4(&figure59[5], -0.5810, -0.4561, 1.2374, 1.0);
   vec4(&figure59[6], -0.6391, -0.3315, 1.1345, 1.0);
-  vec4(&figure59[6], 0, 0, 0, 1.0);
   vec4(&figure59[7], 0, 0, 0, 1.0);
   figures[59].lines[0].start = 0;
   figures[59].lines[0].end = 1;
@@ -2164,8 +2003,6 @@ void init_figures() {
   figures[59].lines[6].end = 5;
   figures[59].lines[7].start = 6;
   figures[59].lines[7].end = 4;
-  figures[59].lines[7].start = 0;
-  figures[59].lines[7].end = 0;
   figures[59].lines[8].start = 0;
   figures[59].lines[8].end = 0;
   figures[59].lines[9].start = 0;
@@ -2183,7 +2020,6 @@ void init_figures() {
   vec4(&figure60[5], -0.5338, -0.4705, 1.1729, 1.0);
   vec4(&figure60[6], -0.3720, -0.5056, 1.2240, 1.0);
   vec4(&figure60[7], -0.4368, -0.3587, 1.3119, 1.0);
-  vec4(&figure60[7], 0, 0, 0, 1.0);
   figures[60].lines[0].start = 4;
   figures[60].lines[0].end = 3;
   figures[60].lines[1].start = 1;
@@ -2199,8 +2035,6 @@ void init_figures() {
   figures[60].lines[6].start = 7;
   figures[60].lines[6].end = 1;
   figures[60].lines[7].start = 7;
-  figures[60].lines[7].end = 0;
-  figures[60].lines[7].start = 0;
   figures[60].lines[7].end = 0;
   figures[60].lines[8].start = 0;
   figures[60].lines[8].end = 0;
@@ -2219,7 +2053,6 @@ void init_figures() {
   vec4(&figure61[5], -0.5365, -0.3362, 1.2789, 1.0);
   vec4(&figure61[6], -0.6046, -0.2473, 1.2603, 1.0);
   vec4(&figure61[7], -0.6277, 0.0379, 1.2331, 1.0);
-  vec4(&figure61[7], 0, 0, 0, 1.0);
   figures[61].lines[0].start = 4;
   figures[61].lines[0].end = 3;
   figures[61].lines[1].start = 5;
@@ -2232,8 +2065,6 @@ void init_figures() {
   figures[61].lines[4].end = 2;
   figures[61].lines[5].start = 0;
   figures[61].lines[5].end = 7;
-  figures[61].lines[5].start = 0;
-  figures[61].lines[5].end = 0;
   figures[61].lines[6].start = 0;
   figures[61].lines[6].end = 0;
   figures[61].lines[7].start = 0;
@@ -2254,7 +2085,6 @@ void init_figures() {
   vec4(&figure62[4], -0.6277, 0.0379, 1.2331, 1.0);
   vec4(&figure62[5], -0.5711, 0.1369, 1.2408, 1.0);
   vec4(&figure62[6], -0.4724, 0.1802, 1.2638, 1.0);
-  vec4(&figure62[6], 0, 0, 0, 1.0);
   vec4(&figure62[7], 0, 0, 0, 1.0);
   figures[62].lines[0].start = 3;
   figures[62].lines[0].end = 4;
@@ -2264,8 +2094,6 @@ void init_figures() {
   figures[62].lines[2].end = 5;
   figures[62].lines[3].start = 0;
   figures[62].lines[3].end = 6;
-  figures[62].lines[3].start = 0;
-  figures[62].lines[3].end = 0;
   figures[62].lines[4].start = 0;
   figures[62].lines[4].end = 0;
   figures[62].lines[5].start = 0;
@@ -2290,7 +2118,6 @@ void init_figures() {
   vec4(&figure63[4], -0.3111, 0.2667, 1.2750, 1.0);
   vec4(&figure63[5], -0.6274, 0.2353, 1.1784, 1.0);
   vec4(&figure63[6], -0.4724, 0.1802, 1.2638, 1.0);
-  vec4(&figure63[6], 0, 0, 0, 1.0);
   vec4(&figure63[7], 0, 0, 0, 1.0);
   figures[63].lines[0].start = 5;
   figures[63].lines[0].end = 6;
@@ -2302,8 +2129,6 @@ void init_figures() {
   figures[63].lines[3].end = 4;
   figures[63].lines[4].start = 1;
   figures[63].lines[4].end = 2;
-  figures[63].lines[4].start = 0;
-  figures[63].lines[4].end = 0;
   figures[63].lines[5].start = 0;
   figures[63].lines[5].end = 0;
   figures[63].lines[6].start = 0;
@@ -2326,7 +2151,6 @@ void init_figures() {
   vec4(&figure64[4], -0.1668, -0.0588, 1.3481, 1.0);
   vec4(&figure64[5], -0.2109, 0.1333, 1.3178, 1.0);
   vec4(&figure64[6], -0.3486, -0.3142, 1.3387, 1.0);
-  vec4(&figure64[6], 0, 0, 0, 1.0);
   vec4(&figure64[7], 0, 0, 0, 1.0);
   figures[64].lines[0].start = 0;
   figures[64].lines[0].end = 5;
@@ -2336,8 +2160,6 @@ void init_figures() {
   figures[64].lines[2].end = 1;
   figures[64].lines[3].start = 6;
   figures[64].lines[3].end = 2;
-  figures[64].lines[3].start = 0;
-  figures[64].lines[3].end = 0;
   figures[64].lines[4].start = 0;
   figures[64].lines[4].end = 0;
   figures[64].lines[5].start = 0;
@@ -2362,7 +2184,6 @@ void init_figures() {
   vec4(&figure65[4], -0.7304, -0.1201, 1.1738, 1.0);
   vec4(&figure65[5], -0.3486, -0.3142, 1.3387, 1.0);
   vec4(&figure65[6], -0.6355, -0.1023, 1.2417, 1.0);
-  vec4(&figure65[6], 0, 0, 0, 1.0);
   vec4(&figure65[7], 0, 0, 0, 1.0);
   figures[65].lines[0].start = 5;
   figures[65].lines[0].end = 2;
@@ -2372,8 +2193,6 @@ void init_figures() {
   figures[65].lines[2].end = 0;
   figures[65].lines[3].start = 6;
   figures[65].lines[3].end = 4;
-  figures[65].lines[3].start = 0;
-  figures[65].lines[3].end = 0;
   figures[65].lines[4].start = 0;
   figures[65].lines[4].end = 0;
   figures[65].lines[5].start = 0;
@@ -2412,8 +2231,6 @@ void init_figures() {
   figures[66].lines[4].end = 5;
   figures[66].lines[5].start = 7;
   figures[66].lines[5].end = 4;
-  figures[66].lines[5].start = 0;
-  figures[66].lines[5].end = 0;
   figures[66].lines[6].start = 0;
   figures[66].lines[6].end = 0;
   figures[66].lines[7].start = 0;
@@ -2435,7 +2252,6 @@ void init_figures() {
   vec4(&figure67[5], -0.5338, -0.4705, 1.1729, 1.0);
   vec4(&figure67[6], -0.3720, -0.5056, 1.2240, 1.0);
   vec4(&figure67[7], -0.4251, 0.2924, 1.1595, 1.0);
-  vec4(&figure67[7], 0, 0, 0, 1.0);
   figures[67].lines[0].start = 7;
   figures[67].lines[0].end = 0;
   figures[67].lines[1].start = 1;
@@ -2448,8 +2264,6 @@ void init_figures() {
   figures[67].lines[4].end = 3;
   figures[67].lines[5].start = 5;
   figures[67].lines[5].end = 6;
-  figures[67].lines[5].start = 0;
-  figures[67].lines[5].end = 0;
   figures[67].lines[6].start = 0;
   figures[67].lines[6].end = 0;
   figures[67].lines[7].start = 0;
@@ -2470,7 +2284,6 @@ void init_figures() {
   vec4(&figure68[4], 0.5320, -0.0898, 1.2885, 1.0);
   vec4(&figure68[5], 0.5031, -0.1525, 1.3011, 1.0);
   vec4(&figure68[6], 0.4657, -0.1757, 1.3107, 1.0);
-  vec4(&figure68[6], 0, 0, 0, 1.0);
   vec4(&figure68[7], 0, 0, 0, 1.0);
   figures[68].lines[0].start = 1;
   figures[68].lines[0].end = 2;
@@ -2486,8 +2299,6 @@ void init_figures() {
   figures[68].lines[5].end = 6;
   figures[68].lines[6].start = 0;
   figures[68].lines[6].end = 6;
-  figures[68].lines[6].start = 0;
-  figures[68].lines[6].end = 0;
   figures[68].lines[7].start = 0;
   figures[68].lines[7].end = 0;
   figures[68].lines[8].start = 0;
@@ -2506,7 +2317,6 @@ void init_figures() {
   vec4(&figure69[4], 0.4299, -0.1535, 1.3210, 1.0);
   vec4(&figure69[5], 0.5320, -0.0898, 1.2885, 1.0);
   vec4(&figure69[6], 0.4657, -0.1757, 1.3107, 1.0);
-  vec4(&figure69[6], 0, 0, 0, 1.0);
   vec4(&figure69[7], 0, 0, 0, 1.0);
   figures[69].lines[0].start = 0;
   figures[69].lines[0].end = 5;
@@ -2524,8 +2334,6 @@ void init_figures() {
   figures[69].lines[6].end = 3;
   figures[69].lines[7].start = 4;
   figures[69].lines[7].end = 6;
-  figures[69].lines[7].start = 0;
-  figures[69].lines[7].end = 0;
   figures[69].lines[8].start = 0;
   figures[69].lines[8].end = 0;
   figures[69].lines[9].start = 0;
@@ -2543,7 +2351,6 @@ void init_figures() {
   vec4(&figure70[5], 0.3693, -0.3338, 1.3303, 1.0);
   vec4(&figure70[6], 0.4635, -0.3660, 1.2969, 1.0);
   vec4(&figure70[7], 0.4657, -0.1757, 1.3107, 1.0);
-  vec4(&figure70[7], 0, 0, 0, 1.0);
   figures[70].lines[0].start = 0;
   figures[70].lines[0].end = 1;
   figures[70].lines[1].start = 1;
@@ -2562,8 +2369,6 @@ void init_figures() {
   figures[70].lines[7].end = 7;
   figures[70].lines[8].start = 5;
   figures[70].lines[8].end = 6;
-  figures[70].lines[8].start = 0;
-  figures[70].lines[8].end = 0;
   figures[70].lines[9].start = 0;
   figures[70].lines[9].end = 0;
   figures[70].lines[10].start = 0;
@@ -2578,7 +2383,6 @@ void init_figures() {
   vec4(&figure71[4], 0.5257, -0.1306, 1.2935, 1.0);
   vec4(&figure71[5], 0.5031, -0.1525, 1.3011, 1.0);
   vec4(&figure71[6], 0.4657, -0.1757, 1.3107, 1.0);
-  vec4(&figure71[6], 0, 0, 0, 1.0);
   vec4(&figure71[7], 0, 0, 0, 1.0);
   figures[71].lines[0].start = 0;
   figures[71].lines[0].end = 6;
@@ -2596,8 +2400,6 @@ void init_figures() {
   figures[71].lines[6].end = 4;
   figures[71].lines[7].start = 2;
   figures[71].lines[7].end = 3;
-  figures[71].lines[7].start = 0;
-  figures[71].lines[7].end = 0;
   figures[71].lines[8].start = 0;
   figures[71].lines[8].end = 0;
   figures[71].lines[9].start = 0;
@@ -2615,7 +2417,6 @@ void init_figures() {
   vec4(&figure72[5], 0.5451, 0.1428, 1.2564, 1.0);
   vec4(&figure72[6], 0.4453, 0.1747, 1.2855, 1.0);
   vec4(&figure72[7], 0.5257, -0.1306, 1.2935, 1.0);
-  vec4(&figure72[7], 0, 0, 0, 1.0);
   figures[72].lines[0].start = 7;
   figures[72].lines[0].end = 3;
   figures[72].lines[1].start = 0;
@@ -2634,8 +2435,6 @@ void init_figures() {
   figures[72].lines[7].end = 5;
   figures[72].lines[8].start = 5;
   figures[72].lines[8].end = 6;
-  figures[72].lines[8].start = 0;
-  figures[72].lines[8].end = 0;
   figures[72].lines[9].start = 0;
   figures[72].lines[9].end = 0;
   figures[72].lines[10].start = 0;
@@ -2650,7 +2449,6 @@ void init_figures() {
   vec4(&figure73[4], 0.3509, 0.1417, 1.3176, 1.0);
   vec4(&figure73[5], 0.3009, 0.0470, 1.3424, 1.0);
   vec4(&figure73[6], 0.2835, -0.0952, 1.3569, 1.0);
-  vec4(&figure73[6], 0, 0, 0, 1.0);
   vec4(&figure73[7], 0, 0, 0, 1.0);
   figures[73].lines[0].start = 0;
   figures[73].lines[0].end = 3;
@@ -2668,8 +2466,6 @@ void init_figures() {
   figures[73].lines[6].end = 2;
   figures[73].lines[7].start = 5;
   figures[73].lines[7].end = 6;
-  figures[73].lines[7].start = 0;
-  figures[73].lines[7].end = 0;
   figures[73].lines[8].start = 0;
   figures[73].lines[8].end = 0;
   figures[73].lines[9].start = 0;
@@ -2706,8 +2502,6 @@ void init_figures() {
   figures[74].lines[7].end = 2;
   figures[74].lines[8].start = 5;
   figures[74].lines[8].end = 8;
-  figures[74].lines[8].start = 0;
-  figures[74].lines[8].end = 0;
   figures[74].lines[9].start = 0;
   figures[74].lines[9].end = 0;
   figures[74].lines[10].start = 0;
@@ -2722,7 +2516,6 @@ void init_figures() {
   vec4(&figure75[4], 0.2029, -0.3016, 1.3532, 1.0);
   vec4(&figure75[5], 0.1565, -0.3184, 1.2985, 1.0);
   vec4(&figure75[6], 0.5257, -0.1306, 1.2935, 1.0);
-  vec4(&figure75[6], 0, 0, 0, 1.0);
   vec4(&figure75[7], 0, 0, 0, 1.0);
   figures[75].lines[0].start = 0;
   figures[75].lines[0].end = 6;
@@ -2734,8 +2527,6 @@ void init_figures() {
   figures[75].lines[3].end = 3;
   figures[75].lines[4].start = 5;
   figures[75].lines[4].end = 4;
-  figures[75].lines[4].start = 0;
-  figures[75].lines[4].end = 0;
   figures[75].lines[5].start = 0;
   figures[75].lines[5].end = 0;
   figures[75].lines[6].start = 0;
@@ -2759,7 +2550,6 @@ void init_figures() {
   vec4(&figure76[5], 0.1907, 0.0991, 1.3431, 1.0);
   vec4(&figure76[6], 0.2760, 0.2468, 1.3096, 1.0);
   vec4(&figure76[7], 0.1443, 0.0823, 1.2884, 1.0);
-  vec4(&figure76[7], 0, 0, 0, 1.0);
   figures[76].lines[0].start = 2;
   figures[76].lines[0].end = 0;
   figures[76].lines[1].start = 0;
@@ -2776,8 +2566,6 @@ void init_figures() {
   figures[76].lines[6].end = 5;
   figures[76].lines[7].start = 6;
   figures[76].lines[7].end = 7;
-  figures[76].lines[7].start = 0;
-  figures[76].lines[7].end = 0;
   figures[76].lines[8].start = 0;
   figures[76].lines[8].end = 0;
   figures[76].lines[9].start = 0;
@@ -2794,7 +2582,6 @@ void init_figures() {
   vec4(&figure77[4], 0.1443, 0.0823, 1.2884, 1.0);
   vec4(&figure77[5], 0.4266, 0.2997, 1.2553, 1.0);
   vec4(&figure77[6], 0.2296, 0.2300, 1.2549, 1.0);
-  vec4(&figure77[6], 0, 0, 0, 1.0);
   vec4(&figure77[7], 0, 0, 0, 1.0);
   figures[77].lines[0].start = 2;
   figures[77].lines[0].end = 4;
@@ -2808,8 +2595,6 @@ void init_figures() {
   figures[77].lines[4].end = 5;
   figures[77].lines[5].start = 0;
   figures[77].lines[5].end = 1;
-  figures[77].lines[5].start = 0;
-  figures[77].lines[5].end = 0;
   figures[77].lines[6].start = 0;
   figures[77].lines[6].end = 0;
   figures[77].lines[7].start = 0;
@@ -2830,7 +2615,6 @@ void init_figures() {
   vec4(&figure78[4], 0.7255, -0.0924, 1.1819, 1.0);
   vec4(&figure78[5], 0.6834, -0.1087, 1.1216, 1.0);
   vec4(&figure78[6], 0.4266, 0.2997, 1.2553, 1.0);
-  vec4(&figure78[6], 0, 0, 0, 1.0);
   vec4(&figure78[7], 0, 0, 0, 1.0);
   figures[78].lines[0].start = 1;
   figures[78].lines[0].end = 6;
@@ -2844,8 +2628,6 @@ void init_figures() {
   figures[78].lines[4].end = 2;
   figures[78].lines[5].start = 4;
   figures[78].lines[5].end = 5;
-  figures[78].lines[5].start = 0;
-  figures[78].lines[5].end = 0;
   figures[78].lines[6].start = 0;
   figures[78].lines[6].end = 0;
   figures[78].lines[7].start = 0;
@@ -2867,7 +2649,6 @@ void init_figures() {
   vec4(&figure79[5], 0.6556, -0.3118, 1.1362, 1.0);
   vec4(&figure79[6], 0.5703, -0.4595, 1.1696, 1.0);
   vec4(&figure79[7], 0.4509, -0.5017, 1.2755, 1.0);
-  vec4(&figure79[7], 0, 0, 0, 1.0);
   figures[79].lines[0].start = 0;
   figures[79].lines[0].end = 2;
   figures[79].lines[1].start = 0;
@@ -2884,8 +2665,6 @@ void init_figures() {
   figures[79].lines[6].end = 4;
   figures[79].lines[7].start = 6;
   figures[79].lines[7].end = 7;
-  figures[79].lines[7].start = 0;
-  figures[79].lines[7].end = 0;
   figures[79].lines[8].start = 0;
   figures[79].lines[8].end = 0;
   figures[79].lines[9].start = 0;
@@ -2902,7 +2681,6 @@ void init_figures() {
   vec4(&figure80[4], 0.2969, -0.4494, 1.3274, 1.0);
   vec4(&figure80[5], 0.2502, -0.4612, 1.2729, 1.0);
   vec4(&figure80[6], 0.4509, -0.5017, 1.2755, 1.0);
-  vec4(&figure80[6], 0, 0, 0, 1.0);
   vec4(&figure80[7], 0, 0, 0, 1.0);
   figures[80].lines[0].start = 1;
   figures[80].lines[0].end = 0;
@@ -2914,8 +2692,6 @@ void init_figures() {
   figures[80].lines[3].end = 5;
   figures[80].lines[4].start = 3;
   figures[80].lines[4].end = 4;
-  figures[80].lines[4].start = 0;
-  figures[80].lines[4].end = 0;
   figures[80].lines[5].start = 0;
   figures[80].lines[5].end = 0;
   figures[80].lines[6].start = 0;
@@ -2939,7 +2715,6 @@ void init_figures() {
   vec4(&figure81[5], 0.6142, -0.2381, 1.2492, 1.0);
   vec4(&figure81[6], 0.6058, 0.0525, 1.2413, 1.0);
   vec4(&figure81[7], 0.4509, -0.5017, 1.2755, 1.0);
-  vec4(&figure81[7], 0, 0, 0, 1.0);
   figures[81].lines[0].start = 3;
   figures[81].lines[0].end = 7;
   figures[81].lines[1].start = 3;
@@ -2954,8 +2729,6 @@ void init_figures() {
   figures[81].lines[5].end = 0;
   figures[81].lines[6].start = 0;
   figures[81].lines[6].end = 6;
-  figures[81].lines[6].start = 0;
-  figures[81].lines[6].end = 0;
   figures[81].lines[7].start = 0;
   figures[81].lines[7].end = 0;
   figures[81].lines[8].start = 0;
@@ -2975,7 +2748,6 @@ void init_figures() {
   vec4(&figure82[5], 0.3509, 0.1417, 1.3176, 1.0);
   vec4(&figure82[6], 0.2760, 0.2468, 1.3096, 1.0);
   vec4(&figure82[7], 0.4266, 0.2997, 1.2553, 1.0);
-  vec4(&figure82[7], 0, 0, 0, 1.0);
   figures[82].lines[0].start = 1;
   figures[82].lines[0].end = 2;
   figures[82].lines[1].start = 1;
@@ -2990,8 +2762,6 @@ void init_figures() {
   figures[82].lines[5].end = 4;
   figures[82].lines[6].start = 5;
   figures[82].lines[6].end = 6;
-  figures[82].lines[6].start = 0;
-  figures[82].lines[6].end = 0;
   figures[82].lines[7].start = 0;
   figures[82].lines[7].end = 0;
   figures[82].lines[8].start = 0;
@@ -3011,7 +2781,6 @@ void init_figures() {
   vec4(&figure83[5], 0.2029, -0.3016, 1.3532, 1.0);
   vec4(&figure83[6], 0.1681, -0.0988, 1.3621, 1.0);
   vec4(&figure83[7], 0.1907, 0.0991, 1.3431, 1.0);
-  vec4(&figure83[7], 0, 0, 0, 1.0);
   figures[83].lines[0].start = 1;
   figures[83].lines[0].end = 7;
   figures[83].lines[1].start = 2;
@@ -3026,8 +2795,6 @@ void init_figures() {
   figures[83].lines[5].end = 5;
   figures[83].lines[6].start = 0;
   figures[83].lines[6].end = 4;
-  figures[83].lines[6].start = 0;
-  figures[83].lines[6].end = 0;
   figures[83].lines[7].start = 0;
   figures[83].lines[7].end = 0;
   figures[83].lines[8].start = 0;
@@ -3047,7 +2814,6 @@ void init_figures() {
   vec4(&figure84[5], 0.1565, -0.3184, 1.2985, 1.0);
   vec4(&figure84[6], 0.1681, -0.0988, 1.3621, 1.0);
   vec4(&figure84[7], 0.1217, -0.1156, 1.3074, 1.0);
-  vec4(&figure84[7], 0, 0, 0, 1.0);
   figures[84].lines[0].start = 6;
   figures[84].lines[0].end = 3;
   figures[84].lines[1].start = 2;
@@ -3060,8 +2826,6 @@ void init_figures() {
   figures[84].lines[4].end = 4;
   figures[84].lines[5].start = 5;
   figures[84].lines[5].end = 7;
-  figures[84].lines[5].start = 0;
-  figures[84].lines[5].end = 0;
   figures[84].lines[6].start = 0;
   figures[84].lines[6].end = 0;
   figures[84].lines[7].start = 0;
@@ -3083,7 +2847,6 @@ void init_figures() {
   vec4(&figure85[5], 0.1443, 0.0823, 1.2884, 1.0);
   vec4(&figure85[6], 0.4266, 0.2997, 1.2553, 1.0);
   vec4(&figure85[7], 0.2296, 0.2300, 1.2549, 1.0);
-  vec4(&figure85[7], 0, 0, 0, 1.0);
   figures[85].lines[0].start = 4;
   figures[85].lines[0].end = 5;
   figures[85].lines[1].start = 5;
@@ -3098,8 +2861,6 @@ void init_figures() {
   figures[85].lines[5].end = 1;
   figures[85].lines[6].start = 1;
   figures[85].lines[6].end = 2;
-  figures[85].lines[6].start = 0;
-  figures[85].lines[6].end = 0;
   figures[85].lines[7].start = 0;
   figures[85].lines[7].end = 0;
   figures[85].lines[8].start = 0;
@@ -3118,7 +2879,6 @@ void init_figures() {
   vec4(&figure86[4], 1.4125, 0.8825, -1.5725, 1.0);
   vec4(&figure86[5], 1.7175, 1.6875, -0.7175, 1.0);
   vec4(&figure86[6], 2.1675, 0.6575, -1.2775, 1.0);
-  vec4(&figure86[6], 0, 0, 0, 1.0);
   vec4(&figure86[7], 0, 0, 0, 1.0);
   figures[86].lines[0].start = 1;
   figures[86].lines[0].end = 0;
@@ -3130,8 +2890,6 @@ void init_figures() {
   figures[86].lines[3].end = 5;
   figures[86].lines[4].start = 5;
   figures[86].lines[4].end = 6;
-  figures[86].lines[4].start = 0;
-  figures[86].lines[4].end = 0;
   figures[86].lines[5].start = 0;
   figures[86].lines[5].end = 0;
   figures[86].lines[6].start = 0;
@@ -3155,7 +2913,6 @@ void init_figures() {
   vec4(&figure87[5], 2.4475, 0.1425, -1.1275, 1.0);
   vec4(&figure87[6], 1.7425, 0.6025, 1.3175, 1.0);
   vec4(&figure87[7], 1.2125, 1.0725, 2.0525, 1.0);
-  vec4(&figure87[7], 0, 0, 0, 1.0);
   figures[87].lines[0].start = 0;
   figures[87].lines[0].end = 1;
   figures[87].lines[1].start = 1;
@@ -3170,8 +2927,6 @@ void init_figures() {
   figures[87].lines[5].end = 5;
   figures[87].lines[6].start = 6;
   figures[87].lines[6].end = 7;
-  figures[87].lines[6].start = 0;
-  figures[87].lines[6].end = 0;
   figures[87].lines[7].start = 0;
   figures[87].lines[7].end = 0;
   figures[87].lines[8].start = 0;
@@ -3209,8 +2964,6 @@ void init_figures() {
   figures[88].lines[6].end = 1;
   figures[88].lines[7].start = 9;
   figures[88].lines[7].end = 0;
-  figures[88].lines[7].start = 0;
-  figures[88].lines[7].end = 0;
   figures[88].lines[8].start = 0;
   figures[88].lines[8].end = 0;
   figures[88].lines[9].start = 0;
@@ -3228,7 +2981,6 @@ void init_figures() {
   vec4(&figure89[5], 0.9125, 2.7525, 0.1425, 1.0);
   vec4(&figure89[6], 0.5925, 2.8825, 0.7525, 1.0);
   vec4(&figure89[7], 1.0275, -0.7875, -2.9375, 1.0);
-  vec4(&figure89[7], 0, 0, 0, 1.0);
   figures[89].lines[0].start = 2;
   figures[89].lines[0].end = 3;
   figures[89].lines[1].start = 3;
@@ -3241,8 +2993,6 @@ void init_figures() {
   figures[89].lines[4].end = 6;
   figures[89].lines[5].start = 7;
   figures[89].lines[5].end = 1;
-  figures[89].lines[5].start = 0;
-  figures[89].lines[5].end = 0;
   figures[89].lines[6].start = 0;
   figures[89].lines[6].end = 0;
   figures[89].lines[7].start = 0;
@@ -3264,7 +3014,6 @@ void init_figures() {
   vec4(&figure90[5], 1.4025, 0.9525, 2.2275, 1.0);
   vec4(&figure90[6], 1.0275, -0.7875, -2.9375, 1.0);
   vec4(&figure90[7], 0.5825, -0.0175, -3.0125, 1.0);
-  vec4(&figure90[7], 0, 0, 0, 1.0);
   figures[90].lines[0].start = 6;
   figures[90].lines[0].end = 7;
   figures[90].lines[1].start = 3;
@@ -3275,8 +3024,6 @@ void init_figures() {
   figures[90].lines[3].end = 5;
   figures[90].lines[4].start = 1;
   figures[90].lines[4].end = 2;
-  figures[90].lines[4].start = 0;
-  figures[90].lines[4].end = 0;
   figures[90].lines[5].start = 0;
   figures[90].lines[5].end = 0;
   figures[90].lines[6].start = 0;
@@ -3300,7 +3047,6 @@ void init_figures() {
   vec4(&figure91[5], 0.2425, 0.9975, -1.3825, 1.0);
   vec4(&figure91[6], 1.4125, 0.8825, -1.5725, 1.0);
   vec4(&figure91[7], 1.7175, 1.6875, -0.7175, 1.0);
-  vec4(&figure91[7], 0, 0, 0, 1.0);
   figures[91].lines[0].start = 1;
   figures[91].lines[0].end = 2;
   figures[91].lines[1].start = 0;
@@ -3313,8 +3059,6 @@ void init_figures() {
   figures[91].lines[4].end = 4;
   figures[91].lines[5].start = 4;
   figures[91].lines[5].end = 5;
-  figures[91].lines[5].start = 0;
-  figures[91].lines[5].end = 0;
   figures[91].lines[6].start = 0;
   figures[91].lines[6].end = 0;
   figures[91].lines[7].start = 0;
@@ -3336,7 +3080,6 @@ void init_figures() {
   vec4(&figure92[5], 1.7425, 0.6025, 1.3175, 1.0);
   vec4(&figure92[6], 1.4025, 0.9525, 2.2275, 1.0);
   vec4(&figure92[7], 1.6125, 0.4625, 0.4175, 1.0);
-  vec4(&figure92[7], 0, 0, 0, 1.0);
   figures[92].lines[0].start = 4;
   figures[92].lines[0].end = 1;
   figures[92].lines[1].start = 6;
@@ -3347,8 +3090,6 @@ void init_figures() {
   figures[92].lines[3].end = 5;
   figures[92].lines[4].start = 3;
   figures[92].lines[4].end = 7;
-  figures[92].lines[4].start = 0;
-  figures[92].lines[4].end = 0;
   figures[92].lines[5].start = 0;
   figures[92].lines[5].end = 0;
   figures[92].lines[6].start = 0;
@@ -3372,7 +3113,6 @@ void init_figures() {
   vec4(&figure93[5], 1.4925, 2.2425, -0.2775, 1.0);
   vec4(&figure93[6], 1.7175, 1.6875, -0.7175, 1.0);
   vec4(&figure93[7], 1.7425, 0.6025, 1.3175, 1.0);
-  vec4(&figure93[7], 0, 0, 0, 1.0);
   figures[93].lines[0].start = 7;
   figures[93].lines[0].end = 2;
   figures[93].lines[1].start = 3;
@@ -3385,8 +3125,6 @@ void init_figures() {
   figures[93].lines[4].end = 1;
   figures[93].lines[5].start = 5;
   figures[93].lines[5].end = 6;
-  figures[93].lines[5].start = 0;
-  figures[93].lines[5].end = 0;
   figures[93].lines[6].start = 0;
   figures[93].lines[6].end = 0;
   figures[93].lines[7].start = 0;
@@ -3408,7 +3146,6 @@ void init_figures() {
   vec4(&figure94[5], 1.2125, 2.6025, 0.5825, 1.0);
   vec4(&figure94[6], 0.9125, 2.7525, 0.1425, 1.0);
   vec4(&figure94[7], 0.5925, 2.8825, 0.7525, 1.0);
-  vec4(&figure94[7], 0, 0, 0, 1.0);
   figures[94].lines[0].start = 5;
   figures[94].lines[0].end = 0;
   figures[94].lines[1].start = 0;
@@ -3425,8 +3162,6 @@ void init_figures() {
   figures[94].lines[6].end = 3;
   figures[94].lines[7].start = 7;
   figures[94].lines[7].end = 4;
-  figures[94].lines[7].start = 0;
-  figures[94].lines[7].end = 0;
   figures[94].lines[8].start = 0;
   figures[94].lines[8].end = 0;
   figures[94].lines[9].start = 0;
@@ -3443,7 +3178,6 @@ void init_figures() {
   vec4(&figure95[4], 1.8325, 1.7975, 0.6075, 1.0);
   vec4(&figure95[5], 2.4475, 0.1425, -1.1275, 1.0);
   vec4(&figure95[6], 1.7775, 2.0875, 0.1525, 1.0);
-  vec4(&figure95[6], 0, 0, 0, 1.0);
   vec4(&figure95[7], 0, 0, 0, 1.0);
   figures[95].lines[0].start = 2;
   figures[95].lines[0].end = 3;
@@ -3457,8 +3191,6 @@ void init_figures() {
   figures[95].lines[4].end = 0;
   figures[95].lines[5].start = 4;
   figures[95].lines[5].end = 6;
-  figures[95].lines[5].start = 0;
-  figures[95].lines[5].end = 0;
   figures[95].lines[6].start = 0;
   figures[95].lines[6].end = 0;
   figures[95].lines[7].start = 0;
@@ -3496,8 +3228,6 @@ void init_figures() {
   figures[96].lines[5].end = 5;
   figures[96].lines[6].start = 1;
   figures[96].lines[6].end = 2;
-  figures[96].lines[6].start = 0;
-  figures[96].lines[6].end = 0;
   figures[96].lines[7].start = 0;
   figures[96].lines[7].end = 0;
   figures[96].lines[8].start = 0;
@@ -3516,7 +3246,6 @@ void init_figures() {
   vec4(&figure97[4], 0.7225, 1.2725, 1.3475, 1.0);
   vec4(&figure97[5], 0.3325, 2.3125, 1.3325, 1.0);
   vec4(&figure97[6], 0.7375, 2.1575, 1.2775, 1.0);
-  vec4(&figure97[6], 0, 0, 0, 1.0);
   vec4(&figure97[7], 0, 0, 0, 1.0);
   figures[97].lines[0].start = 3;
   figures[97].lines[0].end = 4;
@@ -3532,8 +3261,6 @@ void init_figures() {
   figures[97].lines[5].end = 2;
   figures[97].lines[6].start = 1;
   figures[97].lines[6].end = 6;
-  figures[97].lines[6].start = 0;
-  figures[97].lines[6].end = 0;
   figures[97].lines[7].start = 0;
   figures[97].lines[7].end = 0;
   figures[97].lines[8].start = 0;
@@ -3552,7 +3279,6 @@ void init_figures() {
   vec4(&figure98[4], 0.7225, 1.2725, 1.3475, 1.0);
   vec4(&figure98[5], 1.1825, 0.9225, 0.9075, 1.0);
   vec4(&figure98[6], 1.6125, 0.4625, 0.4175, 1.0);
-  vec4(&figure98[6], 0, 0, 0, 1.0);
   vec4(&figure98[7], 0, 0, 0, 1.0);
   figures[98].lines[0].start = 2;
   figures[98].lines[0].end = 3;
@@ -3562,8 +3288,6 @@ void init_figures() {
   figures[98].lines[2].end = 5;
   figures[98].lines[3].start = 1;
   figures[98].lines[3].end = 6;
-  figures[98].lines[3].start = 0;
-  figures[98].lines[3].end = 0;
   figures[98].lines[4].start = 0;
   figures[98].lines[4].end = 0;
   figures[98].lines[5].start = 0;
@@ -3589,7 +3313,6 @@ void init_figures() {
   vec4(&figure99[5], 1.0425, 0.6025, -2.1875, 1.0);
   vec4(&figure99[6], 1.6125, 0.4625, 0.4175, 1.0);
   vec4(&figure99[7], 0.5825, -0.0175, -3.0125, 1.0);
-  vec4(&figure99[7], 0, 0, 0, 1.0);
   figures[99].lines[0].start = 0;
   figures[99].lines[0].end = 4;
   figures[99].lines[1].start = 4;
@@ -3602,8 +3325,6 @@ void init_figures() {
   figures[99].lines[4].end = 2;
   figures[99].lines[5].start = 7;
   figures[99].lines[5].end = 2;
-  figures[99].lines[5].start = 0;
-  figures[99].lines[5].end = 0;
   figures[99].lines[6].start = 0;
   figures[99].lines[6].end = 0;
   figures[99].lines[7].start = 0;
@@ -3625,7 +3346,6 @@ void init_figures() {
   vec4(&figure100[5], 0.2025, 0.8025, -1.8925, 1.0);
   vec4(&figure100[6], 2.0275, -0.3925, -1.7975, 1.0);
   vec4(&figure100[7], 0.5825, -0.0175, -3.0125, 1.0);
-  vec4(&figure100[7], 0, 0, 0, 1.0);
   figures[100].lines[0].start = 4;
   figures[100].lines[0].end = 7;
   figures[100].lines[1].start = 0;
@@ -3636,8 +3356,6 @@ void init_figures() {
   figures[100].lines[3].end = 2;
   figures[100].lines[4].start = 6;
   figures[100].lines[4].end = 3;
-  figures[100].lines[4].start = 0;
-  figures[100].lines[4].end = 0;
   figures[100].lines[5].start = 0;
   figures[100].lines[5].end = 0;
   figures[100].lines[6].start = 0;
@@ -3660,7 +3378,6 @@ void init_figures() {
   vec4(&figure101[4], 0.4125, 0.5225, -2.4825, 1.0);
   vec4(&figure101[5], -0.2075, 0.8025, -1.8925, 1.0);
   vec4(&figure101[6], 0.5825, -0.0175, -3.0125, 1.0);
-  vec4(&figure101[6], 0, 0, 0, 1.0);
   vec4(&figure101[7], 0, 0, 0, 1.0);
   figures[101].lines[0].start = 3;
   figures[101].lines[0].end = 0;
@@ -3670,8 +3387,6 @@ void init_figures() {
   figures[101].lines[2].end = 6;
   figures[101].lines[3].start = 5;
   figures[101].lines[3].end = 2;
-  figures[101].lines[3].start = 0;
-  figures[101].lines[3].end = 0;
   figures[101].lines[4].start = 0;
   figures[101].lines[4].end = 0;
   figures[101].lines[5].start = 0;
@@ -3697,7 +3412,6 @@ void init_figures() {
   vec4(&figure102[5], -0.0025, -0.9525, -3.0775, 1.0);
   vec4(&figure102[6], 1.0275, -0.7875, -2.9375, 1.0);
   vec4(&figure102[7], 0.5825, -0.0175, -3.0125, 1.0);
-  vec4(&figure102[7], 0, 0, 0, 1.0);
   figures[102].lines[0].start = 1;
   figures[102].lines[0].end = 0;
   figures[102].lines[1].start = 1;
@@ -3710,8 +3424,6 @@ void init_figures() {
   figures[102].lines[4].end = 7;
   figures[102].lines[5].start = 5;
   figures[102].lines[5].end = 6;
-  figures[102].lines[5].start = 0;
-  figures[102].lines[5].end = 0;
   figures[102].lines[6].start = 0;
   figures[102].lines[6].end = 0;
   figures[102].lines[7].start = 0;
@@ -3733,7 +3445,6 @@ void init_figures() {
   vec4(&figure103[5], 0.5925, 2.8825, 0.7525, 1.0);
   vec4(&figure103[6], -0.5975, 2.8825, 0.7525, 1.0);
   vec4(&figure103[7], 0.5825, -0.0175, -3.0125, 1.0);
-  vec4(&figure103[7], 0, 0, 0, 1.0);
   figures[103].lines[0].start = 4;
   figures[103].lines[0].end = 7;
   figures[103].lines[1].start = 5;
@@ -3745,8 +3456,6 @@ void init_figures() {
   figures[103].lines[4].start = 2;
   figures[103].lines[4].end = 5;
   figures[103].lines[5].start = 1;
-  figures[103].lines[5].end = 0;
-  figures[103].lines[5].start = 0;
   figures[103].lines[5].end = 0;
   figures[103].lines[6].start = 0;
   figures[103].lines[6].end = 0;
@@ -3769,7 +3478,6 @@ void init_figures() {
   vec4(&figure104[5], 0.2425, 0.9975, -1.3825, 1.0);
   vec4(&figure104[6], 0.4925, 2.4225, -0.3125, 1.0);
   vec4(&figure104[7], -0.5725, 1.8975, -0.8025, 1.0);
-  vec4(&figure104[7], 0, 0, 0, 1.0);
   figures[104].lines[0].start = 0;
   figures[104].lines[0].end = 7;
   figures[104].lines[1].start = 0;
@@ -3784,8 +3492,6 @@ void init_figures() {
   figures[104].lines[5].end = 7;
   figures[104].lines[6].start = 2;
   figures[104].lines[6].end = 3;
-  figures[104].lines[6].start = 0;
-  figures[104].lines[6].end = 0;
   figures[104].lines[7].start = 0;
   figures[104].lines[7].end = 0;
   figures[104].lines[8].start = 0;
@@ -3804,7 +3510,6 @@ void init_figures() {
   vec4(&figure105[4], -0.0025, 1.2375, 2.4075, 1.0);
   vec4(&figure105[5], 0.6075, 0.9475, 1.1425, 1.0);
   vec4(&figure105[6], 0.7225, 1.2725, 1.3475, 1.0);
-  vec4(&figure105[6], 0, 0, 0, 1.0);
   vec4(&figure105[7], 0, 0, 0, 1.0);
   figures[105].lines[0].start = 1;
   figures[105].lines[0].end = 5;
@@ -3818,8 +3523,6 @@ void init_figures() {
   figures[105].lines[4].end = 4;
   figures[105].lines[5].start = 6;
   figures[105].lines[5].end = 2;
-  figures[105].lines[5].start = 0;
-  figures[105].lines[5].end = 0;
   figures[105].lines[6].start = 0;
   figures[105].lines[6].end = 0;
   figures[105].lines[7].start = 0;
@@ -3859,8 +3562,6 @@ void init_figures() {
   figures[106].lines[6].end = 9;
   figures[106].lines[7].start = 7;
   figures[106].lines[7].end = 8;
-  figures[106].lines[7].start = 0;
-  figures[106].lines[7].end = 0;
   figures[106].lines[8].start = 0;
   figures[106].lines[8].end = 0;
   figures[106].lines[9].start = 0;
@@ -3892,8 +3593,6 @@ void init_figures() {
   figures[107].lines[4].end = 5;
   figures[107].lines[5].start = 6;
   figures[107].lines[5].end = 1;
-  figures[107].lines[5].start = 0;
-  figures[107].lines[5].end = 0;
   figures[107].lines[6].start = 0;
   figures[107].lines[6].end = 0;
   figures[107].lines[7].start = 0;
@@ -3914,7 +3613,6 @@ void init_figures() {
   vec4(&figure108[4], 2.0475, -0.2225, -0.8475, 1.0);
   vec4(&figure108[5], 1.6125, 0.4625, 0.4175, 1.0);
   vec4(&figure108[6], 2.2225, 0.2375, -0.3775, 1.0);
-  vec4(&figure108[6], 0, 0, 0, 1.0);
   vec4(&figure108[7], 0, 0, 0, 1.0);
   figures[108].lines[0].start = 0;
   figures[108].lines[0].end = 1;
@@ -3932,8 +3630,6 @@ void init_figures() {
   figures[108].lines[6].end = 2;
   figures[108].lines[7].start = 2;
   figures[108].lines[7].end = 4;
-  figures[108].lines[7].start = 0;
-  figures[108].lines[7].end = 0;
   figures[108].lines[8].start = 0;
   figures[108].lines[8].end = 0;
   figures[108].lines[9].start = 0;
@@ -3951,7 +3647,6 @@ void init_figures() {
   vec4(&figure109[5], -2.0525, -0.2225, -0.8475, 1.0);
   vec4(&figure109[6], 2.0475, -0.2225, -0.8475, 1.0);
   vec4(&figure109[7], 2.2225, 0.2375, -0.3775, 1.0);
-  vec4(&figure109[7], 0, 0, 0, 1.0);
   figures[109].lines[0].start = 6;
   figures[109].lines[0].end = 7;
   figures[109].lines[1].start = 7;
@@ -3966,8 +3661,6 @@ void init_figures() {
   figures[109].lines[5].end = 4;
   figures[109].lines[6].start = 2;
   figures[109].lines[6].end = 5;
-  figures[109].lines[6].start = 0;
-  figures[109].lines[6].end = 0;
   figures[109].lines[7].start = 0;
   figures[109].lines[7].end = 0;
   figures[109].lines[8].start = 0;
@@ -3986,7 +3679,6 @@ void init_figures() {
   vec4(&figure110[4], -2.0325, 0.7525, 0.1225, 1.0);
   vec4(&figure110[5], -1.9975, -0.0075, -0.2525, 1.0);
   vec4(&figure110[6], -1.6175, 0.4625, 0.4175, 1.0);
-  vec4(&figure110[6], 0, 0, 0, 1.0);
   vec4(&figure110[7], 0, 0, 0, 1.0);
   figures[110].lines[0].start = 1;
   figures[110].lines[0].end = 2;
@@ -3998,8 +3690,6 @@ void init_figures() {
   figures[110].lines[3].end = 4;
   figures[110].lines[4].start = 5;
   figures[110].lines[4].end = 6;
-  figures[110].lines[4].start = 0;
-  figures[110].lines[4].end = 0;
   figures[110].lines[5].start = 0;
   figures[110].lines[5].end = 0;
   figures[110].lines[6].start = 0;
@@ -4023,7 +3713,6 @@ void init_figures() {
   vec4(&figure111[5], -1.5875, 1.2925, 0.8525, 1.0);
   vec4(&figure111[6], -1.4175, 0.8825, -1.5725, 1.0);
   vec4(&figure111[7], -0.6375, 0.8575, -1.7475, 1.0);
-  vec4(&figure111[7], 0, 0, 0, 1.0);
   figures[111].lines[0].start = 4;
   figures[111].lines[0].end = 2;
   figures[111].lines[1].start = 3;
@@ -4036,8 +3725,6 @@ void init_figures() {
   figures[111].lines[4].end = 5;
   figures[111].lines[5].start = 6;
   figures[111].lines[5].end = 7;
-  figures[111].lines[5].start = 0;
-  figures[111].lines[5].end = 0;
   figures[111].lines[6].start = 0;
   figures[111].lines[6].end = 0;
   figures[111].lines[7].start = 0;
@@ -4058,7 +3745,6 @@ void init_figures() {
   vec4(&figure112[4], -2.0325, -0.3925, -1.7975, 1.0);
   vec4(&figure112[5], -1.8025, -0.0325, -2.0475, 1.0);
   vec4(&figure112[6], -0.4175, 0.5225, -2.4825, 1.0);
-  vec4(&figure112[6], 0, 0, 0, 1.0);
   vec4(&figure112[7], 0, 0, 0, 1.0);
   figures[112].lines[0].start = 1;
   figures[112].lines[0].end = 2;
@@ -4072,8 +3758,6 @@ void init_figures() {
   figures[112].lines[4].end = 4;
   figures[112].lines[5].start = 5;
   figures[112].lines[5].end = 4;
-  figures[112].lines[5].start = 0;
-  figures[112].lines[5].end = 0;
   figures[112].lines[6].start = 0;
   figures[112].lines[6].end = 0;
   figures[112].lines[7].start = 0;
@@ -4094,7 +3778,6 @@ void init_figures() {
   vec4(&figure113[4], -1.1875, 0.9225, 0.9075, 1.0);
   vec4(&figure113[5], -1.2125, 1.0725, 2.0525, 1.0);
   vec4(&figure113[6], -0.7275, 1.2725, 1.3475, 1.0);
-  vec4(&figure113[6], 0, 0, 0, 1.0);
   vec4(&figure113[7], 0, 0, 0, 1.0);
   figures[113].lines[0].start = 2;
   figures[113].lines[0].end = 1;
@@ -4108,8 +3791,6 @@ void init_figures() {
   figures[113].lines[4].end = 5;
   figures[113].lines[5].start = 5;
   figures[113].lines[5].end = 6;
-  figures[113].lines[5].start = 0;
-  figures[113].lines[5].end = 0;
   figures[113].lines[6].start = 0;
   figures[113].lines[6].end = 0;
   figures[113].lines[7].start = 0;
@@ -4130,7 +3811,6 @@ void init_figures() {
   vec4(&figure114[4], -0.7275, 1.2725, 1.3475, 1.0);
   vec4(&figure114[5], -0.6375, 1.2425, 2.3775, 1.0);
   vec4(&figure114[6], -0.6625, 1.1525, 2.6275, 1.0);
-  vec4(&figure114[6], 0, 0, 0, 1.0);
   vec4(&figure114[7], 0, 0, 0, 1.0);
   figures[114].lines[0].start = 2;
   figures[114].lines[0].end = 4;
@@ -4146,8 +3826,6 @@ void init_figures() {
   figures[114].lines[5].end = 5;
   figures[114].lines[6].start = 5;
   figures[114].lines[6].end = 6;
-  figures[114].lines[6].start = 0;
-  figures[114].lines[6].end = 0;
   figures[114].lines[7].start = 0;
   figures[114].lines[7].end = 0;
   figures[114].lines[8].start = 0;
@@ -4166,7 +3844,6 @@ void init_figures() {
   vec4(&figure115[4], -1.0325, -0.7875, -2.9375, 1.0);
   vec4(&figure115[5], -0.6625, 1.1525, 2.6275, 1.0);
   vec4(&figure115[6], -0.6175, 0.9475, 1.1425, 1.0);
-  vec4(&figure115[6], 0, 0, 0, 1.0);
   vec4(&figure115[7], 0, 0, 0, 1.0);
   figures[115].lines[0].start = 3;
   figures[115].lines[0].end = 5;
@@ -4180,8 +3857,6 @@ void init_figures() {
   figures[115].lines[4].end = 4;
   figures[115].lines[5].start = 0;
   figures[115].lines[5].end = 1;
-  figures[115].lines[5].start = 0;
-  figures[115].lines[5].end = 0;
   figures[115].lines[6].start = 0;
   figures[115].lines[6].end = 0;
   figures[115].lines[7].start = 0;
@@ -4203,7 +3878,6 @@ void init_figures() {
   vec4(&figure116[5], -2.0325, -0.3925, -1.7975, 1.0);
   vec4(&figure116[6], -1.8025, -0.0325, -2.0475, 1.0);
   vec4(&figure116[7], -0.5625, -0.0175, -3.0125, 1.0);
-  vec4(&figure116[7], 0, 0, 0, 1.0);
   figures[116].lines[0].start = 0;
   figures[116].lines[0].end = 4;
   figures[116].lines[1].start = 7;
@@ -4214,8 +3888,6 @@ void init_figures() {
   figures[116].lines[3].end = 2;
   figures[116].lines[4].start = 1;
   figures[116].lines[4].end = 5;
-  figures[116].lines[4].start = 0;
-  figures[116].lines[4].end = 0;
   figures[116].lines[5].start = 0;
   figures[116].lines[5].end = 0;
   figures[116].lines[6].start = 0;
@@ -4255,8 +3927,6 @@ void init_figures() {
   figures[117].lines[5].end = 9;
   figures[117].lines[6].start = 4;
   figures[117].lines[6].end = 3;
-  figures[117].lines[6].start = 0;
-  figures[117].lines[6].end = 0;
   figures[117].lines[7].start = 0;
   figures[117].lines[7].end = 0;
   figures[117].lines[8].start = 0;
@@ -4276,7 +3946,6 @@ void init_figures() {
   vec4(&figure118[5], -1.5875, 1.2925, 0.8525, 1.0);
   vec4(&figure118[6], -1.1875, 0.9225, 0.9075, 1.0);
   vec4(&figure118[7], -0.7275, 1.2725, 1.3475, 1.0);
-  vec4(&figure118[7], 0, 0, 0, 1.0);
   figures[118].lines[0].start = 5;
   figures[118].lines[0].end = 0;
   figures[118].lines[1].start = 4;
@@ -4291,8 +3960,6 @@ void init_figures() {
   figures[118].lines[5].end = 1;
   figures[118].lines[6].start = 2;
   figures[118].lines[6].end = 3;
-  figures[118].lines[6].start = 0;
-  figures[118].lines[6].end = 0;
   figures[118].lines[7].start = 0;
   figures[118].lines[7].end = 0;
   figures[118].lines[8].start = 0;
@@ -4330,8 +3997,6 @@ void init_figures() {
   figures[119].lines[6].end = 1;
   figures[119].lines[7].start = 7;
   figures[119].lines[7].end = 9;
-  figures[119].lines[7].start = 0;
-  figures[119].lines[7].end = 0;
   figures[119].lines[8].start = 0;
   figures[119].lines[8].end = 0;
   figures[119].lines[9].start = 0;
@@ -4363,8 +4028,6 @@ void init_figures() {
   figures[120].lines[4].end = 6;
   figures[120].lines[5].start = 4;
   figures[120].lines[5].end = 8;
-  figures[120].lines[5].start = 0;
-  figures[120].lines[5].end = 0;
   figures[120].lines[6].start = 0;
   figures[120].lines[6].end = 0;
   figures[120].lines[7].start = 0;
@@ -4386,7 +4049,6 @@ void init_figures() {
   vec4(&figure121[5], -1.7825, 2.0875, 0.1525, 1.0);
   vec4(&figure121[6], -2.1725, 0.6575, -1.2775, 1.0);
   vec4(&figure121[7], -0.5975, 2.8825, 0.7525, 1.0);
-  vec4(&figure121[7], 0, 0, 0, 1.0);
   figures[121].lines[0].start = 2;
   figures[121].lines[0].end = 4;
   figures[121].lines[1].start = 2;
@@ -4403,8 +4065,6 @@ void init_figures() {
   figures[121].lines[6].end = 5;
   figures[121].lines[7].start = 6;
   figures[121].lines[7].end = 3;
-  figures[121].lines[7].start = 0;
-  figures[121].lines[7].end = 0;
   figures[121].lines[8].start = 0;
   figures[121].lines[8].end = 0;
   figures[121].lines[9].start = 0;
@@ -4422,7 +4082,6 @@ void init_figures() {
   vec4(&figure122[5], -1.7225, 1.6875, -0.7175, 1.0);
   vec4(&figure122[6], -0.5975, 2.8825, 0.7525, 1.0);
   vec4(&figure122[7], -0.5725, 1.8975, -0.8025, 1.0);
-  vec4(&figure122[7], 0, 0, 0, 1.0);
   figures[122].lines[0].start = 1;
   figures[122].lines[0].end = 6;
   figures[122].lines[1].start = 1;
@@ -4443,8 +4102,6 @@ void init_figures() {
   figures[122].lines[8].end = 4;
   figures[122].lines[9].start = 5;
   figures[122].lines[9].end = 7;
-  figures[122].lines[9].start = 0;
-  figures[122].lines[9].end = 0;
   figures[122].lines[10].start = 0;
   figures[122].lines[10].end = 0;
   figures[122].lines[11].start = 0;
@@ -4457,7 +4114,6 @@ void init_figures() {
   vec4(&figure123[4], -1.4975, 2.2425, -0.2775, 1.0);
   vec4(&figure123[5], -1.4075, 0.9525, 2.2275, 1.0);
   vec4(&figure123[6], -0.6175, 0.9475, 1.1425, 1.0);
-  vec4(&figure123[6], 0, 0, 0, 1.0);
   vec4(&figure123[7], 0, 0, 0, 1.0);
   figures[123].lines[0].start = 2;
   figures[123].lines[0].end = 4;
@@ -4467,8 +4123,6 @@ void init_figures() {
   figures[123].lines[2].end = 6;
   figures[123].lines[3].start = 5;
   figures[123].lines[3].end = 6;
-  figures[123].lines[3].start = 0;
-  figures[123].lines[3].end = 0;
   figures[123].lines[4].start = 0;
   figures[123].lines[4].end = 0;
   figures[123].lines[5].start = 0;
@@ -4512,8 +4166,6 @@ void init_figures() {
   figures[124].lines[6].end = 6;
   figures[124].lines[7].start = 7;
   figures[124].lines[7].end = 1;
-  figures[124].lines[7].start = 0;
-  figures[124].lines[7].end = 0;
   figures[124].lines[8].start = 0;
   figures[124].lines[8].end = 0;
   figures[124].lines[9].start = 0;
@@ -4545,8 +4197,6 @@ void init_figures() {
   figures[125].lines[4].end = 7;
   figures[125].lines[5].start = 4;
   figures[125].lines[5].end = 2;
-  figures[125].lines[5].start = 0;
-  figures[125].lines[5].end = 0;
   figures[125].lines[6].start = 0;
   figures[125].lines[6].end = 0;
   figures[125].lines[7].start = 0;
@@ -4568,7 +4218,6 @@ void init_figures() {
   vec4(&figure126[5], -1.7425, 0.6025, 1.3175, 1.0);
   vec4(&figure126[6], -2.1575, 1.4325, -0.5275, 1.0);
   vec4(&figure126[7], -1.1675, 0.7625, 0.7975, 1.0);
-  vec4(&figure126[7], 0, 0, 0, 1.0);
   figures[126].lines[0].start = 3;
   figures[126].lines[0].end = 6;
   figures[126].lines[1].start = 6;
@@ -4579,8 +4228,6 @@ void init_figures() {
   figures[126].lines[3].end = 7;
   figures[126].lines[4].start = 5;
   figures[126].lines[4].end = 7;
-  figures[126].lines[4].start = 0;
-  figures[126].lines[4].end = 0;
   figures[126].lines[5].start = 0;
   figures[126].lines[5].end = 0;
   figures[126].lines[6].start = 0;
@@ -4604,7 +4251,6 @@ void init_figures() {
   vec4(&figure127[5], -1.4175, 0.8825, -1.5725, 1.0);
   vec4(&figure127[6], -1.8025, -0.0325, -2.0475, 1.0);
   vec4(&figure127[7], -1.2125, 1.0725, 2.0525, 1.0);
-  vec4(&figure127[7], 0, 0, 0, 1.0);
   figures[127].lines[0].start = 3;
   figures[127].lines[0].end = 4;
   figures[127].lines[1].start = 3;
@@ -4615,8 +4261,6 @@ void init_figures() {
   figures[127].lines[3].end = 1;
   figures[127].lines[4].start = 6;
   figures[127].lines[4].end = 5;
-  figures[127].lines[4].start = 0;
-  figures[127].lines[4].end = 0;
   figures[127].lines[5].start = 0;
   figures[127].lines[5].end = 0;
   figures[127].lines[6].start = 0;
@@ -4654,8 +4298,6 @@ void init_figures() {
   figures[128].lines[4].end = 4;
   figures[128].lines[5].start = 1;
   figures[128].lines[5].end = 0;
-  figures[128].lines[5].start = 0;
-  figures[128].lines[5].end = 0;
   figures[128].lines[6].start = 0;
   figures[128].lines[6].end = 0;
   figures[128].lines[7].start = 0;
@@ -4676,7 +4318,6 @@ void init_figures() {
   vec4(&figure129[4], -2.1575, 1.4325, -0.5275, 1.0);
   vec4(&figure129[5], -1.1675, 0.7625, 0.7975, 1.0);
   vec4(&figure129[6], -0.5725, 1.8975, -0.8025, 1.0);
-  vec4(&figure129[6], 0, 0, 0, 1.0);
   vec4(&figure129[7], 0, 0, 0, 1.0);
   figures[129].lines[0].start = 5;
   figures[129].lines[0].end = 0;
@@ -4686,8 +4327,6 @@ void init_figures() {
   figures[129].lines[2].end = 2;
   figures[129].lines[3].start = 4;
   figures[129].lines[3].end = 1;
-  figures[129].lines[3].start = 0;
-  figures[129].lines[3].end = 0;
   figures[129].lines[4].start = 0;
   figures[129].lines[4].end = 0;
   figures[129].lines[5].start = 0;
@@ -4724,8 +4363,6 @@ void init_figures() {
   figures[130].lines[3].end = 8;
   figures[130].lines[4].start = 5;
   figures[130].lines[4].end = 0;
-  figures[130].lines[4].start = 0;
-  figures[130].lines[4].end = 0;
   figures[130].lines[5].start = 0;
   figures[130].lines[5].end = 0;
   figures[130].lines[6].start = 0;
@@ -4749,7 +4386,6 @@ void init_figures() {
   vec4(&figure131[5], -1.0325, -0.7875, -2.9375, 1.0);
   vec4(&figure131[6], -0.6375, 1.2425, 2.3775, 1.0);
   vec4(&figure131[7], -0.0025, -0.9525, -3.0775, 1.0);
-  vec4(&figure131[7], 0, 0, 0, 1.0);
   figures[131].lines[0].start = 7;
   figures[131].lines[0].end = 5;
   figures[131].lines[1].start = 0;
@@ -4762,8 +4398,6 @@ void init_figures() {
   figures[131].lines[4].end = 3;
   figures[131].lines[5].start = 4;
   figures[131].lines[5].end = 3;
-  figures[131].lines[5].start = 0;
-  figures[131].lines[5].end = 0;
   figures[131].lines[6].start = 0;
   figures[131].lines[6].end = 0;
   figures[131].lines[7].start = 0;
@@ -4801,8 +4435,6 @@ void init_figures() {
   figures[132].lines[5].end = 3;
   figures[132].lines[6].start = 8;
   figures[132].lines[6].end = 1;
-  figures[132].lines[6].start = 0;
-  figures[132].lines[6].end = 0;
   figures[132].lines[7].start = 0;
   figures[132].lines[7].end = 0;
   figures[132].lines[8].start = 0;
@@ -4822,7 +4454,6 @@ void init_figures() {
   vec4(&figure133[5], 0.7225, 1.2725, 1.3475, 1.0);
   vec4(&figure133[6], -0.0025, 1.3425, 1.5025, 1.0);
   vec4(&figure133[7], 0.3575, 1.3075, 1.4425, 1.0);
-  vec4(&figure133[7], 0, 0, 0, 1.0);
   figures[133].lines[0].start = 5;
   figures[133].lines[0].end = 7;
   figures[133].lines[1].start = 2;
@@ -4833,8 +4464,6 @@ void init_figures() {
   figures[133].lines[3].end = 3;
   figures[133].lines[4].start = 0;
   figures[133].lines[4].end = 4;
-  figures[133].lines[4].start = 0;
-  figures[133].lines[4].end = 0;
   figures[133].lines[5].start = 0;
   figures[133].lines[5].end = 0;
   figures[133].lines[6].start = 0;
@@ -4869,8 +4498,6 @@ void init_figures() {
   figures[134].lines[3].end = 7;
   figures[134].lines[4].start = 5;
   figures[134].lines[4].end = 1;
-  figures[134].lines[4].start = 0;
-  figures[134].lines[4].end = 0;
   figures[134].lines[5].start = 0;
   figures[134].lines[5].end = 0;
   figures[134].lines[6].start = 0;
@@ -4894,7 +4521,6 @@ void init_figures() {
   vec4(&figure135[5], 0.8925, 1.6425, 1.2875, 1.0);
   vec4(&figure135[6], 2.1525, 1.4325, -0.5275, 1.0);
   vec4(&figure135[7], 1.2125, 2.6025, 0.5825, 1.0);
-  vec4(&figure135[7], 0, 0, 0, 1.0);
   figures[135].lines[0].start = 5;
   figures[135].lines[0].end = 0;
   figures[135].lines[1].start = 1;
@@ -4905,8 +4531,6 @@ void init_figures() {
   figures[135].lines[3].end = 2;
   figures[135].lines[4].start = 6;
   figures[135].lines[4].end = 3;
-  figures[135].lines[4].start = 0;
-  figures[135].lines[4].end = 0;
   figures[135].lines[5].start = 0;
   figures[135].lines[5].end = 0;
   figures[135].lines[6].start = 0;
@@ -4941,8 +4565,6 @@ void init_figures() {
   figures[136].lines[3].end = 1;
   figures[136].lines[4].start = 6;
   figures[136].lines[4].end = 4;
-  figures[136].lines[4].start = 0;
-  figures[136].lines[4].end = 0;
   figures[136].lines[5].start = 0;
   figures[136].lines[5].end = 0;
   figures[136].lines[6].start = 0;
@@ -4966,7 +4588,6 @@ void init_figures() {
   vec4(&figure137[5], 1.2575, -1.1725, -2.2125, 1.0);
   vec4(&figure137[6], -0.5675, 1.6825, 1.3925, 1.0);
   vec4(&figure137[7], 1.0275, -0.7875, -2.9375, 1.0);
-  vec4(&figure137[7], 0, 0, 0, 1.0);
   figures[137].lines[0].start = 5;
   figures[137].lines[0].end = 0;
   figures[137].lines[1].start = 5;
@@ -4979,8 +4600,6 @@ void init_figures() {
   figures[137].lines[4].end = 3;
   figures[137].lines[5].start = 6;
   figures[137].lines[5].end = 4;
-  figures[137].lines[5].start = 0;
-  figures[137].lines[5].end = 0;
   figures[137].lines[6].start = 0;
   figures[137].lines[6].end = 0;
   figures[137].lines[7].start = 0;
@@ -5002,7 +4621,6 @@ void init_figures() {
   vec4(&figure138[5], -0.2975, 1.6575, 1.4275, 1.0);
   vec4(&figure138[6], -0.7275, 1.2725, 1.3475, 1.0);
   vec4(&figure138[7], 0.2925, 1.6575, 1.4275, 1.0);
-  vec4(&figure138[7], 0, 0, 0, 1.0);
   figures[138].lines[0].start = 3;
   figures[138].lines[0].end = 6;
   figures[138].lines[1].start = 4;
@@ -5014,8 +4632,6 @@ void init_figures() {
   figures[138].lines[4].start = 2;
   figures[138].lines[4].end = 7;
   figures[138].lines[5].start = 7;
-  figures[138].lines[5].end = 0;
-  figures[138].lines[5].start = 0;
   figures[138].lines[5].end = 0;
   figures[138].lines[6].start = 0;
   figures[138].lines[6].end = 0;
@@ -5037,7 +4653,6 @@ void init_figures() {
   vec4(&figure139[4], -0.2975, 1.6575, 1.4275, 1.0);
   vec4(&figure139[5], 0.5625, 1.6825, 1.3925, 1.0);
   vec4(&figure139[6], 0.2925, 1.6575, 1.4275, 1.0);
-  vec4(&figure139[6], 0, 0, 0, 1.0);
   vec4(&figure139[7], 0, 0, 0, 1.0);
   figures[139].lines[0].start = 5;
   figures[139].lines[0].end = 2;
@@ -5047,8 +4662,6 @@ void init_figures() {
   figures[139].lines[2].end = 4;
   figures[139].lines[3].start = 1;
   figures[139].lines[3].end = 6;
-  figures[139].lines[3].start = 0;
-  figures[139].lines[3].end = 0;
   figures[139].lines[4].start = 0;
   figures[139].lines[4].end = 0;
   figures[139].lines[5].start = 0;
@@ -5088,8 +4701,6 @@ void init_figures() {
   figures[140].lines[4].end = 3;
   figures[140].lines[5].start = 7;
   figures[140].lines[5].end = 8;
-  figures[140].lines[5].start = 0;
-  figures[140].lines[5].end = 0;
   figures[140].lines[6].start = 0;
   figures[140].lines[6].end = 0;
   figures[140].lines[7].start = 0;
@@ -5122,8 +4733,6 @@ void init_figures() {
   figures[141].lines[3].end = 3;
   figures[141].lines[4].start = 0;
   figures[141].lines[4].end = 4;
-  figures[141].lines[4].start = 0;
-  figures[141].lines[4].end = 0;
   figures[141].lines[5].start = 0;
   figures[141].lines[5].end = 0;
   figures[141].lines[6].start = 0;
@@ -5147,7 +4756,6 @@ void init_figures() {
   vec4(&figure142[5], -0.0025, 1.6825, 1.4875, 1.0);
   vec4(&figure142[6], -0.0025, -2.3825, 1.1425, 1.0);
   vec4(&figure142[7], 0.3275, -2.3325, 1.1275, 1.0);
-  vec4(&figure142[7], 0, 0, 0, 1.0);
   figures[142].lines[0].start = 5;
   figures[142].lines[0].end = 4;
   figures[142].lines[1].start = 6;
@@ -5160,8 +4768,6 @@ void init_figures() {
   figures[142].lines[4].end = 2;
   figures[142].lines[5].start = 2;
   figures[142].lines[5].end = 3;
-  figures[142].lines[5].start = 0;
-  figures[142].lines[5].end = 0;
   figures[142].lines[6].start = 0;
   figures[142].lines[6].end = 0;
   figures[142].lines[7].start = 0;
@@ -5182,7 +4788,6 @@ void init_figures() {
   vec4(&figure143[4], 0.3725, -2.0975, 0.7725, 1.0);
   vec4(&figure143[5], 0.6875, -1.7975, 1.3625, 1.0);
   vec4(&figure143[6], 0.3275, -2.3325, 1.1275, 1.0);
-  vec4(&figure143[6], 0, 0, 0, 1.0);
   vec4(&figure143[7], 0, 0, 0, 1.0);
   figures[143].lines[0].start = 0;
   figures[143].lines[0].end = 2;
@@ -5194,8 +4799,6 @@ void init_figures() {
   figures[143].lines[3].end = 6;
   figures[143].lines[4].start = 1;
   figures[143].lines[4].end = 5;
-  figures[143].lines[4].start = 0;
-  figures[143].lines[4].end = 0;
   figures[143].lines[5].start = 0;
   figures[143].lines[5].end = 0;
   figures[143].lines[6].start = 0;
@@ -5219,7 +4822,6 @@ void init_figures() {
   vec4(&figure144[5], 0.6875, -1.7975, 1.3625, 1.0);
   vec4(&figure144[6], 0.5975, -1.9375, 0.8225, 1.0);
   vec4(&figure144[7], -0.3425, -1.5025, 0.4925, 1.0);
-  vec4(&figure144[7], 0, 0, 0, 1.0);
   figures[144].lines[0].start = 3;
   figures[144].lines[0].end = 5;
   figures[144].lines[1].start = 0;
@@ -5238,8 +4840,6 @@ void init_figures() {
   figures[144].lines[7].end = 5;
   figures[144].lines[8].start = 7;
   figures[144].lines[8].end = 1;
-  figures[144].lines[8].start = 0;
-  figures[144].lines[8].end = 0;
   figures[144].lines[9].start = 0;
   figures[144].lines[9].end = 0;
   figures[144].lines[10].start = 0;
@@ -5254,7 +4854,6 @@ void init_figures() {
   vec4(&figure145[4], -0.6175, -1.7275, 1.3625, 1.0);
   vec4(&figure145[5], -0.5825, -1.9175, 0.8325, 1.0);
   vec4(&figure145[6], -0.0025, -2.3825, 1.1425, 1.0);
-  vec4(&figure145[6], 0, 0, 0, 1.0);
   vec4(&figure145[7], 0, 0, 0, 1.0);
   figures[145].lines[0].start = 2;
   figures[145].lines[0].end = 1;
@@ -5268,8 +4867,6 @@ void init_figures() {
   figures[145].lines[4].end = 3;
   figures[145].lines[5].start = 4;
   figures[145].lines[5].end = 5;
-  figures[145].lines[5].start = 0;
-  figures[145].lines[5].end = 0;
   figures[145].lines[6].start = 0;
   figures[145].lines[6].end = 0;
   figures[145].lines[7].start = 0;
@@ -5291,7 +4888,6 @@ void init_figures() {
   vec4(&figure146[5], -0.2925, -1.7175, 1.0775, 1.0);
   vec4(&figure146[6], -0.5725, -2.0975, 1.1375, 1.0);
   vec4(&figure146[7], -0.3325, -2.3375, 1.1275, 1.0);
-  vec4(&figure146[7], 0, 0, 0, 1.0);
   figures[146].lines[0].start = 0;
   figures[146].lines[0].end = 3;
   figures[146].lines[1].start = 0;
@@ -5308,8 +4904,6 @@ void init_figures() {
   figures[146].lines[6].end = 5;
   figures[146].lines[7].start = 6;
   figures[146].lines[7].end = 7;
-  figures[146].lines[7].start = 0;
-  figures[146].lines[7].end = 0;
   figures[146].lines[8].start = 0;
   figures[146].lines[8].end = 0;
   figures[146].lines[9].start = 0;
@@ -5327,7 +4921,6 @@ void init_figures() {
   vec4(&figure147[5], -0.3325, -2.3375, 1.1275, 1.0);
   vec4(&figure147[6], -0.2075, -2.0525, 1.3675, 1.0);
   vec4(&figure147[7], -0.0025, -2.3825, 1.1425, 1.0);
-  vec4(&figure147[7], 0, 0, 0, 1.0);
   figures[147].lines[0].start = 2;
   figures[147].lines[0].end = 5;
   figures[147].lines[1].start = 2;
@@ -5340,8 +4933,6 @@ void init_figures() {
   figures[147].lines[4].end = 5;
   figures[147].lines[5].start = 1;
   figures[147].lines[5].end = 5;
-  figures[147].lines[5].start = 0;
-  figures[147].lines[5].end = 0;
   figures[147].lines[6].start = 0;
   figures[147].lines[6].end = 0;
   figures[147].lines[7].start = 0;
@@ -5363,7 +4954,6 @@ void init_figures() {
   vec4(&figure148[5], -0.5825, -1.9175, 0.8325, 1.0);
   vec4(&figure148[6], -0.5725, -2.0975, 1.1375, 1.0);
   vec4(&figure148[7], -0.2075, -2.0525, 1.3675, 1.0);
-  vec4(&figure148[7], 0, 0, 0, 1.0);
   figures[148].lines[0].start = 5;
   figures[148].lines[0].end = 6;
   figures[148].lines[1].start = 4;
@@ -5376,8 +4966,6 @@ void init_figures() {
   figures[148].lines[4].end = 3;
   figures[148].lines[5].start = 1;
   figures[148].lines[5].end = 2;
-  figures[148].lines[5].start = 0;
-  figures[148].lines[5].end = 0;
   figures[148].lines[6].start = 0;
   figures[148].lines[6].end = 0;
   figures[148].lines[7].start = 0;
@@ -5399,7 +4987,6 @@ void init_figures() {
   vec4(&figure149[5], 1.4125, -1.0025, -1.6475, 1.0);
   vec4(&figure149[6], 1.7525, 0.0875, 0.0125, 1.0);
   vec4(&figure149[7], 1.6125, 0.4625, 0.4175, 1.0);
-  vec4(&figure149[7], 0, 0, 0, 1.0);
   figures[149].lines[0].start = 0;
   figures[149].lines[0].end = 1;
   figures[149].lines[1].start = 2;
@@ -5414,8 +5001,6 @@ void init_figures() {
   figures[149].lines[5].end = 5;
   figures[149].lines[6].start = 6;
   figures[149].lines[6].end = 7;
-  figures[149].lines[6].start = 0;
-  figures[149].lines[6].end = 0;
   figures[149].lines[7].start = 0;
   figures[149].lines[7].end = 0;
   figures[149].lines[8].start = 0;
@@ -5435,7 +5020,6 @@ void init_figures() {
   vec4(&figure150[5], 2.0525, -0.6025, 0.1925, 1.0);
   vec4(&figure150[6], 1.8075, -0.2425, 0.0525, 1.0);
   vec4(&figure150[7], 1.6225, -0.4325, 0.4175, 1.0);
-  vec4(&figure150[7], 0, 0, 0, 1.0);
   figures[150].lines[0].start = 2;
   figures[150].lines[0].end = 0;
   figures[150].lines[1].start = 3;
@@ -5448,8 +5032,6 @@ void init_figures() {
   figures[150].lines[4].end = 5;
   figures[150].lines[5].start = 6;
   figures[150].lines[5].end = 7;
-  figures[150].lines[5].start = 0;
-  figures[150].lines[5].end = 0;
   figures[150].lines[6].start = 0;
   figures[150].lines[6].end = 0;
   figures[150].lines[7].start = 0;
@@ -5471,7 +5053,6 @@ void init_figures() {
   vec4(&figure151[5], 0.2775, -2.2525, -2.2525, 1.0);
   vec4(&figure151[6], 0.1575, -2.0175, -2.3875, 1.0);
   vec4(&figure151[7], 0.3875, -2.1175, -2.5125, 1.0);
-  vec4(&figure151[7], 0, 0, 0, 1.0);
   figures[151].lines[0].start = 2;
   figures[151].lines[0].end = 1;
   figures[151].lines[1].start = 3;
@@ -5484,8 +5065,6 @@ void init_figures() {
   figures[151].lines[4].end = 6;
   figures[151].lines[5].start = 6;
   figures[151].lines[5].end = 7;
-  figures[151].lines[5].start = 0;
-  figures[151].lines[5].end = 0;
   figures[151].lines[6].start = 0;
   figures[151].lines[6].end = 0;
   figures[151].lines[7].start = 0;
@@ -5506,7 +5085,6 @@ void init_figures() {
   vec4(&figure152[4], 0.2775, -2.2525, -2.2525, 1.0);
   vec4(&figure152[5], 0.3875, -2.1175, -2.5125, 1.0);
   vec4(&figure152[6], 0.4875, -1.3025, -2.1925, 1.0);
-  vec4(&figure152[6], 0, 0, 0, 1.0);
   vec4(&figure152[7], 0, 0, 0, 1.0);
   figures[152].lines[0].start = 4;
   figures[152].lines[0].end = 5;
@@ -5520,8 +5098,6 @@ void init_figures() {
   figures[152].lines[4].end = 6;
   figures[152].lines[5].start = 3;
   figures[152].lines[5].end = 6;
-  figures[152].lines[5].start = 0;
-  figures[152].lines[5].end = 0;
   figures[152].lines[6].start = 0;
   figures[152].lines[6].end = 0;
   figures[152].lines[7].start = 0;
@@ -5543,7 +5119,6 @@ void init_figures() {
   vec4(&figure153[5], 1.2125, -2.2775, -2.0225, 1.0);
   vec4(&figure153[6], 1.0175, -1.9825, -2.3725, 1.0);
   vec4(&figure153[7], 0.1575, -2.0175, -2.3875, 1.0);
-  vec4(&figure153[7], 0, 0, 0, 1.0);
   figures[153].lines[0].start = 0;
   figures[153].lines[0].end = 1;
   figures[153].lines[1].start = 2;
@@ -5558,8 +5133,6 @@ void init_figures() {
   figures[153].lines[5].end = 4;
   figures[153].lines[6].start = 6;
   figures[153].lines[6].end = 5;
-  figures[153].lines[6].start = 0;
-  figures[153].lines[6].end = 0;
   figures[153].lines[7].start = 0;
   figures[153].lines[7].end = 0;
   figures[153].lines[8].start = 0;
@@ -5578,7 +5151,6 @@ void init_figures() {
   vec4(&figure154[4], 1.3825, -1.4325, -2.3125, 1.0);
   vec4(&figure154[5], 1.2025, -1.6625, -2.5525, 1.0);
   vec4(&figure154[6], 0.8675, -1.9925, -2.2525, 1.0);
-  vec4(&figure154[6], 0, 0, 0, 1.0);
   vec4(&figure154[7], 0, 0, 0, 1.0);
   figures[154].lines[0].start = 1;
   figures[154].lines[0].end = 2;
@@ -5592,8 +5164,6 @@ void init_figures() {
   figures[154].lines[4].end = 5;
   figures[154].lines[5].start = 3;
   figures[154].lines[5].end = 6;
-  figures[154].lines[5].start = 0;
-  figures[154].lines[5].end = 0;
   figures[154].lines[6].start = 0;
   figures[154].lines[6].end = 0;
   figures[154].lines[7].start = 0;
@@ -5614,7 +5184,6 @@ void init_figures() {
   vec4(&figure155[4], 1.4675, -2.1625, -2.1375, 1.0);
   vec4(&figure155[5], 1.7075, -1.6275, -1.6325, 1.0);
   vec4(&figure155[6], 1.7225, -1.8275, -2.0825, 1.0);
-  vec4(&figure155[6], 0, 0, 0, 1.0);
   vec4(&figure155[7], 0, 0, 0, 1.0);
   figures[155].lines[0].start = 1;
   figures[155].lines[0].end = 2;
@@ -5628,8 +5197,6 @@ void init_figures() {
   figures[155].lines[4].end = 3;
   figures[155].lines[5].start = 6;
   figures[155].lines[5].end = 3;
-  figures[155].lines[5].start = 0;
-  figures[155].lines[5].end = 0;
   figures[155].lines[6].start = 0;
   figures[155].lines[6].end = 0;
   figures[155].lines[7].start = 0;
@@ -5650,7 +5217,6 @@ void init_figures() {
   vec4(&figure156[4], 1.9375, -0.8225, -1.2425, 1.0);
   vec4(&figure156[5], 1.6925, -0.6525, -1.2775, 1.0);
   vec4(&figure156[6], 1.9425, -1.0325, -1.2475, 1.0);
-  vec4(&figure156[6], 0, 0, 0, 1.0);
   vec4(&figure156[7], 0, 0, 0, 1.0);
   figures[156].lines[0].start = 1;
   figures[156].lines[0].end = 2;
@@ -5666,8 +5232,6 @@ void init_figures() {
   figures[156].lines[5].end = 3;
   figures[156].lines[6].start = 4;
   figures[156].lines[6].end = 6;
-  figures[156].lines[6].start = 0;
-  figures[156].lines[6].end = 0;
   figures[156].lines[7].start = 0;
   figures[156].lines[7].end = 0;
   figures[156].lines[8].start = 0;
@@ -5687,7 +5251,6 @@ void init_figures() {
   vec4(&figure157[5], 2.0025, -0.8225, 0.2525, 1.0);
   vec4(&figure157[6], 2.1175, -0.7725, -0.0375, 1.0);
   vec4(&figure157[7], 2.0525, -0.6025, 0.1925, 1.0);
-  vec4(&figure157[7], 0, 0, 0, 1.0);
   figures[157].lines[0].start = 1;
   figures[157].lines[0].end = 4;
   figures[157].lines[1].start = 0;
@@ -5698,8 +5261,6 @@ void init_figures() {
   figures[157].lines[3].end = 7;
   figures[157].lines[4].start = 5;
   figures[157].lines[4].end = 6;
-  figures[157].lines[4].start = 0;
-  figures[157].lines[4].end = 0;
   figures[157].lines[5].start = 0;
   figures[157].lines[5].end = 0;
   figures[157].lines[6].start = 0;
@@ -5722,7 +5283,6 @@ void init_figures() {
   vec4(&figure158[4], 1.9525, -0.3075, -0.2075, 1.0);
   vec4(&figure158[5], 1.8175, -0.8875, 0.5075, 1.0);
   vec4(&figure158[6], 2.0525, -0.6025, 0.1925, 1.0);
-  vec4(&figure158[6], 0, 0, 0, 1.0);
   vec4(&figure158[7], 0, 0, 0, 1.0);
   figures[158].lines[0].start = 2;
   figures[158].lines[0].end = 6;
@@ -5736,8 +5296,6 @@ void init_figures() {
   figures[158].lines[4].end = 0;
   figures[158].lines[5].start = 5;
   figures[158].lines[5].end = 3;
-  figures[158].lines[5].start = 0;
-  figures[158].lines[5].end = 0;
   figures[158].lines[6].start = 0;
   figures[158].lines[6].end = 0;
   figures[158].lines[7].start = 0;
@@ -5759,7 +5317,6 @@ void init_figures() {
   vec4(&figure159[5], 1.6225, -0.4325, 0.4175, 1.0);
   vec4(&figure159[6], 1.7725, -0.6925, 0.4325, 1.0);
   vec4(&figure159[7], 1.9725, -0.4675, -0.3975, 1.0);
-  vec4(&figure159[7], 0, 0, 0, 1.0);
   figures[159].lines[0].start = 0;
   figures[159].lines[0].end = 1;
   figures[159].lines[1].start = 5;
@@ -5770,8 +5327,6 @@ void init_figures() {
   figures[159].lines[3].end = 2;
   figures[159].lines[4].start = 7;
   figures[159].lines[4].end = 2;
-  figures[159].lines[4].start = 0;
-  figures[159].lines[4].end = 0;
   figures[159].lines[5].start = 0;
   figures[159].lines[5].end = 0;
   figures[159].lines[6].start = 0;
@@ -5794,7 +5349,6 @@ void init_figures() {
   vec4(&figure160[4], 1.9725, -0.4675, -0.3975, 1.0);
   vec4(&figure160[5], 1.7225, -0.9425, -0.2625, 1.0);
   vec4(&figure160[6], 0.1575, -2.0175, -2.3875, 1.0);
-  vec4(&figure160[6], 0, 0, 0, 1.0);
   vec4(&figure160[7], 0, 0, 0, 1.0);
   figures[160].lines[0].start = 5;
   figures[160].lines[0].end = 2;
@@ -5806,8 +5360,6 @@ void init_figures() {
   figures[160].lines[3].end = 6;
   figures[160].lines[4].start = 0;
   figures[160].lines[4].end = 1;
-  figures[160].lines[4].start = 0;
-  figures[160].lines[4].end = 0;
   figures[160].lines[5].start = 0;
   figures[160].lines[5].end = 0;
   figures[160].lines[6].start = 0;
@@ -5831,7 +5383,6 @@ void init_figures() {
   vec4(&figure161[5], 0.8575, -2.2675, -1.9075, 1.0);
   vec4(&figure161[6], 0.5375, -2.1725, -1.6325, 1.0);
   vec4(&figure161[7], 0.1575, -2.0175, -2.3875, 1.0);
-  vec4(&figure161[7], 0, 0, 0, 1.0);
   figures[161].lines[0].start = 2;
   figures[161].lines[0].end = 7;
   figures[161].lines[1].start = 0;
@@ -5842,8 +5393,6 @@ void init_figures() {
   figures[161].lines[3].end = 3;
   figures[161].lines[4].start = 5;
   figures[161].lines[4].end = 3;
-  figures[161].lines[4].start = 0;
-  figures[161].lines[4].end = 0;
   figures[161].lines[5].start = 0;
   figures[161].lines[5].end = 0;
   figures[161].lines[6].start = 0;
@@ -5867,7 +5416,6 @@ void init_figures() {
   vec4(&figure162[5], 0.2775, -2.2525, -2.2525, 1.0);
   vec4(&figure162[6], 0.8575, -2.2675, -1.9075, 1.0);
   vec4(&figure162[7], 0.5125, -2.2525, -2.2525, 1.0);
-  vec4(&figure162[7], 0, 0, 0, 1.0);
   figures[162].lines[0].start = 3;
   figures[162].lines[0].end = 6;
   figures[162].lines[1].start = 5;
@@ -5876,8 +5424,6 @@ void init_figures() {
   figures[162].lines[2].end = 1;
   figures[162].lines[3].start = 4;
   figures[162].lines[3].end = 7;
-  figures[162].lines[3].start = 0;
-  figures[162].lines[3].end = 0;
   figures[162].lines[4].start = 0;
   figures[162].lines[4].end = 0;
   figures[162].lines[5].start = 0;
@@ -5903,7 +5449,6 @@ void init_figures() {
   vec4(&figure163[5], 0.2775, -2.2525, -2.2525, 1.0);
   vec4(&figure163[6], 0.5125, -2.2525, -2.2525, 1.0);
   vec4(&figure163[7], 0.4875, -1.3025, -2.1925, 1.0);
-  vec4(&figure163[7], 0, 0, 0, 1.0);
   figures[163].lines[0].start = 0;
   figures[163].lines[0].end = 6;
   figures[163].lines[1].start = 4;
@@ -5916,8 +5461,6 @@ void init_figures() {
   figures[163].lines[4].end = 7;
   figures[163].lines[5].start = 6;
   figures[163].lines[5].end = 1;
-  figures[163].lines[5].start = 0;
-  figures[163].lines[5].end = 0;
   figures[163].lines[6].start = 0;
   figures[163].lines[6].end = 0;
   figures[163].lines[7].start = 0;
@@ -5939,7 +5482,6 @@ void init_figures() {
   vec4(&figure164[5], 1.5125, -1.9675, -2.3475, 1.0);
   vec4(&figure164[6], 1.4675, -2.1625, -2.1375, 1.0);
   vec4(&figure164[7], 0.5125, -2.2525, -2.2525, 1.0);
-  vec4(&figure164[7], 0, 0, 0, 1.0);
   figures[164].lines[0].start = 1;
   figures[164].lines[0].end = 7;
   figures[164].lines[1].start = 0;
@@ -5952,8 +5494,6 @@ void init_figures() {
   figures[164].lines[4].end = 6;
   figures[164].lines[5].start = 5;
   figures[164].lines[5].end = 6;
-  figures[164].lines[5].start = 0;
-  figures[164].lines[5].end = 0;
   figures[164].lines[6].start = 0;
   figures[164].lines[6].end = 0;
   figures[164].lines[7].start = 0;
@@ -5975,7 +5515,6 @@ void init_figures() {
   vec4(&figure165[5], 1.7225, -1.8275, -2.0825, 1.0);
   vec4(&figure165[6], 1.3625, -1.3925, -1.3825, 1.0);
   vec4(&figure165[7], 1.4725, -1.6225, -2.5175, 1.0);
-  vec4(&figure165[7], 0, 0, 0, 1.0);
   figures[165].lines[0].start = 5;
   figures[165].lines[0].end = 4;
   figures[165].lines[1].start = 2;
@@ -5994,8 +5533,6 @@ void init_figures() {
   figures[165].lines[7].end = 2;
   figures[165].lines[8].start = 0;
   figures[165].lines[8].end = 6;
-  figures[165].lines[8].start = 0;
-  figures[165].lines[8].end = 0;
   figures[165].lines[9].start = 0;
   figures[165].lines[9].end = 0;
   figures[165].lines[10].start = 0;
@@ -6010,7 +5547,6 @@ void init_figures() {
   vec4(&figure166[4], 1.7525, 0.0875, 0.0125, 1.0);
   vec4(&figure166[5], 1.8075, -0.2425, 0.0525, 1.0);
   vec4(&figure166[6], 1.9725, -0.4675, -0.3975, 1.0);
-  vec4(&figure166[6], 0, 0, 0, 1.0);
   vec4(&figure166[7], 0, 0, 0, 1.0);
   figures[166].lines[0].start = 0;
   figures[166].lines[0].end = 3;
@@ -6024,8 +5560,6 @@ void init_figures() {
   figures[166].lines[4].end = 6;
   figures[166].lines[5].start = 6;
   figures[166].lines[5].end = 2;
-  figures[166].lines[5].start = 0;
-  figures[166].lines[5].end = 0;
   figures[166].lines[6].start = 0;
   figures[166].lines[6].end = 0;
   figures[166].lines[7].start = 0;
@@ -6061,8 +5595,6 @@ void init_figures() {
   figures[167].lines[4].end = 6;
   figures[167].lines[5].start = 0;
   figures[167].lines[5].end = 9;
-  figures[167].lines[5].start = 0;
-  figures[167].lines[5].end = 0;
   figures[167].lines[6].start = 0;
   figures[167].lines[6].end = 0;
   figures[167].lines[7].start = 0;
@@ -6083,7 +5615,6 @@ void init_figures() {
   vec4(&figure168[4], 1.4575, -2.0625, -1.3875, 1.0);
   vec4(&figure168[5], 0.5375, -2.1725, -1.6325, 1.0);
   vec4(&figure168[6], 0.8575, -2.2675, -1.9075, 1.0);
-  vec4(&figure168[6], 0, 0, 0, 1.0);
   vec4(&figure168[7], 0, 0, 0, 1.0);
   figures[168].lines[0].start = 5;
   figures[168].lines[0].end = 6;
@@ -6095,8 +5626,6 @@ void init_figures() {
   figures[168].lines[3].end = 2;
   figures[168].lines[4].start = 0;
   figures[168].lines[4].end = 1;
-  figures[168].lines[4].start = 0;
-  figures[168].lines[4].end = 0;
   figures[168].lines[5].start = 0;
   figures[168].lines[5].end = 0;
   figures[168].lines[6].start = 0;
@@ -6120,7 +5649,6 @@ void init_figures() {
   vec4(&figure169[5], 0.8275, -1.5175, -2.4575, 1.0);
   vec4(&figure169[6], 1.7075, -1.6275, -1.6325, 1.0);
   vec4(&figure169[7], 0.4875, -1.3025, -2.1925, 1.0);
-  vec4(&figure169[7], 0, 0, 0, 1.0);
   figures[169].lines[0].start = 0;
   figures[169].lines[0].end = 6;
   figures[169].lines[1].start = 0;
@@ -6135,8 +5663,6 @@ void init_figures() {
   figures[169].lines[5].end = 3;
   figures[169].lines[6].start = 3;
   figures[169].lines[6].end = 4;
-  figures[169].lines[6].start = 0;
-  figures[169].lines[6].end = 0;
   figures[169].lines[7].start = 0;
   figures[169].lines[7].end = 0;
   figures[169].lines[8].start = 0;
@@ -6156,7 +5682,6 @@ void init_figures() {
   vec4(&figure170[5], -1.7125, -1.6275, -1.6325, 1.0);
   vec4(&figure170[6], -1.2925, -2.1825, -1.7425, 1.0);
   vec4(&figure170[7], -1.4625, -2.0625, -1.3875, 1.0);
-  vec4(&figure170[7], 0, 0, 0, 1.0);
   figures[170].lines[0].start = 0;
   figures[170].lines[0].end = 2;
   figures[170].lines[1].start = 1;
@@ -6173,8 +5698,6 @@ void init_figures() {
   figures[170].lines[6].end = 6;
   figures[170].lines[7].start = 7;
   figures[170].lines[7].end = 6;
-  figures[170].lines[7].start = 0;
-  figures[170].lines[7].end = 0;
   figures[170].lines[8].start = 0;
   figures[170].lines[8].end = 0;
   figures[170].lines[9].start = 0;
@@ -6192,7 +5715,6 @@ void init_figures() {
   vec4(&figure171[5], -2.0375, -0.8225, 0.2525, 1.0);
   vec4(&figure171[6], -1.8175, -0.8825, 0.5225, 1.0);
   vec4(&figure171[7], -1.7925, -0.6825, 0.4275, 1.0);
-  vec4(&figure171[7], 0, 0, 0, 1.0);
   figures[171].lines[0].start = 2;
   figures[171].lines[0].end = 1;
   figures[171].lines[1].start = 2;
@@ -6209,8 +5731,6 @@ void init_figures() {
   figures[171].lines[6].end = 6;
   figures[171].lines[7].start = 6;
   figures[171].lines[7].end = 7;
-  figures[171].lines[7].start = 0;
-  figures[171].lines[7].end = 0;
   figures[171].lines[8].start = 0;
   figures[171].lines[8].end = 0;
   figures[171].lines[9].start = 0;
@@ -6227,7 +5747,6 @@ void init_figures() {
   vec4(&figure172[4], -1.9775, -0.4625, -0.3975, 1.0);
   vec4(&figure172[5], -2.0175, -0.1125, -0.4325, 1.0);
   vec4(&figure172[6], -1.9575, -0.3075, -0.2075, 1.0);
-  vec4(&figure172[6], 0, 0, 0, 1.0);
   vec4(&figure172[7], 0, 0, 0, 1.0);
   figures[172].lines[0].start = 0;
   figures[172].lines[0].end = 2;
@@ -6241,8 +5760,6 @@ void init_figures() {
   figures[172].lines[4].end = 4;
   figures[172].lines[5].start = 6;
   figures[172].lines[5].end = 4;
-  figures[172].lines[5].start = 0;
-  figures[172].lines[5].end = 0;
   figures[172].lines[6].start = 0;
   figures[172].lines[6].end = 0;
   figures[172].lines[7].start = 0;
@@ -6263,7 +5780,6 @@ void init_figures() {
   vec4(&figure173[4], -1.7575, 0.0875, 0.0125, 1.0);
   vec4(&figure173[5], -1.3675, -1.3925, -1.3825, 1.0);
   vec4(&figure173[6], -1.4175, -1.0025, -1.6675, 1.0);
-  vec4(&figure173[6], 0, 0, 0, 1.0);
   vec4(&figure173[7], 0, 0, 0, 1.0);
   figures[173].lines[0].start = 2;
   figures[173].lines[0].end = 1;
@@ -6277,8 +5793,6 @@ void init_figures() {
   figures[173].lines[4].end = 0;
   figures[173].lines[5].start = 5;
   figures[173].lines[5].end = 6;
-  figures[173].lines[5].start = 0;
-  figures[173].lines[5].end = 0;
   figures[173].lines[6].start = 0;
   figures[173].lines[6].end = 0;
   figures[173].lines[7].start = 0;
@@ -6299,7 +5813,6 @@ void init_figures() {
   vec4(&figure174[4], -1.5175, -1.9675, -2.3475, 1.0);
   vec4(&figure174[5], -1.2075, -1.6625, -2.5525, 1.0);
   vec4(&figure174[6], -1.0225, -1.9825, -2.3725, 1.0);
-  vec4(&figure174[6], 0, 0, 0, 1.0);
   vec4(&figure174[7], 0, 0, 0, 1.0);
   figures[174].lines[0].start = 0;
   figures[174].lines[0].end = 1;
@@ -6311,8 +5824,6 @@ void init_figures() {
   figures[174].lines[3].end = 4;
   figures[174].lines[4].start = 5;
   figures[174].lines[4].end = 6;
-  figures[174].lines[4].start = 0;
-  figures[174].lines[4].end = 0;
   figures[174].lines[5].start = 0;
   figures[174].lines[5].end = 0;
   figures[174].lines[6].start = 0;
@@ -6335,7 +5846,6 @@ void init_figures() {
   vec4(&figure175[4], -1.0225, -1.9825, -2.3725, 1.0);
   vec4(&figure175[5], -1.4725, -2.1625, -2.1375, 1.0);
   vec4(&figure175[6], -1.2175, -2.2775, -2.0225, 1.0);
-  vec4(&figure175[6], 0, 0, 0, 1.0);
   vec4(&figure175[7], 0, 0, 0, 1.0);
   figures[175].lines[0].start = 4;
   figures[175].lines[0].end = 2;
@@ -6349,8 +5859,6 @@ void init_figures() {
   figures[175].lines[4].end = 2;
   figures[175].lines[5].start = 5;
   figures[175].lines[5].end = 6;
-  figures[175].lines[5].start = 0;
-  figures[175].lines[5].end = 0;
   figures[175].lines[6].start = 0;
   figures[175].lines[6].end = 0;
   figures[175].lines[7].start = 0;
@@ -6371,7 +5879,6 @@ void init_figures() {
   vec4(&figure176[4], -0.1625, -2.0175, -2.3875, 1.0);
   vec4(&figure176[5], -0.3925, -2.1175, -2.5125, 1.0);
   vec4(&figure176[6], -0.4875, -1.7975, -2.6475, 1.0);
-  vec4(&figure176[6], 0, 0, 0, 1.0);
   vec4(&figure176[7], 0, 0, 0, 1.0);
   figures[176].lines[0].start = 2;
   figures[176].lines[0].end = 1;
@@ -6387,8 +5894,6 @@ void init_figures() {
   figures[176].lines[5].end = 6;
   figures[176].lines[6].start = 0;
   figures[176].lines[6].end = 6;
-  figures[176].lines[6].start = 0;
-  figures[176].lines[6].end = 0;
   figures[176].lines[7].start = 0;
   figures[176].lines[7].end = 0;
   figures[176].lines[8].start = 0;
@@ -6407,7 +5912,6 @@ void init_figures() {
   vec4(&figure177[4], -0.0175, -1.3275, -2.2525, 1.0);
   vec4(&figure177[5], -0.2825, -1.7625, -2.6625, 1.0);
   vec4(&figure177[6], -0.3925, -2.1175, -2.5125, 1.0);
-  vec4(&figure177[6], 0, 0, 0, 1.0);
   vec4(&figure177[7], 0, 0, 0, 1.0);
   figures[177].lines[0].start = 0;
   figures[177].lines[0].end = 6;
@@ -6423,8 +5927,6 @@ void init_figures() {
   figures[177].lines[5].end = 5;
   figures[177].lines[6].start = 3;
   figures[177].lines[6].end = 4;
-  figures[177].lines[6].start = 0;
-  figures[177].lines[6].end = 0;
   figures[177].lines[7].start = 0;
   figures[177].lines[7].end = 0;
   figures[177].lines[8].start = 0;
@@ -6444,7 +5946,6 @@ void init_figures() {
   vec4(&figure178[5], -0.0025, -2.1575, -1.6325, 1.0);
   vec4(&figure178[6], -0.5675, -2.1825, -1.6325, 1.0);
   vec4(&figure178[7], -0.2825, -1.7625, -2.6625, 1.0);
-  vec4(&figure178[7], 0, 0, 0, 1.0);
   figures[178].lines[0].start = 7;
   figures[178].lines[0].end = 4;
   figures[178].lines[1].start = 2;
@@ -6459,8 +5960,6 @@ void init_figures() {
   figures[178].lines[5].end = 6;
   figures[178].lines[6].start = 0;
   figures[178].lines[6].end = 3;
-  figures[178].lines[6].start = 0;
-  figures[178].lines[6].end = 0;
   figures[178].lines[7].start = 0;
   figures[178].lines[7].end = 0;
   figures[178].lines[8].start = 0;
@@ -6493,8 +5992,6 @@ void init_figures() {
   figures[179].lines[4].end = 7;
   figures[179].lines[5].start = 6;
   figures[179].lines[5].end = 5;
-  figures[179].lines[5].start = 0;
-  figures[179].lines[5].end = 0;
   figures[179].lines[6].start = 0;
   figures[179].lines[6].end = 0;
   figures[179].lines[7].start = 0;
@@ -6516,7 +6013,6 @@ void init_figures() {
   vec4(&figure180[5], -0.8625, -2.2675, -1.9075, 1.0);
   vec4(&figure180[6], -1.7275, -0.9425, -0.2625, 1.0);
   vec4(&figure180[7], -1.2175, -2.2775, -2.0225, 1.0);
-  vec4(&figure180[7], 0, 0, 0, 1.0);
   figures[180].lines[0].start = 5;
   figures[180].lines[0].end = 2;
   figures[180].lines[1].start = 5;
@@ -6527,8 +6023,6 @@ void init_figures() {
   figures[180].lines[3].end = 4;
   figures[180].lines[4].start = 4;
   figures[180].lines[4].end = 6;
-  figures[180].lines[4].start = 0;
-  figures[180].lines[4].end = 0;
   figures[180].lines[5].start = 0;
   figures[180].lines[5].end = 0;
   figures[180].lines[6].start = 0;
@@ -6552,7 +6046,6 @@ void init_figures() {
   vec4(&figure181[5], -1.7275, -0.9425, -0.2625, 1.0);
   vec4(&figure181[6], -1.9775, -0.4625, -0.3975, 1.0);
   vec4(&figure181[7], -1.9575, -0.3075, -0.2075, 1.0);
-  vec4(&figure181[7], 0, 0, 0, 1.0);
   figures[181].lines[0].start = 0;
   figures[181].lines[0].end = 5;
   figures[181].lines[1].start = 1;
@@ -6565,8 +6058,6 @@ void init_figures() {
   figures[181].lines[4].end = 2;
   figures[181].lines[5].start = 4;
   figures[181].lines[5].end = 3;
-  figures[181].lines[5].start = 0;
-  figures[181].lines[5].end = 0;
   figures[181].lines[6].start = 0;
   figures[181].lines[6].end = 0;
   figures[181].lines[7].start = 0;
@@ -6588,7 +6079,6 @@ void init_figures() {
   vec4(&figure182[5], -1.8175, -0.8825, 0.5225, 1.0);
   vec4(&figure182[6], -1.7925, -0.6825, 0.4275, 1.0);
   vec4(&figure182[7], -1.8125, -0.2425, 0.0525, 1.0);
-  vec4(&figure182[7], 0, 0, 0, 1.0);
   figures[182].lines[0].start = 2;
   figures[182].lines[0].end = 3;
   figures[182].lines[1].start = 6;
@@ -6601,8 +6091,6 @@ void init_figures() {
   figures[182].lines[4].end = 2;
   figures[182].lines[5].start = 4;
   figures[182].lines[5].end = 1;
-  figures[182].lines[5].start = 0;
-  figures[182].lines[5].end = 0;
   figures[182].lines[6].start = 0;
   figures[182].lines[6].end = 0;
   figures[182].lines[7].start = 0;
@@ -6623,7 +6111,6 @@ void init_figures() {
   vec4(&figure183[4], -1.9025, -0.6975, -1.2175, 1.0);
   vec4(&figure183[5], -2.0375, -0.8225, 0.2525, 1.0);
   vec4(&figure183[6], -2.0525, -0.2225, -0.8475, 1.0);
-  vec4(&figure183[6], 0, 0, 0, 1.0);
   vec4(&figure183[7], 0, 0, 0, 1.0);
   figures[183].lines[0].start = 5;
   figures[183].lines[0].end = 1;
@@ -6635,8 +6122,6 @@ void init_figures() {
   figures[183].lines[3].end = 0;
   figures[183].lines[4].start = 4;
   figures[183].lines[4].end = 6;
-  figures[183].lines[4].start = 0;
-  figures[183].lines[4].end = 0;
   figures[183].lines[5].start = 0;
   figures[183].lines[5].end = 0;
   figures[183].lines[6].start = 0;
@@ -6660,7 +6145,6 @@ void init_figures() {
   vec4(&figure184[5], -1.9025, -0.6975, -1.2175, 1.0);
   vec4(&figure184[6], -1.9375, -0.8225, -1.2425, 1.0);
   vec4(&figure184[7], -1.7275, -1.8275, -2.0825, 1.0);
-  vec4(&figure184[7], 0, 0, 0, 1.0);
   figures[184].lines[0].start = 5;
   figures[184].lines[0].end = 0;
   figures[184].lines[1].start = 4;
@@ -6675,8 +6159,6 @@ void init_figures() {
   figures[184].lines[5].end = 2;
   figures[184].lines[6].start = 7;
   figures[184].lines[6].end = 3;
-  figures[184].lines[6].start = 0;
-  figures[184].lines[6].end = 0;
   figures[184].lines[7].start = 0;
   figures[184].lines[7].end = 0;
   figures[184].lines[8].start = 0;
@@ -6695,7 +6177,6 @@ void init_figures() {
   vec4(&figure185[4], -0.8625, -2.2675, -1.9075, 1.0);
   vec4(&figure185[5], -1.2075, -1.6625, -2.5525, 1.0);
   vec4(&figure185[6], -1.2175, -2.2775, -2.0225, 1.0);
-  vec4(&figure185[6], 0, 0, 0, 1.0);
   vec4(&figure185[7], 0, 0, 0, 1.0);
   figures[185].lines[0].start = 4;
   figures[185].lines[0].end = 3;
@@ -6709,8 +6190,6 @@ void init_figures() {
   figures[185].lines[4].end = 0;
   figures[185].lines[5].start = 0;
   figures[185].lines[5].end = 2;
-  figures[185].lines[5].start = 0;
-  figures[185].lines[5].end = 0;
   figures[185].lines[6].start = 0;
   figures[185].lines[6].end = 0;
   figures[185].lines[7].start = 0;
@@ -6743,8 +6222,6 @@ void init_figures() {
   figures[186].lines[3].end = 4;
   figures[186].lines[4].start = 5;
   figures[186].lines[4].end = 1;
-  figures[186].lines[4].start = 0;
-  figures[186].lines[4].end = 0;
   figures[186].lines[5].start = 0;
   figures[186].lines[5].end = 0;
   figures[186].lines[6].start = 0;
@@ -6768,7 +6245,6 @@ void init_figures() {
   vec4(&figure187[5], -1.6175, 0.4625, 0.4175, 1.0);
   vec4(&figure187[6], -1.7575, 0.0875, 0.0125, 1.0);
   vec4(&figure187[7], -1.3675, -1.3925, -1.3825, 1.0);
-  vec4(&figure187[7], 0, 0, 0, 1.0);
   figures[187].lines[0].start = 2;
   figures[187].lines[0].end = 3;
   figures[187].lines[1].start = 7;
@@ -6783,8 +6259,6 @@ void init_figures() {
   figures[187].lines[5].end = 6;
   figures[187].lines[6].start = 4;
   figures[187].lines[6].end = 6;
-  figures[187].lines[6].start = 0;
-  figures[187].lines[6].end = 0;
   figures[187].lines[7].start = 0;
   figures[187].lines[7].end = 0;
   figures[187].lines[8].start = 0;
@@ -6816,8 +6290,6 @@ void init_figures() {
   figures[188].lines[3].end = 5;
   figures[188].lines[4].start = 3;
   figures[188].lines[4].end = 6;
-  figures[188].lines[4].start = 0;
-  figures[188].lines[4].end = 0;
   figures[188].lines[5].start = 0;
   figures[188].lines[5].end = 0;
   figures[188].lines[6].start = 0;
@@ -6841,7 +6313,6 @@ void init_figures() {
   vec4(&figure189[5], -1.7275, -1.8275, -2.0825, 1.0);
   vec4(&figure189[6], -1.4775, -1.6225, -2.5175, 1.0);
   vec4(&figure189[7], -1.0225, -1.9825, -2.3725, 1.0);
-  vec4(&figure189[7], 0, 0, 0, 1.0);
   figures[189].lines[0].start = 0;
   figures[189].lines[0].end = 1;
   figures[189].lines[1].start = 0;
@@ -6852,8 +6323,6 @@ void init_figures() {
   figures[189].lines[3].end = 2;
   figures[189].lines[4].start = 5;
   figures[189].lines[4].end = 4;
-  figures[189].lines[4].start = 0;
-  figures[189].lines[4].end = 0;
   figures[189].lines[5].start = 0;
   figures[189].lines[5].end = 0;
   figures[189].lines[6].start = 0;
@@ -6893,8 +6362,6 @@ void init_figures() {
   figures[190].lines[5].end = 3;
   figures[190].lines[6].start = 0;
   figures[190].lines[6].end = 5;
-  figures[190].lines[6].start = 0;
-  figures[190].lines[6].end = 0;
   figures[190].lines[7].start = 0;
   figures[190].lines[7].end = 0;
   figures[190].lines[8].start = 0;
@@ -6928,8 +6395,6 @@ void init_figures() {
   figures[191].lines[4].end = 2;
   figures[191].lines[5].start = 1;
   figures[191].lines[5].end = 9;
-  figures[191].lines[5].start = 0;
-  figures[191].lines[5].end = 0;
   figures[191].lines[6].start = 0;
   figures[191].lines[6].end = 0;
   figures[191].lines[7].start = 0;
@@ -6963,8 +6428,6 @@ void init_figures() {
   figures[192].lines[3].end = 7;
   figures[192].lines[4].start = 3;
   figures[192].lines[4].end = 4;
-  figures[192].lines[4].start = 0;
-  figures[192].lines[4].end = 0;
   figures[192].lines[5].start = 0;
   figures[192].lines[5].end = 0;
   figures[192].lines[6].start = 0;
@@ -6987,7 +6450,6 @@ void init_figures() {
   vec4(&figure193[4], -0.4125, -0.5325, 1.2075, 1.0);
   vec4(&figure193[5], -0.2775, -0.3275, 1.3125, 1.0);
   vec4(&figure193[6], -0.6925, -0.5075, 1.0375, 1.0);
-  vec4(&figure193[6], 0, 0, 0, 1.0);
   vec4(&figure193[7], 0, 0, 0, 1.0);
   figures[193].lines[0].start = 2;
   figures[193].lines[0].end = 1;
@@ -7001,8 +6463,6 @@ void init_figures() {
   figures[193].lines[4].end = 5;
   figures[193].lines[5].start = 3;
   figures[193].lines[5].end = 6;
-  figures[193].lines[5].start = 0;
-  figures[193].lines[5].end = 0;
   figures[193].lines[6].start = 0;
   figures[193].lines[6].end = 0;
   figures[193].lines[7].start = 0;
@@ -7023,7 +6483,6 @@ void init_figures() {
   vec4(&figure194[4], -0.9075, -0.1625, 0.9575, 1.0);
   vec4(&figure194[5], -0.9075, 0.1375, 0.9575, 1.0);
   vec4(&figure194[6], -0.8075, 0.3725, 0.9975, 1.0);
-  vec4(&figure194[6], 0, 0, 0, 1.0);
   vec4(&figure194[7], 0, 0, 0, 1.0);
   figures[194].lines[0].start = 1;
   figures[194].lines[0].end = 2;
@@ -7040,8 +6499,6 @@ void init_figures() {
   figures[194].lines[6].start = 4;
   figures[194].lines[6].end = 5;
   figures[194].lines[7].start = 6;
-  figures[194].lines[7].end = 0;
-  figures[194].lines[7].start = 0;
   figures[194].lines[7].end = 0;
   figures[194].lines[8].start = 0;
   figures[194].lines[8].end = 0;
@@ -7060,7 +6517,6 @@ void init_figures() {
   vec4(&figure195[5], -0.6225, 0.5225, 1.1125, 1.0);
   vec4(&figure195[6], -0.3625, 0.4825, 1.2175, 1.0);
   vec4(&figure195[7], 0.6875, -0.5075, 1.0125, 1.0);
-  vec4(&figure195[7], 0, 0, 0, 1.0);
   figures[195].lines[0].start = 4;
   figures[195].lines[0].end = 3;
   figures[195].lines[1].start = 2;
@@ -7077,8 +6533,6 @@ void init_figures() {
   figures[195].lines[6].end = 0;
   figures[195].lines[7].start = 7;
   figures[195].lines[7].end = 1;
-  figures[195].lines[7].start = 0;
-  figures[195].lines[7].end = 0;
   figures[195].lines[8].start = 0;
   figures[195].lines[8].end = 0;
   figures[195].lines[9].start = 0;
@@ -7095,7 +6549,6 @@ void init_figures() {
   vec4(&figure196[4], 0.9025, -0.1425, 0.9725, 1.0);
   vec4(&figure196[5], 0.9025, 0.1625, 1.0025, 1.0);
   vec4(&figure196[6], 0.8025, 0.4075, 1.0525, 1.0);
-  vec4(&figure196[6], 0, 0, 0, 1.0);
   vec4(&figure196[7], 0, 0, 0, 1.0);
   figures[196].lines[0].start = 2;
   figures[196].lines[0].end = 3;
@@ -7117,8 +6570,6 @@ void init_figures() {
   figures[196].lines[8].end = 1;
   figures[196].lines[9].start = 0;
   figures[196].lines[9].end = 6;
-  figures[196].lines[9].start = 0;
-  figures[196].lines[9].end = 0;
   figures[196].lines[10].start = 0;
   figures[196].lines[10].end = 0;
   figures[196].lines[11].start = 0;
@@ -7145,8 +6596,6 @@ void init_figures() {
   figures[197].lines[4].end = 4;
   figures[197].lines[5].start = 5;
   figures[197].lines[5].end = 8;
-  figures[197].lines[5].start = 0;
-  figures[197].lines[5].end = 0;
   figures[197].lines[6].start = 0;
   figures[197].lines[6].end = 0;
   figures[197].lines[7].start = 0;
@@ -7168,7 +6617,6 @@ void init_figures() {
   vec4(&figure198[5], 1.2575, -1.1725, -2.2125, 1.0);
   vec4(&figure198[6], -0.5675, 1.6825, 1.3925, 1.0);
   vec4(&figure198[7], 0.5625, 1.6825, 1.3925, 1.0);
-  vec4(&figure198[7], 0, 0, 0, 1.0);
   figures[198].lines[0].start = 6;
   figures[198].lines[0].end = 1;
   figures[198].lines[1].start = 6;
@@ -7181,8 +6629,6 @@ void init_figures() {
   figures[198].lines[4].end = 3;
   figures[198].lines[5].start = 0;
   figures[198].lines[5].end = 5;
-  figures[198].lines[5].start = 0;
-  figures[198].lines[5].end = 0;
   figures[198].lines[6].start = 0;
   figures[198].lines[6].end = 0;
   figures[198].lines[7].start = 0;
@@ -7204,7 +6650,6 @@ void init_figures() {
   vec4(&figure199[5], -2.1175, -0.5175, -1.2225, 1.0);
   vec4(&figure199[6], -1.4175, -1.0025, -1.6675, 1.0);
   vec4(&figure199[7], 1.2575, -1.1725, -2.2125, 1.0);
-  vec4(&figure199[7], 0, 0, 0, 1.0);
   figures[199].lines[0].start = 0;
   figures[199].lines[0].end = 7;
   figures[199].lines[1].start = 7;
@@ -7223,8 +6668,6 @@ void init_figures() {
   figures[199].lines[7].end = 4;
   figures[199].lines[8].start = 3;
   figures[199].lines[8].end = 5;
-  figures[199].lines[8].start = 0;
-  figures[199].lines[8].end = 0;
   figures[199].lines[9].start = 0;
   figures[199].lines[9].end = 0;
   figures[199].lines[10].start = 0;
@@ -7240,7 +6683,6 @@ void init_figures() {
   vec4(&figure200[5], -0.3725, -2.5625, 0.7275, 1.0);
   vec4(&figure200[6], -0.5725, -2.0975, 1.1375, 1.0);
   vec4(&figure200[7], -0.3325, -2.3375, 1.1275, 1.0);
-  vec4(&figure200[7], 0, 0, 0, 1.0);
   figures[200].lines[0].start = 1;
   figures[200].lines[0].end = 2;
   figures[200].lines[1].start = 0;
@@ -7251,8 +6693,6 @@ void init_figures() {
   figures[200].lines[3].end = 7;
   figures[200].lines[4].start = 4;
   figures[200].lines[4].end = 5;
-  figures[200].lines[4].start = 0;
-  figures[200].lines[4].end = 0;
   figures[200].lines[5].start = 0;
   figures[200].lines[5].end = 0;
   figures[200].lines[6].start = 0;
@@ -7275,7 +6715,6 @@ void init_figures() {
   vec4(&figure201[4], -0.0025, -2.5125, 1.1925, 1.0);
   vec4(&figure201[5], -0.0025, -2.6375, 1.0525, 1.0);
   vec4(&figure201[6], -0.0025, -2.3825, 1.1425, 1.0);
-  vec4(&figure201[6], 0, 0, 0, 1.0);
   vec4(&figure201[7], 0, 0, 0, 1.0);
   figures[201].lines[0].start = 2;
   figures[201].lines[0].end = 1;
@@ -7289,8 +6728,6 @@ void init_figures() {
   figures[201].lines[4].end = 6;
   figures[201].lines[5].start = 3;
   figures[201].lines[5].end = 5;
-  figures[201].lines[5].start = 0;
-  figures[201].lines[5].end = 0;
   figures[201].lines[6].start = 0;
   figures[201].lines[6].end = 0;
   figures[201].lines[7].start = 0;
@@ -7312,7 +6749,6 @@ void init_figures() {
   vec4(&figure202[5], -0.0025, -2.6375, 1.0525, 1.0);
   vec4(&figure202[6], -0.7375, -2.2575, 1.0975, 1.0);
   vec4(&figure202[7], -0.6525, -2.3825, 0.6775, 1.0);
-  vec4(&figure202[7], 0, 0, 0, 1.0);
   figures[202].lines[0].start = 4;
   figures[202].lines[0].end = 5;
   figures[202].lines[1].start = 2;
@@ -7325,8 +6761,6 @@ void init_figures() {
   figures[202].lines[4].end = 7;
   figures[202].lines[5].start = 7;
   figures[202].lines[5].end = 1;
-  figures[202].lines[5].start = 0;
-  figures[202].lines[5].end = 0;
   figures[202].lines[6].start = 0;
   figures[202].lines[6].end = 0;
   figures[202].lines[7].start = 0;
@@ -7347,7 +6781,6 @@ void init_figures() {
   vec4(&figure203[4], -0.7375, -2.2575, 1.0975, 1.0);
   vec4(&figure203[5], -0.0025, -2.6525, 0.7325, 1.0);
   vec4(&figure203[6], -0.0025, -2.8225, 0.4575, 1.0);
-  vec4(&figure203[6], 0, 0, 0, 1.0);
   vec4(&figure203[7], 0, 0, 0, 1.0);
   figures[203].lines[0].start = 4;
   figures[203].lines[0].end = 0;
@@ -7359,8 +6792,6 @@ void init_figures() {
   figures[203].lines[3].end = 3;
   figures[203].lines[4].start = 6;
   figures[203].lines[4].end = 1;
-  figures[203].lines[4].start = 0;
-  figures[203].lines[4].end = 0;
   figures[203].lines[5].start = 0;
   figures[203].lines[5].end = 0;
   figures[203].lines[6].start = 0;
@@ -7384,7 +6815,6 @@ void init_figures() {
   vec4(&figure204[5], -0.9625, 0.1375, 1.1575, 1.0);
   vec4(&figure204[6], -1.3275, -0.2625, 0.7425, 1.0);
   vec4(&figure204[7], -0.9925, -0.1925, 1.1975, 1.0);
-  vec4(&figure204[7], 0, 0, 0, 1.0);
   figures[204].lines[0].start = 2;
   figures[204].lines[0].end = 3;
   figures[204].lines[1].start = 2;
@@ -7399,8 +6829,6 @@ void init_figures() {
   figures[204].lines[5].end = 6;
   figures[204].lines[6].start = 6;
   figures[204].lines[6].end = 7;
-  figures[204].lines[6].start = 0;
-  figures[204].lines[6].end = 0;
   figures[204].lines[7].start = 0;
   figures[204].lines[7].end = 0;
   figures[204].lines[8].start = 0;
@@ -7420,7 +6848,6 @@ void init_figures() {
   vec4(&figure205[5], -0.6375, 0.6025, 1.3875, 1.0);
   vec4(&figure205[6], -0.6225, 0.5225, 1.1125, 1.0);
   vec4(&figure205[7], -0.3625, 0.4825, 1.2175, 1.0);
-  vec4(&figure205[7], 0, 0, 0, 1.0);
   figures[205].lines[0].start = 1;
   figures[205].lines[0].end = 2;
   figures[205].lines[1].start = 4;
@@ -7431,8 +6858,6 @@ void init_figures() {
   figures[205].lines[3].end = 5;
   figures[205].lines[4].start = 6;
   figures[205].lines[4].end = 5;
-  figures[205].lines[4].start = 0;
-  figures[205].lines[4].end = 0;
   figures[205].lines[5].start = 0;
   figures[205].lines[5].end = 0;
   figures[205].lines[6].start = 0;
@@ -7474,8 +6899,6 @@ void init_figures() {
   figures[206].lines[6].end = 4;
   figures[206].lines[7].start = 3;
   figures[206].lines[7].end = 0;
-  figures[206].lines[7].start = 0;
-  figures[206].lines[7].end = 0;
   figures[206].lines[8].start = 0;
   figures[206].lines[8].end = 0;
   figures[206].lines[9].start = 0;
@@ -7506,8 +6929,6 @@ void init_figures() {
   figures[207].lines[4].end = 1;
   figures[207].lines[5].start = 7;
   figures[207].lines[5].end = 8;
-  figures[207].lines[5].start = 0;
-  figures[207].lines[5].end = 0;
   figures[207].lines[6].start = 0;
   figures[207].lines[6].end = 0;
   figures[207].lines[7].start = 0;
@@ -7529,7 +6950,6 @@ void init_figures() {
   vec4(&figure208[5], -1.8225, -1.4825, 0.5575, 1.0);
   vec4(&figure208[6], -1.8725, -1.2925, 0.1325, 1.0);
   vec4(&figure208[7], -0.9325, -2.0975, -1.0975, 1.0);
-  vec4(&figure208[7], 0, 0, 0, 1.0);
   figures[208].lines[0].start = 3;
   figures[208].lines[0].end = 4;
   figures[208].lines[1].start = 2;
@@ -7542,8 +6962,6 @@ void init_figures() {
   figures[208].lines[4].end = 6;
   figures[208].lines[5].start = 0;
   figures[208].lines[5].end = 7;
-  figures[208].lines[5].start = 0;
-  figures[208].lines[5].end = 0;
   figures[208].lines[6].start = 0;
   figures[208].lines[6].end = 0;
   figures[208].lines[7].start = 0;
@@ -7565,7 +6983,6 @@ void init_figures() {
   vec4(&figure209[5], -1.6375, -0.4375, 0.4125, 1.0);
   vec4(&figure209[6], -1.3025, -1.8425, -1.2225, 1.0);
   vec4(&figure209[7], -0.9325, -2.0975, -1.0975, 1.0);
-  vec4(&figure209[7], 0, 0, 0, 1.0);
   figures[209].lines[0].start = 0;
   figures[209].lines[0].end = 6;
   figures[209].lines[1].start = 6;
@@ -7578,8 +6995,6 @@ void init_figures() {
   figures[209].lines[4].end = 3;
   figures[209].lines[5].start = 4;
   figures[209].lines[5].end = 5;
-  figures[209].lines[5].start = 0;
-  figures[209].lines[5].end = 0;
   figures[209].lines[6].start = 0;
   figures[209].lines[6].end = 0;
   figures[209].lines[7].start = 0;
@@ -7601,7 +7016,6 @@ void init_figures() {
   vec4(&figure210[5], -0.0025, -2.8225, 0.4575, 1.0);
   vec4(&figure210[6], -0.3875, -2.6675, 0.3875, 1.0);
   vec4(&figure210[7], -1.3275, -0.2625, 0.7425, 1.0);
-  vec4(&figure210[7], 0, 0, 0, 1.0);
   figures[210].lines[0].start = 7;
   figures[210].lines[0].end = 0;
   figures[210].lines[1].start = 7;
@@ -7614,8 +7028,6 @@ void init_figures() {
   figures[210].lines[4].end = 5;
   figures[210].lines[5].start = 4;
   figures[210].lines[5].end = 2;
-  figures[210].lines[5].start = 0;
-  figures[210].lines[5].end = 0;
   figures[210].lines[6].start = 0;
   figures[210].lines[6].end = 0;
   figures[210].lines[7].start = 0;
@@ -7636,7 +7048,6 @@ void init_figures() {
   vec4(&figure211[4], -2.4125, -0.7225, -0.9725, 1.0);
   vec4(&figure211[5], -1.9425, -1.0325, -1.2475, 1.0);
   vec4(&figure211[6], -1.9375, -0.8225, -1.2425, 1.0);
-  vec4(&figure211[6], 0, 0, 0, 1.0);
   vec4(&figure211[7], 0, 0, 0, 1.0);
   figures[211].lines[0].start = 6;
   figures[211].lines[0].end = 1;
@@ -7647,8 +7058,6 @@ void init_figures() {
   figures[211].lines[3].start = 0;
   figures[211].lines[3].end = 3;
   figures[211].lines[4].start = 4;
-  figures[211].lines[4].end = 0;
-  figures[211].lines[4].start = 0;
   figures[211].lines[4].end = 0;
   figures[211].lines[5].start = 0;
   figures[211].lines[5].end = 0;
@@ -7672,7 +7081,6 @@ void init_figures() {
   vec4(&figure212[4], -2.1075, -1.2825, -0.7075, 1.0);
   vec4(&figure212[5], -1.7425, -1.3475, -0.3575, 1.0);
   vec4(&figure212[6], -1.8775, -1.0725, -0.5275, 1.0);
-  vec4(&figure212[6], 0, 0, 0, 1.0);
   vec4(&figure212[7], 0, 0, 0, 1.0);
   figures[212].lines[0].start = 2;
   figures[212].lines[0].end = 1;
@@ -7686,8 +7094,6 @@ void init_figures() {
   figures[212].lines[4].end = 5;
   figures[212].lines[5].start = 5;
   figures[212].lines[5].end = 6;
-  figures[212].lines[5].start = 0;
-  figures[212].lines[5].end = 0;
   figures[212].lines[6].start = 0;
   figures[212].lines[6].end = 0;
   figures[212].lines[7].start = 0;
@@ -7709,7 +7115,6 @@ void init_figures() {
   vec4(&figure213[5], -1.7275, -1.1275, -0.2425, 1.0);
   vec4(&figure213[6], -1.8475, -1.4175, 0.0775, 1.0);
   vec4(&figure213[7], -1.8725, -1.2925, 0.1325, 1.0);
-  vec4(&figure213[7], 0, 0, 0, 1.0);
   figures[213].lines[0].start = 3;
   figures[213].lines[0].end = 4;
   figures[213].lines[1].start = 1;
@@ -7720,8 +7125,6 @@ void init_figures() {
   figures[213].lines[3].end = 6;
   figures[213].lines[4].start = 7;
   figures[213].lines[4].end = 6;
-  figures[213].lines[4].start = 0;
-  figures[213].lines[4].end = 0;
   figures[213].lines[5].start = 0;
   figures[213].lines[5].end = 0;
   figures[213].lines[6].start = 0;
@@ -7758,8 +7161,6 @@ void init_figures() {
   figures[214].lines[4].end = 2;
   figures[214].lines[5].start = 3;
   figures[214].lines[5].end = 7;
-  figures[214].lines[5].start = 0;
-  figures[214].lines[5].end = 0;
   figures[214].lines[6].start = 0;
   figures[214].lines[6].end = 0;
   figures[214].lines[7].start = 0;
@@ -7780,7 +7181,6 @@ void init_figures() {
   vec4(&figure215[4], 1.8675, -1.2925, 0.1325, 1.0);
   vec4(&figure215[5], 1.8075, -0.2425, 0.0525, 1.0);
   vec4(&figure215[6], 1.6225, -0.4325, 0.4175, 1.0);
-  vec4(&figure215[6], 0, 0, 0, 1.0);
   vec4(&figure215[7], 0, 0, 0, 1.0);
   figures[215].lines[0].start = 0;
   figures[215].lines[0].end = 5;
@@ -7794,8 +7194,6 @@ void init_figures() {
   figures[215].lines[4].end = 3;
   figures[215].lines[5].start = 3;
   figures[215].lines[5].end = 4;
-  figures[215].lines[5].start = 0;
-  figures[215].lines[5].end = 0;
   figures[215].lines[6].start = 0;
   figures[215].lines[6].end = 0;
   figures[215].lines[7].start = 0;
@@ -7817,7 +7215,6 @@ void init_figures() {
   vec4(&figure216[5], 1.7375, -1.3475, -0.3575, 1.0);
   vec4(&figure216[6], 2.1025, -1.2825, -0.7075, 1.0);
   vec4(&figure216[7], 1.8725, -1.0725, -0.5275, 1.0);
-  vec4(&figure216[7], 0, 0, 0, 1.0);
   figures[216].lines[0].start = 0;
   figures[216].lines[0].end = 1;
   figures[216].lines[1].start = 2;
@@ -7830,8 +7227,6 @@ void init_figures() {
   figures[216].lines[4].end = 6;
   figures[216].lines[5].start = 6;
   figures[216].lines[5].end = 7;
-  figures[216].lines[5].start = 0;
-  figures[216].lines[5].end = 0;
   figures[216].lines[6].start = 0;
   figures[216].lines[6].end = 0;
   figures[216].lines[7].start = 0;
@@ -7852,7 +7247,6 @@ void init_figures() {
   vec4(&figure217[4], 2.4125, -1.3125, -1.0575, 1.0);
   vec4(&figure217[5], 2.3425, -1.0625, -0.8825, 1.0);
   vec4(&figure217[6], 2.4075, -0.7225, -0.9675, 1.0);
-  vec4(&figure217[6], 0, 0, 0, 1.0);
   vec4(&figure217[7], 0, 0, 0, 1.0);
   figures[217].lines[0].start = 1;
   figures[217].lines[0].end = 3;
@@ -7865,8 +7259,6 @@ void init_figures() {
   figures[217].lines[4].start = 5;
   figures[217].lines[4].end = 0;
   figures[217].lines[5].start = 6;
-  figures[217].lines[5].end = 0;
-  figures[217].lines[5].start = 0;
   figures[217].lines[5].end = 0;
   figures[217].lines[6].start = 0;
   figures[217].lines[6].end = 0;
@@ -7888,7 +7280,6 @@ void init_figures() {
   vec4(&figure218[4], 2.3425, -1.0625, -0.8825, 1.0);
   vec4(&figure218[5], 2.4075, -0.7225, -0.9675, 1.0);
   vec4(&figure218[6], 2.1725, -1.0675, -1.2575, 1.0);
-  vec4(&figure218[6], 0, 0, 0, 1.0);
   vec4(&figure218[7], 0, 0, 0, 1.0);
   figures[218].lines[0].start = 4;
   figures[218].lines[0].end = 5;
@@ -7898,8 +7289,6 @@ void init_figures() {
   figures[218].lines[2].end = 6;
   figures[218].lines[3].start = 0;
   figures[218].lines[3].end = 3;
-  figures[218].lines[3].start = 0;
-  figures[218].lines[3].end = 0;
   figures[218].lines[4].start = 0;
   figures[218].lines[4].end = 0;
   figures[218].lines[5].start = 0;
@@ -7941,8 +7330,6 @@ void init_figures() {
   figures[219].lines[5].end = 6;
   figures[219].lines[6].start = 3;
   figures[219].lines[6].end = 5;
-  figures[219].lines[6].start = 0;
-  figures[219].lines[6].end = 0;
   figures[219].lines[7].start = 0;
   figures[219].lines[7].end = 0;
   figures[219].lines[8].start = 0;
@@ -7962,7 +7349,6 @@ void init_figures() {
   vec4(&figure220[5], 1.5525, -0.5725, 0.7675, 1.0);
   vec4(&figure220[6], -0.5675, -2.1825, -1.6325, 1.0);
   vec4(&figure220[7], 1.6225, -0.4325, 0.4175, 1.0);
-  vec4(&figure220[7], 0, 0, 0, 1.0);
   figures[220].lines[0].start = 0;
   figures[220].lines[0].end = 1;
   figures[220].lines[1].start = 1;
@@ -7977,8 +7363,6 @@ void init_figures() {
   figures[220].lines[5].end = 4;
   figures[220].lines[6].start = 7;
   figures[220].lines[6].end = 5;
-  figures[220].lines[6].start = 0;
-  figures[220].lines[6].end = 0;
   figures[220].lines[7].start = 0;
   figures[220].lines[7].end = 0;
   figures[220].lines[8].start = 0;
@@ -7998,7 +7382,6 @@ void init_figures() {
   vec4(&figure221[5], 1.3225, -0.2625, 0.7425, 1.0);
   vec4(&figure221[6], 1.2975, -1.8425, -1.2225, 1.0);
   vec4(&figure221[7], 2.3425, -1.0625, -0.8825, 1.0);
-  vec4(&figure221[7], 0, 0, 0, 1.0);
   figures[221].lines[0].start = 5;
   figures[221].lines[0].end = 0;
   figures[221].lines[1].start = 1;
@@ -8011,8 +7394,6 @@ void init_figures() {
   figures[221].lines[4].end = 4;
   figures[221].lines[5].start = 4;
   figures[221].lines[5].end = 6;
-  figures[221].lines[5].start = 0;
-  figures[221].lines[5].end = 0;
   figures[221].lines[6].start = 0;
   figures[221].lines[6].end = 0;
   figures[221].lines[7].start = 0;
@@ -8034,7 +7415,6 @@ void init_figures() {
   vec4(&figure222[5], 1.8675, -1.2925, 0.1325, 1.0);
   vec4(&figure222[6], 1.2975, -1.8425, -1.2225, 1.0);
   vec4(&figure222[7], 1.9225, -1.0475, 0.2325, 1.0);
-  vec4(&figure222[7], 0, 0, 0, 1.0);
   figures[222].lines[0].start = 1;
   figures[222].lines[0].end = 6;
   figures[222].lines[1].start = 2;
@@ -8047,8 +7427,6 @@ void init_figures() {
   figures[222].lines[4].end = 7;
   figures[222].lines[5].start = 5;
   figures[222].lines[5].end = 4;
-  figures[222].lines[5].start = 0;
-  figures[222].lines[5].end = 0;
   figures[222].lines[6].start = 0;
   figures[222].lines[6].end = 0;
   figures[222].lines[7].start = 0;
@@ -8070,7 +7448,6 @@ void init_figures() {
   vec4(&figure223[5], 0.2725, -0.3125, 1.2925, 1.0);
   vec4(&figure223[6], 1.8675, -1.2925, 0.1325, 1.0);
   vec4(&figure223[7], 1.9225, -1.0475, 0.2325, 1.0);
-  vec4(&figure223[7], 0, 0, 0, 1.0);
   figures[223].lines[0].start = 6;
   figures[223].lines[0].end = 7;
   figures[223].lines[1].start = 1;
@@ -8081,8 +7458,6 @@ void init_figures() {
   figures[223].lines[3].end = 2;
   figures[223].lines[4].start = 5;
   figures[223].lines[4].end = 4;
-  figures[223].lines[4].start = 0;
-  figures[223].lines[4].end = 0;
   figures[223].lines[5].start = 0;
   figures[223].lines[5].end = 0;
   figures[223].lines[6].start = 0;
@@ -8124,8 +7499,6 @@ void init_figures() {
   figures[224].lines[6].end = 8;
   figures[224].lines[7].start = 4;
   figures[224].lines[7].end = 9;
-  figures[224].lines[7].start = 0;
-  figures[224].lines[7].end = 0;
   figures[224].lines[8].start = 0;
   figures[224].lines[8].end = 0;
   figures[224].lines[9].start = 0;
@@ -8142,7 +7515,6 @@ void init_figures() {
   vec4(&figure225[4], 0.6325, 0.6025, 1.3875, 1.0);
   vec4(&figure225[5], 0.9025, 0.1625, 1.0025, 1.0);
   vec4(&figure225[6], 0.8025, 0.4075, 1.0525, 1.0);
-  vec4(&figure225[6], 0, 0, 0, 1.0);
   vec4(&figure225[7], 0, 0, 0, 1.0);
   figures[225].lines[0].start = 2;
   figures[225].lines[0].end = 5;
@@ -8152,8 +7524,6 @@ void init_figures() {
   figures[225].lines[2].end = 6;
   figures[225].lines[3].start = 1;
   figures[225].lines[3].end = 4;
-  figures[225].lines[3].start = 0;
-  figures[225].lines[3].end = 0;
   figures[225].lines[4].start = 0;
   figures[225].lines[4].end = 0;
   figures[225].lines[5].start = 0;
@@ -8179,7 +7549,6 @@ void init_figures() {
   vec4(&figure226[5], 0.9575, 0.1625, 1.1575, 1.0);
   vec4(&figure226[6], 0.6325, 0.6025, 1.3875, 1.0);
   vec4(&figure226[7], 0.2225, 0.1525, 1.5475, 1.0);
-  vec4(&figure226[7], 0, 0, 0, 1.0);
   figures[226].lines[0].start = 0;
   figures[226].lines[0].end = 6;
   figures[226].lines[1].start = 2;
@@ -8190,8 +7559,6 @@ void init_figures() {
   figures[226].lines[3].end = 5;
   figures[226].lines[4].start = 4;
   figures[226].lines[4].end = 5;
-  figures[226].lines[4].start = 0;
-  figures[226].lines[4].end = 0;
   figures[226].lines[5].start = 0;
   figures[226].lines[5].end = 0;
   figures[226].lines[6].start = 0;
@@ -8215,7 +7582,6 @@ void init_figures() {
   vec4(&figure227[5], 0.6525, -2.3875, 0.6575, 1.0);
   vec4(&figure227[6], 0.3675, -2.5625, 0.7275, 1.0);
   vec4(&figure227[7], 0.3075, -2.5725, 1.0475, 1.0);
-  vec4(&figure227[7], 0, 0, 0, 1.0);
   figures[227].lines[0].start = 3;
   figures[227].lines[0].end = 4;
   figures[227].lines[1].start = 5;
@@ -8230,8 +7596,6 @@ void init_figures() {
   figures[227].lines[5].end = 1;
   figures[227].lines[6].start = 7;
   figures[227].lines[6].end = 1;
-  figures[227].lines[6].start = 0;
-  figures[227].lines[6].end = 0;
   figures[227].lines[7].start = 0;
   figures[227].lines[7].end = 0;
   figures[227].lines[8].start = 0;
@@ -8250,7 +7614,6 @@ void init_figures() {
   vec4(&figure228[4], 0.5975, -2.4225, 1.0125, 1.0);
   vec4(&figure228[5], 0.4625, -2.3625, 1.1675, 1.0);
   vec4(&figure228[6], 0.2025, -2.4825, 1.1875, 1.0);
-  vec4(&figure228[6], 0, 0, 0, 1.0);
   vec4(&figure228[7], 0, 0, 0, 1.0);
   figures[228].lines[0].start = 2;
   figures[228].lines[0].end = 0;
@@ -8264,8 +7627,6 @@ void init_figures() {
   figures[228].lines[4].end = 5;
   figures[228].lines[5].start = 5;
   figures[228].lines[5].end = 6;
-  figures[228].lines[5].start = 0;
-  figures[228].lines[5].end = 0;
   figures[228].lines[6].start = 0;
   figures[228].lines[6].end = 0;
   figures[228].lines[7].start = 0;
@@ -8286,7 +7647,6 @@ void init_figures() {
   vec4(&figure229[4], 0.3075, -2.5725, 1.0475, 1.0);
   vec4(&figure229[5], 0.5975, -2.4225, 1.0125, 1.0);
   vec4(&figure229[6], -0.0025, -2.3825, 1.1425, 1.0);
-  vec4(&figure229[6], 0, 0, 0, 1.0);
   vec4(&figure229[7], 0, 0, 0, 1.0);
   figures[229].lines[0].start = 4;
   figures[229].lines[0].end = 0;
@@ -8298,8 +7658,6 @@ void init_figures() {
   figures[229].lines[3].end = 0;
   figures[229].lines[4].start = 3;
   figures[229].lines[4].end = 5;
-  figures[229].lines[4].start = 0;
-  figures[229].lines[4].end = 0;
   figures[229].lines[5].start = 0;
   figures[229].lines[5].end = 0;
   figures[229].lines[6].start = 0;
@@ -8323,7 +7681,6 @@ void init_figures() {
   vec4(&figure230[5], 0.5975, -2.4225, 1.0125, 1.0);
   vec4(&figure230[6], 0.4625, -2.3625, 1.1675, 1.0);
   vec4(&figure230[7], 0.3275, -2.3325, 1.1275, 1.0);
-  vec4(&figure230[7], 0, 0, 0, 1.0);
   figures[230].lines[0].start = 4;
   figures[230].lines[0].end = 5;
   figures[230].lines[1].start = 3;
@@ -8334,8 +7691,6 @@ void init_figures() {
   figures[230].lines[3].end = 7;
   figures[230].lines[4].start = 2;
   figures[230].lines[4].end = 1;
-  figures[230].lines[4].start = 0;
-  figures[230].lines[4].end = 0;
   figures[230].lines[5].start = 0;
   figures[230].lines[5].end = 0;
   figures[230].lines[6].start = 0;
@@ -8358,7 +7713,6 @@ void init_figures() {
   vec4(&figure231[4], 0.4475, -2.7725, -0.6925, 1.0);
   vec4(&figure231[5], 2.1875, -0.7625, -1.3675, 1.0);
   vec4(&figure231[6], 2.1125, -0.5175, -1.2225, 1.0);
-  vec4(&figure231[6], 0, 0, 0, 1.0);
   vec4(&figure231[7], 0, 0, 0, 1.0);
   figures[231].lines[0].start = 5;
   figures[231].lines[0].end = 6;
@@ -8372,8 +7726,6 @@ void init_figures() {
   figures[231].lines[4].end = 3;
   figures[231].lines[5].start = 4;
   figures[231].lines[5].end = 3;
-  figures[231].lines[5].start = 0;
-  figures[231].lines[5].end = 0;
   figures[231].lines[6].start = 0;
   figures[231].lines[6].end = 0;
   figures[231].lines[7].start = 0;
@@ -8406,8 +7758,6 @@ void init_figures() {
   figures[232].lines[3].end = 5;
   figures[232].lines[4].start = 2;
   figures[232].lines[4].end = 3;
-  figures[232].lines[4].start = 0;
-  figures[232].lines[4].end = 0;
   figures[232].lines[5].start = 0;
   figures[232].lines[5].end = 0;
   figures[232].lines[6].start = 0;
@@ -8431,7 +7781,6 @@ void init_figures() {
   vec4(&figure233[5], -0.6625, -2.1725, 1.2225, 1.0);
   vec4(&figure233[6], -0.6825, -1.9125, 1.3825, 1.0);
   vec4(&figure233[7], -0.5725, -2.0975, 1.1375, 1.0);
-  vec4(&figure233[7], 0, 0, 0, 1.0);
   figures[233].lines[0].start = 1;
   figures[233].lines[0].end = 2;
   figures[233].lines[1].start = 0;
@@ -8444,8 +7793,6 @@ void init_figures() {
   figures[233].lines[4].end = 5;
   figures[233].lines[5].start = 7;
   figures[233].lines[5].end = 6;
-  figures[233].lines[5].start = 0;
-  figures[233].lines[5].end = 0;
   figures[233].lines[6].start = 0;
   figures[233].lines[6].end = 0;
   figures[233].lines[7].start = 0;
@@ -8467,7 +7814,6 @@ void init_figures() {
   vec4(&figure234[5], -0.9425, -1.9375, 1.2675, 1.0);
   vec4(&figure234[6], 0.2625, 0.5625, 1.4575, 1.0);
   vec4(&figure234[7], -0.6175, -1.7275, 1.3625, 1.0);
-  vec4(&figure234[7], 0, 0, 0, 1.0);
   figures[234].lines[0].start = 3;
   figures[234].lines[0].end = 4;
   figures[234].lines[1].start = 5;
@@ -8479,8 +7825,6 @@ void init_figures() {
   figures[234].lines[4].start = 1;
   figures[234].lines[4].end = 2;
   figures[234].lines[5].start = 6;
-  figures[234].lines[5].end = 0;
-  figures[234].lines[5].start = 0;
   figures[234].lines[5].end = 0;
   figures[234].lines[6].start = 0;
   figures[234].lines[6].end = 0;
@@ -8502,7 +7846,6 @@ void init_figures() {
   vec4(&figure235[4], -0.0025, -0.3325, 1.6025, 1.0);
   vec4(&figure235[5], 0.2225, 0.1525, 1.5475, 1.0);
   vec4(&figure235[6], -0.2025, -0.3375, 1.5475, 1.0);
-  vec4(&figure235[6], 0, 0, 0, 1.0);
   vec4(&figure235[7], 0, 0, 0, 1.0);
   figures[235].lines[0].start = 0;
   figures[235].lines[0].end = 2;
@@ -8520,8 +7863,6 @@ void init_figures() {
   figures[235].lines[6].end = 5;
   figures[235].lines[7].start = 6;
   figures[235].lines[7].end = 3;
-  figures[235].lines[7].start = 0;
-  figures[235].lines[7].end = 0;
   figures[235].lines[8].start = 0;
   figures[235].lines[8].end = 0;
   figures[235].lines[9].start = 0;
@@ -8555,8 +7896,6 @@ void init_figures() {
   figures[236].lines[5].end = 7;
   figures[236].lines[6].start = 4;
   figures[236].lines[6].end = 5;
-  figures[236].lines[6].start = 0;
-  figures[236].lines[6].end = 0;
   figures[236].lines[7].start = 0;
   figures[236].lines[7].end = 0;
   figures[236].lines[8].start = 0;
@@ -8591,8 +7930,6 @@ void init_figures() {
   figures[237].lines[5].end = 5;
   figures[237].lines[6].start = 6;
   figures[237].lines[6].end = 7;
-  figures[237].lines[6].start = 0;
-  figures[237].lines[6].end = 0;
   figures[237].lines[7].start = 0;
   figures[237].lines[7].end = 0;
   figures[237].lines[8].start = 0;
@@ -8612,7 +7949,6 @@ void init_figures() {
   vec4(&figure238[5], -0.7275, -0.5075, 2.5975, 1.0);
   vec4(&figure238[6], -0.4525, -0.3275, 2.5975, 1.0);
   vec4(&figure238[7], -0.2025, -0.3375, 1.5475, 1.0);
-  vec4(&figure238[7], 0, 0, 0, 1.0);
   figures[238].lines[0].start = 7;
   figures[238].lines[0].end = 4;
   figures[238].lines[1].start = 7;
@@ -8623,8 +7959,6 @@ void init_figures() {
   figures[238].lines[3].end = 0;
   figures[238].lines[4].start = 5;
   figures[238].lines[4].end = 6;
-  figures[238].lines[4].start = 0;
-  figures[238].lines[4].end = 0;
   figures[238].lines[5].start = 0;
   figures[238].lines[5].end = 0;
   figures[238].lines[6].start = 0;
@@ -8648,7 +7982,6 @@ void init_figures() {
   vec4(&figure239[5], 0.4375, -0.3275, 2.5975, 1.0);
   vec4(&figure239[6], -0.5325, -1.4775, 2.6025, 1.0);
   vec4(&figure239[7], -0.3375, -1.5275, 2.6025, 1.0);
-  vec4(&figure239[7], 0, 0, 0, 1.0);
   figures[239].lines[0].start = 1;
   figures[239].lines[0].end = 3;
   figures[239].lines[1].start = 1;
@@ -8661,8 +7994,6 @@ void init_figures() {
   figures[239].lines[4].end = 4;
   figures[239].lines[5].start = 6;
   figures[239].lines[5].end = 7;
-  figures[239].lines[5].start = 0;
-  figures[239].lines[5].end = 0;
   figures[239].lines[6].start = 0;
   figures[239].lines[6].end = 0;
   figures[239].lines[7].start = 0;
@@ -8684,7 +8015,6 @@ void init_figures() {
   vec4(&figure240[5], 0.3225, -1.2925, 2.9475, 1.0);
   vec4(&figure240[6], 0.8375, -0.9525, 2.6025, 1.0);
   vec4(&figure240[7], 0.8075, -0.7225, 2.5975, 1.0);
-  vec4(&figure240[7], 0, 0, 0, 1.0);
   figures[240].lines[0].start = 1;
   figures[240].lines[0].end = 2;
   figures[240].lines[1].start = 0;
@@ -8697,8 +8027,6 @@ void init_figures() {
   figures[240].lines[4].end = 5;
   figures[240].lines[5].start = 6;
   figures[240].lines[5].end = 7;
-  figures[240].lines[5].start = 0;
-  figures[240].lines[5].end = 0;
   figures[240].lines[6].start = 0;
   figures[240].lines[6].end = 0;
   figures[240].lines[7].start = 0;
@@ -8719,7 +8047,6 @@ void init_figures() {
   vec4(&figure241[4], 0.7775, -1.2175, 2.6025, 1.0);
   vec4(&figure241[5], 0.8375, -0.9525, 2.6025, 1.0);
   vec4(&figure241[6], 0.8075, -0.7225, 2.5975, 1.0);
-  vec4(&figure241[6], 0, 0, 0, 1.0);
   vec4(&figure241[7], 0, 0, 0, 1.0);
   figures[241].lines[0].start = 0;
   figures[241].lines[0].end = 6;
@@ -8735,8 +8062,6 @@ void init_figures() {
   figures[241].lines[5].end = 3;
   figures[241].lines[6].start = 2;
   figures[241].lines[6].end = 4;
-  figures[241].lines[6].start = 0;
-  figures[241].lines[6].end = 0;
   figures[241].lines[7].start = 0;
   figures[241].lines[7].end = 0;
   figures[241].lines[8].start = 0;
@@ -8755,7 +8080,6 @@ void init_figures() {
   vec4(&figure242[4], -0.5975, -1.3075, 1.9125, 1.0);
   vec4(&figure242[5], -0.5325, -1.4775, 2.6025, 1.0);
   vec4(&figure242[6], 0.8375, -0.9525, 2.6025, 1.0);
-  vec4(&figure242[6], 0, 0, 0, 1.0);
   vec4(&figure242[7], 0, 0, 0, 1.0);
   figures[242].lines[0].start = 1;
   figures[242].lines[0].end = 2;
@@ -8767,8 +8091,6 @@ void init_figures() {
   figures[242].lines[3].end = 3;
   figures[242].lines[4].start = 3;
   figures[242].lines[4].end = 4;
-  figures[242].lines[4].start = 0;
-  figures[242].lines[4].end = 0;
   figures[242].lines[5].start = 0;
   figures[242].lines[5].end = 0;
   figures[242].lines[6].start = 0;
@@ -8792,7 +8114,6 @@ void init_figures() {
   vec4(&figure243[5], 0.3275, -0.5625, 2.9425, 1.0);
   vec4(&figure243[6], -0.0025, -0.2675, 2.5975, 1.0);
   vec4(&figure243[7], -0.5325, -1.4775, 2.6025, 1.0);
-  vec4(&figure243[7], 0, 0, 0, 1.0);
   figures[243].lines[0].start = 7;
   figures[243].lines[0].end = 1;
   figures[243].lines[1].start = 3;
@@ -8807,8 +8128,6 @@ void init_figures() {
   figures[243].lines[5].end = 2;
   figures[243].lines[6].start = 5;
   figures[243].lines[6].end = 6;
-  figures[243].lines[6].start = 0;
-  figures[243].lines[6].end = 0;
   figures[243].lines[7].start = 0;
   figures[243].lines[7].end = 0;
   figures[243].lines[8].start = 0;
@@ -8828,7 +8147,6 @@ void init_figures() {
   vec4(&figure244[5], -0.4525, -0.3275, 2.5975, 1.0);
   vec4(&figure244[6], -0.0025, -0.2675, 2.5975, 1.0);
   vec4(&figure244[7], 0.4375, -0.3275, 2.5975, 1.0);
-  vec4(&figure244[7], 0, 0, 0, 1.0);
   figures[244].lines[0].start = 0;
   figures[244].lines[0].end = 7;
   figures[244].lines[1].start = 5;
@@ -8843,8 +8161,6 @@ void init_figures() {
   figures[244].lines[5].end = 5;
   figures[244].lines[6].start = 3;
   figures[244].lines[6].end = 2;
-  figures[244].lines[6].start = 0;
-  figures[244].lines[6].end = 0;
   figures[244].lines[7].start = 0;
   figures[244].lines[7].end = 0;
   figures[244].lines[8].start = 0;
@@ -8880,8 +8196,6 @@ void init_figures() {
   figures[245].lines[5].end = 9;
   figures[245].lines[6].start = 7;
   figures[245].lines[6].end = 0;
-  figures[245].lines[6].start = 0;
-  figures[245].lines[6].end = 0;
   figures[245].lines[7].start = 0;
   figures[245].lines[7].end = 0;
   figures[245].lines[8].start = 0;
@@ -8915,8 +8229,6 @@ void init_figures() {
   figures[246].lines[4].end = 5;
   figures[246].lines[5].start = 4;
   figures[246].lines[5].end = 1;
-  figures[246].lines[5].start = 0;
-  figures[246].lines[5].end = 0;
   figures[246].lines[6].start = 0;
   figures[246].lines[6].end = 0;
   figures[246].lines[7].start = 0;
@@ -8938,7 +8250,6 @@ void init_figures() {
   vec4(&figure247[5], 0.8325, -2.2325, 0.6325, 1.0);
   vec4(&figure247[6], -0.7275, -0.5075, 2.5975, 1.0);
   vec4(&figure247[7], 0.7575, -2.2875, 1.0725, 1.0);
-  vec4(&figure247[7], 0, 0, 0, 1.0);
   figures[247].lines[0].start = 1;
   figures[247].lines[0].end = 4;
   figures[247].lines[1].start = 2;
@@ -8957,8 +8268,6 @@ void init_figures() {
   figures[247].lines[7].end = 5;
   figures[247].lines[8].start = 7;
   figures[247].lines[8].end = 0;
-  figures[247].lines[8].start = 0;
-  figures[247].lines[8].end = 0;
   figures[247].lines[9].start = 0;
   figures[247].lines[9].end = 0;
   figures[247].lines[10].start = 0;
@@ -8973,7 +8282,6 @@ void init_figures() {
   vec4(&figure248[4], 1.1625, 0.7625, 0.8425, 1.0);
   vec4(&figure248[5], 0.6525, -2.3875, 0.6575, 1.0);
   vec4(&figure248[6], 0.7575, -2.2875, 1.0725, 1.0);
-  vec4(&figure248[6], 0, 0, 0, 1.0);
   vec4(&figure248[7], 0, 0, 0, 1.0);
   figures[248].lines[0].start = 6;
   figures[248].lines[0].end = 1;
@@ -8987,8 +8295,6 @@ void init_figures() {
   figures[248].lines[4].end = 1;
   figures[248].lines[5].start = 5;
   figures[248].lines[5].end = 1;
-  figures[248].lines[5].start = 0;
-  figures[248].lines[5].end = 0;
   figures[248].lines[6].start = 0;
   figures[248].lines[6].end = 0;
   figures[248].lines[7].start = 0;
@@ -9010,7 +8316,6 @@ void init_figures() {
   vec4(&figure249[5], -0.0025, -1.5875, 2.0625, 1.0);
   vec4(&figure249[6], 0.6225, -1.3425, 1.7725, 1.0);
   vec4(&figure249[7], 0.6525, -2.3875, 0.6575, 1.0);
-  vec4(&figure249[7], 0, 0, 0, 1.0);
   figures[249].lines[0].start = 7;
   figures[249].lines[0].end = 0;
   figures[249].lines[1].start = 3;
@@ -9023,8 +8328,6 @@ void init_figures() {
   figures[249].lines[4].end = 6;
   figures[249].lines[5].start = 1;
   figures[249].lines[5].end = 6;
-  figures[249].lines[5].start = 0;
-  figures[249].lines[5].end = 0;
   figures[249].lines[6].start = 0;
   figures[249].lines[6].end = 0;
   figures[249].lines[7].start = 0;
@@ -9059,8 +8362,6 @@ void init_figures() {
   figures[250].lines[4].end = 3;
   figures[250].lines[5].start = 7;
   figures[250].lines[5].end = 8;
-  figures[250].lines[5].start = 0;
-  figures[250].lines[5].end = 0;
   figures[250].lines[6].start = 0;
   figures[250].lines[6].end = 0;
   figures[250].lines[7].start = 0;
@@ -9097,8 +8398,6 @@ void init_figures() {
   figures[251].lines[5].end = 4;
   figures[251].lines[6].start = 7;
   figures[251].lines[6].end = 2;
-  figures[251].lines[6].start = 0;
-  figures[251].lines[6].end = 0;
   figures[251].lines[7].start = 0;
   figures[251].lines[7].end = 0;
   figures[251].lines[8].start = 0;
@@ -9131,8 +8430,6 @@ void init_figures() {
   figures[252].lines[4].end = 2;
   figures[252].lines[5].start = 0;
   figures[252].lines[5].end = 1;
-  figures[252].lines[5].start = 0;
-  figures[252].lines[5].end = 0;
   figures[252].lines[6].start = 0;
   figures[252].lines[6].end = 0;
   figures[252].lines[7].start = 0;
@@ -9154,7 +8451,6 @@ void init_figures() {
   vec4(&figure253[5], 0.5275, -1.4775, 2.6025, 1.0);
   vec4(&figure253[6], 0.3275, -1.5275, 2.6025, 1.0);
   vec4(&figure253[7], 0.2325, -1.8175, 1.7425, 1.0);
-  vec4(&figure253[7], 0, 0, 0, 1.0);
   figures[253].lines[0].start = 0;
   figures[253].lines[0].end = 1;
   figures[253].lines[1].start = 6;
@@ -9165,8 +8461,6 @@ void init_figures() {
   figures[253].lines[3].end = 5;
   figures[253].lines[4].start = 3;
   figures[253].lines[4].end = 7;
-  figures[253].lines[4].start = 0;
-  figures[253].lines[4].end = 0;
   figures[253].lines[5].start = 0;
   figures[253].lines[5].end = 0;
   figures[253].lines[6].start = 0;
@@ -9190,7 +8484,6 @@ void init_figures() {
   vec4(&figure254[5], 1.3225, -0.2625, 0.7425, 1.0);
   vec4(&figure254[6], 0.6325, 0.6025, 1.3875, 1.0);
   vec4(&figure254[7], 1.2025, -0.4775, 1.2075, 1.0);
-  vec4(&figure254[7], 0, 0, 0, 1.0);
   figures[254].lines[0].start = 0;
   figures[254].lines[0].end = 4;
   figures[254].lines[1].start = 7;
@@ -9201,8 +8494,6 @@ void init_figures() {
   figures[254].lines[3].end = 2;
   figures[254].lines[4].start = 3;
   figures[254].lines[4].end = 6;
-  figures[254].lines[4].start = 0;
-  figures[254].lines[4].end = 0;
   figures[254].lines[5].start = 0;
   figures[254].lines[5].end = 0;
   figures[254].lines[6].start = 0;
@@ -9239,8 +8530,6 @@ void init_figures() {
   figures[255].lines[4].end = 0;
   figures[255].lines[5].start = 8;
   figures[255].lines[5].end = 3;
-  figures[255].lines[5].start = 0;
-  figures[255].lines[5].end = 0;
   figures[255].lines[6].start = 0;
   figures[255].lines[6].end = 0;
   figures[255].lines[7].start = 0;
@@ -9262,7 +8551,6 @@ void init_figures() {
   vec4(&figure256[5], 2.4725, -0.7075, -1.3325, 1.0);
   vec4(&figure256[6], 2.3225, -0.3375, -1.1125, 1.0);
   vec4(&figure256[7], 2.1125, -0.5175, -1.2225, 1.0);
-  vec4(&figure256[7], 0, 0, 0, 1.0);
   figures[256].lines[0].start = 6;
   figures[256].lines[0].end = 7;
   figures[256].lines[1].start = 6;
@@ -9272,8 +8560,6 @@ void init_figures() {
   figures[256].lines[3].start = 4;
   figures[256].lines[3].end = 2;
   figures[256].lines[4].start = 3;
-  figures[256].lines[4].end = 0;
-  figures[256].lines[4].start = 0;
   figures[256].lines[4].end = 0;
   figures[256].lines[5].start = 0;
   figures[256].lines[5].end = 0;
@@ -9316,8 +8602,6 @@ void init_figures() {
   figures[257].lines[6].end = 8;
   figures[257].lines[7].start = 1;
   figures[257].lines[7].end = 9;
-  figures[257].lines[7].start = 0;
-  figures[257].lines[7].end = 0;
   figures[257].lines[8].start = 0;
   figures[257].lines[8].end = 0;
   figures[257].lines[9].start = 0;
@@ -9335,7 +8619,6 @@ void init_figures() {
   vec4(&figure258[5], 2.3175, -0.4875, -0.7675, 1.0);
   vec4(&figure258[6], -0.0025, -1.5225, 1.8725, 1.0);
   vec4(&figure258[7], 1.9175, -0.8825, -0.8125, 1.0);
-  vec4(&figure258[7], 0, 0, 0, 1.0);
   figures[258].lines[0].start = 2;
   figures[258].lines[0].end = 6;
   figures[258].lines[1].start = 3;
@@ -9350,8 +8633,6 @@ void init_figures() {
   figures[258].lines[5].end = 5;
   figures[258].lines[6].start = 5;
   figures[258].lines[6].end = 7;
-  figures[258].lines[6].start = 0;
-  figures[258].lines[6].end = 0;
   figures[258].lines[7].start = 0;
   figures[258].lines[7].end = 0;
   figures[258].lines[8].start = 0;
@@ -9387,8 +8668,6 @@ void init_figures() {
   figures[259].lines[5].end = 9;
   figures[259].lines[6].start = 0;
   figures[259].lines[6].end = 5;
-  figures[259].lines[6].start = 0;
-  figures[259].lines[6].end = 0;
   figures[259].lines[7].start = 0;
   figures[259].lines[7].end = 0;
   figures[259].lines[8].start = 0;
@@ -9423,8 +8702,6 @@ void init_figures() {
   figures[260].lines[5].end = 4;
   figures[260].lines[6].start = 7;
   figures[260].lines[6].end = 8;
-  figures[260].lines[6].start = 0;
-  figures[260].lines[6].end = 0;
   figures[260].lines[7].start = 0;
   figures[260].lines[7].end = 0;
   figures[260].lines[8].start = 0;
@@ -9443,7 +8720,6 @@ void init_figures() {
   vec4(&figure261[4], 0.9275, -2.0975, -1.0975, 1.0);
   vec4(&figure261[5], -0.0025, -1.5225, 1.8725, 1.0);
   vec4(&figure261[6], 0.2325, -1.8175, 1.7425, 1.0);
-  vec4(&figure261[6], 0, 0, 0, 1.0);
   vec4(&figure261[7], 0, 0, 0, 1.0);
   figures[261].lines[0].start = 5;
   figures[261].lines[0].end = 6;
@@ -9455,8 +8731,6 @@ void init_figures() {
   figures[261].lines[3].end = 4;
   figures[261].lines[4].start = 0;
   figures[261].lines[4].end = 3;
-  figures[261].lines[4].start = 0;
-  figures[261].lines[4].end = 0;
   figures[261].lines[5].start = 0;
   figures[261].lines[5].end = 0;
   figures[261].lines[6].start = 0;
@@ -9480,7 +8754,6 @@ void init_figures() {
   vec4(&figure262[5], 0.6775, -1.8725, 1.4475, 1.0);
   vec4(&figure262[6], 0.6775, -1.7775, 1.6275, 1.0);
   vec4(&figure262[7], 1.2575, -1.6325, 1.3975, 1.0);
-  vec4(&figure262[7], 0, 0, 0, 1.0);
   figures[262].lines[0].start = 1;
   figures[262].lines[0].end = 4;
   figures[262].lines[1].start = 2;
@@ -9493,8 +8766,6 @@ void init_figures() {
   figures[262].lines[4].end = 7;
   figures[262].lines[5].start = 5;
   figures[262].lines[5].end = 3;
-  figures[262].lines[5].start = 0;
-  figures[262].lines[5].end = 0;
   figures[262].lines[6].start = 0;
   figures[262].lines[6].end = 0;
   figures[262].lines[7].start = 0;
@@ -9516,7 +8787,6 @@ void init_figures() {
   vec4(&figure263[5], 0.7575, -2.2875, 1.0725, 1.0);
   vec4(&figure263[6], 0.2025, -2.4825, 1.1875, 1.0);
   vec4(&figure263[7], 0.3275, -2.3325, 1.1275, 1.0);
-  vec4(&figure263[7], 0, 0, 0, 1.0);
   figures[263].lines[0].start = 1;
   figures[263].lines[0].end = 4;
   figures[263].lines[1].start = 3;
@@ -9525,8 +8795,6 @@ void init_figures() {
   figures[263].lines[2].end = 7;
   figures[263].lines[3].start = 0;
   figures[263].lines[3].end = 5;
-  figures[263].lines[3].start = 0;
-  figures[263].lines[3].end = 0;
   figures[263].lines[4].start = 0;
   figures[263].lines[4].end = 0;
   figures[263].lines[5].start = 0;
@@ -9552,7 +8820,6 @@ void init_figures() {
   vec4(&figure264[5], 1.2575, -1.6325, 1.3975, 1.0);
   vec4(&figure264[6], 0.7575, -2.2875, 1.0725, 1.0);
   vec4(&figure264[7], 1.5125, -1.8325, 0.9075, 1.0);
-  vec4(&figure264[7], 0, 0, 0, 1.0);
   figures[264].lines[0].start = 2;
   figures[264].lines[0].end = 3;
   figures[264].lines[1].start = 6;
@@ -9563,8 +8830,6 @@ void init_figures() {
   figures[264].lines[3].end = 7;
   figures[264].lines[4].start = 5;
   figures[264].lines[4].end = 7;
-  figures[264].lines[4].start = 0;
-  figures[264].lines[4].end = 0;
   figures[264].lines[5].start = 0;
   figures[264].lines[5].end = 0;
   figures[264].lines[6].start = 0;
@@ -9602,8 +8867,6 @@ void init_figures() {
   figures[265].lines[4].end = 8;
   figures[265].lines[5].start = 1;
   figures[265].lines[5].end = 7;
-  figures[265].lines[5].start = 0;
-  figures[265].lines[5].end = 0;
   figures[265].lines[6].start = 0;
   figures[265].lines[6].end = 0;
   figures[265].lines[7].start = 0;
@@ -9641,8 +8904,6 @@ void init_figures() {
   figures[266].lines[5].end = 7;
   figures[266].lines[6].start = 3;
   figures[266].lines[6].end = 9;
-  figures[266].lines[6].start = 0;
-  figures[266].lines[6].end = 0;
   figures[266].lines[7].start = 0;
   figures[266].lines[7].end = 0;
   figures[266].lines[8].start = 0;
@@ -9662,7 +8923,6 @@ void init_figures() {
   vec4(&figure267[5], 2.3175, -0.4875, -0.7675, 1.0);
   vec4(&figure267[6], 2.3225, -0.3375, -1.1125, 1.0);
   vec4(&figure267[7], 2.4075, -0.7225, -0.9675, 1.0);
-  vec4(&figure267[7], 0, 0, 0, 1.0);
   figures[267].lines[0].start = 5;
   figures[267].lines[0].end = 7;
   figures[267].lines[1].start = 6;
@@ -9672,8 +8932,6 @@ void init_figures() {
   figures[267].lines[3].start = 0;
   figures[267].lines[3].end = 1;
   figures[267].lines[4].start = 4;
-  figures[267].lines[4].end = 0;
-  figures[267].lines[4].start = 0;
   figures[267].lines[4].end = 0;
   figures[267].lines[5].start = 0;
   figures[267].lines[5].end = 0;
@@ -9709,8 +8967,6 @@ void init_figures() {
   figures[268].lines[3].end = 7;
   figures[268].lines[4].start = 0;
   figures[268].lines[4].end = 1;
-  figures[268].lines[4].start = 0;
-  figures[268].lines[4].end = 0;
   figures[268].lines[5].start = 0;
   figures[268].lines[5].end = 0;
   figures[268].lines[6].start = 0;
@@ -9734,7 +8990,6 @@ void init_figures() {
   vec4(&figure269[5], 0.7125, -0.5125, 1.4325, 1.0);
   vec4(&figure269[6], 1.4625, -0.8275, 1.2425, 1.0);
   vec4(&figure269[7], 1.2575, -1.6325, 1.3975, 1.0);
-  vec4(&figure269[7], 0, 0, 0, 1.0);
   figures[269].lines[0].start = 1;
   figures[269].lines[0].end = 0;
   figures[269].lines[1].start = 3;
@@ -9747,8 +9002,6 @@ void init_figures() {
   figures[269].lines[4].end = 6;
   figures[269].lines[5].start = 4;
   figures[269].lines[5].end = 5;
-  figures[269].lines[5].start = 0;
-  figures[269].lines[5].end = 0;
   figures[269].lines[6].start = 0;
   figures[269].lines[6].end = 0;
   figures[269].lines[7].start = 0;
@@ -9770,7 +9023,6 @@ void init_figures() {
   vec4(&figure270[5], 1.2025, -0.4775, 1.2075, 1.0);
   vec4(&figure270[6], 1.8725, -1.0725, -0.5275, 1.0);
   vec4(&figure270[7], 1.7075, -1.5375, -0.6425, 1.0);
-  vec4(&figure270[7], 0, 0, 0, 1.0);
   figures[270].lines[0].start = 3;
   figures[270].lines[0].end = 5;
   figures[270].lines[1].start = 5;
@@ -9785,8 +9037,6 @@ void init_figures() {
   figures[270].lines[5].end = 7;
   figures[270].lines[6].start = 2;
   figures[270].lines[6].end = 6;
-  figures[270].lines[6].start = 0;
-  figures[270].lines[6].end = 0;
   figures[270].lines[7].start = 0;
   figures[270].lines[7].end = 0;
   figures[270].lines[8].start = 0;
@@ -9806,7 +9056,6 @@ void init_figures() {
   vec4(&figure271[5], 1.8725, -1.0725, -0.5275, 1.0);
   vec4(&figure271[6], 1.9175, -0.8825, -0.8125, 1.0);
   vec4(&figure271[7], 0.2325, -1.8175, 1.7425, 1.0);
-  vec4(&figure271[7], 0, 0, 0, 1.0);
   figures[271].lines[0].start = 5;
   figures[271].lines[0].end = 6;
   figures[271].lines[1].start = 4;
@@ -9815,8 +9064,6 @@ void init_figures() {
   figures[271].lines[2].end = 2;
   figures[271].lines[3].start = 3;
   figures[271].lines[3].end = 1;
-  figures[271].lines[3].start = 0;
-  figures[271].lines[3].end = 0;
   figures[271].lines[4].start = 0;
   figures[271].lines[4].end = 0;
   figures[271].lines[5].start = 0;
@@ -9842,7 +9089,6 @@ void init_figures() {
   vec4(&figure272[5], 1.6125, 0.4625, 0.4175, 1.0);
   vec4(&figure272[6], 2.1525, -0.2425, -0.8575, 1.0);
   vec4(&figure272[7], 1.7225, -0.9425, -0.2625, 1.0);
-  vec4(&figure272[7], 0, 0, 0, 1.0);
   figures[272].lines[0].start = 1;
   figures[272].lines[0].end = 6;
   figures[272].lines[1].start = 2;
@@ -9855,8 +9101,6 @@ void init_figures() {
   figures[272].lines[4].end = 5;
   figures[272].lines[5].start = 4;
   figures[272].lines[5].end = 7;
-  figures[272].lines[5].start = 0;
-  figures[272].lines[5].end = 0;
   figures[272].lines[6].start = 0;
   figures[272].lines[6].end = 0;
   figures[272].lines[7].start = 0;
@@ -9889,8 +9133,6 @@ void init_figures() {
   figures[273].lines[3].end = 6;
   figures[273].lines[4].start = 0;
   figures[273].lines[4].end = 1;
-  figures[273].lines[4].start = 0;
-  figures[273].lines[4].end = 0;
   figures[273].lines[5].start = 0;
   figures[273].lines[5].end = 0;
   figures[273].lines[6].start = 0;
@@ -9932,8 +9174,6 @@ void init_figures() {
   figures[274].lines[6].end = 7;
   figures[274].lines[7].start = 4;
   figures[274].lines[7].end = 1;
-  figures[274].lines[7].start = 0;
-  figures[274].lines[7].end = 0;
   figures[274].lines[8].start = 0;
   figures[274].lines[8].end = 0;
   figures[274].lines[9].start = 0;
@@ -9966,8 +9206,6 @@ void init_figures() {
   figures[275].lines[5].end = 4;
   figures[275].lines[6].start = 5;
   figures[275].lines[6].end = 8;
-  figures[275].lines[6].start = 0;
-  figures[275].lines[6].end = 0;
   figures[275].lines[7].start = 0;
   figures[275].lines[7].end = 0;
   figures[275].lines[8].start = 0;
@@ -9998,8 +9236,6 @@ void init_figures() {
   figures[276].lines[3].end = 5;
   figures[276].lines[4].start = 4;
   figures[276].lines[4].end = 1;
-  figures[276].lines[4].start = 0;
-  figures[276].lines[4].end = 0;
   figures[276].lines[5].start = 0;
   figures[276].lines[5].end = 0;
   figures[276].lines[6].start = 0;
@@ -10023,7 +9259,6 @@ void init_figures() {
   vec4(&figure277[5], 1.7725, -0.6925, 0.4325, 1.0);
   vec4(&figure277[6], 2.3175, -0.4875, -0.7675, 1.0);
   vec4(&figure277[7], 1.9175, -0.8825, -0.8125, 1.0);
-  vec4(&figure277[7], 0, 0, 0, 1.0);
   figures[277].lines[0].start = 3;
   figures[277].lines[0].end = 6;
   figures[277].lines[1].start = 0;
@@ -10032,8 +9267,6 @@ void init_figures() {
   figures[277].lines[2].end = 2;
   figures[277].lines[3].start = 1;
   figures[277].lines[3].end = 4;
-  figures[277].lines[3].start = 0;
-  figures[277].lines[3].end = 0;
   figures[277].lines[4].start = 0;
   figures[277].lines[4].end = 0;
   figures[277].lines[5].start = 0;
@@ -10059,7 +9292,6 @@ void init_figures() {
   vec4(&figure278[5], -0.3375, -0.5625, 2.9425, 1.0);
   vec4(&figure278[6], -0.3325, -1.2925, 2.9475, 1.0);
   vec4(&figure278[7], 0.5375, -2.1725, -1.6325, 1.0);
-  vec4(&figure278[7], 0, 0, 0, 1.0);
   figures[278].lines[0].start = 1;
   figures[278].lines[0].end = 2;
   figures[278].lines[1].start = 0;
@@ -10070,8 +9302,6 @@ void init_figures() {
   figures[278].lines[3].end = 3;
   figures[278].lines[4].start = 6;
   figures[278].lines[4].end = 3;
-  figures[278].lines[4].start = 0;
-  figures[278].lines[4].end = 0;
   figures[278].lines[5].start = 0;
   figures[278].lines[5].end = 0;
   figures[278].lines[6].start = 0;
@@ -10110,8 +9340,6 @@ void init_figures() {
   figures[279].lines[5].end = 4;
   figures[279].lines[6].start = 1;
   figures[279].lines[6].end = 8;
-  figures[279].lines[6].start = 0;
-  figures[279].lines[6].end = 0;
   figures[279].lines[7].start = 0;
   figures[279].lines[7].end = 0;
   figures[279].lines[8].start = 0;
@@ -10131,7 +9359,6 @@ void init_figures() {
   vec4(&figure280[5], -0.3325, -1.2925, 2.9475, 1.0);
   vec4(&figure280[6], -0.0025, -1.5725, 2.6025, 1.0);
   vec4(&figure280[7], -0.0025, -1.5225, 1.8725, 1.0);
-  vec4(&figure280[7], 0, 0, 0, 1.0);
   figures[280].lines[0].start = 2;
   figures[280].lines[0].end = 0;
   figures[280].lines[1].start = 2;
@@ -10142,8 +9369,6 @@ void init_figures() {
   figures[280].lines[3].end = 3;
   figures[280].lines[4].start = 1;
   figures[280].lines[4].end = 3;
-  figures[280].lines[4].start = 0;
-  figures[280].lines[4].end = 0;
   figures[280].lines[5].start = 0;
   figures[280].lines[5].end = 0;
   figures[280].lines[6].start = 0;
@@ -10178,8 +9403,6 @@ void init_figures() {
   figures[281].lines[3].end = 8;
   figures[281].lines[4].start = 4;
   figures[281].lines[4].end = 7;
-  figures[281].lines[4].start = 0;
-  figures[281].lines[4].end = 0;
   figures[281].lines[5].start = 0;
   figures[281].lines[5].end = 0;
   figures[281].lines[6].start = 0;
@@ -10219,8 +9442,6 @@ void init_figures() {
   figures[282].lines[5].end = 1;
   figures[282].lines[6].start = 7;
   figures[282].lines[6].end = 4;
-  figures[282].lines[6].start = 0;
-  figures[282].lines[6].end = 0;
   figures[282].lines[7].start = 0;
   figures[282].lines[7].end = 0;
   figures[282].lines[8].start = 0;
@@ -10239,7 +9460,6 @@ void init_figures() {
   vec4(&figure283[4], 1.7375, -1.3475, -0.3575, 1.0);
   vec4(&figure283[5], 2.1025, -1.2825, -0.7075, 1.0);
   vec4(&figure283[6], 2.4125, -1.3125, -1.0575, 1.0);
-  vec4(&figure283[6], 0, 0, 0, 1.0);
   vec4(&figure283[7], 0, 0, 0, 1.0);
   figures[283].lines[0].start = 4;
   figures[283].lines[0].end = 3;
@@ -10251,8 +9471,6 @@ void init_figures() {
   figures[283].lines[3].end = 5;
   figures[283].lines[4].start = 6;
   figures[283].lines[4].end = 1;
-  figures[283].lines[4].start = 0;
-  figures[283].lines[4].end = 0;
   figures[283].lines[5].start = 0;
   figures[283].lines[5].end = 0;
   figures[283].lines[6].start = 0;
@@ -10275,7 +9493,6 @@ void init_figures() {
   vec4(&figure284[4], 1.6925, -1.1575, 0.9625, 1.0);
   vec4(&figure284[5], 1.8175, -0.8875, 0.5075, 1.0);
   vec4(&figure284[6], 2.1725, -1.0675, -1.2575, 1.0);
-  vec4(&figure284[6], 0, 0, 0, 1.0);
   vec4(&figure284[7], 0, 0, 0, 1.0);
   figures[284].lines[0].start = 0;
   figures[284].lines[0].end = 1;
@@ -10285,8 +9502,6 @@ void init_figures() {
   figures[284].lines[2].end = 2;
   figures[284].lines[3].start = 5;
   figures[284].lines[3].end = 4;
-  figures[284].lines[3].start = 0;
-  figures[284].lines[3].end = 0;
   figures[284].lines[4].start = 0;
   figures[284].lines[4].end = 0;
   figures[284].lines[5].start = 0;
@@ -10323,8 +9538,6 @@ void init_figures() {
   figures[285].lines[3].end = 7;
   figures[285].lines[4].start = 1;
   figures[285].lines[4].end = 3;
-  figures[285].lines[4].start = 0;
-  figures[285].lines[4].end = 0;
   figures[285].lines[5].start = 0;
   figures[285].lines[5].end = 0;
   figures[285].lines[6].start = 0;
@@ -10347,7 +9560,6 @@ void init_figures() {
   vec4(&figure286[4], -1.7925, -0.6825, 0.4275, 1.0);
   vec4(&figure286[5], 1.6925, -1.1575, 0.9625, 1.0);
   vec4(&figure286[6], 1.9225, -1.0475, 0.2325, 1.0);
-  vec4(&figure286[6], 0, 0, 0, 1.0);
   vec4(&figure286[7], 0, 0, 0, 1.0);
   figures[286].lines[0].start = 6;
   figures[286].lines[0].end = 5;
@@ -10359,8 +9571,6 @@ void init_figures() {
   figures[286].lines[3].end = 3;
   figures[286].lines[4].start = 1;
   figures[286].lines[4].end = 3;
-  figures[286].lines[4].start = 0;
-  figures[286].lines[4].end = 0;
   figures[286].lines[5].start = 0;
   figures[286].lines[5].end = 0;
   figures[286].lines[6].start = 0;
@@ -10395,8 +9605,6 @@ void init_figures() {
   figures[287].lines[3].end = 1;
   figures[287].lines[4].start = 3;
   figures[287].lines[4].end = 6;
-  figures[287].lines[4].start = 0;
-  figures[287].lines[4].end = 0;
   figures[287].lines[5].start = 0;
   figures[287].lines[5].end = 0;
   figures[287].lines[6].start = 0;
@@ -10436,8 +9644,6 @@ void init_figures() {
   figures[288].lines[5].end = 0;
   figures[288].lines[6].start = 1;
   figures[288].lines[6].end = 2;
-  figures[288].lines[6].start = 0;
-  figures[288].lines[6].end = 0;
   figures[288].lines[7].start = 0;
   figures[288].lines[7].end = 0;
   figures[288].lines[8].start = 0;
@@ -10456,7 +9662,6 @@ void init_figures() {
   vec4(&figure289[4], -2.0775, -1.5425, -0.7075, 1.0);
   vec4(&figure289[5], -1.7125, -1.5375, -0.6425, 1.0);
   vec4(&figure289[6], -2.0025, -1.4625, -0.8925, 1.0);
-  vec4(&figure289[6], 0, 0, 0, 1.0);
   vec4(&figure289[7], 0, 0, 0, 1.0);
   figures[289].lines[0].start = 0;
   figures[289].lines[0].end = 1;
@@ -10468,8 +9673,6 @@ void init_figures() {
   figures[289].lines[3].end = 5;
   figures[289].lines[4].start = 4;
   figures[289].lines[4].end = 6;
-  figures[289].lines[4].start = 0;
-  figures[289].lines[4].end = 0;
   figures[289].lines[5].start = 0;
   figures[289].lines[5].end = 0;
   figures[289].lines[6].start = 0;
@@ -10511,8 +9714,6 @@ void init_figures() {
   figures[290].lines[6].end = 3;
   figures[290].lines[7].start = 8;
   figures[290].lines[7].end = 9;
-  figures[290].lines[7].start = 0;
-  figures[290].lines[7].end = 0;
   figures[290].lines[8].start = 0;
   figures[290].lines[8].end = 0;
   figures[290].lines[9].start = 0;
@@ -10529,7 +9730,6 @@ void init_figures() {
   vec4(&figure291[4], -1.9225, -0.8825, -0.8125, 1.0);
   vec4(&figure291[5], -1.8975, -0.8625, -0.5225, 1.0);
   vec4(&figure291[6], -2.0375, -0.5675, -0.6225, 1.0);
-  vec4(&figure291[6], 0, 0, 0, 1.0);
   vec4(&figure291[7], 0, 0, 0, 1.0);
   figures[291].lines[0].start = 0;
   figures[291].lines[0].end = 3;
@@ -10539,8 +9739,6 @@ void init_figures() {
   figures[291].lines[2].end = 5;
   figures[291].lines[3].start = 5;
   figures[291].lines[3].end = 6;
-  figures[291].lines[3].start = 0;
-  figures[291].lines[3].end = 0;
   figures[291].lines[4].start = 0;
   figures[291].lines[4].end = 0;
   figures[291].lines[5].start = 0;
@@ -10579,8 +9777,6 @@ void init_figures() {
   figures[292].lines[4].end = 4;
   figures[292].lines[5].start = 2;
   figures[292].lines[5].end = 1;
-  figures[292].lines[5].start = 0;
-  figures[292].lines[5].end = 0;
   figures[292].lines[6].start = 0;
   figures[292].lines[6].end = 0;
   figures[292].lines[7].start = 0;
@@ -10615,8 +9811,6 @@ void init_figures() {
   figures[293].lines[4].end = 0;
   figures[293].lines[5].start = 8;
   figures[293].lines[5].end = 5;
-  figures[293].lines[5].start = 0;
-  figures[293].lines[5].end = 0;
   figures[293].lines[6].start = 0;
   figures[293].lines[6].end = 0;
   figures[293].lines[7].start = 0;
@@ -10656,8 +9850,6 @@ void init_figures() {
   figures[294].lines[6].end = 9;
   figures[294].lines[7].start = 4;
   figures[294].lines[7].end = 8;
-  figures[294].lines[7].start = 0;
-  figures[294].lines[7].end = 0;
   figures[294].lines[8].start = 0;
   figures[294].lines[8].end = 0;
   figures[294].lines[9].start = 0;
@@ -10688,8 +9880,6 @@ void init_figures() {
   figures[295].lines[4].end = 3;
   figures[295].lines[5].start = 0;
   figures[295].lines[5].end = 6;
-  figures[295].lines[5].start = 0;
-  figures[295].lines[5].end = 0;
   figures[295].lines[6].start = 0;
   figures[295].lines[6].end = 0;
   figures[295].lines[7].start = 0;
@@ -10711,7 +9901,6 @@ void init_figures() {
   vec4(&figure296[5], -1.8975, -0.8625, -0.5225, 1.0);
   vec4(&figure296[6], -2.3275, -0.3375, -1.1175, 1.0);
   vec4(&figure296[7], -2.3225, -0.4875, -0.7725, 1.0);
-  vec4(&figure296[7], 0, 0, 0, 1.0);
   figures[296].lines[0].start = 5;
   figures[296].lines[0].end = 3;
   figures[296].lines[1].start = 4;
@@ -10722,8 +9911,6 @@ void init_figures() {
   figures[296].lines[3].end = 6;
   figures[296].lines[4].start = 0;
   figures[296].lines[4].end = 7;
-  figures[296].lines[4].start = 0;
-  figures[296].lines[4].end = 0;
   figures[296].lines[5].start = 0;
   figures[296].lines[5].end = 0;
   figures[296].lines[6].start = 0;
@@ -10747,7 +9934,6 @@ void init_figures() {
   vec4(&figure297[5], -2.3225, -0.4875, -0.7725, 1.0);
   vec4(&figure297[6], -0.8075, -2.6175, -0.2075, 1.0);
   vec4(&figure297[7], -1.2725, -2.1175, -0.5475, 1.0);
-  vec4(&figure297[7], 0, 0, 0, 1.0);
   figures[297].lines[0].start = 2;
   figures[297].lines[0].end = 5;
   figures[297].lines[1].start = 2;
@@ -10758,8 +9944,6 @@ void init_figures() {
   figures[297].lines[3].end = 6;
   figures[297].lines[4].start = 7;
   figures[297].lines[4].end = 6;
-  figures[297].lines[4].start = 0;
-  figures[297].lines[4].end = 0;
   figures[297].lines[5].start = 0;
   figures[297].lines[5].end = 0;
   figures[297].lines[6].start = 0;
@@ -10796,8 +9980,6 @@ void init_figures() {
   figures[298].lines[4].end = 8;
   figures[298].lines[5].start = 4;
   figures[298].lines[5].end = 3;
-  figures[298].lines[5].start = 0;
-  figures[298].lines[5].end = 0;
   figures[298].lines[6].start = 0;
   figures[298].lines[6].end = 0;
   figures[298].lines[7].start = 0;
@@ -10834,8 +10016,6 @@ void init_figures() {
   figures[299].lines[5].end = 0;
   figures[299].lines[6].start = 1;
   figures[299].lines[6].end = 3;
-  figures[299].lines[6].start = 0;
-  figures[299].lines[6].end = 0;
   figures[299].lines[7].start = 0;
   figures[299].lines[7].end = 0;
   figures[299].lines[8].start = 0;
@@ -10855,7 +10035,6 @@ void init_figures() {
   vec4(&figure300[5], -0.4725, -1.8675, 1.5025, 1.0);
   vec4(&figure300[6], -0.6125, -1.8025, 1.4525, 1.0);
   vec4(&figure300[7], -1.8225, -1.4825, 0.5575, 1.0);
-  vec4(&figure300[7], 0, 0, 0, 1.0);
   figures[300].lines[0].start = 4;
   figures[300].lines[0].end = 0;
   figures[300].lines[1].start = 1;
@@ -10866,8 +10045,6 @@ void init_figures() {
   figures[300].lines[3].end = 2;
   figures[300].lines[4].start = 2;
   figures[300].lines[4].end = 7;
-  figures[300].lines[4].start = 0;
-  figures[300].lines[4].end = 0;
   figures[300].lines[5].start = 0;
   figures[300].lines[5].end = 0;
   figures[300].lines[6].start = 0;
@@ -10904,8 +10081,6 @@ void init_figures() {
   figures[301].lines[4].end = 1;
   figures[301].lines[5].start = 4;
   figures[301].lines[5].end = 2;
-  figures[301].lines[5].start = 0;
-  figures[301].lines[5].end = 0;
   figures[301].lines[6].start = 0;
   figures[301].lines[6].end = 0;
   figures[301].lines[7].start = 0;
@@ -10927,7 +10102,6 @@ void init_figures() {
   vec4(&figure302[5], -0.8275, -2.4625, 0.3525, 1.0);
   vec4(&figure302[6], -0.8375, -2.2225, 0.6575, 1.0);
   vec4(&figure302[7], -1.4375, -2.1525, 0.3775, 1.0);
-  vec4(&figure302[7], 0, 0, 0, 1.0);
   figures[302].lines[0].start = 1;
   figures[302].lines[0].end = 2;
   figures[302].lines[1].start = 0;
@@ -10938,8 +10112,6 @@ void init_figures() {
   figures[302].lines[3].end = 6;
   figures[302].lines[4].start = 6;
   figures[302].lines[4].end = 7;
-  figures[302].lines[4].start = 0;
-  figures[302].lines[4].end = 0;
   figures[302].lines[5].start = 0;
   figures[302].lines[5].end = 0;
   figures[302].lines[6].start = 0;
@@ -10974,8 +10146,6 @@ void init_figures() {
   figures[303].lines[3].end = 1;
   figures[303].lines[4].start = 0;
   figures[303].lines[4].end = 6;
-  figures[303].lines[4].start = 0;
-  figures[303].lines[4].end = 0;
   figures[303].lines[5].start = 0;
   figures[303].lines[5].end = 0;
   figures[303].lines[6].start = 0;
@@ -10998,7 +10168,6 @@ void init_figures() {
   vec4(&figure304[4], -0.6425, -0.8675, 1.7125, 1.0);
   vec4(&figure304[5], -1.2075, -0.4775, 1.2075, 1.0);
   vec4(&figure304[6], -1.4375, -0.8025, 1.2425, 1.0);
-  vec4(&figure304[6], 0, 0, 0, 1.0);
   vec4(&figure304[7], 0, 0, 0, 1.0);
   figures[304].lines[0].start = 0;
   figures[304].lines[0].end = 6;
@@ -11014,8 +10183,6 @@ void init_figures() {
   figures[304].lines[5].end = 0;
   figures[304].lines[6].start = 1;
   figures[304].lines[6].end = 2;
-  figures[304].lines[6].start = 0;
-  figures[304].lines[6].end = 0;
   figures[304].lines[7].start = 0;
   figures[304].lines[7].end = 0;
   figures[304].lines[8].start = 0;
@@ -11035,7 +10202,6 @@ void init_figures() {
   vec4(&figure305[5], -0.6425, -0.8675, 1.7125, 1.0);
   vec4(&figure305[6], -1.1975, -1.5575, 1.4225, 1.0);
   vec4(&figure305[7], -1.4375, -0.8025, 1.2425, 1.0);
-  vec4(&figure305[7], 0, 0, 0, 1.0);
   figures[305].lines[0].start = 5;
   figures[305].lines[0].end = 2;
   figures[305].lines[1].start = 5;
@@ -11050,8 +10216,6 @@ void init_figures() {
   figures[305].lines[5].end = 7;
   figures[305].lines[6].start = 3;
   figures[305].lines[6].end = 4;
-  figures[305].lines[6].start = 0;
-  figures[305].lines[6].end = 0;
   figures[305].lines[7].start = 0;
   figures[305].lines[7].end = 0;
   figures[305].lines[8].start = 0;
@@ -11071,7 +10235,6 @@ void init_figures() {
   vec4(&figure306[5], -0.8475, 0.4175, 1.2425, 1.0);
   vec4(&figure306[6], -0.8875, -0.4325, 1.3225, 1.0);
   vec4(&figure306[7], -0.7175, -0.5125, 1.4325, 1.0);
-  vec4(&figure306[7], 0, 0, 0, 1.0);
   figures[306].lines[0].start = 7;
   figures[306].lines[0].end = 2;
   figures[306].lines[1].start = 7;
@@ -11084,8 +10247,6 @@ void init_figures() {
   figures[306].lines[4].end = 5;
   figures[306].lines[5].start = 0;
   figures[306].lines[5].end = 4;
-  figures[306].lines[5].start = 0;
-  figures[306].lines[5].end = 0;
   figures[306].lines[6].start = 0;
   figures[306].lines[6].end = 0;
   figures[306].lines[7].start = 0;
@@ -11118,8 +10279,6 @@ void init_figures() {
   figures[307].lines[3].end = 1;
   figures[307].lines[4].start = 3;
   figures[307].lines[4].end = 6;
-  figures[307].lines[4].start = 0;
-  figures[307].lines[4].end = 0;
   figures[307].lines[5].start = 0;
   figures[307].lines[5].end = 0;
   figures[307].lines[6].start = 0;
@@ -11143,7 +10302,6 @@ void init_figures() {
   vec4(&figure308[5], -1.1675, 0.7625, 0.7975, 1.0);
   vec4(&figure308[6], -0.8375, -2.2225, 0.6575, 1.0);
   vec4(&figure308[7], -1.4375, -2.1525, 0.3775, 1.0);
-  vec4(&figure308[7], 0, 0, 0, 1.0);
   figures[308].lines[0].start = 2;
   figures[308].lines[0].end = 0;
   figures[308].lines[1].start = 3;
@@ -11154,8 +10312,6 @@ void init_figures() {
   figures[308].lines[3].end = 6;
   figures[308].lines[4].start = 1;
   figures[308].lines[4].end = 7;
-  figures[308].lines[4].start = 0;
-  figures[308].lines[4].end = 0;
   figures[308].lines[5].start = 0;
   figures[308].lines[5].end = 0;
   figures[308].lines[6].start = 0;
@@ -11192,8 +10348,6 @@ void init_figures() {
   figures[309].lines[4].end = 4;
   figures[309].lines[5].start = 0;
   figures[309].lines[5].end = 2;
-  figures[309].lines[5].start = 0;
-  figures[309].lines[5].end = 0;
   figures[309].lines[6].start = 0;
   figures[309].lines[6].end = 0;
   figures[309].lines[7].start = 0;
@@ -11215,7 +10369,6 @@ void init_figures() {
   vec4(&figure310[5], -1.1975, -1.5575, 1.4225, 1.0);
   vec4(&figure310[6], -0.5825, -1.6875, 1.6225, 1.0);
   vec4(&figure310[7], -1.8225, -1.4825, 0.5575, 1.0);
-  vec4(&figure310[7], 0, 0, 0, 1.0);
   figures[310].lines[0].start = 0;
   figures[310].lines[0].end = 3;
   figures[310].lines[1].start = 2;
@@ -11226,8 +10379,6 @@ void init_figures() {
   figures[310].lines[3].end = 6;
   figures[310].lines[4].start = 1;
   figures[310].lines[4].end = 6;
-  figures[310].lines[4].start = 0;
-  figures[310].lines[4].end = 0;
   figures[310].lines[5].start = 0;
   figures[310].lines[5].end = 0;
   figures[310].lines[6].start = 0;
@@ -11268,8 +10419,6 @@ void init_figures() {
   figures[311].lines[6].end = 8;
   figures[311].lines[7].start = 6;
   figures[311].lines[7].end = 2;
-  figures[311].lines[7].start = 0;
-  figures[311].lines[7].end = 0;
   figures[311].lines[8].start = 0;
   figures[311].lines[8].end = 0;
   figures[311].lines[9].start = 0;
@@ -11304,8 +10453,6 @@ void init_figures() {
   figures[312].lines[6].end = 8;
   figures[312].lines[7].start = 3;
   figures[312].lines[7].end = 6;
-  figures[312].lines[7].start = 0;
-  figures[312].lines[7].end = 0;
   figures[312].lines[8].start = 0;
   figures[312].lines[8].end = 0;
   figures[312].lines[9].start = 0;
@@ -11322,7 +10469,6 @@ void init_figures() {
   vec4(&figure313[4], -1.1975, -1.5575, 1.4225, 1.0);
   vec4(&figure313[5], -0.6125, -1.8025, 1.4525, 1.0);
   vec4(&figure313[6], -1.4375, -2.1525, 0.3775, 1.0);
-  vec4(&figure313[6], 0, 0, 0, 1.0);
   vec4(&figure313[7], 0, 0, 0, 1.0);
   figures[313].lines[0].start = 0;
   figures[313].lines[0].end = 1;
@@ -11332,8 +10478,6 @@ void init_figures() {
   figures[313].lines[2].end = 6;
   figures[313].lines[3].start = 2;
   figures[313].lines[3].end = 6;
-  figures[313].lines[3].start = 0;
-  figures[313].lines[3].end = 0;
   figures[313].lines[4].start = 0;
   figures[313].lines[4].end = 0;
   figures[313].lines[5].start = 0;
@@ -11370,8 +10514,6 @@ void init_figures() {
   figures[314].lines[3].end = 3;
   figures[314].lines[4].start = 8;
   figures[314].lines[4].end = 4;
-  figures[314].lines[4].start = 0;
-  figures[314].lines[4].end = 0;
   figures[314].lines[5].start = 0;
   figures[314].lines[5].end = 0;
   figures[314].lines[6].start = 0;
@@ -11406,8 +10548,6 @@ void init_figures() {
   figures[315].lines[3].end = 6;
   figures[315].lines[4].start = 1;
   figures[315].lines[4].end = 3;
-  figures[315].lines[4].start = 0;
-  figures[315].lines[4].end = 0;
   figures[315].lines[5].start = 0;
   figures[315].lines[5].end = 0;
   figures[315].lines[6].start = 0;
@@ -11441,8 +10581,6 @@ void init_figures() {
   figures[316].lines[3].start = 5;
   figures[316].lines[3].end = 8;
   figures[316].lines[4].start = 4;
-  figures[316].lines[4].end = 0;
-  figures[316].lines[4].start = 0;
   figures[316].lines[4].end = 0;
   figures[316].lines[5].start = 0;
   figures[316].lines[5].end = 0;
@@ -11478,8 +10616,6 @@ void init_figures() {
   figures[317].lines[3].end = 1;
   figures[317].lines[4].start = 8;
   figures[317].lines[4].end = 5;
-  figures[317].lines[4].start = 0;
-  figures[317].lines[4].end = 0;
   figures[317].lines[5].start = 0;
   figures[317].lines[5].end = 0;
   figures[317].lines[6].start = 0;
@@ -11515,8 +10651,6 @@ void init_figures() {
   figures[318].lines[3].end = 9;
   figures[318].lines[4].start = 2;
   figures[318].lines[4].end = 5;
-  figures[318].lines[4].start = 0;
-  figures[318].lines[4].end = 0;
   figures[318].lines[5].start = 0;
   figures[318].lines[5].end = 0;
   figures[318].lines[6].start = 0;
@@ -11537,7 +10671,6 @@ void init_figures() {
   vec4(&figure319[2], 0.2025, -2.0775, 1.3625, 1.0);
   vec4(&figure319[3], -0.2075, -2.0525, 1.3675, 1.0);
   vec4(&figure319[4], -0.4725, -1.8675, 1.5025, 1.0);
-  vec4(&figure319[4], 0, 0, 0, 1.0);
   vec4(&figure319[5], 0, 0, 0, 1.0);
   vec4(&figure319[6], 0, 0, 0, 1.0);
   vec4(&figure319[7], 0, 0, 0, 1.0);
@@ -11551,8 +10684,6 @@ void init_figures() {
   figures[319].lines[3].end = 0;
   figures[319].lines[4].start = 0;
   figures[319].lines[4].end = 3;
-  figures[319].lines[4].start = 0;
-  figures[319].lines[4].end = 0;
   figures[319].lines[5].start = 0;
   figures[319].lines[5].end = 0;
   figures[319].lines[6].start = 0;

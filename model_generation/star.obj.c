@@ -11,7 +11,6 @@ void init_figures() {
   vec4(&figure0[5], -0.4058, 0.3944, 0.3552, 1.0);
   vec4(&figure0[6], 1.1998, -1.3929, -0.0450, 1.0);
   vec4(&figure0[7], 0.0113, -0.9455, -0.0466, 1.0);
-  vec4(&figure0[7], 0, 0, 0, 1.0);
   figures[0].lines[0].start = 0;
   figures[0].lines[0].end = 1;
   figures[0].lines[1].start = 1;
@@ -32,8 +31,6 @@ void init_figures() {
   figures[0].lines[8].end = 5;
   figures[0].lines[9].start = 6;
   figures[0].lines[9].end = 7;
-  figures[0].lines[9].start = 0;
-  figures[0].lines[9].end = 0;
   figures[0].lines[10].start = 0;
   figures[0].lines[10].end = 0;
   figures[0].lines[11].start = 0;
@@ -47,7 +44,6 @@ void init_figures() {
   vec4(&figure1[5], 1.6145, 0.3892, -0.0302, 1.0);
   vec4(&figure1[6], -1.1689, -1.3981, -0.0548, 1.0);
   vec4(&figure1[7], -0.8961, -0.4038, -0.0464, 1.0);
-  vec4(&figure1[7], 0, 0, 0, 1.0);
   figures[1].lines[0].start = 2;
   figures[1].lines[0].end = 1;
   figures[1].lines[1].start = 2;
@@ -72,8 +68,6 @@ void init_figures() {
   figures[1].lines[10].end = 6;
   figures[1].lines[11].start = 4;
   figures[1].lines[11].end = 7;
-  figures[1].lines[11].start = 0;
-  figures[1].lines[11].end = 0;
   vec4_t *figure2 = figures[2].verts;
   vec4(&figure2[0], 0.0113, -0.9455, -0.0466, 1.0);
   vec4(&figure2[1], 0.0071, -0.0934, 0.5221, 1.0);
@@ -82,7 +76,6 @@ void init_figures() {
   vec4(&figure2[4], -1.5916, 0.3821, -0.0436, 1.0);
   vec4(&figure2[5], 0.6081, 0.4807, -0.0337, 1.0);
   vec4(&figure2[6], 0.0060, 1.3981, -0.0295, 1.0);
-  vec4(&figure2[6], 0, 0, 0, 1.0);
   vec4(&figure2[7], 0, 0, 0, 1.0);
   figures[2].lines[0].start = 2;
   figures[2].lines[0].end = 3;
@@ -96,8 +89,6 @@ void init_figures() {
   figures[2].lines[4].end = 5;
   figures[2].lines[5].start = 6;
   figures[2].lines[5].end = 5;
-  figures[2].lines[5].start = 0;
-  figures[2].lines[5].end = 0;
   figures[2].lines[6].start = 0;
   figures[2].lines[6].end = 0;
   figures[2].lines[7].start = 0;
@@ -119,7 +110,6 @@ void init_figures() {
   vec4(&figure3[5], 0.6081, 0.4807, -0.0337, 1.0);
   vec4(&figure3[6], 0.0060, 1.3981, -0.0295, 1.0);
   vec4(&figure3[7], -0.5856, 0.4781, -0.0387, 1.0);
-  vec4(&figure3[7], 0, 0, 0, 1.0);
   figures[3].lines[0].start = 6;
   figures[3].lines[0].end = 1;
   figures[3].lines[1].start = 7;
@@ -132,8 +122,6 @@ void init_figures() {
   figures[3].lines[4].end = 4;
   figures[3].lines[5].start = 0;
   figures[3].lines[5].end = 3;
-  figures[3].lines[5].start = 0;
-  figures[3].lines[5].end = 0;
   figures[3].lines[6].start = 0;
   figures[3].lines[6].end = 0;
   figures[3].lines[7].start = 0;
@@ -153,7 +141,6 @@ void init_figures() {
   vec4(&figure4[3], 0.6081, 0.4807, -0.0337, 1.0);
   vec4(&figure4[4], 0.0060, 1.3981, -0.0295, 1.0);
   vec4(&figure4[5], -0.5856, 0.4781, -0.0387, 1.0);
-  vec4(&figure4[5], 0, 0, 0, 1.0);
   vec4(&figure4[6], 0, 0, 0, 1.0);
   vec4(&figure4[7], 0, 0, 0, 1.0);
   figures[4].lines[0].start = 0;
@@ -168,8 +155,6 @@ void init_figures() {
   figures[4].lines[4].end = 3;
   figures[4].lines[5].start = 0;
   figures[4].lines[5].end = 4;
-  figures[4].lines[5].start = 0;
-  figures[4].lines[5].end = 0;
   figures[4].lines[6].start = 0;
   figures[4].lines[6].end = 0;
   figures[4].lines[7].start = 0;

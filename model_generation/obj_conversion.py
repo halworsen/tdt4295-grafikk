@@ -83,12 +83,16 @@ with open(f"{args.obj_file}.c", "w") as bugge_file:
         for index, vertex in enumerate(frameVerticies):
             mapping[vertex] = index
             bugge_file.write(f"  vec4(&figure{frameIndex}[{index}], {verticies[vertex][0]}, {verticies[vertex][1]}, {verticies[vertex][2]}, 1.0);\n")
-        bugge_file.writelines(f"  vec4(&figure{frameIndex}[{index}], 0, 0, 0, 1.0);\n" for index in range(len(frameVerticies)-1, POINT_NUM))
+        bugge_file.writelines(f"  vec4(&figure{frameIndex}[{index}], 0, 0, 0, 1.0);\n" for index in range(len(frameVerticies), POINT_NUM))
         unused += 3*(POINT_NUM-len(frameVerticies))
         
         
         bugge_file.writelines(f"  figures[{frameIndex}].lines[{index}].start = {mapping[edge[0]]};\n  figures[{frameIndex}].lines[{index}].end = {mapping[edge[1]]};\n" for index, edge in enumerate(frameEdges))
-        bugge_file.writelines(f"  figures[{frameIndex}].lines[{index}].start = 0;\n  figures[{frameIndex}].lines[{index}].end = 0;\n" for index in range(len(frameEdges)-1, LINE_NUM))
+        bugge_file.writelines(f"  figures[{frameIndex}].lines[{index}].start = 0;\n  figures[{frameIndex}].lines[{index}].end = 0;\n" for index in range(len(frameEdges), LINE_NUM))
+       
+        # bugge_file.writelines(f"  figures[{frameIndex}].lines[{index}].start = {edge[0]+1};\n  figures[{frameIndex}].lines[{index}].end = {edge[1]+1};\n" for index, edge in enumerate(frameEdges))
+        # bugge_file.writelines(f"  figures[{frameIndex}].lines[{index}].start = 0;\n  figures[{frameIndex}].lines[{index}].end = 0;\n" for index in range(len(frameEdges), LINE_NUM))
+        
         unused += 2*(LINE_NUM-len(frameEdges))
     
     bugge_file.write("}\n")
