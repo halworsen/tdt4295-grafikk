@@ -32,7 +32,7 @@
 #define ROTATION_STEP_SIZE 0.03
 
 #define MAX_Z 0.95
-#define MIN_Z -0.95
+#define MIN_Z -1.95
 
 #define MAX_X 0.9
 #define MIN_X -0.9
@@ -86,7 +86,7 @@ struct fpga_package figures3[NUM_FIGURES3];
 struct fpga_package figures4[NUM_FIGURES4];
 int num_figures[4] = {NUM_FIGURES1, NUM_FIGURES2, NUM_FIGURES3, NUM_FIGURES4};
 struct fpga_package *figures[4] = {figures1, figures2, figures3, figures4};
-int figure_num = 0;
+int figure_num = 1;
 
 bool start = false;
 volatile bool can_press = false;
