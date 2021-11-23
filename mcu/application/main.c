@@ -153,6 +153,7 @@ void calc_mat(mat4_t *mat) {
 void btn_handler() {
   GPIO_IntClear(0xFFFF);
   if (can_press) {
+
     GPIO_PinOutToggle(gpioPortE, LED1_PIN);
     if (start)
       figure_num =
@@ -173,7 +174,10 @@ void TIMER1_IRQHandler(void) {
     calc_pos();
     calc_mat(&matrix);
     ADC_Start(ADC0, adcStartScan);
-
+    x = 0;
+    z = 0;
+    th_x = 0;
+    th_y = 0;
     // the model (verts and lines) are already in the package,
     // al we need to do is re-calculate the MVP and sen.
     if (GPIO_PinInGet(gpioPortB, FPGA_DONE_PIN)) {
