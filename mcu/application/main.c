@@ -32,7 +32,7 @@
 #define ROTATION_STEP_SIZE 0.03
 
 #define MAX_Z 0.95
-#define MIN_Z -1.95
+#define MIN_Z -1.3
 
 #define MAX_X 0.9
 #define MIN_X -0.9
@@ -153,6 +153,10 @@ void calc_mat(mat4_t *mat) {
 void btn_handler() {
   GPIO_IntClear(0xFFFF);
   if (can_press) {
+    x = 0;
+    z = 0;
+    th_x = 0;
+    th_y = 0;
 
     GPIO_PinOutToggle(gpioPortE, LED1_PIN);
     if (start)
@@ -174,10 +178,6 @@ void TIMER1_IRQHandler(void) {
     calc_pos();
     calc_mat(&matrix);
     ADC_Start(ADC0, adcStartScan);
-    x = 0;
-    z = 0;
-    th_x = 0;
-    th_y = 0;
     // the model (verts and lines) are already in the package,
     // al we need to do is re-calculate the MVP and sen.
     if (GPIO_PinInGet(gpioPortB, FPGA_DONE_PIN)) {
