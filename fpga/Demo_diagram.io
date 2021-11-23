@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-11-23T16:58:25.173Z" agent="5.0 (Windows)" etag="AuDGg8J6N6ppRhdE-dkZ" version="15.8.2" type="github">
+<mxfile host="app.diagrams.net" modified="2021-11-23T16:58:56.987Z" agent="5.0 (Windows)" etag="Mo4bcFjuMp7lKIWbf6e-" version="15.8.2" type="github">
   <diagram id="q9Ps-RnnYnzRldawcZBS" name="Page-1">
-    <mxGraphModel dx="782" dy="420" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1117" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -113,7 +113,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="zMMuba1bCzdaLHp4CQvv-2" value="&lt;div&gt;Draw vertex&lt;/div&gt;&lt;div&gt; indices&lt;/div&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="1H7v9yOLT2mySPb2tCpm-15" target="zMMuba1bCzdaLHp4CQvv-1">
-          <mxGeometry x="0.2673" relative="1" as="geometry">
+          <mxGeometry x="0.6238" y="15" relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="410" y="435" />
             </Array>
