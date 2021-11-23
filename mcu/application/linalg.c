@@ -47,6 +47,25 @@ void mmul3(mat3_t *ret, mat3_t *A, mat3_t *B) {
   }
 }
 
+void vsub3(vec3_t *ret, vec3_t *A, vec3_t *B) {
+  ret->x = A->x - B->x;
+  ret->y = A->y - B->y;
+  ret->z = A->z - B->z;
+}
+
+void vcross3(vec3_t *ret, vec3_t *A, vec3_t B) {
+  // TODO: Check if this is compliable. Needs origo to be at 0,0,0
+  ret->x = A->y * B->z  - A->z * B->y;
+  ret->y = A->z * B->x - A->x * B->z;
+  ret->z = A->x * B->y - A->y * B->x;
+}
+
+float norm3(vec3_t *p) { return sqrt(dot3(p, p)); }
+
+float dot3(vec3_t *p, vec3_t *q) {
+  return p->x * q->x + p->y * q->y + p->z * q->z;
+}
+
 // ret <- Tv (apply T to v)
 void transform3(vec3_t *ret, mat3_t *T, vec3_t *v) {
   // Alias the pointer to the matrix data buffer.
@@ -128,6 +147,7 @@ float dot3(vec4_t *p, vec4_t *q) {
 
 float dot4(vec4_t *p, vec4_t *q) { return dot3(p, q) + p->w * q->w; }
 
+
 float norm3(vec4_t *p) { return sqrt(dot3(p, p)); }
 
 float norm4(vec4_t *p) { return sqrt(dot4(p, p)); }
@@ -205,6 +225,53 @@ void rot_z(mat4_t *ret, float th) {
   *at(ret, 1, 1) = cos(th);
 }
 
+void set_camera(mat4_t *ret, vec3_t *trans, float pitch, float yaw) {
+  // https://stackoverflow.com/questions/26248804/opengl-camera-implementation-which-is-right
+  float yawRad = yaw * 2*pi / 180;
+  float pitchRad = pitch * 2*pi / 180;
+  
+  rot_y(ret, -yawRad);
+  rot_x(ret, -pitchRad);
+
+  translation(ret, -trans->x, -trans->y, -trans->z);
+}
+
+void lookAt(mat4_t *ret, vec3_t *eye, vec3_t *target, vec3_t *up) {
+  // http://www.songho.ca/opengl/gl_camera.html
+  // updir is often (0, 1, 0) or (0, 0, 1)
+  // vector between target and eye
+  vec3_t *forward;
+  vsub3(forward, eye, target);
+  norm3(forward);
+
+  // compute left vec 
+  vec3_t *left;
+  cross3(left, up, forward);
+  norm3(left);
+	
+  // Orthonomal up
+  vec3_t up;
+  cross3(up, forward, left);
+
+  identity(ret);
+  
+  // Rotation part
+  *at(ret, 0, 0) = left->x;
+  *at(ret, 1, 0) = left->y;
+  *at(ret, 2, 0) = left->z;
+  *at(ret, 0, 1) = up->x;
+  *at(ret, 1, 1) = up->y;
+  *at(ret, 2, 1) = up->z;
+  *at(ret, 0, 2) = forward->x;
+  *at(ret, 1, 2) = forward->y;
+  *at(ret, 2, 2) = forward->x;
+
+  // Translation part
+  *at(ret, 3, 0) = -left->x * eye->x - left->y * eye->y - left_z * eye_z;
+  *at(ret, 3, 1) = -up->x * eye->x - up->y * eye->y - up->z * eye_z;
+  *at(ret, 3, 2) = -forward->x * eye->x - forward->y * eye->y - forward->z * eye_z;
+}
+
 void perspective(mat4_t *ret, float fov_rad, float aspect, float z_near,
                  float z_far) {
   // Straight ripoff from the glm rust crate.
@@ -215,6 +282,20 @@ void perspective(mat4_t *ret, float fov_rad, float aspect, float z_near,
 
   mat4(ret, a, 0.0, 0.0, 0.0, 0.0, q, 0.0, 0.0, 0.0, 0.0, b, -1.0, 0.0, 0.0, c,
        0.0);
+}
+
+// Perspecive projection matrix
+void proj_trans(mat4_t *ret, float left, float right, float bottom, float top,
+           float z_near, float z_far) {
+  // OpenGL implementation
+  identity(ret);
+  *at(ret, 0, 0) = 2 * z_near / right * left;
+  *at(ret, 1, 1 ) = 2 * z_near / (top - bottom);
+  *at(ret, 0, 2) = (right + left) / (right - left);
+  *at(ret, 1, 2) = (top + bottom) / (top - bottom);
+  *at(ret, 2, 2) = - (z_far + z_near) / (z_far - z_near);
+  *at(ret, 2, 3) = (-2 * z_far * z_near) / (z_far - z_near);
+  *at(ret, 3, 2) = -1.0;
 }
 
 // Right handed orthographic projection
